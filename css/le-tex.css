@@ -27,13 +27,15 @@ a.button-collapse.top-nav {position: absolute; height: 48px; width: 48px; color:
 /* 
  * transpect logo
  */
-#logo-container{ height:14em; text-align:center; }
+#logo-container{ height:14rem; text-align:center; }
 .side-nav li.logo{width:240px;margin-top:-1px;  border-bottom:1px solid #ccc}
 .side-nav li.logo:hover{background:none;}
 /*
  * right side nav menu
  */
 ul.side-nav.fixed li a {line-height: 44px; height: 44px;}
+li.naventry-1st a{font-weight:300; font-size:1.2rem; text-decoration:none}
+
 
 /*
  * mini-toc
@@ -47,9 +49,9 @@ ul.side-nav.fixed li a {line-height: 44px; height: 44px;}
 /*
  * headline wrapper
  */
-#index-banner{min-height:14em}
-#tr-title{margin:0.2em 0 0.4em 0}
-#tr-subtitle{margin:0 0 1em 0}
+#index-banner{min-height:14rem}
+#tr-title{margin:0.2rem 0 0.4rem 0}
+#tr-subtitle{margin:0 0 1rem 0}
 /*
  * colors
  */
@@ -63,8 +65,8 @@ ul.side-nav.fixed li a {line-height: 44px; height: 44px;}
 .footer-copyright {background-color:#a42423}
 .side-nav .collapsible-body li.active, .side-nav.fixed .collapsible-body li.active{background-color:#ff9800;}
 .side-nav li:hover{background-color:#fff3e0 }
-.side-nav li:active, .side-nav li:focus{background-color:#E53935}
-.side-nav li.active{background-color:#fff3e0 }
+.side-nav li:active, .side-nav li:focus{background-color:#ff9800}
+.side-nav li.active{background-color:#eee }
 body, #tr-nav{background-color:#fafafa}
 
 /*
@@ -72,10 +74,12 @@ body, #tr-nav{background-color:#fafafa}
  * 
  */
 .header{color: #e53935; font-weight:300}
-
-#tr-content ul li, #tr-content ol li{margin:0 0 0 2em; padding:0}
+a:hover {text-decoration:underline}
+#tr-content ul li, #tr-content ol li{margin:0 0 0 2rem; padding:0}
 #tr-content ul li p, #tr-content ol li p{margin:0; padding:0}
 
 #tr-content ul li{list-style-type:disc}
 #tr-content ol li{list-style-type:decimal}
+
+p{font-size: 1.25rem; font-weight: 300;}
 
