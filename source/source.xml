@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="http://docbook.org/xml/5.0/rng/docbook.rng" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml-model href="http://docbook.org/xml/5.0/rng/docbook.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<book xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" version="5.0">
+  <info>
+    <title>transpect.github.io</title>
+    <!-- 
+      part      ...   left nav-bar entry
+      chapter   ...   left nav-bar subentry (only multiple chapters become subentries)
+      section   ...   right table of contents
+      appendix  ...   becomes footer?
+    -->
+  </info>
+  <part>
+    <title>About</title>
+    <chapter xml:base="index.html">
+      <title>transpect</title>
+      <subtitle>open source framework for converting and checking data</subtitle>
+      <section>
+        <title>Converting and checking documents</title>
+        <para>Transpect offers many modules to parse and convert a wide range of XML-based formats such as DOCX, IDML, EPUB, NLM JATS/BITS and TEI.
+          Additionally, there exist tools for converting text-based formats such as CSS and LaTeX as well as extensions, e. g., in order to check PDF and 
+          image files. The following list of supported formats makes no claim to be comprehensive.</para>
+        <informaltable>
+          <thead>
+            <tr>
+              <td>Format</td>
+              <td>Parse</td>
+              <td>Generate</td>
+              <td>Remark</td>
+            </tr>
+          </thead>
+          <tbody>            
+            <tr>
+              <td>EPUB 2/3</td>              
+              <td>&#x2713;</td>
+              <td>&#x2713;</td>
+              <td>including Landmarks, Fixed Layout, Media Overlays, Structural Semantics Vocabulary</td>
+            </tr>
+            <tr>
+              <td>HTML, CSS</td>
+              <td>&#x2713;</td>
+              <td>&#x2713;</td>
+              <td>including conversion from CSS to CSSa</td>
+            </tr>
+            <tr>
+              <td>Images</td>
+              <td>&#x2713;</td>
+              <td>–</td>
+              <td>extract technical metadata, conversion is possible with 3rd-party software</td>
+            </tr>
+            <tr>
+              <td>InDesign Markup Language (IDML)</td>              
+              <td>&#x2713;</td>
+              <td>&#x2713;</td>
+              <td>Styles are retained as CSSa. Generation is limited to one main story yet.</td>
+            </tr>
+            <tr>
+              <td>Math (MathML, OMML, LaTeX)</td>
+              <td>&#x2713;</td>
+              <td>&#x2713;</td>
+              <td>parsing MathType is possible with 3rd-party extensions</td>
+            </tr>
+            <tr>
+              <td>Office Open XML, OpenDocument (ODT)</td>
+              <td>&#x2713;</td>
+              <td>&#x2713;</td>
+              <td>Styles are retained as CSSa. Some OOXML are not supported yet but are retained (SmartArts, Drawings)</td>
+            </tr>
+            <tr>
+              <td>XML-based formats DocBook, NLM JATS/BITS/HoBots, TEI</td>
+              <td>&#x2713;</td>
+              <td>&#x2713;</td>
+            </tr>
+            <tr>
+              <td>PDF</td>
+              <td>–</td>
+              <td>&#x2713;</td>
+              <td>parsing is possible with 3rd-party extensions but limited due to the nature of the format</td>
+            </tr>
+          </tbody>
+        </informaltable>
+        <para>Many converters generate the intermediate format Hub XML. Hub XML is a DocBook 5.1 derivative that 
+          allows for documents that lack a proper section hierarchy and uses CSSa for expressing layout 
+          information. It is used as a common intermediate format to represent raw conversion results of, for 
+          example, OOXML, ODT, and IDML documents.</para>
+      </section>
+      <section>
+        <title>Configuration Cascade</title>
+        <para>Default transformation and checking rules (XSLT, Schematron, CSS, …) may be superseded with specific rules. 
+          These rules specified according to the group of content that the input belongs to, for example per company, 
+          per production-line, or per product.</para>
+      </section>
+      <section>
+        <title>Open Source</title>
+        <para>Transpect is published under the BSD 2-clause license, also known as FreeBSD License. This permissive 
+          license imposes minimal restrictions on the redistribution of the software. Therefore you can use the software in 
+          commercial and even in closed source projects.</para>
+        <para>
+          The license terms can be found here: <link xlink:href="http://opensource.org/licenses/BSD-2-Clause">http://opensource.org/licenses/BSD-2-Clause</link>
+        </para>
+      </section>
+      <section>
+        <title>Industry Standards</title>
+        <para>The technologies behind transpect are industry standards like XProc, XSLT 2.0 and Schematron. Their specifications are 
+          publicly available through international standards organizations such as W3C and ISO.</para>        
+        <informaltable>
+          <tbody>
+            <tr>
+              <th>XProc</th>
+              <td>A language to specify a sequence of operations to be performed on XML documents.</td>
+            </tr>
+            <tr>
+              <th>XSLT 2.0</th>
+              <td>XSLT is a programming language for the purpose of transforming XML documents. Due to several limitations of version 1.0, we recommend to use XSLT 2.0</td>
+            </tr>
+            <tr>
+              <th>Schematron</th>
+              <td>A rule-based schema language to validate XML documents.</td>
+            </tr>
+            <tr>
+              <th>RelaxNG</th>
+              <td>RelaxNG is an XML schema language to specify patterns for the structure of an XML document.</td>
+            </tr>
+          </tbody>
+        </informaltable>
+      </section>
+    </chapter>
+  </part>
+  <part>
+    <title>Getting started</title>
+    <chapter xml:base="getting-started.html">
+      <title>Getting started</title>
+      <section>
+        <title>Install Dependencies</title>
+        <para></para>
+      </section>
+    </chapter>
+  </part>
+  <part>
+    <title>Modules</title>
+    <chapter xml:base="docx2hub.html">
+      <title>docx2hub</title>
+        <para>Cati sunte cus eumque et, exceate stendel estrum eiusam qui rem volut velent.
+          Ossum ipit eaqui at volor simporeris evelic tectiande cum laccum quis eos moluptat.
+          Harciam et, omni coneces eat pla nus di occatecatis samus ut quistendus asit modisqu aspelique nonsequi digent, que nus dit facero officie nectenis estia volorio maios iminvelique simet peditis quiassima sust, sitibusame verum nihil in cum ium hictas volo dolo volum aut imustiant min nit assimolorit autem quatur sam quamust, od utates vendae enienis santiis dolorat quis sim quidelibera dolutam aut acia vellabo reptiossus, voluptur, ut quos sum illendit lat.
+          Onsedite culles alit estem el il estore molut omnia nonseni doluptatur am fugit archil ipsaperere conseque parciusa sed ut eos eatqui omniendi que porehenis aut qui blab ilitatium fugit aut adis saesciam corro offici in nobis acerum veritaqui offictur rest, illiquas dolor aut quiati vendi te offic tem consero quatias andendunt iur, conecume mos remquuntur, earum aut officia temquae cora doluptatur?
+          Dia nestis remos seque dis et, coriam sinvelese pa volut reperna tibusa non et esequisita aut molo volectatem ut iscit ex et modicim agnaturiam enihil ima dolupitem re volut ommodi ut eum hicia doluptae ellatur rescipsus, con nost arcium re dolorum duscim harcium comnimus exereptatur, quianducias quaecer ibuscip santius delia quae cupta voluptatur a non porum lanihit reped que nectotae pres sam estotati dicae volut aut endi temolor erepeliquia aute consed quod quoditaes qui in cuptatur, sitis ni volore dolorit et ullaccus duntius molore, occum aut qui quam ut ut ium de nihil incidebis nimus aci nos velibus, omnis vita plaborro con nam expe non consedi tatecus que plit rat laccusdae. Itatem vercit, solorunt rectatur aborem fuga. Namust, omnim fugit est, alit, nonsequist, sus, omnimi, sunt, netus aperchil into voluptatur molor rerundem rem aut autem. Essunt doluptus asim illuptatis et rerum quodionseque doluptae quaectus, susae prorum quis sume doluptatur? Qui cus nonse quas cumquas itatur?
+          Otatessed eatemol enihilitas eat.
+          Genditia voloreptat restem atem conse omnim nulparum quaepero berumquo volum dolupti accum re provit, que est, con consecus, qui re velest et et volorere possit, consed qui cuptiatat volorro volorem dolecae</para>
+    </chapter>
+    <chapter xml:base="idml2hub.html">
+      <title>idml2hub</title>
+      <para>Cati sunte cus eumque et, exceate stendel estrum eiusam qui rem volut velent.
+        Ossum ipit eaqui at volor simporeris evelic tectiande cum laccum quis eos moluptat.
+        Harciam et, omni coneces eat pla nus di occatecatis samus ut quistendus asit modisqu aspelique nonsequi digent, que nus dit facero officie nectenis estia volorio maios iminvelique simet peditis quiassima sust, sitibusame verum nihil in cum ium hictas volo dolo volum aut imustiant min nit assimolorit autem quatur sam quamust, od utates vendae enienis santiis dolorat quis sim quidelibera dolutam aut acia vellabo reptiossus, voluptur, ut quos sum illendit lat.
+        Onsedite culles alit estem el il estore molut omnia nonseni doluptatur am fugit archil ipsaperere conseque parciusa sed ut eos eatqui omniendi que porehenis aut qui blab ilitatium fugit aut adis saesciam corro offici in nobis acerum veritaqui offictur rest, illiquas dolor aut quiati vendi te offic tem consero quatias andendunt iur, conecume mos remquuntur, earum aut officia temquae cora doluptatur?
+        Dia nestis remos seque dis et, coriam sinvelese pa volut reperna tibusa non et esequisita aut molo volectatem ut iscit ex et modicim agnaturiam enihil ima dolupitem re volut ommodi ut eum hicia doluptae ellatur rescipsus, con nost arcium re dolorum duscim harcium comnimus exereptatur, quianducias quaecer ibuscip santius delia quae cupta voluptatur a non porum lanihit reped que nectotae pres sam estotati dicae volut aut endi temolor erepeliquia aute consed quod quoditaes qui in cuptatur, sitis ni volore dolorit et ullaccus duntius molore, occum aut qui quam ut ut ium de nihil incidebis nimus aci nos velibus, omnis vita plaborro con nam expe non consedi tatecus que plit rat laccusdae. Itatem vercit, solorunt rectatur aborem fuga. Namust, omnim fugit est, alit, nonsequist, sus, omnimi, sunt, netus aperchil into voluptatur molor rerundem rem aut autem. Essunt doluptus asim illuptatis et rerum quodionseque doluptae quaectus, susae prorum quis sume doluptatur? Qui cus nonse quas cumquas itatur?
+        Otatessed eatemol enihilitas eat.
+        Genditia voloreptat restem atem conse omnim nulparum quaepero berumquo volum dolupti accum re provit, que est, con consecus, qui re velest et et volorere possit, consed qui cuptiatat volorro volorem dolecae</para>
+    </chapter>
+    <chapter xml:base="epubtools.html">
+      <title>epubtools</title>
+      <para>Cati sunte cus eumque et, exceate stendel estrum eiusam qui rem volut velent.
+        Ossum ipit eaqui at volor simporeris evelic tectiande cum laccum quis eos moluptat.
+        Harciam et, omni coneces eat pla nus di occatecatis samus ut quistendus asit modisqu aspelique nonsequi digent, que nus dit facero officie nectenis estia volorio maios iminvelique simet peditis quiassima sust, sitibusame verum nihil in cum ium hictas volo dolo volum aut imustiant min nit assimolorit autem quatur sam quamust, od utates vendae enienis santiis dolorat quis sim quidelibera dolutam aut acia vellabo reptiossus, voluptur, ut quos sum illendit lat.
+        Onsedite culles alit estem el il estore molut omnia nonseni doluptatur am fugit archil ipsaperere conseque parciusa sed ut eos eatqui omniendi que porehenis aut qui blab ilitatium fugit aut adis saesciam corro offici in nobis acerum veritaqui offictur rest, illiquas dolor aut quiati vendi te offic tem consero quatias andendunt iur, conecume mos remquuntur, earum aut officia temquae cora doluptatur?
+        Dia nestis remos seque dis et, coriam sinvelese pa volut reperna tibusa non et esequisita aut molo volectatem ut iscit ex et modicim agnaturiam enihil ima dolupitem re volut ommodi ut eum hicia doluptae ellatur rescipsus, con nost arcium re dolorum duscim harcium comnimus exereptatur, quianducias quaecer ibuscip santius delia quae cupta voluptatur a non porum lanihit reped que nectotae pres sam estotati dicae volut aut endi temolor erepeliquia aute consed quod quoditaes qui in cuptatur, sitis ni volore dolorit et ullaccus duntius molore, occum aut qui quam ut ut ium de nihil incidebis nimus aci nos velibus, omnis vita plaborro con nam expe non consedi tatecus que plit rat laccusdae. Itatem vercit, solorunt rectatur aborem fuga. Namust, omnim fugit est, alit, nonsequist, sus, omnimi, sunt, netus aperchil into voluptatur molor rerundem rem aut autem. Essunt doluptus asim illuptatis et rerum quodionseque doluptae quaectus, susae prorum quis sume doluptatur? Qui cus nonse quas cumquas itatur?
+        Otatessed eatemol enihilitas eat.
+        Genditia voloreptat restem atem conse omnim nulparum quaepero berumquo volum dolupti accum re provit, que est, con consecus, qui re velest et et volorere possit, consed qui cuptiatat volorro volorem dolecae</para>
+    </chapter>
+  </part>
+</book>
