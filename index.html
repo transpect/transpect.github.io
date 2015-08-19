@@ -6,7 +6,12 @@
     <link type="text/css" rel="stylesheet" href="css/le-tex.css" media="screen,projection" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    
     <meta name="theme-color" content="#EE6E73" />
+    
+    <link rel="apple-touch-icon-precomposed" href="images/favicon/apple-touch-icon-152x152.png" />
+    <meta name="msapplication-TileImage" content="images/favicon/mstile-144x144.png" />
+    <link rel="icon" href="images/favicon/favicon-32x32.png" sizes="32x32" />
   </head>
   <body>
     
@@ -17,11 +22,11 @@
       <ul id="tr-nav" class="side-nav fixed" style="width:240px">
         <li class="logo"><a id="logo-container" href="#" class="brand-logo"><object id="front-page-logo" type="image/svg+xml" data="icons/logo-transpect.svg">Your browser does not support SVG</object></a></li>
         
-      <li class="active bold"><a href="index.html">About</a></li><li class="bold"><a href="about.html">About</a></li><li class="no-padding"><ul class="collapsible collapsible-accordion"><li class="bold"><a class="collapsible-header">Getting started</a><div class="collapsible-body"><ul><li><a href="getting-started-ch1.html">The first chapter</a></li><li><a href="getting-started-ch2.html">The chapter continues</a></li></ul></div></li></ul></li></ul>
+      <li class="active naventry-1st"><a href="index.html">About</a></li><li class="naventry-1st"><a href="getting-started.html">Getting started</a></li><li class="no-padding"><ul class="collapsible collapsible-accordion"><li class="naventry-1st"><a class="collapsible-header">Modules</a><div class="collapsible-body"><ul><li class="naventry-2nd"><a href="docx2hub.html">docx2hub</a></li><li class="naventry-2nd"><a href="idml2hub.html">idml2hub</a></li><li class="naventry-2nd"><a href="epubtools.html">epubtools</a></li></ul></div></li></ul></li></ul>
     </header>
     
     <main>
-      <div class="section orange lighten-1" id="index-banner">
+      <div class="section orange" id="index-banner">
         <div class="container">
           <h1 id="tr-title" class="light header center-on-small-only white-text">transpect</h1>
           <h4 id="tr-subtitle" class="light orange-text text-lighten-4 center-on-small-only">open source framework for converting and checking data</h4>
@@ -30,10 +35,80 @@
       <div class="container">
         <div class="row">
           
-          <div class="col s12 m9 l10" id="tr-content"><div xmlns:xlink="http://www.w3.org/1999/xlink" id="d18e9" class="section scrollspy">
-        <h2 class="header">Converting and checking</h2>
-        <p></p>
-      </div><div xmlns:xlink="http://www.w3.org/1999/xlink" id="d18e17" class="section scrollspy">
+          <div class="col s12 m9 l10" id="tr-content"><div xmlns:xlink="http://www.w3.org/1999/xlink" id="d20e9" class="section scrollspy">
+        <h2 class="header">Converting and checking documents</h2>
+        <p>Transpect offers many modules to parse and convert a wide range of XML-based formats such as DOCX, IDML, EPUB, NLM JATS/BITS and TEI.
+          Additionally, there exist tools for converting text-based formats such as CSS and LaTeX as well as extensions, e. g., in order to check PDF and 
+          image files. The following list of supported formats makes no claim to be comprehensive.</p>
+        <table>
+          <thead>
+            <tr>
+              <td>Format</td>
+              <td>Parse</td>
+              <td>Generate</td>
+              <td>Remark</td>
+            </tr>
+          </thead>
+          <tbody>            
+            <tr>
+              <td>EPUB 2/3</td>              
+              <td>✓</td>
+              <td>✓</td>
+              <td>including Landmarks, Fixed Layout, Media Overlays, Structural Semantics Vocabulary</td>
+            </tr>
+            <tr>
+              <td>HTML, CSS</td>
+              <td>✓</td>
+              <td>✓</td>
+              <td>including conversion from CSS to CSSa</td>
+            </tr>
+            <tr>
+              <td>Images</td>
+              <td>✓</td>
+              <td>–</td>
+              <td>extract technical metadata, conversion is possible with 3rd-party software</td>
+            </tr>
+            <tr>
+              <td>InDesign Markup Language (IDML)</td>              
+              <td>✓</td>
+              <td>✓</td>
+              <td>Styles are retained as CSSa. Generation is limited to one main story yet.</td>
+            </tr>
+            <tr>
+              <td>Math (MathML, OMML, LaTeX)</td>
+              <td>✓</td>
+              <td>✓</td>
+              <td>parsing MathType is possible with 3rd-party extensions</td>
+            </tr>
+            <tr>
+              <td>Office Open XML, OpenDocument (ODT)</td>
+              <td>✓</td>
+              <td>✓</td>
+              <td>Styles are retained as CSSa. Some OOXML are not supported yet but are retained (SmartArts, Drawings)</td>
+            </tr>
+            <tr>
+              <td>XML-based formats DocBook, NLM JATS/BITS/HoBots, TEI</td>
+              <td>✓</td>
+              <td>✓</td>
+            </tr>
+            <tr>
+              <td>PDF</td>
+              <td>–</td>
+              <td>✓</td>
+              <td>parsing is possible with 3rd-party extensions but limited due to the nature of the format</td>
+            </tr>
+          </tbody>
+        </table>
+        <p>Many converters generate the intermediate format Hub XML. Hub XML is a DocBook 5.1 derivative that 
+          allows for documents that lack a proper section hierarchy and uses CSSa for expressing layout 
+          information. It is used as a common intermediate format to represent raw conversion results of, for 
+          example, OOXML, ODT, and IDML documents.</p>
+      </div><div xmlns:xlink="http://www.w3.org/1999/xlink" id="d20e163" class="section scrollspy">
+        <h2 class="header">Configuration Cascade</h2>
+        <p>Default transformation and checking rules (XSLT, Schematron, CSS, …) may be superseded with specific rules. 
+          These rules specified according to the group of content that the input belongs to, for example per company, 
+          per production-line, or per product.</p>
+      </div><div xmlns:xlink="http://www.w3.org/1999/xlink" id="d20e172" class="section scrollspy">
         <h2 class="header">Open Source</h2>
         <p>Transpect is published under the BSD 2-clause license, also known as FreeBSD License. This permissive 
           license imposes minimal restrictions on the redistribution of the software. Therefore you can use the software in 
@@ -41,26 +116,36 @@
         <p>
           The license terms can be found here: <a href="http://opensource.org/licenses/BSD-2-Clause" target="_blank">http://opensource.org/licenses/BSD-2-Clause</a>
         </p>
-      </div><div xmlns:xlink="http://www.w3.org/1999/xlink" id="d18e32" class="section scrollspy">
+      </div><div xmlns:xlink="http://www.w3.org/1999/xlink" id="d20e188" class="section scrollspy">
         <h2 class="header">Industry Standards</h2>
-        <p>The technologies behind transpect are industry standards like XSLT 2.0 and Schematron. Their specifications are 
-          publicly available through international standards organizations such as W3C and ISO. Here is a list of used technologies 
-          which makes no claim to be comprehensive.</p>
-        <ul>
-          <li><p>XProc</p></li>
-          <li><p>XSLT 2.0</p></li>
-          <li><p>RelaxNG</p></li>
-          <li><p>Schematron</p></li>
-          <li><p>EPUB</p></li>
-          <li><p>Office Open XML</p></li>
-          <li><p>InDesign Markup Language</p></li>
-        </ul>
+        <p>The technologies behind transpect are industry standards like XProc, XSLT 2.0 and Schematron. Their specifications are 
+          publicly available through international standards organizations such as W3C and ISO.</p>        
+        <table>
+          <tbody>
+            <tr>
+              <th xmlns="http://docbook.org/ns/docbook">XProc</th>
+              <td>A language to specify a sequence of operations to be performed on XML documents.</td>
+            </tr>
+            <tr>
+              <th xmlns="http://docbook.org/ns/docbook">XSLT 2.0</th>
+              <td>XSLT is a programming language for the purpose of transforming XML documents. Due to several limitations of version 1.0, we recommend to use XSLT 2.0</td>
+            </tr>
+            <tr>
+              <th xmlns="http://docbook.org/ns/docbook">Schematron</th>
+              <td>A rule-based schema language to validate XML documents.</td>
+            </tr>
+            <tr>
+              <th xmlns="http://docbook.org/ns/docbook">RelaxNG</th>
+              <td>RelaxNG is an XML schema language to specify patterns for the structure of an XML document.</td>
+            </tr>
+          </tbody>
+        </table>
       </div></div>
           
           <div class="col hide-on-small-only m3 l2">
             <div class="toc-wrapper pin-top" style="top: 0px;">
               <div style="height: 1px;">
-                <ul id="tr-toc" class="table-of-contents"><li xmlns:xlink="http://www.w3.org/1999/xlink"><a href="#d18e9" class="active">Converting and checking</a></li><li xmlns:xlink="http://www.w3.org/1999/xlink"><a href="#d18e17">Open Source</a></li><li xmlns:xlink="http://www.w3.org/1999/xlink"><a href="#d18e32">Industry Standards</a></li></ul>
+                <ul id="tr-toc" class="table-of-contents"><li xmlns:xlink="http://www.w3.org/1999/xlink"><a href="#d20e9" class="active">Converting and checking documents</a></li><li xmlns:xlink="http://www.w3.org/1999/xlink"><a href="#d20e163">Configuration Cascade</a></li><li xmlns:xlink="http://www.w3.org/1999/xlink"><a href="#d20e172">Open Source</a></li><li xmlns:xlink="http://www.w3.org/1999/xlink"><a href="#d20e188">Industry Standards</a></li></ul>
               </div>
             </div>
           </div>
