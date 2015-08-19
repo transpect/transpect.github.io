@@ -61,7 +61,7 @@
     <p:for-each>
       <p:iteration-source select="//html:html"/>
       
-      <p:store method="xhtml" include-content-type="false" omit-xml-declaration="false">
+      <p:store method="xhtml" include-content-type="true" omit-xml-declaration="false">
         <p:with-option name="href" select="concat('../', //html:html/@xml:base)"/>
       </p:store>
       
