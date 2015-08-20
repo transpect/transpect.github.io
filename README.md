@@ -8,8 +8,6 @@ a source DocBook file where the content is stored. The DocBook XML is splitted i
 Each HTML chunk is inserted into an HTML template, which use the Materialize CSS framework, an 
 implementation of Googles Material Design.
 
-## build
-
 ### prerequisites
 
 * at least Java 1.7
