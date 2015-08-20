@@ -53,6 +53,12 @@ li.naventry-1st a{font-weight:300; font-size:1.2rem; text-decoration:none}
 #tr-title{margin:3rem 0 0 0}
 #tr-subtitle{margin:0.8rem 0 0.8rem 0;}
 /*
+ * footer
+ */
+footer p{font-weight:normal; line-height:130%; font-size:1rem;}
+#tr-footer-3{text-align:right}
+#letex-logo{margin:1rem; padding:1rem}
+ * /*
  * colors
  */
  
@@ -75,7 +81,7 @@ body, #tr-nav{background-color:#fafafa}
  */
 .header{color: #e53935; font-weight:300}
 #tr-content ul li, #tr-content ol li{margin:0 0 0 2rem; padding:0}
-#tr-content ul li p, #tr-content ol li p{margin:0; padding:0}
+#tr-content ul li p, #tr-content ol li p{margin:0.5em 0 0 0.5em; padding:0}
 
 #tr-content ul li{list-style-type:disc}
 #tr-content ol li{list-style-type:decimal}
