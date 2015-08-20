@@ -20,13 +20,7 @@
     </p:documentation>
     <p:document href="../template/template.html"/>
   </p:input>
-  
-  <!--<p:output port="result" sequence="true">
-    <p:documentation xmlns="http://www.w3.org/1999/xhtml">
-      <dl><dt>result</dt><dd>provides the generated websites</dd></dl>
-    </p:documentation>
-  </p:output>-->
-  
+    
   <p:xslt name="insert-nav">
     <p:input port="source">
       <p:pipe port="template" step="build"/>
