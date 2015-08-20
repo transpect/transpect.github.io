@@ -19,9 +19,7 @@
       <para>Transpect was designed to provide generic and stable modules for common 
         conversion and checking tasks. To adress complex and diverse data, transpect 
         offers a cascading configuration to override specific transformation and checking 
-        rules.
-      </para>
-      <para>Each component within the framework is Open Source and build with standard 
+        rules. Each component within the framework is Open Source and use standard 
         technologies such as XSLT 2.0 and XProc.</para>
       <section>
         <title>Data Conversion</title>
