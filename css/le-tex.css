@@ -50,8 +50,8 @@ li.naventry-1st a{font-weight:300; font-size:1.2rem; text-decoration:none}
  * headline wrapper
  */
 #index-banner{min-height:14rem}
-#tr-title{margin:0.2rem 0 0.4rem 0}
-#tr-subtitle{margin:0 0 1rem 0}
+#tr-title{margin:3rem 0 0 0}
+#tr-subtitle{margin:1rem 0 1rem 0}
 /*
  * colors
  */
@@ -82,4 +82,3 @@ a:hover {text-decoration:underline}
 #tr-content ol li{list-style-type:decimal}
 
 p{font-size: 1.25rem; font-weight: 300;}
-
