@@ -5,7 +5,7 @@
   xmlns:xlink="http://www.w3.org/1999/xlink"
   xmlns="http://www.w3.org/1999/xhtml"
   version="2.0"
-  exclude-result-prefixes="xs dbk"
+  exclude-result-prefixes="xs xlink dbk"
   xpath-default-namespace="http://www.w3.org/1999/xhtml">
   
   <xsl:variable name="chapter" select="collection()[2]/*" as="element(dbk:chapter)"/>
@@ -104,16 +104,33 @@
         * transform DocBook to XHTML5
         * -->
 
+
+  <xsl:template match="@role">
+    <xsl:attribute name="class" select="."/>
+  </xsl:template>
+
   <xsl:template match="dbk:section[not(parent::dbk:section)]">
-    <div id="{generate-id()}" class="section scrollspy">
-      <xsl:apply-templates/>
+    <div id="{generate-id()}" class="section col s12 scrollspy">
+      <xsl:apply-templates select="@*|node()"/>
     </div>
   </xsl:template>
   
   <xsl:template match="dbk:section[ancestor::dbk:section]">
-    <div class="subsection">
-      <xsl:apply-templates/>
+    <div>
+      <xsl:apply-templates select="@*|node()"/>
     </div>
+  </xsl:template>
+  
+  <xsl:template match="dbk:simplesect">
+    <div>
+      <xsl:apply-templates select="@*|node()"/>
+    </div>
+  </xsl:template>
+  
+  <xsl:template match="dbk:simplesect/dbk:title">
+    <h5>
+      <xsl:apply-templates select="@*|node()"/>
+    </h5>
   </xsl:template>
   
   <!-- headlines -->
@@ -130,13 +147,13 @@
   
   <xsl:template match="dbk:bridgehead">
     <h4>
-      <xsl:apply-templates/>
+      <xsl:apply-templates select="@*|node()"/>
     </h4>
   </xsl:template>
     
   <xsl:template match="dbk:para">
     <p>
-      <xsl:apply-templates/>
+      <xsl:apply-templates select="@*|node()"/>
     </p>
   </xsl:template>
   
@@ -144,7 +161,7 @@
   
   <xsl:template match="dbk:link">
     <a href="{@xlink:href}" target="_blank">
-      <xsl:apply-templates/>
+      <xsl:apply-templates select="@*|node()"/>
     </a>
   </xsl:template>
   
@@ -152,56 +169,70 @@
   
   <xsl:template match="dbk:itemizedlist">
     <ul>
-      <xsl:apply-templates/>
+      <xsl:apply-templates select="@*|node()"/>
     </ul>
   </xsl:template>
   
   <xsl:template match="dbk:orderedlist">
     <ol>
-      <xsl:apply-templates/>
+      <xsl:apply-templates select="@*|node()"/>
     </ol>
   </xsl:template>
   
   <xsl:template match="dbk:itemizedlist/dbk:listitem|dbk:orderedlist/dbk:listitem">
     <li>
-      <xsl:apply-templates/>
+      <xsl:apply-templates select="@*|node()"/>
     </li>
   </xsl:template>
   
   <xsl:template match="dbk:variablelist">
     <dl>
-      <xsl:apply-templates/>
+      <xsl:apply-templates select="@*|node()"/>
     </dl>
   </xsl:template>
   
   <xsl:template match="dbk:varlistentry">
-    <xsl:apply-templates/>
+    <xsl:apply-templates select="@*|node()"/>
   </xsl:template>
   
   <xsl:template match="dbk:varlistentry/dbk:term">
     <dt>
-      <xsl:apply-templates/>
+      <xsl:apply-templates select="@*|node()"/>
     </dt>
   </xsl:template>
   
   <xsl:template match="dbk:varlistentry/dbk:listitem">
     <dd>
-      <xsl:apply-templates/>
+      <xsl:apply-templates select="@*|node()"/>
     </dd>
   </xsl:template>
   
   <!-- tables -->
 
   <xsl:template match="dbk:table|dbk:informaltable">
-    <table>
-      <xsl:apply-templates/>
+    <table class="{local-name()}">
+      <xsl:apply-templates select="@*|node()"/>
     </table>
   </xsl:template>
   
   <xsl:template match="dbk:tr|dbk:td|dbk:thead|dbk:tbody|dbk:foot">
     <xsl:element name="{local-name()}">
-      <xsl:apply-templates/>
+      <xsl:apply-templates select="@*|node()"/>
     </xsl:element>
+  </xsl:template>
+  
+  <!-- programm listings -->
+  
+  <xsl:template match="dbk:programlisting|dbk:programlistingco">
+    <pre>
+      <xsl:apply-templates select="@*|node()"/>
+    </pre>
+  </xsl:template>
+  
+  <xsl:template match="dbk:code|dbk:command|dbk:computeroutput">
+    <code class="{local-name()}">
+      <xsl:apply-templates select="@*|node()"/>
+    </code>
   </xsl:template>
 
   <!--  * 
