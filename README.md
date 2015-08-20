@@ -48,10 +48,10 @@ Execute the XProc build script with XML Calabash
 $ ./calabash/calabash.sh xpl/build.xpl
 ```
 
-Commit the HTML files with Git.
+Commit HTML and DocBook with Git.
 
 ```
-$ git add *.html
+$ git add *.html source/source.dbk
 $ git commit -m 'update website'
 $ git push
 ```
