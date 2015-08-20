@@ -74,7 +74,6 @@ body, #tr-nav{background-color:#fafafa}
  * 
  */
 .header{color: #e53935; font-weight:300}
-a:hover {text-decoration:underline}
 #tr-content ul li, #tr-content ol li{margin:0 0 0 2rem; padding:0}
 #tr-content ul li p, #tr-content ol li p{margin:0; padding:0}
 
