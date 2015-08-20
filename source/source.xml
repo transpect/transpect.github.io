@@ -15,12 +15,21 @@
     <title>About</title>
     <chapter xml:base="index.html">
       <title>transpect</title>
-      <subtitle>open source framework for converting and checking data</subtitle>
+      <subtitle>A open source framework for converting and checking data</subtitle>
+      <para>Transpect was designed to provide generic and stable modules for common 
+        conversion and checking tasks. To adress complex and diverse data, transpect 
+        offers a cascading configuration to override specific transformation and checking 
+        rules.
+      </para>
+      <para>Each component within the framework is Open Source and build with standard 
+        technologies such as XSLT 2.0 and XProc.</para>
       <section>
-        <title>Converting and checking documents</title>
-        <para>Transpect offers many modules to parse and convert a wide range of XML-based formats such as DOCX, IDML, EPUB, NLM JATS/BITS and TEI.
-          Additionally, there exist tools for converting text-based formats such as CSS and LaTeX as well as extensions, e. g., in order to check PDF and 
-          image files. The following list of supported formats makes no claim to be comprehensive.</para>
+        <title>Data Conversion</title>
+        <para>Transpect offers many modules to parse and convert a wide range of XML-based formats 
+          such as DOCX, IDML, EPUB, NLM JATS/BITS and TEI. Additionally, there exist tools for 
+          converting text-based formats such as CSS and LaTeX as well as extensions, e. g., in 
+          order to check PDF and image files. The following list of supported formats makes no 
+          claim to be comprehensive.</para>
         <informaltable>
           <thead>
             <tr>
@@ -68,7 +77,7 @@
               <td>Styles are retained as CSSa. Some OOXML are not supported yet but are retained (SmartArts, Drawings)</td>
             </tr>
             <tr>
-              <td>XML-based formats DocBook, NLM JATS/BITS/HoBots, TEI</td>
+              <td>XML formats, e.g. DocBook, NLM JATS/BITS/HoBots, TEI</td>
               <td>&#x2713;</td>
               <td>&#x2713;</td>
             </tr>
@@ -84,6 +93,13 @@
           allows for documents that lack a proper section hierarchy and uses CSSa for expressing layout 
           information. It is used as a common intermediate format to represent raw conversion results of, for 
           example, OOXML, ODT, and IDML documents.</para>
+      </section>
+      <section>
+        <title>Checking Data</title>
+        <para>Transpect implements Schematron and Schema validation. Furthermore, many modules integrate error 
+          detection and recovery methods. Reports are stored as Schematron SVRL document. The report messages 
+          can be displayed in an HTML view of the document at the error location.
+        </para>
       </section>
       <section>
         <title>Configuration Cascade</title>
