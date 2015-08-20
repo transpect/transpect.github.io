@@ -57,8 +57,12 @@ li.naventry-1st a{font-weight:300; font-size:1.2rem; text-decoration:none}
  */
 footer p{font-weight:normal; line-height:130%; font-size:1rem;}
 #tr-footer-3{text-align:right}
-#letex-logo{margin:1rem; padding:1rem}
- * /*
+@media only screen and (max-width: 992px){
+  #tr-footer-3{text-align:center}
+}
+#letex-logo{margin:2.5rem 0 3rem 0;}
+
+/*
  * colors
  */
  
@@ -87,3 +91,4 @@ body, #tr-nav{background-color:#fafafa}
 #tr-content ol li{list-style-type:decimal}
 
 p{font-size: 1.25rem; font-weight: 300;}
+
