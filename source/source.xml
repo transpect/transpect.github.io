@@ -261,6 +261,7 @@ MyProject/
     <title>Styleguide</title>
     <chapter xml:base="styleguide.html">
       <title>Styleguide</title>
+      <subtitle>Guidelines for writing XProc, XSLT, XPath…</subtitle>
       <section>
         <title>General</title>
         <itemizedlist>
