@@ -17,9 +17,7 @@ header, main, footer {
 /* 
  * standard column width 
  */
-.container {
-  width: 90%;
-}
+.container {width: 90%;}
 /*  
  * mobile menu button
  */
@@ -60,8 +58,7 @@ footer p{font-weight:normal; line-height:130%; font-size:1rem;}
 @media only screen and (max-width: 992px){
   #tr-footer-3{text-align:center}
 }
-#letex-logo{margin:2.5rem 0 3rem 0;}
-
+#letex-logo{margin:2.5rem 0 3rem 0;} 
 /*
  * colors
  */
@@ -78,14 +75,19 @@ footer p{font-weight:normal; line-height:130%; font-size:1rem;}
 .side-nav li:active, .side-nav li:focus{background-color:#ff9800}
 .side-nav li.active{background-color:#eee }
 body, #tr-nav{background-color:#fafafa}
-
+pre{background-color:#f5f5f5; border: 1px solid #e0e0e0; padding:1rem 1rem 1.5rem 1rem }
 /*
  * text styles
  * 
  */
-.header{color: #e53935; font-weight:300}
+
+#tr-content h2, #tr-content h3, #tr-content h4{font-weight:300} 
+#tr-content h2{font-size:3.5rem; color: #e53935;}
+#tr-content h3{font-size:2rem; }
+#tr-content h5{font-size:1.5rem; color: #000}
+
 #tr-content ul li, #tr-content ol li{margin:0 0 0 2rem; padding:0}
-#tr-content ul li p, #tr-content ol li p{margin:0.5em 0 0 0.5em; padding:0}
+#tr-content ul li p, #tr-content ol li p{margin:0.25em 0 0 0.25em; padding:0}
 
 #tr-content ul li{list-style-type:disc}
 #tr-content ol li{list-style-type:decimal}
