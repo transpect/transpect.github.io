@@ -260,7 +260,7 @@ MyProject/
   <part>
     <title>Styleguide</title>
     <chapter xml:base="styleguide.html">
-      <title>XProc/XSLT Styleguide</title>
+      <title>Styleguide</title>
       <section>
         <title>General</title>
         <itemizedlist>
@@ -410,12 +410,8 @@ else if (bar)
       </section>
       <section>
         <title>RelaxNG/XSD</title>
-        <itemizedlist>
-          <listitem>
-            <para>Use <link xlink:href="http://www.xfront.com/GlobalVersusLocal.html#SecondDesign">Salami Slice
-                Design</link> pattern for writing Schemas</para>
-          </listitem>
-        </itemizedlist>
+        <para>Use <link xlink:href="http://www.xfront.com/GlobalVersusLocal.html#SecondDesign">Salami Slice
+            Design</link> pattern for writing Schemas</para>
       </section>
       <section>
         <title>DTD</title>
