@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="UTF-8"?><html xmlns="http://www.w3.org/1999/xhtml" xml:base="styleguide.html">
+  <head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>XProc/XSLT Styleguide</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    
+    <meta name="theme-color" content="#FF9800" />
+    
+    <link rel="apple-touch-icon-precomposed" href="icons/apple-touch-icon-152x152.png" />
+    <meta name="msapplication-TileImage" content="icons/mstile-144x144.png" />
+    <link rel="icon" href="icons/favicon-32x32.png" sizes="32x32" />
+    
+    <link type="text/css" rel="stylesheet" media="screen,projection" href="css/prism.css" />
+    <link type="text/css" rel="stylesheet" media="screen,projection" href="css/materialize.min.css" />
+    <link type="text/css" rel="stylesheet" media="screen,projection" href="css/le-tex.css" />
+  </head>
+  <body>
+    
+    <header>
+      <div class="container"><a href="#" data-activates="tr-nav" class="button-collapse top-nav circle hide-on-large-only"><i class="mdi-navigation-menu"></i></a></div>
+      
+      
+      <ul id="tr-nav" class="side-nav fixed" style="width:240px">
+        <li class="logo"><a id="logo-container" href="#" class="brand-logo"><object id="front-page-logo" type="image/svg+xml" data="icons/logo-transpect.svg">Your browser does not support SVG</object></a></li>
+        
+      <li class="naventry-1st"><a href="index.html">About</a></li><li class="naventry-1st"><a href="getting-started.html">Getting Started</a></li><li class="no-padding"><ul class="collapsible collapsible-accordion"><li class="naventry-1st"><a class="collapsible-header">Modules</a><div class="collapsible-body"><ul><li class="naventry-2nd"><a href="docx2hub.html">docx2hub</a></li><li class="naventry-2nd"><a href="idml2hub.html">idml2hub</a></li><li class="naventry-2nd"><a href="epubtools.html">epubtools</a></li></ul></div></li></ul></li><li class="active naventry-1st"><a href="styleguide.html">Styleguide</a></li></ul>
+    </header>
+    
+    <main>
+      <div class="section orange" id="index-banner">
+        <div class="container">
+          <h1 id="tr-title" class="light header center-on-small-only white-text">XProc/XSLT Styleguide</h1>
+          <h4 id="tr-subtitle" class="light orange-text text-lighten-4 center-on-small-only"></h4>
+        </div>
+      </div>
+      <div class="container">
+        <div class="row">
+          
+          <div class="col s12 m9 l10" id="tr-content"><div id="d27e6" class="section col s12 scrollspy">
+        <h2 class="header">General</h2>
+        <ul>
+          <li>
+            <p>Use <code class="code">UTF-8</code> encoding</p>
+          </li>
+          <li>
+            <p>Use soft-tabs with a two space indent</p>
+          </li>
+          <li>
+            <p>Keep lines fewer than 80 characters</p>
+          </li>
+          <li>
+            <p>Use spaces around operators, after commas, colons and semicolons</p>
+          </li>
+          <li>
+            <p>Leave a blank newline at the end of each file</p>
+          </li>
+          <li>
+            <p>Comment your code extensively and use always speaking variable names. </p>
+          </li>
+        </ul>
+      </div><div id="d27e55" class="section col s12 scrollspy">
+        <h2 class="header">Repository</h2>
+        <div>
+          <h3>SVN Externals / Git Submodules</h3>
+          <ul>
+            <li>
+              <p>Always include SVN externals or Git submodules at the root of your repository.</p>
+            </li>
+            <li>
+              <p>Use SVN externals or Git submodules only in your frontend project and not in libraries.</p>
+            </li>
+          </ul>
+        </div>
+        <div>
+          <h3>XML Catalogs</h3>
+          <ul>
+            <li>
+              <p>Include an XML catalog to your repository. The path of your catalog should be
+                  <filename xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink">xmlcatalog/catalog.xml</filename></p>
+            </li>
+            <li>
+              <p>The catalog file must include a <code class="code">rewriteURI</code> statement which identifies the repository
+                with a URI.</p>
+              <pre>
+&lt;rewriteURI uriStartString="http://transpect.io/docx2hub/" 
+            rewritePrefix="../"/&gt;</pre>
+            </li>
+          </ul>
+        </div>
+        <div>
+          <h3>Paths</h3>
+          <p>The code should be stored separated by code language. The directory name identifies the typical file
+            extension of the code file. Always use common file extensions, such as <filename xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink">xpl</filename> for XProc
+            pipelines and <filename xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink">xsl</filename> for XSLT Stylesheets.</p>
+          <pre>
+myproject/
+  |--css
+  |  |--stylesheet.css
+  |--xmlcatalog/
+  |  |--catalog.xml
+  |--xpl
+  |  |--myproject.xpl
+  |--xsl
+  |  |--myproject.xsl
+</pre>
+        </div>
+      </div><div id="d27e129" class="section col s12 scrollspy">
+        <h2 class="header">XProc</h2>
+        <ul>
+          <li>
+            <p>Encapsulate commonly used functionality into components with <code class="code">p:import</code> and
+                <code class="code">p:declare-step</code>. Add <code class="code">name</code> and <code class="code">type</code> attributes to each
+                <code class="code">p:declare-step</code> to make it accessible from inside and outside of the pipeline</p>
+          </li>
+          <li>
+            <p>Avoid too many nested <code class="code">p:choose</code> if possible. A proper XSLT is many times a better option
+              to encapsulate application logic.</p>
+          </li>
+          <li>
+            <p>Use <code class="code">p:documentation</code> tags to explain what your pipeline does.</p>
+          </li>
+          <li>
+            <p>Provide debugging features and console output in your pipeline, e.g. via <code class="code">tr:store-debug</code>
+              or <code class="code">cx:message</code></p>
+          </li>
+          <li>
+            <p>We encourage you to use the <code class="code">cx:depends-on</code> attribute for declaring step order explicitely.
+              This is needed when you want to use steps which operate with files.</p>
+          </li>
+        </ul>
+      </div><div id="d27e197" class="section col s12 scrollspy">
+        <h2 class="header">XSLT</h2>
+        <ul>
+          <li>
+            <p>Avoid too many nested <code class="code">xsl:choose</code> as this will make your code difficult do decipher. Try
+              to replace with <code class="code">xsl:template</code> with concrete matching patterns.</p>
+          </li>
+          <li>
+            <p>Provide a data type for your variables and parameters via <code class="code">as</code> attribute.</p>
+          </li>
+          <li>
+            <p>Avoid to call named templates which call named templates and so on. If applicable use functions
+              instead.</p>
+          </li>
+          <li>
+            <p>Use XSLT modes only if technically required and not to separate your code logically. Be careful when
+              using XSLT modes accompanied with identity templates as this will cost memory and reduce overall execution
+              speed</p>
+          </li>
+          <li>
+            <p>Use namespace <code class="code">http://transpect.io</code> and prefix <code class="code">tr</code> for custom functions.</p>
+          </li>
+        </ul>
+      </div><div id="d27e252" class="section col s12 scrollspy">
+        <h2 class="header">XPath</h2>
+        <ul>
+          <li>
+            <p>Some XPath expressions force the XML parser to perform deep explorations of the XML tree. If you know
+              the expected context, you can reduce CPU and memory usage by avoiding wildcard patterns (<code class="code">*</code>,
+                <code class="code">@*</code>) and deep XPath axis requests (<code class="code">ancestor</code>, <code class="code">descendant</code> or
+                <code class="code">//*</code>, <code class="code">preceding</code>, <code class="code">following</code>).</p>
+          </li>
+          <li>
+            <p>Sometimes regular expression (<code class="code">matches()</code>, <code class="code">replace()</code>, <code class="code">tokenize()</code>)
+              can be substituted with simple string manipulation functions (<code class="code">contains</code>,
+                <code class="code">starts-with</code>, <code class="code">ends-with</code>, <code class="code">substring-before</code>,
+                <code class="code">substring-after</code>, <code class="code">translate</code></p>
+          </li>
+          <li>
+            <p>Indent longer conditional statements, loops and expressions with functions
+              <literallayout xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink"><code xmlns="http://www.w3.org/1999/xhtml" class="code">&lt;xsl:value-of select="if(foo)
+then foo
+else if (bar)
+  then bar 
+  else false()"/&gt;</code></literallayout></p>
+          </li>
+          <li>
+            <p>Comment longer XPath statements: <code class="code">(: my XPath comment :)</code></p>
+          </li>
+        </ul>
+      </div><div id="d27e339" class="section col s12 scrollspy">
+        <h2 class="header">RelaxNG/XSD</h2>
+        <ul>
+          <li>
+            <p>Use <a xmlns:xlink="http://www.w3.org/1999/xlink" href="http://www.xfront.com/GlobalVersusLocal.html#SecondDesign" target="_blank" xlink:href="http://www.xfront.com/GlobalVersusLocal.html#SecondDesign">Salami Slice
+                Design</a> pattern for writing Schemas</p>
+          </li>
+        </ul>
+      </div><div id="d27e357" class="section col s12 scrollspy">
+        <h2 class="header">DTD</h2>
+        <p>Yo mama use a DTD for her CD catalog.</p>
+      </div></div>
+          
+          <div class="col hide-on-small-only m3 l2">
+            <div class="toc-wrapper pin-top" style="top: 0px;">
+              <div style="height: 1px;">
+                <ul id="tr-toc" class="table-of-contents"><li><a href="#d27e6" class="active">General</a></li><li><a href="#d27e55">Repository</a></li><li><a href="#d27e129">XProc</a></li><li><a href="#d27e197">XSLT</a></li><li><a href="#d27e252">XPath</a></li><li><a href="#d27e339">RelaxNG/XSD</a></li><li><a href="#d27e357">DTD</a></li></ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <footer class="page-footer grey">
+      <div class="container">
+        <div class="row">
+          <div id="tr-footer-1" class="col s12 m6 l4">
+            <h5 class="white-text">GitHub</h5>
+            <p class="white-text">Checkout the transpect repositories on GitHub and use transpect in your project. 
+              Give us feedback, create issues and make pull requests.</p>
+            <p><a target="_blank" href="https://github.com/transpect" class="btn red">GitHub</a></p>
+          </div>
+          <div id="tr-footer-2" class="col s12 m6 l4">
+            <h5 class="white-text">Twitter</h5>
+            <p class="white-text">News from le-tex’ XML machine room. Mostly related to 
+              XSLT/XPath 2+, XProc, Relax NG, Schematron, and our 
+              open-source framework transpect.
+            </p>
+            <p><a target="_blank" href="https://twitter.com/intent/user?screen_name=letexml" class="btn red">Follow @letexml</a></p>
+          </div>
+          <div id="tr-footer-3" class="col s12 m6 l4">
+            <a target="_blank" href="http://www.le-tex.de"><object id="letex-logo" type="image/svg+xml" data="icons/logo-le-tex.svg">Your browser does not support SVG</object></a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-copyright grey darken-1">
+        <div class="container">
+          <div class="row">
+            <div id="tr-footer-copyright-1" class="col s12 m6 l6">
+              <p class="white-text left">le-tex publishing services GmbH, 2015</p>
+            </div>
+            <div id="tr-footer-copyright-2" class="col s12 m6 l6">
+              <p><a class="white-text right" href="http://www.le-tex.de">http://www.le-tex.de</a></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+    
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script type="text/javascript" src="js/prism.js"></script>
+    <script type="text/javascript" src="js/materialize.min.js"></script>
+    <script src="js/init.js"></script>
+  </body>
+</html>
