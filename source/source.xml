@@ -396,13 +396,13 @@ myproject/
                 <code>//*</code>, <code>preceding</code>, <code>following</code>).</para>
           </listitem>
           <listitem>
-            <para>Sometimes regular expression (<code>matches()</code>, <code>replace()</code>, <code>tokenize()</code>)
-              can be substituted with simple string manipulation functions (<code>contains()</code>,
+            <para>If possible, substitute regular expression functions (<code>matches()</code>, <code>replace()</code>, <code>tokenize()</code>)
+              with simple string manipulation functions (<code>contains()</code>,
                 <code>starts-with()</code>, <code>ends-with()</code>, <code>substring-before()</code>,
                 <code>substring-after()</code>, <code>translate()</code></para>
           </listitem>
           <listitem>
-            <para>Indent longer conditional statements, loops and expressions with functions</para>
+            <para>Indent longer conditional statements, loops and nested functions</para>
             <programlisting><code role="language-markup">&lt;xsl:value-of select="if(foo)
                       then foo
                       else if (bar)
