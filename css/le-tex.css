@@ -95,3 +95,7 @@ pre{background-color:#f5f5f5; border: 1px solid #e0e0e0; padding:1rem 1rem 1.5re
 
 p{font-size: 1.25rem; font-weight: 300;}
 
+code{font-size:1rem; padding: .1em; border-radius: .3em;    background: #f5f2f0;color: black;
+    text-shadow: 0 1px white;
+    white-space: pre;
+}

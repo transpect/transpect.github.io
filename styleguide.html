@@ -136,7 +136,9 @@ myproject/
               to replace with <code class="code">xsl:template</code> with concrete matching patterns.</p>
           </li>
           <li>
-            <p>Provide a data type for your variables and parameters via <code class="code">as</code> attribute.</p>
+            <p>Provide a data type for variables via <code class="code">as</code> attribute.</p>
+            <pre><code class="language-markup">&lt;xsl:variable name="chapter" select="chapter" 
+              as="element(chapter)"/&gt;</code></pre>
           </li>
           <li>
             <p>Avoid to call named templates which call named templates and so on. If applicable use functions
@@ -151,7 +153,7 @@ myproject/
             <p>Use namespace <code class="code">http://transpect.io</code> and prefix <code class="code">tr</code> for custom functions.</p>
           </li>
         </ul>
-      </div><div id="d27e255" class="section col s12 scrollspy">
+      </div><div id="d27e259" class="section col s12 scrollspy">
         <h2 class="header">XPath</h2>
         <ul>
           <li>
@@ -162,27 +164,27 @@ myproject/
           </li>
           <li>
             <p>Sometimes regular expression (<code class="code">matches()</code>, <code class="code">replace()</code>, <code class="code">tokenize()</code>)
-              can be substituted with simple string manipulation functions (<code class="code">contains</code>,
-                <code class="code">starts-with</code>, <code class="code">ends-with</code>, <code class="code">substring-before</code>,
-                <code class="code">substring-after</code>, <code class="code">translate</code></p>
+              can be substituted with simple string manipulation functions (<code class="code">contains()</code>,
+                <code class="code">starts-with()</code>, <code class="code">ends-with()</code>, <code class="code">substring-before()</code>,
+                <code class="code">substring-after()</code>, <code class="code">translate()</code></p>
           </li>
           <li>
-            <p>Indent longer conditional statements, loops and expressions with functions
-              <literallayout xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink"><code xmlns="http://www.w3.org/1999/xhtml" class="code">&lt;xsl:value-of select="if(foo)
-then foo
-else if (bar)
-  then bar 
-  else false()"/&gt;</code></literallayout></p>
+            <p>Indent longer conditional statements, loops and expressions with functions</p>
+            <pre><code class="language-markup">&lt;xsl:value-of select="if(foo)
+                      then foo
+                      else if (bar)
+                      then bar 
+                      else false()"/&gt;</code></pre>
           </li>
           <li>
             <p>Comment longer XPath statements: <code class="code">(: my XPath comment :)</code></p>
           </li>
         </ul>
-      </div><div id="d27e342" class="section col s12 scrollspy">
+      </div><div id="d27e347" class="section col s12 scrollspy">
         <h2 class="header">RelaxNG/XSD</h2>
         <p>Use <a xmlns:xlink="http://www.w3.org/1999/xlink" href="http://www.xfront.com/GlobalVersusLocal.html#SecondDesign" target="_blank" xlink:href="http://www.xfront.com/GlobalVersusLocal.html#SecondDesign">Salami Slice
             Design</a> pattern for writing Schemas</p>
-      </div><div id="d27e354" class="section col s12 scrollspy">
+      </div><div id="d27e359" class="section col s12 scrollspy">
         <h2 class="header">DTD</h2>
         <p>Yo mama use a DTD for her CD catalog.</p>
       </div></div>
@@ -190,7 +192,7 @@ else if (bar)
           <div class="col hide-on-small-only m3 l2">
             <div class="toc-wrapper pin-top" style="top: 0px;">
               <div style="height: 1px;">
-                <ul id="tr-toc" class="table-of-contents"><li><a href="#d27e9" class="active">General</a></li><li><a href="#d27e58">Repository</a></li><li><a href="#d27e132">XProc</a></li><li><a href="#d27e201">XSLT</a></li><li><a href="#d27e255">XPath</a></li><li><a href="#d27e342">RelaxNG/XSD</a></li><li><a href="#d27e354">DTD</a></li></ul>
+                <ul id="tr-toc" class="table-of-contents"><li><a href="#d27e9" class="active">General</a></li><li><a href="#d27e58">Repository</a></li><li><a href="#d27e132">XProc</a></li><li><a href="#d27e201">XSLT</a></li><li><a href="#d27e259">XPath</a></li><li><a href="#d27e347">RelaxNG/XSD</a></li><li><a href="#d27e359">DTD</a></li></ul>
               </div>
             </div>
           </div>

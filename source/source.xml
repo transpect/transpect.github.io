@@ -365,7 +365,9 @@ myproject/
               to replace with <code>xsl:template</code> with concrete matching patterns.</para>
           </listitem>
           <listitem>
-            <para>Provide a data type for your variables and parameters via <code>as</code> attribute.</para>
+            <para>Provide a data type for variables via <code>as</code> attribute.</para>
+            <programlisting><code role="language-markup">&lt;xsl:variable name="chapter" select="chapter" 
+              as="element(chapter)"/&gt;</code></programlisting>
           </listitem>
           <listitem>
             <para>Avoid to call named templates which call named templates and so on. If applicable use functions
@@ -392,17 +394,17 @@ myproject/
           </listitem>
           <listitem>
             <para>Sometimes regular expression (<code>matches()</code>, <code>replace()</code>, <code>tokenize()</code>)
-              can be substituted with simple string manipulation functions (<code>contains</code>,
-                <code>starts-with</code>, <code>ends-with</code>, <code>substring-before</code>,
-                <code>substring-after</code>, <code>translate</code></para>
+              can be substituted with simple string manipulation functions (<code>contains()</code>,
+                <code>starts-with()</code>, <code>ends-with()</code>, <code>substring-before()</code>,
+                <code>substring-after()</code>, <code>translate()</code></para>
           </listitem>
           <listitem>
-            <para>Indent longer conditional statements, loops and expressions with functions
-              <literallayout><code>&lt;xsl:value-of select="if(foo)
-then foo
-else if (bar)
-  then bar 
-  else false()"/></code></literallayout></para>
+            <para>Indent longer conditional statements, loops and expressions with functions</para>
+            <programlisting><code role="language-markup">&lt;xsl:value-of select="if(foo)
+                      then foo
+                      else if (bar)
+                      then bar 
+                      else false()"/></code></programlisting>
           </listitem>
           <listitem>
             <para>Comment longer XPath statements: <code>(: my XPath comment :)</code></para>
