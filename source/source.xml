@@ -308,9 +308,13 @@ MyProject/
             <listitem>
               <para>The catalog file must include a <code>rewriteURI</code> statement which identifies the repository
                 with a URI.</para>
-              <programlisting>
-&lt;rewriteURI uriStartString="http://transpect.io/docx2hub/" 
-            rewritePrefix="../"/></programlisting>
+              <programlisting><code role="language-markup">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog"&gt;
+  
+  &lt;rewriteURI uriStartString="http://transpect.io/docx2hub/" 
+              rewritePrefix="../"&gt;
+  
+&lt;/catalog&gt;</code></programlisting>
             </listitem>
           </itemizedlist>
         </section>
@@ -366,8 +370,7 @@ myproject/
           </listitem>
           <listitem>
             <para>Provide a data type for variables via <code>as</code> attribute.</para>
-            <programlisting><code role="language-markup">&lt;xsl:variable name="chapter" select="chapter" 
-              as="element(chapter)"/&gt;</code></programlisting>
+            <programlisting><code role="language-markup">&lt;xsl:variable name="chapter" select="chapter" as="element(chapter)"/&gt;</code></programlisting>
           </listitem>
           <listitem>
             <para>Avoid to call named templates which call named templates and so on. If applicable use functions
@@ -403,8 +406,8 @@ myproject/
             <programlisting><code role="language-markup">&lt;xsl:value-of select="if(foo)
                       then foo
                       else if (bar)
-                      then bar 
-                      else false()"/></code></programlisting>
+                           then bar 
+                           else false()"/></code></programlisting>
           </listitem>
           <listitem>
             <para>Comment longer XPath statements: <code>(: my XPath comment :)</code></para>
