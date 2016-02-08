@@ -555,6 +555,55 @@ git push</programlisting>
         <programlisting>git add docx2jats-demo.xpr
 git commit -m "add XML catalog, oXygen project"
 git push</programlisting>
+        <para>You may try the correct catalog resolution and oXygen configuration by Ctrl-clicking on 
+          <literal>http://this.transpect.io/</literal> in the catalog. It should open the project’s base directory.</para>
+        <para>With an update to a submodule that happened in the meantime, the repo at this stage looks like this: <link 
+          xlink:href="https://github.com/transpect/docx2jats-demo/tree/eabd9b6201e236af1042f0c60eb3b9bf97444169">eabd9b6</link></para>
+      </section>
+      <section>
+        <title>Getting sample input</title>
+        <para>Our friends at <link xlink:href="http://www.ulsp.eu/">University of Leipzig Sports Medicine</link> produce and
+          publish an open access journal from Word files. Their desire to upload the articles to <link 
+            xlink:href="http://www.ncbi.nlm.nih.gov/pmc/">PMC</link> made them ask us to provide a converter. Because our test
+        system relies on svn front-end repos, we were unable to use it as a github-based demo project. But we can use their
+        content. You can check it out from our <link 
+          xlink:href="https://subversion.le-tex.de/common/transpect-demo/content/ulsp/">svn server</link>:</para>
+        <programlisting>mkdir ../content
+svn co https://subversion.le-tex.de/common/transpect-demo/content/ulsp/ ../content/ulsp</programlisting>
+        <para>or, for the time being, you can just save one of the 
+          <literal>.docx</literal> files anywhere you want. Please be aware though
+        that steps that we’ll introduce later (zipping the output and the images for PMC, …) rely on the 
+          <literal>.docx</literal> files residing in a <literal>docx/</literal> directory. Also, for making use of the configuration
+          cascade that lets you – in principle – override settings per article, the content has to be stored according to a certain 
+          directory structure.</para>
+      </section>
+      <section>
+        <title>A first pipeline</title>
+        <para>By convention, the pipelines that are meant to be invoked directly (as opposed to pipelines that implement 
+          the innards of a macroscopic step such as the ominous <literal>evolve-hub</literal>) reside in the directory 
+          <literal>a9s/common/xpl</literal>. This is absolutely not necessary; they may reside anywhere within the project.</para>
+        <para>Let’s create <literal>a9s/common/xpl/docx2jats.xpl</literal> and insert a basic pipeline: docx → flat Hub XML → JATS</para>
+        <para>The commit is <link 
+          xlink:href="https://github.com/transpect/docx2jats-demo/tree/0e289b58a2978f334c2ced62f557627b1e7e9172">0e289b5</link>, 
+        and the <link 
+          xlink:href="https://github.com/transpect/docx2jats-demo/blob/0e289b58a2978f334c2ced62f557627b1e7e9172/a9s/common/xpl/docx2jats.xpl">pipeline 
+          looks like this</link>. You’ll notice the <literal>p:import</literal> by canonical URI statements and the three essential
+        steps, <literal>docx2hub:convert</literal>, <literal>hub:evolve-hub</literal>, and <literal>jats:hub2bits</literal> 
+          (the odd naming is because the step will produce <link xlink:href="http://jats.nlm.nih.gov/extensions/bits/">BITS</link> 
+          books instead of JATS articles if fed with a <literal>/dbk:book</literal> document).</para>
+        <para>Invoke the transformation with the following statement on the command line (swapping <literal>.sh</literal>
+        with <literal>.bat</literal> and probably also <literal>/</literal> with <literal>\</literal> on Windows machines 
+        without <link xlink:href="https://cygwin.com/">Cygwin</link>):</para>
+        <programlisting>calabash/calabash.sh a9s/common/xpl/docx2jats.xpl file=../content/ulsp/CSMI/CSMI_2014_701/docx/CSMI_2014_701.docx</programlisting>
+        <para>You will see some garbage that faintly resembles JATS, but with all kinds of <literal>css:</literal> attributes
+        and a <literal>dark-matter</literal> element instead of <literal>body</literal> or <literal>back</literal>. This
+        is because the converter needs to know how to interpret the paragraph and character style names in the Word file.
+        The main part of this transformation is done in <literal>evolve-hub</literal> that is a library for nesting list
+          items according to indentation, hierarchizing sections whose names match ceertain regexes, grouping figures and
+          tables with their captions, etc. <literal>evolve-hub</literal> is a toolbox (or a beast, according to other people)
+        from which to configure multi-pass XSLT pipelines that up-convert 
+          <link xlink:href="https://github.com/le-tex/Hub">Hub XML</link>, the flat DocBook derivative, to a more reasonable
+        DocBook that may then be converted “sideways,” with significantly less XSLT passes, into JATS, for example.</para>
       </section>
     </chapter>
   </part>
