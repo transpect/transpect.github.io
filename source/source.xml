@@ -182,7 +182,7 @@ MyProject/
       </section>
     </chapter>
   </part>
-  <part>
+  <part xml:id="part-modules">
     <title>Modules</title>
     <chapter xml:base="docx2hub.html">
       <title>docx2hub</title>
@@ -422,6 +422,139 @@ myproject/
       <section>
         <title>DTD</title>
         <para>Yo mama use a DTD for her CD catalog.</para>
+      </section>
+    </chapter>
+  </part>
+  <part>
+    <title>Tutorials</title>
+    <chapter>
+      <title>docx→JATS→EPUB</title>
+      <section>
+        <title>Creating a repository</title>
+        <para>A transpect project consists of a specification which modules to use (and in which revision), project-specific
+          adaptations, and the modules. The project itself resides in a version control repository (we are using git and svn,
+          others will probably work, too). There are at least three ways of setting up a transpect project:</para>
+        <itemizedlist>
+          <listitem>
+            <para>git project with git submodules</para>
+            <para>svn project with svn externals (github provides sufficient svn support to make this feasible, even if
+              the modules reside in git repositories)</para>
+            <para>git, svn (or probably also Mercurial) project with the modules as git or svn externals, using 
+              <link xlink:href="http://nopugs.com/ext-tutorial">ext</link></para>
+          </listitem>
+        </itemizedlist>
+        <para>We will focus on the first approach, although git submodules are quite a beast. For people who don’t use
+        svn on a regular basis it’s the best choice though.</para>
+        <para>Let’s start creating a repository on github. We call it <link 
+          xlink:href="https://github.com/transpect/docx2jats-demo">docx2jats-demo</link> and clone it to local:</para>
+        <programlisting>git clone https://github.com/transpect/docx2jats-demo.git --recursive</programlisting>
+        <annotation>
+          <para>You wouldn’t need <parameter>--recursive</parameter> on your first checkout, but for those who intend
+        to clone the final project this is helpful already.</para>
+        </annotation>
+      </section>
+      <section>
+        <title>Adding Submodules</title>
+        <para>We’ll identify the modules that we need (primarily by their name, such as <link 
+          xlink:href="https://github.com/transpect/docx2hub">docx2hub</link>, <link 
+            xlink:href="https://github.com/transpect/hub2jats">hub2jats</link>, <link 
+              xlink:href="https://github.com/transpect/jats2html">jats2html</link>
+          or <link xlink:href="https://github.com/transpect/epubtools">epubtools</link>).
+        One of the submodules is the XProc processor. In principle, we could rely on an already-installed XML Calabash.
+        However, we need some Calabash extensions, a more recent Saxon version than is bundled with Calabash, and compatibility
+        assurance. Therefore, we created our own Calabash distribution, usually based on the most recent release, and we add 
+        this as a submodule to every project.</para>
+        <programlisting>git submodule add https://github.com/transpect/calabash-frontend.git calabash</programlisting>
+        <para>The <literal>calabash-frontend</literal> is special in that it includes other submodules. These won’t be checked
+          out by default. Therefore you should initialize them recursively:</para>
+        <programlisting>git submodule update --init --recursive</programlisting>
+        <para>(You can postpone this statement until you have specified all submodules.)</para>
+        <annotation>
+          <para>If you are using svn externals, you’ll have to specify five externals:</para>
+          <programlisting>https://github.com/transpect/calabash-frontend/trunk@38 calabash
+https://github.com/transpect/calabash-distro/trunk@9 calabash/distro
+https://github.com/transpect/rng-extension/trunk@10 calabash/extensions/transpect/rng-extension
+https://github.com/transpect/unzip-extension/trunk@2 calabash/extensions/transpect/unzip-extension
+https://github.com/transpect/image-props-extension/trunk@4 calabash/extensions/transpect/image-props-extension</programlisting>
+          <para>Note that it is recommended to attach svn externals with a fixed revision number, at least in production.
+          git submodules are fixed to a certain commit by default.</para>
+        </annotation>
+        <para>Let’s continue checking out some externals. We are probably going to validate the intermediate <link 
+          xlink:href="https://github.com/le-tex/Hub">Hub XML</link> in our docx→Hub→JATS→EPUB pipeline. This RNG schema includes
+        the <link xlink:href="https://github.com/le-tex/CSSa">CSSa</link> schema as a submodule.</para>
+        <programlisting>git submodule add https://github.com/le-tex/Hub.git schema/hub
+git submodule update --init --recursive</programlisting>
+        <annotation>
+          <para>In an svn project, you’d add two externals for this:</para>
+          <programlisting>https://github.com/le-tex/Hub/trunk schema/Hub
+https://github.com/le-tex/CSSa/trunk schema/Hub/css</programlisting>
+          <para>Since it is not relevant for production and since newer releases of the schemas should be backward compatible,
+        it is relatively safe to omit the fixed revision here.</para>
+        </annotation>
+        <programlisting>git submodule add https://github.com/transpect/schema-jats schema/jats
+git submodule add https://github.com/transpect/schema-html schema/html
+git submodule add https://github.com/transpect/docx2hub
+git submodule add https://github.com/transpect/evolve-hub.git
+git submodule add https://github.com/transpect/hub2html.git
+git submodule add https://github.com/transpect/hub2bits.git hub2jats
+git submodule add https://github.com/transpect/jats2html.git
+git submodule add https://github.com/transpect/cascade.git
+git submodule add https://github.com/transpect/htmlreports.git
+git submodule add https://github.com/transpect/schematron.git
+git submodule add https://github.com/transpect/epubtools.git
+git submodule add https://github.com/transpect/epubcheck-idpf.git
+git submodule add https://github.com/transpect/xslt-util.git
+git submodule add https://github.com/transpect/xproc-util.git
+</programlisting>
+        <para>You’ll find individual descriptions of the modules in <xref linkend="part-modules"/>.</para>
+        <para>Some of the modules you’ll need in almost every transpect project, some are vocabulary-specific (the ones
+        that contain “jats” or “bits”) or input/output format specific (the ones that contain “docx”, “idml”, or “epub”).</para>
+        <para>Commit the changes and push it to the upstream repository:</para>
+        <programlisting>git commit -m "add submodules"
+git push</programlisting>
+        <para>This is the repository after commit <link xlink:href="https://github.com/transpect/docx2jats-demo/tree/2445f084fae5635bb1f32f3e47e33275d73a34d9">2445f08</link>.</para>
+      </section>
+      <section>
+        <title>XML Catalog</title>
+        <para>Each transpect module is known by a canonical URI (example: <literal>http:transpect.io/docx2hub/</literal>) 
+          that may be used for importing their XSLT, XProc, images, or even for referring to fonts in CSS files. The
+        mapping to actual files will be performed by a catalog resolver that needs to be configured by an XML Catalog. 
+        The Calabash frontend script, 
+          <link xlink:href="https://github.com/transpect/calabash-frontend/blob/master/calabash.bat">calabat.sh</link> or 
+          <link xlink:href="https://github.com/transpect/calabash-frontend/blob/master/calabash.bat">calabash.bat</link>, will 
+        read a catalog <literal>../xmlcatalog/catalog.xml</literal> by default. The catalog that you are going to create 
+        will contain mostly <literal>nextCatalog</literal> that refer to the modules’ XML catalogs, at their relative locations
+        in your project. In addition, you declare 
+          <markup>&lt;rewriteURI uriStartString="http://this.transpect.io/" rewritePrefix="../"/&gt;</markup> to point to
+        your project’s base directory. This is necessary for the configuration cascade that we’ll encounter later. By convention,
+        all project-specific adaptations reside below <literal>http://this.transpect.io/a9s/</literal>.</para>
+        <programlisting>mkdir xmlcatalog
+ # (edit xmlcatalog/catalog.xml)
+ git add xmlcatalog</programlisting>
+        <para>We’ll get back to the last instruction in the catalog later 
+          (<markup>&lt;nextCatalog catalog="content-repo.catalog.xml"/&gt;</markup>).</para>
+        <para>If you are an <link xlink:href="https://www.oxygenxml.com/">oXygen</link> user, now is a good time to create
+        a <literal>.xpr</literal> (oXygen project) file. In this file, you tell oXygen to use 
+          <literal>${pdu}/calabash/xmlcatalog/catalog.xml</literal> as XML catalog.</para>
+        <informalfigure>
+          <mediaobject>
+            <alt>oXygen XML catalog configuration</alt>
+            <imageobject>
+              <imagedata fileref="media/docx2jats-demo/catalog-xpr.png"/>
+            </imageobject>
+          </mediaobject>
+        </informalfigure>
+        <para>This will make oXygen use your project’s catalog by means of a <literal>nextCatalog</literal> instruction, in 
+          the same way as Calabash uses your catalog. This will be helpful later because oXygen will be able to follow the
+        canonical URIs.</para>
+        <para>While you are at it, you should “Enable Master Files Support” for this oXygen project and add 
+          <literal>docx2hub/xsl/main.xsl</literal> and <literal>evolve-hub/xsl/evolve-hub.xsl</literal>. We may need to
+          add more files as we go. They are needed by oXygen in order to resolve variable/function/key/template declarations
+          from other files than the currently edited or its imports. By doing so, you’ll benefit from oXygen’s XSLT checking
+        capabilities that go far beyond syntax checks.</para>
+        <programlisting>git add docx2jats-demo.xpr
+git commit -m "add XML catalog, oXygen project"
+git push</programlisting>
       </section>
     </chapter>
   </part>
