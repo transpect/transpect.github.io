@@ -1,6 +1,6 @@
-<?xml version="1.0" encoding="UTF-8"?><html xmlns="http://www.w3.org/1999/xhtml" xml:base="../modules-docx2hub.html">
+<?xml version="1.0" encoding="UTF-8"?><html xmlns="http://www.w3.org/1999/xhtml" xml:base="../modules-htmlreports.html">
   <head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <title>docx2hub</title>
+    <title>htmlreports</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     
@@ -29,26 +29,69 @@
     <main>
       <div class="section orange" id="index-banner">
         <div class="container">
-          <h1 id="tr-title" class="light header center-on-small-only white-text">docx2hub</h1>
-          <h4 id="tr-subtitle" class="light orange-text text-lighten-4 center-on-small-only">https://github.com/transpect/docx2hub</h4>
+          <h1 id="tr-title" class="light header center-on-small-only white-text">htmlreports</h1>
+          <h4 id="tr-subtitle" class="light orange-text text-lighten-4 center-on-small-only">https://github.com/transpect/htmlreports</h4>
         </div>
       </div>
       <div class="container">
         <div class="row">
           
-          <div class="col s12 m9 l10" id="tr-content"><p>This module converts Microsoft Word files in Office Open XML format (OOXML) (DOCX) to <a href="https://github.com/le-tex/Hub" target="_blank">Hub XML</a>. Styles including overrides 
-          are extracted as <a href="https://github.com/le-tex/CSSa" target="_blank">CSSa</a>. Equations are converted from Office Open Math Markup Language (OOMML) to (Presentational) MathML 3. </p><h4>Import URI</h4><pre><code class="language-markup">&lt;p:import href="http://transpect.io/docx2hub/xpl/docx2hub.xpl"/&gt;</code></pre><h4>Synopsis</h4><pre><code class="language-markup">&lt;docx2hub:convert xmlns:docx2hub="http://transpect.io/docx2hub"&gt;
-  &lt;p:output port="result"/&gt;                               &lt;!-- Hub XML document --&gt;
-  &lt;p:with-option name="docx" select="'myWord.docx'"/&gt;     &lt;!-- file path --&gt;
+          <div class="col s12 m9 l10" id="tr-content"><p>Various XProc steps for validating XML with RelaxNG and Schematron and rendering the report messages into an HTML file.</p><p><a href="https://github.com/transpect/epubtools" target="_blank" class="btn red">Source ⬇</a></p><div id="d34e16" class="section col s12 scrollspy">
+        <h2 class="header">tr:patch-svrl</h2>
+        <p>This step patches error report(s) into an HTML document 
+          and provide an HTML report.</p>
+        <h4>Import URI</h4>
+        <pre><code class="language-markup">&lt;p:import href="http://transpect.io/htmlreports/xpl/patch-svrl.xpl"/&gt;</code></pre>
+        <h4>Synopsis</h4>
+        <pre><code class="language-markup">&lt;tr:patch-svrl xmlns:tr="http://transpect.io"&gt;
+  &lt;p:input port="source"/&gt;                                &lt;!-- an XHTML document --&gt;
+  &lt;p:input port="reports" sequence="true"&gt;                &lt;!-- sequence of SVRL reports and c:errors documents --&gt;
+  &lt;p:input port="params"/&gt;                                &lt;!-- cascade paths document --&gt;
+  &lt;p:output port="result"/&gt;                               &lt;!-- HTML report --&gt;
+  &lt;p:with-option name="report-title" select="''"/&gt;        &lt;!-- string --&gt;
+  &lt;p:with-option name="severity-default-name" select="'no-role'"/&gt;&lt;!-- string --&gt;
   &lt;p:with-option name="debug" select="'yes'"/&gt;            &lt;!-- "yes"|"no" --&gt;
   &lt;p:with-option name="debug-dir-uri" select="'debug'"/&gt;  &lt;!-- "debug" --&gt;
   &lt;p:with-option name="status-dir-uri" select="'status'"/&gt;&lt;!-- "status" --&gt;
-&lt;/docx2hub:convert&gt;</code></pre><p><a href="https://github.com/transpect/docx2hub" target="_blank" class="btn red">Source ⬇</a></p></div>
+&lt;/tr:patch-svrl&gt;</code></pre>
+      </div><div id="d34e41" class="section col s12 scrollspy">
+        <h2 class="header">tr:validate-with-rng</h2>
+        <p>Validates XML files with RelaxNG schema files and provides an SVRL representation of the validation errors. The input source file 
+        is forwarded to the primary output port without any changes.</p>
+        <pre><code class="language-markup">&lt;p:import href="http://transpect.io/htmlreports/xpl/validate-with-rng.xpl"/&gt;</code></pre>
+        <h4>Synopsis</h4>
+        <pre><code class="language-markup">&lt;tr:validate-with-rng xmlns:tr="http://transpect.io"&gt;
+  &lt;p:input port="source"/&gt;                                &lt;!-- XML document to be validated --&gt;
+  &lt;p:input port="schema"/&gt;                                &lt;!-- RelaxNG schema --&gt;
+  &lt;p:output port="result"/&gt;                               &lt;!-- The input XML document --&gt;
+  &lt;p:output port="report"/&gt;                               &lt;!-- The SVRL report --&gt;
+  &lt;p:with-option name="debug" select="'yes'"/&gt;            &lt;!-- "yes"|"no" --&gt;
+  &lt;p:with-option name="debug-dir-uri" select="'debug'"/&gt;  &lt;!-- "debug" --&gt;
+  &lt;p:with-option name="status-dir-uri" select="'status'"/&gt;&lt;!-- "status" --&gt;  
+&lt;/tr:validate-with-rng&gt;</code></pre>
+      </div><div id="d34e61" class="section col s12 scrollspy">
+        <h2 class="header">tr:validate-with-schematron</h2>
+        <p>This step loads schematron files based on a cascade paths document, assemble them and perform a validation.</p>
+        <pre><code class="language-markup">&lt;p:import href="http://transpect.io/htmlreports/xpl/validate-with-schematron.xpl"/&gt;</code></pre>
+        <h4>Synopsis</h4>
+        <pre><code class="language-markup">&lt;tr:validate-with-schematron xmlns:tr="http://transpect.io"&gt;
+  &lt;p:input port="source"/&gt;                                &lt;!-- XML document to be validated --&gt;
+  &lt;p:input port="parameters"/&gt;                            &lt;!-- Cascade paths document --&gt;
+  &lt;p:output port="result"/&gt;                               &lt;!-- The input XML document --&gt;
+  &lt;p:output port="report"/&gt;                               &lt;!-- The SVRL report" --&gt;
+  &lt;p:with-param name="family" select="''"/&gt;               &lt;!-- Rule family, transpect looks in this directory for Schematron files, adds the name to the report and group checks according to this attribute. --&gt;
+  &lt;p:with-param name="step-name" select="''"/&gt;            &lt;!-- Step name, added to the SVRL and displayed in the HTML report --&gt;
+  &lt;p:with-option name="phase" select="'#ALL'"/&gt;           &lt;!-- "Selected schematron phase" --&gt;
+  &lt;p:with-option name="debug" select="'yes'"/&gt;            &lt;!-- "yes"|"no" --&gt;
+  &lt;p:with-option name="debug-dir-uri" select="'debug'"/&gt;  &lt;!-- "debug" --&gt;
+  &lt;p:with-option name="status-dir-uri" select="'status'"/&gt;&lt;!-- "status" --&gt;  
+&lt;/tr:validate-with-schematron&gt;</code></pre>
+      </div></div>
           
           <div class="col hide-on-small-only m3 l2">
             <div class="toc-wrapper pin-top" style="top: 0px;">
               <div style="height: 1px;">
-                <ul id="tr-toc" class="table-of-contents"></ul>
+                <ul id="tr-toc" class="table-of-contents"><li><a href="#d34e16" class="active">tr:patch-svrl</a></li><li><a href="#d34e41">tr:validate-with-rng</a></li><li><a href="#d34e61">tr:validate-with-schematron</a></li></ul>
               </div>
             </div>
           </div>

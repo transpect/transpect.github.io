@@ -259,14 +259,49 @@ MyProject/
   &lt;p:input port="source"/>                                &lt;!-- an XHTML document -->
   &lt;p:input port="reports" sequence="true">                &lt;!-- sequence of SVRL reports and c:errors documents -->
   &lt;p:input port="params"/>                                &lt;!-- cascade paths document -->
+  &lt;p:output port="result"/>                               &lt;!-- HTML report -->
   &lt;p:with-option name="report-title" select="''"/>        &lt;!-- string -->
   &lt;p:with-option name="severity-default-name" select="'no-role'"/>&lt;!-- string -->
   &lt;p:with-option name="debug" select="'yes'"/>            &lt;!-- "yes"|"no" -->
   &lt;p:with-option name="debug-dir-uri" select="'debug'"/>  &lt;!-- "debug" -->
   &lt;p:with-option name="status-dir-uri" select="'status'"/>&lt;!-- "status" -->
 &lt;/tr:patch-svrl></code></programlisting>
-        
       </section>
+      <section>
+        <title>tr:validate-with-rng</title>
+        <para>Validates XML files with RelaxNG schema files and provides an SVRL representation of the validation errors. The input source file 
+        is forwarded to the primary output port without any changes.</para>
+        <programlisting><code role="language-markup">&lt;p:import href="http://transpect.io/htmlreports/xpl/validate-with-rng.xpl"/></code></programlisting>
+        <bridgehead>Synopsis</bridgehead>
+        <programlisting><code role="language-markup">&lt;tr:validate-with-rng xmlns:tr="http://transpect.io">
+  &lt;p:input port="source"/>                                &lt;!-- XML document to be validated -->
+  &lt;p:input port="schema"/>                                &lt;!-- RelaxNG schema -->
+  &lt;p:output port="result"/>                               &lt;!-- The input XML document -->
+  &lt;p:output port="report"/>                               &lt;!-- The SVRL report -->
+  &lt;p:with-option name="debug" select="'yes'"/>            &lt;!-- "yes"|"no" -->
+  &lt;p:with-option name="debug-dir-uri" select="'debug'"/>  &lt;!-- "debug" -->
+  &lt;p:with-option name="status-dir-uri" select="'status'"/>&lt;!-- "status" -->  
+&lt;/tr:validate-with-rng></code></programlisting>
+      </section>
+      <section>
+        <title>tr:validate-with-schematron</title>
+        <para>This step loads schematron files based on a cascade paths document, assemble them and perform a validation.</para>
+        <programlisting><code role="language-markup">&lt;p:import href="http://transpect.io/htmlreports/xpl/validate-with-schematron.xpl"/></code></programlisting>
+        <bridgehead>Synopsis</bridgehead>
+        <programlisting><code role="language-markup">&lt;tr:validate-with-schematron xmlns:tr="http://transpect.io">
+  &lt;p:input port="source"/>                                &lt;!-- XML document to be validated -->
+  &lt;p:input port="parameters"/>                            &lt;!-- Cascade paths document -->
+  &lt;p:output port="result"/>                               &lt;!-- The input XML document -->
+  &lt;p:output port="report"/>                               &lt;!-- The SVRL report" -->
+  &lt;p:with-param name="family" select="''"/>               &lt;!-- Rule family, transpect looks in this directory for Schematron files, adds the name to the report and group checks according to this attribute. -->
+  &lt;p:with-param name="step-name" select="''"/>            &lt;!-- Step name, added to the SVRL and displayed in the HTML report -->
+  &lt;p:with-option name="phase" select="'#ALL'"/>           &lt;!-- "Selected schematron phase" -->
+  &lt;p:with-option name="debug" select="'yes'"/>            &lt;!-- "yes"|"no" -->
+  &lt;p:with-option name="debug-dir-uri" select="'debug'"/>  &lt;!-- "debug" -->
+  &lt;p:with-option name="status-dir-uri" select="'status'"/>&lt;!-- "status" -->  
+&lt;/tr:validate-with-schematron></code></programlisting>
+      </section>
+      
       
     </chapter>
     <!-- idml2xml -->
