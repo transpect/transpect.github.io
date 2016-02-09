@@ -195,12 +195,135 @@ MyProject/
       <programlisting><code role="language-markup">&lt;p:import href="http://transpect.io/docx2hub/xpl/docx2hub.xpl"/></code></programlisting>
       <bridgehead>Synopsis</bridgehead>
       <programlisting><code role="language-markup">&lt;docx2hub:convert xmlns:docx2hub="http://transpect.io/docx2hub">
-  &lt;p:with-option name="docx" select="myWord.docx"/>              &lt;!-- file path -->
-  &lt;p:with-option name="debug" select="$debug"/>                  &lt;!-- "yes"|"no" -->
-  &lt;p:with-option name="debug-dir-uri" select="$debug-dir-uri"/>  &lt;!-- "debug" -->
-  &lt;p:with-option name="status-dir-uri" select="$status-dir-uri"/>&lt;!-- "status" -->
+  &lt;p:output port="result"/>                               &lt;!-- Hub XML document -->
+  &lt;p:output port="report"/>                               &lt;!-- Schematron report -->
+  &lt;p:with-option name="docx" select="'myWord.docx'"/>     &lt;!-- file path -->
+  &lt;p:with-option name="debug" select="'yes'"/>            &lt;!-- "yes"|"no" -->
+  &lt;p:with-option name="debug-dir-uri" select="'debug'"/>  &lt;!-- "debug" -->
+  &lt;p:with-option name="status-dir-uri" select="'status'"/>&lt;!-- "status" -->
 &lt;/docx2hub:convert></code></programlisting>
+      <para><link role="btn red" xlink:href="https://github.com/transpect/docx2hub">Source ⬇</link></para>
     </chapter>
+    <!-- bits2hub -->
+    <chapter xml:base="../modules-bits2hub.html">
+      <title>bits2hub</title>
+      <subtitle>https://github.com/transpect/bits2hub</subtitle>
+      <para>This XProc step converts <link xlink:href="http://jatspan.org/nlm/bits-1.0/">BITS</link> (Book Interchange Tag Suite) to <link xlink:href="https://github.com/le-tex/Hub">Hub XML</link>.</para>
+      <bridgehead>Import URI</bridgehead>
+      <programlisting><code role="language-markup">&lt;p:import href="http://transpect.io/bits2hub/xpl/bits2hub.xpl"/></code></programlisting>
+      <bridgehead>Synopsis</bridgehead>
+      <programlisting><code role="language-markup">&lt;tr:bits2hub xmlns:tr="http://transpect.io">
+  &lt;p:input port="source"/>                                &lt;!-- a BITS XML document -->
+  &lt;p:input port="paths" kind="parameter"/>                &lt;!-- parameter input -->
+  &lt;p:output port="result"/>                               &lt;!-- Hub XML document -->
+  &lt;p:with-option name="debug" select="'yes'"/>            &lt;!-- "yes"|"no" -->
+  &lt;p:with-option name="debug-dir-uri" select="'debug'"/>  &lt;!-- "debug" -->
+  &lt;p:with-option name="status-dir-uri" select="'status'"/>&lt;!-- "status" -->
+&lt;/tr:bits2hub></code></programlisting>
+      <para><link role="btn red" xlink:href="https://github.com/transpect/bits2hub">Source ⬇</link></para>
+    </chapter>
+    <!-- epubtools -->
+    <chapter xml:base="../modules-epubtools.html">
+      <title>epubtools</title>
+      <subtitle>https://github.com/transpect/epubtools</subtitle>
+      <para>This libary converts EPUB&#x2009;2 or EPUB&#x2009;3 from XHTML files. The XHTML must contain a proper <code>@xml:base</code> attribute from where its 
+        file references (images, videos, audio files, stylesheets and scripts) are resolved. HTTP file references are fetched from there 
+        respective locations and included in the EPUB package. Additionally, <emphasis>epubtools</emphasis> provides a Schematron report with 
+        reports on images, metadata, file references and other parameters.
+      </para>
+      <bridgehead>Import URI</bridgehead>
+      <programlisting><code role="language-markup">&lt;p:import href="http://transpect.io/epubtools/xpl/epub-convert.xpl"/></code></programlisting>
+      <bridgehead>Synopsis</bridgehead>
+      <programlisting><code role="language-markup">&lt;epub:convert xmlns:epub="http://transpect.io/epubtools">
+  &lt;p:input port="source"/>                                &lt;!-- an XHTML document -->
+  &lt;p:input port="meta"/>                                  &lt;!-- EPUB config XML, see <link xlink:href="https://github.com/transpect/epubtools/blob/master/sample/epub-config.xml">example</link> -->
+  &lt;p:output port="result"/>                               &lt;!-- Output filename -->
+  &lt;p:output port="report"/>                               &lt;!-- Schematron report -->
+  &lt;p:with-option name="target" select="'EPUB2'"/>         &lt;!-- EPUB2 | EPUB3 | KF8 // DEFAULT: EPUB2 -->  
+  &lt;p:with-option name="debug" select="'yes'"/>            &lt;!-- "yes"|"no" -->
+  &lt;p:with-option name="debug-dir-uri" select="'debug'"/>  &lt;!-- "debug" -->
+  &lt;p:with-option name="status-dir-uri" select="'status'"/>&lt;!-- "status" -->
+&lt;/epub:convert></code></programlisting>
+      <para><link role="btn red" xlink:href="https://github.com/transpect/epubtools">Source ⬇</link></para>
+    </chapter>
+    <chapter xml:base="../modules-htmlreports.html">
+      <title>htmlreports</title>
+      <subtitle>https://github.com/transpect/htmlreports</subtitle>
+      <para>Various XProc steps for validating XML with RelaxNG and Schematron and rendering the report messages into an HTML file.</para>
+      <para><link role="btn red" xlink:href="https://github.com/transpect/epubtools">Source ⬇</link></para>
+      <section>
+        <title>tr:patch-svrl</title>
+        <para>This step patches error report(s) into an HTML document 
+          and provide an HTML report.</para>
+        <bridgehead>Import URI</bridgehead>
+        <programlisting><code role="language-markup">&lt;p:import href="http://transpect.io/htmlreports/xpl/patch-svrl.xpl"/></code></programlisting>
+        <bridgehead>Synopsis</bridgehead>
+        <programlisting><code role="language-markup">&lt;tr:patch-svrl xmlns:tr="http://transpect.io">
+  &lt;p:input port="source"/>                                &lt;!-- an XHTML document -->
+  &lt;p:input port="reports" sequence="true">                &lt;!-- sequence of SVRL reports and c:errors documents -->
+  &lt;p:input port="params"/>                                &lt;!-- cascade paths document -->
+  &lt;p:output port="result"/>                               &lt;!-- HTML report -->
+  &lt;p:with-option name="report-title" select="''"/>        &lt;!-- string -->
+  &lt;p:with-option name="severity-default-name" select="'no-role'"/>&lt;!-- string -->
+  &lt;p:with-option name="debug" select="'yes'"/>            &lt;!-- "yes"|"no" -->
+  &lt;p:with-option name="debug-dir-uri" select="'debug'"/>  &lt;!-- "debug" -->
+  &lt;p:with-option name="status-dir-uri" select="'status'"/>&lt;!-- "status" -->
+&lt;/tr:patch-svrl></code></programlisting>
+      </section>
+      <section>
+        <title>tr:validate-with-rng</title>
+        <para>Validates XML files with RelaxNG schema files and provides an SVRL representation of the validation errors. The input source file 
+        is forwarded to the primary output port without any changes.</para>
+        <bridgehead>Import URI</bridgehead>
+        <programlisting><code role="language-markup">&lt;p:import href="http://transpect.io/htmlreports/xpl/validate-with-rng.xpl"/></code></programlisting>
+        <bridgehead>Synopsis</bridgehead>
+        <programlisting><code role="language-markup">&lt;tr:validate-with-rng xmlns:tr="http://transpect.io">
+  &lt;p:input port="source"/>                                &lt;!-- XML document to be validated -->
+  &lt;p:input port="schema"/>                                &lt;!-- RelaxNG schema -->
+  &lt;p:output port="result"/>                               &lt;!-- The input XML document -->
+  &lt;p:output port="report"/>                               &lt;!-- Schematron report -->
+  &lt;p:with-option name="debug" select="'yes'"/>            &lt;!-- "yes"|"no" -->
+  &lt;p:with-option name="debug-dir-uri" select="'debug'"/>  &lt;!-- "debug" -->
+  &lt;p:with-option name="status-dir-uri" select="'status'"/>&lt;!-- "status" -->  
+&lt;/tr:validate-with-rng></code></programlisting>
+      </section>
+      <section>
+        <title>tr:validate-with-schematron</title>
+        <para>This step loads Schematron files based on a cascade paths document, assembles the Schematron files and performs a validation.</para>
+        <bridgehead>Import URI</bridgehead>
+        <programlisting><code role="language-markup">&lt;p:import href="http://transpect.io/htmlreports/xpl/validate-with-schematron.xpl"/></code></programlisting>
+        <bridgehead>Synopsis</bridgehead>
+        <programlisting><code role="language-markup">&lt;tr:validate-with-schematron xmlns:tr="http://transpect.io">
+  &lt;p:input port="source"/>                                &lt;!-- XML document to be validated -->
+  &lt;p:input port="parameters"/>                            &lt;!-- Cascade paths document -->
+  &lt;p:output port="result"/>                               &lt;!-- The input XML document -->
+  &lt;p:output port="report"/>                               &lt;!-- Schematron report -->
+  &lt;p:with-param name="family" select="''"/>               &lt;!-- Rule family, transpect looks in this directory for Schematron files, adds the name to the report and group checks according to this attribute. -->
+  &lt;p:with-param name="step-name" select="''"/>            &lt;!-- Step name, added to the SVRL and displayed in the HTML report -->
+  &lt;p:with-option name="phase" select="'#ALL'"/>           &lt;!-- "Selected schematron phase" -->
+  &lt;p:with-option name="debug" select="'yes'"/>            &lt;!-- "yes"|"no" -->
+  &lt;p:with-option name="debug-dir-uri" select="'debug'"/>  &lt;!-- "debug" -->
+  &lt;p:with-option name="status-dir-uri" select="'status'"/>&lt;!-- "status" -->  
+&lt;/tr:validate-with-schematron></code></programlisting>
+      </section>     
+    </chapter>
+    <chapter xml:base="../modules-hub2bits.html">
+      <title>hub2bits</title>
+      <subtitle>https://github.com/transpect/hub2bits</subtitle>
+      <para>This XProc step generates a <link xlink:href="http://jatspan.org/nlm/bits-1.0/">BITS</link> (Book Interchange Tag Suite) 
+        document from <link xlink:href="https://github.com/le-tex/Hub">Hub XML</link>.</para>
+      <bridgehead>Import URI</bridgehead>
+      <programlisting><code role="language-markup">&lt;p:import href="http://transpect.io/hub2bits/xpl/hub2bits.xpl"/></code></programlisting>
+      <bridgehead>Synopsis</bridgehead>
+      <programlisting><code role="language-markup">&lt;tr:hub2bits xmlns:tr="http://transpect.io">
+  &lt;p:input port="source"/>                                &lt;!-- Hub XML document -->
+  &lt;p:output port="result"/>                               &lt;!-- Schematron report -->
+  &lt;p:with-option name="debug" select="'yes'"/>            &lt;!-- "yes"|"no" -->
+  &lt;p:with-option name="debug-dir-uri" select="'debug'"/>  &lt;!-- "debug" -->
+  &lt;p:with-option name="status-dir-uri" select="'status'"/>&lt;!-- "status" -->
+&lt;/tr:hub2bits></code></programlisting>
+    </chapter>
+    <!-- idml2xml -->
     <chapter xml:base="../modules-idml2xml.html">
       <title>idml2xml</title>
       <subtitle>https://github.com/transpect/idml2xml</subtitle>
@@ -210,36 +333,15 @@ MyProject/
       <programlisting><code role="language-markup">&lt;p:import href="http://transpect.io/idml2xml/xpl/idml2hub.xpl"/></code></programlisting>
       <bridgehead>Synopsis</bridgehead>
       <programlisting><code role="language-markup">&lt;idml2xml:hub xmlns:idml2xml="http://transpect.io/idml2xml">
-  &lt;p:with-option name="idmlfile" select="/c:param-set/c:param[@name eq 'file']/@value"/>
-  &lt;p:with-option name="debug" select="$debug"/>
-  &lt;p:with-option name="debug-dir-uri" select="$debug-dir-uri"/>
-  &lt;p:with-option name="status-dir-uri" select="$status-dir-uri"/>
+  &lt;p:output port="result"/>                                      &lt;!-- Hub XML document -->
+  &lt;p:output port="report"/>                                      &lt;!-- Schematron report -->
+  &lt;p:output port="DocumentStoriesSorted"/>                       &lt;!-  wrapped IDML document stories -->
+  &lt;p:with-option name="idmlfile" select="'myInDesignFile.idml'"/>&lt;!-- file path -->
+  &lt;p:with-option name="debug" select="'yes'"/>                   &lt;!-- "yes"|"no" -->
+  &lt;p:with-option name="debug-dir-uri" select="'debug'"/>         &lt;!-- "debug" -->
+  &lt;p:with-option name="status-dir-uri" select="'status'"/>       &lt;!-- "status" -->
 &lt;/idml2xml:hub></code></programlisting>
-      
-    </chapter>
-    <chapter xml:base="../epubtools.html">
-      <title>epubtools</title>
-      <para>Cati sunte cus eumque et, exceate stendel estrum eiusam qui rem volut velent. Ossum ipit eaqui at volor
-        simporeris evelic tectiande cum laccum quis eos moluptat. Harciam et, omni coneces eat pla nus di occatecatis
-        samus ut quistendus asit modisqu aspelique nonsequi digent, que nus dit facero officie nectenis estia volorio
-        maios iminvelique simet peditis quiassima sust, sitibusame verum nihil in cum ium hictas volo dolo volum aut
-        imustiant min nit assimolorit autem quatur sam quamust, od utates vendae enienis santiis dolorat quis sim
-        quidelibera dolutam aut acia vellabo reptiossus, voluptur, ut quos sum illendit lat. Onsedite culles alit estem
-        el il estore molut omnia nonseni doluptatur am fugit archil ipsaperere conseque parciusa sed ut eos eatqui
-        omniendi que porehenis aut qui blab ilitatium fugit aut adis saesciam corro offici in nobis acerum veritaqui
-        offictur rest, illiquas dolor aut quiati vendi te offic tem consero quatias andendunt iur, conecume mos
-        remquuntur, earum aut officia temquae cora doluptatur? Dia nestis remos seque dis et, coriam sinvelese pa volut
-        reperna tibusa non et esequisita aut molo volectatem ut iscit ex et modicim agnaturiam enihil ima dolupitem re
-        volut ommodi ut eum hicia doluptae ellatur rescipsus, con nost arcium re dolorum duscim harcium comnimus
-        exereptatur, quianducias quaecer ibuscip santius delia quae cupta voluptatur a non porum lanihit reped que
-        nectotae pres sam estotati dicae volut aut endi temolor erepeliquia aute consed quod quoditaes qui in cuptatur,
-        sitis ni volore dolorit et ullaccus duntius molore, occum aut qui quam ut ut ium de nihil incidebis nimus aci
-        nos velibus, omnis vita plaborro con nam expe non consedi tatecus que plit rat laccusdae. Itatem vercit,
-        solorunt rectatur aborem fuga. Namust, omnim fugit est, alit, nonsequist, sus, omnimi, sunt, netus aperchil into
-        voluptatur molor rerundem rem aut autem. Essunt doluptus asim illuptatis et rerum quodionseque doluptae
-        quaectus, susae prorum quis sume doluptatur? Qui cus nonse quas cumquas itatur? Otatessed eatemol enihilitas
-        eat. Genditia voloreptat restem atem conse omnim nulparum quaepero berumquo volum dolupti accum re provit, que
-        est, con consecus, qui re velest et et volorere possit, consed qui cuptiatat volorro volorem dolecae</para>
+      <para><link role="btn red" xlink:href="https://github.com/transpect/idml2xml">Source ⬇</link></para>
     </chapter>
   </part>
   <part>

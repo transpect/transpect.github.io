@@ -28,8 +28,9 @@
                   </a>
                   <div class="collapsible-body">
                     <ul>
+                      <xsl:message select="concat('  |--', dbk:title)"/>
                       <xsl:for-each select="dbk:chapter">
-                        <xsl:message select="concat('build nav entry: ', @xml:base)"/>
+                        <xsl:message select="concat('  |  |-- ', dbk:title)"/>
                         <li class="naventry-2nd">
                           <a href="{replace(@xml:base, '^\.\./', '')}">
                             <xsl:apply-templates select="dbk:title/node()"/>
@@ -44,7 +45,7 @@
           </xsl:when>
           <!-- simple menu entry -->
           <xsl:when test="count(dbk:chapter) eq 1">
-            <xsl:message select="concat('build nav entry: ', dbk:chapter/@xml:base)"/>
+            <xsl:message select="concat('  |--', dbk:title)"/>
             <li class="naventry-1st">
               <a href="{replace(dbk:chapter/@xml:base, '^\.\./', '')}">
                 <xsl:apply-templates select="dbk:title/node()"/>

@@ -1,6 +1,6 @@
-<?xml version="1.0" encoding="UTF-8"?><html xmlns="http://www.w3.org/1999/xhtml" xml:base="../getting-started.html">
+<?xml version="1.0" encoding="UTF-8"?><html xmlns="http://www.w3.org/1999/xhtml" xml:base="../modules-hub2bits.html">
   <head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <title>Getting Started</title>
+    <title>hub2bits</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     
@@ -29,46 +29,26 @@
     <main>
       <div class="section orange" id="index-banner">
         <div class="container">
-          <h1 id="tr-title" class="light header center-on-small-only white-text">Getting Started</h1>
-          <h4 id="tr-subtitle" class="light orange-text text-lighten-4 center-on-small-only">Learn how to use transpect</h4>
+          <h1 id="tr-title" class="light header center-on-small-only white-text">hub2bits</h1>
+          <h4 id="tr-subtitle" class="light orange-text text-lighten-4 center-on-small-only">https://github.com/transpect/hub2bits</h4>
         </div>
       </div>
       <div class="container">
         <div class="row">
           
-          <div class="col s12 m9 l10" id="tr-content"><div id="d34e9" class="section col s12 scrollspy">
-        <h2 class="header">Prerequisites</h2>
-        <p>There are no further prerequisites as are required to run XProc. If you are not familiar with XProc, we
-          suggest to work yourself through Roger L. Costello’s <a href="http://www.xfront.com/xproc/" target="_blank">XProc
-            tutorial</a> first.</p>
-        <div class="col s12 m6">
-          <h5>XML Calabash</h5>
-          <p>We recommend XML Calabash for running transpect’s XProc pipelines. You should use our pre-configured
-            version of XML Calabash. It comes with extensions which are essential to some modules.</p>
-          
-        </div>
-        <div class="col s12 m6">
-          <h5>Java</h5>
-          <p>XML Calabash needs at least Java 1.7 to run. We noticed some odd behaviour while running XML Calabash
-            with a JVMs other than Oracle. If you get memory issues, consider to install the 64-bit version.</p>
-          
-        </div>
-      </div><div id="d34e43" class="section col s12 scrollspy">
-        <h2 class="header">Setup</h2>
-        <h4>Install calabash</h4>
-        <p>After downloading, extract XML Calabash into your project directory. We </p>
-        <pre>
-MyProject/
-  |--calabash/
-  |  |--calabash.sh
-  |  |--calabash.bat</pre>
-
-      </div></div>
+          <div class="col s12 m9 l10" id="tr-content"><p>This XProc step generates a <a href="http://jatspan.org/nlm/bits-1.0/" target="_blank">BITS</a> (Book Interchange Tag Suite) 
+        document from <a href="https://github.com/le-tex/Hub" target="_blank">Hub XML</a>.</p><h4>Import URI</h4><pre><code class="language-markup">&lt;p:import href="http://transpect.io/hub2bits/xpl/hub2bits.xpl"/&gt;</code></pre><h4>Synopsis</h4><pre><code class="language-markup">&lt;tr:hub2bits xmlns:tr="http://transpect.io"&gt;
+  &lt;p:input port="source"/&gt;                                &lt;!-- Hub XML document --&gt;
+  &lt;p:output port="result"/&gt;                               &lt;!-- Schematron report --&gt;
+  &lt;p:with-option name="debug" select="'yes'"/&gt;            &lt;!-- "yes"|"no" --&gt;
+  &lt;p:with-option name="debug-dir-uri" select="'debug'"/&gt;  &lt;!-- "debug" --&gt;
+  &lt;p:with-option name="status-dir-uri" select="'status'"/&gt;&lt;!-- "status" --&gt;
+&lt;/tr:hub2bits&gt;</code></pre></div>
           
           <div class="col hide-on-small-only m3 l2">
             <div class="toc-wrapper pin-top" style="top: 0px;">
               <div style="height: 1px;">
-                <ul id="tr-toc" class="table-of-contents"><li><a href="#d34e9" class="active">Prerequisites</a></li><li><a href="#d34e43">Setup</a></li></ul>
+                <ul id="tr-toc" class="table-of-contents"></ul>
               </div>
             </div>
           </div>
