@@ -558,6 +558,117 @@ git push</programlisting>
         <programlisting>git add docx2jats-demo.xpr
 git commit -m "add XML catalog, oXygen project"
 git push</programlisting>
+        <para>You may try the correct catalog resolution and oXygen configuration by Ctrl-clicking on 
+          <literal>http://this.transpect.io/</literal> in the catalog. It should open the project’s base directory.</para>
+        <para>With an update to a submodule that happened in the meantime, the repo at this stage looks like this: <link 
+          xlink:href="https://github.com/transpect/docx2jats-demo/tree/eabd9b6201e236af1042f0c60eb3b9bf97444169">eabd9b6</link></para>
+      </section>
+      <section>
+        <title>Getting sample input</title>
+        <para>Our friends at <link xlink:href="http://www.ulsp.eu/">University of Leipzig Sports Medicine</link> produce and
+          publish an open access journal from Word files. Their desire to upload the articles to <link 
+            xlink:href="http://www.ncbi.nlm.nih.gov/pmc/">PMC</link> made them ask us to provide a converter. Because our test
+        system relies on svn front-end repos, we were unable to use it as a github-based demo project. But we can use their
+        content. You can check it out from our <link 
+          xlink:href="https://subversion.le-tex.de/common/transpect-demo/content/ulsp/">svn server</link>:</para>
+        <programlisting>mkdir ../content
+svn co https://subversion.le-tex.de/common/transpect-demo/content/ulsp/ ../content/ulsp</programlisting>
+        <para>or, for the time being, you can just save one of the 
+          <literal>.docx</literal> files anywhere you want. Please be aware though
+        that steps that we’ll introduce later (zipping the output and the images for PMC, …) rely on the 
+          <literal>.docx</literal> files residing in a <literal>docx/</literal> directory. Also, for making use of the configuration
+          cascade that lets you – in principle – override settings per article, the content has to be stored according to a certain 
+          directory structure.</para>
+      </section>
+      <section>
+        <title>A first pipeline</title>
+        <para>By convention, the pipelines that are meant to be invoked directly (as opposed to pipelines that implement 
+          the innards of a macroscopic step such as the ominous <literal>evolve-hub</literal>) reside in the directory 
+          <literal>a9s/common/xpl</literal>. This is absolutely not necessary; they may reside anywhere within the project.</para>
+        <para>Let’s create <literal>a9s/common/xpl/docx2jats.xpl</literal> and insert a basic pipeline: docx → flat Hub XML → JATS</para>
+        <para>The commit is <link 
+          xlink:href="https://github.com/transpect/docx2jats-demo/tree/0e289b58a2978f334c2ced62f557627b1e7e9172">0e289b5</link>, 
+        and the <link 
+          xlink:href="https://github.com/transpect/docx2jats-demo/blob/0e289b58a2978f334c2ced62f557627b1e7e9172/a9s/common/xpl/docx2jats.xpl">pipeline 
+          looks like this</link>. You’ll notice the <literal>p:import</literal> by canonical URI statements and the three essential
+        steps, <literal>docx2hub:convert</literal>, <literal>hub:evolve-hub</literal>, and <literal>jats:hub2bits</literal> 
+          (the odd naming is because the step will produce <link xlink:href="http://jats.nlm.nih.gov/extensions/bits/">BITS</link> 
+          books instead of JATS articles if fed with a <literal>/dbk:book</literal> document).</para>
+        <para>Invoke the transformation with the following statement on the command line (swapping <literal>.sh</literal>
+        with <literal>.bat</literal> and probably also <literal>/</literal> with <literal>\</literal> on Windows machines 
+        without <link xlink:href="https://cygwin.com/">Cygwin</link>):</para>
+        <programlisting>calabash/calabash.sh a9s/common/xpl/docx2jats.xpl file=../content/ulsp/CSMI/CSMI_2014_701/docx/CSMI_2014_701.docx</programlisting>
+        <para>You will see some garbage that faintly resembles JATS, but with all kinds of <literal>css:</literal> attributes
+        and a <literal>dark-matter</literal> element instead of <literal>body</literal> or <literal>back</literal>. This
+        is because the converter needs to know how to interpret the paragraph and character style names in the Word file.
+        The main part of this transformation is done in <literal>evolve-hub</literal> that is a library for nesting list
+          items according to indentation, hierarchizing sections whose names match ceertain regexes, grouping figures and
+          tables with their captions, etc. <literal>evolve-hub</literal> is a toolbox (or a beast, according to other people)
+        from which to configure multi-pass XSLT pipelines that up-convert 
+          <link xlink:href="https://github.com/le-tex/Hub">Hub XML</link>, the flat DocBook derivative, to a more reasonable
+        DocBook that may then be converted “sideways,” with significantly less XSLT passes, into JATS, for example. The 
+          <literal>evolve-hub</literal> configuration that was applied to the input was a succession of XSLT modes defined
+        in <link xlink:href="https://github.com/transpect/evolve-hub/blob/master/xpl/fallback.xpl#L210">fallback.xpl</link>,
+        using default parameters/variables/templates/functions in XSLT.</para>
+      </section>
+      <section>
+        <title>Dynamic transformation pipelines</title>
+        <para>All the major steps that transform documents from one XML format to another XML format are implemented using the
+          XProc step <link xlink:href="https://github.com/transpect/cascade/blob/master/xpl/dynamic-transformation-pipeline.xpl"
+              ><literal>tr:dynamic-transformation-pipeline</literal></link>.</para>
+        <para>It works like this:</para>
+        <orderedlist>
+          <listitem>
+            <para>Consider the <literal>load</literal> option given to the step (for ex. <literal>evolve-hub/driver</literal>)</para>
+          </listitem>
+          <listitem>
+            <para>In the configuration cascade, look for the most specific file with the name <literal>evolve-hub/driver.xpl</literal>. 
+            This pipeline (or a fallback pipeline, if specified) will then be dynamically executed, using Calabash’s 
+              <literal>cx:eval</literal> extension step.</para>
+          </listitem>
+          <listitem>
+            <para>In the configuration cascade, look for the most specific file with the name <literal>evolve-hub/driver.xsl</literal>.
+            This will be supplied to the pipeline on its stylesheet port. Typically a more specific stylesheet (for a journal) 
+            will import a stylesheet from a less specific location (for an imprint).</para>
+          </listitem>
+        </orderedlist>
+        <para>Apart from the primary input (<literal>source</literal> port) and the stylesheet, the dynamically loaded pipeline
+        may get its options in a <literal>cx:options</literal> document and additional inputs on an <literal>additional-inputs</literal>
+        port with <literal>sequence="true"</literal>. It will typically contain a sequence of XSLT passes, where each pass will transform
+        its input in a given XSLT mode, using the same stylesheet. It may apply arbitrary XProc steps, though.</para>
+        <para>XSLT has a nice import mechanism; in XProc, import is a different thing. There is no “inherit&amp;tweak” 
+        mechanism for pipelines. Therefore, in order to avoid the redundancy of writing lots of fairly similar multi-XSLT-pass 
+        pipelines, <literal>tr:dynamic-transformation-pipeline</literal> (or rather, <link 
+          xlink:href="https://github.com/transpect/cascade/blob/master/xpl/load-cascaded.xpl"><literal>tr:load-cascaded</literal></link>)
+        supports dynamic generation of the resource in question. So in the example above, if the dynamic loader is looking for
+        <literal>evolve-hub/driver.xpl</literal> at a certain location and doesn’t find it there, it will also use an XSLT pipeline 
+          <literal>evolve-hub/driver.xpl.xsl</literal> at that location, before it skips the location altogether and searches
+        less specific locations. It will invoke, by convention, the <literal>main</literal> template of 
+          <literal>evolve-hub/driver.xpl.xsl</literal>. This main template typically loads the pipeline 
+          <literal>evolve-hub/driver.xpl</literal> from a less specific location (or from a sister journal) and transforms
+          it, typically adding or removing XSLT steps in certain modes.</para>
+      </section>
+      <section>
+        <title>Configuration Cascade</title>
+        <para>The underlying concept is described in greater detail in <link 
+          xlink:href="https://subversion.le-tex.de/common/transpect-demo/content/le-tex/setup-manual/en/out/xhtml/transpect-setup.xhtml#sec-cascade">another 
+          piece of documentation</link> that will eventually be integrated here. In brief, the content is organized 
+        in <link xlink:href="https://en.wikipedia.org/wiki/Clade">clades</link> where the content items in each clade
+        share configuration settings. Clades may be publishers, imprints, journals, book series, … It is also possible
+        to have an own clade for each input type, e.g., <literal>.docx</literal> and <literal>.idml</literal>. However,
+        this approach is problematic within a rigorous clade system as dicussed briefly at the end of 
+          <link xlink:href="https://subversion.le-tex.de/common/transpect-demo/content/le-tex/setup-manual/en/out/xhtml/transpect-setup.xhtml#sec-cascade-clade-selection">this section</link>.</para>
+        <para>There are two ways to determine which clade a given input file belongs to:</para>
+        <itemizedlist>
+          <listitem>
+            <para>by file name parsing (example: <literal>CSMI_2014_701.docx → journal=CSMI, ms=701, ext=docx</literal>)</para>
+          </listitem>
+          <listitem>
+            <para>by explicitly setting it as an option to the pipeline (example: <literal>clades="journal=CSMI MS=701"</literal>)</para>
+          </listitem>
+        </itemizedlist>
+        <para>Without further ado, we’ll present you with the project’s clade configuration file, its filename parser
+        customization and the resulting parameter set that contains the search paths in descending specificity.</para>
       </section>
     </chapter>
   </part>

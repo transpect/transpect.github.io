@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+	 xmlns:svg="http://www.w3.org/2000/svg"
+	 xmlns="http://www.w3.org/2000/svg"
+	 version="1.0"
+	 id="svg2"
+	 width="944"
+	 height="354"
+	 viewBox="-22 -22 944 354"
+	 >
+	<title>Clade-Grade II</title>
+	<style type="text/css">
+		polyline {
+			opacity:1;
+			fill:none;
+			stroke:#000000;
+			stroke-width:6;
+			stroke-linejoin:miter;
+			visibility:visible;
+			display:inline;
+			}
+		rect {
+			opacity:1;
+			fill-opacity:1;
+			fill-rule:nonzero;
+			stroke:none;
+			stroke-linecap:butt;
+			stroke-linejoin:miter;
+			stroke-miterlimit:4;
+			stroke-opacity:1;
+			visibility:visible;
+			display:inline;
+			overflow:visible
+			}
+	</style>
+	<g>
+		<rect x="-20" y="-20" width="220" height="200" style="fill:#8099ff" />
+		<rect x="220" y="-20" width="400" height="290" style="fill:#66cc66" />
+		<rect x="640" y="-20" width="280" height="170" style="fill:#ff8066" />
+		<polyline points="0,0 0,100 60,100 60,0" />
+		<polyline points="30,100 30,130 120,130 120,0" />
+		<polyline points="80,130 80,160 180,160 180,0" />
+		<polyline points="240,0 240,120 300,120 300,0" />
+		<polyline points="360,0 360,140 420,140 420,0" />
+		<polyline points="130,160 130,190 270,190 270,120" />
+		<polyline points="390,140 390,170 480,170 480,0" />
+		<polyline points="540,0 540,150 600,150 600,0" />
+		<polyline points="330,220 330,250 570,250 570,150" />
+		<polyline points="240,190 240,220 430,220 430,170" />
+		<polyline points="660,0 660,40 720,40 720,0" />
+		<polyline points="690,40 690,70 780,70 780,0" />
+		<polyline points="730,70 730,100 840,100 840,0" />
+		<polyline points="790,100 790,130 900,130 900,0" />
+		<polyline points="450,250 450,280 630,280 630,330 630,280 850,280 850,130" />
+	</g>
+</svg>
