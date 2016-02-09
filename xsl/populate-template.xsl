@@ -214,7 +214,7 @@
   <xsl:template match="dbk:informalfigure">
     <xsl:variable name="fileuri" select="tr:uri-to-relative-path(collection()[2]/base-uri(), dbk:mediaobject/dbk:imageobject/dbk:imagedata/@fileref)" as="xs:string"/>
     <figure class="{local-name()}">
-      <img src="{$fileuri}" alt="{dbk:mediaobject/dbk:alt}"/>
+      <img class="responsive-img" src="{$fileuri}" alt="{dbk:mediaobject/dbk:alt}"/>
     </figure>
   </xsl:template>
   
