@@ -195,10 +195,10 @@ MyProject/
       <programlisting><code role="language-markup">&lt;p:import href="http://transpect.io/docx2hub/xpl/docx2hub.xpl"/></code></programlisting>
       <bridgehead>Synopsis</bridgehead>
       <programlisting><code role="language-markup">&lt;docx2hub:convert xmlns:docx2hub="http://transpect.io/docx2hub">
-  &lt;p:with-option name="docx" select="myWord.docx"/>              &lt;!-- file path -->
-  &lt;p:with-option name="debug" select="$debug"/>                  &lt;!-- "yes"|"no" -->
-  &lt;p:with-option name="debug-dir-uri" select="$debug-dir-uri"/>  &lt;!-- "debug" -->
-  &lt;p:with-option name="status-dir-uri" select="$status-dir-uri"/>&lt;!-- "status" -->
+  &lt;p:with-option name="docx" select="'myWord.docx'"/>     &lt;!-- file path -->
+  &lt;p:with-option name="debug" select="'yes'"/>            &lt;!-- "yes"|"no" -->
+  &lt;p:with-option name="debug-dir-uri" select="'debug'"/>  &lt;!-- "debug" -->
+  &lt;p:with-option name="status-dir-uri" select="'status'"/>&lt;!-- "status" -->
 &lt;/docx2hub:convert></code></programlisting>
     </chapter>
     <chapter xml:base="../modules-idml2xml.html">
@@ -210,10 +210,10 @@ MyProject/
       <programlisting><code role="language-markup">&lt;p:import href="http://transpect.io/idml2xml/xpl/idml2hub.xpl"/></code></programlisting>
       <bridgehead>Synopsis</bridgehead>
       <programlisting><code role="language-markup">&lt;idml2xml:hub xmlns:idml2xml="http://transpect.io/idml2xml">
-  &lt;p:with-option name="idmlfile" select="/c:param-set/c:param[@name eq 'file']/@value"/>
-  &lt;p:with-option name="debug" select="$debug"/>
-  &lt;p:with-option name="debug-dir-uri" select="$debug-dir-uri"/>
-  &lt;p:with-option name="status-dir-uri" select="$status-dir-uri"/>
+  &lt;p:with-option name="idmlfile" select="'myInDesignFile.idml'"/>&lt;!-- file path -->
+  &lt;p:with-option name="debug" select="'yes'"/>                   &lt;!-- "yes"|"no" -->
+  &lt;p:with-option name="debug-dir-uri" select="'debug'"/>         &lt;!-- "debug" -->
+  &lt;p:with-option name="status-dir-uri" select="'status'"/>       &lt;!-- "status" -->
 &lt;/idml2xml:hub></code></programlisting>
       
     </chapter>
