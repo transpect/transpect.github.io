@@ -651,9 +651,18 @@ svn co https://subversion.le-tex.de/common/transpect-demo/content/ulsp/ ../conte
           xlink:href="https://subversion.le-tex.de/common/transpect-demo/content/le-tex/setup-manual/en/out/xhtml/transpect-setup.xhtml#sec-cascade">another 
           piece of documentation</link> that will eventually be integrated here. In brief, the content is organized 
         in <link xlink:href="https://en.wikipedia.org/wiki/Clade">clades</link> where the content items in each clade
-        share configuration settings. Clades may be publishers, imprints, journals, book series, … It is also possible
-        to have an own clade for each input type, e.g., <literal>.docx</literal> and <literal>.idml</literal>. However,
-        this approach is problematic within a rigorous clade system as dicussed briefly at the end of 
+        share configuration settings. Clades may be publishers, imprints, journals, book series, …</para>
+        <informalfigure>
+          <mediaobject>
+            <alt>Schematic clade diagram (from Wikipedia)</alt>
+            <imageobject>
+              <imagedata fileref="media/docx2jats-demo/wikipedia_Clade-grade_II.svg"/>
+            </imageobject>
+          </mediaobject>
+        </informalfigure>
+        
+        <para>It is also possible to have clades for each input type, e.g., <literal>.docx</literal> and <literal>.idml</literal>. 
+          However, this approach is problematic as dicussed briefly at the end of 
           <link xlink:href="https://subversion.le-tex.de/common/transpect-demo/content/le-tex/setup-manual/en/out/xhtml/transpect-setup.xhtml#sec-cascade-clade-selection">this section</link>.</para>
         <para>There are two ways to determine which clade a given input file belongs to:</para>
         <itemizedlist>
@@ -661,11 +670,25 @@ svn co https://subversion.le-tex.de/common/transpect-demo/content/ulsp/ ../conte
             <para>by file name parsing (example: <literal>CSMI_2014_701.docx → journal=CSMI, ms=701, ext=docx</literal>)</para>
           </listitem>
           <listitem>
-            <para>by explicitly setting it as an option to the pipeline (example: <literal>clades="journal=CSMI MS=701"</literal>)</para>
+            <para>by explicitly setting it as an option to the pipeline (example: <literal>clades="journal=CSMI MS=701"</literal>,
+              where ext may still be parsed from the file name). You may use <link 
+                xlink:href="https://github.com/transpect/cascade/blob/master/xsl/paths.xsl#L365"><literal>[,/\s]</literal></link> 
+              as a sepator</para>
           </listitem>
         </itemizedlist>
-        <para>Without further ado, we’ll present you with the project’s clade configuration file, its filename parser
-        customization and the resulting parameter set that contains the search paths in descending specificity.</para>
+        <para>At this point, it might be helpful to define “configuration”. It bears dual meaning: In a broad sense, 
+          it’s the entirety of customizations, be it XSLT, CSS, fonts, dynamically loaded Proc pipelines, Schematron rules, …
+        In a narrow sense, it is the single configuration file (the <emphasis>transpect configuration file</emphasis>) that 
+          declares which clades are available and by which name/value pairs they are selected.</para>
+        <para>The ultimate goal of this clade selection is to compute file system paths in descending specificity where 
+        to look for the broad-sense configuration files. The file system paths will be contained in a <literal>c:param-set</literal>
+          document that is the result of invoking <link 
+            xlink:href="https://github.com/transpect/cascade/blob/master/xpl/paths.xpl"><literal>paths.xpl</literal></link> with 
+          a <literal>file</literal> option and optionally a <literal>clades</literal> option, where the name/value pairs in 
+          <literal>clades</literal> will have precedence. Technically the name/value pairs are modeled as attributes (not bound to any 
+          element). In the transpect  </para>
+        
+        
       </section>
     </chapter>
   </part>
