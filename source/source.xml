@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-model href="http://docbook.org/xml/5.0/rng/docbook.rng" schematypens="http://relaxng.org/ns/structure/1.0"?>
 <?xml-model href="http://docbook.org/xml/5.0/rng/docbook.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<book xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" version="5.0">
+<book xmlns="http://docbook.org/ns/docbook" 
+  xmlns:xlink="http://www.w3.org/1999/xlink" 
+  version="5.0">
   <info>
     <title>transpect.github.io</title>
     <!-- 
@@ -13,7 +15,7 @@
   </info>
   <part>
     <title>About</title>
-    <chapter xml:base="index.html">
+    <chapter xml:base="../index.html">
       <title>transpect</title>
       <subtitle>An open source framework for converting and checking data</subtitle>
       <para role="col">Transpect was designed to provide generic and stable modules for common conversion and checking
@@ -148,7 +150,7 @@
   </part>
   <part>
     <title>Getting Started</title>
-    <chapter xml:base="getting-started.html">
+    <chapter xml:base="../getting-started.html">
       <title>Getting Started</title>
       <subtitle>Learn how to use transpect</subtitle>
       <section>
@@ -184,7 +186,7 @@ MyProject/
   </part>
   <part xml:id="part-modules">
     <title>Modules</title>
-    <chapter xml:base="docx2hub.html">
+    <chapter xml:base="../docx2hub.html">
       <title>docx2hub</title>
       <para>Cati sunte cus eumque et, exceate stendel estrum eiusam qui rem volut velent. Ossum ipit eaqui at volor
         simporeris evelic tectiande cum laccum quis eos moluptat. Harciam et, omni coneces eat pla nus di occatecatis
@@ -208,7 +210,7 @@ MyProject/
         eat. Genditia voloreptat restem atem conse omnim nulparum quaepero berumquo volum dolupti accum re provit, que
         est, con consecus, qui re velest et et volorere possit, consed qui cuptiatat volorro volorem dolecae</para>
     </chapter>
-    <chapter xml:base="idml2hub.html">
+    <chapter xml:base="../idml2hub.html">
       <title>idml2hub</title>
       <para>Cati sunte cus eumque et, exceate stendel estrum eiusam qui rem volut velent. Ossum ipit eaqui at volor
         simporeris evelic tectiande cum laccum quis eos moluptat. Harciam et, omni coneces eat pla nus di occatecatis
@@ -232,7 +234,7 @@ MyProject/
         eat. Genditia voloreptat restem atem conse omnim nulparum quaepero berumquo volum dolupti accum re provit, que
         est, con consecus, qui re velest et et volorere possit, consed qui cuptiatat volorro volorem dolecae</para>
     </chapter>
-    <chapter xml:base="epubtools.html">
+    <chapter xml:base="../epubtools.html">
       <title>epubtools</title>
       <para>Cati sunte cus eumque et, exceate stendel estrum eiusam qui rem volut velent. Ossum ipit eaqui at volor
         simporeris evelic tectiande cum laccum quis eos moluptat. Harciam et, omni coneces eat pla nus di occatecatis
@@ -259,7 +261,7 @@ MyProject/
   </part>
   <part>
     <title>Styleguide</title>
-    <chapter xml:base="styleguide.html">
+    <chapter xml:base="../styleguide.html">
       <title>Styleguide</title>
       <subtitle>Guidelines for writing XProc, XSLT, XPath…</subtitle>
       <section>
@@ -427,8 +429,9 @@ myproject/
   </part>
   <part>
     <title>Tutorials</title>
-    <chapter>
-      <title>docx→JATS→EPUB</title>
+    <chapter xml:base="../tutorial.html">
+      <title>Tutorials</title>
+      <subtitle>docx→JATS→EPUB</subtitle>
       <section>
         <title>Creating a repository</title>
         <para>A transpect project consists of a specification which modules to use (and in which revision), project-specific
