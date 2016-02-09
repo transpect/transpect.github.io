@@ -688,17 +688,74 @@ svn co https://subversion.le-tex.de/common/transpect-demo/content/ulsp/ ../conte
           xlink:href="https://github.com/transpect/docx2jats-demo/blob/master/conf/transpect-conf.xml#L6"><literal>/tr:conf/@paths-xsl-uri</literal></link>
         of the transpect configuration file.</para>
         <para>It is instructive to have a look at the <link xlink:href="https://github.com/transpect/docx2jats-demo/commit/e5e4e45eb4dad4a1acc48baf1f338c16e1ed17f4">changes 
-          of commit e5e4e45</link> and also at the <link xlink:href="https://gist.github.com/gimsieke/3f866dc10d613665c83f">resulting 
+          of commit e5e4e45</link> and also at the <link xlink:href="https://gist.github.com/gimsieke/3f866dc10d613665c83f/4c2b87e1769aa26bf2dc2dc533fd32b6169ae357">resulting 
             paths document</link>.</para>
-        <para>Please have a look at the <literal>c:param</literal>s that start with “s9y…” (for “specificity”).
+        <para>Have a look at the <literal>c:param</literal>s that start with “s9y…” (for “specificity”).
             <literal>s9y1-path</literal> is the path to the most specific confiuration location. There are 9 levels of
-          spcificity available at the moment, that means 7 levels of nested clades, plus the path for the common configuration,
+          specificity available at the moment, that means 7 levels of nested clades, plus the path for the common configuration,
           plus the content location for per-work specific overrides.</para>
-        <para>If no clade matches, there will only be two search paths in the paths document: the directory where the input 
-          file resides in and the common path.</para>
-        <para>Other name value pairs may be given in the config file. Their scope is global if they are immediately below 
-          <literal>/conf</literal>, or otherwise their corresponding clade</para>
-        
+        <para>If no clade matches, there will only be two search paths in the paths document: the directory where the input file
+          resides in and the common path. </para>
+        <note>
+          <title>Clades are complex. Should I use them for simple pipelines?</title>
+          <para>If the project doesn’t rely on cascaded configuration, most macroscopic steps such as
+              <literal>evolve-hub</literal> support custom, static URIs for <literal>fallback-xsl</literal> and
+              <literal>fallback-xpl</literal>, and they also provide useful default values for these options. So in principle,
+            instead of the cascaded loading, we can supply the pipeline of <link
+              xlink:href="https://github.com/transpect/docx2jats-demo/blob/0e289b58a2978f334c2ced62f557627b1e7e9172/a9s/common/xpl/docx2jats.xpl"
+              >commit 0e289b5</link> with more appropriate XSLT and inner XProc pipelines and be done with it. However,
+            especially book production teaches us that there will always be exceptions. The way we dealt with exceptions before
+            transpect was either to produce non-standard titles outside of the standard workflow or to add case switches to the
+            conversion code that will ultimately render a monolithic converter unmaintainable.</para>
+        </note>
+        <para>
+          <bridgehead>Content Repository</bridgehead>
+        </para>
+        <para>You might have noticed that in the paths document that <link
+            xlink:href="https://gist.github.com/gimsieke/3f866dc10d613665c83f#file-paths-xml-L22"
+              ><literal>repo-href-local</literal></link> and also <literal>s9y1-path</literal> point to HTTP URLs, although they
+          should be pointing to local paths. This is the canonical content repo location URI that will be resolved by the
+          catalog resolver. We didn’t supply a local <literal>rewriteURI</literal> resolution for this yet. Because the content
+          files’ location on a local drive may be different for each user, it is not advisable to provide a fixed catalog for
+          all of them in the revision control repository. Although there is a <literal>&lt;nextCatalog
+            catalog="content-repo.catalog.xml"/&gt;</literal> provision already in the XML catalog for this resolution, you
+          should only provide an unversioned file for each installation of this project.</para>
+        <para>However, a common location for the (local copy of the) content repository is next to the project’s code directory.
+          We typically cover this common case by placing another <literal>&lt;nextCatalog</literal> instruction below the
+          first (see <link xlink:href="https://github.com/transpect/docx2jats-demo/compare/e5e4e45...37a9086">diff</link> of
+        the catalogs). The paths that are supposed to be local 
+          <link xlink:href="https://gist.github.com/gimsieke/3f866dc10d613665c83f/revisions">become local</link> in the paths document.</para>
+        <para>By providing a <literal>content-repo.catalog.xml</literal> that has higher <literal>nextCatalog</literal> precedence 
+        than <literal>content-repo.default.catalog.xml</literal>, you can still divert content repo lookups to other locations.</para>
+        <para>As mentioned before, local resolution of the content repo will not only be used for per-content-item configuration
+        overrides, but also for locating images. When Word InDesign link to external files, we often strip their paths and later
+        replace them with <literal>concat($s9y1-path, 'images/', @fileref)</literal>.</para>
+<!--     §§§   <para>Examples for content-base-uri=".."</para>-->
+        <bridgehead>Per-clade parameters</bridgehead>
+        <para>Other use case for the configuration file is to supply other name/value pairs to the paths document. 
+          These parameters may be supplied globally or 
+          <link xlink:href="https://github.com/transpect/docx2jats-demo/blob/master/conf/transpect-conf.xml#L24">by clade</link>.</para>
+      </section>
+      <section>
+        <title>Debugging</title>
+        <para>You might have wondered where we read the paths document in the last step, as the pipeline has no output port
+        for it. We read it from the file <literal>debug/cascade/paths.xml</literal>. The location of the debugging files
+        and whether they will be written at all (they can easily comprise dozens of Megabytes for IDML conversions)
+        can be controlled as follows:</para>
+        <para>Almost every transpect step supports two options, <literal>debug</literal> and <literal>debug-dir-uri</literal>.
+          A transpect pipeline run might consist of dozens of steps (primarily XSLT passes) and these transformations are hard
+          to debug if they are a black box. We never really figured out how to use <literal>p:log</literal>, so we wrote our own
+            <link xlink:href="https://github.com/transpect/xproc-util/blob/master/store-debug/xpl/store-debug.xpl"
+            >tr:store-debug</link> step. <literal>debug</literal> expects the somewhat XSLT-ish <literal>yes|no</literal>
+          option, while debug-dir-uri expects a <literal>file:</literal> URL (note that catalog resolution will not apply to
+          this URL). For the <literal>docx2jats.xpl</literal> pipeline, <literal>debug</literal> is set to
+            <literal>yes</literal> by default, but debug-dir-uri is set to <literal>debug</literal>, which leads to the
+          debugging output being written to <literal>xproc-util/store-debug/xpl/debug</literal>. If you want to store it below
+          the project directory, you can do so by modifying the invocation to:</para>
+        <programlisting>calabash/calabash.sh -o result=out.xml a9s/common/xpl/docx2jats.xpl \
+  file=../content/ulsp/CSMI/CSMI_2014_701/docx/CSMI_2014_701.docx \
+  debug-dir-uri=file:$(pwd)/debug</programlisting>
+        <para>for Linux or <literal>debug-dir-uri=file:/$(cygpath -ma debug)</literal> for Cygwin.</para>
       </section>
     </chapter>
   </part>
