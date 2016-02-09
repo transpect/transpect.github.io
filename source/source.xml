@@ -196,6 +196,7 @@ MyProject/
       <bridgehead>Synopsis</bridgehead>
       <programlisting><code role="language-markup">&lt;docx2hub:convert xmlns:docx2hub="http://transpect.io/docx2hub">
   &lt;p:output port="result"/>                               &lt;!-- Hub XML document -->
+  &lt;p:output port="report"/>                               &lt;!-- Schematron report -->
   &lt;p:with-option name="docx" select="'myWord.docx'"/>     &lt;!-- file path -->
   &lt;p:with-option name="debug" select="'yes'"/>            &lt;!-- "yes"|"no" -->
   &lt;p:with-option name="debug-dir-uri" select="'debug'"/>  &lt;!-- "debug" -->
@@ -207,7 +208,7 @@ MyProject/
     <chapter xml:base="../modules-bits2hub.html">
       <title>bits2hub</title>
       <subtitle>https://github.com/transpect/bits2hub</subtitle>
-      <para>This XProc step converts <link xlink:href="http://jatspan.org/nlm/bits-1.0/">BITS</link> (Book Interchange Tag Suite) to Hub XML.</para>
+      <para>This XProc step converts <link xlink:href="http://jatspan.org/nlm/bits-1.0/">BITS</link> (Book Interchange Tag Suite) to <link xlink:href="https://github.com/le-tex/Hub">Hub XML</link>.</para>
       <bridgehead>Import URI</bridgehead>
       <programlisting><code role="language-markup">&lt;p:import href="http://transpect.io/bits2hub/xpl/bits2hub.xpl"/></code></programlisting>
       <bridgehead>Synopsis</bridgehead>
@@ -236,6 +237,8 @@ MyProject/
       <programlisting><code role="language-markup">&lt;epub:convert xmlns:epub="http://transpect.io/epubtools">
   &lt;p:input port="source"/>                                &lt;!-- an XHTML document -->
   &lt;p:input port="meta"/>                                  &lt;!-- EPUB config XML, see <link xlink:href="https://github.com/transpect/epubtools/blob/master/sample/epub-config.xml">example</link> -->
+  &lt;p:output port="result"/>                               &lt;!-- Output filename -->
+  &lt;p:output port="report"/>                               &lt;!-- Schematron report -->
   &lt;p:with-option name="target" select="'EPUB2'"/>         &lt;!-- EPUB2 | EPUB3 | KF8 // DEFAULT: EPUB2 -->  
   &lt;p:with-option name="debug" select="'yes'"/>            &lt;!-- "yes"|"no" -->
   &lt;p:with-option name="debug-dir-uri" select="'debug'"/>  &lt;!-- "debug" -->
@@ -271,13 +274,14 @@ MyProject/
         <title>tr:validate-with-rng</title>
         <para>Validates XML files with RelaxNG schema files and provides an SVRL representation of the validation errors. The input source file 
         is forwarded to the primary output port without any changes.</para>
+        <bridgehead>Import URI</bridgehead>
         <programlisting><code role="language-markup">&lt;p:import href="http://transpect.io/htmlreports/xpl/validate-with-rng.xpl"/></code></programlisting>
         <bridgehead>Synopsis</bridgehead>
         <programlisting><code role="language-markup">&lt;tr:validate-with-rng xmlns:tr="http://transpect.io">
   &lt;p:input port="source"/>                                &lt;!-- XML document to be validated -->
   &lt;p:input port="schema"/>                                &lt;!-- RelaxNG schema -->
   &lt;p:output port="result"/>                               &lt;!-- The input XML document -->
-  &lt;p:output port="report"/>                               &lt;!-- The SVRL report -->
+  &lt;p:output port="report"/>                               &lt;!-- Schematron report -->
   &lt;p:with-option name="debug" select="'yes'"/>            &lt;!-- "yes"|"no" -->
   &lt;p:with-option name="debug-dir-uri" select="'debug'"/>  &lt;!-- "debug" -->
   &lt;p:with-option name="status-dir-uri" select="'status'"/>&lt;!-- "status" -->  
@@ -285,14 +289,15 @@ MyProject/
       </section>
       <section>
         <title>tr:validate-with-schematron</title>
-        <para>This step loads schematron files based on a cascade paths document, assemble them and perform a validation.</para>
+        <para>This step loads Schematron files based on a cascade paths document, assembles the Schematron files and performs a validation.</para>
+        <bridgehead>Import URI</bridgehead>
         <programlisting><code role="language-markup">&lt;p:import href="http://transpect.io/htmlreports/xpl/validate-with-schematron.xpl"/></code></programlisting>
         <bridgehead>Synopsis</bridgehead>
         <programlisting><code role="language-markup">&lt;tr:validate-with-schematron xmlns:tr="http://transpect.io">
   &lt;p:input port="source"/>                                &lt;!-- XML document to be validated -->
   &lt;p:input port="parameters"/>                            &lt;!-- Cascade paths document -->
   &lt;p:output port="result"/>                               &lt;!-- The input XML document -->
-  &lt;p:output port="report"/>                               &lt;!-- The SVRL report" -->
+  &lt;p:output port="report"/>                               &lt;!-- Schematron report -->
   &lt;p:with-param name="family" select="''"/>               &lt;!-- Rule family, transpect looks in this directory for Schematron files, adds the name to the report and group checks according to this attribute. -->
   &lt;p:with-param name="step-name" select="''"/>            &lt;!-- Step name, added to the SVRL and displayed in the HTML report -->
   &lt;p:with-option name="phase" select="'#ALL'"/>           &lt;!-- "Selected schematron phase" -->
@@ -300,9 +305,23 @@ MyProject/
   &lt;p:with-option name="debug-dir-uri" select="'debug'"/>  &lt;!-- "debug" -->
   &lt;p:with-option name="status-dir-uri" select="'status'"/>&lt;!-- "status" -->  
 &lt;/tr:validate-with-schematron></code></programlisting>
-      </section>
-      
-      
+      </section>     
+    </chapter>
+    <chapter xml:base="../modules-hub2bits.html">
+      <title>hub2bits</title>
+      <subtitle>https://github.com/transpect/hub2bits</subtitle>
+      <para>This XProc step generates a <link xlink:href="http://jatspan.org/nlm/bits-1.0/">BITS</link> (Book Interchange Tag Suite) 
+        document from <link xlink:href="https://github.com/le-tex/Hub">Hub XML</link>.</para>
+      <bridgehead>Import URI</bridgehead>
+      <programlisting><code role="language-markup">&lt;p:import href="http://transpect.io/hub2bits/xpl/hub2bits.xpl"/></code></programlisting>
+      <bridgehead>Synopsis</bridgehead>
+      <programlisting><code role="language-markup">&lt;tr:hub2bits xmlns:tr="http://transpect.io">
+  &lt;p:input port="source"/>                                &lt;!-- Hub XML document -->
+  &lt;p:output port="result"/>                               &lt;!-- Schematron report -->
+  &lt;p:with-option name="debug" select="'yes'"/>            &lt;!-- "yes"|"no" -->
+  &lt;p:with-option name="debug-dir-uri" select="'debug'"/>  &lt;!-- "debug" -->
+  &lt;p:with-option name="status-dir-uri" select="'status'"/>&lt;!-- "status" -->
+&lt;/tr:hub2bits></code></programlisting>
     </chapter>
     <!-- idml2xml -->
     <chapter xml:base="../modules-idml2xml.html">
@@ -315,6 +334,7 @@ MyProject/
       <bridgehead>Synopsis</bridgehead>
       <programlisting><code role="language-markup">&lt;idml2xml:hub xmlns:idml2xml="http://transpect.io/idml2xml">
   &lt;p:output port="result"/>                                      &lt;!-- Hub XML document -->
+  &lt;p:output port="report"/>                                      &lt;!-- Schematron report -->
   &lt;p:output port="DocumentStoriesSorted"/>                       &lt;!-  wrapped IDML document stories -->
   &lt;p:with-option name="idmlfile" select="'myInDesignFile.idml'"/>&lt;!-- file path -->
   &lt;p:with-option name="debug" select="'yes'"/>                   &lt;!-- "yes"|"no" -->
