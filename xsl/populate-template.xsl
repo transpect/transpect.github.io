@@ -140,9 +140,7 @@
   <xsl:template match="dbk:section/dbk:title">
     <xsl:variable name="level" select="count(ancestor::dbk:section) + 1" as="xs:integer"/>
     <xsl:element name="{concat('h', $level)}">
-      <xsl:if test="$level eq 2">
-        <xsl:attribute name="class" select="'header'"/>
-      </xsl:if>
+      <xsl:attribute name="class" select="if($level eq 2) then 'header' else '', parent::dbk:section/@role"/>
       <xsl:apply-templates/>
     </xsl:element>
   </xsl:template>
@@ -230,6 +228,22 @@
     <xsl:element name="{local-name()}">
       <xsl:apply-templates select="@*|node()"/>
     </xsl:element>
+  </xsl:template>
+  
+  <!-- notes and annotations -->
+  
+  <xsl:template match="dbk:note|dbk:annotation">
+    <div class="card">
+      <div class="card-content">
+        <xsl:apply-templates select="@*|node()"/>
+      </div>
+    </div>
+  </xsl:template>
+  
+  <xsl:template match="dbk:note/dbk:title|dbk:annotation/dbk:title">
+    <span class="card-title">
+      <xsl:apply-templates select="@*|node()"/>
+    </span>
   </xsl:template>
   
   <!-- programm listings -->
