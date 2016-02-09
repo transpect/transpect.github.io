@@ -6,7 +6,7 @@
   xmlns:tr="http://transpect.io"
   xmlns="http://www.w3.org/1999/xhtml"
   version="2.0"
-  exclude-result-prefixes="xs xlink dbk"
+  exclude-result-prefixes="xs xlink dbk tr"
   xpath-default-namespace="http://www.w3.org/1999/xhtml">
   
   <xsl:import href="http://transpect.io/xslt-util/uri-to-relative-path/xsl/uri-to-relative-path.xsl"/>
