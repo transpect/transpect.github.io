@@ -451,10 +451,10 @@ myproject/
         <para>Let’s start creating a repository on github. We call it <link 
           xlink:href="https://github.com/transpect/docx2jats-demo">docx2jats-demo</link> and clone it to local:</para>
         <programlisting>git clone https://github.com/transpect/docx2jats-demo.git --recursive</programlisting>
-        <annotation>
+        <note>
           <para>You wouldn’t need <parameter>--recursive</parameter> on your first checkout, but for those who intend
         to clone the final project this is helpful already.</para>
-        </annotation>
+        </note>
       </section>
       <section>
         <title>Adding Submodules</title>
@@ -472,7 +472,7 @@ myproject/
           out by default. Therefore you should initialize them recursively:</para>
         <programlisting>git submodule update --init --recursive</programlisting>
         <para>(You can postpone this statement until you have specified all submodules.)</para>
-        <annotation>
+        <note>
           <para>If you are using svn externals, you’ll have to specify five externals:</para>
           <programlisting>https://github.com/transpect/calabash-frontend/trunk@38 calabash
 https://github.com/transpect/calabash-distro/trunk@9 calabash/distro
@@ -481,19 +481,19 @@ https://github.com/transpect/unzip-extension/trunk@2 calabash/extensions/transpe
 https://github.com/transpect/image-props-extension/trunk@4 calabash/extensions/transpect/image-props-extension</programlisting>
           <para>Note that it is recommended to attach svn externals with a fixed revision number, at least in production.
           git submodules are fixed to a certain commit by default.</para>
-        </annotation>
+        </note>
         <para>Let’s continue checking out some externals. We are probably going to validate the intermediate <link 
           xlink:href="https://github.com/le-tex/Hub">Hub XML</link> in our docx→Hub→JATS→EPUB pipeline. This RNG schema includes
         the <link xlink:href="https://github.com/le-tex/CSSa">CSSa</link> schema as a submodule.</para>
         <programlisting>git submodule add https://github.com/le-tex/Hub.git schema/hub
 git submodule update --init --recursive</programlisting>
-        <annotation>
+        <note>
           <para>In an svn project, you’d add two externals for this:</para>
           <programlisting>https://github.com/le-tex/Hub/trunk schema/Hub
 https://github.com/le-tex/CSSa/trunk schema/Hub/css</programlisting>
           <para>Since it is not relevant for production and since newer releases of the schemas should be backward compatible,
         it is relatively safe to omit the fixed revision here.</para>
-        </annotation>
+        </note>
         <programlisting>git submodule add https://github.com/transpect/schema-jats schema/jats
 git submodule add https://github.com/transpect/schema-html schema/html
 git submodule add https://github.com/transpect/docx2hub
@@ -683,14 +683,38 @@ svn co https://subversion.le-tex.de/common/transpect-demo/content/ulsp/ ../conte
           it’s the entirety of customizations, be it XSLT, CSS, fonts, dynamically loaded Proc pipelines, Schematron rules, …
         In a narrow sense, it is the single configuration file (the <emphasis>transpect configuration file</emphasis>) that 
           declares which clades are available and by which name/value pairs they are selected.</para>
-        <para>The ultimate goal of this clade selection is to compute file system paths in descending specificity where 
-        to look for the broad-sense configuration files. The file system paths will be contained in a <literal>c:param-set</literal>
-          document that is the result of invoking <link 
-            xlink:href="https://github.com/transpect/cascade/blob/master/xpl/paths.xpl"><literal>paths.xpl</literal></link> with 
-          a <literal>file</literal> option and optionally a <literal>clades</literal> option, where the name/value pairs in 
-          <literal>clades</literal> will have precedence. Technically the name/value pairs are modeled as attributes (not bound to any 
-          element). In the transpect  </para>
-        
+        <para>The current project’s transpect configuration file contains three clades: one for the publisher,
+            <literal>ulsp</literal>, and two for the journals <literal>CSMI</literal> and <literal>Test</literal>.</para>
+        <para>The ultimate goal of clade selection is to compute file system paths in descending specificity where to look for
+          the broad-sense configuration files. The file system paths will be contained in a <literal>c:param-set</literal>
+          document that is the result of invoking <link
+            xlink:href="https://github.com/transpect/cascade/blob/master/xpl/paths.xpl"><literal>paths.xpl</literal></link> with
+          a <literal>file</literal> option and optionally a <literal>clades</literal> option, where the name/value pairs in
+            <literal>clades</literal> will have precedence. Technically the name/value pairs are modeled as attributes (not
+          bound to any element).</para>
+        <para>Matching a clade according to the parsed or supplied name/value pairs is one thing. If you don’t supply the 
+          <literal>clades</literal> option, it is necessary nonetheless to parse the input file name in order to get the 
+          name/value pairs in first place. Parsing the file name typically involves <literal>xsl:analyze-string</literal>
+        and creating attributes from the results. There is a <link 
+          xlink:href="https://github.com/transpect/cascade/blob/master/xsl/paths.xsl">default parser</link> that will be 
+          imported by a project-specific parser that <link 
+            xlink:href="https://github.com/transpect/docx2jats-demo/blob/master/a9s/common/xsl/paths.xsl#L7">overrides its 
+            <literal>tr:parse-file-name()</literal></link> 
+          function. Supplying this overriding parser is an essential customizing task. The location of this
+        custom <literal>paths.xsl</literal> is given in the <link 
+          xlink:href="https://github.com/transpect/docx2jats-demo/blob/master/conf/transpect-conf.xml#L6"><literal>/tr:conf/@paths-xsl-uri</literal></link>
+        of the transpect configuration file.</para>
+        <para>It is instructive to have a look at the <link xlink:href="https://github.com/transpect/docx2jats-demo/commit/e5e4e45eb4dad4a1acc48baf1f338c16e1ed17f4">changes 
+          of commit e5e4e45</link> and also at the <link xlink:href="https://gist.github.com/gimsieke/3f866dc10d613665c83f">resulting 
+            paths document</link>.</para>
+        <para>Please have a look at the <literal>c:param</literal>s that start with “s9y…” (for “specificity”).
+            <literal>s9y1-path</literal> is the path to the most specific confiuration location. There are 9 levels of
+          spcificity available at the moment, that means 7 levels of nested clades, plus the path for the common configuration,
+          plus the content location for per-work specific overrides.</para>
+        <para>If no clade matches, there will only be two search paths in the paths document: the directory where the input 
+          file resides in and the common path.</para>
+        <para>Other name value pairs may be given in the config file. Their scope is global if they are immediately below 
+          <literal>/conf</literal>, or otherwise their corresponding clade</para>
         
       </section>
     </chapter>
