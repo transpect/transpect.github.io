@@ -23,7 +23,7 @@
       <ul id="tr-nav" class="side-nav fixed" style="width:240px">
         <li class="logo"><a id="logo-container" href="#" class="brand-logo"><object id="front-page-logo" type="image/svg+xml" data="icons/logo-transpect.svg">Your browser does not support SVG</object></a></li>
         
-      <li xmlns:tr="http://transpect.io" class="naventry-1st"><a href="index.html">About</a></li><li xmlns:tr="http://transpect.io" class="naventry-1st"><a href="getting-started.html">Getting Started</a></li><li xmlns:tr="http://transpect.io" class="no-padding"><ul class="collapsible collapsible-accordion"><li class="naventry-1st"><a class="collapsible-header">Modules</a><div class="collapsible-body"><ul><li class="naventry-2nd"><a href="modules-docx2hub.html">docx2hub</a></li><li class="naventry-2nd"><a href="modules-idml2xml.html">idml2xml</a></li><li class="naventry-2nd"><a href="modules-epubtools.html">epubtools</a></li></ul></div></li></ul></li><li xmlns:tr="http://transpect.io" class="naventry-1st"><a href="styleguide.html">Styleguide</a></li><li xmlns:tr="http://transpect.io" class="naventry-1st"><a href="tutorial.html">Tutorials</a></li></ul>
+      <li xmlns:tr="http://transpect.io" class="naventry-1st"><a href="index.html">About</a></li><li xmlns:tr="http://transpect.io" class="naventry-1st"><a href="getting-started.html">Getting Started</a></li><li xmlns:tr="http://transpect.io" class="no-padding"><ul class="collapsible collapsible-accordion"><li class="naventry-1st"><a class="collapsible-header">Modules</a><div class="collapsible-body"><ul><li class="naventry-2nd"><a href="modules-docx2hub.html">docx2hub</a></li><li class="naventry-2nd"><a href="modules-bits2hub.html">bits2hub</a></li><li class="naventry-2nd"><a href="modules-epubtools.html">epubtools</a></li><li class="naventry-2nd"><a href="modules-idml2xml.html">idml2xml</a></li></ul></div></li></ul></li><li xmlns:tr="http://transpect.io" class="naventry-1st"><a href="styleguide.html">Styleguide</a></li><li xmlns:tr="http://transpect.io" class="naventry-1st"><a href="tutorial.html">Tutorials</a></li></ul>
     </header>
     
     <main>
@@ -38,6 +38,7 @@
           
           <div class="col s12 m9 l10" id="tr-content"><p xmlns:tr="http://transpect.io">This module converts Microsoft Word files in Office Open XML format (OOXML) (DOCX) to <a href="https://github.com/le-tex/Hub" target="_blank">Hub XML</a>. Styles including overrides 
           are extracted as <a href="https://github.com/le-tex/CSSa" target="_blank">CSSa</a>. Equations are converted from Office Open Math Markup Language (OOMML) to (Presentational) MathML 3. </p><h4 xmlns:tr="http://transpect.io">Import URI</h4><pre xmlns:tr="http://transpect.io"><code class="language-markup">&lt;p:import href="http://transpect.io/docx2hub/xpl/docx2hub.xpl"/&gt;</code></pre><h4 xmlns:tr="http://transpect.io">Synopsis</h4><pre xmlns:tr="http://transpect.io"><code class="language-markup">&lt;docx2hub:convert xmlns:docx2hub="http://transpect.io/docx2hub"&gt;
+  &lt;p:output port="result"/&gt;                               &lt;!-- Hub XML document --&gt;
   &lt;p:with-option name="docx" select="'myWord.docx'"/&gt;     &lt;!-- file path --&gt;
   &lt;p:with-option name="debug" select="'yes'"/&gt;            &lt;!-- "yes"|"no" --&gt;
   &lt;p:with-option name="debug-dir-uri" select="'debug'"/&gt;  &lt;!-- "debug" --&gt;
