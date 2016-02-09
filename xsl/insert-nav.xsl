@@ -2,11 +2,14 @@
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
   xmlns:xs="http://www.w3.org/2001/XMLSchema"
   xmlns:dbk="http://docbook.org/ns/docbook"
+  xmlns:tr="http://transpect.io"
   xmlns="http://www.w3.org/1999/xhtml"
   version="2.0"
   exclude-result-prefixes="xs dbk"
   xpath-default-namespace="http://www.w3.org/1999/xhtml">
-  
+
+  <xsl:import href="http://transpect.io/xslt-util/uri-to-relative-path/xsl/uri-to-relative-path.xsl"/>
+
   <xsl:variable name="book" select="collection()[2]/dbk:book" as="element(dbk:book)"/>
   
   <xsl:template match="/html/body//*[@id eq 'tr-nav']">
@@ -28,7 +31,7 @@
                       <xsl:for-each select="dbk:chapter">
                         <xsl:message select="concat('build nav entry: ', @xml:base)"/>
                         <li class="naventry-2nd">
-                          <a href="{@xml:base}">
+                          <a href="{replace(@xml:base, '^\.\./', '')}">
                             <xsl:apply-templates select="dbk:title/node()"/>
                           </a>
                         </li>
@@ -43,7 +46,7 @@
           <xsl:when test="count(dbk:chapter) eq 1">
             <xsl:message select="concat('build nav entry: ', dbk:chapter/@xml:base)"/>
             <li class="naventry-1st">
-              <a href="{dbk:chapter/@xml:base}">
+              <a href="{replace(dbk:chapter/@xml:base, '^\.\./', '')}">
                 <xsl:apply-templates select="dbk:title/node()"/>
               </a>
             </li>
