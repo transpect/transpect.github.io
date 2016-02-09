@@ -106,10 +106,22 @@
   <!--  * 
         * transform DocBook to XHTML5
         * -->
+  
+  <!-- attributes -->
 
   <xsl:template match="@role">
     <xsl:attribute name="class" select="."/>
   </xsl:template>
+
+  <xsl:template match="@xml:id">
+    <xsl:attribute name="id" select="."/>
+  </xsl:template>
+  
+  <xsl:template match="@xlink:href">
+    <xsl:attribute name="href" select="."/>
+  </xsl:template>
+
+  <!-- sections -->
 
   <xsl:template match="dbk:section[not(parent::dbk:section)]">
     <div id="{generate-id()}" class="section col s12 scrollspy">
@@ -254,10 +266,38 @@
     </pre>
   </xsl:template>
   
-  <xsl:template match="dbk:code|dbk:command|dbk:computeroutput">
+  <xsl:template match="dbk:code|dbk:code|dbk:command|dbk:computeroutput">
     <code class="{local-name()}">
       <xsl:apply-templates select="@*|node()"/>
     </code>
+  </xsl:template>
+  
+  <!-- character styles -->
+  
+  <xsl:template match="dbk:emphasis">
+    <span>
+      <xsl:apply-templates select="@*|node()"/>
+    </span>
+  </xsl:template>
+  
+  <xsl:template match="dbk:emphasis[@role = ('italic', 'emphasis', 'em', 'i')]">
+    <em>
+      <xsl:apply-templates select="@*|node()"/>
+    </em>
+  </xsl:template>
+  
+  <xsl:template match="dbk:emphasis[@role = ('bold', 'strong', 'b')]">
+    <strong>
+      <xsl:apply-templates select="@*|node()"/>
+    </strong>
+  </xsl:template>
+  
+  <xsl:template match="dbk:emphasis[@role = ('bold-italic')]">
+    <strong>
+      <em>
+        <xsl:apply-templates select="@*|node()"/>  
+      </em>
+    </strong>
   </xsl:template>
 
   <!--  * 
