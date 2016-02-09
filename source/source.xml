@@ -543,7 +543,7 @@ git push</programlisting>
           <mediaobject>
             <alt>oXygen XML catalog configuration</alt>
             <imageobject>
-              <imagedata fileref="media/docx2jats-demo/catalog-xpr.png"/>
+              <imagedata fileref="source/media/docx2jats-demo/catalog-xpr.png"/>
             </imageobject>
           </mediaobject>
         </informalfigure>
