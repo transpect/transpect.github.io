@@ -275,9 +275,9 @@
   <!-- character styles -->
   
   <xsl:template match="dbk:emphasis">
-    <span>
+    <em>
       <xsl:apply-templates select="@*|node()"/>
-    </span>
+    </em>
   </xsl:template>
   
   <xsl:template match="dbk:emphasis[@role = ('italic', 'emphasis', 'em', 'i')]">
