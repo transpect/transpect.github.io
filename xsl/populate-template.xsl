@@ -3,10 +3,13 @@
   xmlns:xs="http://www.w3.org/2001/XMLSchema"
   xmlns:dbk="http://docbook.org/ns/docbook"
   xmlns:xlink="http://www.w3.org/1999/xlink"
+  xmlns:tr="http://transpect.io"
   xmlns="http://www.w3.org/1999/xhtml"
   version="2.0"
   exclude-result-prefixes="xs xlink dbk"
   xpath-default-namespace="http://www.w3.org/1999/xhtml">
+  
+  <xsl:import href="http://transpect.io/xslt-util/uri-to-relative-path/xsl/uri-to-relative-path.xsl"/>
   
   <xsl:variable name="chapter" select="collection()[2]/*" as="element(dbk:chapter)"/>
   
@@ -103,7 +106,6 @@
   <!--  * 
         * transform DocBook to XHTML5
         * -->
-
 
   <xsl:template match="@role">
     <xsl:attribute name="class" select="."/>
@@ -205,6 +207,15 @@
     <dd>
       <xsl:apply-templates select="@*|node()"/>
     </dd>
+  </xsl:template>
+  
+  <!-- images -->
+  
+  <xsl:template match="dbk:informalfigure">
+    <xsl:variable name="fileuri" select="tr:uri-to-relative-path(collection()[2]/base-uri(), dbk:mediaobject/dbk:imageobject/dbk:imagedata/@fileref)" as="xs:string"/>
+    <figure class="{local-name()}">
+      <img src="{$fileuri}" alt="{dbk:mediaobject/dbk:alt}"/>
+    </figure>
   </xsl:template>
   
   <!-- tables -->
