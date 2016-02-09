@@ -36,18 +36,18 @@
       <div class="container">
         <div class="row">
           
-          <div class="col s12 m9 l10" id="tr-content"><p xmlns:tr="http://transpect.io">This libary converts EPUB 2 or EPUB 3 from XHTML files. The XHTML must contain a proper <code class="code">@xml:base</code> attribute from where its 
+          <div class="col s12 m9 l10" id="tr-content"><p>This libary converts EPUB 2 or EPUB 3 from XHTML files. The XHTML must contain a proper <code class="code">@xml:base</code> attribute from where its 
         file references (images, videos, audio files, stylesheets and scripts) are resolved. HTTP file references are fetched from there 
         respective locations and included in the EPUB package. Additionally, <em>epubtools</em> provides a Schematron report with 
         reports on images, metadata, file references and other parameters.
-      </p><h4 xmlns:tr="http://transpect.io">Import URI</h4><pre xmlns:tr="http://transpect.io"><code class="language-markup">&lt;p:import href="http://transpect.io/epubtools/xpl/epub-convert.xpl"/&gt;</code></pre><h4 xmlns:tr="http://transpect.io">Synopsis</h4><pre xmlns:tr="http://transpect.io"><code class="language-markup">&lt;epub:convert xmlns:epub="http://transpect.io/epubtools"&gt;
+      </p><h4>Import URI</h4><pre><code class="language-markup">&lt;p:import href="http://transpect.io/epubtools/xpl/epub-convert.xpl"/&gt;</code></pre><h4>Synopsis</h4><pre><code class="language-markup">&lt;epub:convert xmlns:epub="http://transpect.io/epubtools"&gt;
   &lt;p:input port="source"/&gt;                                &lt;!-- an XHTML document --&gt;
   &lt;p:input port="meta"/&gt;                                  &lt;!-- EPUB config XML, see <a href="https://github.com/transpect/epubtools/blob/master/sample/epub-config.xml" target="_blank">example</a> --&gt;
   &lt;p:with-option name="target" select="'EPUB2'"/&gt;         &lt;!-- EPUB2 | EPUB3 | KF8 // DEFAULT: EPUB2 --&gt;  
   &lt;p:with-option name="debug" select="'yes'"/&gt;            &lt;!-- "yes"|"no" --&gt;
   &lt;p:with-option name="debug-dir-uri" select="'debug'"/&gt;  &lt;!-- "debug" --&gt;
   &lt;p:with-option name="status-dir-uri" select="'status'"/&gt;&lt;!-- "status" --&gt;
-&lt;/epub:convert&gt;</code></pre><p xmlns:tr="http://transpect.io"><a href="https://github.com/transpect/epubtools" target="_blank" class="btn red">Source ⬇</a></p></div>
+&lt;/epub:convert&gt;</code></pre><p><a href="https://github.com/transpect/epubtools" target="_blank" class="btn red">Source ⬇</a></p></div>
           
           <div class="col hide-on-small-only m3 l2">
             <div class="toc-wrapper pin-top" style="top: 0px;">

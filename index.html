@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><html xmlns="http://www.w3.org/1999/xhtml" xml:base="index.html">
+<?xml version="1.0" encoding="UTF-8"?><html xmlns="http://www.w3.org/1999/xhtml" xml:base="../index.html">
   <head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <title>transpect</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -23,7 +23,7 @@
       <ul id="tr-nav" class="side-nav fixed" style="width:240px">
         <li class="logo"><a id="logo-container" href="#" class="brand-logo"><object id="front-page-logo" type="image/svg+xml" data="icons/logo-transpect.svg">Your browser does not support SVG</object></a></li>
         
-      <li class="active naventry-1st"><a href="index.html">About</a></li><li class="naventry-1st"><a href="getting-started.html">Getting Started</a></li><li class="no-padding"><ul class="collapsible collapsible-accordion"><li class="naventry-1st"><a class="collapsible-header">Modules</a><div class="collapsible-body"><ul><li class="naventry-2nd"><a href="docx2hub.html">docx2hub</a></li><li class="naventry-2nd"><a href="idml2hub.html">idml2hub</a></li><li class="naventry-2nd"><a href="epubtools.html">epubtools</a></li></ul></div></li></ul></li><li class="naventry-1st"><a href="styleguide.html">Styleguide</a></li></ul>
+      <li xmlns:tr="http://transpect.io" class="naventry-1st"><a href="index.html">About</a></li><li xmlns:tr="http://transpect.io" class="naventry-1st"><a href="getting-started.html">Getting Started</a></li><li xmlns:tr="http://transpect.io" class="no-padding"><ul class="collapsible collapsible-accordion"><li class="naventry-1st"><a class="collapsible-header">Modules</a><div class="collapsible-body"><ul><li class="naventry-2nd"><a href="modules-docx2hub.html">docx2hub</a></li><li class="naventry-2nd"><a href="modules-bits2hub.html">bits2hub</a></li><li class="naventry-2nd"><a href="modules-epubtools.html">epubtools</a></li><li class="naventry-2nd"><a href="modules-idml2xml.html">idml2xml</a></li></ul></div></li></ul></li><li xmlns:tr="http://transpect.io" class="naventry-1st"><a href="styleguide.html">Styleguide</a></li><li xmlns:tr="http://transpect.io" class="naventry-1st"><a href="tutorial.html">Tutorials</a></li></ul>
     </header>
     
     <main>
@@ -39,7 +39,7 @@
           <div class="col s12 m9 l10" id="tr-content"><p class="col">Transpect was designed to provide generic and stable modules for common conversion and checking
         tasks. To adress complex and diverse data, transpect offers a cascading configuration to override specific
         transformation and checking rules. Each component within the framework is Open Source and use standard
-        technologies such as XSLT 2.0 and XProc.</p><div id="d22e12" class="section col s12 scrollspy">
+        technologies such as XSLT 2.0 and XProc.</p><div id="d27e12" class="section col s12 scrollspy">
         <h2 class="header">Data Conversion</h2>
         <p>Transpect offers many modules to parse and convert a wide range of XML-based formats such as DOCX, IDML,
           EPUB, NLM JATS/BITS and TEI. Additionally, there exist tools for converting text-based formats such as CSS and
@@ -109,24 +109,24 @@
           for documents that lack a proper section hierarchy and uses CSSa for expressing layout information. It is used
           as a common intermediate format to represent raw conversion results of, for example, OOXML, ODT, and IDML
           documents.</p>
-      </div><div id="d22e166" class="section col s12 scrollspy">
+      </div><div id="d27e166" class="section col s12 scrollspy">
         <h2 class="header">Checking Data</h2>
         <p>Transpect implements Schematron and Schema validation. Furthermore, many modules integrate error detection
           and recovery methods. Reports are stored as Schematron SVRL document. The report messages can be displayed in
           an HTML view of the document at the error location. </p>
-      </div><div id="d22e176" class="section col s12 scrollspy">
+      </div><div id="d27e176" class="section col s12 scrollspy">
         <h2 class="header">Configuration Cascade</h2>
         <p>Default transformation and checking rules (XSLT, Schematron, CSS, …) may be superseded with specific
           rules. These rules specified according to the group of content that the input belongs to, for example per
           company, per production-line, or per product.</p>
-      </div><div id="d22e185" class="section col s12 scrollspy">
+      </div><div id="d27e185" class="section col s12 scrollspy">
         <h2 class="header">Open Source</h2>
         <p>Transpect is published under the BSD 2-clause license, also known as FreeBSD License. This permissive
           license imposes minimal restrictions on the redistribution of the software. Therefore you can use the software
           in commercial and even in closed source projects.</p>
-        <p> The license terms can be found here: <a xmlns:xlink="http://www.w3.org/1999/xlink" href="http://opensource.org/licenses/BSD-2-Clause" target="_blank" xlink:href="http://opensource.org/licenses/BSD-2-Clause">http://opensource.org/licenses/BSD-2-Clause</a>
+        <p> The license terms can be found here: <a href="http://opensource.org/licenses/BSD-2-Clause" target="_blank">http://opensource.org/licenses/BSD-2-Clause</a>
         </p>
-      </div><div id="d22e200" class="section col s12 scrollspy">
+      </div><div id="d27e200" class="section col s12 scrollspy">
         <h2 class="header">Industry Standards</h2>
         <p>The technologies behind transpect are industry standards like XProc, XSLT 2.0 and Schematron. Their
           specifications are publicly available through international standards organizations such as W3C and
@@ -152,7 +152,7 @@
             </tr>
           </tbody>
         </table>
-      </div><div id="d22e251" class="section col s12 scrollspy">
+      </div><div id="d27e251" class="section col s12 scrollspy">
         <h2 class="header">le-tex</h2>
         <p>Transpect is developed and maintained by le-tex, a Leipzig-based company which provides professional
           services for publishers.</p>
@@ -161,7 +161,7 @@
           <div class="col hide-on-small-only m3 l2">
             <div class="toc-wrapper pin-top" style="top: 0px;">
               <div style="height: 1px;">
-                <ul id="tr-toc" class="table-of-contents"><li><a href="#d22e12" class="active">Data Conversion</a></li><li><a href="#d22e166">Checking Data</a></li><li><a href="#d22e176">Configuration Cascade</a></li><li><a href="#d22e185">Open Source</a></li><li><a href="#d22e200">Industry Standards</a></li><li><a href="#d22e251">le-tex</a></li></ul>
+                <ul id="tr-toc" class="table-of-contents"><li><a href="#d27e12" class="active">Data Conversion</a></li><li><a href="#d27e166">Checking Data</a></li><li><a href="#d27e176">Configuration Cascade</a></li><li><a href="#d27e185">Open Source</a></li><li><a href="#d27e200">Industry Standards</a></li><li><a href="#d27e251">le-tex</a></li></ul>
               </div>
             </div>
           </div>
