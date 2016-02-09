@@ -3,4 +3,4 @@
 	url = https://github.com/transpect/xslt-util
 [submodule "calabash"]
 	path = calabash
-	url = git@github.com:transpect/calabash-frontend.git
+	url = https://github.com/transpect/calabash-frontend.git
