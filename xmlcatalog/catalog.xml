@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog">
+  
+  <!-- this repository -->
+  
+  <rewriteURI uriStartString="http://transpect.github.io/" rewritePrefix="../"/>
+  
+  <!-- xproc/xslt modules -->
+  
+  <nextCatalog catalog="../xslt-util/xmlcatalog/catalog.xml"/>
+  
+</catalog>
