@@ -186,6 +186,83 @@ MyProject/
   </part>
   <part xml:id="part-modules">
     <title>Modules</title>
+    <!-- bits2hub -->
+    <chapter xml:base="../modules-bits2hub.html" xml:id="bits2hub">
+      <title>bits2hub</title>
+      <subtitle>https://github.com/transpect/bits2hub</subtitle>
+      <para>This XProc step converts <link xlink:href="http://jatspan.org/nlm/bits-1.0/">BITS</link> (Book Interchange Tag Suite) to <link xlink:href="https://github.com/le-tex/Hub">Hub XML</link>.</para>
+      <bridgehead>Import URI</bridgehead>
+      <programlisting><code role="language-markup">&lt;p:import href="http://transpect.io/bits2hub/xpl/bits2hub.xpl"/></code></programlisting>
+      <bridgehead>Synopsis</bridgehead>
+      <programlisting><code role="language-markup">&lt;tr:bits2hub xmlns:tr="http://transpect.io">
+  &lt;p:input port="source"/>                                &lt;!-- a BITS XML document -->
+  &lt;p:input port="paths" kind="parameter"/>                &lt;!-- parameter input -->
+  &lt;p:output port="result"/>                               &lt;!-- Hub XML document -->
+  &lt;p:with-option name="debug" select="'yes'"/>            &lt;!-- "yes"|"no" -->
+  &lt;p:with-option name="debug-dir-uri" select="'debug'"/>  &lt;!-- "debug" -->
+  &lt;p:with-option name="status-dir-uri" select="'status'"/>&lt;!-- "status" -->
+&lt;/tr:bits2hub></code></programlisting>
+      <para><link role="btn red" xlink:href="https://github.com/transpect/bits2hub">Source ⬇</link></para>
+    </chapter>
+    <!-- cascade -->
+    <chapter xml:base="../modules-cascade.html" xml:id="modules-cascade">
+      <title>cascade</title>
+      <subtitle>https://github.com/transpect/cascade</subtitle>
+      <para>This module is a library of various XSLT stylesheets and XProc steps to generate a cascade paths document 
+        and to load files dynamically by the provided paths document.</para>
+      <para><link role="btn red" xlink:href="https://github.com/transpect/cascade">Source ⬇</link></para>
+      <section xml:id="modules-cascade-tr-paths">
+        <title>tr:paths</title>
+        <para>This step takes a <link xlink:href="https://github.com/transpect/cascade/blob/master/schema/cascade.rng">cascade configuration</link> 
+          and a XSLT stylesheet as input. The cascade configuration specifies the possible configuration levels (e.g. global, imprint, series, work). 
+          The XSLT stylesheet is used to override certain functions in paths.xsl, which provides the paths parameter document. The paths document provides 
+          an ordered collection of file paths.</para>
+        <bridgehead>Import URI</bridgehead>
+        <programlisting><code role="language-markup">&lt;p:import href="http://transpect.io/cascade/xpl/paths.xpl"/></code></programlisting>
+        <bridgehead>Synopsis</bridgehead>
+        <programlisting><code role="language-markup">&lt;tr:paths xmlns:tr="http://transpect.io">
+  &lt;p:input port="conf"/>                                  &lt;!-- Cascade configuration according to this <link xlink:href="https://github.com/transpect/cascade/blob/master/schema/cascade.rng">schema</link> -->
+  &lt;p:input port="stylesheet"/>                            &lt;!-- XSLT to override default paths.xsl -->
+  &lt;p:output port="result"/>                               &lt;!-- The paths parameter document -->
+  &lt;p:with-option name="debug" select="'yes'"/>            &lt;!-- "yes"|"no" -->
+  &lt;p:with-option name="debug-dir-uri" select="'debug'"/>  &lt;!-- "debug" -->
+  &lt;p:with-option name="status-dir-uri" select="'status'"/>&lt;!-- "status" -->
+&lt;/tr:paths></code></programlisting>
+      </section>
+      <section xml:id="modules-cascade-tr-load-cascaded">
+        <title>tr:load-cascaded</title>
+        <para>The XProc pipleline loads the most specific file based on a cascade paths document. A fallback can be provided, 
+          if there exist no file under the current cascade path.</para>
+        <bridgehead>Import URI</bridgehead>
+        <programlisting><code role="language-markup">&lt;p:import href="http://transpect.io/cascade/xpl/load-cascaded.xpl"/></code></programlisting>
+        <bridgehead>Synopsis</bridgehead>
+        <programlisting><code role="language-markup">&lt;tr:load-cascaded xmlns:tr="http://transpect.io">
+  &lt;p:input port="paths"/>                                 &lt;!-- The paths parameter document  -->
+  &lt;p:output port="result"/>                               &lt;!-- Provides the loaded file -->
+  &lt;p:with-option name="filename" select="'yes'"/>         &lt;!-- file to be loaded -->
+  &lt;p:with-option name="fallback" select="'yes'"/>         &lt;!-- provide a fallback path -->
+  &lt;p:with-option name="debug" select="'yes'"/>            &lt;!-- "yes"|"no" -->
+  &lt;p:with-option name="debug-dir-uri" select="'debug'"/>  &lt;!-- "debug" -->
+  &lt;p:with-option name="status-dir-uri" select="'status'"/>&lt;!-- "status" -->
+&lt;/tr:load-cascaded></code></programlisting>
+      </section>
+      <section xml:id="modules-cascade-tr-get-clades-from-dirs">
+        <title>tr:get-clades-from-dirs</title>
+        <para>Generates a cascade configuration from a recursive directory listing and a collection of parameter sets. This configuration 
+          can be used by tr:paths <xref linkend="modules-cascade-tr-paths"/> as input.</para>
+        <bridgehead>Import URI</bridgehead>
+        <programlisting><code role="language-markup">&lt;p:import href="http://transpect.io/cascade/xpl/get-clades-from-dirs.xpl"/></code></programlisting>
+        <bridgehead>Synopsis</bridgehead>
+        <programlisting><code role="language-markup">&lt;tr:get-clades-from-dirs xmlns:tr="http://transpect.io">
+  &lt;p:input port="params"/>                                &lt;!-- The initial params document. It's base URI is used to iterate over the subdirectories and to generate the cascade configuration. -->
+  &lt;p:output port="directory-param-sets"/>                 &lt;!-- Provides the cascade configuration, later to be used by tr:paths -->
+  &lt;p:with-option name="debug" select="'yes'"/>            &lt;!-- "yes"|"no" -->
+  &lt;p:with-option name="debug-dir-uri" select="'debug'"/>  &lt;!-- "debug" -->
+  &lt;p:with-option name="status-dir-uri" select="'status'"/>&lt;!-- "status" -->
+&lt;/tr:get-clades-from-dirs></code></programlisting>
+      </section>
+    </chapter>
+    <!-- docx2hub -->
     <chapter xml:base="../modules-docx2hub.html">
       <title>docx2hub</title>
       <subtitle>https://github.com/transpect/docx2hub</subtitle>
@@ -203,24 +280,6 @@ MyProject/
   &lt;p:with-option name="status-dir-uri" select="'status'"/>&lt;!-- "status" -->
 &lt;/docx2hub:convert></code></programlisting>
       <para><link role="btn red" xlink:href="https://github.com/transpect/docx2hub">Source ⬇</link></para>
-    </chapter>
-    <!-- bits2hub -->
-    <chapter xml:base="../modules-bits2hub.html">
-      <title>bits2hub</title>
-      <subtitle>https://github.com/transpect/bits2hub</subtitle>
-      <para>This XProc step converts <link xlink:href="http://jatspan.org/nlm/bits-1.0/">BITS</link> (Book Interchange Tag Suite) to <link xlink:href="https://github.com/le-tex/Hub">Hub XML</link>.</para>
-      <bridgehead>Import URI</bridgehead>
-      <programlisting><code role="language-markup">&lt;p:import href="http://transpect.io/bits2hub/xpl/bits2hub.xpl"/></code></programlisting>
-      <bridgehead>Synopsis</bridgehead>
-      <programlisting><code role="language-markup">&lt;tr:bits2hub xmlns:tr="http://transpect.io">
-  &lt;p:input port="source"/>                                &lt;!-- a BITS XML document -->
-  &lt;p:input port="paths" kind="parameter"/>                &lt;!-- parameter input -->
-  &lt;p:output port="result"/>                               &lt;!-- Hub XML document -->
-  &lt;p:with-option name="debug" select="'yes'"/>            &lt;!-- "yes"|"no" -->
-  &lt;p:with-option name="debug-dir-uri" select="'debug'"/>  &lt;!-- "debug" -->
-  &lt;p:with-option name="status-dir-uri" select="'status'"/>&lt;!-- "status" -->
-&lt;/tr:bits2hub></code></programlisting>
-      <para><link role="btn red" xlink:href="https://github.com/transpect/bits2hub">Source ⬇</link></para>
     </chapter>
     <!-- epubtools -->
     <chapter xml:base="../modules-epubtools.html">
@@ -250,7 +309,7 @@ MyProject/
       <title>htmlreports</title>
       <subtitle>https://github.com/transpect/htmlreports</subtitle>
       <para>Various XProc steps for validating XML with RelaxNG and Schematron and rendering the report messages into an HTML file.</para>
-      <para><link role="btn red" xlink:href="https://github.com/transpect/epubtools">Source ⬇</link></para>
+      <para><link role="btn red" xlink:href="https://github.com/transpect/htmlreports">Source ⬇</link></para>
       <section>
         <title>tr:patch-svrl</title>
         <para>This step patches error report(s) into an HTML document 
@@ -546,24 +605,24 @@ myproject/
       <section>
         <title>Creating a Repository</title>
         <para>A transpect project consists of a specification which modules to use (and in which revision), project-specific
-          adaptations, and the modules. The project itself resides in a version control repository (we are using git and svn,
+          adaptations, and the modules. The project itself resides in a version control repository (we are using Git and Subversion (SVN),
           others will probably work, too). There are at least three ways of setting up a transpect project:</para>
         <itemizedlist>
           <listitem>
-            <para>git project with git submodules</para>
+            <para>Git project with Git submodules</para>
           </listitem>
           <listitem>
-            <para>svn project with svn externals (github provides sufficient svn support to make this feasible, even if
-              the modules reside in git repositories)</para>
-            </listitem>
+            <para>SVN project with SVN externals (GitHub provides sufficient SVN support to make this feasible, even if
+              the modules reside in Git repositories)</para>
+          </listitem>
           <listitem>
-            <para>git, svn (or probably also Mercurial) project with the modules as git or svn externals, using 
+            <para>Git, SVN (or probably also Mercurial) project with the modules as Git or SVN externals, using 
               <link xlink:href="http://nopugs.com/ext-tutorial">ext</link></para>
           </listitem>
         </itemizedlist>
         <para>We will focus on the first approach, although git submodules are quite a beast. For people who don’t use
-        svn on a regular basis it’s the best choice though.</para>
-        <para>Let’s start creating a repository on github. We call it <link 
+        SVN on a regular basis it’s the best choice though.</para>
+        <para>Let’s start creating a repository on GitHub. We call it <link 
           xlink:href="https://github.com/transpect/docx2jats-demo">docx2jats-demo</link> and clone its <link 
             xlink:href="https://github.com/transpect/docx2jats-demo/tree/99ce82f2a007e8c948a9663d8325c73bcc05664a">initial
           commit 99ce82f</link> to local:</para>
@@ -590,14 +649,15 @@ myproject/
         <programlisting>git submodule update --init --recursive</programlisting>
         <para>(You can postpone this statement until you have specified all submodules.)</para>
         <note>
-          <para>If you are using svn externals, you’ll have to specify five externals:</para>
+          <title>Optional: Using Subversion</title>
+          <para>If you are using SVN externals, you’ll have to specify five externals:</para>
           <programlisting>https://github.com/transpect/calabash-frontend/trunk@38 calabash
 https://github.com/transpect/calabash-distro/trunk@9 calabash/distro
 https://github.com/transpect/rng-extension/trunk@10 calabash/extensions/transpect/rng-extension
 https://github.com/transpect/unzip-extension/trunk@2 calabash/extensions/transpect/unzip-extension
 https://github.com/transpect/image-props-extension/trunk@4 calabash/extensions/transpect/image-props-extension</programlisting>
-          <para>Note that it is recommended to attach svn externals with a fixed revision number, at least in production.
-          git submodules are fixed to a certain commit by default.</para>
+          <para>Note that it is recommended to attach SVN externals with a fixed revision number, at least in production.
+          Git submodules are fixed to a certain commit by default.</para>
         </note>
         <para>Let’s continue checking out some externals. We are probably going to validate the intermediate <link 
           xlink:href="https://github.com/le-tex/Hub">Hub XML</link> in our docx→Hub→JATS→EPUB pipeline. This RNG schema includes
@@ -605,7 +665,8 @@ https://github.com/transpect/image-props-extension/trunk@4 calabash/extensions/t
         <programlisting>git submodule add https://github.com/le-tex/Hub.git schema/hub
 git submodule update --init --recursive</programlisting>
         <note>
-          <para>In an svn project, you’d add two externals for this:</para>
+          <title>Optional: Using Subversion</title>
+          <para>In an SVN project, you’d add two externals for this:</para>
           <programlisting>https://github.com/le-tex/Hub/trunk schema/Hub
 https://github.com/le-tex/CSSa/trunk schema/Hub/css</programlisting>
           <para>Since it is not relevant for production and since newer releases of the schemas should be backward compatible,
@@ -685,9 +746,9 @@ git push</programlisting>
         <para>Our friends at <link xlink:href="http://www.ulsp.eu/">University of Leipzig Sports Medicine</link> produce and
           publish an open access journal from Word files. Their desire to upload the articles to <link 
             xlink:href="http://www.ncbi.nlm.nih.gov/pmc/">PMC</link> made them ask us to provide a converter. Because our test
-        system relies on svn front-end repos, we were unable to use it as a github-based demo project. But we can use their
+        system relies on SVN front-end repos, we were unable to use it as a GitHub-based demo project. But we can use their
         content. You can check it out from our <link 
-          xlink:href="https://subversion.le-tex.de/common/transpect-demo/content/ulsp/">svn server</link>:</para>
+          xlink:href="https://subversion.le-tex.de/common/transpect-demo/content/ulsp/">SVN server</link>:</para>
         <programlisting>mkdir ../content
 svn co https://subversion.le-tex.de/common/transpect-demo/content/ulsp/ ../content/ulsp</programlisting>
         <para>or, for the time being, you can just save one of the 
@@ -776,7 +837,7 @@ svn co https://subversion.le-tex.de/common/transpect-demo/content/ulsp/ ../conte
           <mediaobject>
             <alt>Schematic clade diagram (from Wikipedia)</alt>
             <imageobject>
-              <imagedata fileref="media/docx2jats-demo/wikipedia_Clade-grade_II.svg"/>
+              <imagedata fileref="source/media/docx2jats-demo/wikipedia_Clade-grade_II.svg"/>
             </imageobject>
           </mediaobject>
         </informalfigure>

@@ -11,7 +11,8 @@
   
   <xsl:import href="http://transpect.io/xslt-util/uri-to-relative-path/xsl/uri-to-relative-path.xsl"/>
   
-  <xsl:variable name="chapter" select="collection()[2]/*" as="element(dbk:chapter)"/>
+  <xsl:variable name="current-chapter" select="collection()[2]/*" as="element(dbk:chapter)"/>
+  <xsl:variable name="book" select="collection()[3]/*" as="element(dbk:book)"/>
   
   <!--  * 
         * insert nodes
@@ -23,26 +24,33 @@
   
   <xsl:template match="html">
     <xsl:copy>
-      <xsl:apply-templates select="$chapter/@xml:base"/>
+      <xsl:apply-templates select="$current-chapter/@xml:base"/>
+      <xsl:apply-templates/>
+    </xsl:copy>
+  </xsl:template>
+  
+  <xsl:template match="body">
+    <xsl:copy>
+      <xsl:apply-templates select="$current-chapter/@xml:id"/>
       <xsl:apply-templates/>
     </xsl:copy>
   </xsl:template>
   
   <xsl:template match="title">
     <xsl:copy>
-      <xsl:apply-templates select="$chapter/dbk:title/node()"/>
+      <xsl:apply-templates select="$current-chapter/dbk:title/node()"/>
     </xsl:copy>
   </xsl:template>
   
   <xsl:template match="/html/body//*[@id eq 'tr-title']">
     <xsl:copy>
-      <xsl:apply-templates select="$chapter/dbk:title/node()|@*"/>
+      <xsl:apply-templates select="$current-chapter/dbk:title/node()|@*"/>
     </xsl:copy>
   </xsl:template>
   
   <xsl:template match="/html/body//*[@id eq 'tr-subtitle']">
     <xsl:copy>
-      <xsl:apply-templates select="$chapter/dbk:subtitle/node()|@*"/>
+      <xsl:apply-templates select="$current-chapter/dbk:subtitle/node()|@*"/>
     </xsl:copy>
   </xsl:template>
   
@@ -50,37 +58,30 @@
   
   <xsl:template match="/html/body//*[@id eq 'tr-content']">
     <xsl:copy>
-      <xsl:apply-templates select="$chapter/* except ($chapter/dbk:title|$chapter/dbk:subtitle)|@*"/>
+      <xsl:apply-templates select="$current-chapter/* except ($current-chapter/dbk:title|$current-chapter/dbk:subtitle)|@*"/>
     </xsl:copy>
   </xsl:template>
   
-  <!-- make nav element active -->
+  <!-- make nav li element active -->
   
-  <xsl:template match="/html/body//*[@id eq 'tr-nav']//li[a/@href eq $chapter/@xml:base]">
+  <xsl:template match="html/body//*[@id eq 'tr-nav']//li[some $i in .//a satisfies $i/@href eq tokenize($current-chapter/@xml:base, '/')[last()]]">
     <xsl:copy>
       <xsl:attribute name="class" select="concat('active ', @class)"/>
-      <xsl:apply-templates/>
+      <xsl:apply-templates select="@* except @class, node()"/>
     </xsl:copy>
   </xsl:template>
   
-  <xsl:template match="/html/body//*[@id eq 'tr-nav']//ul[matches(@class, 'collapsible') and .//li[a/@href eq $chapter/@xml:base]]/li[1]">
+  <xsl:template match="html/body//*[@id eq 'tr-nav']//li[some $i in .//a satisfies $i/@href eq tokenize($current-chapter/@xml:base, '/')[last()]]/a[@class eq 'collapsible-header']">
     <xsl:copy>
       <xsl:attribute name="class" select="concat('active ', @class)"/>
-      <xsl:apply-templates/>
+      <xsl:apply-templates select="@* except @class, node()"/>
     </xsl:copy>
   </xsl:template>
   
-  <xsl:template match="/html/body//*[@id eq 'tr-nav']//ul[matches(@class, 'collapsible') and .//li[a/@href eq $chapter/@xml:base]]/li[1]/a">
-    <xsl:copy>
-      <xsl:attribute name="class" select="concat('active ', @class)"/>
-      <xsl:apply-templates/>
-    </xsl:copy>
-  </xsl:template>
-  
-  <xsl:template match="/html/body//*[@id eq 'tr-nav']//ul[matches(@class, 'collapsible') and .//li[a/@href eq $chapter/@xml:base]]/li/div[@class eq 'collapsible-body']">
+  <xsl:template match="html/body//*[@id eq 'tr-nav']//li[some $i in .//a satisfies $i/@href eq tokenize($current-chapter/@xml:base, '/')[last()]]/div[@class eq 'collapsible-body']">
     <xsl:copy>
       <xsl:attribute name="style" select="'display:block'"/>
-      <xsl:apply-templates select="@class|node()"/>
+      <xsl:apply-templates select="@* except @style, node()"/>
     </xsl:copy>
   </xsl:template>
     
@@ -89,9 +90,9 @@
   <xsl:template match="/html/body//*[@id eq 'tr-toc']">
     <xsl:copy>
       <xsl:apply-templates select="@*"/>
-      <xsl:for-each select="$chapter/dbk:section">
+      <xsl:for-each select="$current-chapter/dbk:section">
         <li>
-          <a href="{concat('#', generate-id())}">
+          <a href="{concat('#', (@xml:id, generate-id())[1])}">
             <xsl:if test="position() eq 1">
               <xsl:attribute name="class" select="'active'"/>
             </xsl:if>
@@ -124,7 +125,7 @@
   <!-- sections -->
 
   <xsl:template match="dbk:section[not(parent::dbk:section)]">
-    <div id="{generate-id()}" class="section col s12 scrollspy">
+    <div id="{(@xml:id, generate-id())[1]}" class="section col s12 scrollspy">
       <xsl:apply-templates select="@*|node()"/>
     </div>
   </xsl:template>
@@ -169,12 +170,21 @@
     </p>
   </xsl:template>
   
-  <!-- hyperlinks -->
+  <!-- hyperlinks and cross-references -->
   
   <xsl:template match="dbk:link">
     <a href="{@xlink:href}" target="_blank">
       <xsl:apply-templates select="@*|node()"/>
     </a>
+  </xsl:template>
+  
+  <xsl:template match="dbk:xref">
+    <xsl:variable name="linkend" select="@linkend" as="xs:string"/>
+    <xsl:variable name="match" select="$book//*[@xml:id eq $linkend]" as="element()"/>
+    <xsl:variable name="reference" select="if(tokenize($match/base-uri(), '/')[last()] eq tokenize(base-uri(), '/')[last()])
+                                           then concat('#', @linkend)
+                                           else concat('#', tokenize($match/base-uri(), '/')[last()], @linkend)" as="xs:string"/>
+    <a href="{concat('#', @linkend)}" target="_blank">&#x27bc;</a>
   </xsl:template>
   
   <!-- lists -->
@@ -266,8 +276,8 @@
     </pre>
   </xsl:template>
   
-  <xsl:template match="dbk:code|dbk:code|dbk:command|dbk:computeroutput">
-    <code class="{local-name()}">
+  <xsl:template match="dbk:code|dbk:parameter|dbk:markup|dbk:literal|dbk:code|dbk:command|dbk:computeroutput">
+    <code class="{(@role, concat('language-', local-name()))[1]}">
       <xsl:apply-templates select="@*|node()"/>
     </code>
   </xsl:template>

@@ -23,7 +23,7 @@
       <ul id="tr-nav" class="side-nav fixed" style="width:240px">
         <li class="logo"><a id="logo-container" href="#" class="brand-logo"><object id="front-page-logo" type="image/svg+xml" data="icons/logo-transpect.svg">Your browser does not support SVG</object></a></li>
         
-      <li xmlns:tr="http://transpect.io" class="naventry-1st"><a href="index.html">About</a></li><li xmlns:tr="http://transpect.io" class="naventry-1st"><a href="getting-started.html">Getting Started</a></li><li xmlns:tr="http://transpect.io" class="no-padding"><ul class="collapsible collapsible-accordion"><li class="naventry-1st"><a class="collapsible-header">Modules</a><div class="collapsible-body"><ul><li class="naventry-2nd"><a href="modules-docx2hub.html">docx2hub</a></li><li class="naventry-2nd"><a href="modules-bits2hub.html">bits2hub</a></li><li class="naventry-2nd"><a href="modules-epubtools.html">epubtools</a></li><li class="naventry-2nd"><a href="modules-htmlreports.html">htmlreports</a></li><li class="naventry-2nd"><a href="modules-hub2bits.html">hub2bits</a></li><li class="naventry-2nd"><a href="modules-idml2xml.html">idml2xml</a></li></ul></div></li></ul></li><li xmlns:tr="http://transpect.io" class="naventry-1st"><a href="styleguide.html">Styleguide</a></li><li xmlns:tr="http://transpect.io" class="naventry-1st"><a href="tutorial.html">Tutorials</a></li></ul>
+      <li class="naventry-1st"><a href="index.html">About</a></li><li class="naventry-1st"><a href="getting-started.html">Getting Started</a></li><li class="no-padding"><ul class="collapsible collapsible-accordion"><li class="naventry-1st" id="part-modules"><a class="collapsible-header">Modules</a><div class="collapsible-body"><ul><li class="naventry-2nd"><a href="modules-bits2hub.html">bits2hub</a></li><li class="naventry-2nd"><a href="modules-cascade.html">cascade</a></li><li class="naventry-2nd"><a href="modules-docx2hub.html">docx2hub</a></li><li class="naventry-2nd"><a href="modules-epubtools.html">epubtools</a></li><li class="naventry-2nd"><a href="modules-htmlreports.html">htmlreports</a></li><li class="naventry-2nd"><a href="modules-hub2bits.html">hub2bits</a></li><li class="naventry-2nd"><a href="modules-idml2xml.html">idml2xml</a></li></ul></div></li></ul></li><li class="naventry-1st"><a href="styleguide.html">Styleguide</a></li><li class="active naventry-1st"><a href="tutorial.html">Tutorials</a></li></ul>
     </header>
     
     <main>
@@ -36,29 +36,29 @@
       <div class="container">
         <div class="row">
           
-          <div class="col s12 m9 l10" id="tr-content"><div id="d42e9" class="section col s12 scrollspy">
+          <div class="col s12 m9 l10" id="tr-content"><div id="d45e9" class="section col s12 scrollspy">
         <h2 class="header">Creating a repository</h2>
         <p>A transpect project consists of a specification which modules to use (and in which revision), project-specific
-          adaptations, and the modules. The project itself resides in a version control repository (we are using git and svn,
+          adaptations, and the modules. The project itself resides in a version control repository (we are using Git and Subversion (SVN),
           others will probably work, too). There are at least three ways of setting up a transpect project:</p>
         <ul>
           <li>
-            <p>git project with git submodules</p>
-            <p>svn project with svn externals (github provides sufficient svn support to make this feasible, even if
-              the modules reside in git repositories)</p>
-            <p>git, svn (or probably also Mercurial) project with the modules as git or svn externals, using 
+            <p>Git project with Git submodules</p>
+            <p>SVN project with SVN externals (GitHub provides sufficient SVN support to make this feasible, even if
+              the modules reside in Git repositories)</p>
+            <p>Git, SVN (or probably also Mercurial) project with the modules as Git or SVN externals, using 
               <a href="http://nopugs.com/ext-tutorial" target="_blank">ext</a></p>
           </li>
         </ul>
         <p>We will focus on the first approach, although git submodules are quite a beast. For people who don’t use
-        svn on a regular basis it’s the best choice though.</p>
-        <p>Let’s start creating a repository on github. We call it <a href="https://github.com/transpect/docx2jats-demo" target="_blank">docx2jats-demo</a> and clone it to local:</p>
+        SVN on a regular basis it’s the best choice though.</p>
+        <p>Let’s start creating a repository on GitHub. We call it <a href="https://github.com/transpect/docx2jats-demo" target="_blank">docx2jats-demo</a> and clone it to local:</p>
         <pre>git clone https://github.com/transpect/docx2jats-demo.git --recursive</pre>
         <div class="card"><div class="card-content">
-          <p>You wouldn’t need <parameter xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink">--recursive</parameter> on your first checkout, but for those who intend
+          <p>You wouldn’t need <code class="language-parameter">--recursive</code> on your first checkout, but for those who intend
         to clone the final project this is helpful already.</p>
         </div></div>
-      </div><div id="d42e57" class="section col s12 scrollspy">
+      </div><div id="d45e57" class="section col s12 scrollspy">
         <h2 class="header">Adding Submodules</h2>
         <p>We’ll identify the modules that we need (primarily by their name, such as <a href="https://github.com/transpect/docx2hub" target="_blank">docx2hub</a>, <a href="https://github.com/transpect/hub2jats" target="_blank">hub2jats</a>, <a href="https://github.com/transpect/jats2html" target="_blank">jats2html</a>
           or <a href="https://github.com/transpect/epubtools" target="_blank">epubtools</a>).
@@ -67,26 +67,28 @@
         assurance. Therefore, we created our own Calabash distribution, usually based on the most recent release, and we add 
         this as a submodule to every project.</p>
         <pre>git submodule add https://github.com/transpect/calabash-frontend.git calabash</pre>
-        <p>The <literal xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink">calabash-frontend</literal> is special in that it includes other submodules. These won’t be checked
+        <p>The <code class="language-literal">calabash-frontend</code> is special in that it includes other submodules. These won’t be checked
           out by default. Therefore you should initialize them recursively:</p>
         <pre>git submodule update --init --recursive</pre>
         <p>(You can postpone this statement until you have specified all submodules.)</p>
         <div class="card"><div class="card-content">
-          <p>If you are using svn externals, you’ll have to specify five externals:</p>
+          <span class="card-title">Optional: Using Subversion</span>
+          <p>If you are using SVN externals, you’ll have to specify five externals:</p>
           <pre>https://github.com/transpect/calabash-frontend/trunk@38 calabash
 https://github.com/transpect/calabash-distro/trunk@9 calabash/distro
 https://github.com/transpect/rng-extension/trunk@10 calabash/extensions/transpect/rng-extension
 https://github.com/transpect/unzip-extension/trunk@2 calabash/extensions/transpect/unzip-extension
 https://github.com/transpect/image-props-extension/trunk@4 calabash/extensions/transpect/image-props-extension</pre>
-          <p>Note that it is recommended to attach svn externals with a fixed revision number, at least in production.
-          git submodules are fixed to a certain commit by default.</p>
+          <p>Note that it is recommended to attach SVN externals with a fixed revision number, at least in production.
+          Git submodules are fixed to a certain commit by default.</p>
         </div></div>
         <p>Let’s continue checking out some externals. We are probably going to validate the intermediate <a href="https://github.com/le-tex/Hub" target="_blank">Hub XML</a> in our docx→Hub→JATS→EPUB pipeline. This RNG schema includes
         the <a href="https://github.com/le-tex/CSSa" target="_blank">CSSa</a> schema as a submodule.</p>
         <pre>git submodule add https://github.com/le-tex/Hub.git schema/hub
 git submodule update --init --recursive</pre>
         <div class="card"><div class="card-content">
-          <p>In an svn project, you’d add two externals for this:</p>
+          <span class="card-title">Optional: Using Subversion</span>
+          <p>In an SVN project, you’d add two externals for this:</p>
           <pre>https://github.com/le-tex/Hub/trunk schema/Hub
 https://github.com/le-tex/CSSa/trunk schema/Hub/css</pre>
           <p>Since it is not relevant for production and since newer releases of the schemas should be backward compatible,
@@ -107,41 +109,41 @@ git submodule add https://github.com/transpect/epubcheck-idpf.git
 git submodule add https://github.com/transpect/xslt-util.git
 git submodule add https://github.com/transpect/xproc-util.git
 </pre>
-        <p>You’ll find individual descriptions of the modules in <xref xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" linkend="part-modules"></xref>.</p>
+        <p>You’ll find individual descriptions of the modules in <a href="#part-modules" target="_blank">➼</a>.</p>
         <p>Some of the modules you’ll need in almost every transpect project, some are vocabulary-specific (the ones
         that contain “jats” or “bits”) or input/output format specific (the ones that contain “docx”, “idml”, or “epub”).</p>
         <p>Commit the changes and push it to the upstream repository:</p>
         <pre>git commit -m "add submodules"
 git push</pre>
         <p>This is the repository after commit <a href="https://github.com/transpect/docx2jats-demo/tree/2445f084fae5635bb1f32f3e47e33275d73a34d9" target="_blank">2445f08</a>.</p>
-      </div><div id="d42e154" class="section col s12 scrollspy">
+      </div><div id="d45e160" class="section col s12 scrollspy">
         <h2 class="header">XML Catalog</h2>
-        <p>Each transpect module is known by a canonical URI (example: <literal xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink">http:transpect.io/docx2hub/</literal>) 
+        <p>Each transpect module is known by a canonical URI (example: <code class="language-literal">http:transpect.io/docx2hub/</code>) 
           that may be used for importing their XSLT, XProc, images, or even for referring to fonts in CSS files. The
         mapping to actual files will be performed by a catalog resolver that needs to be configured by an XML Catalog. 
         The Calabash frontend script, 
           <a href="https://github.com/transpect/calabash-frontend/blob/master/calabash.bat" target="_blank">calabat.sh</a> or 
           <a href="https://github.com/transpect/calabash-frontend/blob/master/calabash.bat" target="_blank">calabash.bat</a>, will 
-        read a catalog <literal xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink">../xmlcatalog/catalog.xml</literal> by default. The catalog that you are going to create 
-        will contain mostly <literal xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink">nextCatalog</literal> that refer to the modules’ XML catalogs, at their relative locations
+        read a catalog <code class="language-literal">../xmlcatalog/catalog.xml</code> by default. The catalog that you are going to create 
+        will contain mostly <code class="language-literal">nextCatalog</code> that refer to the modules’ XML catalogs, at their relative locations
         in your project. In addition, you declare 
-          <markup xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink">&lt;rewriteURI uriStartString="http://this.transpect.io/" rewritePrefix="../"/&gt;</markup> to point to
+          <code class="language-markup">&lt;rewriteURI uriStartString="http://this.transpect.io/" rewritePrefix="../"/&gt;</code> to point to
         your project’s base directory. This is necessary for the configuration cascade that we’ll encounter later. By convention,
-        all project-specific adaptations reside below <literal xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink">http://this.transpect.io/a9s/</literal>.</p>
+        all project-specific adaptations reside below <code class="language-literal">http://this.transpect.io/a9s/</code>.</p>
         <pre>mkdir xmlcatalog
  # (edit xmlcatalog/catalog.xml)
  git add xmlcatalog</pre>
         <p>We’ll get back to the last instruction in the catalog later 
-          (<markup xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink">&lt;nextCatalog catalog="content-repo.catalog.xml"/&gt;</markup>).</p>
+          (<code class="language-markup">&lt;nextCatalog catalog="content-repo.catalog.xml"/&gt;</code>).</p>
         <p>If you are an <a href="https://www.oxygenxml.com/" target="_blank">oXygen</a> user, now is a good time to create
-        a <literal xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink">.xpr</literal> (oXygen project) file. In this file, you tell oXygen to use 
-          <literal xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink">${pdu}/calabash/xmlcatalog/catalog.xml</literal> as XML catalog.</p>
+        a <code class="language-literal">.xpr</code> (oXygen project) file. In this file, you tell oXygen to use 
+          <code class="language-literal">${pdu}/calabash/xmlcatalog/catalog.xml</code> as XML catalog.</p>
         <figure class="informalfigure"><img class="responsive-img" src="source/media/docx2jats-demo/catalog-xpr.png" alt="oXygen XML catalog configuration" /></figure>
-        <p>This will make oXygen use your project’s catalog by means of a <literal xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink">nextCatalog</literal> instruction, in 
+        <p>This will make oXygen use your project’s catalog by means of a <code class="language-literal">nextCatalog</code> instruction, in 
           the same way as Calabash uses your catalog. This will be helpful later because oXygen will be able to follow the
         canonical URIs.</p>
         <p>While you are at it, you should “Enable Master Files Support” for this oXygen project and add 
-          <literal xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink">docx2hub/xsl/main.xsl</literal> and <literal xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink">evolve-hub/xsl/evolve-hub.xsl</literal>. We may need to
+          <code class="language-literal">docx2hub/xsl/main.xsl</code> and <code class="language-literal">evolve-hub/xsl/evolve-hub.xsl</code>. We may need to
           add more files as we go. They are needed by oXygen in order to resolve variable/function/key/template declarations
           from other files than the currently edited or its imports. By doing so, you’ll benefit from oXygen’s XSLT checking
         capabilities that go far beyond syntax checks.</p>
@@ -149,103 +151,103 @@ git push</pre>
 git commit -m "add XML catalog, oXygen project"
 git push</pre>
         <p>You may try the correct catalog resolution and oXygen configuration by Ctrl-clicking on 
-          <literal xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink">http://this.transpect.io/</literal> in the catalog. It should open the project’s base directory.</p>
+          <code class="language-literal">http://this.transpect.io/</code> in the catalog. It should open the project’s base directory.</p>
         <p>With an update to a submodule that happened in the meantime, the repo at this stage looks like this: <a href="https://github.com/transpect/docx2jats-demo/tree/eabd9b6201e236af1042f0c60eb3b9bf97444169" target="_blank">eabd9b6</a></p>
-      </div><div id="d42e251" class="section col s12 scrollspy">
+      </div><div id="d45e257" class="section col s12 scrollspy">
         <h2 class="header">Getting sample input</h2>
         <p>Our friends at <a href="http://www.ulsp.eu/" target="_blank">University of Leipzig Sports Medicine</a> produce and
           publish an open access journal from Word files. Their desire to upload the articles to <a href="http://www.ncbi.nlm.nih.gov/pmc/" target="_blank">PMC</a> made them ask us to provide a converter. Because our test
-        system relies on svn front-end repos, we were unable to use it as a github-based demo project. But we can use their
-        content. You can check it out from our <a href="https://subversion.le-tex.de/common/transpect-demo/content/ulsp/" target="_blank">svn server</a>:</p>
+        system relies on SVN front-end repos, we were unable to use it as a GitHub-based demo project. But we can use their
+        content. You can check it out from our <a href="https://subversion.le-tex.de/common/transpect-demo/content/ulsp/" target="_blank">SVN server</a>:</p>
         <pre>mkdir ../content
 svn co https://subversion.le-tex.de/common/transpect-demo/content/ulsp/ ../content/ulsp</pre>
         <p>or, for the time being, you can just save one of the 
-          <literal xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink">.docx</literal> files anywhere you want. Please be aware though
+          <code class="language-literal">.docx</code> files anywhere you want. Please be aware though
         that steps that we’ll introduce later (zipping the output and the images for PMC, …) rely on the 
-          <literal xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink">.docx</literal> files residing in a <literal xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink">docx/</literal> directory. Also, for making use of the configuration
+          <code class="language-literal">.docx</code> files residing in a <code class="language-literal">docx/</code> directory. Also, for making use of the configuration
           cascade that lets you – in principle – override settings per article, the content has to be stored according to a certain 
           directory structure.</p>
-      </div><div id="d42e284" class="section col s12 scrollspy">
+      </div><div id="d45e290" class="section col s12 scrollspy">
         <h2 class="header">A first pipeline</h2>
         <p>By convention, the pipelines that are meant to be invoked directly (as opposed to pipelines that implement 
-          the innards of a macroscopic step such as the ominous <literal xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink">evolve-hub</literal>) reside in the directory 
-          <literal xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink">a9s/common/xpl</literal>. This is absolutely not necessary; they may reside anywhere within the project.</p>
-        <p>Let’s create <literal xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink">a9s/common/xpl/docx2jats.xpl</literal> and insert a basic pipeline: docx → flat Hub XML → JATS</p>
+          the innards of a macroscopic step such as the ominous <code class="language-literal">evolve-hub</code>) reside in the directory 
+          <code class="language-literal">a9s/common/xpl</code>. This is absolutely not necessary; they may reside anywhere within the project.</p>
+        <p>Let’s create <code class="language-literal">a9s/common/xpl/docx2jats.xpl</code> and insert a basic pipeline: docx → flat Hub XML → JATS</p>
         <p>The commit is <a href="https://github.com/transpect/docx2jats-demo/tree/0e289b58a2978f334c2ced62f557627b1e7e9172" target="_blank">0e289b5</a>, 
         and the <a href="https://github.com/transpect/docx2jats-demo/blob/0e289b58a2978f334c2ced62f557627b1e7e9172/a9s/common/xpl/docx2jats.xpl" target="_blank">pipeline 
-          looks like this</a>. You’ll notice the <literal xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink">p:import</literal> by canonical URI statements and the three essential
-        steps, <literal xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink">docx2hub:convert</literal>, <literal xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink">hub:evolve-hub</literal>, and <literal xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink">jats:hub2bits</literal> 
+          looks like this</a>. You’ll notice the <code class="language-literal">p:import</code> by canonical URI statements and the three essential
+        steps, <code class="language-literal">docx2hub:convert</code>, <code class="language-literal">hub:evolve-hub</code>, and <code class="language-literal">jats:hub2bits</code> 
           (the odd naming is because the step will produce <a href="http://jats.nlm.nih.gov/extensions/bits/" target="_blank">BITS</a> 
-          books instead of JATS articles if fed with a <literal xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink">/dbk:book</literal> document).</p>
-        <p>Invoke the transformation with the following statement on the command line (swapping <literal xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink">.sh</literal>
-        with <literal xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink">.bat</literal> and probably also <literal xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink">/</literal> with <literal xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink">\</literal> on Windows machines 
+          books instead of JATS articles if fed with a <code class="language-literal">/dbk:book</code> document).</p>
+        <p>Invoke the transformation with the following statement on the command line (swapping <code class="language-literal">.sh</code>
+        with <code class="language-literal">.bat</code> and probably also <code class="language-literal">/</code> with <code class="language-literal">\</code> on Windows machines 
         without <a href="https://cygwin.com/" target="_blank">Cygwin</a>):</p>
         <pre>calabash/calabash.sh a9s/common/xpl/docx2jats.xpl file=../content/ulsp/CSMI/CSMI_2014_701/docx/CSMI_2014_701.docx</pre>
-        <p>You will see some garbage that faintly resembles JATS, but with all kinds of <literal xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink">css:</literal> attributes
-        and a <literal xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink">dark-matter</literal> element instead of <literal xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink">body</literal> or <literal xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink">back</literal>. This
+        <p>You will see some garbage that faintly resembles JATS, but with all kinds of <code class="language-literal">css:</code> attributes
+        and a <code class="language-literal">dark-matter</code> element instead of <code class="language-literal">body</code> or <code class="language-literal">back</code>. This
         is because the converter needs to know how to interpret the paragraph and character style names in the Word file.
-        The main part of this transformation is done in <literal xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink">evolve-hub</literal> that is a library for nesting list
+        The main part of this transformation is done in <code class="language-literal">evolve-hub</code> that is a library for nesting list
           items according to indentation, hierarchizing sections whose names match ceertain regexes, grouping figures and
-          tables with their captions, etc. <literal xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink">evolve-hub</literal> is a toolbox (or a beast, according to other people)
+          tables with their captions, etc. <code class="language-literal">evolve-hub</code> is a toolbox (or a beast, according to other people)
         from which to configure multi-pass XSLT pipelines that up-convert 
           <a href="https://github.com/le-tex/Hub" target="_blank">Hub XML</a>, the flat DocBook derivative, to a more reasonable
         DocBook that may then be converted “sideways,” with significantly less XSLT passes, into JATS, for example. The 
-          <literal xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink">evolve-hub</literal> configuration that was applied to the input was a succession of XSLT modes defined
+          <code class="language-literal">evolve-hub</code> configuration that was applied to the input was a succession of XSLT modes defined
         in <a href="https://github.com/transpect/evolve-hub/blob/master/xpl/fallback.xpl#L210" target="_blank">fallback.xpl</a>,
         using default parameters/variables/templates/functions in XSLT.</p>
-      </div><div id="d42e386" class="section col s12 scrollspy">
+      </div><div id="d45e392" class="section col s12 scrollspy">
         <h2 class="header">Dynamic transformation pipelines</h2>
         <p>All the major steps that transform documents from one XML format to another XML format are implemented using the
-          XProc step <a href="https://github.com/transpect/cascade/blob/master/xpl/dynamic-transformation-pipeline.xpl" target="_blank"><literal xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink">tr:dynamic-transformation-pipeline</literal></a>.</p>
+          XProc step <a href="https://github.com/transpect/cascade/blob/master/xpl/dynamic-transformation-pipeline.xpl" target="_blank"><code class="language-literal">tr:dynamic-transformation-pipeline</code></a>.</p>
         <p>It works like this:</p>
         <ol>
           <li>
-            <p>Consider the <literal xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink">load</literal> option given to the step (for ex. <literal xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink">evolve-hub/driver</literal>)</p>
+            <p>Consider the <code class="language-literal">load</code> option given to the step (for ex. <code class="language-literal">evolve-hub/driver</code>)</p>
           </li>
           <li>
-            <p>In the configuration cascade, look for the most specific file with the name <literal xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink">evolve-hub/driver.xpl</literal>. 
+            <p>In the configuration cascade, look for the most specific file with the name <code class="language-literal">evolve-hub/driver.xpl</code>. 
             This pipeline (or a fallback pipeline, if specified) will then be dynamically executed, using Calabash’s 
-              <literal xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink">cx:eval</literal> extension step.</p>
+              <code class="language-literal">cx:eval</code> extension step.</p>
           </li>
           <li>
-            <p>In the configuration cascade, look for the most specific file with the name <literal xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink">evolve-hub/driver.xsl</literal>.
+            <p>In the configuration cascade, look for the most specific file with the name <code class="language-literal">evolve-hub/driver.xsl</code>.
             This will be supplied to the pipeline on its stylesheet port. Typically a more specific stylesheet (for a journal) 
             will import a stylesheet from a less specific location (for an imprint).</p>
           </li>
         </ol>
-        <p>Apart from the primary input (<literal xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink">source</literal> port) and the stylesheet, the dynamically loaded pipeline
-        may get its options in a <literal xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink">cx:options</literal> document and additional inputs on an <literal xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink">additional-inputs</literal>
-        port with <literal xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink">sequence="true"</literal>. It will typically contain a sequence of XSLT passes, where each pass will transform
+        <p>Apart from the primary input (<code class="language-literal">source</code> port) and the stylesheet, the dynamically loaded pipeline
+        may get its options in a <code class="language-literal">cx:options</code> document and additional inputs on an <code class="language-literal">additional-inputs</code>
+        port with <code class="language-literal">sequence="true"</code>. It will typically contain a sequence of XSLT passes, where each pass will transform
         its input in a given XSLT mode, using the same stylesheet. It may apply arbitrary XProc steps, though.</p>
         <p>XSLT has a nice import mechanism; in XProc, import is a different thing. There is no “inherit&amp;tweak” 
         mechanism for pipelines. Therefore, in order to avoid the redundancy of writing lots of fairly similar multi-XSLT-pass 
-        pipelines, <literal xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink">tr:dynamic-transformation-pipeline</literal> (or rather, <a href="https://github.com/transpect/cascade/blob/master/xpl/load-cascaded.xpl" target="_blank"><literal xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink">tr:load-cascaded</literal></a>)
+        pipelines, <code class="language-literal">tr:dynamic-transformation-pipeline</code> (or rather, <a href="https://github.com/transpect/cascade/blob/master/xpl/load-cascaded.xpl" target="_blank"><code class="language-literal">tr:load-cascaded</code></a>)
         supports dynamic generation of the resource in question. So in the example above, if the dynamic loader is looking for
-        <literal xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink">evolve-hub/driver.xpl</literal> at a certain location and doesn’t find it there, it will also use an XSLT pipeline 
-          <literal xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink">evolve-hub/driver.xpl.xsl</literal> at that location, before it skips the location altogether and searches
-        less specific locations. It will invoke, by convention, the <literal xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink">main</literal> template of 
-          <literal xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink">evolve-hub/driver.xpl.xsl</literal>. This main template typically loads the pipeline 
-          <literal xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink">evolve-hub/driver.xpl</literal> from a less specific location (or from a sister journal) and transforms
+        <code class="language-literal">evolve-hub/driver.xpl</code> at a certain location and doesn’t find it there, it will also use an XSLT pipeline 
+          <code class="language-literal">evolve-hub/driver.xpl.xsl</code> at that location, before it skips the location altogether and searches
+        less specific locations. It will invoke, by convention, the <code class="language-literal">main</code> template of 
+          <code class="language-literal">evolve-hub/driver.xpl.xsl</code>. This main template typically loads the pipeline 
+          <code class="language-literal">evolve-hub/driver.xpl</code> from a less specific location (or from a sister journal) and transforms
           it, typically adding or removing XSLT steps in certain modes.</p>
-      </div><div id="d42e480" class="section col s12 scrollspy">
+      </div><div id="d45e486" class="section col s12 scrollspy">
         <h2 class="header">Configuration Cascade</h2>
         <p>The underlying concept is described in greater detail in <a href="https://subversion.le-tex.de/common/transpect-demo/content/le-tex/setup-manual/en/out/xhtml/transpect-setup.xhtml#sec-cascade" target="_blank">another 
           piece of documentation</a> that will eventually be integrated here. In brief, the content is organized 
         in <a href="https://en.wikipedia.org/wiki/Clade" target="_blank">clades</a> where the content items in each clade
         share configuration settings. Clades may be publishers, imprints, journals, book series, …</p>
-        <figure class="informalfigure"><img class="responsive-img" src="media/docx2jats-demo/wikipedia_Clade-grade_II.svg" alt="Schematic clade diagram (from Wikipedia)" /></figure>
+        <figure class="informalfigure"><img class="responsive-img" src="source/media/docx2jats-demo/wikipedia_Clade-grade_II.svg" alt="Schematic clade diagram (from Wikipedia)" /></figure>
         
-        <p>It is also possible to have clades for each input type, e.g., <literal xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink">.docx</literal> and <literal xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink">.idml</literal>. 
+        <p>It is also possible to have clades for each input type, e.g., <code class="language-literal">.docx</code> and <code class="language-literal">.idml</code>. 
           However, this approach is problematic as dicussed briefly at the end of 
           <a href="https://subversion.le-tex.de/common/transpect-demo/content/le-tex/setup-manual/en/out/xhtml/transpect-setup.xhtml#sec-cascade-clade-selection" target="_blank">this section</a>.</p>
         <p>There are two ways to determine which clade a given input file belongs to:</p>
         <ul>
           <li>
-            <p>by file name parsing (example: <literal xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink">CSMI_2014_701.docx → journal=CSMI, ms=701, ext=docx</literal>)</p>
+            <p>by file name parsing (example: <code class="language-literal">CSMI_2014_701.docx → journal=CSMI, ms=701, ext=docx</code>)</p>
           </li>
           <li>
-            <p>by explicitly setting it as an option to the pipeline (example: <literal xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink">clades="journal=CSMI MS=701"</literal>,
-              where ext may still be parsed from the file name). You may use <a href="https://github.com/transpect/cascade/blob/master/xsl/paths.xsl#L365" target="_blank"><literal xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink">[,/\s]</literal></a> 
+            <p>by explicitly setting it as an option to the pipeline (example: <code class="language-literal">clades="journal=CSMI MS=701"</code>,
+              where ext may still be parsed from the file name). You may use <a href="https://github.com/transpect/cascade/blob/master/xsl/paths.xsl#L365" target="_blank"><code class="language-literal">[,/\s]</code></a> 
               as a sepator</p>
           </li>
         </ul>
@@ -254,40 +256,40 @@ svn co https://subversion.le-tex.de/common/transpect-demo/content/ulsp/ ../conte
         In a narrow sense, it is the single configuration file (the <em>transpect configuration file</em>) that 
           declares which clades are available and by which name/value pairs they are selected.</p>
         <p>The current project’s transpect configuration file contains three clades: one for the publisher,
-            <literal xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink">ulsp</literal>, and two for the journals <literal xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink">CSMI</literal> and <literal xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink">Test</literal>.</p>
+            <code class="language-literal">ulsp</code>, and two for the journals <code class="language-literal">CSMI</code> and <code class="language-literal">Test</code>.</p>
         <p>The ultimate goal of clade selection is to compute file system paths in descending specificity where to look for
-          the broad-sense configuration files. The file system paths will be contained in a <literal xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink">c:param-set</literal>
-          document that is the result of invoking <a href="https://github.com/transpect/cascade/blob/master/xpl/paths.xpl" target="_blank"><literal xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink">paths.xpl</literal></a> with
-          a <literal xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink">file</literal> option and optionally a <literal xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink">clades</literal> option, where the name/value pairs in
-            <literal xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink">clades</literal> will have precedence. Technically the name/value pairs are modeled as attributes (not
+          the broad-sense configuration files. The file system paths will be contained in a <code class="language-literal">c:param-set</code>
+          document that is the result of invoking <a href="https://github.com/transpect/cascade/blob/master/xpl/paths.xpl" target="_blank"><code class="language-literal">paths.xpl</code></a> with
+          a <code class="language-literal">file</code> option and optionally a <code class="language-literal">clades</code> option, where the name/value pairs in
+            <code class="language-literal">clades</code> will have precedence. Technically the name/value pairs are modeled as attributes (not
           bound to any element).</p>
         <p>Matching a clade according to the parsed or supplied name/value pairs is one thing. If you don’t supply the 
-          <literal xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink">clades</literal> option, it is necessary nonetheless to parse the input file name in order to get the 
-          name/value pairs in first place. Parsing the file name typically involves <literal xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink">xsl:analyze-string</literal>
+          <code class="language-literal">clades</code> option, it is necessary nonetheless to parse the input file name in order to get the 
+          name/value pairs in first place. Parsing the file name typically involves <code class="language-literal">xsl:analyze-string</code>
         and creating attributes from the results. There is a <a href="https://github.com/transpect/cascade/blob/master/xsl/paths.xsl" target="_blank">default parser</a> that will be 
           imported by a project-specific parser that <a href="https://github.com/transpect/docx2jats-demo/blob/master/a9s/common/xsl/paths.xsl#L7" target="_blank">overrides its 
-            <literal xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink">tr:parse-file-name()</literal></a> 
+            <code class="language-literal">tr:parse-file-name()</code></a> 
           function. Supplying this overriding parser is an essential customizing task. The location of this
-        custom <literal xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink">paths.xsl</literal> is given in the <a href="https://github.com/transpect/docx2jats-demo/blob/master/conf/transpect-conf.xml#L6" target="_blank"><literal xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink">/tr:conf/@paths-xsl-uri</literal></a>
+        custom <code class="language-literal">paths.xsl</code> is given in the <a href="https://github.com/transpect/docx2jats-demo/blob/master/conf/transpect-conf.xml#L6" target="_blank"><code class="language-literal">/tr:conf/@paths-xsl-uri</code></a>
         of the transpect configuration file.</p>
         <p>It is instructive to have a look at the <a href="https://github.com/transpect/docx2jats-demo/commit/e5e4e45eb4dad4a1acc48baf1f338c16e1ed17f4" target="_blank">changes 
           of commit e5e4e45</a> and also at the <a href="https://gist.github.com/gimsieke/3f866dc10d613665c83f" target="_blank">resulting 
             paths document</a>.</p>
-        <p>Please have a look at the <literal xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink">c:param</literal>s that start with “s9y…” (for “specificity”).
-            <literal xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink">s9y1-path</literal> is the path to the most specific confiuration location. There are 9 levels of
+        <p>Please have a look at the <code class="language-literal">c:param</code>s that start with “s9y…” (for “specificity”).
+            <code class="language-literal">s9y1-path</code> is the path to the most specific confiuration location. There are 9 levels of
           spcificity available at the moment, that means 7 levels of nested clades, plus the path for the common configuration,
           plus the content location for per-work specific overrides.</p>
         <p>If no clade matches, there will only be two search paths in the paths document: the directory where the input 
           file resides in and the common path.</p>
         <p>Other name value pairs may be given in the config file. Their scope is global if they are immediately below 
-          <literal xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink">/conf</literal>, or otherwise their corresponding clade</p>
+          <code class="language-literal">/conf</code>, or otherwise their corresponding clade</p>
         
       </div></div>
           
           <div class="col hide-on-small-only m3 l2">
             <div class="toc-wrapper pin-top" style="top: 0px;">
               <div style="height: 1px;">
-                <ul id="tr-toc" class="table-of-contents"><li><a href="#d42e9" class="active">Creating a repository</a></li><li><a href="#d42e57">Adding Submodules</a></li><li><a href="#d42e154">XML Catalog</a></li><li><a href="#d42e251">Getting sample input</a></li><li><a href="#d42e284">A first pipeline</a></li><li><a href="#d42e386">Dynamic transformation pipelines</a></li><li><a href="#d42e480">Configuration Cascade</a></li></ul>
+                <ul id="tr-toc" class="table-of-contents"><li><a href="#d45e9" class="active">Creating a repository</a></li><li><a href="#d45e57">Adding Submodules</a></li><li><a href="#d45e160">XML Catalog</a></li><li><a href="#d45e257">Getting sample input</a></li><li><a href="#d45e290">A first pipeline</a></li><li><a href="#d45e392">Dynamic transformation pipelines</a></li><li><a href="#d45e486">Configuration Cascade</a></li></ul>
               </div>
             </div>
           </div>

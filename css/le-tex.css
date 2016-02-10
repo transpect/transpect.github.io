@@ -86,6 +86,7 @@ pre{background-color:#f5f5f5; border: 1px solid #e0e0e0; padding:1rem 1rem 1.5re
 #tr-content h2{font-size:3.5rem; color: #e53935;}
 #tr-content h3{font-size:2rem; }
 #tr-content h5{font-size:1.5rem; color: #000}
+#tr-content .card-title{color: #ef5350}
 
 #tr-content ul li, #tr-content ol li{margin:0 0 0 2rem; padding:0}
 #tr-content ul li p, #tr-content ol li p{margin:0.25em 0 0 0.25em; padding:0}
