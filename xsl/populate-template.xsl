@@ -174,7 +174,11 @@
   
   <xsl:template match="dbk:link">
     <a href="{@xlink:href}" target="_blank">
-      <xsl:apply-templates select="@*|node()"/>
+      <xsl:apply-templates select="@*"/>
+      <xsl:if test="starts-with(@xlink:href, 'http') and not(matches(@role, 'btn'))">
+        <xsl:text>&#x27bc;&#x202f;</xsl:text>
+      </xsl:if>
+      <xsl:apply-templates/>
     </a>
   </xsl:template>
   
@@ -184,7 +188,7 @@
     <xsl:variable name="reference" select="if(tokenize($match/base-uri(), '/')[last()] eq tokenize(base-uri(), '/')[last()])
                                            then concat('#', @linkend)
                                            else concat('#', tokenize($match/base-uri(), '/')[last()], @linkend)" as="xs:string"/>
-    <a href="{concat('#', @linkend)}" target="_blank">&#x27bc;</a>
+    <a href="{concat('#', @linkend)}" target="_blank"><xsl:value-of select="if($match/dbk:title) then $match/dbk:title/text() else $match/text()"/></a>
   </xsl:template>
   
   <!-- lists -->
