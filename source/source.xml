@@ -702,7 +702,7 @@ git push</programlisting>
           that may be used for importing their XSLT, XProc, images, or even for referring to fonts in CSS files. The
         mapping to actual files will be performed by a catalog resolver that needs to be configured by an XML Catalog. 
         The Calabash frontend script, 
-          <link xlink:href="https://github.com/transpect/calabash-frontend/blob/master/calabash.bat">calabat.sh</link> or 
+          <link xlink:href="https://github.com/transpect/calabash-frontend/blob/master/calabash.bat">calabash.sh</link> or 
           <link xlink:href="https://github.com/transpect/calabash-frontend/blob/master/calabash.bat">calabash.bat</link>, will 
         read a catalog <literal>../xmlcatalog/catalog.xml</literal> by default. The catalog that you are going to create 
         will contain mostly <literal>nextCatalog</literal> that refer to the modules’ XML catalogs, at their relative locations
