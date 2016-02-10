@@ -706,7 +706,7 @@ git push</programlisting>
         read a catalog <literal>../xmlcatalog/catalog.xml</literal> by default. The catalog that you are going to create 
         will contain mostly <literal>nextCatalog</literal> that refer to the modules’ XML catalogs, at their relative locations
         in your project. In addition, you declare 
-          <markup>&lt;rewriteURI uriStartString="http://this.transpect.io/" rewritePrefix="../"/&gt;</markup> to point to
+          <markup>&lt;rewriteURI uriStartString=​"http://this.transpect.io/" rewritePrefix="../"/&gt;</markup> to point to
         your project’s base directory. This is necessary for the configuration cascade that we’ll encounter later. By convention,
         all project-specific adaptations reside below <literal>http://this.transpect.io/a9s/</literal>.</para>
         <programlisting>mkdir xmlcatalog
@@ -971,6 +971,10 @@ svn co https://subversion.le-tex.de/common/transpect-demo/content/ulsp/ ../conte
         Admittedly, finding the right places to tweak the <link 
           xlink:href="https://github.com/transpect/docx2jats-demo/blob/master/a9s/common/evolve-hub/driver.xsl#L14">imported XSLT</link> may
         be hard, but that’s a thing that this sample project should help alleviate.</para>
+      </section>
+      <section>
+        <title>Validating the Output and Intermediate Steps</title>
+        <para></para>
       </section>
     </chapter>
   </part>
