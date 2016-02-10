@@ -184,7 +184,7 @@
     <xsl:variable name="reference" select="if(tokenize($match/base-uri(), '/')[last()] eq tokenize(base-uri(), '/')[last()])
                                            then concat('#', @linkend)
                                            else concat('#', tokenize($match/base-uri(), '/')[last()], @linkend)" as="xs:string"/>
-    <a href="{concat('#', @linkend)}" target="_blank">&#x27bc;</a>
+    <a href="{concat('#', @linkend)}" target="_blank">&#x27bc; <xsl:value-of select="if($match/dbk:title) then $match/dbk:title/text() else $match/text()"/></a>
   </xsl:template>
   
   <!-- lists -->
