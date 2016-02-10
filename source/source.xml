@@ -1013,7 +1013,7 @@ svn co https://subversion.le-tex.de/common/transpect-demo/content/ulsp/ ../conte
    -o htmlreport=report.xhtml \
    a9s/common/xpl/docx2jats.xpl \
    file=../content/ulsp/CSMI/CSMI_2014_701/docx/CSMI_2014_701.docx</programlisting>
-        <para>See the resulting <link xlink:href="media/docx2jats-demo/report-CSMI_2014_701.xhtml">error report</link>.</para>
+        <para>See the resulting <link xlink:href="source/media/docx2jats-demo/report-CSMI_2014_701.xhtml">error report</link>.</para>
       </section>
     </chapter>
   </part>
