@@ -359,7 +359,7 @@ MyProject/
             <para>Use soft-tabs with a two space indent</para>
           </listitem>
           <listitem>
-            <para>Keep lines fewer than 80 characters</para>
+            <para>Keep lines shorter than 128 characters</para>
           </listitem>
           <listitem>
             <para>Use spaces around operators, after commas, colons and semicolons</para>
@@ -517,16 +517,46 @@ myproject/
     <chapter xml:base="../tutorial.html">
       <title>Tutorials</title>
       <subtitle>docx→JATS→EPUB</subtitle>
+      <para>By following this tutorial you will be able to set up a transpect conversion project. You will encounter
+      the main concepts:</para>
+      <itemizedlist>
+        <listitem>
+          <para>transpect is a configuration management system for XProc/XSLT/validation pipelines with a focus on
+          publishing workflows.</para>
+        </listitem>
+        <listitem>
+          <para>transpect provides modules for conversion between XML-based formats such as docx and EPUB, and between
+          XML vocabularies.</para>
+          </listitem>
+        <listitem>
+          <para>The Schematron/RelaxNG/custom validation results will be consolidated into an HTML rendering of
+          the input.</para>
+        </listitem>
+        <listitem>
+          <para>transpect projects typically reside in revision control repositories, attaching the necessary modules
+          and even the runtime (Calabash XProc processor) as svn externals or git submodules</para>
+        </listitem>
+      </itemizedlist>
+      <para>Prerequisites: Intermediate knowledge of revision control systems, XProc, and XSLT.</para>
+      <para>transpect offers some ready-to-run pipelines such as <link xlink:href="https://github.com/transpect/docx2tex">docx2tex</link>, 
+        but most projects require configuration. transpect is not a tool, it’s a framework that has
+        its own modules and methodologies. Someone needs to configure them, operate them, and to make sure that
+        once-configured pipelines continue to yield consistent results.</para>
+      <para>This tutorial focuses on the configuration part.</para>
       <section>
-        <title>Creating a repository</title>
+        <title>Creating a Repository</title>
         <para>A transpect project consists of a specification which modules to use (and in which revision), project-specific
           adaptations, and the modules. The project itself resides in a version control repository (we are using git and svn,
           others will probably work, too). There are at least three ways of setting up a transpect project:</para>
         <itemizedlist>
           <listitem>
             <para>git project with git submodules</para>
+          </listitem>
+          <listitem>
             <para>svn project with svn externals (github provides sufficient svn support to make this feasible, even if
               the modules reside in git repositories)</para>
+            </listitem>
+          <listitem>
             <para>git, svn (or probably also Mercurial) project with the modules as git or svn externals, using 
               <link xlink:href="http://nopugs.com/ext-tutorial">ext</link></para>
           </listitem>
@@ -534,7 +564,9 @@ myproject/
         <para>We will focus on the first approach, although git submodules are quite a beast. For people who don’t use
         svn on a regular basis it’s the best choice though.</para>
         <para>Let’s start creating a repository on github. We call it <link 
-          xlink:href="https://github.com/transpect/docx2jats-demo">docx2jats-demo</link> and clone it to local:</para>
+          xlink:href="https://github.com/transpect/docx2jats-demo">docx2jats-demo</link> and clone its <link 
+            xlink:href="https://github.com/transpect/docx2jats-demo/tree/99ce82f2a007e8c948a9663d8325c73bcc05664a">initial
+          commit 99ce82f</link> to local:</para>
         <programlisting>git clone https://github.com/transpect/docx2jats-demo.git --recursive</programlisting>
         <note>
           <para>You wouldn’t need <parameter>--recursive</parameter> on your first checkout, but for those who intend
@@ -649,7 +681,7 @@ git push</programlisting>
           xlink:href="https://github.com/transpect/docx2jats-demo/tree/eabd9b6201e236af1042f0c60eb3b9bf97444169">eabd9b6</link></para>
       </section>
       <section>
-        <title>Getting sample input</title>
+        <title>Getting Sample Input</title>
         <para>Our friends at <link xlink:href="http://www.ulsp.eu/">University of Leipzig Sports Medicine</link> produce and
           publish an open access journal from Word files. Their desire to upload the articles to <link 
             xlink:href="http://www.ncbi.nlm.nih.gov/pmc/">PMC</link> made them ask us to provide a converter. Because our test
@@ -666,7 +698,7 @@ svn co https://subversion.le-tex.de/common/transpect-demo/content/ulsp/ ../conte
           directory structure.</para>
       </section>
       <section>
-        <title>A first pipeline</title>
+        <title>A First Pipeline</title>
         <para>By convention, the pipelines that are meant to be invoked directly (as opposed to pipelines that implement 
           the innards of a macroscopic step such as the ominous <literal>evolve-hub</literal>) reside in the directory 
           <literal>a9s/common/xpl</literal>. This is absolutely not necessary; they may reside anywhere within the project.</para>
@@ -697,7 +729,7 @@ svn co https://subversion.le-tex.de/common/transpect-demo/content/ulsp/ ../conte
         using default parameters/variables/templates/functions in XSLT.</para>
       </section>
       <section>
-        <title>Dynamic transformation pipelines</title>
+        <title>Dynamic Transformation Pipelines</title>
         <para>All the major steps that transform documents from one XML format to another XML format are implemented using the
           XProc step <link xlink:href="https://github.com/transpect/cascade/blob/master/xpl/dynamic-transformation-pipeline.xpl"
               ><literal>tr:dynamic-transformation-pipeline</literal></link>.</para>
@@ -858,6 +890,26 @@ svn co https://subversion.le-tex.de/common/transpect-demo/content/ulsp/ ../conte
   file=../content/ulsp/CSMI/CSMI_2014_701/docx/CSMI_2014_701.docx \
   debug-dir-uri=file:$(pwd)/debug</programlisting>
         <para>for Linux or <literal>debug-dir-uri=file:/$(cygpath -ma debug)</literal> for Cygwin.</para>
+        <para>The resulting tree looks like this. There are debug subdirectories for almost every step.</para>
+        <informalfigure>
+          <mediaobject>
+            <alt>debug directories</alt>
+            <imageobject>
+              <imagedata fileref="source/media/docx2jats-demo/debug-paths.png"/>
+            </imageobject>
+          </mediaobject>
+        </informalfigure>
+      </section>
+      <section>
+        <title>Improving the Output by Adding Actual Configuration</title>
+        <para>In order to make the output more valid and reasonable, we now add configuration for the <literal>evolve-hub</literal>
+        and <literal>hub2jats</literal> steps. (As a side note: <literal>docx2hub</literal> is a virtually configuration-free step that
+          is supposed to yield the same flat Hub XML output for a given <literal>.docx</literal> file.)</para>
+        <para>The differences in code can be seen <link 
+          xlink:href="https://github.com/transpect/docx2jats-demo/commit/34147aceaaeeb3f014ecfdd39c953d0f5d34cfa9">here (commit 34147ac)</link>.
+        Admittedly, finding the right places to tweak the <link 
+          xlink:href="https://github.com/transpect/docx2jats-demo/blob/master/a9s/common/evolve-hub/driver.xsl#L14">imported XSLT</link> may
+        be hard, but that’s a thing that this sample project should help alleviate.</para>
       </section>
     </chapter>
   </part>
