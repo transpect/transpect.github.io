@@ -77,11 +77,11 @@
       <xsl:apply-templates select="@* except @class, node()"/>
     </xsl:copy>
   </xsl:template>
-    
-  <xsl:template match="/html/body//*[@id eq 'tr-nav']//ul[matches(@class, 'collapsible') and .//li[a/@href eq $current-chapter/@xml:base]]/li/div[@class eq 'collapsible-body']">
+  
+  <xsl:template match="html/body//*[@id eq 'tr-nav']//li[some $i in .//a satisfies $i/@href eq tokenize($current-chapter/@xml:base, '/')[last()]]/div[@class eq 'collapsible-body']">
     <xsl:copy>
       <xsl:attribute name="style" select="'display:block'"/>
-      <xsl:apply-templates select="@class|node()"/>
+      <xsl:apply-templates select="@* except @style, node()"/>
     </xsl:copy>
   </xsl:template>
     
