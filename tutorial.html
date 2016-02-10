@@ -372,14 +372,49 @@ svn co https://subversion.le-tex.de/common/transpect-demo/content/ulsp/ ../conte
         Admittedly, finding the right places to tweak the <a href="https://github.com/transpect/docx2jats-demo/blob/master/a9s/common/evolve-hub/driver.xsl#L14" target="_blank">imported XSLT</a> may
         be hard, but that’s a thing that this sample project should help alleviate.</p>
       </div><div id="d45e887" class="section col s12 scrollspy">
-        <h2 class="header">Validating the Output and Intermediate Steps</h2>
-        <p></p>
+        <h2 class="header">Validating the Input, Output, and Intermediate Steps</h2>
+        <p>This <a href="https://github.com/transpect/docx2jats-demo/compare/34147ac...e5ef56c" target="_blank">diff of commit e5ef56c</a> 
+        show several modifications to the <a href="https://github.com/transpect/docx2jats-demo/commit/fbd645bc9f1c4f204fd248b361cc600adabe0413#diff-70cf31a3c86a739a35ebbf3fe22ec844" target="_blank">current pipeline</a>:</p>
+        <ul>
+          <li>
+            <p>Added a <code class="language-literal">jats2html</code> step, <a href="https://github.com/transpect/docx2jats-demo/blob/e5ef56c8f9b15b466047b813f66940a63550cdbf/a9s/common/jats2html/jats2html.xsl" target="_blank">XSLT customizing</a>
+            for this step, and CSS </p>
+          </li>
+          <li>
+            <p>Added Schematron checks for flat Hub, for evolved Hub, and for JATS XML</p>
+          </li>
+          <li>
+            <p>Added a Relax NG check for JATS XML, using the JATS 1.0 archiving schema (using a <a href="https://github.com/transpect/rng-extension/blob/master/xpl/validate-with-rng-declaration.xpl" target="_blank">wrapper</a> around
+            <code class="language-literal">p:validate-with-relax-ng</code> that produces an output port and reports the XPath
+            location for each error, in addition to the line number which is meaningless in the middle of a pipeline)</p>
+          </li>
+          <li>
+            <p>Added a <code class="language-literal">tr:check-styles</code> step that matches the styles found in the input <code class="language-literal">.docx</code>
+              against <a href="https://github.com/transpect/docx2jats-demo/blob/master/a9s/common/styles/cssa.xml" target="_blank">this list</a>
+            (that has been extracted from the Hub XML of a sample input document)</p>
+          </li>
+          <li>
+            <p><code class="language-literal">tr:patch-svrl</code>: Collect the 
+              <code class="language-literal">report</code> ports of all steps (SVRL and <code class="language-literal">c:errors</code> documents produced by the
+              RNG validation and potentially also by <code class="language-literal">p:try</code>/<code class="language-literal">p:catch</code>-encapsulated steps)
+              and patch them into the HTML rendering, at the error location. There is an XML Amsterdam presentation entitled 
+              <a href="http://publishinggeekly.com/wp-content/uploads/2015/11/2015-11-06_xmlamsterdam_htmlreports/" target="_blank">“Unified Validation Reporting in HTML Renderings”</a> that describes this approach.
+            </p>
+          </li>
+        </ul>
+        <p>The modified invocation (modulo debug options) reads:</p>
+        <pre>calabash/calabash.sh \
+   -o result=out.xml \
+   -o htmlreport=report.xhtml \
+   a9s/common/xpl/docx2jats.xpl \
+   file=../content/ulsp/CSMI/CSMI_2014_701/docx/CSMI_2014_701.docx</pre>
+        <p>See the resulting <a href="media/docx2jats-demo/report-CSMI_2014_701.xhtml" target="_blank">error report</a>.</p>
       </div></div>
           
           <div class="col hide-on-small-only m3 l2">
             <div class="toc-wrapper pin-top" style="top: 0px;">
               <div style="height: 1px;">
-                <ul id="tr-toc" class="table-of-contents"><li><a href="#d45e52" class="active">Creating a Repository</a></li><li><a href="#d45e109">Adding Submodules</a></li><li><a href="#d45e212">XML Catalog</a></li><li><a href="#d45e308">Getting Sample Input</a></li><li><a href="#d45e342">A First Pipeline</a></li><li><a href="#d45e444">Dynamic Transformation Pipelines</a></li><li><a href="#d45e538">Configuration Cascade</a></li><li><a href="#d45e777">Debugging</a></li><li><a href="#d45e857">Improving the Output by Adding Actual Configuration</a></li><li><a href="#d45e887">Validating the Output and Intermediate Steps</a></li></ul>
+                <ul id="tr-toc" class="table-of-contents"><li><a href="#d45e52" class="active">Creating a Repository</a></li><li><a href="#d45e109">Adding Submodules</a></li><li><a href="#d45e212">XML Catalog</a></li><li><a href="#d45e308">Getting Sample Input</a></li><li><a href="#d45e342">A First Pipeline</a></li><li><a href="#d45e444">Dynamic Transformation Pipelines</a></li><li><a href="#d45e538">Configuration Cascade</a></li><li><a href="#d45e777">Debugging</a></li><li><a href="#d45e857">Improving the Output by Adding Actual Configuration</a></li><li><a href="#d45e887">Validating the Input, Output, and Intermediate Steps</a></li></ul>
               </div>
             </div>
           </div>
