@@ -831,7 +831,27 @@ svn co https://subversion.le-tex.de/common/transpect-demo/content/ulsp/ ../conte
       </section>
       <section>
         <title>Configuration Cascade</title>
-        <!-- tbd: tree diagram of a9s -->
+        <para>The configuration relies on the following assumptions:</para>
+        <itemizedlist>
+          <listitem>
+            <para>Each content item belongs to a certain place 
+        in a content hierarchy (a certain imprint, a certain book series, …).</para>
+          </listitem>
+          <listitem>
+            <para>It is possible to address this location by name/value pairs</para>
+          </listitem>
+          <listitem>
+            <para>The name/value pairs, if not given explicitly, may be parsed from the file name.</para>
+          </listitem>
+        </itemizedlist>
+        <informalfigure>
+          <mediaobject>
+            <alt>Schematic clade diagram (from Wikipedia)</alt>
+            <imageobject>
+              <imagedata fileref="source/media/docx2jats-demo/filename2directory.svg"/>
+            </imageobject>
+          </mediaobject>
+        </informalfigure>
         <para>The underlying concept is described in greater detail in <link 
           xlink:href="https://subversion.le-tex.de/common/transpect-demo/content/le-tex/setup-manual/en/out/xhtml/transpect-setup.xhtml#sec-cascade">another 
           piece of documentation</link> that will eventually be integrated here. In brief, the content is organized 
