@@ -579,20 +579,20 @@ myproject/
       <section>
         <title>Creating a repository</title>
         <para>A transpect project consists of a specification which modules to use (and in which revision), project-specific
-          adaptations, and the modules. The project itself resides in a version control repository (we are using git and svn,
+          adaptations, and the modules. The project itself resides in a version control repository (we are using Git and Subversion (SVN),
           others will probably work, too). There are at least three ways of setting up a transpect project:</para>
         <itemizedlist>
           <listitem>
-            <para>git project with git submodules</para>
-            <para>svn project with svn externals (github provides sufficient svn support to make this feasible, even if
-              the modules reside in git repositories)</para>
-            <para>git, svn (or probably also Mercurial) project with the modules as git or svn externals, using 
+            <para>Git project with Git submodules</para>
+            <para>SVN project with SVN externals (GitHub provides sufficient SVN support to make this feasible, even if
+              the modules reside in Git repositories)</para>
+            <para>Git, SVN (or probably also Mercurial) project with the modules as Git or SVN externals, using 
               <link xlink:href="http://nopugs.com/ext-tutorial">ext</link></para>
           </listitem>
         </itemizedlist>
         <para>We will focus on the first approach, although git submodules are quite a beast. For people who don’t use
-        svn on a regular basis it’s the best choice though.</para>
-        <para>Let’s start creating a repository on github. We call it <link 
+        SVN on a regular basis it’s the best choice though.</para>
+        <para>Let’s start creating a repository on GitHub. We call it <link 
           xlink:href="https://github.com/transpect/docx2jats-demo">docx2jats-demo</link> and clone it to local:</para>
         <programlisting>git clone https://github.com/transpect/docx2jats-demo.git --recursive</programlisting>
         <note>
@@ -617,14 +617,15 @@ myproject/
         <programlisting>git submodule update --init --recursive</programlisting>
         <para>(You can postpone this statement until you have specified all submodules.)</para>
         <note>
-          <para>If you are using svn externals, you’ll have to specify five externals:</para>
+          <title>Optional: Using Subversion</title>
+          <para>If you are using SVN externals, you’ll have to specify five externals:</para>
           <programlisting>https://github.com/transpect/calabash-frontend/trunk@38 calabash
 https://github.com/transpect/calabash-distro/trunk@9 calabash/distro
 https://github.com/transpect/rng-extension/trunk@10 calabash/extensions/transpect/rng-extension
 https://github.com/transpect/unzip-extension/trunk@2 calabash/extensions/transpect/unzip-extension
 https://github.com/transpect/image-props-extension/trunk@4 calabash/extensions/transpect/image-props-extension</programlisting>
-          <para>Note that it is recommended to attach svn externals with a fixed revision number, at least in production.
-          git submodules are fixed to a certain commit by default.</para>
+          <para>Note that it is recommended to attach SVN externals with a fixed revision number, at least in production.
+          Git submodules are fixed to a certain commit by default.</para>
         </note>
         <para>Let’s continue checking out some externals. We are probably going to validate the intermediate <link 
           xlink:href="https://github.com/le-tex/Hub">Hub XML</link> in our docx→Hub→JATS→EPUB pipeline. This RNG schema includes
@@ -632,7 +633,8 @@ https://github.com/transpect/image-props-extension/trunk@4 calabash/extensions/t
         <programlisting>git submodule add https://github.com/le-tex/Hub.git schema/hub
 git submodule update --init --recursive</programlisting>
         <note>
-          <para>In an svn project, you’d add two externals for this:</para>
+          <title>Optional: Using Subversion</title>
+          <para>In an SVN project, you’d add two externals for this:</para>
           <programlisting>https://github.com/le-tex/Hub/trunk schema/Hub
 https://github.com/le-tex/CSSa/trunk schema/Hub/css</programlisting>
           <para>Since it is not relevant for production and since newer releases of the schemas should be backward compatible,
@@ -712,9 +714,9 @@ git push</programlisting>
         <para>Our friends at <link xlink:href="http://www.ulsp.eu/">University of Leipzig Sports Medicine</link> produce and
           publish an open access journal from Word files. Their desire to upload the articles to <link 
             xlink:href="http://www.ncbi.nlm.nih.gov/pmc/">PMC</link> made them ask us to provide a converter. Because our test
-        system relies on svn front-end repos, we were unable to use it as a github-based demo project. But we can use their
+        system relies on SVN front-end repos, we were unable to use it as a GitHub-based demo project. But we can use their
         content. You can check it out from our <link 
-          xlink:href="https://subversion.le-tex.de/common/transpect-demo/content/ulsp/">svn server</link>:</para>
+          xlink:href="https://subversion.le-tex.de/common/transpect-demo/content/ulsp/">SVN server</link>:</para>
         <programlisting>mkdir ../content
 svn co https://subversion.le-tex.de/common/transpect-demo/content/ulsp/ ../content/ulsp</programlisting>
         <para>or, for the time being, you can just save one of the 

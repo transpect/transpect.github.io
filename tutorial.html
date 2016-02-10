@@ -39,20 +39,20 @@
           <div class="col s12 m9 l10" id="tr-content"><div id="d45e9" class="section col s12 scrollspy">
         <h2 class="header">Creating a repository</h2>
         <p>A transpect project consists of a specification which modules to use (and in which revision), project-specific
-          adaptations, and the modules. The project itself resides in a version control repository (we are using git and svn,
+          adaptations, and the modules. The project itself resides in a version control repository (we are using Git and Subversion (SVN),
           others will probably work, too). There are at least three ways of setting up a transpect project:</p>
         <ul>
           <li>
-            <p>git project with git submodules</p>
-            <p>svn project with svn externals (github provides sufficient svn support to make this feasible, even if
-              the modules reside in git repositories)</p>
-            <p>git, svn (or probably also Mercurial) project with the modules as git or svn externals, using 
+            <p>Git project with Git submodules</p>
+            <p>SVN project with SVN externals (GitHub provides sufficient SVN support to make this feasible, even if
+              the modules reside in Git repositories)</p>
+            <p>Git, SVN (or probably also Mercurial) project with the modules as Git or SVN externals, using 
               <a href="http://nopugs.com/ext-tutorial" target="_blank">ext</a></p>
           </li>
         </ul>
         <p>We will focus on the first approach, although git submodules are quite a beast. For people who don’t use
-        svn on a regular basis it’s the best choice though.</p>
-        <p>Let’s start creating a repository on github. We call it <a href="https://github.com/transpect/docx2jats-demo" target="_blank">docx2jats-demo</a> and clone it to local:</p>
+        SVN on a regular basis it’s the best choice though.</p>
+        <p>Let’s start creating a repository on GitHub. We call it <a href="https://github.com/transpect/docx2jats-demo" target="_blank">docx2jats-demo</a> and clone it to local:</p>
         <pre>git clone https://github.com/transpect/docx2jats-demo.git --recursive</pre>
         <div class="card"><div class="card-content">
           <p>You wouldn’t need <parameter xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink">--recursive</parameter> on your first checkout, but for those who intend
@@ -72,21 +72,23 @@
         <pre>git submodule update --init --recursive</pre>
         <p>(You can postpone this statement until you have specified all submodules.)</p>
         <div class="card"><div class="card-content">
-          <p>If you are using svn externals, you’ll have to specify five externals:</p>
+          <span class="card-title">Optional: Using Subversion</span>
+          <p>If you are using SVN externals, you’ll have to specify five externals:</p>
           <pre>https://github.com/transpect/calabash-frontend/trunk@38 calabash
 https://github.com/transpect/calabash-distro/trunk@9 calabash/distro
 https://github.com/transpect/rng-extension/trunk@10 calabash/extensions/transpect/rng-extension
 https://github.com/transpect/unzip-extension/trunk@2 calabash/extensions/transpect/unzip-extension
 https://github.com/transpect/image-props-extension/trunk@4 calabash/extensions/transpect/image-props-extension</pre>
-          <p>Note that it is recommended to attach svn externals with a fixed revision number, at least in production.
-          git submodules are fixed to a certain commit by default.</p>
+          <p>Note that it is recommended to attach SVN externals with a fixed revision number, at least in production.
+          Git submodules are fixed to a certain commit by default.</p>
         </div></div>
         <p>Let’s continue checking out some externals. We are probably going to validate the intermediate <a href="https://github.com/le-tex/Hub" target="_blank">Hub XML</a> in our docx→Hub→JATS→EPUB pipeline. This RNG schema includes
         the <a href="https://github.com/le-tex/CSSa" target="_blank">CSSa</a> schema as a submodule.</p>
         <pre>git submodule add https://github.com/le-tex/Hub.git schema/hub
 git submodule update --init --recursive</pre>
         <div class="card"><div class="card-content">
-          <p>In an svn project, you’d add two externals for this:</p>
+          <span class="card-title">Optional: Using Subversion</span>
+          <p>In an SVN project, you’d add two externals for this:</p>
           <pre>https://github.com/le-tex/Hub/trunk schema/Hub
 https://github.com/le-tex/CSSa/trunk schema/Hub/css</pre>
           <p>Since it is not relevant for production and since newer releases of the schemas should be backward compatible,
@@ -114,7 +116,7 @@ git submodule add https://github.com/transpect/xproc-util.git
         <pre>git commit -m "add submodules"
 git push</pre>
         <p>This is the repository after commit <a href="https://github.com/transpect/docx2jats-demo/tree/2445f084fae5635bb1f32f3e47e33275d73a34d9" target="_blank">2445f08</a>.</p>
-      </div><div id="d45e154" class="section col s12 scrollspy">
+      </div><div id="d45e160" class="section col s12 scrollspy">
         <h2 class="header">XML Catalog</h2>
         <p>Each transpect module is known by a canonical URI (example: <literal xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink">http:transpect.io/docx2hub/</literal>) 
           that may be used for importing their XSLT, XProc, images, or even for referring to fonts in CSS files. The
@@ -151,12 +153,12 @@ git push</pre>
         <p>You may try the correct catalog resolution and oXygen configuration by Ctrl-clicking on 
           <literal xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink">http://this.transpect.io/</literal> in the catalog. It should open the project’s base directory.</p>
         <p>With an update to a submodule that happened in the meantime, the repo at this stage looks like this: <a href="https://github.com/transpect/docx2jats-demo/tree/eabd9b6201e236af1042f0c60eb3b9bf97444169" target="_blank">eabd9b6</a></p>
-      </div><div id="d45e251" class="section col s12 scrollspy">
+      </div><div id="d45e257" class="section col s12 scrollspy">
         <h2 class="header">Getting sample input</h2>
         <p>Our friends at <a href="http://www.ulsp.eu/" target="_blank">University of Leipzig Sports Medicine</a> produce and
           publish an open access journal from Word files. Their desire to upload the articles to <a href="http://www.ncbi.nlm.nih.gov/pmc/" target="_blank">PMC</a> made them ask us to provide a converter. Because our test
-        system relies on svn front-end repos, we were unable to use it as a github-based demo project. But we can use their
-        content. You can check it out from our <a href="https://subversion.le-tex.de/common/transpect-demo/content/ulsp/" target="_blank">svn server</a>:</p>
+        system relies on SVN front-end repos, we were unable to use it as a GitHub-based demo project. But we can use their
+        content. You can check it out from our <a href="https://subversion.le-tex.de/common/transpect-demo/content/ulsp/" target="_blank">SVN server</a>:</p>
         <pre>mkdir ../content
 svn co https://subversion.le-tex.de/common/transpect-demo/content/ulsp/ ../content/ulsp</pre>
         <p>or, for the time being, you can just save one of the 
@@ -165,7 +167,7 @@ svn co https://subversion.le-tex.de/common/transpect-demo/content/ulsp/ ../conte
           <literal xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink">.docx</literal> files residing in a <literal xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink">docx/</literal> directory. Also, for making use of the configuration
           cascade that lets you – in principle – override settings per article, the content has to be stored according to a certain 
           directory structure.</p>
-      </div><div id="d45e284" class="section col s12 scrollspy">
+      </div><div id="d45e290" class="section col s12 scrollspy">
         <h2 class="header">A first pipeline</h2>
         <p>By convention, the pipelines that are meant to be invoked directly (as opposed to pipelines that implement 
           the innards of a macroscopic step such as the ominous <literal xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink">evolve-hub</literal>) reside in the directory 
@@ -193,7 +195,7 @@ svn co https://subversion.le-tex.de/common/transpect-demo/content/ulsp/ ../conte
           <literal xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink">evolve-hub</literal> configuration that was applied to the input was a succession of XSLT modes defined
         in <a href="https://github.com/transpect/evolve-hub/blob/master/xpl/fallback.xpl#L210" target="_blank">fallback.xpl</a>,
         using default parameters/variables/templates/functions in XSLT.</p>
-      </div><div id="d45e386" class="section col s12 scrollspy">
+      </div><div id="d45e392" class="section col s12 scrollspy">
         <h2 class="header">Dynamic transformation pipelines</h2>
         <p>All the major steps that transform documents from one XML format to another XML format are implemented using the
           XProc step <a href="https://github.com/transpect/cascade/blob/master/xpl/dynamic-transformation-pipeline.xpl" target="_blank"><literal xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink">tr:dynamic-transformation-pipeline</literal></a>.</p>
@@ -227,7 +229,7 @@ svn co https://subversion.le-tex.de/common/transpect-demo/content/ulsp/ ../conte
           <literal xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink">evolve-hub/driver.xpl.xsl</literal>. This main template typically loads the pipeline 
           <literal xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink">evolve-hub/driver.xpl</literal> from a less specific location (or from a sister journal) and transforms
           it, typically adding or removing XSLT steps in certain modes.</p>
-      </div><div id="d45e480" class="section col s12 scrollspy">
+      </div><div id="d45e486" class="section col s12 scrollspy">
         <h2 class="header">Configuration Cascade</h2>
         <p>The underlying concept is described in greater detail in <a href="https://subversion.le-tex.de/common/transpect-demo/content/le-tex/setup-manual/en/out/xhtml/transpect-setup.xhtml#sec-cascade" target="_blank">another 
           piece of documentation</a> that will eventually be integrated here. In brief, the content is organized 
@@ -287,7 +289,7 @@ svn co https://subversion.le-tex.de/common/transpect-demo/content/ulsp/ ../conte
           <div class="col hide-on-small-only m3 l2">
             <div class="toc-wrapper pin-top" style="top: 0px;">
               <div style="height: 1px;">
-                <ul id="tr-toc" class="table-of-contents"><li><a href="#d45e9" class="active">Creating a repository</a></li><li><a href="#d45e57">Adding Submodules</a></li><li><a href="#d45e154">XML Catalog</a></li><li><a href="#d45e251">Getting sample input</a></li><li><a href="#d45e284">A first pipeline</a></li><li><a href="#d45e386">Dynamic transformation pipelines</a></li><li><a href="#d45e480">Configuration Cascade</a></li></ul>
+                <ul id="tr-toc" class="table-of-contents"><li><a href="#d45e9" class="active">Creating a repository</a></li><li><a href="#d45e57">Adding Submodules</a></li><li><a href="#d45e160">XML Catalog</a></li><li><a href="#d45e257">Getting sample input</a></li><li><a href="#d45e290">A first pipeline</a></li><li><a href="#d45e392">Dynamic transformation pipelines</a></li><li><a href="#d45e486">Configuration Cascade</a></li></ul>
               </div>
             </div>
           </div>
