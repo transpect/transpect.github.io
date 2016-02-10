@@ -43,6 +43,7 @@
       <p:input port="source">
         <p:pipe port="result" step="insert-nav"/>
         <p:pipe port="current" step="split"/>
+        <p:pipe port="source" step="build"/>
       </p:input>
       <p:input port="stylesheet">
         <p:document href="../xsl/populate-template.xsl"/>
