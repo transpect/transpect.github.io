@@ -39,7 +39,7 @@
           <div class="col s12 m9 l10" id="tr-content"><p>This module is a library of various XSLT stylesheets and XProc steps to generate a cascade paths document 
         and to load files dynamically by the provided paths document.</p><p><a href="https://github.com/transpect/cascade" target="_blank" class="btn red">Source ⬇</a></p><div id="modules-cascade-tr-paths" class="section col s12 scrollspy">
         <h2 class="header">tr:paths</h2>
-        <p>This step takes a <a href="https://github.com/transpect/cascade/blob/master/schema/cascade.rng" target="_blank">cascade configuration</a> 
+        <p>This step takes a <a href="https://github.com/transpect/cascade/blob/master/schema/cascade.rng" target="_blank">➼ cascade configuration</a> 
           and a XSLT stylesheet as input. The cascade configuration specifies the possible configuration levels (e.g. global, imprint, series, work). 
           The XSLT stylesheet is used to override certain functions in paths.xsl, which provides the paths parameter document. The paths document provides 
           an ordered collection of file paths.</p>
@@ -47,7 +47,7 @@
         <pre><code class="language-markup">&lt;p:import href="http://transpect.io/cascade/xpl/paths.xpl"/&gt;</code></pre>
         <h4>Synopsis</h4>
         <pre><code class="language-markup">&lt;tr:paths xmlns:tr="http://transpect.io"&gt;
-  &lt;p:input port="conf"/&gt;                                  &lt;!-- Cascade configuration according to this <a href="https://github.com/transpect/cascade/blob/master/schema/cascade.rng" target="_blank">schema</a> --&gt;
+  &lt;p:input port="conf"/&gt;                                  &lt;!-- Cascade configuration according to this <a href="https://github.com/transpect/cascade/blob/master/schema/cascade.rng" target="_blank">➼ schema</a> --&gt;
   &lt;p:input port="stylesheet"/&gt;                            &lt;!-- XSLT to override default paths.xsl --&gt;
   &lt;p:output port="result"/&gt;                               &lt;!-- The paths parameter document --&gt;
   &lt;p:with-option name="debug" select="'yes'"/&gt;            &lt;!-- "yes"|"no" --&gt;
@@ -73,7 +73,7 @@
       </div><div id="modules-cascade-tr-get-clades-from-dirs" class="section col s12 scrollspy">
         <h2 class="header">tr:get-clades-from-dirs</h2>
         <p>Generates a cascade configuration from a recursive directory listing and a collection of parameter sets. This configuration 
-          can be used by tr:paths <a href="#modules-cascade-tr-paths" target="_blank">➼</a> as input.</p>
+          can be used by tr:paths <a href="#modules-cascade-tr-paths" target="_blank">tr:paths</a> as input.</p>
         <h4>Import URI</h4>
         <pre><code class="language-markup">&lt;p:import href="http://transpect.io/cascade/xpl/get-clades-from-dirs.xpl"/&gt;</code></pre>
         <h4>Synopsis</h4>

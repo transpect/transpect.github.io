@@ -843,21 +843,22 @@ svn co https://subversion.le-tex.de/common/transpect-demo/content/ulsp/ ../conte
           </listitem>
           <listitem>
             <para>The name/value pairs, if not given explicitly, may be parsed from the file name.</para>
-          </listitem>
-        </itemizedlist>
-        <informalfigure>
+            <informalfigure>
           <mediaobject>
-            <alt>Schematic clade diagram (from Wikipedia)</alt>
+            <alt>Location lookup from name/value pairs</alt>
             <imageobject>
               <imagedata fileref="source/media/docx2jats-demo/filename2directory.svg"/>
             </imageobject>
           </mediaobject>
         </informalfigure>
-        <para>The underlying concept is described in greater detail in <link 
-          xlink:href="https://subversion.le-tex.de/common/transpect-demo/content/le-tex/setup-manual/en/out/xhtml/transpect-setup.xhtml#sec-cascade">another 
-          piece of documentation</link> that will eventually be integrated here. In brief, the content is organized 
-        in <link xlink:href="https://en.wikipedia.org/wiki/Clade">clades</link> where the content items in each clade
-        share configuration settings. Clades may be publishers, imprints, journals, book series, …</para>
+          </listitem>
+          <listitem>
+            <para>All content items within a subtree inherit the same configuration settings (CSS, XSLT, Schematron, …)
+            and may overwrite them for their subtree.</para>
+          </listitem>
+        </itemizedlist>
+        <para>These non-overlapping classification hierarchies are called <emphasis><link 
+          xlink:href="https://en.wikipedia.org/wiki/Clade">clades</link></emphasis>.</para>
         <informalfigure>
           <mediaobject>
             <alt>Schematic clade diagram (from Wikipedia)</alt>
@@ -866,6 +867,12 @@ svn co https://subversion.le-tex.de/common/transpect-demo/content/ulsp/ ../conte
             </imageobject>
           </mediaobject>
         </informalfigure>
+        <para>In a transpect project, the configuration overrides for the clades are stored in the <literal>a9s</literal> 
+          (adaptations) directory.</para>
+        <para>The underlying concept is described in greater detail in <link 
+          xlink:href="https://subversion.le-tex.de/common/transpect-demo/content/le-tex/setup-manual/en/out/xhtml/transpect-setup.xhtml#sec-cascade">another 
+          piece of documentation</link> that will eventually be integrated into this site.</para>
+        
         
         <para>It is also possible to have clades for each input type, e.g., <literal>.docx</literal> and <literal>.idml</literal>. 
           However, this approach is problematic as dicussed briefly at the end of 
@@ -873,28 +880,54 @@ svn co https://subversion.le-tex.de/common/transpect-demo/content/ulsp/ ../conte
         <para>There are two ways to determine which clade a given input file belongs to:</para>
         <itemizedlist>
           <listitem>
-            <para>by file name parsing (example: <literal>CSMI_2014_701.docx → journal=CSMI, ms=CSMI_2014_701, ext=docx</literal>)</para>
+            <para>by file name parsing (example: <literal>CSMI_2014_701.docx → publisher=ulsp, journal=CSMI, ms=CSMI_2014_701, ext=docx</literal>)</para>
+            <para>(Note that <literal>publisher=ulsp</literal> doesn’t come from nowhere; this name/value pair either needs to be returned
+            statically the same for every content by the parser, or it needs to be looked up by the parser in a journal/publisher list.)</para>
           </listitem>
           <listitem>
-            <para>by explicitly setting it as an option to the pipeline (example: <literal>clades="journal=CSMI MS=701"</literal>,
+            <para>by explicitly setting it as an option to the pipeline (example: <literal>clades="publisher=ulsp journal=CSMI"</literal>,
               where ext may still be parsed from the file name). You may use <link 
                 xlink:href="https://github.com/transpect/cascade/blob/master/xsl/paths.xsl#L365"><literal>[,/\s]</literal></link> 
               as a sepator</para>
           </listitem>
         </itemizedlist>
+        
+        <bridgehead>transpect Configuration File (clades file)</bridgehead>
+        
         <para>At this point, it might be helpful to define “configuration”. It bears dual meaning: In a broad sense, 
           it’s the entirety of customizations, be it XSLT, CSS, fonts, dynamically loaded Proc pipelines, Schematron rules, …
         In a narrow sense, it is the single configuration file (the <emphasis>transpect configuration file</emphasis>) that 
           declares which clades are available and by which name/value pairs they are selected.</para>
-        <para>The current project’s transpect configuration file contains three clades: one for the publisher,
+        <para>The current project’s <link 
+          xlink:href="https://github.com/transpect/docx2jats-demo/blob/master/conf/transpect-conf.xml">transpect configuration 
+          file</link> contains three clades: one for the publisher,
             <literal>ulsp</literal>, and two for the journals <literal>CSMI</literal> and <literal>Test</literal>.</para>
         <para>The ultimate goal of clade selection is to compute file system paths in descending specificity where to look for
-          the broad-sense configuration files. The file system paths will be contained in a <literal>c:param-set</literal>
+          the broad-sense configuration files. The file system paths will be contained in a <link 
+            xlink:href="https://gist.github.com/gimsieke/3f866dc10d613665c83f"><literal>c:param-set</literal></link>
           document that is the result of invoking <link
             xlink:href="https://github.com/transpect/cascade/blob/master/xpl/paths.xpl"><literal>paths.xpl</literal></link> with
           a <literal>file</literal> option and optionally a <literal>clades</literal> option, where the name/value pairs in
             <literal>clades</literal> will have precedence. Technically the name/value pairs are modeled as attributes (not
           bound to any element).</para>
+        <para>There is a <link xlink:href="https://github.com/transpect/cascade/blob/master/schema/cascade.rng">Relax NG 
+          schema</link> for the transpect configuration file. <link 
+            xlink:href="https://github.com/transpect/cascade/blob/master/schema/cascade.rng#L76">Schematron rules</link> in this schema support
+        you in avoiding ambiguous clades that match the same combination of name/value pairs.</para>
+
+        <bridgehead>Per-clade parameters</bridgehead>
+        
+        <para>You can insert <link 
+          xlink:href="https://github.com/transpect/docx2jats-demo/blob/master/conf/transpect-conf.xml#L24">arbitrary name/value 
+          pairs</link> in the clades. These will be included in the generated paths
+          document for a content item that belongs to the clade. By using these parameters, you can for example specify
+        that for a given clade, EPUB2 files should be generated instead of the global EPUB3 setting.
+        This won’t happen automagically though. A pipeline step has to read the parameter from the paths document and
+        alter the value in the EPUB configuration document template.</para>
+<!-- tbd: epub3/epub2 for CSMI/Test -->
+        
+        <bridgehead>Custom File Name Parser</bridgehead>
+        
         <para>Matching a clade according to the parsed or supplied name/value pairs is one thing. If you don’t supply the 
           <literal>clades</literal> option, it is necessary nonetheless to parse the input file name in order to get the 
           name/value pairs in first place. Parsing the file name typically involves <literal>xsl:analyze-string</literal>
@@ -951,10 +984,6 @@ svn co https://subversion.le-tex.de/common/transpect-demo/content/ulsp/ ../conte
         overrides, but also for locating images. When Word InDesign link to external files, we often strip their paths and later
         replace them with <literal>concat($s9y1-path, 'images/', @fileref)</literal>.</para>
 <!--     §§§tbd   <para>Examples for content-base-uri=".."</para>-->
-        <bridgehead>Per-clade parameters</bridgehead>
-        <para>Other use case for the configuration file is to supply other name/value pairs to the paths document. 
-          These parameters may be supplied globally or 
-          <link xlink:href="https://github.com/transpect/docx2jats-demo/blob/master/conf/transpect-conf.xml#L24">by clade</link>.</para>
       </section>
       <section>
         <title>Debugging</title>
