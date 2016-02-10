@@ -688,7 +688,8 @@ git submodule add https://github.com/transpect/epubcheck-idpf.git
 git submodule add https://github.com/transpect/xslt-util.git
 git submodule add https://github.com/transpect/xproc-util.git
 </programlisting>
-        <para>You’ll find individual descriptions of the modules in <xref linkend="part-modules"/>.</para>
+        <para>You’ll find individual descriptions of the modules in the <link 
+          xlink:href="http://transpect.github.io/modules-bits2hub.html">Modules section</link>.</para>
         <para>Some of the modules you’ll need in almost every transpect project, some are vocabulary-specific (the ones
         that contain “jats” or “bits”) or input/output format specific (the ones that contain “docx”, “idml”, or “epub”).</para>
         <para>Commit the changes and push it to the upstream repository:</para>
