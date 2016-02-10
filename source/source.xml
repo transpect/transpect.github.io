@@ -186,6 +186,83 @@ MyProject/
   </part>
   <part xml:id="part-modules">
     <title>Modules</title>
+    <!-- bits2hub -->
+    <chapter xml:base="../modules-bits2hub.html" xml:id="bits2hub">
+      <title>bits2hub</title>
+      <subtitle>https://github.com/transpect/bits2hub</subtitle>
+      <para>This XProc step converts <link xlink:href="http://jatspan.org/nlm/bits-1.0/">BITS</link> (Book Interchange Tag Suite) to <link xlink:href="https://github.com/le-tex/Hub">Hub XML</link>.</para>
+      <bridgehead>Import URI</bridgehead>
+      <programlisting><code role="language-markup">&lt;p:import href="http://transpect.io/bits2hub/xpl/bits2hub.xpl"/></code></programlisting>
+      <bridgehead>Synopsis</bridgehead>
+      <programlisting><code role="language-markup">&lt;tr:bits2hub xmlns:tr="http://transpect.io">
+  &lt;p:input port="source"/>                                &lt;!-- a BITS XML document -->
+  &lt;p:input port="paths" kind="parameter"/>                &lt;!-- parameter input -->
+  &lt;p:output port="result"/>                               &lt;!-- Hub XML document -->
+  &lt;p:with-option name="debug" select="'yes'"/>            &lt;!-- "yes"|"no" -->
+  &lt;p:with-option name="debug-dir-uri" select="'debug'"/>  &lt;!-- "debug" -->
+  &lt;p:with-option name="status-dir-uri" select="'status'"/>&lt;!-- "status" -->
+&lt;/tr:bits2hub></code></programlisting>
+      <para><link role="btn red" xlink:href="https://github.com/transpect/bits2hub">Source ⬇</link></para>
+    </chapter>
+    <!-- cascade -->
+    <chapter xml:base="../modules-cascade.html" xml:id="modules-cascade">
+      <title>cascade</title>
+      <subtitle>https://github.com/transpect/cascade</subtitle>
+      <para>This module is a library of various XSLT stylesheets and XProc steps to generate a cascade paths document 
+        and to load files dynamically by the provided paths document.</para>
+      <para><link role="btn red" xlink:href="https://github.com/transpect/cascade">Source ⬇</link></para>
+      <section xml:id="modules-cascade-tr-paths">
+        <title>tr:paths</title>
+        <para>This step takes a <link xlink:href="https://github.com/transpect/cascade/blob/master/schema/cascade.rng">cascade configuration</link> 
+          and a XSLT stylesheet as input. The cascade configuration specifies the possible configuration levels (e.g. global, imprint, series, work). 
+          The XSLT stylesheet is used to override certain functions in paths.xsl, which provides the paths parameter document. The paths document provides 
+          an ordered collection of file paths.</para>
+        <bridgehead>Import URI</bridgehead>
+        <programlisting><code role="language-markup">&lt;p:import href="http://transpect.io/cascade/xpl/paths.xpl"/></code></programlisting>
+        <bridgehead>Synopsis</bridgehead>
+        <programlisting><code role="language-markup">&lt;tr:paths xmlns:tr="http://transpect.io">
+  &lt;p:input port="conf"/>                                  &lt;!-- Cascade configuration according to this <link xlink:href="https://github.com/transpect/cascade/blob/master/schema/cascade.rng">schema</link> -->
+  &lt;p:input port="stylesheet"/>                            &lt;!-- XSLT to override default paths.xsl -->
+  &lt;p:output port="result"/>                               &lt;!-- The paths parameter document -->
+  &lt;p:with-option name="debug" select="'yes'"/>            &lt;!-- "yes"|"no" -->
+  &lt;p:with-option name="debug-dir-uri" select="'debug'"/>  &lt;!-- "debug" -->
+  &lt;p:with-option name="status-dir-uri" select="'status'"/>&lt;!-- "status" -->
+&lt;/tr:paths></code></programlisting>
+      </section>
+      <section xml:id="modules-cascade-tr-load-cascaded">
+        <title>tr:load-cascaded</title>
+        <para>The XProc pipleline loads the most specific file based on a cascade paths document. A fallback can be provided, 
+          if there exist no file under the current cascade path.</para>
+        <bridgehead>Import URI</bridgehead>
+        <programlisting><code role="language-markup">&lt;p:import href="http://transpect.io/cascade/xpl/load-cascaded.xpl"/></code></programlisting>
+        <bridgehead>Synopsis</bridgehead>
+        <programlisting><code role="language-markup">&lt;tr:load-cascaded xmlns:tr="http://transpect.io">
+  &lt;p:input port="paths"/>                                 &lt;!-- The paths parameter document  -->
+  &lt;p:output port="result"/>                               &lt;!-- Provides the loaded file -->
+  &lt;p:with-option name="filename" select="'yes'"/>         &lt;!-- file to be loaded -->
+  &lt;p:with-option name="fallback" select="'yes'"/>         &lt;!-- provide a fallback path -->
+  &lt;p:with-option name="debug" select="'yes'"/>            &lt;!-- "yes"|"no" -->
+  &lt;p:with-option name="debug-dir-uri" select="'debug'"/>  &lt;!-- "debug" -->
+  &lt;p:with-option name="status-dir-uri" select="'status'"/>&lt;!-- "status" -->
+&lt;/tr:load-cascaded></code></programlisting>
+      </section>
+      <section xml:id="modules-cascade-tr-get-clades-from-dirs">
+        <title>tr:get-clades-from-dirs</title>
+        <para>Generates a cascade configuration from a recursive directory listing and a collection of parameter sets. This configuration 
+          can be used by tr:paths <xref linkend="modules-cascade-tr-paths"/> as input.</para>
+        <bridgehead>Import URI</bridgehead>
+        <programlisting><code role="language-markup">&lt;p:import href="http://transpect.io/cascade/xpl/get-clades-from-dirs.xpl"/></code></programlisting>
+        <bridgehead>Synopsis</bridgehead>
+        <programlisting><code role="language-markup">&lt;tr:get-clades-from-dirs xmlns:tr="http://transpect.io">
+  &lt;p:input port="params"/>                                &lt;!-- The initial params document. It's base URI is used to iterate over the subdirectories and to generate the cascade configuration. -->
+  &lt;p:output port="directory-param-sets"/>                 &lt;!-- Provides the cascade configuration, later to be used by tr:paths -->
+  &lt;p:with-option name="debug" select="'yes'"/>            &lt;!-- "yes"|"no" -->
+  &lt;p:with-option name="debug-dir-uri" select="'debug'"/>  &lt;!-- "debug" -->
+  &lt;p:with-option name="status-dir-uri" select="'status'"/>&lt;!-- "status" -->
+&lt;/tr:get-clades-from-dirs></code></programlisting>
+      </section>
+    </chapter>
+    <!-- docx2hub -->
     <chapter xml:base="../modules-docx2hub.html">
       <title>docx2hub</title>
       <subtitle>https://github.com/transpect/docx2hub</subtitle>
@@ -203,24 +280,6 @@ MyProject/
   &lt;p:with-option name="status-dir-uri" select="'status'"/>&lt;!-- "status" -->
 &lt;/docx2hub:convert></code></programlisting>
       <para><link role="btn red" xlink:href="https://github.com/transpect/docx2hub">Source ⬇</link></para>
-    </chapter>
-    <!-- bits2hub -->
-    <chapter xml:base="../modules-bits2hub.html">
-      <title>bits2hub</title>
-      <subtitle>https://github.com/transpect/bits2hub</subtitle>
-      <para>This XProc step converts <link xlink:href="http://jatspan.org/nlm/bits-1.0/">BITS</link> (Book Interchange Tag Suite) to <link xlink:href="https://github.com/le-tex/Hub">Hub XML</link>.</para>
-      <bridgehead>Import URI</bridgehead>
-      <programlisting><code role="language-markup">&lt;p:import href="http://transpect.io/bits2hub/xpl/bits2hub.xpl"/></code></programlisting>
-      <bridgehead>Synopsis</bridgehead>
-      <programlisting><code role="language-markup">&lt;tr:bits2hub xmlns:tr="http://transpect.io">
-  &lt;p:input port="source"/>                                &lt;!-- a BITS XML document -->
-  &lt;p:input port="paths" kind="parameter"/>                &lt;!-- parameter input -->
-  &lt;p:output port="result"/>                               &lt;!-- Hub XML document -->
-  &lt;p:with-option name="debug" select="'yes'"/>            &lt;!-- "yes"|"no" -->
-  &lt;p:with-option name="debug-dir-uri" select="'debug'"/>  &lt;!-- "debug" -->
-  &lt;p:with-option name="status-dir-uri" select="'status'"/>&lt;!-- "status" -->
-&lt;/tr:bits2hub></code></programlisting>
-      <para><link role="btn red" xlink:href="https://github.com/transpect/bits2hub">Source ⬇</link></para>
     </chapter>
     <!-- epubtools -->
     <chapter xml:base="../modules-epubtools.html">
@@ -250,7 +309,7 @@ MyProject/
       <title>htmlreports</title>
       <subtitle>https://github.com/transpect/htmlreports</subtitle>
       <para>Various XProc steps for validating XML with RelaxNG and Schematron and rendering the report messages into an HTML file.</para>
-      <para><link role="btn red" xlink:href="https://github.com/transpect/epubtools">Source ⬇</link></para>
+      <para><link role="btn red" xlink:href="https://github.com/transpect/htmlreports">Source ⬇</link></para>
       <section>
         <title>tr:patch-svrl</title>
         <para>This step patches error report(s) into an HTML document 
