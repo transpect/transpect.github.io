@@ -276,8 +276,8 @@
     </pre>
   </xsl:template>
   
-  <xsl:template match="dbk:code|dbk:code|dbk:command|dbk:computeroutput">
-    <code class="{local-name()}">
+  <xsl:template match="dbk:code|dbk:parameter|dbk:markup|dbk:literal|dbk:code|dbk:command|dbk:computeroutput">
+    <code class="{(@role, concat('language-', local-name()))[1]}">
       <xsl:apply-templates select="@*|node()"/>
     </code>
   </xsl:template>
