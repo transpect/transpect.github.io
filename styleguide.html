@@ -40,7 +40,7 @@
         <h2 class="header">General</h2>
         <ul>
           <li>
-            <p>Use <code class="code">UTF-8</code> encoding</p>
+            <p>Use <code class="language-code">UTF-8</code> encoding</p>
           </li>
           <li>
             <p>Use soft-tabs with a two space indent</p>
@@ -79,7 +79,7 @@
                   <filename xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink">xmlcatalog/catalog.xml</filename></p>
             </li>
             <li>
-              <p>The catalog file must include a <code class="code">rewriteURI</code> statement which identifies the repository
+              <p>The catalog file must include a <code class="language-code">rewriteURI</code> statement which identifies the repository
                 with a URI.</p>
               <pre><code class="language-markup">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
 &lt;catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog"&gt;
@@ -112,23 +112,23 @@ myproject/
         <h2 class="header">XProc</h2>
         <ul>
           <li>
-            <p>Encapsulate commonly used functionality into components with <code class="code">p:import</code> and
-                <code class="code">p:declare-step</code>. Add <code class="code">name</code> and <code class="code">type</code> attributes to each
-                <code class="code">p:declare-step</code> to make it accessible from inside and outside of the pipeline</p>
+            <p>Encapsulate commonly used functionality into components with <code class="language-code">p:import</code> and
+                <code class="language-code">p:declare-step</code>. Add <code class="language-code">name</code> and <code class="language-code">type</code> attributes to each
+                <code class="language-code">p:declare-step</code> to make it accessible from inside and outside of the pipeline</p>
           </li>
           <li>
-            <p>Avoid too many nested <code class="code">p:choose</code> if possible. A proper XSLT is many times a better option
+            <p>Avoid too many nested <code class="language-code">p:choose</code> if possible. A proper XSLT is many times a better option
               to encapsulate application logic.</p>
           </li>
           <li>
-            <p>Use <code class="code">p:documentation</code> tags to explain what your pipeline does.</p>
+            <p>Use <code class="language-code">p:documentation</code> tags to explain what your pipeline does.</p>
           </li>
           <li>
-            <p>Provide debugging features and console output in your pipeline, e.g. via <code class="code">tr:store-debug</code>
-              or <code class="code">cx:message</code></p>
+            <p>Provide debugging features and console output in your pipeline, e.g. via <code class="language-code">tr:store-debug</code>
+              or <code class="language-code">cx:message</code></p>
           </li>
           <li>
-            <p>We encourage you to use the <code class="code">cx:depends-on</code> attribute for declaring step order explicitely.
+            <p>We encourage you to use the <code class="language-code">cx:depends-on</code> attribute for declaring step order explicitely.
               This is needed when you want to use steps which operate with files.</p>
           </li>
         </ul>
@@ -136,11 +136,11 @@ myproject/
         <h2 class="header">XSLT</h2>
         <ul>
           <li>
-            <p>Avoid too many nested <code class="code">xsl:choose</code> as this will make your code difficult do decipher. Try
-              to replace with <code class="code">xsl:template</code> with concrete matching patterns.</p>
+            <p>Avoid too many nested <code class="language-code">xsl:choose</code> as this will make your code difficult do decipher. Try
+              to replace with <code class="language-code">xsl:template</code> with concrete matching patterns.</p>
           </li>
           <li>
-            <p>Provide a data type for variables via <code class="code">as</code> attribute.</p>
+            <p>Provide a data type for variables via <code class="language-code">as</code> attribute.</p>
             <pre><code class="language-markup">&lt;xsl:variable name="chapter" select="chapter" as="element(chapter)"/&gt;</code></pre>
           </li>
           <li>
@@ -153,7 +153,7 @@ myproject/
               speed</p>
           </li>
           <li>
-            <p>Use namespace <code class="code">http://transpect.io</code> and prefix <code class="code">tr</code> for custom functions.</p>
+            <p>Use namespace <code class="language-code">http://transpect.io</code> and prefix <code class="language-code">tr</code> for custom functions.</p>
           </li>
         </ul>
       </div><div id="d44e260" class="section col s12 scrollspy">
@@ -161,15 +161,15 @@ myproject/
         <ul>
           <li>
             <p>Some XPath expressions force the XML parser to perform deep explorations of the XML tree. If you know
-              the expected context, you can reduce CPU and memory usage by avoiding wildcard patterns (<code class="code">*</code>,
-                <code class="code">@*</code>) and deep XPath axis requests (<code class="code">ancestor</code>, <code class="code">descendant</code> or
-                <code class="code">//*</code>, <code class="code">preceding</code>, <code class="code">following</code>).</p>
+              the expected context, you can reduce CPU and memory usage by avoiding wildcard patterns (<code class="language-code">*</code>,
+                <code class="language-code">@*</code>) and deep XPath axis requests (<code class="language-code">ancestor</code>, <code class="language-code">descendant</code> or
+                <code class="language-code">//*</code>, <code class="language-code">preceding</code>, <code class="language-code">following</code>).</p>
           </li>
           <li>
-            <p>If possible, substitute regular expression functions (<code class="code">matches()</code>, <code class="code">replace()</code>, <code class="code">tokenize()</code>)
-              with simple string manipulation functions (<code class="code">contains()</code>,
-                <code class="code">starts-with()</code>, <code class="code">ends-with()</code>, <code class="code">substring-before()</code>,
-                <code class="code">substring-after()</code>, <code class="code">translate()</code></p>
+            <p>If possible, substitute regular expression functions (<code class="language-code">matches()</code>, <code class="language-code">replace()</code>, <code class="language-code">tokenize()</code>)
+              with simple string manipulation functions (<code class="language-code">contains()</code>,
+                <code class="language-code">starts-with()</code>, <code class="language-code">ends-with()</code>, <code class="language-code">substring-before()</code>,
+                <code class="language-code">substring-after()</code>, <code class="language-code">translate()</code></p>
           </li>
           <li>
             <p>Indent longer conditional statements, loops and nested functions</p>
@@ -180,7 +180,7 @@ myproject/
                            else false()"/&gt;</code></pre>
           </li>
           <li>
-            <p>Comment longer XPath statements: <code class="code">(: my XPath comment :)</code></p>
+            <p>Comment longer XPath statements: <code class="language-code">(: my XPath comment :)</code></p>
           </li>
         </ul>
       </div><div id="d44e348" class="section col s12 scrollspy">
