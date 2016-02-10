@@ -371,6 +371,7 @@ MyProject/
       <subtitle>https://github.com/transpect/hub2bits</subtitle>
       <para>This XProc step generates a <link xlink:href="http://jatspan.org/nlm/bits-1.0/">BITS</link> (Book Interchange Tag Suite) 
         document from <link xlink:href="https://github.com/le-tex/Hub">Hub XML</link>.</para>
+      <para><link role="btn red" xlink:href="https://github.com/transpect/hub2bits">Source ⬇</link></para>
       <bridgehead>Import URI</bridgehead>
       <programlisting><code role="language-markup">&lt;p:import href="http://transpect.io/hub2bits/xpl/hub2bits.xpl"/></code></programlisting>
       <bridgehead>Synopsis</bridgehead>
