@@ -925,7 +925,7 @@ svn co https://subversion.le-tex.de/common/transpect-demo/content/ulsp/ ../conte
         <para>As mentioned before, local resolution of the content repo will not only be used for per-content-item configuration
         overrides, but also for locating images. When Word InDesign link to external files, we often strip their paths and later
         replace them with <literal>concat($s9y1-path, 'images/', @fileref)</literal>.</para>
-<!--     §§§   <para>Examples for content-base-uri=".."</para>-->
+<!--     §§§tbd   <para>Examples for content-base-uri=".."</para>-->
         <bridgehead>Per-clade parameters</bridgehead>
         <para>Other use case for the configuration file is to supply other name/value pairs to the paths document. 
           These parameters may be supplied globally or 
@@ -973,7 +973,7 @@ svn co https://subversion.le-tex.de/common/transpect-demo/content/ulsp/ ../conte
         be hard, but that’s a thing that this sample project should help alleviate.</para>
       </section>
       <section>
-        <title>Validating the Input, Output, and Intermediate Steps</title>
+        <title>Validation</title>
         <para>This <link xlink:href="https://github.com/transpect/docx2jats-demo/compare/34147ac...e5ef56c">diff of commit e5ef56c</link> 
         show several modifications to the <link 
           xlink:href="https://github.com/transpect/docx2jats-demo/commit/fbd645bc9f1c4f204fd248b361cc600adabe0413#diff-70cf31a3c86a739a35ebbf3fe22ec844">current pipeline</link>:</para>
@@ -1014,6 +1014,32 @@ svn co https://subversion.le-tex.de/common/transpect-demo/content/ulsp/ ../conte
    a9s/common/xpl/docx2jats.xpl \
    file=../content/ulsp/CSMI/CSMI_2014_701/docx/CSMI_2014_701.docx</programlisting>
         <para>See the resulting <link xlink:href="media/docx2jats-demo/report-CSMI_2014_701.xhtml">error report</link>.</para>
+        <bridgehead>Faulty Input</bridgehead>
+        <para>tbd</para>
+        <bridgehead>PubMed Central / NLM style checker</bridgehead>
+        <para>tbd</para>
+      </section>
+      <section>
+        <title>Creating a PMC Zip</title>
+        <para>tbd</para>
+      </section>
+      <section>
+        <title>Creating an EPUB</title>
+        <para>tbd</para>
+      </section>
+      <section>
+        <title>transpectdoc</title>
+        <para>tbd</para>
+      </section>
+      <section>
+        <title>Integration/Tests</title>
+        <para>tbd: Upload interface / Makefile</para>
+        <para>tbd: before/after</para>
+        <para>tbd: jenkins screenshot</para>
+      </section>
+      <section>
+        <title>GUI</title>
+        <para>tbd</para>
       </section>
     </chapter>
   </part>
