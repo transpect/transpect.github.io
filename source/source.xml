@@ -973,8 +973,47 @@ svn co https://subversion.le-tex.de/common/transpect-demo/content/ulsp/ ../conte
         be hard, but that’s a thing that this sample project should help alleviate.</para>
       </section>
       <section>
-        <title>Validating the Output and Intermediate Steps</title>
-        <para></para>
+        <title>Validating the Input, Output, and Intermediate Steps</title>
+        <para>This <link xlink:href="https://github.com/transpect/docx2jats-demo/compare/34147ac...e5ef56c">diff of commit e5ef56c</link> 
+        show several modifications to the <link 
+          xlink:href="https://github.com/transpect/docx2jats-demo/commit/fbd645bc9f1c4f204fd248b361cc600adabe0413#diff-70cf31a3c86a739a35ebbf3fe22ec844">current pipeline</link>:</para>
+        <itemizedlist>
+          <listitem>
+            <para>Added a <literal>jats2html</literal> step, <link 
+              xlink:href="https://github.com/transpect/docx2jats-demo/blob/e5ef56c8f9b15b466047b813f66940a63550cdbf/a9s/common/jats2html/jats2html.xsl">XSLT customizing</link>
+            for this step, and CSS </para>
+          </listitem>
+          <listitem>
+            <para>Added Schematron checks for flat Hub, for evolved Hub, and for JATS XML</para>
+          </listitem>
+          <listitem>
+            <para>Added a Relax NG check for JATS XML, using the JATS 1.0 archiving schema (using a <link 
+              xlink:href="https://github.com/transpect/rng-extension/blob/master/xpl/validate-with-rng-declaration.xpl">wrapper</link> around
+            <literal>p:validate-with-relax-ng</literal> that produces an output port and reports the XPath
+            location for each error, in addition to the line number which is meaningless in the middle of a pipeline)</para>
+          </listitem>
+          <listitem>
+            <para>Added a <literal>tr:check-styles</literal> step that matches the styles found in the input <literal>.docx</literal>
+              against <link xlink:href="https://github.com/transpect/docx2jats-demo/blob/master/a9s/common/styles/cssa.xml">this list</link>
+            (that has been extracted from the Hub XML of a sample input document)</para>
+          </listitem>
+          <listitem>
+            <para><literal>tr:patch-svrl</literal>: Collect the 
+              <literal>report</literal> ports of all steps (SVRL and <literal>c:errors</literal> documents produced by the
+              RNG validation and potentially also by <literal>p:try</literal>/<literal>p:catch</literal>-encapsulated steps)
+              and patch them into the HTML rendering, at the error location. There is an XML Amsterdam presentation entitled 
+              <link xlink:href="http://publishinggeekly.com/wp-content/uploads/2015/11/2015-11-06_xmlamsterdam_htmlreports/"
+                >“Unified Validation Reporting in HTML Renderings”</link> that describes this approach.
+            </para>
+          </listitem>
+        </itemizedlist>
+        <para>The modified invocation (modulo debug options) reads:</para>
+        <programlisting>calabash/calabash.sh \
+   -o result=out.xml \
+   -o htmlreport=report.xhtml \
+   a9s/common/xpl/docx2jats.xpl \
+   file=../content/ulsp/CSMI/CSMI_2014_701/docx/CSMI_2014_701.docx</programlisting>
+        <para>See the resulting <link xlink:href="media/docx2jats-demo/report-CSMI_2014_701.xhtml">error report</link>.</para>
       </section>
     </chapter>
   </part>
