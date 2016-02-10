@@ -598,7 +598,8 @@ myproject/
         </listitem>
       </itemizedlist>
       <para>Prerequisites: Intermediate knowledge of revision control systems, XProc, and XSLT.</para>
-      <para>transpect offers some ready-to-run pipelines such as <link xlink:href="https://github.com/transpect/docx2tex">docx2tex</link>, 
+      <para>transpect offers some ready-to-run pipelines such as <link xlink:href="https://github.com/transpect/docx2tex">docx2tex</link>
+        or <link xlink:href="https://transpect.le-tex.de/en/converter/save_file?set_button=&amp;upload_type=epubcheck">epubcheck-transpect</link>, 
         but most projects require configuration. transpect is not a tool, it’s a framework that has
         its own modules and methodologies. Someone needs to configure them, operate them, and to make sure that
         once-configured pipelines continue to yield consistent results.</para>
@@ -703,9 +704,10 @@ git push</programlisting>
           that may be used for importing their XSLT, XProc, images, or even for referring to fonts in CSS files. The
         mapping to actual files will be performed by a catalog resolver that needs to be configured by an XML Catalog. 
         The Calabash frontend script, 
-          <link xlink:href="https://github.com/transpect/calabash-frontend/blob/master/calabash.bat">calabat.sh</link> or 
+          <link xlink:href="https://github.com/transpect/calabash-frontend/blob/master/calabash.bat">calabash.sh</link> or 
           <link xlink:href="https://github.com/transpect/calabash-frontend/blob/master/calabash.bat">calabash.bat</link>, will 
-        read a catalog <literal>../xmlcatalog/catalog.xml</literal> by default. The catalog that you are going to create 
+        read a catalog <link 
+          xlink:href="https://github.com/transpect/docx2jats-demo/blob/eabd9b6201e236af1042f0c60eb3b9bf97444169/xmlcatalog/catalog.xml"><literal>../xmlcatalog/catalog.xml</literal></link> by default. The catalog that you are going to create 
         will contain mostly <literal>nextCatalog</literal> that refer to the modules’ XML catalogs, at their relative locations
         in your project. In addition, you declare 
           <markup>&lt;rewriteURI uriStartString=​"http://this.transpect.io/" rewritePrefix="../"/&gt;</markup> to point to
@@ -830,6 +832,7 @@ svn co https://subversion.le-tex.de/common/transpect-demo/content/ulsp/ ../conte
       </section>
       <section>
         <title>Configuration Cascade</title>
+        <!-- tbd: tree diagram of a9s -->
         <para>The underlying concept is described in greater detail in <link 
           xlink:href="https://subversion.le-tex.de/common/transpect-demo/content/le-tex/setup-manual/en/out/xhtml/transpect-setup.xhtml#sec-cascade">another 
           piece of documentation</link> that will eventually be integrated here. In brief, the content is organized 
@@ -850,7 +853,7 @@ svn co https://subversion.le-tex.de/common/transpect-demo/content/ulsp/ ../conte
         <para>There are two ways to determine which clade a given input file belongs to:</para>
         <itemizedlist>
           <listitem>
-            <para>by file name parsing (example: <literal>CSMI_2014_701.docx → journal=CSMI, ms=701, ext=docx</literal>)</para>
+            <para>by file name parsing (example: <literal>CSMI_2014_701.docx → journal=CSMI, ms=CSMI_2014_701, ext=docx</literal>)</para>
           </listitem>
           <listitem>
             <para>by explicitly setting it as an option to the pipeline (example: <literal>clades="journal=CSMI MS=701"</literal>,
@@ -935,7 +938,8 @@ svn co https://subversion.le-tex.de/common/transpect-demo/content/ulsp/ ../conte
       </section>
       <section>
         <title>Debugging</title>
-        <para>You might have wondered where we read the paths document in the last step, as the pipeline has no output port
+        <para>You might have wondered where we read the <link xlink:href="https://gist.github.com/gimsieke/3f866dc10d613665c83f">paths 
+          document</link> in the previous section, as the pipeline has no output port
         for it. We read it from the file <literal>debug/cascade/paths.xml</literal>. The location of the debugging files
         and whether they will be written at all (they can easily comprise dozens of Megabytes for IDML conversions)
         can be controlled as follows:</para>
@@ -949,6 +953,7 @@ svn co https://subversion.le-tex.de/common/transpect-demo/content/ulsp/ ../conte
             <literal>yes</literal> by default, but debug-dir-uri is set to <literal>debug</literal>, which leads to the
           debugging output being written to <literal>xproc-util/store-debug/xpl/debug</literal>. If you want to store it below
           the project directory, you can do so by modifying the invocation to:</para>
+        <!-- tbd: link to more debugging output -->
         <programlisting>calabash/calabash.sh -o result=out.xml a9s/common/xpl/docx2jats.xpl \
   file=../content/ulsp/CSMI/CSMI_2014_701/docx/CSMI_2014_701.docx \
   debug-dir-uri=file:$(pwd)/debug</programlisting>
@@ -965,6 +970,7 @@ svn co https://subversion.le-tex.de/common/transpect-demo/content/ulsp/ ../conte
       </section>
       <section>
         <title>Improving the Output by Adding Actual Configuration</title>
+        <!-- tbd: link to output -->
         <para>In order to make the output more valid and reasonable, we now add configuration for the <literal>evolve-hub</literal>
         and <literal>hub2jats</literal> steps. (As a side note: <literal>docx2hub</literal> is a virtually configuration-free step that
           is supposed to yield the same flat Hub XML output for a given <literal>.docx</literal> file.)</para>
@@ -1017,6 +1023,8 @@ svn co https://subversion.le-tex.de/common/transpect-demo/content/ulsp/ ../conte
    file=../content/ulsp/CSMI/CSMI_2014_701/docx/CSMI_2014_701.docx</programlisting>
         <para>See the resulting <link xlink:href="source/media/docx2jats-demo/report-CSMI_2014_701.xhtml">error report</link>.</para>
         <bridgehead>Faulty Input</bridgehead>
+        <para>tbd</para>
+        <bridgehead>Extending the Schematron for a Sub-Clade</bridgehead>
         <para>tbd</para>
         <bridgehead>PubMed Central / NLM style checker</bridgehead>
         <para>tbd</para>
