@@ -805,7 +805,7 @@ svn co https://subversion.le-tex.de/common/transpect-demo/content/ulsp/ ../conte
           <mediaobject>
             <alt>Schematic clade diagram (from Wikipedia)</alt>
             <imageobject>
-              <imagedata fileref="media/docx2jats-demo/wikipedia_Clade-grade_II.svg"/>
+              <imagedata fileref="source/media/docx2jats-demo/wikipedia_Clade-grade_II.svg"/>
             </imageobject>
           </mediaobject>
         </informalfigure>
