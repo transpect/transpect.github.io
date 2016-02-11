@@ -695,7 +695,8 @@ myproject/
         its own modules and methodologies. Someone needs to configure them, operate them, and to make sure that
         once-configured pipelines continue to yield consistent results.</para>
       <para>This tutorial focuses on the configuration part.</para>
-      <section>
+      
+      <section xml:id="initial-github-repo">
         <title>Creating a Repository</title>
         <para>A transpect project consists of a specification which modules to use (and in which revision), project-specific
           adaptations, and the modules. The project itself resides in a version control repository (we are using Git and Subversion (SVN),
@@ -725,7 +726,8 @@ myproject/
         to clone the final project this is helpful already.</para>
         </note>
       </section>
-      <section>
+      
+      <section xml:id="submodules">
         <title>Adding Submodules</title>
         <para>We’ll identify the modules that we need (primarily by their name, such as <link 
           xlink:href="https://github.com/transpect/docx2hub">docx2hub</link>, <link 
@@ -803,8 +805,7 @@ git push</programlisting>
         </note>
       </section>
 
-
-      <section>
+      <section xml:id="xmlcatalog">
         <title>XML Catalog</title>
         <para>Each transpect module is known by a canonical URI (example: <literal>http:transpect.io/docx2hub/</literal>) 
           that may be used for importing their XSLT, XProc, images, or even for referring to fonts in CSS files. The
@@ -851,7 +852,8 @@ git push</programlisting>
         <para>With an update to a submodule that happened in the meantime, the repo at this stage looks like this: <link 
           xlink:href="https://github.com/transpect/docx2jats-demo/tree/eabd9b6201e236af1042f0c60eb3b9bf97444169">eabd9b6</link></para>
       </section>
-      <section>
+      
+      <section xml:id="getting-input">
         <title>Getting Sample Input</title>
         <para>Our friends at <link xlink:href="http://www.ulsp.eu/">University of Leipzig Sports Medicine</link> produce and
           publish an open access journal from Word files. Their desire to upload the articles to <link 
@@ -869,7 +871,8 @@ svn co https://subversion.le-tex.de/common/transpect-demo/content/ulsp/ ../conte
           cascade that lets you – in principle – override settings per article, the content has to be stored according to a certain 
           directory structure.</para>
       </section>
-      <section>
+      
+      <section xml:id="basic-pipeline">
         <title>A First Pipeline</title>
         <para>By convention, the pipelines that are meant to be invoked directly (as opposed to pipelines that implement 
           the innards of a macroscopic step such as the ominous <literal>evolve-hub</literal>) reside in the directory 
@@ -903,7 +906,8 @@ svn co https://subversion.le-tex.de/common/transpect-demo/content/ulsp/ ../conte
         in <link xlink:href="https://github.com/transpect/evolve-hub/blob/master/xpl/fallback.xpl#L210">fallback.xpl</link>,
         using default parameters/variables/templates/functions in XSLT.</para>
       </section>
-      <section>
+      
+      <section xml:id="dynamic-transformation-pipelines">
         <title>Dynamic Transformation Pipelines</title>
         <note>
           <para>You can skip this and the following two sections if you aren’t interested (yet) in the gory configuration 
@@ -944,7 +948,8 @@ svn co https://subversion.le-tex.de/common/transpect-demo/content/ulsp/ ../conte
           <literal>evolve-hub/driver.xpl</literal> from a less specific location (or from a sister journal) and transforms
           it, typically adding or removing XSLT steps in certain modes.</para>
       </section>
-      <section>
+      
+      <section xml:id="cascade">
         <title>Configuration Cascade</title>
         <para>The configuration relies on the following assumptions:</para>
         <itemizedlist>
@@ -1099,7 +1104,8 @@ svn co https://subversion.le-tex.de/common/transpect-demo/content/ulsp/ ../conte
         replace them with <literal>concat($s9y1-path, 'images/', @fileref)</literal>.</para>
 <!--     §§§tbd   <para>Examples for content-base-uri=".."</para>-->
       </section>
-      <section>
+      
+      <section xml:id="debugging">
         <title>Debugging</title>
         <para>You might have wondered where we read the <link xlink:href="https://gist.github.com/gimsieke/3f866dc10d613665c83f">paths 
           document</link> in the previous section, as the pipeline has no output port
@@ -1131,6 +1137,7 @@ svn co https://subversion.le-tex.de/common/transpect-demo/content/ulsp/ ../conte
           </mediaobject>
         </informalfigure>
       </section>
+      
       <section xml:id="a9s-common">
         <title>Improving the Output by Adding Actual Configuration</title>
         <!-- tbd: link to output -->
@@ -1144,7 +1151,8 @@ svn co https://subversion.le-tex.de/common/transpect-demo/content/ulsp/ ../conte
           xlink:href="https://github.com/transpect/docx2jats-demo/blob/master/a9s/common/evolve-hub/driver.xsl#L14">imported XSLT</link> may
         be hard, but that’s a thing that this sample project should help alleviate.</para>
       </section>
-      <section>
+      
+      <section xml:id="validation">
         <title>Validation</title>
         <para>This <link xlink:href="https://github.com/transpect/docx2jats-demo/compare/34147ac...e5ef56c">diff of commit e5ef56c</link> 
         show several modifications to the <link 
@@ -1198,7 +1206,7 @@ svn co https://subversion.le-tex.de/common/transpect-demo/content/ulsp/ ../conte
 
       </section>
 
-      <section>
+      <section xml:id="a9s-specific-customizations">
         <title>Using the Configuration Cascade</title>
 
         <para>So far, we did only supply customizations in the <literal>a9s/common</literal> directory. Let’s introduce
@@ -1254,7 +1262,7 @@ svn co https://subversion.le-tex.de/common/transpect-demo/content/ulsp/ ../conte
         empty there.</para>
       </section>
 
-      <section>
+      <section xml:id="epub">
         <title>Creating an EPUB</title>
         <para>transpect’s EPUB conversion step accepts a single (X)HTML document on its source port. In addition,
         it requires a configuration file in which you can specify the EPUB version (2 or 3 currently), the hierarchization 
@@ -1282,7 +1290,7 @@ svn co https://subversion.le-tex.de/common/transpect-demo/content/ulsp/ ../conte
         <para>This is the resulting <link xlink:href="source/media/docx2jats-demo/Test_2014_701.epub">EPUB file</link>.</para>
       </section>
 
-      <section>
+      <section xml:id="pmc">
         <title>Creating a PMC Zip</title>
 
         <bridgehead>PubMed Central / NLM style checker</bridgehead>
@@ -1296,14 +1304,14 @@ svn co https://subversion.le-tex.de/common/transpect-demo/content/ulsp/ ../conte
         <para>The <link xlink:href="source/media/docx2jats-demo/doc/">generated documentation</link> of this project.</para>
       </section>
 
-      <section>
+      <section xml:id="integration">
         <title>Integration/Tests</title>
         <para>tbd: Upload interface / Makefile</para>
         <para>tbd: before/after</para>
         <para>tbd: jenkins screenshot</para>
       </section>
 
-      <section>
+      <section xml:id="gui">
         <title>GUI</title>
         <para>tbd: screenshots, installation of this project on <link 
           xlink:href="https://transpect.le-tex.de/?locale=en">transpect.le-tex.de</link></para>
