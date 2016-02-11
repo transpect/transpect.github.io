@@ -1276,7 +1276,7 @@ svn co https://subversion.le-tex.de/common/transpect-demo/content/ulsp/ ../conte
 
       
 
-      <section>
+      <section xml:id="transpectdoc">
         <title>transpectdoc</title>
         <para>The <link xlink:href="source/media/docx2jats-demo/doc/">generated documentation</link> of this project.</para>
       </section>
