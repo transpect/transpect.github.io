@@ -480,12 +480,7 @@ svn co https://subversion.le-tex.de/common/transpect-demo/content/ulsp/ ../conte
           conversion step, where category is supplied by the Schematron author, the <a href="source/media/docx2jats-demo/report-CSMI_2014_701.xhtml" target="_blank">HTML report</a> contains some more errors
           and warnings.</p>
 
-
-        
-
-        <h4>PubMed Central / NLM style checker</h4>
-        <p>tbd</p>
-      </div><div id="d51e1147" class="section col s12 scrollspy">
+      </div><div id="d51e1141" class="section col s12 scrollspy">
         <h2 class="header">Using the Configuration Cascade</h2>
 
         <p>So far, we did only supply customizations in the <code class="language-literal">a9s/common</code> directory. Let’s introduce
@@ -526,21 +521,31 @@ svn co https://subversion.le-tex.de/common/transpect-demo/content/ulsp/ ../conte
           of the sub-clades to the ancestor clades’ checks. </p>
         <p>If a check should be left out in the derivative clade, its pattern should be redefined
         empty there.</p>
-      </div><div id="d51e1248" class="section col s12 scrollspy">
-        <h2 class="header">Creating a PMC Zip</h2>
-        <p>tbd</p>
-      </div><div id="d51e1257" class="section col s12 scrollspy">
+      </div><div id="d51e1242" class="section col s12 scrollspy">
         <h2 class="header">Creating an EPUB</h2>
+        <p>The necessary changes consist in:</p>
+        <ul>
+          <li>
+            <p>adding an <code class="language-literal">xml:base</code> attribute to the HTML rendering that is a <code class="language-literal">file:</code> 
+              URI that ends in <code class="language-literal">.xhtml</code>.
+            In the example, it is the file URI of the <code class="language-literal">docx2hub</code> output, with a trailing <code class="language-literal">.hub.xml</code>
+            replaced with <code class="language-literal">.xhtml</code></p>
+          </li>
+        </ul>
+      </div><div id="d51e1278" class="section col s12 scrollspy">
+        <h2 class="header">Creating a PMC Zip</h2>
+
+        <h4>PubMed Central / NLM style checker</h4>
         <p>tbd</p>
-      </div><div id="d51e1266" class="section col s12 scrollspy">
+      </div><div id="d51e1290" class="section col s12 scrollspy">
         <h2 class="header">transpectdoc</h2>
-        <p>tbd</p>
-      </div><div id="d51e1275" class="section col s12 scrollspy">
+        <p>The <a href="source/media/docx2jats-demo/doc/" target="_blank">generated documentation</a> of this project.</p>
+      </div><div id="d51e1302" class="section col s12 scrollspy">
         <h2 class="header">Integration/Tests</h2>
         <p>tbd: Upload interface / Makefile</p>
         <p>tbd: before/after</p>
         <p>tbd: jenkins screenshot</p>
-      </div><div id="d51e1290" class="section col s12 scrollspy">
+      </div><div id="d51e1317" class="section col s12 scrollspy">
         <h2 class="header">GUI</h2>
         <p>tbd</p>
       </div></div>
@@ -548,7 +553,7 @@ svn co https://subversion.le-tex.de/common/transpect-demo/content/ulsp/ ../conte
           <div class="col hide-on-small-only m3 l2">
             <div class="toc-wrapper pin-top" style="top: 0px;">
               <div style="height: 1px;">
-                <ul id="tr-toc" class="table-of-contents"><li><a href="#d51e55" class="active">Creating a Repository</a></li><li><a href="#d51e112">Adding Submodules</a></li><li><a href="#d51e240">XML Catalog</a></li><li><a href="#d51e337">Getting Sample Input</a></li><li><a href="#d51e372">A First Pipeline</a></li><li><a href="#d51e477">Dynamic Transformation Pipelines</a></li><li><a href="#d51e579">Configuration Cascade</a></li><li><a href="#d51e900">Debugging</a></li><li><a href="#a9s-common">Improving the Output by Adding Actual Configuration</a></li><li><a href="#d51e1020">Validation</a></li><li><a href="#d51e1147">Using the Configuration Cascade</a></li><li><a href="#d51e1248">Creating a PMC Zip</a></li><li><a href="#d51e1257">Creating an EPUB</a></li><li><a href="#d51e1266">transpectdoc</a></li><li><a href="#d51e1275">Integration/Tests</a></li><li><a href="#d51e1290">GUI</a></li></ul>
+                <ul id="tr-toc" class="table-of-contents"><li><a href="#d51e55" class="active">Creating a Repository</a></li><li><a href="#d51e112">Adding Submodules</a></li><li><a href="#d51e240">XML Catalog</a></li><li><a href="#d51e337">Getting Sample Input</a></li><li><a href="#d51e372">A First Pipeline</a></li><li><a href="#d51e477">Dynamic Transformation Pipelines</a></li><li><a href="#d51e579">Configuration Cascade</a></li><li><a href="#d51e900">Debugging</a></li><li><a href="#a9s-common">Improving the Output by Adding Actual Configuration</a></li><li><a href="#d51e1020">Validation</a></li><li><a href="#d51e1141">Using the Configuration Cascade</a></li><li><a href="#d51e1242">Creating an EPUB</a></li><li><a href="#d51e1278">Creating a PMC Zip</a></li><li><a href="#d51e1290">transpectdoc</a></li><li><a href="#d51e1302">Integration/Tests</a></li><li><a href="#d51e1317">GUI</a></li></ul>
               </div>
             </div>
           </div>

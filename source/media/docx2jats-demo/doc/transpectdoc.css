@@ -1,0 +1,377 @@
+body {
+  font-family:Calibri,Lucida,sans-serif;
+  font-size:12pt;
+}
+
+.macroblock {
+  display:inline-block;
+  vertical-align:top;
+  border:1px solid #e0d0a0;
+  background-color:#ffd;
+  padding:0.5em;
+}
+
+#nav {
+  width:26%;
+  margin-right:2em;
+}
+
+#main {
+  width:65%;
+}
+
+.block {
+  margin-top:1em;
+  width:95%;
+  padding:0.5em;
+}
+
+.block.documentation {
+  font-size: 116%;
+  line-height: 1.3;
+}
+
+.block.documentation pre {
+  font-size: 80%;
+}
+
+.block table {
+  border-collapse:collapse;
+  border-width:1pt;
+  width:100%;
+}
+
+.block table, .block > p, .block > ul {
+    background-color:#ffd;
+}
+
+.block table td {
+  border:1px solid #dcb;
+}
+
+div.visualisation {
+  border:0.15em dotted #eda;
+}
+
+div.visualisation text {
+  font-family:Calibri,Lucida,sans-serif !important;
+}
+
+div.visualisation div.svg-wrapper {
+  text-align: center;
+}
+
+div.output {
+  background-color:#f93;
+}
+
+div.input {
+  background-color:#f83;
+}
+
+div.option {
+  background-color:#ca5;
+}
+
+div.subpipeline {
+  background-color:#eda;
+  overflow-x:scroll;
+}
+
+div.use {
+  border: 0.15em solid #eda;
+  
+}
+
+
+div.use ul {
+  list-style-type: none;
+  padding:0.2em;
+  margin:0;
+  border: 0.15em solid #eda;
+}
+
+ul.connections {
+  list-style-type: none;
+  padding:0.2em;
+  margin:0;
+}
+
+td, th {
+  padding:0.3em;
+}
+
+td {
+  vertical-align:top;
+}
+
+th {
+  text-align:left;
+  font-weight:bold;
+}
+
+col.name {
+  width:25%;
+}
+
+col.doc {
+  width:45%;
+}
+
+col.connect {
+  width:30%;
+}
+
+col.inputs {
+  width:40%;
+}
+
+col.outputs {
+  width:15%;
+}
+
+col.options {
+  width:20%;
+}
+
+
+.none {
+  font-style:italic;
+  padding:0.2em;
+}
+
+h1 {
+  margin-top:0.5em;
+}
+
+h2 {
+  margin-top:1em;
+}
+
+
+.block h3 {
+  font-size:116%;
+  margin-top:0;
+  margin-bottom:0.5em;
+}
+
+#nav h3, #nav h4 {
+  margin-top:0.5em;
+  margin-bottom:0.2em;
+}
+
+#nav h2 {
+  margin-top:0.8em;
+  margin-bottom:0.4em;
+}
+
+p {
+  margin-bottom:0;
+  margin-top:0;
+}
+
+span.flag {
+  margin-left:0.2em;
+  margin-right:0.2em;
+}
+
+
+.primary {
+  color:#a80;
+}
+
+.required {
+  color:#f35;
+}
+
+.sequence {
+  color:#3a6;
+}
+
+span.name {
+  font-weight:bold;
+  font-style:italic;
+  color:#876;
+}
+
+span.count{
+  color:#666;
+}
+.rotate {
+    writing-mode:bt-lr;
+    transform:rotate(-90deg);
+    -webkit-transform:rotate(-90deg);
+    white-space:nowrap;
+    display:block;
+    position:relative;
+    bottom:-7.5em;
+    height:1em;  width:1em;
+}
+
+.name.generated {
+  font-weight:normal;
+}
+
+.names {
+  font-weight:bold;
+  margin-bottom: 0.5em;
+}
+
+.cases {
+  background-color:#fca;
+}
+
+.cond.even {
+  background-color:#fca;
+}
+
+.cond.odd {
+  background-color:#fdb;
+}
+
+.foreach {
+  background-color:#eef;
+}
+
+.viewport {
+  background-color:#fde;
+}
+
+.group {
+  background-color:#dfb;
+}
+
+.try {
+  background-color:#cfa;
+}
+
+.catch {
+  background-color:#cfa;
+}
+
+.toggle a, .toggle a:hover {
+  text-decoration: none;
+}
+
+.toggle a:before {
+  color: #ffd;
+  background-color: #765;
+  padding: 0 0.25em 0.1em 0.2em;
+  margin-right: 0.4em;
+}
+
+.toggle a:before {
+  content: "−";
+}
+
+.toggle a.fold:before {
+  content: "+";
+}
+
+.pointer { cursor:pointer }
+
+ul.nav p.toggle {
+  margin-top:0.3em;
+  text-indent: -1.35em;
+  margin-left: 1.35em;
+}
+
+ul.nav p.toggle a{
+  font-weight:bold;
+  color:#542;
+}
+
+
+ul.nav p.toggle a:hover {
+  text-decoration:none;
+  color: #a50;
+}
+
+ul.nav p.level1 {
+  font-size:120%;
+}
+
+ul.nav p.level2 {
+  font-size:110%;
+}
+
+ul.nav p.level3 {
+  font-size:100%;
+}
+
+ul.nav, ul.nav ul {
+  padding-left:0;
+}
+
+ul.nav ul {
+  margin-left: 1.6em;
+}
+
+ul.nav li {
+  display:block;
+  margin-left:0;
+  padding-left:0;
+  text-indent:0;
+}
+
+.current, .current:hover {
+  border: #f31 solid 0.1em;
+  background-color: #feb;
+  padding:0 0.2em;
+  margin:0.1em;
+  text-decoration:none;
+}
+
+a {
+  text-decoration:none;
+  color:#a50;
+}
+
+a:hover {
+  text-decoration:underline;
+}
+
+a:visited {
+  color: #962;
+}
+
+#main h3.toggle a, #main h3.toggle a:visited {
+ color: black; 
+}
+
+#main h4 {
+  margin:0;
+  font-size:100%;
+}
+
+tr.local-end > td {
+  border-bottom: 0.1em solid red;
+}
+
+dd {
+  margin-left:0.75em;
+}
+
+dt {
+  font-weight: bold;
+  margin-top:0.5em;
+}
+
+pre code {
+	padding: 5px;
+	word-wrap: normal;
+}
+pre{
+  width:60em;
+  max-width:100%;
+  overflow: auto;
+  margin-left:0; 
+	white-space:pre;
+	max-height: 16em;
+  }
+
+td pre {
+  width: 25em;
+  font-size:smaller;
+}
+
