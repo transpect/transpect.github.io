@@ -23,7 +23,7 @@
       <ul id="tr-nav" class="side-nav fixed" style="width:240px">
         <li class="logo"><a id="logo-container" href="#" class="brand-logo"><object id="front-page-logo" type="image/svg+xml" data="icons/logo-transpect.svg">Your browser does not support SVG</object></a></li>
         
-      <li class="naventry-1st"><a href="index.html">About</a></li><li class="active naventry-1st"><a href="getting-started.html">Getting Started</a></li><li class="no-padding"><ul class="collapsible collapsible-accordion"><li class="naventry-1st" id="part-modules"><a class="collapsible-header">Modules</a><div class="collapsible-body"><ul><li class="naventry-2nd"><a href="modules-bits2hub.html">bits2hub</a></li><li class="naventry-2nd"><a href="modules-cascade.html">cascade</a></li><li class="naventry-2nd"><a href="modules-docx2hub.html">docx2hub</a></li><li class="naventry-2nd"><a href="modules-epubtools.html">epubtools</a></li><li class="naventry-2nd"><a href="modules-htmlreports.html">htmlreports</a></li><li class="naventry-2nd"><a href="modules-hub2bits.html">hub2bits</a></li><li class="naventry-2nd"><a href="modules-idml2xml.html">idml2xml</a></li></ul></div></li></ul></li><li class="naventry-1st"><a href="styleguide.html">Styleguide</a></li><li class="naventry-1st"><a href="tutorial.html">Tutorials</a></li></ul>
+      <li class="naventry-1st"><a href="index.html">About</a></li><li class="active naventry-1st"><a href="getting-started.html">Getting Started</a></li><li class="no-padding"><ul class="collapsible collapsible-accordion"><li class="naventry-1st" id="part-modules"><a class="collapsible-header">Modules</a><div class="collapsible-body"><ul><li class="naventry-2nd"><a href="modules-bits2hub.html">bits2hub</a></li><li class="naventry-2nd"><a href="modules-cascade.html">cascade</a></li><li class="naventry-2nd"><a href="modules-docx2hub.html">docx2hub</a></li><li class="naventry-2nd"><a href="modules-epubtools.html">epubtools</a></li><li class="naventry-2nd"><a href="modules-htmlreports.html">htmlreports</a></li><li class="naventry-2nd"><a href="modules-hub2bits.html">hub2bits</a></li><li class="naventry-2nd"><a href="modules-idml2xml.html">idml2xml</a></li><li class="naventry-2nd"><a href="modules-xproc-util.html">xproc-util</a></li><li class="naventry-2nd"><a href="modules-xslt-util.html">xslt-util</a></li></ul></div></li></ul></li><li class="naventry-1st"><a href="styleguide.html">Styleguide</a></li><li class="naventry-1st"><a href="tutorial.html">Tutorials</a></li></ul>
     </header>
     
     <main>
@@ -36,39 +36,116 @@
       <div class="container">
         <div class="row">
           
-          <div class="col s12 m9 l10" id="tr-content"><div id="d36e9" class="section col s12 scrollspy">
+          <div class="col s12 m9 l10" id="tr-content"><div id="d40e9" class="section col s12 scrollspy">
         <h2 class="header">Prerequisites</h2>
         <p>There are no further prerequisites as are required to run XProc. If you are not familiar with XProc, we
           suggest to work yourself through Roger L. Costello’s <a href="http://www.xfront.com/xproc/" target="_blank">➼ XProc
             tutorial</a> first.</p>
         <div class="col s12 m6">
           <h5>XML Calabash</h5>
-          <p>We recommend XML Calabash for running transpect’s XProc pipelines. You should use our pre-configured
-            version of XML Calabash. It comes with extensions which are essential to some modules.</p>
-          
+          <p>We recommend to use our pre-configured XML Calabash for running transpect’s XProc pipelines. It includes
+            convenient frontend scripts and extensions steps which are essential to some modules.</p>
         </div>
         <div class="col s12 m6">
           <h5>Java</h5>
           <p>XML Calabash needs at least Java 1.7 to run. We noticed some odd behaviour while running XML Calabash
             with a JVMs other than Oracle. If you get memory issues, consider to install the 64-bit version.</p>
-          
         </div>
-      </div><div id="d36e43" class="section col s12 scrollspy">
-        <h2 class="header">Setup</h2>
-        <h4>Install calabash</h4>
-        <p>After downloading, extract XML Calabash into your project directory. We </p>
-        <pre>
-MyProject/
+      </div><div id="d40e39" class="section col s12 scrollspy">
+        <h2 class="header">Install XML Calabash</h2>
+        <p>We recommend to use Git or SVN to checkout Calabash to take care that all dependencies are met. The calabash directory
+          should be placed at the top-level of your project directory.</p>
+        <pre>MyProject/
   |--calabash/
   |  |--calabash.sh
   |  |--calabash.bat</pre>
-
+        <pre><code class="language-git">git clone --recursive https://github.com/transpect/calabash-frontend calabash</code></pre>
+        <div class="card"><div class="card-content">
+          <span class="card-title">Optional: checkout XML Calabash with SVN</span>
+          <p>The SVN client of GitHub doesn't support SVN externals, so we have to get each module separately.</p>
+          <pre><code class="language-svn">svn co https://github.com/transpect/calabash-frontend/trunk calabash
+svn co https://github.com/transpect/calabash-distro/trunk calabash/distro</code></pre>
+          <p>Some transpect modules depend on certain XML Calabash extensions, so you may want to get them, too.</p>
+          <pre><code class="language-svn">svn co https://github.com/transpect/unzip-extension/trunk calabash/extensions/transpect/unzip-extension
+svn co https://github.com/transpect/rng-extension/trunk calabash/extensions/transpect/rng-extension
+svn co https://github.com/transpect/image-props-extension/trunk calabash/extensions/transpect/image-props-extension
+svn co https://github.com/transpect/image-transform-extension/trunk calabash/extensions/transpect/image-transform-extension</code></pre>
+        </div></div>
+      </div><div id="d40e75" class="section col s12 scrollspy">
+        <h2 class="header">Include transpect modules</h2>
+        <h4>Checkout the modules</h4>
+        <p>First, we have to checkout the modules with Git or SVN. For example, we want to get <a href="modules-docx2hub.html#docx2hub" target="_blank">docx2hub</a>, 
+          which converts Microsoft Word to <a href="https://github.com/le-tex/Hub" target="_blank">➼ Hub XML</a>. The docx2hub module depends on <a href="modules-xproc-util.html#xproc-util" target="_blank">xproc-util</a> and <a href="modules-xslt-util.html#xslt-util" target="_blank">xslt-util</a>.
+        </p>
+        <pre><code class="language-git">git clone https://github.com/transpect/docx2hub
+git clone https://github.com/transpect/xslt-util
+git clone https://github.com/transpect/xproc-util</code></pre>
+        <div class="card"><div class="card-content">
+          <span class="card-title">Optional: checkout modules with SVN</span>
+          <pre><code class="language-git">svn co https://github.com/transpect/docx2hub/trunk docx2hub
+svn co https://github.com/transpect/xslt-util/trunk xslt-util
+svn co https://github.com/transpect/xproc-util/trunk xproc-util</code></pre>
+        </div></div>
+        <p>After we cloned XML Calabash and the transpect modules, our project directory should look like this.</p>
+<pre>MyProject/
+  |--calabash/
+  |--docx2hub/
+  |--xproc-util/
+  |--xslt-util/
+</pre>
+        <h4>Create an XML Catalog</h4>
+        <p>Transpect uses canonical import URIs to import other modules. To resolve this URIs, our XML Calabash
+          looks after an XML catalog in the project directory. Starting from the project dir, the path is usually <code class="language-filename">xmlcatalog/catalog.xml</code>.</p>
+        <pre>MyProject/
+  |--xmlcatalog/
+  |  |--catalog.xml</pre>
+        <p>The XML catalog of the project is used to include the catalogs of the transpect modules. Therefore the <code class="language-code">nextCatalog</code> element is used 
+        to connect the module catalogs.</p>
+        <pre><code class="language-markup">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog"&gt;
+  &lt;nextCatalog catalog="../docx2hub/xmlcatalog/catalog.xml"/&gt;
+  &lt;nextCatalog catalog="../xproc-util/xmlcatalog/catalog.xml"/&gt;
+  &lt;nextCatalog catalog="../xslt-util/xmlcatalog/catalog.xml"/&gt;
+&lt;/catalog&gt;</code></pre>
+      </div><div id="d40e141" class="section col s12 scrollspy">
+        <h2 class="header">Run the pipeline</h2>
+        <h4>Command line</h4>
+        <p>After we are included transpect in our project, we can run the <a href="modules-docx2hub.html#docx2hub" target="_blank">docx2hub</a> pipeline to convert a Microsoft 
+          Word DOCX file to <a href="https://github.com/le-tex/Hub" target="_blank">➼ Hub XML</a>. Users of Linux, Mac OS X or Cygwin can use 
+          a convenient Bash script:</p>
+        <pre>./calabash/calabash.sh -o result=MyXMLfile.xml docx2hub/xpl/docx2hub.xpl docx=MyWordfile.docx</pre>
+        <p>There exists also a Batch file for Windows users:</p>
+        <pre>.\calabash\calabash.bat -o result=MyXMLfile.xml .\docx2hub\xpl\docx2hub.xpl docx=MyWordfile.docx</pre>
+        <h4>Include in your XProc pipeline</h4>
+        <p>You can import and use transpect modules in your own XProc pipelines. Therefore, you need to declare the namespace and 
+          add the <code class="language-code">p:import</code> statement of the XProc step you want to use. Here is a simple XProc pipeline which implements 
+          <a href="modules-docx2hub.html#docx2hub" target="_blank">docx2hub</a>.
+        </p>
+        <pre><code class="language-markup">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;p:declare-step xmlns:p="http://www.w3.org/ns/xproc" 
+  xmlns:docx2hub="http://transpect.io/docx2hub"
+  version="1.0"&gt;
+  
+  &lt;p:output port="result"/&gt;
+  
+  &lt;p:option name="docx"/&gt;
+  
+  &lt;p:import href="http://transpect.io/docx2hub/xpl/docx2hub.xpl"/&gt;
+  
+  &lt;docx2hub:convert name="docx2hub"&gt;
+    &lt;p:with-option name="docx" select="$docx"/&gt;
+  &lt;/docx2hub:convert&gt;
+  
+&lt;/p:declare-step&gt;</code></pre>  
+      </div><div id="d40e183" class="section col s12 scrollspy">
+        <h2 class="header">Learn more?</h2>
+        <p>If you want to get a deeper insight into the transpect framework, we would recommend to read our <a href="tutorial.html#tutorial-docx-jats-epub" target="_blank">Tutorials</a>.</p>          
       </div></div>
           
           <div class="col hide-on-small-only m3 l2">
             <div class="toc-wrapper pin-top" style="top: 0px;">
               <div style="height: 1px;">
-                <ul id="tr-toc" class="table-of-contents"><li><a href="#d36e9" class="active">Prerequisites</a></li><li><a href="#d36e43">Setup</a></li></ul>
+                <ul id="tr-toc" class="table-of-contents"><li><a href="#d40e9" class="active">Prerequisites</a></li><li><a href="#d40e39">Install XML Calabash</a></li><li><a href="#d40e75">Include transpect modules</a></li><li><a href="#d40e141">Run the pipeline</a></li><li><a href="#d40e183">Learn more?</a></li></ul>
               </div>
             </div>
           </div>
