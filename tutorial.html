@@ -14,7 +14,7 @@
     <link type="text/css" rel="stylesheet" media="screen,projection" href="css/materialize.min.css" />
     <link type="text/css" rel="stylesheet" media="screen,projection" href="css/le-tex.css" />
   </head>
-  <body>
+  <body id="tutorial-docx-jats-epub">
     
     <header>
       <div class="container"><a href="#" data-activates="tr-nav" class="button-collapse top-nav circle hide-on-large-only"><i class="mdi-navigation-menu"></i></a></div>
@@ -23,7 +23,7 @@
       <ul id="tr-nav" class="side-nav fixed" style="width:240px">
         <li class="logo"><a id="logo-container" href="#" class="brand-logo"><object id="front-page-logo" type="image/svg+xml" data="icons/logo-transpect.svg">Your browser does not support SVG</object></a></li>
         
-      <li class="naventry-1st"><a href="index.html">About</a></li><li class="naventry-1st"><a href="getting-started.html">Getting Started</a></li><li class="no-padding"><ul class="collapsible collapsible-accordion"><li class="naventry-1st" id="part-modules"><a class="collapsible-header">Modules</a><div class="collapsible-body"><ul><li class="naventry-2nd"><a href="modules-bits2hub.html">bits2hub</a></li><li class="naventry-2nd"><a href="modules-cascade.html">cascade</a></li><li class="naventry-2nd"><a href="modules-docx2hub.html">docx2hub</a></li><li class="naventry-2nd"><a href="modules-epubtools.html">epubtools</a></li><li class="naventry-2nd"><a href="modules-htmlreports.html">htmlreports</a></li><li class="naventry-2nd"><a href="modules-hub2bits.html">hub2bits</a></li><li class="naventry-2nd"><a href="modules-idml2xml.html">idml2xml</a></li></ul></div></li></ul></li><li class="naventry-1st"><a href="styleguide.html">Styleguide</a></li><li class="active naventry-1st"><a href="tutorial.html">Tutorials</a></li></ul>
+      <li class="naventry-1st"><a href="index.html">About</a></li><li class="naventry-1st"><a href="getting-started.html">Getting Started</a></li><li class="no-padding"><ul class="collapsible collapsible-accordion"><li class="naventry-1st" id="part-modules"><a class="collapsible-header">Modules</a><div class="collapsible-body"><ul><li class="naventry-2nd"><a href="modules-bits2hub.html">bits2hub</a></li><li class="naventry-2nd"><a href="modules-cascade.html">cascade</a></li><li class="naventry-2nd"><a href="modules-docx2hub.html">docx2hub</a></li><li class="naventry-2nd"><a href="modules-epubtools.html">epubtools</a></li><li class="naventry-2nd"><a href="modules-htmlreports.html">htmlreports</a></li><li class="naventry-2nd"><a href="modules-hub2bits.html">hub2bits</a></li><li class="naventry-2nd"><a href="modules-idml2xml.html">idml2xml</a></li><li class="naventry-2nd"><a href="modules-xproc-util.html">xproc-util</a></li><li class="naventry-2nd"><a href="modules-xslt-util.html">xslt-util</a></li></ul></div></li></ul></li><li class="naventry-1st"><a href="styleguide.html">Styleguide</a></li><li class="active naventry-1st"><a href="tutorial.html">Tutorials</a></li></ul>
     </header>
     
     <main>
@@ -58,7 +58,7 @@
         or <a href="https://transpect.le-tex.de/en/converter/save_file?set_button=&amp;upload_type=epubcheck" target="_blank">➼ epubcheck-transpect</a>, 
         but most projects require configuration. transpect is not a tool, it’s a framework that has
         its own modules and methodologies. Someone needs to configure them, operate them, and to make sure that
-        once-configured pipelines continue to yield consistent results.</p><p>This tutorial focuses on the configuration part.</p><div id="d45e55" class="section col s12 scrollspy">
+        once-configured pipelines continue to yield consistent results.</p><p>This tutorial focuses on the configuration part.</p><div id="d51e55" class="section col s12 scrollspy">
         <h2 class="header">Creating a Repository</h2>
         <p>A transpect project consists of a specification which modules to use (and in which revision), project-specific
           adaptations, and the modules. The project itself resides in a version control repository (we are using Git and Subversion (SVN),
@@ -85,7 +85,7 @@
           <p>You wouldn’t need <code class="language-parameter">--recursive</code> on your first checkout, but for those who intend
         to clone the final project this is helpful already.</p>
         </div></div>
-      </div><div id="d45e112" class="section col s12 scrollspy">
+      </div><div id="d51e112" class="section col s12 scrollspy">
         <h2 class="header">Adding Submodules</h2>
         <p>We’ll identify the modules that we need (primarily by their name, such as <a href="https://github.com/transpect/docx2hub" target="_blank">➼ docx2hub</a>, <a href="https://github.com/transpect/hub2jats" target="_blank">➼ hub2jats</a>, <a href="https://github.com/transpect/jats2html" target="_blank">➼ jats2html</a>
           or <a href="https://github.com/transpect/epubtools" target="_blank">➼ epubtools</a>).
@@ -155,7 +155,7 @@ git push</pre>
           changes to the submodules <em>from their own directories</em>, until you finally add, commit, and push
           the new commits from the top-level directory.</p>
         </div></div>
-      </div><div id="d45e240" class="section col s12 scrollspy">
+      </div><div id="d51e240" class="section col s12 scrollspy">
         <h2 class="header">XML Catalog</h2>
         <p>Each transpect module is known by a canonical URI (example: <code class="language-literal">http:transpect.io/docx2hub/</code>) 
           that may be used for importing their XSLT, XProc, images, or even for referring to fonts in CSS files. The
@@ -192,7 +192,7 @@ git push</pre>
         <p>You may try the correct catalog resolution and oXygen configuration by Ctrl-clicking on 
           <code class="language-literal">http://this.transpect.io/</code> in the catalog. It should open the project’s base directory.</p>
         <p>With an update to a submodule that happened in the meantime, the repo at this stage looks like this: <a href="https://github.com/transpect/docx2jats-demo/tree/eabd9b6201e236af1042f0c60eb3b9bf97444169" target="_blank">➼ eabd9b6</a></p>
-      </div><div id="d45e337" class="section col s12 scrollspy">
+      </div><div id="d51e337" class="section col s12 scrollspy">
         <h2 class="header">Getting Sample Input</h2>
         <p>Our friends at <a href="http://www.ulsp.eu/" target="_blank">➼ University of Leipzig Sports Medicine</a> produce and
           publish an open access journal from Word files. Their desire to upload the articles to <a href="http://www.ncbi.nlm.nih.gov/pmc/" target="_blank">➼ PMC</a> made them ask us to provide a converter. Because our test
@@ -207,7 +207,7 @@ svn co https://subversion.le-tex.de/common/transpect-demo/content/ulsp/ ../conte
           <code class="language-literal">.docx</code> files residing in a <code class="language-literal">docx/</code> directory. Also, for making use of the configuration
           cascade that lets you – in principle – override settings per article, the content has to be stored according to a certain 
           directory structure.</p>
-      </div><div id="d45e372" class="section col s12 scrollspy">
+      </div><div id="d51e372" class="section col s12 scrollspy">
         <h2 class="header">A First Pipeline</h2>
         <p>By convention, the pipelines that are meant to be invoked directly (as opposed to pipelines that implement 
           the innards of a macroscopic step such as the ominous <code class="language-literal">evolve-hub</code>) reside in the directory 
@@ -238,7 +238,7 @@ svn co https://subversion.le-tex.de/common/transpect-demo/content/ulsp/ ../conte
           <code class="language-literal">evolve-hub</code> configuration that was applied to the input was a succession of XSLT modes defined
         in <a href="https://github.com/transpect/evolve-hub/blob/master/xpl/fallback.xpl#L210" target="_blank">➼ fallback.xpl</a>,
         using default parameters/variables/templates/functions in XSLT.</p>
-      </div><div id="d45e477" class="section col s12 scrollspy">
+      </div><div id="d51e477" class="section col s12 scrollspy">
         <h2 class="header">Dynamic Transformation Pipelines</h2>
         <div class="card"><div class="card-content">
           <p>You can skip this and the following two sections if you aren’t interested (yet) in the gory configuration 
@@ -276,7 +276,7 @@ svn co https://subversion.le-tex.de/common/transpect-demo/content/ulsp/ ../conte
           <code class="language-literal">evolve-hub/driver.xpl.xsl</code>. This main template typically loads the pipeline 
           <code class="language-literal">evolve-hub/driver.xpl</code> from a less specific location (or from a sister journal) and transforms
           it, typically adding or removing XSLT steps in certain modes.</p>
-      </div><div id="d45e579" class="section col s12 scrollspy">
+      </div><div id="d51e579" class="section col s12 scrollspy">
         <h2 class="header">Configuration Cascade</h2>
         <p>The configuration relies on the following assumptions:</p>
         <ul>
@@ -401,7 +401,7 @@ svn co https://subversion.le-tex.de/common/transpect-demo/content/ulsp/ ../conte
         overrides, but also for locating images. When Word InDesign link to external files, we often strip their paths and later
         replace them with <code class="language-literal">concat($s9y1-path, 'images/', @fileref)</code>.</p>
 
-      </div><div id="d45e900" class="section col s12 scrollspy">
+      </div><div id="d51e900" class="section col s12 scrollspy">
         <h2 class="header">Debugging</h2>
         <p>You might have wondered where we read the <a href="https://gist.github.com/gimsieke/3f866dc10d613665c83f" target="_blank">➼ paths 
           document</a> in the previous section, as the pipeline has no output port
@@ -434,7 +434,7 @@ svn co https://subversion.le-tex.de/common/transpect-demo/content/ulsp/ ../conte
         <p>The differences in code can be seen <a href="https://github.com/transpect/docx2jats-demo/commit/34147aceaaeeb3f014ecfdd39c953d0f5d34cfa9" target="_blank">➼ here (commit 34147ac)</a>.
         Admittedly, finding the right places to tweak the <a href="https://github.com/transpect/docx2jats-demo/blob/master/a9s/common/evolve-hub/driver.xsl#L14" target="_blank">➼ imported XSLT</a> may
         be hard, but that’s a thing that this sample project should help alleviate.</p>
-      </div><div id="d45e1020" class="section col s12 scrollspy">
+      </div><div id="d51e1020" class="section col s12 scrollspy">
         <h2 class="header">Validation</h2>
         <p>This <a href="https://github.com/transpect/docx2jats-demo/compare/34147ac...e5ef56c" target="_blank">➼ diff of commit e5ef56c</a> 
         show several modifications to the <a href="https://github.com/transpect/docx2jats-demo/commit/fbd645bc9f1c4f204fd248b361cc600adabe0413#diff-70cf31a3c86a739a35ebbf3fe22ec844" target="_blank">➼ current pipeline</a>:</p>
@@ -485,7 +485,7 @@ svn co https://subversion.le-tex.de/common/transpect-demo/content/ulsp/ ../conte
 
         <h4>PubMed Central / NLM style checker</h4>
         <p>tbd</p>
-      </div><div id="d45e1147" class="section col s12 scrollspy">
+      </div><div id="d51e1147" class="section col s12 scrollspy">
         <h2 class="header">Using the Configuration Cascade</h2>
 
         <p>So far, we did only supply customizations in the <code class="language-literal">a9s/common</code> directory. Let’s introduce
@@ -526,21 +526,21 @@ svn co https://subversion.le-tex.de/common/transpect-demo/content/ulsp/ ../conte
           of the sub-clades to the ancestor clades’ checks. </p>
         <p>If a check should be left out in the derivative clade, its pattern should be redefined
         empty there.</p>
-      </div><div id="d45e1248" class="section col s12 scrollspy">
+      </div><div id="d51e1248" class="section col s12 scrollspy">
         <h2 class="header">Creating a PMC Zip</h2>
         <p>tbd</p>
-      </div><div id="d45e1257" class="section col s12 scrollspy">
+      </div><div id="d51e1257" class="section col s12 scrollspy">
         <h2 class="header">Creating an EPUB</h2>
         <p>tbd</p>
-      </div><div id="d45e1266" class="section col s12 scrollspy">
+      </div><div id="d51e1266" class="section col s12 scrollspy">
         <h2 class="header">transpectdoc</h2>
         <p>tbd</p>
-      </div><div id="d45e1275" class="section col s12 scrollspy">
+      </div><div id="d51e1275" class="section col s12 scrollspy">
         <h2 class="header">Integration/Tests</h2>
         <p>tbd: Upload interface / Makefile</p>
         <p>tbd: before/after</p>
         <p>tbd: jenkins screenshot</p>
-      </div><div id="d45e1290" class="section col s12 scrollspy">
+      </div><div id="d51e1290" class="section col s12 scrollspy">
         <h2 class="header">GUI</h2>
         <p>tbd</p>
       </div></div>
@@ -548,7 +548,7 @@ svn co https://subversion.le-tex.de/common/transpect-demo/content/ulsp/ ../conte
           <div class="col hide-on-small-only m3 l2">
             <div class="toc-wrapper pin-top" style="top: 0px;">
               <div style="height: 1px;">
-                <ul id="tr-toc" class="table-of-contents"><li><a href="#d45e55" class="active">Creating a Repository</a></li><li><a href="#d45e112">Adding Submodules</a></li><li><a href="#d45e240">XML Catalog</a></li><li><a href="#d45e337">Getting Sample Input</a></li><li><a href="#d45e372">A First Pipeline</a></li><li><a href="#d45e477">Dynamic Transformation Pipelines</a></li><li><a href="#d45e579">Configuration Cascade</a></li><li><a href="#d45e900">Debugging</a></li><li><a href="#a9s-common">Improving the Output by Adding Actual Configuration</a></li><li><a href="#d45e1020">Validation</a></li><li><a href="#d45e1147">Using the Configuration Cascade</a></li><li><a href="#d45e1248">Creating a PMC Zip</a></li><li><a href="#d45e1257">Creating an EPUB</a></li><li><a href="#d45e1266">transpectdoc</a></li><li><a href="#d45e1275">Integration/Tests</a></li><li><a href="#d45e1290">GUI</a></li></ul>
+                <ul id="tr-toc" class="table-of-contents"><li><a href="#d51e55" class="active">Creating a Repository</a></li><li><a href="#d51e112">Adding Submodules</a></li><li><a href="#d51e240">XML Catalog</a></li><li><a href="#d51e337">Getting Sample Input</a></li><li><a href="#d51e372">A First Pipeline</a></li><li><a href="#d51e477">Dynamic Transformation Pipelines</a></li><li><a href="#d51e579">Configuration Cascade</a></li><li><a href="#d51e900">Debugging</a></li><li><a href="#a9s-common">Improving the Output by Adding Actual Configuration</a></li><li><a href="#d51e1020">Validation</a></li><li><a href="#d51e1147">Using the Configuration Cascade</a></li><li><a href="#d51e1248">Creating a PMC Zip</a></li><li><a href="#d51e1257">Creating an EPUB</a></li><li><a href="#d51e1266">transpectdoc</a></li><li><a href="#d51e1275">Integration/Tests</a></li><li><a href="#d51e1290">GUI</a></li></ul>
               </div>
             </div>
           </div>

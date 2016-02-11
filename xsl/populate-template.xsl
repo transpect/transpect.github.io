@@ -187,8 +187,8 @@
     <xsl:variable name="match" select="$book//*[@xml:id eq $linkend]" as="element()"/>
     <xsl:variable name="reference" select="if(tokenize($match/base-uri(), '/')[last()] eq tokenize(base-uri(), '/')[last()])
                                            then concat('#', @linkend)
-                                           else concat('#', tokenize($match/base-uri(), '/')[last()], @linkend)" as="xs:string"/>
-    <a href="{concat('#', @linkend)}" target="_blank"><xsl:value-of select="if($match/dbk:title) then $match/dbk:title/text() else $match/text()"/></a>
+                                           else concat(tokenize($match/base-uri(), '/')[last()], '#', @linkend)" as="xs:string"/>
+    <a href="{$reference}" target="_blank"><xsl:value-of select="if($match/dbk:title) then $match/dbk:title/text() else $match/text()"/></a>
   </xsl:template>
   
   <!-- lists -->
@@ -280,7 +280,7 @@
     </pre>
   </xsl:template>
   
-  <xsl:template match="dbk:code|dbk:parameter|dbk:markup|dbk:literal|dbk:code|dbk:command|dbk:computeroutput">
+  <xsl:template match="dbk:code|dbk:parameter|dbk:markup|dbk:literal|dbk:code|dbk:command|dbk:computeroutput|dbk:filename">
     <code class="{(@role, concat('language-', local-name()))[1]}">
       <xsl:apply-templates select="@*|node()"/>
     </code>

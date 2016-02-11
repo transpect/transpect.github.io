@@ -23,7 +23,7 @@
       <ul id="tr-nav" class="side-nav fixed" style="width:240px">
         <li class="logo"><a id="logo-container" href="#" class="brand-logo"><object id="front-page-logo" type="image/svg+xml" data="icons/logo-transpect.svg">Your browser does not support SVG</object></a></li>
         
-      <li class="naventry-1st"><a href="index.html">About</a></li><li class="naventry-1st"><a href="getting-started.html">Getting Started</a></li><li class="no-padding"><ul class="collapsible collapsible-accordion"><li class="naventry-1st" id="part-modules"><a class="collapsible-header">Modules</a><div class="collapsible-body"><ul><li class="naventry-2nd"><a href="modules-bits2hub.html">bits2hub</a></li><li class="naventry-2nd"><a href="modules-cascade.html">cascade</a></li><li class="naventry-2nd"><a href="modules-docx2hub.html">docx2hub</a></li><li class="naventry-2nd"><a href="modules-epubtools.html">epubtools</a></li><li class="naventry-2nd"><a href="modules-htmlreports.html">htmlreports</a></li><li class="naventry-2nd"><a href="modules-hub2bits.html">hub2bits</a></li><li class="naventry-2nd"><a href="modules-idml2xml.html">idml2xml</a></li></ul></div></li></ul></li><li class="active naventry-1st"><a href="styleguide.html">Styleguide</a></li><li class="naventry-1st"><a href="tutorial.html">Tutorials</a></li></ul>
+      <li class="naventry-1st"><a href="index.html">About</a></li><li class="naventry-1st"><a href="getting-started.html">Getting Started</a></li><li class="no-padding"><ul class="collapsible collapsible-accordion"><li class="naventry-1st" id="part-modules"><a class="collapsible-header">Modules</a><div class="collapsible-body"><ul><li class="naventry-2nd"><a href="modules-bits2hub.html">bits2hub</a></li><li class="naventry-2nd"><a href="modules-cascade.html">cascade</a></li><li class="naventry-2nd"><a href="modules-docx2hub.html">docx2hub</a></li><li class="naventry-2nd"><a href="modules-epubtools.html">epubtools</a></li><li class="naventry-2nd"><a href="modules-htmlreports.html">htmlreports</a></li><li class="naventry-2nd"><a href="modules-hub2bits.html">hub2bits</a></li><li class="naventry-2nd"><a href="modules-idml2xml.html">idml2xml</a></li><li class="naventry-2nd"><a href="modules-xproc-util.html">xproc-util</a></li><li class="naventry-2nd"><a href="modules-xslt-util.html">xslt-util</a></li></ul></div></li></ul></li><li class="active naventry-1st"><a href="styleguide.html">Styleguide</a></li><li class="naventry-1st"><a href="tutorial.html">Tutorials</a></li></ul>
     </header>
     
     <main>
@@ -36,7 +36,7 @@
       <div class="container">
         <div class="row">
           
-          <div class="col s12 m9 l10" id="tr-content"><div id="d44e9" class="section col s12 scrollspy">
+          <div class="col s12 m9 l10" id="tr-content"><div id="d50e9" class="section col s12 scrollspy">
         <h2 class="header">General</h2>
         <ul>
           <li>
@@ -58,7 +58,7 @@
             <p>Comment your code extensively and use always speaking variable names. </p>
           </li>
         </ul>
-      </div><div id="d44e58" class="section col s12 scrollspy">
+      </div><div id="d50e58" class="section col s12 scrollspy">
         <h2 class="header">Repository</h2>
         <div>
           <h3 class="">SVN Externals / Git Submodules</h3>
@@ -76,7 +76,7 @@
           <ul>
             <li>
               <p>Include an XML catalog to your repository. The path of your catalog should be
-                  <filename xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink">xmlcatalog/catalog.xml</filename></p>
+                  <code class="language-filename">xmlcatalog/catalog.xml</code></p>
             </li>
             <li>
               <p>The catalog file must include a <code class="language-code">rewriteURI</code> statement which identifies the repository
@@ -94,8 +94,8 @@
         <div>
           <h3 class="">Paths</h3>
           <p>The code should be stored separated by code language. The directory name identifies the typical file
-            extension of the code file. Always use common file extensions, such as <filename xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink">xpl</filename> for XProc
-            pipelines and <filename xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink">xsl</filename> for XSLT Stylesheets.</p>
+            extension of the code file. Always use common file extensions, such as <code class="language-filename">xpl</code> for XProc
+            pipelines and <code class="language-filename">xsl</code> for XSLT Stylesheets.</p>
           <pre>
 myproject/
   |--css
@@ -108,7 +108,7 @@ myproject/
   |  |--myproject.xsl
 </pre>
         </div>
-      </div><div id="d44e133" class="section col s12 scrollspy">
+      </div><div id="d50e133" class="section col s12 scrollspy">
         <h2 class="header">XProc</h2>
         <ul>
           <li>
@@ -132,7 +132,7 @@ myproject/
               This is needed when you want to use steps which operate with files.</p>
           </li>
         </ul>
-      </div><div id="d44e202" class="section col s12 scrollspy">
+      </div><div id="d50e202" class="section col s12 scrollspy">
         <h2 class="header">XSLT</h2>
         <ul>
           <li>
@@ -156,7 +156,7 @@ myproject/
             <p>Use namespace <code class="language-code">http://transpect.io</code> and prefix <code class="language-code">tr</code> for custom functions.</p>
           </li>
         </ul>
-      </div><div id="d44e260" class="section col s12 scrollspy">
+      </div><div id="d50e260" class="section col s12 scrollspy">
         <h2 class="header">XPath</h2>
         <ul>
           <li>
@@ -183,11 +183,11 @@ myproject/
             <p>Comment longer XPath statements: <code class="language-code">(: my XPath comment :)</code></p>
           </li>
         </ul>
-      </div><div id="d44e348" class="section col s12 scrollspy">
+      </div><div id="d50e348" class="section col s12 scrollspy">
         <h2 class="header">RelaxNG/XSD</h2>
         <p>Use <a href="http://www.xfront.com/GlobalVersusLocal.html#SecondDesign" target="_blank">➼ Salami Slice
             Design</a> pattern for writing Schemas</p>
-      </div><div id="d44e360" class="section col s12 scrollspy">
+      </div><div id="d50e360" class="section col s12 scrollspy">
         <h2 class="header">DTD</h2>
         <p>Yo mama use a DTD for her CD catalog.</p>
       </div></div>
@@ -195,7 +195,7 @@ myproject/
           <div class="col hide-on-small-only m3 l2">
             <div class="toc-wrapper pin-top" style="top: 0px;">
               <div style="height: 1px;">
-                <ul id="tr-toc" class="table-of-contents"><li><a href="#d44e9" class="active">General</a></li><li><a href="#d44e58">Repository</a></li><li><a href="#d44e133">XProc</a></li><li><a href="#d44e202">XSLT</a></li><li><a href="#d44e260">XPath</a></li><li><a href="#d44e348">RelaxNG/XSD</a></li><li><a href="#d44e360">DTD</a></li></ul>
+                <ul id="tr-toc" class="table-of-contents"><li><a href="#d50e9" class="active">General</a></li><li><a href="#d50e58">Repository</a></li><li><a href="#d50e133">XProc</a></li><li><a href="#d50e202">XSLT</a></li><li><a href="#d50e260">XPath</a></li><li><a href="#d50e348">RelaxNG/XSD</a></li><li><a href="#d50e360">DTD</a></li></ul>
               </div>
             </div>
           </div>
