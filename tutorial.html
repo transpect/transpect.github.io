@@ -551,10 +551,17 @@ svn co https://subversion.le-tex.de/common/transpect-demo/content/ulsp/ ../conte
           and sizes by Schematron. But in this case the images happen to be TIFFs – we need to 
           <a href="https://github.com/transpect/image-transform-extension" target="_blank">➼ convert them to supported formats</a> before.</p>
       </div><div id="pmc" class="section col s12 scrollspy">
-        <h2 class="header">Creating a PMC Zip</h2>
+        <h2 class="header">PubMed Central Submission</h2>
 
         <h4>PubMed Central / NLM style checker</h4>
-        <p>tbd</p>
+        <p>PMC provides <a href="http://www.ncbi.nlm.nih.gov/pmc/tools/stylechecker/" target="_blank">➼ XSLT stylesheets</a> for letting you check JATS prior to submission. We wrapped this as an XProc step that 
+        produces SVRL that may then be rendered into the <a href="source/media/docx2jats-demo/report-CSMI_2014_701-nlm.xhtml" target="_blank">HTML report</a>.</p>
+
+        <p>Here’s the corresponding <a href="https://github.com/transpect/docx2jats-demo/commit/0327abfebc013908de3879d408200163243ca2ad" target="_blank">➼ commit 0327abf</a></p>
+
+        <h4>Creating a PMC Zip</h4>
+        <p>tbd; will be available by tonight…</p>
+
       </div><div id="transpectdoc" class="section col s12 scrollspy">
         <h2 class="header">transpectdoc</h2>
         <p>The <a href="source/media/docx2jats-demo/doc/" target="_blank">generated documentation</a> of this project.</p>
@@ -571,7 +578,7 @@ svn co https://subversion.le-tex.de/common/transpect-demo/content/ulsp/ ../conte
           <div class="col hide-on-small-only m3 l2">
             <div class="toc-wrapper pin-top" style="top: 0px;">
               <div style="height: 1px;">
-                <ul id="tr-toc" class="table-of-contents"><li><a href="#initial-github-repo" class="active">Creating a Repository</a></li><li><a href="#submodules">Adding Submodules</a></li><li><a href="#xmlcatalog">XML Catalog</a></li><li><a href="#getting-input">Getting Sample Input</a></li><li><a href="#basic-pipeline">A First Pipeline</a></li><li><a href="#dynamic-transformation-pipelines">Dynamic Transformation Pipelines</a></li><li><a href="#cascade">Configuration Cascade</a></li><li><a href="#debugging">Debugging</a></li><li><a href="#a9s-common">Improving the Output by Adding Actual Configuration</a></li><li><a href="#validation">Validation</a></li><li><a href="#a9s-specific-customizations">Using the Configuration Cascade</a></li><li><a href="#epub">Creating an EPUB</a></li><li><a href="#pmc">Creating a PMC Zip</a></li><li><a href="#transpectdoc">transpectdoc</a></li><li><a href="#integration">Integration/Tests</a></li><li><a href="#gui">GUI</a></li></ul>
+                <ul id="tr-toc" class="table-of-contents"><li><a href="#initial-github-repo" class="active">Creating a Repository</a></li><li><a href="#submodules">Adding Submodules</a></li><li><a href="#xmlcatalog">XML Catalog</a></li><li><a href="#getting-input">Getting Sample Input</a></li><li><a href="#basic-pipeline">A First Pipeline</a></li><li><a href="#dynamic-transformation-pipelines">Dynamic Transformation Pipelines</a></li><li><a href="#cascade">Configuration Cascade</a></li><li><a href="#debugging">Debugging</a></li><li><a href="#a9s-common">Improving the Output by Adding Actual Configuration</a></li><li><a href="#validation">Validation</a></li><li><a href="#a9s-specific-customizations">Using the Configuration Cascade</a></li><li><a href="#epub">Creating an EPUB</a></li><li><a href="#pmc">PubMed Central Submission</a></li><li><a href="#transpectdoc">transpectdoc</a></li><li><a href="#integration">Integration/Tests</a></li><li><a href="#gui">GUI</a></li></ul>
               </div>
             </div>
           </div>
