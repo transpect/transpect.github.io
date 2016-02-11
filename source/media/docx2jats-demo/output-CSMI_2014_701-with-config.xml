@@ -1,0 +1,615 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<article article-type="research-article" dtd-version="1.0" xml:lang="de">
+   <front>
+      <journal-meta>
+         <journal-id journal-id-type="nlm-ta">CSMI</journal-id>
+         <journal-title-group>
+            <journal-title>Clinical Sports Medicine International</journal-title>
+         </journal-title-group>
+         <issn pub-type="ppub">1617-9870</issn>
+      </journal-meta>
+      <article-meta>
+         <article-categories>
+            <subj-group subj-group-type="heading">
+               <subject>Research Article</subject>
+               <subj-group>
+                  <subject>hypertension</subject>
+                  <subject>therapy</subject>
+                  <subject>young adult</subject>
+               </subj-group>
+            </subj-group>
+         </article-categories>
+         <title-group>
+            <article-title>The impact of an antihypertensive therapy of three to six months on the blood pressure parameters of young adults</article-title>
+         </title-group>
+         <contrib-group>
+            <contrib contrib-type="author" corresp="yes">
+               <name>
+                  <surname>Bischoff</surname>
+                  <given-names>C</given-names>
+               </name>
+               <xref ref-type="aff" rid="aff1"/>
+               <xref ref-type="corresp" rid="cor1"/>
+            </contrib>
+            <contrib contrib-type="author">
+               <name>
+                  <surname>Friedrich</surname>
+                  <given-names>R</given-names>
+               </name>
+               <xref ref-type="aff" rid="aff1"/>
+            </contrib>
+            <contrib contrib-type="author">
+               <name>
+                  <surname>Falz</surname>
+                  <given-names>R</given-names>
+               </name>
+               <xref ref-type="aff" rid="aff1"/>
+            </contrib>
+            <contrib contrib-type="author">
+               <name>
+                  <surname>Fikenzer</surname>
+                  <given-names>S</given-names>
+               </name>
+               <xref ref-type="aff" rid="aff2"/>
+            </contrib>
+            <contrib contrib-type="author">
+               <name>
+                  <surname>Busse</surname>
+                  <given-names>M</given-names>
+               </name>
+               <xref ref-type="aff" rid="aff1"/>
+            </contrib>
+            <aff id="aff1">Institute of Sports Medicine / Sports Medical Clinic of the University of Leipzig (Director: Prof. Dr. med. M. Busse)</aff>
+            <aff id="aff2">Department of Fitness and Individual Training, German University of Applied Sciences for Prevention and Health Management, Saarbrücken, Germany</aff>
+         </contrib-group>
+         <author-notes>
+            <corresp id="cor1">
+               <addr-line>Universität Leipzig</addr-line>
+               <addr-line>Institut für Sportmedizin und Prävention</addr-line>
+               <addr-line>Marschner Str. 29</addr-line>
+               <addr-line>04109 Leipzig</addr-line>
+               <addr-line>Germany</addr-line>
+               <email>bischoff.christian@gmx.net</email>
+            </corresp>
+         </author-notes>
+         <pub-date pub-type="ppub">
+            <year>2014</year>
+         </pub-date>
+         <volume>7</volume>
+         <issue>1</issue>
+         <fpage>9</fpage>
+         <lpage>14</lpage>
+         <abstract>
+            <title>Abstract</title>
+            <p content-type="quotation">
+               <bold>Bischoff C, Friedrich R, Falz R, Fikenzer S, Busse M. The impact of an antihypertensive therapy of three to six months on the blood pressure parameters of young adults. Clinical Sports Medicine International (CSMI) 2014, 7 (1): 9-14</bold>
+            </p>
+            <sec id="Sec1">
+               <title>Introduction: </title>
+               <p>Hypertension is one of the major risk factors for morbidity and mortality in cardiovascular diseases, but etiology and pathology for hypertension are not completely clarified. This open-label study focuses on the examination of impacts of an antihypertensive therapy of three to six months on the blood pressure parameters of young adults.</p>
+            </sec>
+            <sec id="Sec2">
+               <title>Material and Method: </title>
+               <p>After intense screening, medical consultation and personal consent, 18 students in total could be included in the study. All of them had high systolic blood pressure in repeated long-term blood pressure measurements. The participants of the intervention group (n=9) took a lower dosage of antihypertensive medication over a limited period of three or six months. After discontinuing medication, the blood pressure was observed three further months. The participants of the control group (n=9) received no medication. The initial measurement was followed by further long-term blood pressure measurements at set control points.</p>
+            </sec>
+            <sec id="Sec3">
+               <title>Results: </title>
+               <p>The low dosage of taken medication led to a significant reduction of the systolic blood pressure, the mean arterial pressure and the heart rate in the intervention group. After discontinuing the antihypertensive medication, the blood pressure increased moderately but not significantly. Despite the low increase of the blood pressure parameters after discontinuing medication, the systolic blood pressure and the pulse pressure were, as compared to the base level, lower at the time of the final measurement. The blood pressure parameters in the reference group showed no significant change and remained on a stable level over the entire period.</p>
+            </sec>
+            <sec id="Sec4">
+               <title>Conclusion: </title>
+               <p>Systolic blood pressure and pulse pressure may decrease as an effect of a preceding pharmaceutical therapy in young adults with high systolic blood pressure. Nevertheless, further investigations should follow due to the relatively small study population.</p>
+            </sec>
+            <sec id="Sec5">
+               <title>Keywords: </title>
+               <p>hypertension, therapy, young adult</p>
+            </sec>
+         </abstract>
+      </article-meta>
+   </front>
+   <body>
+      <sec id="Sec6">
+         <title>Introduction</title>
+         <p>According to the German Statistical Office, cardiovascular diseases are the most common cause of death (41.1 %) in Germany <xref ref-type="bibr" rid="R18">18</xref>. One of the major risk factors for the development of cardiovascular diseases is arterial hypertension <xref ref-type="bibr" rid="R7">7</xref>. It is estimated that approximately 35 million German citizens have blood pressure that is considerably higher than the set limits, but only every second person knows about the elevated blood pressure level <xref ref-type="bibr" rid="R9">9</xref>. Therefore, arterial hypertension is without doubt one of the widespread diseases nowadays and also one of the most underestimated diseases. It is a known fact that the probability of future cardiovascular complications rises with increasing blood pressure <xref ref-type="bibr" rid="R10">10</xref>
+            <xref ref-type="bibr" rid="R17">17</xref>. Also the risk of getting cardiovascular diseases already increases significantly at the time of prehypertension (120 - 139 mmHg sys; 80 - 89 mmHg dia) <xref ref-type="bibr" rid="R19">19</xref>. Examinations made by Fikenzer et al. show that the prevalence of hypertension among students from Leipzig (age 20 - 30 years) already lies at 22.7 % <xref ref-type="bibr" rid="R4">4</xref>. Consequently, considerations on how the treatment could be modified, especially in the early stages of hypertension development, followed.</p>
+      </sec>
+      <sec id="Sec7">
+         <title>Method</title>
+         <sec id="Sec8">
+            <title>Study population/study design:</title>
+            <p>In the scope of a long-term study, blood pressure parameters of 240 students of the University of Leipzig were determined by taking the blood pressure at rest and by 24h-blood pressure monitoring. The long-term blood pressure measurements were made due to the fact that blood pressure is a variable and repeated measurements under everyday conditions probably give detailed information about the cardiovascular risk. After intense screening, remeasurements (n = 36), medical consultation and personal consent, 18 male participants in total were assigned to either intervention (n = 9) or control group (n = 9). The participants of both groups were between the age of 20 and 28 years. In comparison to the limits for long-term blood pressure monitoring set by the European Society of Hypertension, all of the participants had elevated systolic blood pressure values <xref ref-type="bibr" rid="R11">11</xref>. A local cardiologist classed the participants of the intervention group as in need of treatment and prescribed a low dosage of antihypertensive medication for a limited period of three or six months. Diovan 80/160 mg, Concor 1.25/2.5 mg and Bisoprolol 5 mg in a dosage of half a tablet or one tablet per day were used as medicines. After discontinuing medication, the blood pressure was observed for three further months. The control group consisted of people, who refused an intervention or of people with blood pressure that was classed as observable by the cardiologist. Those participants received no medication during the entire period. The study was and open-label study. All participants underwent 24h long-term blood pressure monitoring at chosen control points to mark the course of the blood pressure parameters. In the scope of the analysis, several measurement errors were identified and documented with the cardiologist. Additionally, the day and night values were appropriately adapted according to the activity and resting phases of the participants to define them more precisely.</p>
+            <table-wrap id="Tab1">
+               <label>Table 1</label>
+               <caption>
+                  <title>	basic characteristic of the study participants</title>
+               </caption>
+               <table frame="hsides" width="212.65pt">
+                  <colgroup>
+                     <col width="25.4000016mm"/>
+                     <col width="24.80027934mm"/>
+                     <col width="24.81791823mm"/>
+                  </colgroup>
+                  <tbody>
+                     <tr>
+                        <td/>
+                        <td>
+                           <italic>intervention group (n = 9)</italic>
+                        </td>
+                        <td>
+                           <italic>control group (n = 9)</italic>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td/>
+                        <td/>
+                        <td/>
+                     </tr>
+                     <tr>
+                        <td/>
+                        <td/>
+                        <td/>
+                     </tr>
+                     <tr>
+                        <td>
+                           <bold>age (years)</bold>
+                           <xref ref-type="table-fn" rid="fn1">*</xref>
+                        </td>
+                        <td>23.44 ± 2.7</td>
+                        <td>22.78 ± 1.99</td>
+                     </tr>
+                     <tr>
+                        <td>
+                           <bold>height (cm)</bold>
+                           <xref ref-type="table-fn" rid="fn1">*</xref>
+                        </td>
+                        <td>179.00 ± 0.07</td>
+                        <td>181.00 ± 0.06</td>
+                     </tr>
+                     <tr>
+                        <td>
+                           <bold>weight (kg)</bold>
+                           <xref ref-type="table-fn" rid="fn1">*</xref>
+                        </td>
+                        <td>77.21 ± 9.03</td>
+                        <td>79.01 ± 10.74</td>
+                     </tr>
+                     <tr>
+                        <td>
+                           <bold>BMI (kg/m²)</bold>
+                           <xref ref-type="table-fn" rid="fn1">*</xref>
+                        </td>
+                        <td>23.99 ± 1.77</td>
+                        <td>24.15 ± 2.15</td>
+                     </tr>
+                     <tr>
+                        <td>
+                           <bold>24h-RR SYS, average (mmHg)</bold>
+                           <xref ref-type="table-fn" rid="fn1">*</xref>
+                        </td>
+                        <td>141.26 ± 8.02</td>
+                        <td>137.32 ± 2.74</td>
+                     </tr>
+                     <tr>
+                        <td>
+                           <bold>24h-RR DIA, average (mmHg)</bold>
+                           <xref ref-type="table-fn" rid="fn1">*</xref>
+                        </td>
+                        <td>74.55 ± 4.50</td>
+                        <td>73.90 ± 3.56</td>
+                     </tr>
+                     <tr>
+                        <td>
+                           <bold>24h-HR, average (S/min)</bold>
+                           <xref ref-type="table-fn" rid="fn1">*</xref>
+                        </td>
+                        <td>67.52 ± 7.63</td>
+                        <td>66.54 ± 5.90</td>
+                     </tr>
+                     <tr>
+                        <td>
+                           <bold>sports activity per week in h</bold>
+                        </td>
+                        <td>9.5 ± 6.6</td>
+                        <td>7.8 ± 3.5</td>
+                     </tr>
+                  </tbody>
+               </table>
+               <table-wrap-foot>
+                  <fn id="fn1">
+                     <p content-type="tablesub">* average value and standard deviation in the study population</p>
+                  </fn>
+               </table-wrap-foot>
+            </table-wrap>
+            <fig id="Fig1">
+               <label>fig. 1</label>
+               <caption>
+                  <title>	 temporalpattern of the examination</title>
+               </caption>
+               <graphic xmlns:xlink="http://www.w3.org/1999/xlink"
+                        xlink:href="file:/C:/cygwin/home/gerrit/XML/Prague/2016/transpect-tutorial/content/ulsp/CSMI/CSMI_2014_701/docx/CSMI_2014_701.docx.tmp/word/media/image1.tiff"/>
+            </fig>
+         </sec>
+         <sec id="Sec9">
+            <title>Study procedure:</title>
+            <p>The sample period began in May 2009 and lasted until February 2012. In the scope of the study, the participants of the intervention group underwent six long-term blood pressure monitorings and the participants of the control group four. The time pattern in <xref ref-type="fig" rid="Fig1">Fig. 1</xref> shows the division of the 24h blood pressure measurements. At the beginning, the blood pressure of almost all participants was taken twice. These measurements represent the starting point. After the documentation of the baseline values, the informing and the consent of the participants, the use of medication followed for the period set by the physician. During this period, two further 24h blood pressure monitorings were performed. The first measurement took place after one month to control the medication. The next measurement was perfomed after three or six months at the end of the intervention when the patients were still taking medication. Afterwards, the participants discontinued the antihypertensive medication according to medical prescriptions. Two further 24h blood pressure monitorings were performed to document the subsequent effects. They were carried out one and three months after discontinuing the medication. The participants of the control group repeated the long-term blood pressure monitorings three or six months (second measurement) after the inital measurement. The different measurement dates result from the different periods of medication intake in the intervention group. The date of the second measurement was randomly assigned to the participants of the control group for being comparable with the intervention group. A further long-term measurement (third measurement) followed three months after the second one.</p>
+         </sec>
+         <sec id="Sec10">
+            <title>Statistic:</title>
+            <p>All statistical evaluations were made with the programs SPSS 15.0 (SPSS Inc., Illinois, USA) and GraphPad Prism 6.0 (GraphPad Software Inc., California, USA). Due to the distribution requirements that could not be met and the small sample size, nonparametric tests were used. The comparison of the parameters with regard to their central tendency between the single measurements was made with the help of Friedman’s rank variance analysis. For this reason, the critical difference according to Schaich &amp; Hamerle (1984; according to Bortz et al., 2000) was determined by using the Χr²-value of the Friedman test <xref ref-type="bibr" rid="R8">8</xref>. The U-test developed by Mann and Whitney (1947) was used to compare both groups with each other. The following significances were defined as p≤0.05 significant (*); p≤0.01 highly significant (**); p≤0.001 most significant (***).</p>
+         </sec>
+      </sec>
+      <sec id="Sec11">
+         <title>Results</title>
+         <sec id="Sec12">
+            <title>Course of the blood pressure parameters during the observation period</title>
+            <p>In the intervention group, the low dosage of taken medication (β-blockers, ACE inhibitors) led to a significant reduction of the systolic blood pressure, the mean arterial pressure and the heart rate. No significant increase of these parameters could be determined after discontinuing antihypertensive medication. Despite the slight increase of the blood pressure parameters after discontinuing medication, the systolic blood pressure and the pulse pressure were, as compared to the base level, reduced by 6.59 (±5.02) mmHg or 6.43 (±4.58) mmHg at the final measurement (see <xref ref-type="table" rid="Tab2">Table 2</xref> &amp; <xref ref-type="fig" rid="Fig2">Fig. 2</xref>
+               <xref ref-type="fig" rid="Fig3">Fig. 3</xref>).</p>
+            <p>The Friedman test shows significant or even highly significant differences in the central tendency of the following measurements:</p>
+            <p content-type="Normallist">
+               <styled-content style-type="hub:identifier">▪</styled-content>average systolic blood pressure (p = 0.005)</p>
+            <p content-type="Normallist">
+               <styled-content style-type="hub:identifier">▪</styled-content>daily average systolic blood pressure (p = 0.002)</p>
+            <p content-type="Normallist">
+               <styled-content style-type="hub:identifier">▪</styled-content>night average systolic blood pressure (p = 0.005)</p>
+            <p content-type="Normallist">
+               <styled-content style-type="hub:identifier">▪</styled-content>daily average diastolic blood pressure (p = 0.033)</p>
+            <p content-type="Normallist">
+               <styled-content style-type="hub:identifier">▪</styled-content>average heart rate (p = 0.010)</p>
+            <p content-type="Normallist">
+               <styled-content style-type="hub:identifier">▪</styled-content>daily average heart rate (p = 0.003)</p>
+            <p content-type="Normallist">
+               <styled-content style-type="hub:identifier">▪</styled-content>night average heart rate (p = 0.015)</p>
+            <p content-type="Normallist">
+               <styled-content style-type="hub:identifier">▪</styled-content>average mean arterial pressure (p = 0.010)</p>
+            <p content-type="Normallist">
+               <styled-content style-type="hub:identifier">▪</styled-content>average pulse pressure (p = 0.015)</p>
+            <table-wrap id="Tab2">
+               <label>Table 2</label>
+               <caption>
+                  <title>	blood pressure parameters &amp; heart rate in the intervention group (average value &amp; standard deviation)</title>
+               </caption>
+               <table frame="box" width="96.7%">
+                  <colgroup>
+                     <col width="15.1694454mm"/>
+                     <col width="13.98763977mm"/>
+                     <col width="14.00527866mm"/>
+                     <col width="13.98763977mm"/>
+                     <col width="14.00527866mm"/>
+                  </colgroup>
+                  <tbody>
+                     <tr>
+                        <td>measurement</td>
+                        <td>1<break/>base level<break/>(n = 9)</td>
+                        <td>2<break/>end of medication therapy<break/>(n = 9)</td>
+                        <td>3<break/>1 month after the therapy<break/>(n = 8)</td>
+                        <td>4<break/>3 months after the therapy<break/>(n = 8)</td>
+                     </tr>
+                     <tr>
+                        <td>average_RRsys [mmHg]</td>
+                        <td>141.26 ± 8.02</td>
+                        <td>130.16 ± 4.17</td>
+                        <td>133.81 ± 6.42</td>
+                        <td>134.67 ± 5.02</td>
+                     </tr>
+                     <tr>
+                        <td>average_RRdia [mmHg]</td>
+                        <td>74.55 ± 4.50</td>
+                        <td>69.86 ± 5.26</td>
+                        <td>72.16 ± 3.10</td>
+                        <td>74.39 ± 6.99</td>
+                     </tr>
+                     <tr>
+                        <td>Average_HR <break/>[min-1]</td>
+                        <td>67.52 ± 7.63</td>
+                        <td>61.61 ± 7.01</td>
+                        <td>62.76 ± 9.31</td>
+                        <td>65.65 ± 6.02</td>
+                     </tr>
+                     <tr>
+                        <td>Average_MAP [mmHg]</td>
+                        <td>96.79 ± 3.43</td>
+                        <td>89.96 ± 4.54</td>
+                        <td>92.71 ± 3.61</td>
+                        <td>94.49 ± 6.03</td>
+                     </tr>
+                     <tr>
+                        <td>average_PP [mmHg]</td>
+                        <td>66.71 ± 10.21</td>
+                        <td>60.30 ± 4.04</td>
+                        <td>61.65 ± 5.67</td>
+                        <td>60.28 ± 4.58</td>
+                     </tr>
+                     <tr>
+                        <td>daily_average_RRsys [mmHg]</td>
+                        <td>146.61 ± 9.24</td>
+                        <td>13.80 ± 5.60</td>
+                        <td>140.30 ± 7.74</td>
+                        <td>141.09 ± 5.41</td>
+                     </tr>
+                     <tr>
+                        <td>night_average_RRsys [mmHg]</td>
+                        <td>122.19 ± 6.04</td>
+                        <td>114.07 ± 4.19</td>
+                        <td>116.33 ± 6.13</td>
+                        <td>119.71 ± 7.21</td>
+                     </tr>
+                     <tr>
+                        <td>daily_average_RRdia [mmHg]</td>
+                        <td>77.34 ± 4.82</td>
+                        <td>72.59 ± 5.72</td>
+                        <td>76.10 ± 3.67</td>
+                        <td>77.93 ± 6.63</td>
+                     </tr>
+                     <tr>
+                        <td>night_average_RRdia [mmHg]</td>
+                        <td>65.24 ± 6.83</td>
+                        <td>62.27 ± 7.10</td>
+                        <td>62.02 ± 4.77</td>
+                        <td>65.67 ± 7.76</td>
+                     </tr>
+                     <tr>
+                        <td>daily_average_HR [min-1]</td>
+                        <td>71.58 ± 9.12</td>
+                        <td>63.98 ± 7.78</td>
+                        <td>66.93 ± 10.62</td>
+                        <td>68.98 ± 6.84</td>
+                     </tr>
+                     <tr>
+                        <td>night_average_HR [min-1]</td>
+                        <td>54.64 ± 4.33</td>
+                        <td>54.53 ± 7.73</td>
+                        <td>51.72 ± 6.56</td>
+                        <td>56.88 ± 4.63</td>
+                     </tr>
+                     <tr>
+                        <td>daily_average_MAP [mmHg]</td>
+                        <td>100.43 ± 3.62</td>
+                        <td>93.66 ± 5.29</td>
+                        <td>97.54 ± 4.45</td>
+                        <td>98.81 ± 5.76</td>
+                     </tr>
+                     <tr>
+                        <td>night_average_MAP [mmHg]</td>
+                        <td>84.23 ± 5.48</td>
+                        <td>79.53 ± 5.12</td>
+                        <td>80.67 ± 5.06</td>
+                        <td>83.69 ± 7.14</td>
+                     </tr>
+                  </tbody>
+               </table>
+            </table-wrap>
+            <p>These results are confirmed by the comparison of the empirically determined Χ²-values with the determined critical Χ²-values (=7.81). The subsequent detailed result interpretation, using the post-hoc analysis with two-sided interrogation for the calculation of the critical difference (=1.93), reveals that the systolic blood pressure values (average, daily and night average), the heart rate (daily average) and the mean arterial pressure (average) differ significantly from each other between the first and second measurement. All other differences indicated no significant change.</p>
+            <table-wrap id="Tab3">
+               <label>Table 3</label>
+               <caption>
+                  <title>	blood pressure parameters &amp; heart rate in the control group (average values &amp; standard deviation)</title>
+               </caption>
+               <table frame="box" width="92.80000000000001%">
+                  <colgroup>
+                     <col width="17.05680663mm"/>
+                     <col width="17.07444552mm"/>
+                     <col width="17.07444552mm"/>
+                     <col width="17.07444552mm"/>
+                  </colgroup>
+                  <tbody>
+                     <tr>
+                        <td>measurement</td>
+                        <td>1<break/>base level<break/>(n = 9)</td>
+                        <td>2<break/>3 - 6 months after the initial measurement<break/>(n = 9)</td>
+                        <td>4<break/>3 months after the second measurement<break/>(n = 9)</td>
+                     </tr>
+                     <tr>
+                        <td>average_RRsys [mmHg]</td>
+                        <td>137.32 ± 2.74</td>
+                        <td>137.53 ± 5.30</td>
+                        <td>136.83 ± 8.23</td>
+                     </tr>
+                     <tr>
+                        <td>average_RRdia [mmHg]</td>
+                        <td>73.90 ± 3.56</td>
+                        <td>75.20 ± 5.62</td>
+                        <td>75.00 ± 6.47</td>
+                     </tr>
+                     <tr>
+                        <td>average_HR<break/>[min-1]</td>
+                        <td>66.54 ± 5.90</td>
+                        <td>67.61 ± 7.40</td>
+                        <td>64.86 ± 3.05</td>
+                     </tr>
+                     <tr>
+                        <td>average_MAP [mmHg]</td>
+                        <td>95.04 ± 2.68</td>
+                        <td>95.98 ± 5.28</td>
+                        <td>95.61 ± 6.80</td>
+                     </tr>
+                     <tr>
+                        <td>average_PP [mmHg]</td>
+                        <td>63.42 ± 4.13</td>
+                        <td>62.34 ± 3.44</td>
+                        <td>61.82 ± 4.37</td>
+                     </tr>
+                     <tr>
+                        <td>daily_average_RRsys [mmHg]</td>
+                        <td>143.86 ± 4.77</td>
+                        <td>144.24 ± 8.10</td>
+                        <td>143.42 ± 9.97</td>
+                     </tr>
+                     <tr>
+                        <td>night_average_RRsys [mmHg]</td>
+                        <td>118.67 ± 5.67</td>
+                        <td>116.09 ± 6.73</td>
+                        <td>117.50 ± 5.67</td>
+                     </tr>
+                     <tr>
+                        <td>daily average_RRdia [mmHg]</td>
+                        <td>77.90 ± 4.21</td>
+                        <td>79.23 ± 7.53</td>
+                        <td>78.95 ± 7.15</td>
+                     </tr>
+                     <tr>
+                        <td>night_average_RRdia [mmHg]</td>
+                        <td>62.63 ± 4.57</td>
+                        <td>62.54 ± 5.08</td>
+                        <td>63.34 ± 5.61</td>
+                     </tr>
+                     <tr>
+                        <td>daily_average_HR [min-1]</td>
+                        <td>71.63 ± 6.37</td>
+                        <td>72.71 ± 8.59</td>
+                        <td>69.53 ± 4.05</td>
+                     </tr>
+                     <tr>
+                        <td>night_average_HR [min-1]</td>
+                        <td>52.59 ± 6.37</td>
+                        <td>51.46 ± 6.71</td>
+                        <td>51.26 ± 9.06</td>
+                     </tr>
+                     <tr>
+                        <td>daily_average_MAP [mmHg]</td>
+                        <td>99.89 ± 3.63</td>
+                        <td>100.90 ± 7.49</td>
+                        <td>100.44 ± 7.80</td>
+                     </tr>
+                     <tr>
+                        <td>night_average_MAP [mmHg]</td>
+                        <td>81.31 ± 4.40</td>
+                        <td>80.39 ± 5.41</td>
+                        <td>81.39 ± 5.08</td>
+                     </tr>
+                  </tbody>
+               </table>
+            </table-wrap>
+            <p>The course of the blood pressure parameters and the heart rate of the control group are shown in table 3. It can be noted that all measured variables move on a constant level during the documented period. The analysis of the average values with regard to their central tendency (Friedman test) revealed no significant change.</p>
+         </sec>
+         <sec id="Sec13">
+            <title>Group comparison</title>
+            <p>It can be noted that statistically, there is no significant difference between the blood pressure parameters and the heart rate of both groups at the time of the first measurement (initial measurement) and third measurement (three months after the end of therapy or even six or nine months after the initial measurement). As opposed to this, the average and daily average values of the systolic and diastolic blood pressure, the mean arterial pressure and the heart rate of the intervention group, which were determined with the help of the long-term blood pressure monitoring, can be significantly isolated from the control group by the lowering of the values at the time of medication intake.</p>
+            <fig id="Fig2">
+               <label>Fig. 1</label>
+               <caption>
+                  <title>	 Course of the systolic blood pressure of both groups in the sample period</title>
+               </caption>
+               <graphic xmlns:xlink="http://www.w3.org/1999/xlink"
+                        xlink:href="file:/C:/cygwin/home/gerrit/XML/Prague/2016/transpect-tutorial/content/ulsp/CSMI/CSMI_2014_701/docx/CSMI_2014_701.docx.tmp/word/media/image2.tiff"/>
+            </fig>
+            <fig id="Fig3">
+               <label>Fig. 2</label>
+               <caption>
+                  <title>	 Course of the pulse pressure of both groups in the sample period</title>
+               </caption>
+               <graphic xmlns:xlink="http://www.w3.org/1999/xlink"
+                        xlink:href="file:/C:/cygwin/home/gerrit/XML/Prague/2016/transpect-tutorial/content/ulsp/CSMI/CSMI_2014_701/docx/CSMI_2014_701.docx.tmp/word/media/image3.tiff"/>
+            </fig>
+         </sec>
+      </sec>
+      <sec id="Sec14">
+         <title>Discussion</title>
+         <p>The results revealed that the therapy group benefits from the intervention because by comparison, there could no significant or tendential changes of the parameters be documented in the untreated control group. So it can be assumed that the mediated blood pressure reduction during the time of the intake of medication enables the organism, but especially the short- and middle-term blood pressure regulation mechanisms, to sensitization and adaptation processes. On the basis of the collected data however, it is not possible to make any statement about the specific structures and physiological processes responsible for the lowering.</p>
+         <p>The comparison with other therapy studies is difficult because most examinations in hypertension research are linked to endpoints (cardiovascular events or death). High-risk patients are frequently chosen for those studies to reinforce the statistical significance. In contrast, young patients and patients with uncomplicated blood pressure or with a moderate cardiovascular risk are rarely represented. In a study from 1993, Materson et al. compared the effect of six antihypertensive medications with a placebo tested on men with diastolic blood pressure values between 95 and 109 mmHg <xref ref-type="bibr" rid="R13">13</xref>. With the beta-blocker Atenolol, reductions of 14 (±11) mmHg systolic and 13 (±6) mmHg diastolic were determined in young white men. The result for the ACE-inhibitor Captopril amounted to a reduction of 11 (±9) mmHg systolic and 10 (±7) mmHg diastolic. The reduction of the systolic blood pressure values influenced by the medication is comparable to the effect achieved in this investigation (11.1 ± 4.2 mmHg). The diastolic blood pressure (4.7 ± 5.3 mmHg) however, did not drop as significantly as seen in Materson et al. <xref ref-type="bibr" rid="R13">13</xref>. Reasons for the observed differences could be the age of the patients (Age 51 ± 7 years), the clear differences of the blood pressure base level (149 ± 13 sys; 99 ± 3 dia) or/and the dosage of the medication. Materson et al. <xref ref-type="bibr" rid="R13">13</xref> indicate the number of patients and the dosage they received, but those parameters are not included in the evaluation of the results with regard to the observable reduction of the blood pressure. A meta-analysis of Law et al. from 2003 compares the different impacts of normal and low dosage of the substance groups on the blood pressure <xref ref-type="bibr" rid="R8">8</xref>. There were similar blood pressure reductions for all substance groups (thiazides, beta-blockers, ACE inhibitors, Angiotensin II receptor antagonists and calcium channel blockers) <xref ref-type="bibr" rid="R8">8</xref>. With a normal dosage, the reduction averages 9.1 mmHg systolic and 5.5 mmHg diastolic and 7.1 mmHg systolic and 4.4 mmHg diastolic with half of the standard dosage (a 20 % lower reduction) <xref ref-type="bibr" rid="R8">8</xref>. The participants of the intervention group showed a comparatively higher reduction of the systolic blood pressure and similar reductions of the diastolic pressure at a low dosage of the medication (Diovan 80/160 mg once a day; Concor 1.25/2.5 half or one tablet a day; Bisoprolol 5 mg once a day). The cause for the higher reduction of the systolic blood pressure cannot be exactly solved. One reason could be the low sample size but also the age of the patients could play a role here. The blood pressure regulation mechanisms of the organism are exposed to elevated blood pressure for only a short time and are therefore more flexible.</p>
+         <p>The comparison of the effect of the performed intervention with other therapies that orient more on a change of lifestyle, records that the tendential lowering of the systolic blood pressure, which was achieved in the investigation, is similar to the effects of relaxation procedures and biofeedback therapy <xref ref-type="bibr" rid="R22">22</xref> and higher than the effect of weight reduction <xref ref-type="bibr" rid="R5">5</xref>
+            <xref ref-type="bibr" rid="R14">14</xref>
+            <xref ref-type="bibr" rid="R15">15</xref> and dietary change <xref ref-type="bibr" rid="R1">1</xref>
+            <xref ref-type="bibr" rid="R12">12</xref>. If the results of this investigation are confirmed by a bigger sample size, it will represent a useful addition to drug-free treatment methods. The little time patients have to spend is a clear advantage in this case. Furthermore, studies revealed that a low dosage of medication can lead to a high compliance in patients <xref ref-type="bibr" rid="R3">3</xref>. But motivating young adults (&lt;30 years) to participate on relaxation methods could rather be difficult. The implemented intervention should not be the therapy of first choice but should be used in young people who are not overweight, non-smokers and often do sports.</p>
+         <p>In general, epidemiologic data of hypertension investigation <xref ref-type="bibr" rid="R6">6</xref> revealed that increased diastolic and systolic blood pressure values are relevant for the cardiovascular risk. In combination with other risk factors (nicotine abuse, diabetes mellitus, adiposity, etc.), the blood pressure increases lead to a further aggravation of the prognosis. With every increase of the systolic blood pressure by 20 mmHg and of the diastolic blood pressure by 10 mmHg, people between 40 and 69 years indicate a risk for strokes or coronary mortality which is twice as high as usually <xref ref-type="bibr" rid="R16">16</xref>. Furthermore, the data that was collected four years long in the scope of the Framingham study <xref ref-type="bibr" rid="R20">20</xref> indicates that people under 65 years with high normal blood pressure develop hypertension seven times more often than people with optimal blood pressure. In the present investigation it was possible to tendentially lower the systolic blood pressure by 6.59 (± 5.02) mmHg and as a result the cardiovascular risk of patients declines. The diastolic blood pressure of the intervention group was reduced by antihypertensive medication (not significantly) but was similar to the base level after three months of not taking medication. However, the measured values still clearly lie under the critical level of 80 mmHg. So it can be assumed that there are no pathological changes of the vascular system until now. Additionally, a reduction of the diastolic blood pressure regarding the development of the pulse pressure is not desired. A higher pulse pressure (&lt;65 mmHg) is an independent risk factor, which lies in close correlation with the development of a myocardial infarction, a stroke or a left ventricular hypertrophy <xref ref-type="bibr" rid="R21">21</xref>. While observing the measurements of the pulse pressure it is apparent that both groups lie over the standard values (&lt;50 mmHg). However, it can be noted that the pulse pressure of the intervention group is reduced by the intake of medication. This tendential reduction still exists after discontinuing antihypertensive medication and consequently, an improvement of the prognosis can be assumed.</p>
+         <p>This was one of the first investigations of this kind. Young patients and patients with uncomplicated hypertension are a rather unusual research topic in the investigation of hypertension. This is the reason why there are a number of open questions and starting points. It is necessary to confirm the present results by future studies with a bigger sample size and to support them statistically more reliable. Furthermore, it is necessary to check the effects regarding different influential variables such as age, family anamnesis, period of therapy, size of the initial blood pressure and used antihypertensive medication. </p>
+         <p>Additionally, the observation period after discontinuing medication could be expanded to see how the blood pressure develops over a long period. The therapy could also be performed together with drug-free treatments (weight reduction) to check if there are additive effects regarding the reduction of the blood pressure.</p>
+      </sec>
+      <sec id="Sec15">
+         <title>Bibliography</title>
+         <ref-list>
+            <ref id="R1">
+               <mixed-citation>
+                  <bold>Appel, L.J., Miller, E.R., Seidler, A.J, &amp; Whelton, P.K. (1993).</bold> Does supplementation of diet with ’ﬁsh oil’ reduce blood pressure? A meta-analysis of controlled clinical trials. Arch Intern Med, 153,1429–1438.</mixed-citation>
+            </ref>
+            <ref id="R2">
+               <mixed-citation>
+                  <bold>Bortz, J., Lienert, G.A. &amp; Boehnke, K. (2000).</bold> Verteilungsfreie Methoden in der Biostatistik (3. Auflage). Heidelberg: Springer.</mixed-citation>
+            </ref>
+            <ref id="R3">
+               <mixed-citation>
+                  <bold>Claxton, A.J., Cramer, J. &amp; Pierce, C. (2001).</bold> A Systematic Review of the Associations Between Dose Regimens and Medication Compliance. Clinical Therapeutics, 23 (8), 1296-1310.</mixed-citation>
+            </ref>
+            <ref id="R4">
+               <mixed-citation>
+                  <bold>Fikenzer, S., Falz, R., Tegtbur, U., Thomas, M., Drechsler, K., Schulze, A. &amp; Busse, M. (2006)</bold>. Prävalenz der arteriellen Hypertonie bei Studenten der Universität Leipzig. Klinische Sportmedizin, 7 (2), 19-22.</mixed-citation>
+            </ref>
+            <ref id="R5">
+               <mixed-citation>
+                  <bold>Holzgreve, H. (2005).</bold> Weight loss prevents Hypertension. MMW Fortschritt der Medizin, 147 (42), 22.</mixed-citation>
+            </ref>
+            <ref id="R6">
+               <mixed-citation>
+                  <bold>Kannel, W.B., Vasan, R.S. &amp; Levy D. (2003).</bold> Is the Relation of Systolic Blood Pressure to Risk of Cardiovascular Disease Continuous and Graded, or Are There Critical Values? Hypertension, 42, 453-456.</mixed-citation>
+            </ref>
+            <ref id="R7">
+               <mixed-citation>
+                  <bold>Kearney, M.K., Whelton, M., Reynolds, K., Whelton, P.K. &amp; He, J. (2004)</bold>. Worldwide Prevalence of Hypertension: a systematic review. Journal of Hypertension, 18, 11-19.</mixed-citation>
+            </ref>
+            <ref id="R8">
+               <mixed-citation>
+                  <bold>Law, M.R., Wald, N.J., Morris, J.K. &amp; Jordan, R.E. (2003).</bold> Value of low dose combination treatment with blood pressure lowering drugs: analysis of 354 randomised trials. British Medical Journal, 326, 1427-1434.</mixed-citation>
+            </ref>
+            <ref id="R9">
+               <mixed-citation>
+                  <bold>Leiblein, J. (2011, 29. September).</bold> 
+                  <ext-link xmlns:xlink="http://www.w3.org/1999/xlink"
+                            ext-link-type="uri"
+                            xlink:href="http://www.hochdruckliga.de/bluthochdruck-in-zahlen-presse.html">Bluthochdruck in Zahlen</ext-link>. Zugriff am 18.11.12 unter www.hochdruckliga.de/bluthochdruck-in-zahlen-presse.html</mixed-citation>
+            </ref>
+            <ref id="R10">
+               <mixed-citation>
+                  <bold>Lewington, S., Clarke, R., Qizilbash, N., Peto, R. &amp; Collins, R. (2002)</bold>. Age-specific relevance of usual blood pressure to vascular mortality. The Lancet, 360, 1903-1913.</mixed-citation>
+            </ref>
+            <ref id="R11">
+               <mixed-citation>
+                  <bold>Mancia, G., De Backer, G., Dominiczak, A., Cifkova, R., Fagard, R., Germano, G., Grassi, G., Heagerty, A.M., Kjeldsen, S.E., Laurent, S., Narkiewicz, K., Ruilope, L., Rynkiewicz, A., Schmieder, R.E., Struijker-Boudier, H.A., Zanchetti, A. (2007).</bold> ESH-ESC Practice Guidelines for the Management of Arterial Hypertension. Journal of Hypertension, 25 (9), 1751-1762.</mixed-citation>
+            </ref>
+            <ref id="R12">
+               <mixed-citation>
+                  <bold>Margetts, B.M., Beilin, L.J., Vandongen, R. &amp; Amstrong, B.K. (1986).</bold> Vegetarian diet in mild hypertension: a randomized controlled trial. British Medical Journal, 293 (6560), 1468-1471.</mixed-citation>
+            </ref>
+            <ref id="R13">
+               <mixed-citation>
+                  <bold>Materson, B.J., Reda, D.J., Cushman, W.C., Massie, M.B., Freis, E.D., Kochar, M.S., Hamburger, R.J., Fye, C., Laskshman, R., Gottdiener, J., Ramirez, E.A. &amp; Henderson, W.G. (1993).</bold> Single-Drug Therapy for Hypertension in Men. A Comparison of Six Antihypertensive Agents with Placebo. The New England Journal of Medicine, 328, 914-921.</mixed-citation>
+            </ref>
+            <ref id="R14">
+               <mixed-citation>
+                  <bold>Mulrow, C.D., Chiquette, E., Angel, L., Cornell, J., Summerbell, C., Anagnostelis, B., Brand, M. &amp; Grimm Jr., R. (2008).</bold> Dieting to reduce body weight for controlling hypertension in adults. The Cochrane Library, Issue 3, John Wiley &amp; Sons.</mixed-citation>
+            </ref>
+            <ref id="R15">
+               <mixed-citation>
+                  <bold>Neter, J.E., Stam, B.E., Kok, F.J., Grobbee, D.E. &amp; Geleijnse, J.M. (2003).</bold> Inﬂuence of weight reduction on blood pressure: a meta-analysis of randomized controlled trials. Hypertension, 42, 878–884.</mixed-citation>
+            </ref>
+            <ref id="R16">
+               <mixed-citation>
+                  <bold>Prospective Studies Collaboration (2002). Age-specific relevance of usual blood pressure to vascular mortality: a metanalysis of individual data for one million adults in 61 prospective studies. Lancet, 360, 1903-1913.</bold>
+               </mixed-citation>
+            </ref>
+            <ref id="R17">
+               <mixed-citation>
+                  <bold>Stamler, J., Stamler, R. &amp; Neaton, J.D. (1993)</bold>. Blood pressure, systolic and diastolic, and cardiovascular risks. US population data. Archives in Internal Medicine, 153, (5), 598-615.</mixed-citation>
+            </ref>
+            <ref id="R18">
+               <mixed-citation>
+                  <bold>Statistisches Bundesamt (2012, 29. Juni)</bold>. Gesundheit. Todesursachen in Deutschland. Zugriff am 18.11.12 unter www.destatis.de/DE/Publikationen/Thematisch/Gesundheit/Todesursachen/Todesursachen2120400107004.pdf?__blob=publicationFile</mixed-citation>
+            </ref>
+            <ref id="R19">
+               <mixed-citation>
+                  <bold>Vasan, S., Larson, M.G., Leip, E.P., Evans, J.C., O´Donnell, C.J., Kannel, W.B. &amp; Levy, D. (2001)</bold>. Impact of high normal blood pressure on the risk of cardiovascular disease. The New England Journal of Medicine, 345, (18), 1291-1297.</mixed-citation>
+            </ref>
+            <ref id="R20">
+               <mixed-citation>
+                  <bold>Vasan, R.S., Larson, M.G., Leip, E.P., Kannel, W.B. &amp; Levy, D. (2001).</bold> Assessment of frequency of progression to hypertension in non-hypertensive participants in the Framingham Study: a cohort study. Lancet, 358, 1682-1686.</mixed-citation>
+            </ref>
+            <ref id="R21">
+               <mixed-citation>
+                  <bold>Weihs, W. (2005).</bold> Pulsdruck als eigenständiger Risikofaktor: Ergebnisse der Praxisstudie CORIPULS. Journal für Hypertonie - Austrian Journal of Hypertension, 9 (4), 6-9.</mixed-citation>
+            </ref>
+            <ref id="R22">
+               <mixed-citation>
+                  <bold>Yucha, C.B., Clark, L., Smith, L., Uris, P., LaFleur, B. &amp; Duval, S. (2001).</bold> The effect of biofeedback in hypertension. Applied Nursing Research, 14 (1), 29-35</mixed-citation>
+            </ref>
+         </ref-list>
+      </sec>
+   </body>
+</article>
