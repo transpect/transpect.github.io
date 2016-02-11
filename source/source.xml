@@ -1105,11 +1105,6 @@ svn co https://subversion.le-tex.de/common/transpect-demo/content/ulsp/ ../conte
             xlink:href="source/media/docx2jats-demo/report-CSMI_2014_701.xhtml">HTML report</link> contains some more errors
           and warnings.</para>
 
-
-        
-
-        <bridgehead>PubMed Central / NLM style checker</bridgehead>
-        <para>tbd</para>
       </section>
 
       <section>
@@ -1169,14 +1164,26 @@ svn co https://subversion.le-tex.de/common/transpect-demo/content/ulsp/ ../conte
       </section>
 
       <section>
-        <title>Creating a PMC Zip</title>
-        <para>tbd</para>
+        <title>Creating an EPUB</title>
+        <para>The necessary changes consist in:</para>
+        <itemizedlist>
+          <listitem>
+            <para>adding an <literal>xml:base</literal> attribute to the HTML rendering that is a <literal>file:</literal> 
+              URI that ends in <literal>.xhtml</literal>.
+            In the example, it is the file URI of the <literal>docx2hub</literal> output, with a trailing <literal>.hub.xml</literal>
+            replaced with <literal>.xhtml</literal></para>
+          </listitem>
+        </itemizedlist>
       </section>
 
       <section>
-        <title>Creating an EPUB</title>
+        <title>Creating a PMC Zip</title>
+
+        <bridgehead>PubMed Central / NLM style checker</bridgehead>
         <para>tbd</para>
       </section>
+
+      
 
       <section>
         <title>transpectdoc</title>
