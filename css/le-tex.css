@@ -84,7 +84,8 @@ pre{background-color:#f5f5f5; border: 1px solid #e0e0e0; padding:1rem 1rem 1.5re
 
 #tr-content h2, #tr-content h3, #tr-content h4{font-weight:300} 
 #tr-content h2{font-size:3.5rem; color: #e53935;}
-#tr-content h3{font-size:2rem; }
+#tr-content h3{font-size:2.6rem; }
+#tr-content h4{margin-top:2.3rem }
 #tr-content h5{font-size:1.5rem; color: #000}
 #tr-content .card-title{color: #ef5350; line-height: 1.3}
 
