@@ -48,7 +48,7 @@
               <td>HTML, CSS</td>
               <td>&#x2713;</td>
               <td>&#x2713;</td>
-              <td>including conversion from CSS to CSSa</td>
+              <td>including conversion from CSS to <link xlink:href="https://github.com/le-tex/CSSa">CSSa</link></td>
             </tr>
             <tr>
               <td>Images</td>
@@ -60,7 +60,7 @@
               <td>InDesign Markup Language (IDML)</td>
               <td>&#x2713;</td>
               <td>&#x2713;</td>
-              <td>Styles are retained as CSSa. Generation is limited to one main story yet.</td>
+              <td>Styles are retained as <link xlink:href="https://github.com/le-tex/CSSa">CSSa</link>. Generation is limited to one main story yet.</td>
             </tr>
             <tr>
               <td>Math (MathML, OMML, LaTeX)</td>
@@ -72,7 +72,7 @@
               <td>Office Open XML, OpenDocument (ODT)</td>
               <td>&#x2713;</td>
               <td>&#x2713;</td>
-              <td>Styles are retained as CSSa. Some OOXML are not supported yet but are retained (SmartArts,
+              <td>Styles are retained as <link xlink:href="https://github.com/le-tex/CSSa">CSSa</link>. Some OOXML are not supported yet but are retained (SmartArts,
                 Drawings)</td>
             </tr>
             <tr>
@@ -88,8 +88,8 @@
             </tr>
           </tbody>
         </informaltable>
-        <para>Many converters generate the intermediate format Hub XML. Hub XML is a DocBook 5.1 derivative that allows
-          for documents that lack a proper section hierarchy and uses CSSa for expressing layout information. It is used
+        <para>Many converters generate the intermediate format <link xlink:href="https://github.com/le-tex/Hub">Hub XML</link>. Hub XML is a DocBook 5.1 derivative that allows
+          for documents that lack a proper section hierarchy and uses <link xlink:href="https://github.com/le-tex/CSSa">CSSa</link> for expressing layout information. It is used
           as a common intermediate format to represent raw conversion results of, for example, OOXML, ODT, and IDML
           documents.</para>
       </section>
@@ -173,17 +173,13 @@
         <title>Install XML Calabash</title>
         <para>We recommend to use Git or SVN to checkout Calabash to take care that all dependencies are met. The calabash directory
           should be placed at the top-level of your project directory.</para>
-        <programlisting>
-MyProject/
+        <programlisting>MyProject/
   |--calabash/
   |  |--calabash.sh
   |  |--calabash.bat</programlisting>
+        <programlisting><code role="language-git">git clone --recursive https://github.com/transpect/calabash-frontend calabash</code></programlisting>
         <note>
-          <title>Clone XML Calabash with Git</title>
-          <programlisting><code role="language-git">git clone --recursive https://github.com/transpect/calabash-frontend calabash</code></programlisting>
-        </note>
-        <note>
-          <title>Checkout XML Calabash with SVN</title>
+          <title>Optional: checkout XML Calabash with SVN</title>
           <para>The SVN client of GitHub doesn't support SVN externals, so we have to get each module separately.</para>
           <programlisting><code role="language-svn">svn co https://github.com/transpect/calabash-frontend/trunk calabash
 svn co https://github.com/transpect/calabash-distro/trunk calabash/distro</code></programlisting>
@@ -196,8 +192,75 @@ svn co https://github.com/transpect/image-transform-extension/trunk calabash/ext
       </section>
       <section>
         <title>Include transpect modules</title>
-        <para>First, we have to checkout the modules with Git or SVN. For example, we want to get <xref linkend="docx2hub"/>, which converts Microsoft Word to XML.</para>
-        <programlisting><code role="language-git">git clone --recursive https://github.com/transpect/calabash-frontend calabash</code></programlisting>
+        <bridgehead>Checkout the modules</bridgehead>
+        <para>First, we have to checkout the modules with Git or SVN. For example, we want to get <xref linkend="docx2hub"/>, 
+          which converts Microsoft Word to <link xlink:href="https://github.com/le-tex/Hub">Hub XML</link>. The docx2hub module depends on <xref linkend="xproc-util"/> and <xref linkend="xslt-util"/>.
+        </para>
+        <programlisting><code role="language-git">git clone https://github.com/transpect/docx2hub
+git clone https://github.com/transpect/xslt-util
+git clone https://github.com/transpect/xproc-util</code></programlisting>
+        <note>
+          <title>Optional: checkout modules with SVN</title>
+          <programlisting><code role="language-git">svn co https://github.com/transpect/docx2hub/trunk docx2hub
+svn co https://github.com/transpect/xslt-util/trunk xslt-util
+svn co https://github.com/transpect/xproc-util/trunk xproc-util</code></programlisting>
+        </note>
+        <para>After we cloned XML Calabash and the transpect modules, our project directory should look like this.</para>
+<programlisting>MyProject/
+  |--calabash/
+  |--docx2hub/
+  |--xproc-util/
+  |--xslt-util/
+</programlisting>
+        <bridgehead>Create an XML Catalog</bridgehead>
+        <para>Transpect uses canonical import URIs to import other modules. To resolve this URIs, our XML Calabash
+          looks after an XML catalog in the project directory. Starting from the project dir, the path is usually <filename>xmlcatalog/catalog.xml</filename>.</para>
+        <programlisting>MyProject/
+  |--xmlcatalog/
+  |  |--catalog.xml</programlisting>
+        <para>The XML catalog of the project is used to include the catalogs of the transpect modules. Therefore the <code>nextCatalog</code> element is used 
+        to connect the module catalogs.</para>
+        <programlisting><code role="language-markup">&lt;?xml version="1.0" encoding="UTF-8"?>
+&lt;catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog">
+  &lt;nextCatalog catalog="../docx2hub/xmlcatalog/catalog.xml"/>
+  &lt;nextCatalog catalog="../xproc-util/xmlcatalog/catalog.xml"/>
+  &lt;nextCatalog catalog="../xslt-util/xmlcatalog/catalog.xml"/>
+&lt;/catalog></code></programlisting>
+      </section>
+      <section>
+        <title>Run the pipeline</title>
+        <bridgehead>Command line</bridgehead>
+        <para>After we are included transpect in our project, we can run the <xref linkend="docx2hub"/> pipeline to convert a Microsoft 
+          Word DOCX file to <link xlink:href="https://github.com/le-tex/Hub">Hub XML</link>. Users of Linux, Mac OS X or Cygwin can use 
+          a convenient Bash script:</para>
+        <programlisting>./calabash/calabash.sh -o result=MyXMLfile.xml docx2hub/xpl/docx2hub.xpl docx=MyWordfile.docx</programlisting>
+        <para>There exists also a Batch file for Windows users:</para>
+        <programlisting>.\calabash\calabash.bat -o result=MyXMLfile.xml .\docx2hub\xpl\docx2hub.xpl docx=MyWordfile.docx</programlisting>
+        <bridgehead>Include in your XProc pipeline</bridgehead>
+        <para>You can import and use transpect modules in your own XProc pipelines. Therefore, you need to declare the namespace and 
+          add the <code>p:import</code> statement of the XProc step you want to use. Here is a simple XProc pipeline which implements 
+          <xref linkend="docx2hub"/>.
+        </para>
+        <programlisting><code role="language-markup">&lt;?xml version="1.0" encoding="UTF-8"?>
+&lt;p:declare-step xmlns:p="http://www.w3.org/ns/xproc" 
+  xmlns:docx2hub="http://transpect.io/docx2hub"
+  version="1.0">
+  
+  &lt;p:output port="result"/>
+  
+  &lt;p:option name="docx"/>
+  
+  &lt;p:import href="http://transpect.io/docx2hub/xpl/docx2hub.xpl"/>
+  
+  &lt;docx2hub:convert name="docx2hub">
+    &lt;p:with-option name="docx" select="$docx"/>
+  &lt;/docx2hub:convert>
+  
+&lt;/p:declare-step></code></programlisting>  
+      </section>
+      <section>
+        <title>Learn more?</title>
+        <para>If you want to get a deeper insight into the transpect framework, we would recommend to read our <xref linkend="tutorial-docx-jats-epub"/>.</para>          
       </section>
     </chapter>
   </part>
@@ -420,6 +483,18 @@ svn co https://github.com/transpect/image-transform-extension/trunk calabash/ext
 &lt;/idml2xml:hub></code></programlisting>
       <para><link role="btn red" xlink:href="https://github.com/transpect/idml2xml">Source ⬇</link></para>
     </chapter>
+    <chapter xml:base="../modules-xproc-util.html" xml:id="xproc-util">
+      <title>xproc-util</title>
+      <subtitle>https://github.com/transpect/xproc-util</subtitle>
+      <para>A collection of XProc utility steps which are needed for many other transpect modules.</para>
+      <para><link role="btn red" xlink:href="https://github.com/transpect/xproc-util">Source ⬇</link></para>
+    </chapter>
+    <chapter xml:base="../modules-xslt-util.html" xml:id="xslt-util">
+      <title>xslt-util</title>
+      <subtitle>https://github.com/transpect/xslt-util</subtitle>
+      <para>A collection of XSLT stylesheets which include various functions which are used by other transpect modules.</para>
+      <para><link role="btn red" xlink:href="https://github.com/transpect/idml2xml">Source ⬇</link></para>
+    </chapter>
   </part>
   <part>
     <title>Styleguide</title>
@@ -591,7 +666,7 @@ myproject/
   </part>
   <part>
     <title>Tutorials</title>
-    <chapter xml:base="../tutorial.html">
+    <chapter xml:base="../tutorial.html" xml:id="tutorial-docx-jats-epub">
       <title>Tutorials</title>
       <subtitle>docx→JATS→EPUB</subtitle>
       <para>By following this tutorial you will be able to set up a transpect conversion project. You will encounter
