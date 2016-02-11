@@ -76,7 +76,7 @@ body, #tr-nav{background-color:#fafafa}
  */
 code{font-size:1rem; padding: .1em; border-radius: .3em; background: #f5f2f0; color: #07a; white-space:pre-line !important}
 pre code{white-space:pre !important}
-pre{background-color:#f5f5f5; border: 1px solid #e0e0e0; padding:1rem 1rem 1.5rem 1rem; margin:1rem 0}
+pre{background-color:#f5f5f5 !important; border: 1px solid #e0e0e0; padding:1rem 1rem 1.5rem 1rem; margin:1rem 0}
 /*
  * headings
  */
