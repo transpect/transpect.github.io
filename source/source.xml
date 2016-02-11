@@ -170,7 +170,8 @@
         </simplesect>
       </section>
       <section>
-        <title>Install XML Calabash</title>
+        <title>Project Setup</title>
+        <bridgehead>Install XML Calabash</bridgehead>
         <para>We recommend to use Git or SVN to checkout Calabash to take care that all dependencies are met. The calabash directory
           should be placed at the top-level of your project directory.</para>
         <programlisting><code>MyProject/
@@ -189,10 +190,7 @@ svn co https://github.com/transpect/rng-extension/trunk calabash/extensions/tran
 svn co https://github.com/transpect/image-props-extension/trunk calabash/extensions/transpect/image-props-extension
 svn co https://github.com/transpect/image-transform-extension/trunk calabash/extensions/transpect/image-transform-extension</code></programlisting>
         </note>
-      </section>
-      <section>
-        <title>Include transpect modules</title>
-        <bridgehead>Checkout the modules</bridgehead>
+        <bridgehead>Checkout the transpect modules</bridgehead>
         <para>First, we have to checkout the modules with Git or SVN. For example, we want to get <xref linkend="docx2hub"/>, 
           which converts Microsoft Word to <link xlink:href="https://github.com/le-tex/Hub">Hub XML</link>. The docx2hub module depends on <xref linkend="xproc-util"/> and <xref linkend="xslt-util"/>.
         </para>
@@ -235,7 +233,7 @@ svn co https://github.com/transpect/xproc-util/trunk xproc-util</code></programl
         <programlisting>./calabash/calabash.sh -o result=MyXMLfile.xml docx2hub/xpl/docx2hub.xpl docx=MyWordfile.docx</programlisting>
         <para>There exists also a Batch file for Windows users:</para>
         <programlisting>.\calabash\calabash.bat -o result=MyXMLfile.xml .\docx2hub\xpl\docx2hub.xpl docx=MyWordfile.docx</programlisting>
-        <bridgehead>Include in your XProc pipeline</bridgehead>
+        <bridgehead>Include in your pipeline</bridgehead>
         <para>You can import and use transpect modules in your own XProc pipelines. Therefore, you need to declare the namespace and 
           add the <code>p:import</code> statement of the XProc step you want to use. Here is a simple XProc pipeline which implements 
           <xref linkend="docx2hub"/>.
