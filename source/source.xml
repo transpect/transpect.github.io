@@ -1256,15 +1256,30 @@ svn co https://subversion.le-tex.de/common/transpect-demo/content/ulsp/ ../conte
 
       <section>
         <title>Creating an EPUB</title>
-        <para>The necessary changes consist in:</para>
+        <para>transpect’s EPUB conversion step accepts a single (X)HTML document on its source port. In addition,
+        it requires a configuration file in which you can specify the EPUB version (2 or 3 currently), the hierarchization 
+        classes/epub:types for generating the nav document, parameters for existing checks (e.g., image file size, colorspace),
+        additional Schematron for checks, the location of the cover image, and metadata.</para>
+        <para>We’ll have to change the following things:</para>
         <itemizedlist>
           <listitem>
-            <para>adding an <literal>xml:base</literal> attribute to the HTML rendering that is a <literal>file:</literal> 
+            <para>add an <literal>xml:base</literal> attribute to the HTML rendering that is a <literal>file:</literal> 
               URI that ends in <literal>.xhtml</literal>.
             In the example, it is the file URI of the <literal>docx2hub</literal> output, with a trailing <literal>.hub.xml</literal>
             replaced with <literal>.xhtml</literal></para>
           </listitem>
+          <listitem>
+            <para>add css-tools as submodule since we forgot to add it initially</para>
+          </listitem>
+          <listitem>
+            <para>provide an epub configuration (we put it into <literal>a9s/common/epubtools/epub-config.xml</literal>,
+            and <literal>tr:load-cascaded</literal> lets you load a different config files for other 
+            clades or create a document from another one using the <literal>epub-config.xml.xsl</literal> mechanism).</para>
+          </listitem>
         </itemizedlist>
+        <para>These are the changes of the corresponding <link 
+          xlink:href="https://github.com/transpect/docx2jats-demo/commit/9e5e49bf0d17d7291e02225d30fb6763a0f19586">commit 9e5e49b</link>.</para>
+        <para>This is the resulting <link xlink:href="source/media/docx2jats-demo/Test_2014_701.epub">EPUB file</link>.</para>
       </section>
 
       <section>
@@ -1290,7 +1305,8 @@ svn co https://subversion.le-tex.de/common/transpect-demo/content/ulsp/ ../conte
 
       <section>
         <title>GUI</title>
-        <para>tbd</para>
+        <para>tbd: screenshots, installation of this project on <link 
+          xlink:href="https://transpect.le-tex.de/?locale=en">transpect.le-tex.de</link></para>
       </section>
     </chapter>
   </part>
