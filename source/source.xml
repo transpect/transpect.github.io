@@ -1285,7 +1285,11 @@ svn co https://subversion.le-tex.de/common/transpect-demo/content/ulsp/ ../conte
         </itemizedlist>
         <para>These are the changes of the corresponding <link 
           xlink:href="https://github.com/transpect/docx2jats-demo/commit/9e5e49bf0d17d7291e02225d30fb6763a0f19586">commit 9e5e49b</link>.</para>
-        <para>This is the resulting <link xlink:href="source/media/docx2jats-demo/Test_2014_701.epub">EPUB file</link>.</para>
+        <para>This is the resulting <link xlink:href="source/media/docx2jats-demo/Test_2014_701.epub">EPUB file</link>, and
+          this is the 
+          <link xlink:href="source/media/docx2jats-demo/report-Test_2014_701-epubtools.xhtml">HTML report</link> that includes the standard IDPF epubcheck 4.0.1 checks. In addition, it would have also checked image color spaces
+          and sizes by Schematron. But in this case the images happen to be TIFFs – we need to 
+          <link xlink:href="https://github.com/transpect/image-transform-extension">convert them to supported formats</link> before.</para>
       </section>
 
       <section xml:id="pmc">
