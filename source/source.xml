@@ -359,8 +359,27 @@ svn co https://github.com/transpect/xproc-util/trunk xproc-util</code></programl
 &lt;/docx2hub:convert></code></programlisting>
       <para><link role="btn red" xlink:href="https://github.com/transpect/docx2hub">Source ⬇</link></para>
     </chapter>
+    <!-- docx2tex -->
+    <chapter xml:base="../modules-docx2tex.html" xml:id="docx2tex">
+      <title>docx2tex</title>
+      <subtitle>https://github.com/transpect/docx2tex</subtitle>
+      <para>Converts Microsoft Word to LaTeX including tables, lists and equations. Many unicode characters are mapped to standard LaTeX code.</para>
+      <bridgehead>Import URI</bridgehead>
+      <programlisting><code role="language-markup">&lt;p:import href="http://transpect.io/docx2tex/xpl/docx2tex.xpl"/></code></programlisting>
+      <bridgehead>Synopsis</bridgehead>
+      <programlisting><code role="language-markup">&lt;docx2tex:main xmlns:docx2tex="http://transpect.io/docx2tex">
+  &lt;p:output port="result"/>                               &lt;!-- LaTeX text document -->
+  &lt;p:output port="hub"/>                                  &lt;!-- Hub XML document  -->
+  &lt;p:with-option name="docx" select="''"/>                &lt;!-- Path to docx file -->
+  &lt;p:with-option name="conf" select="''"/>                &lt;!-- XML or CSV based configuration file -->
+  &lt;p:with-option name="debug" select="'yes'"/>            &lt;!-- "yes"|"no" -->
+  &lt;p:with-option name="debug-dir-uri" select="'debug'"/>  &lt;!-- "debug" -->
+  &lt;p:with-option name="status-dir-uri" select="'status'"/>&lt;!-- "status" -->
+&lt;/docx2tex:main></code></programlisting>
+      <para><link role="btn red" xlink:href="https://github.com/transpect/docx2tex">Source ⬇</link></para>
+    </chapter>
     <!-- epubtools -->
-    <chapter xml:base="../modules-epubtools.html">
+    <chapter xml:base="../modules-epubtools.html" xml:id="epubtools">
       <title>epubtools</title>
       <subtitle>https://github.com/transpect/epubtools</subtitle>
       <para>This libary converts EPUB&#x2009;2 or EPUB&#x2009;3 from XHTML files. The XHTML must contain a proper <code>@xml:base</code> attribute from where its 
@@ -407,7 +426,8 @@ svn co https://github.com/transpect/xproc-util/trunk xproc-util</code></programl
   &lt;p:with-option name="status-dir-uri" select="'status'"/>&lt;!-- "status" -->
 &lt;/tr:patch-svrl></code></programlisting>
       </section>
-      <section>
+      <!-- validate-with-rng -->
+      <section xml:id="validate-with-rng">
         <title>tr:validate-with-rng</title>
         <para>Validates XML files with RelaxNG schema files and provides an SVRL representation of the validation errors. The input source file 
         is forwarded to the primary output port without any changes.</para>
@@ -424,7 +444,7 @@ svn co https://github.com/transpect/xproc-util/trunk xproc-util</code></programl
   &lt;p:with-option name="status-dir-uri" select="'status'"/>&lt;!-- "status" -->  
 &lt;/tr:validate-with-rng></code></programlisting>
       </section>
-      <section>
+      <section xml:id="validate-with-schematron">
         <title>tr:validate-with-schematron</title>
         <para>This step loads Schematron files based on a cascade paths document, assembles the Schematron files and performs a validation.</para>
         <bridgehead>Import URI</bridgehead>
@@ -444,6 +464,7 @@ svn co https://github.com/transpect/xproc-util/trunk xproc-util</code></programl
 &lt;/tr:validate-with-schematron></code></programlisting>
       </section>     
     </chapter>
+    <!-- hub2bits -->
     <chapter xml:base="../modules-hub2bits.html">
       <title>hub2bits</title>
       <subtitle>https://github.com/transpect/hub2bits</subtitle>
@@ -462,7 +483,7 @@ svn co https://github.com/transpect/xproc-util/trunk xproc-util</code></programl
 &lt;/tr:hub2bits></code></programlisting>
     </chapter>
     <!-- idml2xml -->
-    <chapter xml:base="../modules-idml2xml.html">
+    <chapter xml:base="../modules-idml2xml.html" xml:id="modules-idml2xml">
       <title>idml2xml</title>
       <subtitle>https://github.com/transpect/idml2xml</subtitle>
       <para>The idml2xml library can be used to convert from InDesign Markup Language (IDML) to <link xlink:href="https://github.com/le-tex/Hub">Hub XML</link>. Object, 
@@ -471,15 +492,49 @@ svn co https://github.com/transpect/xproc-util/trunk xproc-util</code></programl
       <programlisting><code role="language-markup">&lt;p:import href="http://transpect.io/idml2xml/xpl/idml2hub.xpl"/></code></programlisting>
       <bridgehead>Synopsis</bridgehead>
       <programlisting><code role="language-markup">&lt;idml2xml:hub xmlns:idml2xml="http://transpect.io/idml2xml">
-  &lt;p:output port="result"/>                                      &lt;!-- Hub XML document -->
-  &lt;p:output port="report"/>                                      &lt;!-- Schematron report -->
-  &lt;p:output port="DocumentStoriesSorted"/>                       &lt;!-  wrapped IDML document stories -->
-  &lt;p:with-option name="idmlfile" select="'myInDesignFile.idml'"/>&lt;!-- file path -->
+  &lt;p:output port="result"/>                               &lt;!-- Hub XML document -->
+  &lt;p:output port="report"/>                               &lt;!-- Schematron report -->
+  &lt;p:output port="DocumentStoriesSorted"/>                &lt;!-  wrapped IDML document stories -->
+  &lt;p:with-option name="idmlfile" select="'myIDML.idml'"/> &lt;!-- IDML file path -->
+  &lt;p:with-option name="debug" select="'yes'"/>            &lt;!-- "yes"|"no" -->
+  &lt;p:with-option name="debug-dir-uri" select="'debug'"/>  &lt;!-- "debug" -->
+  &lt;p:with-option name="status-dir-uri" select="'status'"/>&lt;!-- "status" -->
+&lt;/idml2xml:hub></code></programlisting>
+      <para><link role="btn red" xlink:href="https://github.com/transpect/idml2xml">Source ⬇</link></para>
+    </chapter>
+    <chapter xml:base="../modules-mml2tex.html" xml:id="modules-mml2tex">
+      <title>mml2tex</title>
+      <subtitle>https://github.com/transpect/mml2tex</subtitle>
+      <para>The mml2tex library is used to parse MathML and provide LaTeX equations.</para>
+      <bridgehead>Import URI</bridgehead>
+      <programlisting><code role="language-markup">&lt;p:import href="http://transpect.io/mml2tex/xpl/mml2tex.xpl"/></code></programlisting>
+      <bridgehead>Synopsis</bridgehead>
+      <programlisting><code role="language-markup">&lt;mml2tex:convert xmlns:mml2tex="http://transpect.io/mml2tex">
+  &lt;p:input port="source"/>                                       &lt;!-- a XML document-->
+  &lt;p:input port="conf"/>                                         &lt;!-- character map, see texmap/texmap.xml -->
+  &lt;p:output port="result"/>                                      &lt;!-- the XML document including PIs with the LaTeX equations -->
   &lt;p:with-option name="debug" select="'yes'"/>                   &lt;!-- "yes"|"no" -->
   &lt;p:with-option name="debug-dir-uri" select="'debug'"/>         &lt;!-- "debug" -->
   &lt;p:with-option name="status-dir-uri" select="'status'"/>       &lt;!-- "status" -->
-&lt;/idml2xml:hub></code></programlisting>
-      <para><link role="btn red" xlink:href="https://github.com/transpect/idml2xml">Source ⬇</link></para>
+&lt;/mml2tex:convert></code></programlisting>
+      <para><link role="btn red" xlink:href="https://github.com/transpect/mml2tex">Source ⬇</link></para>
+    </chapter>
+    <chapter xml:base="../modules-xml2tex.html" xml:id="modules-xml2tex">
+      <title>xml2tex</title>
+      <subtitle>https://github.com/transpect/xml2tex</subtitle>
+      <para>Takes a XML and an xml2tex configuration file as input and converts the XML file according to the configuration to LaTeX.</para>
+      <bridgehead>Import URI</bridgehead>
+      <programlisting><code role="language-markup">&lt;p:import href="http://transpect.io/xml2tex/xpl/xml2tex.xpl"/></code></programlisting>
+      <bridgehead>Synopsis</bridgehead>
+      <programlisting><code role="language-markup">&lt;xml2tex:convert xmlns:xml2tex="http://transpect.io/xml2tex">
+  &lt;p:input port="source"/>                                &lt;!-- a XML document-->
+  &lt;p:input port="conf"/>                                  &lt;!-- xml2tex configuration, see example/conf-hubcssa.xml -->
+  &lt;p:output port="result"/>                               &lt;!-- the LaTeX text file -->
+  &lt;p:with-option name="debug" select="'yes'"/>            &lt;!-- "yes"|"no" -->
+  &lt;p:with-option name="debug-dir-uri" select="'debug'"/>  &lt;!-- "debug" -->
+  &lt;p:with-option name="status-dir-uri" select="'status'"/>&lt;!-- "status" -->
+&lt;/xml2tex:convert></code></programlisting>
+      <para><link role="btn red" xlink:href="https://github.com/transpect/xml2tex">Source ⬇</link></para>
     </chapter>
     <chapter xml:base="../modules-xproc-util.html" xml:id="xproc-util">
       <title>xproc-util</title>

@@ -1,6 +1,6 @@
-<?xml version="1.0" encoding="UTF-8"?><html xmlns="http://www.w3.org/1999/xhtml" xml:base="../modules-docx2hub.html">
+<?xml version="1.0" encoding="UTF-8"?><html xmlns="http://www.w3.org/1999/xhtml" xml:base="../modules-xml2tex.html">
   <head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <title>docx2hub</title>
+    <title>xml2tex</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     
@@ -14,7 +14,7 @@
     <link type="text/css" rel="stylesheet" media="screen,projection" href="css/materialize.min.css" />
     <link type="text/css" rel="stylesheet" media="screen,projection" href="css/le-tex.css" />
   </head>
-  <body id="docx2hub">
+  <body id="modules-xml2tex">
     
     <header>
       <div class="container"><a href="#" data-activates="tr-nav" class="button-collapse top-nav circle hide-on-large-only"><i class="mdi-navigation-menu"></i></a></div>
@@ -23,28 +23,27 @@
       <ul id="tr-nav" class="side-nav fixed" style="width:240px">
         <li class="logo"><a id="logo-container" href="#" class="brand-logo"><object id="front-page-logo" type="image/svg+xml" data="icons/logo-transpect.svg">Your browser does not support SVG</object></a></li>
         
-      <li class="naventry-1st"><a href="index.html">About</a></li><li class="naventry-1st"><a href="getting-started.html">Getting Started</a></li><li class="active no-padding"><ul class="collapsible collapsible-accordion"><li class="active naventry-1st" id="part-modules"><a class="active collapsible-header">Modules</a><div style="display:block" class="collapsible-body"><ul><li class="naventry-2nd"><a href="modules-bits2hub.html">bits2hub</a></li><li class="naventry-2nd"><a href="modules-cascade.html">cascade</a></li><li class="active naventry-2nd"><a href="modules-docx2hub.html">docx2hub</a></li><li class="naventry-2nd"><a href="modules-docx2tex.html">docx2tex</a></li><li class="naventry-2nd"><a href="modules-epubtools.html">epubtools</a></li><li class="naventry-2nd"><a href="modules-htmlreports.html">htmlreports</a></li><li class="naventry-2nd"><a href="modules-hub2bits.html">hub2bits</a></li><li class="naventry-2nd"><a href="modules-idml2xml.html">idml2xml</a></li><li class="naventry-2nd"><a href="modules-mml2tex.html">mml2tex</a></li><li class="naventry-2nd"><a href="modules-xml2tex.html">xml2tex</a></li><li class="naventry-2nd"><a href="modules-xproc-util.html">xproc-util</a></li><li class="naventry-2nd"><a href="modules-xslt-util.html">xslt-util</a></li></ul></div></li></ul></li><li class="naventry-1st"><a href="styleguide.html">Styleguide</a></li><li class="naventry-1st"><a href="tutorial.html">Tutorials</a></li></ul>
+      <li class="naventry-1st"><a href="index.html">About</a></li><li class="naventry-1st"><a href="getting-started.html">Getting Started</a></li><li class="active no-padding"><ul class="collapsible collapsible-accordion"><li class="active naventry-1st" id="part-modules"><a class="active collapsible-header">Modules</a><div style="display:block" class="collapsible-body"><ul><li class="naventry-2nd"><a href="modules-bits2hub.html">bits2hub</a></li><li class="naventry-2nd"><a href="modules-cascade.html">cascade</a></li><li class="naventry-2nd"><a href="modules-docx2hub.html">docx2hub</a></li><li class="naventry-2nd"><a href="modules-docx2tex.html">docx2tex</a></li><li class="naventry-2nd"><a href="modules-epubtools.html">epubtools</a></li><li class="naventry-2nd"><a href="modules-htmlreports.html">htmlreports</a></li><li class="naventry-2nd"><a href="modules-hub2bits.html">hub2bits</a></li><li class="naventry-2nd"><a href="modules-idml2xml.html">idml2xml</a></li><li class="naventry-2nd"><a href="modules-mml2tex.html">mml2tex</a></li><li class="active naventry-2nd"><a href="modules-xml2tex.html">xml2tex</a></li><li class="naventry-2nd"><a href="modules-xproc-util.html">xproc-util</a></li><li class="naventry-2nd"><a href="modules-xslt-util.html">xslt-util</a></li></ul></div></li></ul></li><li class="naventry-1st"><a href="styleguide.html">Styleguide</a></li><li class="naventry-1st"><a href="tutorial.html">Tutorials</a></li></ul>
     </header>
     
     <main>
       <div class="section orange" id="index-banner">
         <div class="container">
-          <h1 id="tr-title" class="light header center-on-small-only white-text">docx2hub</h1>
-          <h4 id="tr-subtitle" class="light orange-text text-lighten-4 center-on-small-only">https://github.com/transpect/docx2hub</h4>
+          <h1 id="tr-title" class="light header center-on-small-only white-text">xml2tex</h1>
+          <h4 id="tr-subtitle" class="light orange-text text-lighten-4 center-on-small-only">https://github.com/transpect/xml2tex</h4>
         </div>
       </div>
       <div class="container">
         <div class="row">
           
-          <div class="col s12 m9 l10" id="tr-content"><p>This module converts Microsoft Word files in Office Open XML format (OOXML) (DOCX) to <a href="https://github.com/le-tex/Hub" target="_blank">➼ Hub XML</a>. Styles including overrides 
-          are extracted as <a href="https://github.com/le-tex/CSSa" target="_blank">➼ CSSa</a>. Equations are converted from Office Open Math Markup Language (OOMML) to (Presentational) MathML 3. </p><h4>Import URI</h4><pre><code class="language-markup">&lt;p:import href="http://transpect.io/docx2hub/xpl/docx2hub.xpl"/&gt;</code></pre><h4>Synopsis</h4><pre><code class="language-markup">&lt;docx2hub:convert xmlns:docx2hub="http://transpect.io/docx2hub"&gt;
-  &lt;p:output port="result"/&gt;                               &lt;!-- Hub XML document --&gt;
-  &lt;p:output port="report"/&gt;                               &lt;!-- Schematron report --&gt;
-  &lt;p:with-option name="docx" select="'myWord.docx'"/&gt;     &lt;!-- file path --&gt;
+          <div class="col s12 m9 l10" id="tr-content"><p>Takes a XML and an xml2tex configuration file as input and converts the XML file according to the configuration to LaTeX.</p><h4>Import URI</h4><pre><code class="language-markup">&lt;p:import href="http://transpect.io/xml2tex/xpl/xml2tex.xpl"/&gt;</code></pre><h4>Synopsis</h4><pre><code class="language-markup">&lt;xml2tex:convert xmlns:xml2tex="http://transpect.io/xml2tex"&gt;
+  &lt;p:input port="source"/&gt;                                &lt;!-- a XML document--&gt;
+  &lt;p:input port="conf"/&gt;                                  &lt;!-- xml2tex configuration, see example/conf-hubcssa.xml --&gt;
+  &lt;p:output port="result"/&gt;                               &lt;!-- the LaTeX text file --&gt;
   &lt;p:with-option name="debug" select="'yes'"/&gt;            &lt;!-- "yes"|"no" --&gt;
   &lt;p:with-option name="debug-dir-uri" select="'debug'"/&gt;  &lt;!-- "debug" --&gt;
   &lt;p:with-option name="status-dir-uri" select="'status'"/&gt;&lt;!-- "status" --&gt;
-&lt;/docx2hub:convert&gt;</code></pre><p><a href="https://github.com/transpect/docx2hub" target="_blank" class="btn red">Source ⬇</a></p></div>
+&lt;/xml2tex:convert&gt;</code></pre><p><a href="https://github.com/transpect/xml2tex" target="_blank" class="btn red">Source ⬇</a></p></div>
           
           <div class="col hide-on-small-only m3 l2">
             <div class="toc-wrapper pin-top" style="top: 0px;">
