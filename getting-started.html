@@ -55,10 +55,10 @@
         <h2 class="header">Install XML Calabash</h2>
         <p>We recommend to use Git or SVN to checkout Calabash to take care that all dependencies are met. The calabash directory
           should be placed at the top-level of your project directory.</p>
-        <pre>MyProject/
+        <pre><code class="language-code">MyProject/
   |--calabash/
   |  |--calabash.sh
-  |  |--calabash.bat</pre>
+  |  |--calabash.bat</code></pre>
         <pre><code class="language-git">git clone --recursive https://github.com/transpect/calabash-frontend calabash</code></pre>
         <div class="card"><div class="card-content">
           <span class="card-title">Optional: checkout XML Calabash with SVN</span>
@@ -71,7 +71,7 @@ svn co https://github.com/transpect/rng-extension/trunk calabash/extensions/tran
 svn co https://github.com/transpect/image-props-extension/trunk calabash/extensions/transpect/image-props-extension
 svn co https://github.com/transpect/image-transform-extension/trunk calabash/extensions/transpect/image-transform-extension</code></pre>
         </div></div>
-      </div><div id="d40e75" class="section col s12 scrollspy">
+      </div><div id="d40e76" class="section col s12 scrollspy">
         <h2 class="header">Include transpect modules</h2>
         <h4>Checkout the modules</h4>
         <p>First, we have to checkout the modules with Git or SVN. For example, we want to get <a href="modules-docx2hub.html#docx2hub" target="_blank">docx2hub</a>, 
@@ -87,18 +87,17 @@ svn co https://github.com/transpect/xslt-util/trunk xslt-util
 svn co https://github.com/transpect/xproc-util/trunk xproc-util</code></pre>
         </div></div>
         <p>After we cloned XML Calabash and the transpect modules, our project directory should look like this.</p>
-<pre>MyProject/
+<pre><code class="language-code">MyProject/
   |--calabash/
   |--docx2hub/
   |--xproc-util/
-  |--xslt-util/
-</pre>
+  |--xslt-util/</code></pre>
         <h4>Create an XML Catalog</h4>
         <p>Transpect uses canonical import URIs to import other modules. To resolve this URIs, our XML Calabash
           looks after an XML catalog in the project directory. Starting from the project dir, the path is usually <code class="language-filename">xmlcatalog/catalog.xml</code>.</p>
-        <pre>MyProject/
+        <pre><code class="language-code">MyProject/
   |--xmlcatalog/
-  |  |--catalog.xml</pre>
+  |  |--catalog.xml</code></pre>
         <p>The XML catalog of the project is used to include the catalogs of the transpect modules. Therefore the <code class="language-code">nextCatalog</code> element is used 
         to connect the module catalogs.</p>
         <pre><code class="language-markup">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
@@ -107,7 +106,7 @@ svn co https://github.com/transpect/xproc-util/trunk xproc-util</code></pre>
   &lt;nextCatalog catalog="../xproc-util/xmlcatalog/catalog.xml"/&gt;
   &lt;nextCatalog catalog="../xslt-util/xmlcatalog/catalog.xml"/&gt;
 &lt;/catalog&gt;</code></pre>
-      </div><div id="d40e141" class="section col s12 scrollspy">
+      </div><div id="d40e144" class="section col s12 scrollspy">
         <h2 class="header">Run the pipeline</h2>
         <h4>Command line</h4>
         <p>After we are included transpect in our project, we can run the <a href="modules-docx2hub.html#docx2hub" target="_blank">docx2hub</a> pipeline to convert a Microsoft 
@@ -137,7 +136,7 @@ svn co https://github.com/transpect/xproc-util/trunk xproc-util</code></pre>
   &lt;/docx2hub:convert&gt;
   
 &lt;/p:declare-step&gt;</code></pre>  
-      </div><div id="d40e183" class="section col s12 scrollspy">
+      </div><div id="d40e186" class="section col s12 scrollspy">
         <h2 class="header">Learn more?</h2>
         <p>If you want to get a deeper insight into the transpect framework, we would recommend to read our <a href="tutorial.html#tutorial-docx-jats-epub" target="_blank">Tutorials</a>.</p>          
       </div></div>
@@ -145,7 +144,7 @@ svn co https://github.com/transpect/xproc-util/trunk xproc-util</code></pre>
           <div class="col hide-on-small-only m3 l2">
             <div class="toc-wrapper pin-top" style="top: 0px;">
               <div style="height: 1px;">
-                <ul id="tr-toc" class="table-of-contents"><li><a href="#d40e9" class="active">Prerequisites</a></li><li><a href="#d40e39">Install XML Calabash</a></li><li><a href="#d40e75">Include transpect modules</a></li><li><a href="#d40e141">Run the pipeline</a></li><li><a href="#d40e183">Learn more?</a></li></ul>
+                <ul id="tr-toc" class="table-of-contents"><li><a href="#d40e9" class="active">Prerequisites</a></li><li><a href="#d40e39">Install XML Calabash</a></li><li><a href="#d40e76">Include transpect modules</a></li><li><a href="#d40e144">Run the pipeline</a></li><li><a href="#d40e186">Learn more?</a></li></ul>
               </div>
             </div>
           </div>
