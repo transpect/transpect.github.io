@@ -160,27 +160,44 @@
             tutorial</link> first.</para>
         <simplesect role="col s12 m6">
           <title>XML Calabash</title>
-          <para>We recommend XML Calabash for running transpect’s XProc pipelines. You should use our pre-configured
-            version of XML Calabash. It comes with extensions which are essential to some modules.</para>
-          <!--<para><link xlink:href="https://github.com/transpect/calabash-frontend/" role="btn red">Get XML Calabash</link></para>-->
+          <para>We recommend to use our pre-configured XML Calabash for running transpect’s XProc pipelines. It includes
+            convenient frontend scripts and extensions steps which are essential to some modules.</para>
         </simplesect>
         <simplesect role="col s12 m6">
           <title>Java</title>
           <para>XML Calabash needs at least Java 1.7 to run. We noticed some odd behaviour while running XML Calabash
             with a JVMs other than Oracle. If you get memory issues, consider to install the 64-bit version.</para>
-          <!--<para><link xlink:href="https://www.java.com/en/download/manual.jsp" role="btn red">Get Java</link></para>-->
         </simplesect>
       </section>
       <section>
-        <title>Setup</title>
-        <bridgehead>Install calabash</bridgehead>
-        <para>After downloading, extract XML Calabash into your project directory. We </para>
+        <title>Install XML Calabash</title>
+        <para>We recommend to use Git or SVN to checkout Calabash to take care that all dependencies are met. The calabash directory
+          should be placed at the top-level of your project directory.</para>
         <programlisting>
 MyProject/
   |--calabash/
   |  |--calabash.sh
   |  |--calabash.bat</programlisting>
-
+        <note>
+          <title>Clone XML Calabash with Git</title>
+          <programlisting><code role="language-git">git clone --recursive https://github.com/transpect/calabash-frontend calabash</code></programlisting>
+        </note>
+        <note>
+          <title>Checkout XML Calabash with SVN</title>
+          <para>The SVN client of GitHub doesn't support SVN externals, so we have to get each module separately.</para>
+          <programlisting><code role="language-svn">svn co https://github.com/transpect/calabash-frontend/trunk calabash
+svn co https://github.com/transpect/calabash-distro/trunk calabash/distro</code></programlisting>
+          <para>Some transpect modules depend on certain XML Calabash extensions, so you may want to get them, too.</para>
+          <programlisting><code role="language-svn">svn co https://github.com/transpect/unzip-extension/trunk calabash/extensions/transpect/unzip-extension
+svn co https://github.com/transpect/rng-extension/trunk calabash/extensions/transpect/rng-extension
+svn co https://github.com/transpect/image-props-extension/trunk calabash/extensions/transpect/image-props-extension
+svn co https://github.com/transpect/image-transform-extension/trunk calabash/extensions/transpect/image-transform-extension</code></programlisting>
+        </note>
+      </section>
+      <section>
+        <title>Include transpect modules</title>
+        <para>First, we have to checkout the modules with Git or SVN. For example, we want to get <xref linkend="docx2hub"/>, which converts Microsoft Word to XML.</para>
+        <programlisting><code role="language-git">git clone --recursive https://github.com/transpect/calabash-frontend calabash</code></programlisting>
       </section>
     </chapter>
   </part>
@@ -263,7 +280,7 @@ MyProject/
       </section>
     </chapter>
     <!-- docx2hub -->
-    <chapter xml:base="../modules-docx2hub.html">
+    <chapter xml:base="../modules-docx2hub.html" xml:id="docx2hub">
       <title>docx2hub</title>
       <subtitle>https://github.com/transpect/docx2hub</subtitle>
       <para>This module converts Microsoft Word files in Office Open XML format (OOXML) (DOCX) to <link xlink:href="https://github.com/le-tex/Hub">Hub XML</link>. Styles including overrides 
