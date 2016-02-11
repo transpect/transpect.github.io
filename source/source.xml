@@ -502,6 +502,23 @@ svn co https://github.com/transpect/xproc-util/trunk xproc-util</code></programl
 &lt;/idml2xml:hub></code></programlisting>
       <para><link role="btn red" xlink:href="https://github.com/transpect/idml2xml">Source ⬇</link></para>
     </chapter>
+    <chapter xml:base="../modules-jats2html.html" xml:id="modules-jats2html">
+      <title>jats2html</title>
+      <subtitle>https://github.com/transpect/jats2html</subtitle>
+      <para>Converts HTML from XML which applies to the <link xlink:href="http://jats.nlm.nih.gov/">Journal Article Tag Suite</link> (JATS) schema family.</para>
+      <para><link role="btn red" xlink:href="https://github.com/transpect/jats2html">Source ⬇</link></para>
+      <bridgehead>Import URI</bridgehead>
+      <programlisting><code role="language-markup">&lt;p:import href="http://transpect.io/jats2html/xpl/jats2html.xpl"/></code></programlisting>
+      <bridgehead>Synopsis</bridgehead>
+      <programlisting><code role="language-markup">&lt;jats:html xmlns:jats="http://jats.nlm.nih.gov">
+  &lt;p:input port="source"/>                                &lt;!-- JATS XML document -->
+  &lt;p:input port="paths"/>                                 &lt;!-- Cascade paths parameter document -->
+  &lt;p:output port="result"/>                               &lt;!-- Schematron report -->
+  &lt;p:with-option name="debug" select="'yes'"/>            &lt;!-- "yes"|"no" -->
+  &lt;p:with-option name="debug-dir-uri" select="'debug'"/>  &lt;!-- "debug" -->
+  &lt;p:with-option name="status-dir-uri" select="'status'"/>&lt;!-- "status" -->
+&lt;/jats:html></code></programlisting>
+    </chapter>
     <chapter xml:base="../modules-mml2tex.html" xml:id="modules-mml2tex">
       <title>mml2tex</title>
       <subtitle>https://github.com/transpect/mml2tex</subtitle>
