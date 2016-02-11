@@ -170,7 +170,8 @@
         </simplesect>
       </section>
       <section>
-        <title>Install XML Calabash</title>
+        <title>Project Setup</title>
+        <bridgehead>Install XML Calabash</bridgehead>
         <para>We recommend to use Git or SVN to checkout Calabash to take care that all dependencies are met. The calabash directory
           should be placed at the top-level of your project directory.</para>
         <programlisting><code>MyProject/
@@ -189,10 +190,7 @@ svn co https://github.com/transpect/rng-extension/trunk calabash/extensions/tran
 svn co https://github.com/transpect/image-props-extension/trunk calabash/extensions/transpect/image-props-extension
 svn co https://github.com/transpect/image-transform-extension/trunk calabash/extensions/transpect/image-transform-extension</code></programlisting>
         </note>
-      </section>
-      <section>
-        <title>Include transpect modules</title>
-        <bridgehead>Checkout the modules</bridgehead>
+        <bridgehead>Checkout the transpect modules</bridgehead>
         <para>First, we have to checkout the modules with Git or SVN. For example, we want to get <xref linkend="docx2hub"/>, 
           which converts Microsoft Word to <link xlink:href="https://github.com/le-tex/Hub">Hub XML</link>. The docx2hub module depends on <xref linkend="xproc-util"/> and <xref linkend="xslt-util"/>.
         </para>
@@ -213,12 +211,13 @@ svn co https://github.com/transpect/xproc-util/trunk xproc-util</code></programl
   |--xslt-util/</code></programlisting>
         <bridgehead>Create an XML Catalog</bridgehead>
         <para>Transpect uses canonical import URIs to import other modules. To resolve this URIs, our XML Calabash
-          looks after an XML catalog in the project directory. Starting from the project dir, the path is usually <filename>xmlcatalog/catalog.xml</filename>.</para>
+          looks after an XML catalog in the project directory. Starting from the project dir, the path is usually <filename>xmlcatalog/catalog.xml</filename>. 
+          So you have to create the directory <filename>xmlcatalog</filename> and create a file named <filename>catalog.xml</filename> in this directory.</para>
         <programlisting><code>MyProject/
   |--xmlcatalog/
   |  |--catalog.xml</code></programlisting>
         <para>The XML catalog of the project is used to include the catalogs of the transpect modules. Therefore the <code>nextCatalog</code> element is used 
-        to connect the module catalogs.</para>
+        to connect the module catalogs. Edit the <filename>catalog.xml</filename> and add the following lines.</para>
         <programlisting><code role="language-markup">&lt;?xml version="1.0" encoding="UTF-8"?>
 &lt;catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog">
   &lt;nextCatalog catalog="../docx2hub/xmlcatalog/catalog.xml"/>
@@ -235,7 +234,7 @@ svn co https://github.com/transpect/xproc-util/trunk xproc-util</code></programl
         <programlisting>./calabash/calabash.sh -o result=MyXMLfile.xml docx2hub/xpl/docx2hub.xpl docx=MyWordfile.docx</programlisting>
         <para>There exists also a Batch file for Windows users:</para>
         <programlisting>.\calabash\calabash.bat -o result=MyXMLfile.xml .\docx2hub\xpl\docx2hub.xpl docx=MyWordfile.docx</programlisting>
-        <bridgehead>Include in your XProc pipeline</bridgehead>
+        <bridgehead>Include in your pipeline</bridgehead>
         <para>You can import and use transpect modules in your own XProc pipelines. Therefore, you need to declare the namespace and 
           add the <code>p:import</code> statement of the XProc step you want to use. Here is a simple XProc pipeline which implements 
           <xref linkend="docx2hub"/>.

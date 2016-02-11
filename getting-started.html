@@ -52,7 +52,8 @@
             with a JVMs other than Oracle. If you get memory issues, consider to install the 64-bit version.</p>
         </div>
       </div><div id="d40e39" class="section col s12 scrollspy">
-        <h2 class="header">Install XML Calabash</h2>
+        <h2 class="header">Project Setup</h2>
+        <h4>Install XML Calabash</h4>
         <p>We recommend to use Git or SVN to checkout Calabash to take care that all dependencies are met. The calabash directory
           should be placed at the top-level of your project directory.</p>
         <pre><code class="language-code">MyProject/
@@ -71,9 +72,7 @@ svn co https://github.com/transpect/rng-extension/trunk calabash/extensions/tran
 svn co https://github.com/transpect/image-props-extension/trunk calabash/extensions/transpect/image-props-extension
 svn co https://github.com/transpect/image-transform-extension/trunk calabash/extensions/transpect/image-transform-extension</code></pre>
         </div></div>
-      </div><div id="d40e76" class="section col s12 scrollspy">
-        <h2 class="header">Include transpect modules</h2>
-        <h4>Checkout the modules</h4>
+        <h4>Checkout the transpect modules</h4>
         <p>First, we have to checkout the modules with Git or SVN. For example, we want to get <a href="modules-docx2hub.html#docx2hub" target="_blank">docx2hub</a>, 
           which converts Microsoft Word to <a href="https://github.com/le-tex/Hub" target="_blank">➼ Hub XML</a>. The docx2hub module depends on <a href="modules-xproc-util.html#xproc-util" target="_blank">xproc-util</a> and <a href="modules-xslt-util.html#xslt-util" target="_blank">xslt-util</a>.
         </p>
@@ -94,19 +93,20 @@ svn co https://github.com/transpect/xproc-util/trunk xproc-util</code></pre>
   |--xslt-util/</code></pre>
         <h4>Create an XML Catalog</h4>
         <p>Transpect uses canonical import URIs to import other modules. To resolve this URIs, our XML Calabash
-          looks after an XML catalog in the project directory. Starting from the project dir, the path is usually <code class="language-filename">xmlcatalog/catalog.xml</code>.</p>
+          looks after an XML catalog in the project directory. Starting from the project dir, the path is usually <code class="language-filename">xmlcatalog/catalog.xml</code>. 
+          So you have to create the directory <code class="language-filename">xmlcatalog</code> and create a file named <code class="language-filename">catalog.xml</code> in this directory.</p>
         <pre><code class="language-code">MyProject/
   |--xmlcatalog/
   |  |--catalog.xml</code></pre>
         <p>The XML catalog of the project is used to include the catalogs of the transpect modules. Therefore the <code class="language-code">nextCatalog</code> element is used 
-        to connect the module catalogs.</p>
+        to connect the module catalogs. Edit the <code class="language-filename">catalog.xml</code> and add the following lines.</p>
         <pre><code class="language-markup">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
 &lt;catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog"&gt;
   &lt;nextCatalog catalog="../docx2hub/xmlcatalog/catalog.xml"/&gt;
   &lt;nextCatalog catalog="../xproc-util/xmlcatalog/catalog.xml"/&gt;
   &lt;nextCatalog catalog="../xslt-util/xmlcatalog/catalog.xml"/&gt;
 &lt;/catalog&gt;</code></pre>
-      </div><div id="d40e144" class="section col s12 scrollspy">
+      </div><div id="d40e149" class="section col s12 scrollspy">
         <h2 class="header">Run the pipeline</h2>
         <h4>Command line</h4>
         <p>After we are included transpect in our project, we can run the <a href="modules-docx2hub.html#docx2hub" target="_blank">docx2hub</a> pipeline to convert a Microsoft 
@@ -115,7 +115,7 @@ svn co https://github.com/transpect/xproc-util/trunk xproc-util</code></pre>
         <pre>./calabash/calabash.sh -o result=MyXMLfile.xml docx2hub/xpl/docx2hub.xpl docx=MyWordfile.docx</pre>
         <p>There exists also a Batch file for Windows users:</p>
         <pre>.\calabash\calabash.bat -o result=MyXMLfile.xml .\docx2hub\xpl\docx2hub.xpl docx=MyWordfile.docx</pre>
-        <h4>Include in your XProc pipeline</h4>
+        <h4>Include in your pipeline</h4>
         <p>You can import and use transpect modules in your own XProc pipelines. Therefore, you need to declare the namespace and 
           add the <code class="language-code">p:import</code> statement of the XProc step you want to use. Here is a simple XProc pipeline which implements 
           <a href="modules-docx2hub.html#docx2hub" target="_blank">docx2hub</a>.
@@ -136,7 +136,7 @@ svn co https://github.com/transpect/xproc-util/trunk xproc-util</code></pre>
   &lt;/docx2hub:convert&gt;
   
 &lt;/p:declare-step&gt;</code></pre>  
-      </div><div id="d40e186" class="section col s12 scrollspy">
+      </div><div id="d40e192" class="section col s12 scrollspy">
         <h2 class="header">Learn more?</h2>
         <p>If you want to get a deeper insight into the transpect framework, we would recommend to read our <a href="tutorial.html#tutorial-docx-jats-epub" target="_blank">Tutorials</a>.</p>          
       </div></div>
@@ -144,7 +144,7 @@ svn co https://github.com/transpect/xproc-util/trunk xproc-util</code></pre>
           <div class="col hide-on-small-only m3 l2">
             <div class="toc-wrapper pin-top" style="top: 0px;">
               <div style="height: 1px;">
-                <ul id="tr-toc" class="table-of-contents"><li><a href="#d40e9" class="active">Prerequisites</a></li><li><a href="#d40e39">Install XML Calabash</a></li><li><a href="#d40e76">Include transpect modules</a></li><li><a href="#d40e144">Run the pipeline</a></li><li><a href="#d40e186">Learn more?</a></li></ul>
+                <ul id="tr-toc" class="table-of-contents"><li><a href="#d40e9" class="active">Prerequisites</a></li><li><a href="#d40e39">Project Setup</a></li><li><a href="#d40e149">Run the pipeline</a></li><li><a href="#d40e192">Learn more?</a></li></ul>
               </div>
             </div>
           </div>
