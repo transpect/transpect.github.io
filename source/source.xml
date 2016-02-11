@@ -522,7 +522,7 @@ svn co https://github.com/transpect/xproc-util/trunk xproc-util</code></programl
     <chapter xml:base="../modules-xml2tex.html" xml:id="modules-xml2tex">
       <title>xml2tex</title>
       <subtitle>https://github.com/transpect/xml2tex</subtitle>
-      <para>Takes a XML and an xml2tex configuration file as input and converts the XML file according to the configuration to LaTeX.</para>
+      <para>Takes an XML document and an xml2tex configuration file as input and converts according to the configuration rules from XML to LaTeX.</para>
       <bridgehead>Import URI</bridgehead>
       <programlisting><code role="language-markup">&lt;p:import href="http://transpect.io/xml2tex/xpl/xml2tex.xpl"/></code></programlisting>
       <bridgehead>Synopsis</bridgehead>
