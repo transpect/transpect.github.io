@@ -1295,10 +1295,18 @@ svn co https://subversion.le-tex.de/common/transpect-demo/content/ulsp/ ../conte
       </section>
 
       <section xml:id="pmc">
-        <title>Creating a PMC Zip</title>
+        <title>PubMed Central Submission</title>
 
         <bridgehead>PubMed Central / NLM style checker</bridgehead>
-        <para>tbd</para>
+        <para>PMC provides <link xlink:href="http://www.ncbi.nlm.nih.gov/pmc/tools/stylechecker/">XSLT stylesheets</link> for letting you check JATS prior to submission. We wrapped this as an XProc step that 
+        produces SVRL that may then be rendered into the <link 
+          xlink:href="source/media/docx2jats-demo/report-CSMI_2014_701-nlm.xhtml">HTML report</link>.</para>
+
+        <para>Here’s the corresponding <link xlink:href="https://github.com/transpect/docx2jats-demo/commit/0327abfebc013908de3879d408200163243ca2ad">commit 0327abf</link></para>
+
+        <bridgehead>Creating a PMC Zip</bridgehead>
+        <para>tbd; will be available by tonight…</para>
+
       </section>
 
       
