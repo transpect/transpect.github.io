@@ -1,6 +1,6 @@
-<?xml version="1.0" encoding="UTF-8"?><html xmlns="http://www.w3.org/1999/xhtml" xml:base="../modules-docx2tex.html">
+<?xml version="1.0" encoding="UTF-8"?><html xmlns="http://www.w3.org/1999/xhtml" xml:base="../modules-tei2html.html">
   <head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <title>docx2tex</title>
+    <title>tei2html</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     
@@ -14,7 +14,7 @@
     <link type="text/css" rel="stylesheet" media="screen,projection" href="css/materialize.min.css" />
     <link type="text/css" rel="stylesheet" media="screen,projection" href="css/le-tex.css" />
   </head>
-  <body id="docx2tex">
+  <body id="modules-tei2html">
     
     <header>
       <div class="container"><a href="#" data-activates="tr-nav" class="button-collapse top-nav circle hide-on-large-only"><i class="mdi-navigation-menu"></i></a></div>
@@ -23,28 +23,27 @@
       <ul id="tr-nav" class="side-nav fixed" style="width:240px">
         <li class="logo"><a id="logo-container" href="#" class="brand-logo"><object id="front-page-logo" type="image/svg+xml" data="icons/logo-transpect.svg">Your browser does not support SVG</object></a></li>
         
-      <li class="naventry-1st"><a href="index.html">About</a></li><li class="naventry-1st"><a href="getting-started.html">Getting Started</a></li><li class="active no-padding"><ul class="collapsible collapsible-accordion"><li class="active naventry-1st" id="part-modules"><a class="active collapsible-header">Modules</a><div style="display:block" class="collapsible-body"><ul><li class="naventry-2nd"><a href="modules-bits2hub.html">bits2hub</a></li><li class="naventry-2nd"><a href="modules-cascade.html">cascade</a></li><li class="naventry-2nd"><a href="modules-docx2hub.html">docx2hub</a></li><li class="active naventry-2nd"><a href="modules-docx2tex.html">docx2tex</a></li><li class="naventry-2nd"><a href="modules-epubtools.html">epubtools</a></li><li class="naventry-2nd"><a href="modules-htmlreports.html">htmlreports</a></li><li class="naventry-2nd"><a href="modules-hub2bits.html">hub2bits</a></li><li class="naventry-2nd"><a href="modules-idml2xml.html">idml2xml</a></li><li class="naventry-2nd"><a href="modules-jats2html.html">jats2html</a></li><li class="naventry-2nd"><a href="modules-mml2tex.html">mml2tex</a></li><li class="naventry-2nd"><a href="modules-tei2html.html">tei2html</a></li><li class="naventry-2nd"><a href="modules-xml2tex.html">xml2tex</a></li><li class="naventry-2nd"><a href="modules-xproc-util.html">xproc-util</a></li><li class="naventry-2nd"><a href="modules-xslt-util.html">xslt-util</a></li></ul></div></li></ul></li><li class="naventry-1st"><a href="styleguide.html">Styleguide</a></li><li class="naventry-1st"><a href="tutorial.html">Tutorials</a></li></ul>
+      <li class="naventry-1st"><a href="index.html">About</a></li><li class="naventry-1st"><a href="getting-started.html">Getting Started</a></li><li class="active no-padding"><ul class="collapsible collapsible-accordion"><li class="active naventry-1st" id="part-modules"><a class="active collapsible-header">Modules</a><div style="display:block" class="collapsible-body"><ul><li class="naventry-2nd"><a href="modules-bits2hub.html">bits2hub</a></li><li class="naventry-2nd"><a href="modules-cascade.html">cascade</a></li><li class="naventry-2nd"><a href="modules-docx2hub.html">docx2hub</a></li><li class="naventry-2nd"><a href="modules-docx2tex.html">docx2tex</a></li><li class="naventry-2nd"><a href="modules-epubtools.html">epubtools</a></li><li class="naventry-2nd"><a href="modules-htmlreports.html">htmlreports</a></li><li class="naventry-2nd"><a href="modules-hub2bits.html">hub2bits</a></li><li class="naventry-2nd"><a href="modules-idml2xml.html">idml2xml</a></li><li class="naventry-2nd"><a href="modules-jats2html.html">jats2html</a></li><li class="naventry-2nd"><a href="modules-mml2tex.html">mml2tex</a></li><li class="active naventry-2nd"><a href="modules-tei2html.html">tei2html</a></li><li class="naventry-2nd"><a href="modules-xml2tex.html">xml2tex</a></li><li class="naventry-2nd"><a href="modules-xproc-util.html">xproc-util</a></li><li class="naventry-2nd"><a href="modules-xslt-util.html">xslt-util</a></li></ul></div></li></ul></li><li class="naventry-1st"><a href="styleguide.html">Styleguide</a></li><li class="naventry-1st"><a href="tutorial.html">Tutorials</a></li></ul>
     </header>
     
     <main>
       <div class="section orange" id="index-banner">
         <div class="container">
-          <h1 id="tr-title" class="light header center-on-small-only white-text">docx2tex</h1>
-          <h4 id="tr-subtitle" class="light orange-text text-lighten-4 center-on-small-only">https://github.com/transpect/docx2tex</h4>
+          <h1 id="tr-title" class="light header center-on-small-only white-text">tei2html</h1>
+          <h4 id="tr-subtitle" class="light orange-text text-lighten-4 center-on-small-only">https://github.com/transpect/tei2html</h4>
         </div>
       </div>
       <div class="container">
         <div class="row">
           
-          <div class="col s12 m9 l10" id="tr-content"><p>Converts Microsoft Word to LaTeX including tables, lists and equations. Many unicode characters are mapped to standard LaTeX code.</p><h4>Import URI</h4><pre><code class="language-markup">&lt;p:import href="http://transpect.io/docx2tex/xpl/docx2tex.xpl"/&gt;</code></pre><h4>Synopsis</h4><pre><code class="language-markup">&lt;docx2tex:main xmlns:docx2tex="http://transpect.io/docx2tex"&gt;
-  &lt;p:output port="result"/&gt;                               &lt;!-- LaTeX text document --&gt;
-  &lt;p:output port="hub"/&gt;                                  &lt;!-- Hub XML document  --&gt;
-  &lt;p:with-option name="docx" select="''"/&gt;                &lt;!-- Path to docx file --&gt;
-  &lt;p:with-option name="conf" select="''"/&gt;                &lt;!-- XML or CSV based configuration file --&gt;
+          <div class="col s12 m9 l10" id="tr-content"><p>This step is used to convert HTML from <a href="http://www.tei-c.org/index.xml" target="_blank">➼ Text Encoding Initiative (TEI)</a> XML.</p><h4>Import URI</h4><pre><code class="language-markup">&lt;p:import href="http://transpect.io/tei2html/xpl/tei2html.xpl"/&gt;</code></pre><h4>Synopsis</h4><pre><code class="language-markup">&lt;tei2html:tei2html xmlns:tei2html="http://transpect.io/tei2html"&gt;
+  &lt;p:input port="source"/&gt;                                &lt;!-- TEI XML document --&gt;
+  &lt;p:input port="paths"/&gt;                                 &lt;!-- Cascade paths parameter document --&gt;
+  &lt;p:output port="result"/&gt;                               &lt;!-- Schematron report --&gt;
   &lt;p:with-option name="debug" select="'yes'"/&gt;            &lt;!-- "yes"|"no" --&gt;
   &lt;p:with-option name="debug-dir-uri" select="'debug'"/&gt;  &lt;!-- "debug" --&gt;
   &lt;p:with-option name="status-dir-uri" select="'status'"/&gt;&lt;!-- "status" --&gt;
-&lt;/docx2tex:main&gt;</code></pre><p><a href="https://github.com/transpect/docx2tex" target="_blank" class="btn red">Source ⬇</a></p></div>
+&lt;/tei2html:tei2html&gt;</code></pre><p><a href="https://github.com/transpect/tei2html" target="_blank" class="btn red">Source ⬇</a></p></div>
           
           <div class="col hide-on-small-only m3 l2">
             <div class="toc-wrapper pin-top" style="top: 0px;">

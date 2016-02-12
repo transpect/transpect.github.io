@@ -506,7 +506,6 @@ svn co https://github.com/transpect/xproc-util/trunk xproc-util</code></programl
       <title>jats2html</title>
       <subtitle>https://github.com/transpect/jats2html</subtitle>
       <para>Converts HTML from XML which applies to the <link xlink:href="http://jats.nlm.nih.gov/">Journal Article Tag Suite</link> (JATS) schema family.</para>
-      <para><link role="btn red" xlink:href="https://github.com/transpect/jats2html">Source ⬇</link></para>
       <bridgehead>Import URI</bridgehead>
       <programlisting><code role="language-markup">&lt;p:import href="http://transpect.io/jats2html/xpl/jats2html.xpl"/></code></programlisting>
       <bridgehead>Synopsis</bridgehead>
@@ -518,6 +517,7 @@ svn co https://github.com/transpect/xproc-util/trunk xproc-util</code></programl
   &lt;p:with-option name="debug-dir-uri" select="'debug'"/>  &lt;!-- "debug" -->
   &lt;p:with-option name="status-dir-uri" select="'status'"/>&lt;!-- "status" -->
 &lt;/jats:html></code></programlisting>
+      <para><link role="btn red" xlink:href="https://github.com/transpect/jats2html">Source ⬇</link></para>
     </chapter>
     <chapter xml:base="../modules-mml2tex.html" xml:id="modules-mml2tex">
       <title>mml2tex</title>
@@ -535,6 +535,23 @@ svn co https://github.com/transpect/xproc-util/trunk xproc-util</code></programl
   &lt;p:with-option name="status-dir-uri" select="'status'"/>       &lt;!-- "status" -->
 &lt;/mml2tex:convert></code></programlisting>
       <para><link role="btn red" xlink:href="https://github.com/transpect/mml2tex">Source ⬇</link></para>
+    </chapter>
+    <chapter xml:base="../modules-tei2html.html" xml:id="modules-tei2html">
+      <title>tei2html</title>
+      <subtitle>https://github.com/transpect/tei2html</subtitle>
+      <para>This step is used to convert HTML from <link xlink:href="http://www.tei-c.org/index.xml">Text Encoding Initiative (TEI)</link> XML.</para>
+      <bridgehead>Import URI</bridgehead>
+      <programlisting><code role="language-markup">&lt;p:import href="http://transpect.io/tei2html/xpl/tei2html.xpl"/></code></programlisting>
+      <bridgehead>Synopsis</bridgehead>
+      <programlisting><code role="language-markup">&lt;tei2html:tei2html xmlns:tei2html="http://transpect.io/tei2html">
+  &lt;p:input port="source"/>                                &lt;!-- TEI XML document -->
+  &lt;p:input port="paths"/>                                 &lt;!-- Cascade paths parameter document -->
+  &lt;p:output port="result"/>                               &lt;!-- Schematron report -->
+  &lt;p:with-option name="debug" select="'yes'"/>            &lt;!-- "yes"|"no" -->
+  &lt;p:with-option name="debug-dir-uri" select="'debug'"/>  &lt;!-- "debug" -->
+  &lt;p:with-option name="status-dir-uri" select="'status'"/>&lt;!-- "status" -->
+&lt;/tei2html:tei2html></code></programlisting>
+      <para><link role="btn red" xlink:href="https://github.com/transpect/tei2html">Source ⬇</link></para>
     </chapter>
     <chapter xml:base="../modules-xml2tex.html" xml:id="modules-xml2tex">
       <title>xml2tex</title>
