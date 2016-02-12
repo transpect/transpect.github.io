@@ -470,7 +470,6 @@ svn co https://github.com/transpect/xproc-util/trunk xproc-util</code></programl
       <subtitle>https://github.com/transpect/hub2bits</subtitle>
       <para>This XProc step generates a <link xlink:href="http://jatspan.org/nlm/bits-1.0/">BITS</link> (Book Interchange Tag Suite) 
         document from <link xlink:href="https://github.com/le-tex/Hub">Hub XML</link>.</para>
-      <para><link role="btn red" xlink:href="https://github.com/transpect/hub2bits">Source ⬇</link></para>
       <bridgehead>Import URI</bridgehead>
       <programlisting><code role="language-markup">&lt;p:import href="http://transpect.io/hub2bits/xpl/hub2bits.xpl"/></code></programlisting>
       <bridgehead>Synopsis</bridgehead>
@@ -481,13 +480,13 @@ svn co https://github.com/transpect/xproc-util/trunk xproc-util</code></programl
   &lt;p:with-option name="debug-dir-uri" select="'debug'"/>  &lt;!-- "debug" -->
   &lt;p:with-option name="status-dir-uri" select="'status'"/>&lt;!-- "status" -->
 &lt;/tr:hub2bits></code></programlisting>
+      <para><link role="btn red" xlink:href="https://github.com/transpect/hub2bits">Source ⬇</link></para>
     </chapter>
     <!-- hub2tei -->
     <chapter xml:base="../modules-hub2tei.html" xml:id="hub2tei">
       <title>hub2tei</title>
       <subtitle>https://github.com/transpect/hub2tei</subtitle>
       <para>Converts <link xlink:href="http://www.tei-c.org/index.xml">TEI</link> XML from <link xlink:href="https://github.com/le-tex/Hub">Hub XML</link>.</para>
-      <para><link role="btn red" xlink:href="https://github.com/transpect/hub2tei">Source ⬇</link></para>
       <bridgehead>Import URI</bridgehead>
       <programlisting><code role="language-markup">&lt;p:import href="http://transpect.io/hub2tei/xpl/hub2tei.xpl"/></code></programlisting>
       <bridgehead>Synopsis</bridgehead>
@@ -499,6 +498,7 @@ svn co https://github.com/transpect/xproc-util/trunk xproc-util</code></programl
   &lt;p:with-option name="debug-dir-uri" select="'debug'"/>  &lt;!-- "debug" -->
   &lt;p:with-option name="status-dir-uri" select="'status'"/>&lt;!-- "status" -->
 &lt;/hub2tei:hub2tei></code></programlisting>
+      <para><link role="btn red" xlink:href="https://github.com/transpect/hub2tei">Source ⬇</link></para>
     </chapter>
     <!-- idml2xml -->
     <chapter xml:base="../modules-idml2xml.html" xml:id="modules-idml2xml">
