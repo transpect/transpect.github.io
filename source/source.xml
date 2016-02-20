@@ -234,7 +234,7 @@ svn co https://github.com/transpect/xproc-util/trunk xproc-util</code></programl
         <programlisting>./calabash/calabash.sh -o result=MyXMLfile.xml docx2hub/xpl/docx2hub.xpl docx=MyWordfile.docx</programlisting>
         <para>There exists also a Batch file for Windows users:</para>
         <programlisting>.\calabash\calabash.bat -o result=MyXMLfile.xml .\docx2hub\xpl\docx2hub.xpl docx=MyWordfile.docx</programlisting>
-        <bridgehead id="gs-include-in-your-pipeline">Include in your pipeline</bridgehead>
+        <bridgehead xml:id="gs-include-in-your-pipeline">Include in your pipeline</bridgehead>
         <para>You can import and use transpect modules in your own XProc pipelines. Therefore, you need to declare the namespace and 
           add the <code>p:import</code> statement of the XProc step you want to use. Here is a simple XProc pipeline which implements 
           <xref linkend="docx2hub"/>.
