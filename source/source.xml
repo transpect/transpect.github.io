@@ -153,7 +153,7 @@
     <chapter xml:base="../getting-started.html">
       <title>Getting Started</title>
       <subtitle>Learn how to use transpect</subtitle>
-      <section>
+      <section xml:id="gs-prerequisites">
         <title>Prerequisites</title>
         <para>There are no further prerequisites as are required to run XProc. If you are not familiar with XProc, we
           suggest to work yourself through Roger L. Costello’s <link xlink:href="http://www.xfront.com/xproc/">XProc
@@ -169,7 +169,7 @@
             with a JVMs other than Oracle. If you get memory issues, consider to install the 64-bit version.</para>
         </simplesect>
       </section>
-      <section>
+      <section  xml:id="gs-project-setup">
         <title>Project Setup</title>
         <bridgehead>Install XML Calabash</bridgehead>
         <para>We recommend to use Git or SVN to checkout Calabash to take care that all dependencies are met. The calabash directory
@@ -225,7 +225,7 @@ svn co https://github.com/transpect/xproc-util/trunk xproc-util</code></programl
   &lt;nextCatalog catalog="../xslt-util/xmlcatalog/catalog.xml"/>
 &lt;/catalog></code></programlisting>
       </section>
-      <section>
+      <section xml:id="gs-run-the-pipeline">
         <title>Run the pipeline</title>
         <bridgehead>Command line</bridgehead>
         <para>After we are included transpect in our project, we can run the <xref linkend="docx2hub"/> pipeline to convert a Microsoft 
@@ -256,7 +256,7 @@ svn co https://github.com/transpect/xproc-util/trunk xproc-util</code></programl
   
 &lt;/p:declare-step></code></programlisting>  
       </section>
-      <section>
+      <section xml:id="gs-learn-more">
         <title>Learn more?</title>
         <para>If you want to get a deeper insight into the transpect framework, we would recommend to read our <xref linkend="tutorial-docx-jats-epub"/>.</para>          
       </section>
