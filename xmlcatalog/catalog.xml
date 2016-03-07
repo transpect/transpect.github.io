@@ -4,6 +4,7 @@
   <!-- this repository -->
   
   <rewriteURI uriStartString="http://transpect.github.io/" rewritePrefix="../"/>
+  <rewriteURI uriStartString="http://transpect.io/website/" rewritePrefix="../"/>
   
   <!-- xproc/xslt modules -->
   
