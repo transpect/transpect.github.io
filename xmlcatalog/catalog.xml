@@ -9,5 +9,6 @@
   <!-- xproc/xslt modules -->
   
   <nextCatalog catalog="../xslt-util/xmlcatalog/catalog.xml"/>
+  <nextCatalog catalog="../github-api/xmlcatalog/catalog.xml"/>
   
 </catalog>
