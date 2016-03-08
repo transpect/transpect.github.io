@@ -2,7 +2,7 @@
  * toggle main content padding on mobile
  */
 header, main, footer {
-  padding-left: 240px;
+  padding-left: 260px;
 }
 @media only screen and (max-width: 992px){
   header, main, footer {
@@ -21,13 +21,15 @@ a.button-collapse.top-nav {position: absolute; height: 48px; width: 48px; color:
  * transpect logo
  */
 #logo-container{ height:14rem; text-align:center; }
-.side-nav li.logo{width:240px;margin-top:-1px;  border-bottom:1px solid #ccc}
+
+.side-nav li.logo{width:260px;margin-top:-1px;  border-bottom:1px solid #ccc}
 .side-nav li.logo:hover{background:none;}
 /*
  * right side nav menu
  */
-ul.side-nav.fixed li a {line-height: 44px; height: 44px;}
-li.naventry-1st a{font-weight:300; font-size:1.2rem; text-decoration:none}
+ul.side-nav.fixed li a {line-height: 44px; height: 44px; padding:0 5px}
+ul.side-nav li.naventry-1st a{font-weight:300; font-size:1.2rem; text-decoration:none;}
+ul.side-nav li.naventry-2nd a{font-weight:300; font-size:1rem; text-decoration:none; margin: 0 0.5rem 0 1.5rem;}
 
 
 /*
