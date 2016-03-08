@@ -9,7 +9,7 @@
   xmlns:tr="http://transpect.io"
   xmlns:xlink="http://www.w3.org/1999/xlink" 
   xmlns="http://docbook.org/ns/docbook" 
-  exclude-result-prefixes="xs p cx c j tr cat"
+  exclude-result-prefixes="xs p cx c j tr cat xlink"
   version="2.0">
   
   <xsl:variable name="repos" select="/cx:document/j:item" as="element(j:item)+"/>
@@ -51,7 +51,10 @@
       <xsl:apply-templates select=".//p:declare-step">
         <xsl:with-param name="catalog" select="$catalog"/>
       </xsl:apply-templates>
-      <para role="last-updated">GitHub sync date: <xsl:value-of select="current-date()"/></para>
+      <section role="status">
+        <title/>
+        <para role="last-updated">GitHub sync date: <xsl:value-of select="current-date()"/></para>
+      </section>
     </chapter>
   </xsl:template>
   
@@ -63,7 +66,7 @@
     <xsl:if test="@type">
       <section xml:id="{replace(@type, ':', '-')}">
         <title><xsl:value-of select="@type"></xsl:value-of></title>
-        <!--<para><xsl:apply-templates select="p:documentation"/></para>-->
+        <xsl:apply-templates select="p:documentation"/>
         <!--  *
               * evaluate base URI if catalog rewrite exists
               * -->
@@ -89,17 +92,17 @@
         </xsl:variable>
         <xsl:if test="count(distinct-values($dependency)) gt 0">
           <bridgehead>Dependencies</bridgehead>
+          <itemizedlist>
+            <xsl:for-each select="distinct-values($dependency)">
+              <xsl:variable name="dep-name" select="." as="xs:string"/>
+              <listitem>
+                <para><link xlink:href="{concat('modules-', ., '.html')}">
+                  <xsl:value-of select="$dep-name"/>
+                </link></para>
+              </listitem>
+            </xsl:for-each>
+          </itemizedlist>
         </xsl:if>
-        <itemizedlist>
-          <xsl:for-each select="distinct-values($dependency)">
-            <xsl:variable name="dep-name" select="." as="xs:string"/>
-            <listitem>
-              <para><link xlink:href="{concat('modules-', ., '.html')}">
-                <xsl:value-of select="$dep-name"/>
-              </link></para>
-            </listitem>
-          </xsl:for-each>
-        </itemizedlist>
         
         <!--  *
               * step declaration 
@@ -125,11 +128,22 @@
     
   </xsl:template>
   
-  <!--<xsl:template match="p:documentation">
-    <div xmlns="http://www.w3.org/1999/xhtml">
-      <xsl:apply-templates/>
-    </div>
-  </xsl:template>-->
+  <xsl:template match="p:documentation">
+    <para>
+      <xsl:apply-templates/>  
+    </para>
+  </xsl:template>
+  
+  <xsl:template match="p:documentation/text()">
+    <xsl:analyze-string select="." regex="\n\s*\n" flags="m">
+      <xsl:matching-substring>
+        <br/>
+      </xsl:matching-substring>
+      <xsl:non-matching-substring>
+        <xsl:value-of select="."/>
+      </xsl:non-matching-substring>
+    </xsl:analyze-string>
+  </xsl:template>
   
   <xsl:template match="@*|*">
     <xsl:copy>
