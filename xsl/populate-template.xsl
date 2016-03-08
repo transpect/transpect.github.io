@@ -125,7 +125,7 @@
   <!-- sections -->
 
   <xsl:template match="dbk:section[not(parent::dbk:section)]">
-    <div id="{(@xml:id, generate-id())[1]}" class="section col s12 scrollspy">
+    <div id="{(@xml:id, generate-id())[1]}" class="section scrollspy">
       <xsl:apply-templates select="@*|node()"/>
     </div>
   </xsl:template>
@@ -173,7 +173,7 @@
   <!-- hyperlinks and cross-references -->
   
   <xsl:template match="dbk:link">
-    <a href="{@xlink:href}" target="_blank">
+    <a href="{@xlink:href}">
       <xsl:apply-templates select="@*"/>
       <xsl:if test="starts-with(@xlink:href, 'http') and not(matches(@role, 'btn'))">
         <xsl:text>&#x27bc;&#x202f;</xsl:text>
@@ -188,7 +188,7 @@
     <xsl:variable name="reference" select="if(tokenize($match/base-uri(), '/')[last()] eq tokenize(base-uri(), '/')[last()])
                                            then concat('#', @linkend)
                                            else concat(tokenize($match/base-uri(), '/')[last()], '#', @linkend)" as="xs:string"/>
-    <a href="{$reference}" target="_blank"><xsl:value-of select="if($match/dbk:title) then $match/dbk:title/text() else $match/text()"/></a>
+    <a href="{$reference}"><xsl:value-of select="if($match/dbk:title) then $match/dbk:title/text() else $match/text()"/></a>
   </xsl:template>
   
   <!-- lists -->
@@ -250,7 +250,7 @@
     </table>
   </xsl:template>
   
-  <xsl:template match="dbk:tr|dbk:td|dbk:thead|dbk:tbody|dbk:foot">
+  <xsl:template match="dbk:tr|dbk:td|dbk:thead|dbk:tbody|dbk:tgroup|dbk:foot">
     <xsl:element name="{local-name()}">
       <xsl:apply-templates select="@*|node()"/>
     </xsl:element>
@@ -322,8 +322,6 @@
     <xsl:copy>
       <xsl:apply-templates select="@*|node()"/>
     </xsl:copy>
-  </xsl:template>
-  
-  
+  </xsl:template>  
   
 </xsl:stylesheet>
