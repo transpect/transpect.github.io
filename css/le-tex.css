@@ -22,7 +22,7 @@ a.button-collapse.top-nav {position: absolute; height: 48px; width: 48px; color:
  */
 #logo-container{ height:14rem; text-align:center; }
 
-.side-nav li.logo{width:260px;margin-top:-1px;  border-bottom:1px solid #ccc}
+.side-nav li.logo{margin-top:-1px;  border-bottom:1px solid #ccc}
 .side-nav li.logo:hover{background:none;}
 /*
  * right side nav menu
