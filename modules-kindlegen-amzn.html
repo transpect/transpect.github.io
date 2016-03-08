@@ -37,15 +37,11 @@
         <div class="row">
           
           <div class="col s12 m9 l10" id="tr-content"><div class="card"><div class="card-content"><span class="card-title">Repository</span><table class="informaltable"><tbody><tr><td>Git URL</td><td><code class="language-markup">https://github.com/transpect/kindlegen-amzn.git</code></td></tr><tr><td>SVN URL</td><td><code class="language-markup">https://github.com/transpect/kindlegen-amzn</code></td></tr><tr><td>Base URI</td><td><code class="language-markup">http://transpect.io/kindlegen/</code></td></tr></tbody></table><p><a href="https://github.com/transpect/kindlegen-amzn" class="btn-flat  orange lighten-4">Source ⬇</a></p></div></div><div id="tr-kindlegen" class="section scrollspy"><h2 class="header">tr:kindlegen</h2><p>
-    <h1 xmlns:p="http://www.w3.org/ns/xproc" xmlns:pos="http://exproc.org/proposed/steps/os" xmlns:tr="http://transpect.io" xmlns:c="http://www.w3.org/ns/xproc-step" xmlns:j="http://marklogic.com/json" xmlns:cx="http://xmlcalabash.com/ns/extensions" xmlns:xlink="http://www.w3.org/1999/xlink">tr:kindlegen</h1>
-    <p xmlns:p="http://www.w3.org/ns/xproc" xmlns:pos="http://exproc.org/proposed/steps/os" xmlns:tr="http://transpect.io" xmlns:c="http://www.w3.org/ns/xproc-step" xmlns:j="http://marklogic.com/json" xmlns:cx="http://xmlcalabash.com/ns/extensions" xmlns:xlink="http://www.w3.org/1999/xlink">A XProc Wrapper for Amazon KindleGen.</p>
-    <h2 xmlns:p="http://www.w3.org/ns/xproc" xmlns:pos="http://exproc.org/proposed/steps/os" xmlns:tr="http://transpect.io" xmlns:c="http://www.w3.org/ns/xproc-step" xmlns:j="http://marklogic.com/json" xmlns:cx="http://xmlcalabash.com/ns/extensions" xmlns:xlink="http://www.w3.org/1999/xlink">Usage</h2>
-    <p xmlns:p="http://www.w3.org/ns/xproc" xmlns:pos="http://exproc.org/proposed/steps/os" xmlns:tr="http://transpect.io" xmlns:c="http://www.w3.org/ns/xproc-step" xmlns:j="http://marklogic.com/json" xmlns:cx="http://xmlcalabash.com/ns/extensions" xmlns:xlink="http://www.w3.org/1999/xlink">Pass EPUB file and the location of your kindlegen binary as parameters to this pipeline.</p>
+    <p xmlns:p="http://www.w3.org/ns/xproc" xmlns:pos="http://exproc.org/proposed/steps/os" xmlns:tr="http://transpect.io" xmlns:c="http://www.w3.org/ns/xproc-step" xmlns:j="http://marklogic.com/json" xmlns:cx="http://xmlcalabash.com/ns/extensions" xmlns:xlink="http://www.w3.org/1999/xlink">A XProc Wrapper for Amazon KindleGen. Pass the EPUB file and the location of your kindlegen binary as parameters to this pipeline.</p>
     <pre xmlns:p="http://www.w3.org/ns/xproc" xmlns:pos="http://exproc.org/proposed/steps/os" xmlns:tr="http://transpect.io" xmlns:c="http://www.w3.org/ns/xproc-step" xmlns:j="http://marklogic.com/json" xmlns:cx="http://xmlcalabash.com/ns/extensions" xmlns:xlink="http://www.w3.org/1999/xlink">java -jar calabash.jar kindlegen.xpl kindlegen=/data/mypath/kindlegen epub=/data/mypath/myepub.epub</pre>
     <p xmlns:p="http://www.w3.org/ns/xproc" xmlns:pos="http://exproc.org/proposed/steps/os" xmlns:tr="http://transpect.io" xmlns:c="http://www.w3.org/ns/xproc-step" xmlns:j="http://marklogic.com/json" xmlns:cx="http://xmlcalabash.com/ns/extensions" xmlns:xlink="http://www.w3.org/1999/xlink">Note: KindleGen path can be passed as option. If the option is not set, the path is resolved against a XML catalog.</p>
-    <h2 xmlns:p="http://www.w3.org/ns/xproc" xmlns:pos="http://exproc.org/proposed/steps/os" xmlns:tr="http://transpect.io" xmlns:c="http://www.w3.org/ns/xproc-step" xmlns:j="http://marklogic.com/json" xmlns:cx="http://xmlcalabash.com/ns/extensions" xmlns:xlink="http://www.w3.org/1999/xlink">Output</h2>
-    <p xmlns:p="http://www.w3.org/ns/xproc" xmlns:pos="http://exproc.org/proposed/steps/os" xmlns:tr="http://transpect.io" xmlns:c="http://www.w3.org/ns/xproc-step" xmlns:j="http://marklogic.com/json" xmlns:cx="http://xmlcalabash.com/ns/extensions" xmlns:xlink="http://www.w3.org/1999/xlink">The MOBI file is stored to the directory of the EPUB file.</p>
-    <p xmlns:p="http://www.w3.org/ns/xproc" xmlns:pos="http://exproc.org/proposed/steps/os" xmlns:tr="http://transpect.io" xmlns:c="http://www.w3.org/ns/xproc-step" xmlns:j="http://marklogic.com/json" xmlns:cx="http://xmlcalabash.com/ns/extensions" xmlns:xlink="http://www.w3.org/1999/xlink">The XML result shipped on the result port is either a <code>c:file</code> or a <code>c:errors</code>, depending on whether KindleGen was executed successfully.</p>
+    <h5 xmlns:p="http://www.w3.org/ns/xproc" xmlns:pos="http://exproc.org/proposed/steps/os" xmlns:tr="http://transpect.io" xmlns:c="http://www.w3.org/ns/xproc-step" xmlns:j="http://marklogic.com/json" xmlns:cx="http://xmlcalabash.com/ns/extensions" xmlns:xlink="http://www.w3.org/1999/xlink">Output</h5>
+    <p xmlns:p="http://www.w3.org/ns/xproc" xmlns:pos="http://exproc.org/proposed/steps/os" xmlns:tr="http://transpect.io" xmlns:c="http://www.w3.org/ns/xproc-step" xmlns:j="http://marklogic.com/json" xmlns:cx="http://xmlcalabash.com/ns/extensions" xmlns:xlink="http://www.w3.org/1999/xlink">The MOBI file is stored to the directory of the EPUB file. The XML result shipped on the result port is either a <code>c:file</code> or a <code>c:errors</code>, depending on whether KindleGen was executed successfully.</p>
     <pre xmlns:p="http://www.w3.org/ns/xproc" xmlns:pos="http://exproc.org/proposed/steps/os" xmlns:tr="http://transpect.io" xmlns:c="http://www.w3.org/ns/xproc-step" xmlns:j="http://marklogic.com/json" xmlns:cx="http://xmlcalabash.com/ns/extensions" xmlns:xlink="http://www.w3.org/1999/xlink">
       Success:
       &lt;c:file code="OK" name="C:/home/my-sample.mobi"/&gt;
@@ -56,7 +52,7 @@
       Errors:
       &lt;c:error tr:rule-family="kindlegen"
         name="C:/home/my-sample.epub"&gt;MOBI/KF8 generation failed!&lt;/c:error&gt;</pre>
-    <h2 xmlns:p="http://www.w3.org/ns/xproc" xmlns:pos="http://exproc.org/proposed/steps/os" xmlns:tr="http://transpect.io" xmlns:c="http://www.w3.org/ns/xproc-step" xmlns:j="http://marklogic.com/json" xmlns:cx="http://xmlcalabash.com/ns/extensions" xmlns:xlink="http://www.w3.org/1999/xlink">Requirements</h2>
+    <h5 xmlns:p="http://www.w3.org/ns/xproc" xmlns:pos="http://exproc.org/proposed/steps/os" xmlns:tr="http://transpect.io" xmlns:c="http://www.w3.org/ns/xproc-step" xmlns:j="http://marklogic.com/json" xmlns:cx="http://xmlcalabash.com/ns/extensions" xmlns:xlink="http://www.w3.org/1999/xlink">Requirements</h5>
     <ul xmlns:p="http://www.w3.org/ns/xproc" xmlns:pos="http://exproc.org/proposed/steps/os" xmlns:tr="http://transpect.io" xmlns:c="http://www.w3.org/ns/xproc-step" xmlns:j="http://marklogic.com/json" xmlns:cx="http://xmlcalabash.com/ns/extensions" xmlns:xlink="http://www.w3.org/1999/xlink">
       <li><p>Path normalizing requires <a href="https://github.com/transpect/xproc-util/tree/master/file-uri/" target="_blank">tr:file-uri</a>.</p></li>
       <li><p>You have to download KindleGen from <a href="http://www.amazon.com/gp/feature.html?docId=1000765211" target="_blank">here</a> and store it to <i>some-directory</i>™</p></li>
@@ -73,11 +69,12 @@
         </pre>
       </li>
     </ul>
-    <h2 xmlns:p="http://www.w3.org/ns/xproc" xmlns:pos="http://exproc.org/proposed/steps/os" xmlns:tr="http://transpect.io" xmlns:c="http://www.w3.org/ns/xproc-step" xmlns:j="http://marklogic.com/json" xmlns:cx="http://xmlcalabash.com/ns/extensions" xmlns:xlink="http://www.w3.org/1999/xlink">Known Issues</h2>
+    <h5 xmlns:p="http://www.w3.org/ns/xproc" xmlns:pos="http://exproc.org/proposed/steps/os" xmlns:tr="http://transpect.io" xmlns:c="http://www.w3.org/ns/xproc-step" xmlns:j="http://marklogic.com/json" xmlns:cx="http://xmlcalabash.com/ns/extensions" xmlns:xlink="http://www.w3.org/1999/xlink">Known Issues</h5>
     <ul xmlns:p="http://www.w3.org/ns/xproc" xmlns:pos="http://exproc.org/proposed/steps/os" xmlns:tr="http://transpect.io" xmlns:c="http://www.w3.org/ns/xproc-step" xmlns:j="http://marklogic.com/json" xmlns:cx="http://xmlcalabash.com/ns/extensions" xmlns:xlink="http://www.w3.org/1999/xlink">
       <li><p>Consider to use <code>cx:depends-on</code> if your input EPUB file is dynamically generated by another XProc pipeline.</p></li>  
       <li><p>Running kindlegen on 64 bit Linux operating systems requires ia32-libs to be installed.</p></li>
-    </ul><br xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink"></br>  </p><h4>Import</h4><pre><code class="language-markup">&lt;p:import href="http://transpect.io/kindlegen/xpl/kindlegen.xpl"/&gt;</code></pre><h4>Dependencies</h4><ul><li><p><a href="modules-xproc-util.html">xproc-util</a></p></li></ul><h4>Synopsis</h4><pre><code class="language-markup">&lt;tr:kindlegen xmlns:tr="http://transpect.io"&gt;
+    </ul>
+  </p><h4>Import</h4><pre><code class="language-markup">&lt;p:import href="http://transpect.io/kindlegen/xpl/kindlegen.xpl"/&gt;</code></pre><h4>Dependencies</h4><ul><li><p><a href="modules-xproc-util.html">xproc-util</a></p></li></ul><h4>Synopsis</h4><pre><code class="language-markup">&lt;tr:kindlegen xmlns:tr="http://transpect.io"&gt;
   &lt;p:output port="result" primary="true"/&gt;
   &lt;p:output port="report" primary="false"/&gt;
   &lt;p:option name="kindlegen" select="''"/&gt;
@@ -87,12 +84,12 @@
   &lt;p:option name="debug" select="'no'"/&gt;
   &lt;p:option name="debug-dir-uri" select="'debug'"/&gt;
   &lt;p:option name="status-dir-uri" select="'status'"/&gt;
-&lt;/tr:kindlegen&gt;</code></pre></div><div id="d164e150" class="status"><h2 class="header status"></h2><p class="last-updated">GitHub sync date: 2016-03-09+01:00</p></div></div>
+&lt;/tr:kindlegen&gt;</code></pre></div><div id="d164e136" class="status"><h2 class="header status"></h2><p class="last-updated">GitHub sync date: 2016-03-09+01:00</p></div></div>
           
           <div class="col hide-on-small-only m3 l2">
             <div class="toc-wrapper pin-top" style="top: 0px;">
               <div style="height: 1px;">
-                <ul id="tr-toc" class="table-of-contents"><li><a href="#tr-kindlegen" class="active">tr:kindlegen</a></li><li><a href="#d164e150"></a></li></ul>
+                <ul id="tr-toc" class="table-of-contents"><li><a href="#tr-kindlegen" class="active">tr:kindlegen</a></li><li><a href="#d164e136"></a></li></ul>
               </div>
             </div>
           </div>
