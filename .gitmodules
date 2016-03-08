@@ -4,3 +4,6 @@
 [submodule "calabash"]
 	path = calabash
 	url = https://github.com/transpect/calabash-frontend.git
+[submodule "github-api"]
+	path = github-api
+	url = https://github.com/transpect/github-api
