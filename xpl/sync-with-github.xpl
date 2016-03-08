@@ -13,7 +13,7 @@
     about repositories and XProc pipelines.  
   </p:documentation>
   
-  <p:output port="result" sequence="true">
+  <p:output port="result">
     <p:documentation>
       Provides a transparent JSON document containing the 
       requested results.
