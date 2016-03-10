@@ -1864,7 +1864,7 @@ saxon -xsl:epubtools/modules/html-splitter/xsl/html-splitter.xsl -s:$PRE_SPLIT -
     <p xmlns="http://www.w3.org/1999/xhtml" xmlns:p="http://www.w3.org/ns/xproc" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:tr="http://transpect.io" xmlns:pos="http://exproc.org/proposed/steps/os" xmlns:cat="urn:oasis:names:tc:entity:xmlns:xml:catalog" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:c="http://www.w3.org/ns/xproc-step" xmlns:j="http://marklogic.com/json" xmlns:cx="http://xmlcalabash.com/ns/extensions">It is possible to specify a temporary directory in the 'tmpdir' option. By default, it will be the subdir 'tmp' of the
       user’s home directory. The 'tmpdir' option accepts both a file: URL and an OS path, thanks to this normalization step.</p>
     <p xmlns="http://www.w3.org/1999/xhtml" xmlns:p="http://www.w3.org/ns/xproc" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:tr="http://transpect.io" xmlns:pos="http://exproc.org/proposed/steps/os" xmlns:cat="urn:oasis:names:tc:entity:xmlns:xml:catalog" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:c="http://www.w3.org/ns/xproc-step" xmlns:j="http://marklogic.com/json" xmlns:cx="http://xmlcalabash.com/ns/extensions">Please note that temporary files will not be deleted by this step.</p>
-    <h4 xmlns="http://www.w3.org/1999/xhtml" xmlns:p="http://www.w3.org/ns/xproc" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:tr="http://transpect.io" xmlns:pos="http://exproc.org/proposed/steps/os" xmlns:cat="urn:oasis:names:tc:entity:xmlns:xml:catalog" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:c="http://www.w3.org/ns/xproc-step" xmlns:j="http://marklogic.com/json" xmlns:cx="http://xmlcalabash.com/ns/extensions">Unique File Names for HTTP Downloads</h4>
+    <h5 xmlns="http://www.w3.org/1999/xhtml" xmlns:p="http://www.w3.org/ns/xproc" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:tr="http://transpect.io" xmlns:pos="http://exproc.org/proposed/steps/os" xmlns:cat="urn:oasis:names:tc:entity:xmlns:xml:catalog" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:c="http://www.w3.org/ns/xproc-step" xmlns:j="http://marklogic.com/json" xmlns:cx="http://xmlcalabash.com/ns/extensions">Unique File Names for HTTP Downloads</h5>
     <p xmlns="http://www.w3.org/1999/xhtml" xmlns:p="http://www.w3.org/ns/xproc" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:tr="http://transpect.io" xmlns:pos="http://exproc.org/proposed/steps/os" xmlns:cat="urn:oasis:names:tc:entity:xmlns:xml:catalog" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:c="http://www.w3.org/ns/xproc-step" xmlns:j="http://marklogic.com/json" xmlns:cx="http://xmlcalabash.com/ns/extensions">If the option 'make-unique' is true (which it is by default), the files that are fetched by <code>p:http-request</code>
       will get a random string like <code>_0fa8d348</code> appended to their base name.</p>
     <h5 xmlns="http://www.w3.org/1999/xhtml" xmlns:p="http://www.w3.org/ns/xproc" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:tr="http://transpect.io" xmlns:pos="http://exproc.org/proposed/steps/os" xmlns:cat="urn:oasis:names:tc:entity:xmlns:xml:catalog" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:c="http://www.w3.org/ns/xproc-step" xmlns:j="http://marklogic.com/json" xmlns:cx="http://xmlcalabash.com/ns/extensions">Output format</h5>
@@ -1906,24 +1906,7 @@ saxon -xsl:epubtools/modules/html-splitter/xsl/html-splitter.xsl -s:$PRE_SPLIT -
   &lt;/head&gt;
   &lt;body&gt;
     &lt;div&gt;
-      &lt;img alt="a blue square" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFCAMAAAC6sdbXAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJ
-bWFnZVJlYWR5ccllPAAAAyJpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdp
-bj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6
-eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0
-NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJo
-dHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlw
-dGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAv
-IiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RS
-ZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpD
-cmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoV2luZG93cykiIHhtcE1NOkluc3RhbmNl
-SUQ9InhtcC5paWQ6NjExNUU3Q0RFNkQ1MTFFNUE4MThFMjY3QjgwODYwQ0UiIHhtcE1NOkRvY3Vt
-ZW50SUQ9InhtcC5kaWQ6NjExNUU3Q0VFNkQ1MTFFNUE4MThFMjY3QjgwODYwQ0UiPiA8eG1wTU06
-RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo2MTE1RTdDQkU2RDUxMUU1QTgx
-OEUyNjdCODA4NjBDRSIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDo2MTE1RTdDQ0U2RDUxMUU1
-QTgxOEUyNjdCODA4NjBDRSIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1w
-bWV0YT4gPD94cGFja2V0IGVuZD0iciI/PjJf70IAAAAGUExURQCe4AAAAB0uYYYAAAAOSURBVHja
-YmDABwACDAAAHgABzCCyiwAAAABJRU5ErkJggg==
-" /&gt;
+      &lt;img alt="a blue square" src="image.png" /&gt;
     &lt;/div&gt;
   &lt;/body&gt;
 &lt;/html&gt;</pre>
@@ -2081,7 +2064,7 @@ YmDABwACDAAAHgABzCCyiwAAAABJRU5ErkJggg==
       &lt;/c:messages&gt;
     &lt;/p:inline&gt;
   &lt;/p:input&gt;
-&lt;p:with-option name="status-dir-uri" select="$status-dir-uri"/&gt;
+  &lt;p:with-option name="status-dir-uri" select="$status-dir-uri"/&gt;
 &lt;/tr:simple-progress-msg&gt;</code></pre>
   	</para><bridgehead>Import</bridgehead><programlisting><code role="language-markup">&lt;p:import href="http://transpect.io/xproc-util/simple-progress-msg/xpl/simple-progress-msg.xpl"/&gt;</code></programlisting><bridgehead>Synopsis</bridgehead><programlisting><code role="language-markup">&lt;tr:simple-progress-msg xmlns:tr="http://transpect.io"&gt;
   &lt;p:input port="source" sequence="true" primary="true"/&gt;
