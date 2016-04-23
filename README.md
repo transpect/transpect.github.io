@@ -50,8 +50,8 @@ $ ./calabash/calabash.sh xpl/build.xpl
 
 If you want to request GitHub for updated transpect modules, you have to add the option `sync=yes`.
 Unfortunately, GitHub limits API requests to 60 per hour. To bypass this limitation, you
-can obtain a personal access token from your GitHub personal settings and add this via the
-option named token.
+can obtain a personal access token from your GitHub personal settings and add the value to the
+option named `token`.
 
 ```
 $ ./calabash/calabash.sh xpl/build.xpl sync=yes token=123456
