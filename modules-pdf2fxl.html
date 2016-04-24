@@ -37,10 +37,13 @@
         <div class="row">
           
           <div class="col s12 m9 l10" id="tr-content"><div class="card"><div class="card-content"><span class="card-title">Repository</span><table class="informaltable"><tbody><tr><td>Git URL</td><td><code class="language-markup">https://github.com/transpect/pdf2fxl.git</code></td></tr><tr><td>SVN URL</td><td><code class="language-markup">https://github.com/transpect/pdf2fxl</code></td></tr></tbody></table><p><a href="https://github.com/transpect/pdf2fxl" class="btn-flat  orange lighten-4">Source ⬇</a></p></div></div><div id="tr-pdf2fxl" class="section scrollspy"><h2 class="header">tr:pdf2fxl</h2><p>
-    This step is used to convert HTML files from Popplers pdftohtml tool
+    pdf2fxl converts a PDF to Fixed Layout EPUB3. To extract HTML from PDF, 
+    <a xmlns:p="http://www.w3.org/ns/xproc" xmlns:css="http://www.w3.org/1996/css" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:epub="http://transpect.io/epubtools" xmlns:tr="http://transpect.io" xmlns:c="http://www.w3.org/ns/xproc-step" xmlns:j="http://marklogic.com/json" xmlns:cx="http://xmlcalabash.com/ns/extensions" xmlns:xlink="http://www.w3.org/1999/xlink" href="https://poppler.freedesktop.org" target="_blank">Poppler</a> needs 
+    to be installed. Further information can be found in the 
+    <a xmlns:p="http://www.w3.org/ns/xproc" xmlns:css="http://www.w3.org/1996/css" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:epub="http://transpect.io/epubtools" xmlns:tr="http://transpect.io" xmlns:c="http://www.w3.org/ns/xproc-step" xmlns:j="http://marklogic.com/json" xmlns:cx="http://xmlcalabash.com/ns/extensions" xmlns:xlink="http://www.w3.org/1999/xlink" href="https://github.com/transpect/pdf2fxl/blob/master/README.md" target="_blank">README</a>.  
   </p><h4>Dependencies</h4><ul><li><p><a href="modules-css-tools.html">css-tools</a></p></li><li><p><a href="modules-xproc-util.html">xproc-util</a></p></li></ul><h4>Synopsis</h4><pre><code class="language-markup">&lt;tr:pdf2fxl xmlns:tr="http://transpect.io"&gt;
   &lt;p:output port="result" primary="true"/&gt;
-  &lt;p:output port="css"/&gt;
+  &lt;p:output port="css" primary="false"/&gt;
   &lt;p:option name="path" required="true"/&gt;
   &lt;p:option name="rastertext" select="'no'"/&gt;
   &lt;p:option name="headline-fontsize" select="35"/&gt;
@@ -49,12 +52,12 @@
   &lt;p:option name="debug-dir-uri" select="'debug'"/&gt;
   &lt;p:option name="progress" select="'yes'"/&gt;
   &lt;p:option name="status-dir-uri" select="concat($debug-dir-uri, '/status')"/&gt;
-&lt;/tr:pdf2fxl&gt;</code></pre></div><div id="d10219e47" class="status"><h2 class="header status"></h2><p class="last-updated">GitHub sync date: 2016-04-23+02:00</p></div></div>
+&lt;/tr:pdf2fxl&gt;</code></pre></div><div id="d10219e53" class="status"><h2 class="header status"></h2><p class="last-updated">GitHub sync date: 2016-04-24+02:00</p></div></div>
           
           <div class="col hide-on-small-only m3 l2">
             <div class="toc-wrapper pin-top" style="top: 0px;">
               <div style="height: 1px;">
-                <ul id="tr-toc" class="table-of-contents"><li><a href="#tr-pdf2fxl" class="active">tr:pdf2fxl</a></li><li><a href="#d10219e47"></a></li></ul>
+                <ul id="tr-toc" class="table-of-contents"><li><a href="#tr-pdf2fxl" class="active">tr:pdf2fxl</a></li><li><a href="#d10219e53"></a></li></ul>
               </div>
             </div>
           </div>
