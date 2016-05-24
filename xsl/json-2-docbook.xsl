@@ -70,7 +70,7 @@
         <!--  *
               * evaluate base URI if catalog rewrite exists
               * -->
-        <xsl:if test="$catalog/cat:rewriteURI">
+        <xsl:if test="$catalog/cat:rewriteURI[matches(@uriStartString, 'http://transpect\.io')]">
           <xsl:variable name="rewrite-uri" select="$catalog/cat:rewriteURI[matches(@uriStartString, 'http://transpect\.io')]/@uriStartString" as="xs:string"/>
           <xsl:variable name="base-uri" select="replace($download-url, 'https://raw.githubusercontent.com/transpect/.+?/master/', $rewrite-uri)" as="xs:string"/>
           <bridgehead>Import</bridgehead>
