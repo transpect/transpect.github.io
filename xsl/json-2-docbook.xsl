@@ -12,6 +12,8 @@
   exclude-result-prefixes="xs p cx c j tr cat xlink"
   version="2.0">
   
+  <xsl:output indent="yes"/>
+  
   <xsl:variable name="repos" select="/cx:document/j:item" as="element(j:item)+"/>
   <xsl:variable name="catalogs" select="/cx:document/j:item/c:files/j:json//j:item[j:path eq 'xmlcatalog/catalog.xml']/cx:document/cat:catalog" as="element(cat:catalog)+"/>
   
@@ -81,14 +83,20 @@
               * dependencies 
               * -->
         <xsl:variable name="dependency" as="xs:string*">
-          <xsl:for-each select="p:import">
+          
+          <xsl:for-each select="p:import
+                                |p:xslt/p:input[@port eq 'stylesheet']/p:document
+                                |p:load[matches(@href, '\.xsl$')]
+                                |p:xslt/p:input[@port eq 'stylesheet']/p:inline//xsl:import">
             <xsl:variable name="href" select="@href" as="xs:string"/>
             <xsl:variable name="rewrite-from-uri" select="tr:get-rewrite-from-uri($href, $catalogs)" as="item()*"/>
-            <xsl:variable name="dependency-name" select="/cx:document/j:item[some $i in c:files//cat:catalog/cat:rewriteURI satisfies $i/@uriStartString eq $rewrite-from-uri]/j:name"/>
+            <xsl:variable name="dependency-name" 
+                          select="/cx:document/j:item[some $i in c:files//cat:catalog/cat:rewriteURI 
+                                                      satisfies $i/@uriStartString eq $rewrite-from-uri]/j:name"/>
             <xsl:for-each select="$rewrite-from-uri[. ne 'false']">
               <xsl:value-of select="$dependency-name"/>              
             </xsl:for-each>
-          </xsl:for-each>  
+          </xsl:for-each>
         </xsl:variable>
         <xsl:if test="count(distinct-values($dependency)) gt 0">
           <bridgehead>Dependencies</bridgehead>
@@ -155,7 +163,6 @@
     <xsl:param name="uri" as="xs:string"/>
     <xsl:param name="catalogs" as="element(cat:catalog)+"/>
     <xsl:variable name="path" select="replace($uri, '^(https?|file)://', '')" as="xs:string"/>
-    <xsl:variable name="protocol" select="replace($uri, '^(https?|file)://.+$', '$1')" as="xs:string"/>
     <xsl:variable name="path-tokens" select="tokenize($path, '/')" as="xs:string+"/>
     <xsl:variable name="remove-last-item" select="remove($path-tokens, count($path-tokens))" as="xs:string*"/>
     <xsl:variable name="construct-path" select="string-join($remove-last-item, '/')" as="xs:string"/>
