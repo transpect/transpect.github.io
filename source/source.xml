@@ -17,7 +17,7 @@
     <title>About</title>
     <chapter xml:base="../index.html">
       <title>transpect</title>
-      <subtitle>An open source framework for converting and checking data</subtitle>
+      <subtitle>An Open Source framework for converting and checking data</subtitle>
       <para role="col">Transpect was designed to provide generic and stable modules for common conversion and checking
         tasks. To adress complex and diverse data, transpect offers a cascading configuration to override specific
         transformation and checking rules. Each component within the framework is Open Source and use standard
