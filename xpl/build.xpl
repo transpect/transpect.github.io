@@ -9,6 +9,10 @@
   name="build-website" 
   type="tr:build-website">
   
+  <p:documentation xmlns="http://www.w3.org/1999/xhtml">
+    Builds the framework reference hosted on transpect.io
+  </p:documentation>
+  
   <p:input port="source" primary="true">
     <p:documentation xmlns="http://www.w3.org/1999/xhtml">
       <dl><dt>source</dt><dd>expects the DocBook source document</dd></dl>
@@ -40,6 +44,7 @@
       <p:sink/>
       
       <tr:sync-with-github>
+        <p:log port="result" href="../github-dump-log.xml"/>
         <p:with-option name="token" select="$token"/>
       </tr:sync-with-github>
       
