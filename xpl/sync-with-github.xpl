@@ -27,15 +27,16 @@
   </p:option>
   
   <p:import href="http://xmlcalabash.com/extension/steps/library-1.0.xpl"/>
-  <p:import href="http://transpect.io/github-api/xpl/get-repos-from-org.xpl"/>
-  <p:import href="http://transpect.io/github-api/xpl/recursive-repository-listing.xpl"/>
+  <p:import href="http://transpect.io/github-api/xpl/list-repos.xpl"/>
+  <p:import href="http://transpect.io/github-api/xpl/repo-directory-list.xpl"/>
   
   <!-- provide a list of all repositories -->
     
-  <tr:get-repos-from-org name="rq-list-repositories">
+  <tr:list-repos name="rq-list-repositories">
     <p:with-option name="token" select="$token"/>
-    <p:with-option name="org" select="'transpect'"/>
-  </tr:get-repos-from-org>
+    <p:with-option name="username" select="'transpect'"/>
+    <p:with-option name="group" select="'orgs'"/>
+  </tr:list-repos>
   
   <!-- loop over repositories -->
   
@@ -47,10 +48,10 @@
       <p:with-option name="message" select="j:item/j:html_005furl"/>
     </cx:message>
     
-    <tr:recursive-repo-listing>
+    <tr:repo-directory-list>
       <p:with-option name="token" select="$token"/>
       <p:with-option name="contents-url" select="replace(j:item/j:contents_005furl, '/\{\+path\}', '')"/>
-    </tr:recursive-repo-listing>
+    </tr:repo-directory-list>
     
     <p:wrap match="/j:json" wrapper="c:files" name="wrap-files"/>
     
