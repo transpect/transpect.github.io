@@ -195,11 +195,13 @@ svn co https://github.com/transpect/image-transform-extension/trunk calabash/ext
           which converts Microsoft Word to <link xlink:href="https://github.com/le-tex/Hub">Hub XML</link>. The docx2hub module depends on <xref linkend="modules-xproc-util"/> and <xref linkend="modules-xslt-util"/>.
         </para>
         <programlisting><code role="language-git">git clone https://github.com/transpect/docx2hub
+git clone https://github.com/transpect/htmlreports
 git clone https://github.com/transpect/xslt-util
 git clone https://github.com/transpect/xproc-util</code></programlisting>
         <note>
           <title>Optional: checkout modules with SVN</title>
           <programlisting><code role="language-git">svn co https://github.com/transpect/docx2hub/trunk docx2hub
+svn co https://github.com/transpect/htmlreports/trunk htmlreports          
 svn co https://github.com/transpect/xslt-util/trunk xslt-util
 svn co https://github.com/transpect/xproc-util/trunk xproc-util</code></programlisting>
         </note>
@@ -207,6 +209,7 @@ svn co https://github.com/transpect/xproc-util/trunk xproc-util</code></programl
 <programlisting><code>MyProject/
   |--calabash/
   |--docx2hub/
+  |--htmlreports/
   |--xproc-util/
   |--xslt-util/</code></programlisting>
         <bridgehead>Create an XML Catalog</bridgehead>
@@ -221,6 +224,7 @@ svn co https://github.com/transpect/xproc-util/trunk xproc-util</code></programl
         <programlisting><code role="language-markup">&lt;?xml version="1.0" encoding="UTF-8"?>
 &lt;catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog">
   &lt;nextCatalog catalog="../docx2hub/xmlcatalog/catalog.xml"/>
+  &lt;nextCatalog catalog="../htmlreports/xmlcatalog/catalog.xml"/>
   &lt;nextCatalog catalog="../xproc-util/xmlcatalog/catalog.xml"/>
   &lt;nextCatalog catalog="../xslt-util/xmlcatalog/catalog.xml"/>
 &lt;/catalog></code></programlisting>
