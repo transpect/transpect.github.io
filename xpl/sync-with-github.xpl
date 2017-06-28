@@ -2,6 +2,7 @@
 <p:declare-step xmlns:p="http://www.w3.org/ns/xproc"
   xmlns:c="http://www.w3.org/ns/xproc-step"
   xmlns:cx="http://xmlcalabash.com/ns/extensions"
+  xmlns:px="http://xmlcalabash.com/ns/document-sequence"
   xmlns:j="http://marklogic.com/json"
   xmlns:tr="http://transpect.io"
   name="sync-with-github"
@@ -111,7 +112,9 @@
     </p:viewport>
     
   </p:for-each>
-    
+  
   <p:wrap-sequence wrapper="cx:document"/>
+  
+  <p:unwrap match="/px:document-sequence/px:document"/>
   
 </p:declare-step>
