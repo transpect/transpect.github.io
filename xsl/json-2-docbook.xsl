@@ -73,7 +73,7 @@
               * evaluate base URI if catalog rewrite exists
               * -->
         <xsl:if test="$catalog/cat:rewriteURI[matches(@uriStartString, 'http://transpect\.io')]">
-          <xsl:variable name="rewrite-uri" select="$catalog/cat:rewriteURI[matches(@uriStartString, 'http://transpect\.io')]/@uriStartString" as="xs:string"/>
+          <xsl:variable name="rewrite-uri" select="$catalog/cat:rewriteURI[matches(@uriStartString, 'http://transpect\.io')][1]/@uriStartString" as="xs:string"/>
           <xsl:variable name="base-uri" select="replace($download-url, 'https://raw.githubusercontent.com/transpect/.+?/master/', $rewrite-uri)" as="xs:string"/>
           <bridgehead>Import</bridgehead>
           <programlisting><code role="language-markup"><xsl:value-of select="concat('&lt;p:import href=&quot;', $base-uri, '&quot;/&gt;')"/></code></programlisting>        
@@ -82,6 +82,7 @@
         <!--  *
               * dependencies 
               * -->
+        
         <xsl:variable name="dependency" as="xs:string*">
           
           <xsl:for-each select="p:import
@@ -94,6 +95,7 @@
                           select="/cx:document/j:item[some $i in c:files//cat:catalog/cat:rewriteURI 
                                                       satisfies $i/@uriStartString eq $rewrite-from-uri]/j:name"/>
             <xsl:for-each select="$rewrite-from-uri[. ne 'false']">
+              <xsl:sort select="." order="ascending"/>
               <xsl:value-of select="$dependency-name"/>              
             </xsl:for-each>
           </xsl:for-each>
