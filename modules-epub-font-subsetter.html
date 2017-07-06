@@ -44,7 +44,8 @@
   &lt;p:option name="debug-dir-uri" select="resolve-uri('debug')"/&gt;
 &lt;/tr:create-font-subset&gt;</code></pre></div><div id="tr-unzip-epub" class="section scrollspy"><h2 class="header">tr:unzip-epub</h2><p>Step to unzip epub and create filelist</p><h4>Dependencies</h4><ul><li><p><a href="modules-unzip-extension.html">unzip-extension</a></p></li><li><p><a href="modules-xproc-util.html">xproc-util</a></p></li></ul><h4>Synopsis</h4><pre><code class="language-markup">&lt;tr:unzip-epub xmlns:tr="http://transpect.io"&gt;
   &lt;p:input port="params" primary="true"/&gt;
-  &lt;p:output port="result" sequence="true" primary="true"/&gt;
+  &lt;p:output port="result" sequence="true" primary="false"/&gt;
+  &lt;p:output port="zip-manifest" sequence="true" primary="true"/&gt;
   &lt;p:option name="debug" required="false" select="'yes'"/&gt;
   &lt;p:option name="debug-dir-uri" select="resolve-uri('debug')"/&gt;
   &lt;p:option name="epubfile" required="true"/&gt;
@@ -56,7 +57,8 @@
   &lt;p:option name="font-name" required="false"/&gt;
   &lt;p:option name="font-style" required="false" select="'normal'"/&gt;
   &lt;p:option name="font-weight" required="false" select="'normal'"/&gt;
-&lt;/tr:epub-fontsubset&gt;</code></pre></div><div id="d14285e98" class="status"><h2 class="header status"></h2><p class="last-updated">GitHub sync date: 2017-06-28+02:00</p></div></div>
+  &lt;p:option name="delete-not-used-font" required="false" select="'true'"/&gt;
+&lt;/tr:epub-fontsubset&gt;</code></pre></div><div id="d14285e98" class="status"><h2 class="header status"></h2><p class="last-updated">GitHub sync date: 2017-07-06+02:00</p></div></div>
           
           <div class="col hide-on-small-only m3 l2">
             <div class="toc-wrapper pin-top" style="top: 0px;">
