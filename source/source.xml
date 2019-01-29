@@ -66,7 +66,7 @@
               <td>Math (MathML, OMML, LaTeX)</td>
               <td>&#x2713;</td>
               <td>&#x2713;</td>
-              <td>parsing MathType is possible with 3rd-party extensions</td>
+              <td>Conversion from MathType, OMML to MathML and LaTeX.</td>
             </tr>
             <tr>
               <td>Office Open XML, OpenDocument (ODT)</td>
