@@ -80,14 +80,18 @@
   &lt;p:option name="debug" required="false" select="'no'"/&gt;
   &lt;p:option name="debug-dir-uri" required="false" select="'debug'"/&gt;
   &lt;p:option name="create-font-subset" required="false" select="'false'"/&gt;
+  &lt;p:option name="font-subset-min-file-size" required="false" select="0"/&gt;
   &lt;p:option name="create-svg-cover" required="false" select="'false'"/&gt;
   &lt;p:option name="convert-svg-cover" required="false" select="'false'"/&gt;
-&lt;/epub:create-ops&gt;</code></pre></div><div id="tr-create-font-subset" class="section scrollspy"><h2 class="header">tr:create-font-subset</h2><p>This pipeline can be used to create fontsubsets. The characters used in each font will be displayed in a character set.
-  The subset is created using the pyftsubset phython script from fonttools https://github.com/fonttools</p><h4>Import</h4><pre><code class="language-markup">&lt;p:import href="http://transpect.io/epubtools/modules/fontsubsetter/xpl/fontsubsetter.xpl"/&gt;</code></pre><h4>Dependencies</h4><ul><li><p><a href="modules-css-tools.html">css-tools</a></p></li><li><p><a href="modules-xproc-util.html">xproc-util</a></p></li></ul><h4>Synopsis</h4><pre><code class="language-markup">&lt;tr:create-font-subset xmlns:tr="http://transpect.io"&gt;
+&lt;/epub:create-ops&gt;</code></pre></div><div id="tr-create-font-subset" class="section scrollspy"><h2 class="header">tr:create-font-subset</h2><p>This pipeline creates fontsubsets. The characters used 
+    in each font will be displayed in a character set. The subset is created 
+    using the pyftsubset phython script from fonttools https://github.com/fonttools.
+  </p><h4>Import</h4><pre><code class="language-markup">&lt;p:import href="http://transpect.io/epubtools/modules/fontsubsetter/xpl/fontsubsetter.xpl"/&gt;</code></pre><h4>Dependencies</h4><ul><li><p><a href="modules-css-tools.html">css-tools</a></p></li><li><p><a href="modules-xproc-util.html">xproc-util</a></p></li></ul><h4>Synopsis</h4><pre><code class="language-markup">&lt;tr:create-font-subset xmlns:tr="http://transpect.io"&gt;
   &lt;p:input port="source" primary="true"/&gt;
   &lt;p:input port="expand-css"/&gt;
   &lt;p:output port="result" sequence="true" primary="true"/&gt;
   &lt;p:option name="script-path" select="'../../../scripts/pyftsubset.sh'"/&gt;
+  &lt;p:option name="min-file-size-kb" select="0"/&gt;
   &lt;p:option name="debug" required="false" select="'yes'"/&gt;
   &lt;p:option name="debug-dir-uri" select="'debug'"/&gt;
 &lt;/tr:create-font-subset&gt;</code></pre></div><div id="epub-html-splitter" class="section scrollspy"><h2 class="header">epub:html-splitter</h2><p>
@@ -208,10 +212,10 @@ saxon -xsl:epubtools/modules/html-splitter/xsl/html-splitter.xsl -s:$PRE_SPLIT -
   &lt;p:option name="debug-dir-uri" select="'debug'"/&gt;
   &lt;p:option name="status-dir-uri" select="'status'"/&gt;
   &lt;p:option name="id-in-report-heading" select="'false'"/&gt;
-  &lt;p:option name="create-font-subset" required="false" select="'false'"/&gt;
+  &lt;p:option name="create-font-subset" required="false" select="'true'"/&gt;
   &lt;p:option name="create-svg-cover" required="false" select="'false'"/&gt;
   &lt;p:option name="convert-svg-cover" required="false" select="'false'"/&gt;
-&lt;/epub:convert&gt;</code></pre></div><div id="d16281e315" class="status"><h2 class="header status"></h2><p class="last-updated">GitHub sync date: 2019-04-02+02:00</p></div></div>
+&lt;/epub:convert&gt;</code></pre></div><div id="d16281e315" class="status"><h2 class="header status"></h2><p class="last-updated">GitHub sync date: 2019-05-20+02:00</p></div></div>
           
           <div class="col hide-on-small-only m3 l2">
             <div class="toc-wrapper pin-top" style="top: 0px;">
