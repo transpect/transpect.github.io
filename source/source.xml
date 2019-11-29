@@ -165,7 +165,7 @@
         </simplesect>
         <simplesect role="col s12 m6">
           <title>Java</title>
-          <para>XML Calabash needs Java 1.7 or 1.8 to run. We noticed some odd behaviour while running XML Calabash
+          <para>XML Calabash needs Java 1.7 and later to run. We noticed some odd behaviour while running XML Calabash
             with a JVMs other than Oracle. If you get memory issues, consider to install the 64-bit version.</para>
         </simplesect>
       </section>
