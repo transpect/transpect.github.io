@@ -10,7 +10,7 @@ implementation of Googles Material Design.
 
 ### prerequisites
 
-* Java 1.7 or 1.8
+* Java 1.7 or later
 * XML Calabash
 
 ### edit the content
