@@ -44,13 +44,13 @@
   
   <xsl:template match="/html/body//*[@id eq 'tr-title']">
     <xsl:copy>
-      <xsl:apply-templates select="$current-chapter/dbk:title/node()|@*"/>
+      <xsl:apply-templates select="@*, $current-chapter/dbk:title/node()"/>
     </xsl:copy>
   </xsl:template>
   
   <xsl:template match="/html/body//*[@id eq 'tr-subtitle']">
     <xsl:copy>
-      <xsl:apply-templates select="$current-chapter/dbk:subtitle/node()|@*"/>
+      <xsl:apply-templates select="@*, $current-chapter/dbk:subtitle/node()"/>
     </xsl:copy>
   </xsl:template>
   
@@ -58,7 +58,7 @@
   
   <xsl:template match="/html/body//*[@id eq 'tr-content']">
     <xsl:copy>
-      <xsl:apply-templates select="$current-chapter/* except ($current-chapter/dbk:title|$current-chapter/dbk:subtitle)|@*"/>
+      <xsl:apply-templates select="@*, $current-chapter/* except ($current-chapter/dbk:title|$current-chapter/dbk:subtitle)"/>
     </xsl:copy>
   </xsl:template>
   
