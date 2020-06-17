@@ -48,12 +48,20 @@
   &lt;p:option name="css-location" required="false" select="'stylesheet.css'"/&gt;
   &lt;p:option name="fallback-xsl" select="'http://transpect.io/jats2html/xsl/jats2html.xsl'"/&gt;
   &lt;p:option name="fallback-xpl" select="'http://transpect.io/jats2html/xpl/jats2html_default.xpl'"/&gt;
-&lt;/jats:html&gt;</code></pre></div><div id="d17141e46" class="status"><h2 class="header status"></h2><p class="last-updated">GitHub sync date: 2020-05-31+02:00</p></div></div>
+&lt;/jats:html&gt;</code></pre></div><div id="tr-jats2html" class="section scrollspy"><h2 class="header">tr:jats2html</h2><h4>Import</h4><pre><code class="language-markup">&lt;p:import href="http://transpect.io/jats2html/xpl/jats2html_default.xpl"/&gt;</code></pre><h4>Dependencies</h4><ul><li><p><a href="modules-xproc-util.html">xproc-util</a></p></li></ul><h4>Synopsis</h4><pre><code class="language-markup">&lt;tr:jats2html xmlns:tr="http://transpect.io"&gt;
+  &lt;p:input port="source" primary="true"/&gt;
+  &lt;p:input port="stylesheet" primary="false"/&gt;
+  &lt;p:input port="parameters" primary="true"/&gt;
+  &lt;p:output port="result" primary="true"/&gt;
+  &lt;p:output port="report" sequence="true"/&gt;
+  &lt;p:option name="debug" select="'no'"/&gt;
+  &lt;p:option name="debug-dir-uri" select="'debug'"/&gt;
+&lt;/tr:jats2html&gt;</code></pre></div><div id="d17141e62" class="status"><h2 class="header status"></h2><p class="last-updated">GitHub sync date: 2020-06-17+02:00</p></div></div>
           
           <div class="col hide-on-small-only m3 l2">
             <div class="toc-wrapper pin-top" style="top: 0px;">
               <div style="height: 1px;">
-                <ul id="tr-toc" class="table-of-contents"><li><a href="#jats-html" class="active">jats:html</a></li><li><a href="#d17141e46"></a></li></ul>
+                <ul id="tr-toc" class="table-of-contents"><li><a href="#jats-html" class="active">jats:html</a></li><li><a href="#tr-jats2html">tr:jats2html</a></li><li><a href="#d17141e62"></a></li></ul>
               </div>
             </div>
           </div>
