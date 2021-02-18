@@ -63,7 +63,7 @@
   &lt;p:option name="hub-version" required="false" select="'1.2'"/&gt;
   &lt;p:option name="fail-on-error" required="false" select="'no'"/&gt;
   &lt;p:option name="extract-dir" required="false" select="''"/&gt;
-  &lt;p:option name="create-svg" required="false" select="'no'"/&gt;
+  &lt;p:option name="create-svg" required="false" select="'false'"/&gt;
 &lt;/docx2hub:docx2html&gt;</code></pre></div><div id="docx2hub-convert" class="section scrollspy"><h2 class="header">docx2hub:convert</h2><p>
     <p xmlns:p="http://www.w3.org/ns/xproc" xmlns:tr="http://transpect.io" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:docx2hub="http://transpect.io/docx2hub" xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main" xmlns:c="http://www.w3.org/ns/xproc-step" xmlns:j="http://marklogic.com/json" xmlns:cx="http://xmlcalabash.com/ns/extensions" xmlns:xlink="http://www.w3.org/1999/xlink">This script is used to convert docx to Hub XML. By default, the output is stored in the same directory as the input docx
       file, with the same basename. It is a library that needs other externals. For standalone operation, please check out the
@@ -104,7 +104,6 @@
   &lt;p:option name="fail-on-error" select="'no'"/&gt;
   &lt;p:option name="field-vars" select="'no'"/&gt;
   &lt;p:option name="extract-dir" select="''"/&gt;
-  &lt;p:option name="create-svg" required="false" select="'no'"/&gt;
   &lt;p:option name="discard-alternate-choices" select="'yes'"/&gt;
   &lt;p:option name="charmap-policy" select="'unicode'"/&gt;
   &lt;p:option name="mathtype2mml" required="false" select="'yes'"/&gt;
@@ -112,6 +111,7 @@
   &lt;p:option name="apply-changemarkup" required="false" select="'yes'"/&gt;
   &lt;p:option name="use-filename-from-http-response" required="false" select="'no'"/&gt;
   &lt;p:option name="check-tables" required="false" select="'no'"/&gt;
+  &lt;p:option name="create-svg" select="'true'"/&gt;
   &lt;p:option name="include-header-and-footer" required="false" select="'no'"/&gt;
   &lt;p:option name="insert-document-defaults" required="false" select="'yes'"/&gt;
   &lt;p:option name="float-nr-check-error-level" select="''"/&gt;
@@ -184,7 +184,7 @@
   &lt;p:option name="no-srcpaths-for-text-runs-threshold" select="'40000'"/&gt;
   &lt;p:option name="use-filename-from-http-response" required="false" select="'no'"/&gt;
   &lt;p:option name="insert-document-defaults" select="'yes'"/&gt;
-&lt;/docx2hub:single-tree&gt;</code></pre></div><div id="d17405e174" class="status"><h2 class="header status"></h2><p class="last-updated">GitHub sync date: 2021-02-12+01:00</p></div></div>
+&lt;/docx2hub:single-tree&gt;</code></pre></div><div id="d17405e174" class="status"><h2 class="header status"></h2><p class="last-updated">GitHub sync date: 2021-02-18+01:00</p></div></div>
           
           <div class="col hide-on-small-only m3 l2">
             <div class="toc-wrapper pin-top" style="top: 0px;">
