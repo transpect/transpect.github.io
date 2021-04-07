@@ -40,9 +40,10 @@
     folder.</p><h4>Import</h4><pre><code class="language-markup">&lt;p:import href="http://transpect.io/calabash-extensions/unzip-extension/internal-unzip-declaration.xpl"/&gt;</code></pre><h4>Synopsis</h4><pre><code class="language-markup">&lt;tr-internal:unzip xmlns:tr-internal="http://transpect.io/internal"&gt;
   &lt;p:output port="result" primary="true"/&gt;
   &lt;p:option name="zip" required="true"/&gt;
-  &lt;p:option name="dest-dir" required="true"/&gt;
+  &lt;p:option name="dest-dir" required="false"/&gt;
   &lt;p:option name="overwrite" required="false" select="'no'"/&gt;
   &lt;p:option name="file" required="false"/&gt;
+  &lt;p:option name="list-only" required="false" select="'no'"/&gt;
 &lt;/tr-internal:unzip&gt;</code></pre></div><div id="tr-unzip" class="section scrollspy"><h2 class="header">tr:unzip</h2><p>Provides an interface to tr-internal:unzip that prevents users from accidentally deleting
     precious directories and that provides a hierarchized representation of the archive contents.
     Attempts to create the hierarchized representation directly in Java from the archive member list have failed
@@ -54,10 +55,11 @@
   &lt;p:output port="result" primary="true"/&gt;
   &lt;p:output port="list-with-directories"/&gt;
   &lt;p:option name="zip" required="true"/&gt;
-  &lt;p:option name="dest-dir" required="true"/&gt;
+  &lt;p:option name="dest-dir" required="false"/&gt;
   &lt;p:option name="overwrite" select="'yes'"/&gt;
   &lt;p:option name="safe" select="'yes'"/&gt;
-&lt;/tr:unzip&gt;</code></pre></div><div id="d17468e54" class="status"><h2 class="header status"></h2><p class="last-updated">GitHub sync date: 2021-03-22+01:00</p></div></div>
+  &lt;p:option name="list-only" required="false" select="'no'"/&gt;
+&lt;/tr:unzip&gt;</code></pre></div><div id="d17468e54" class="status"><h2 class="header status"></h2><p class="last-updated">GitHub sync date: 2021-04-07+02:00</p></div></div>
           
           <div class="col hide-on-small-only m3 l2">
             <div class="toc-wrapper pin-top" style="top: 0px;">
