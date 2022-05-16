@@ -30,10 +30,12 @@
     <xsl:variable name="base" select="concat('../modules-', j:name, '.html')" as="xs:string"/>
     <!--<xsl:message select="$base"/>-->
     <xsl:variable name="catalog" select="c:files/j:json//j:item[j:path eq 'xmlcatalog/catalog.xml']/cx:document/cat:catalog" as="element(cat:catalog)?"/>
+    <xsl:variable name="module-name" select="j:name" as="xs:string"/>
+    <xsl:variable name="imported-xproc-steps" select=".//p:declare-step[@type]" as="element(p:declare-step)*"/>
     <chapter>
-      <xsl:attribute name="xml:id" select="concat('modules-', j:name)"/>
+      <xsl:attribute name="xml:id" select="concat('modules-', $module-name)"/>
       <xsl:attribute name="xml:base" select="$base"/>
-      <title><xsl:apply-templates select="j:name/node()"/></title>
+      <title><xsl:value-of select="$module-name"/></title>
       <subtitle><xsl:apply-templates select="j:description/node()"/></subtitle>
       <note>
         <title>Repository</title>
@@ -49,10 +51,13 @@
         </informaltable>
         <para><link role="btn-flat  orange lighten-4" xlink:href="{j:html_005furl}">Source ⬇</link></para>
       </note>
-      <!-- process xproc steps -->
-      <xsl:apply-templates select=".//p:declare-step">
-        <xsl:with-param name="catalog" select="$catalog"/>
-      </xsl:apply-templates>
+      <!-- process distinct xproc steps -->
+      <xsl:for-each select=" distinct-values($imported-xproc-steps/@type)">
+        <xsl:variable name="type" select="." as="xs:string"/>
+        <xsl:apply-templates select="$imported-xproc-steps[@type eq $type][1]">
+          <xsl:with-param name="catalog" select="$catalog" as="element(cat:catalog)?"/>
+        </xsl:apply-templates>  
+      </xsl:for-each>
       <section role="status">
         <title/>
         <para role="last-updated">GitHub sync date: <xsl:value-of select="current-date()"/></para>
@@ -61,7 +66,7 @@
   </xsl:template>
   
   <xsl:template match="p:declare-step">
-    <xsl:param name="catalog"/>
+    <xsl:param name="catalog" as="element(cat:catalog)?"/>
     <xsl:variable name="ns-prefix" select="replace(@type, '^(.+?):.+$', '$1')" as="xs:string"/>
     <xsl:variable name="ns-statement" select="concat('xmlns:', $ns-prefix, '=&quot;', namespace-uri-for-prefix($ns-prefix, .), '&quot;')" as="xs:string"/>
     <xsl:variable name="download-url" select="ancestor::cx:document[1]/@xml:base" as="xs:string"/>
