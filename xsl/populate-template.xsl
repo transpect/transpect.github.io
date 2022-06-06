@@ -250,7 +250,7 @@
     </table>
   </xsl:template>
   
-  <xsl:template match="dbk:tr|dbk:td|dbk:thead|dbk:tbody|dbk:tgroup|dbk:foot">
+  <xsl:template match="dbk:tr|dbk:td|dbk:th|dbk:thead|dbk:tbody|dbk:tgroup|dbk:foot">
     <xsl:element name="{local-name()}">
       <xsl:apply-templates select="@*|node()"/>
     </xsl:element>

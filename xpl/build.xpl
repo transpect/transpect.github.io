@@ -106,7 +106,7 @@
     <p:for-each>
       <p:iteration-source select="//html:html"/>
       
-      <p:store method="xhtml" include-content-type="true" omit-xml-declaration="false">
+      <p:store method="xhtml" include-content-type="true" omit-xml-declaration="false" indent="true">
         <p:with-option name="href" select="//html:html/@xml:base"/>
       </p:store>
       

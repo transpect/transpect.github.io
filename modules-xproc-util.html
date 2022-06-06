@@ -1,74 +1,256 @@
 <?xml version="1.0" encoding="UTF-8"?><html xmlns="http://www.w3.org/1999/xhtml" xml:base="../modules-xproc-util.html">
-  <head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <title>xproc-util</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    
-    <meta name="theme-color" content="#FF9800" />
-    
-    <link rel="apple-touch-icon-precomposed" href="icons/apple-touch-icon-152x152.png" />
-    <meta name="msapplication-TileImage" content="icons/mstile-144x144.png" />
-    <link rel="icon" href="icons/favicon-32x32.png" sizes="32x32" />
-    
-    <link type="text/css" rel="stylesheet" media="screen,projection" href="css/prism.css" />
-    <link type="text/css" rel="stylesheet" media="screen,projection" href="css/materialize.min.css" />
-    <link type="text/css" rel="stylesheet" media="screen,projection" href="css/le-tex.css" />
-  </head>
-  <body id="modules-xproc-util">
-    
-    <header>
-      <div class="container"><a href="#" data-activates="tr-nav" class="button-collapse top-nav circle hide-on-large-only"><i class="mdi-navigation-menu"></i></a></div>
+   
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+      
+      <title>xproc-util</title>
+      
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
       
       
-      <ul id="tr-nav" class="side-nav fixed" style="width:260px">
-        <li class="logo"><a id="logo-container" href="#" class="brand-logo"><object id="front-page-logo" type="image/svg+xml" data="icons/logo-transpect.svg">Your browser does not support SVG</object></a></li>
-        
-      <li class="naventry-1st"><a href="index.html">About</a></li><li class="naventry-1st"><a href="getting-started.html">Getting Started</a></li><li class="active no-padding"><ul class="collapsible collapsible-accordion"><li class="active naventry-1st" id="d33714e415"><a class="active collapsible-header">Modules</a><div style="display:block" class="collapsible-body"><ul><li class="naventry-2nd"><a href="modules-basex-svn-api.html">basex-svn-api</a></li><li class="naventry-2nd"><a href="modules-bits2hub.html">bits2hub</a></li><li class="naventry-2nd"><a href="modules-calabash-distro.html">calabash-distro</a></li><li class="naventry-2nd"><a href="modules-calabash-frontend.html">calabash-frontend</a></li><li class="naventry-2nd"><a href="modules-cascade.html">cascade</a></li><li class="naventry-2nd"><a href="modules-control.html">control</a></li><li class="naventry-2nd"><a href="modules-control-backend.html">control-backend</a></li><li class="naventry-2nd"><a href="modules-crossref.html">crossref</a></li><li class="naventry-2nd"><a href="modules-css-tools.html">css-tools</a></li><li class="naventry-2nd"><a href="modules-docx2hub.html">docx2hub</a></li><li class="naventry-2nd"><a href="modules-docx2hub-frontend.html">docx2hub-frontend</a></li><li class="naventry-2nd"><a href="modules-docx2jats-demo.html">docx2jats-demo</a></li><li class="naventry-2nd"><a href="modules-docx2tex.html">docx2tex</a></li><li class="naventry-2nd"><a href="modules-docx_modify-lib.html">docx_modify-lib</a></li><li class="naventry-2nd"><a href="modules-epub-font-subsetter.html">epub-font-subsetter</a></li><li class="naventry-2nd"><a href="modules-epub2hub-lib.html">epub2hub-lib</a></li><li class="naventry-2nd"><a href="modules-epubcheck-extension.html">epubcheck-extension</a></li><li class="naventry-2nd"><a href="modules-epubcheck-idpf.html">epubcheck-idpf</a></li><li class="naventry-2nd"><a href="modules-epubcheck-transpect.html">epubcheck-transpect</a></li><li class="naventry-2nd"><a href="modules-epubtools.html">epubtools</a></li><li class="naventry-2nd"><a href="modules-epubtools-frontend.html">epubtools-frontend</a></li><li class="naventry-2nd"><a href="modules-evolve-hub.html">evolve-hub</a></li><li class="naventry-2nd"><a href="modules-font-obfuscate-extension.html">font-obfuscate-extension</a></li><li class="naventry-2nd"><a href="modules-fontmaps.html">fontmaps</a></li><li class="naventry-2nd"><a href="modules-github-api.html">github-api</a></li><li class="naventry-2nd"><a href="modules-html2hub.html">html2hub</a></li><li class="naventry-2nd"><a href="modules-html2xlsx.html">html2xlsx</a></li><li class="naventry-2nd"><a href="modules-htmlreports.html">htmlreports</a></li><li class="naventry-2nd"><a href="modules-htmltables.html">htmltables</a></li><li class="naventry-2nd"><a href="modules-htmltemplates.html">htmltemplates</a></li><li class="naventry-2nd"><a href="modules-hub2bits.html">hub2bits</a></li><li class="naventry-2nd"><a href="modules-hub2dbk.html">hub2dbk</a></li><li class="naventry-2nd"><a href="modules-hub2docx-frontend.html">hub2docx-frontend</a></li><li class="naventry-2nd"><a href="modules-hub2docx-lib.html">hub2docx-lib</a></li><li class="naventry-2nd"><a href="modules-hub2html.html">hub2html</a></li><li class="naventry-2nd"><a href="modules-hub2tei.html">hub2tei</a></li><li class="naventry-2nd"><a href="modules-idml2xml.html">idml2xml</a></li><li class="naventry-2nd"><a href="modules-idml2xml-frontend.html">idml2xml-frontend</a></li><li class="naventry-2nd"><a href="modules-idml_docx-to-docbook_epub-demo.html">idml_docx-to-docbook_epub-demo</a></li><li class="naventry-2nd"><a href="modules-idmlvalidation.html">idmlvalidation</a></li><li class="naventry-2nd"><a href="modules-image-props-extension.html">image-props-extension</a></li><li class="naventry-2nd"><a href="modules-image-transform-extension.html">image-transform-extension</a></li><li class="naventry-2nd"><a href="modules-jats2html.html">jats2html</a></li><li class="naventry-2nd"><a href="modules-javascript-extension.html">javascript-extension</a></li><li class="naventry-2nd"><a href="modules-jing-trang-patch.html">jing-trang-patch</a></li><li class="naventry-2nd"><a href="modules-kindlegen-amzn.html">kindlegen-amzn</a></li><li class="naventry-2nd"><a href="modules-latex-math-images.html">latex-math-images</a></li><li class="naventry-2nd"><a href="modules-logo.html">logo</a></li><li class="naventry-2nd"><a href="modules-map-style-names.html">map-style-names</a></li><li class="naventry-2nd"><a href="modules-markdown2hub.html">markdown2hub</a></li><li class="naventry-2nd"><a href="modules-mathtype-extension.html">mathtype-extension</a></li><li class="naventry-2nd"><a href="modules-mml-normalize.html">mml-normalize</a></li><li class="naventry-2nd"><a href="modules-mml2tex.html">mml2tex</a></li><li class="naventry-2nd"><a href="modules-nlm-stylechecker.html">nlm-stylechecker</a></li><li class="naventry-2nd"><a href="modules-officeopenxml-validation.html">officeopenxml-validation</a></li><li class="naventry-2nd"><a href="modules-pdf2fxl.html">pdf2fxl</a></li><li class="naventry-2nd"><a href="modules-pygmentize-xpl.html">pygmentize-xpl</a></li><li class="naventry-2nd"><a href="modules-rng-extension.html">rng-extension</a></li><li class="naventry-2nd"><a href="modules-schema-bits.html">schema-bits</a></li><li class="naventry-2nd"><a href="modules-schema-html.html">schema-html</a></li><li class="naventry-2nd"><a href="modules-schema-jats.html">schema-jats</a></li><li class="naventry-2nd"><a href="modules-schema-onix.html">schema-onix</a></li><li class="naventry-2nd"><a href="modules-schematron.html">schematron</a></li><li class="naventry-2nd"><a href="modules-semex.html">semex</a></li><li class="naventry-2nd"><a href="modules-stylemapper-frontend.html">stylemapper-frontend</a></li><li class="naventry-2nd"><a href="modules-stylemapper-lib.html">stylemapper-lib</a></li><li class="naventry-2nd"><a href="modules-svn-extension.html">svn-extension</a></li><li class="naventry-2nd"><a href="modules-tei2bits.html">tei2bits</a></li><li class="naventry-2nd"><a href="modules-tei2html.html">tei2html</a></li><li class="naventry-2nd"><a href="modules-tei2hub.html">tei2hub</a></li><li class="naventry-2nd"><a href="modules-tokenized-to-tree.html">tokenized-to-tree</a></li><li class="naventry-2nd"><a href="modules-transpect-tex.html">transpect-tex</a></li><li class="naventry-2nd"><a href="modules-transpect.github.io.html">transpect.github.io</a></li><li class="naventry-2nd"><a href="modules-transpectdoc.html">transpectdoc</a></li><li class="naventry-2nd"><a href="modules-unwrap-mml.html">unwrap-mml</a></li><li class="naventry-2nd"><a href="modules-unzip-extension.html">unzip-extension</a></li><li class="naventry-2nd"><a href="modules-upload-webcomponent.html">upload-webcomponent</a></li><li class="naventry-2nd"><a href="modules-use-css-decorator-classes.html">use-css-decorator-classes</a></li><li class="naventry-2nd"><a href="modules-xerif.html">xerif</a></li><li class="naventry-2nd"><a href="modules-xerif-demo.html">xerif-demo</a></li><li class="naventry-2nd"><a href="modules-xlsx2html-frontend.html">xlsx2html-frontend</a></li><li class="naventry-2nd"><a href="modules-xlsx2html-lib.html">xlsx2html-lib</a></li><li class="naventry-2nd"><a href="modules-xml2idml.html">xml2idml</a></li><li class="naventry-2nd"><a href="modules-xml2tex.html">xml2tex</a></li><li class="active naventry-2nd"><a href="modules-xproc-util.html">xproc-util</a></li><li class="naventry-2nd"><a href="modules-xslt-util.html">xslt-util</a></li></ul></div></li></ul></li><li class="naventry-1st"><a href="styleguide.html">Styleguide</a></li><li class="naventry-1st"><a href="tutorial.html">Tutorials</a></li></ul>
-    </header>
-    
-    <main>
-      <div class="section orange" id="index-banner">
-        <div class="container">
-          <h1 id="tr-title" class="light header center-on-small-only white-text">xproc-util</h1>
-          <h4 id="tr-subtitle" class="light orange-text text-lighten-4 center-on-small-only">XProc utilities for transpect</h4>
-        </div>
-      </div>
-      <div class="container">
-        <div class="row">
-          
-          <div class="col s12 m9 l10" id="tr-content"><div class="card"><div class="card-content"><span class="card-title">Repository</span><table class="informaltable"><tbody><tr><td>Git URL</td><td><code class="language-markup">https://github.com/transpect/xproc-util.git</code></td></tr><tr><td>SVN URL</td><td><code class="language-markup">https://github.com/transpect/xproc-util</code></td></tr><tr><td>Base URI</td><td><code class="language-markup">http://transpect.io/xproc-util/</code></td></tr></tbody></table><p><a href="https://github.com/transpect/xproc-util" class="btn-flat  orange lighten-4">Source ⬇</a></p></div></div><div id="tr-batch-rename-files" class="section scrollspy"><h2 class="header">tr:batch-rename-files</h2><p>
-    <p xmlns:p="http://www.w3.org/ns/xproc" xmlns:cxf="http://xmlcalabash.com/ns/extensions/fileutils" xmlns:tr="http://transpect.io" xmlns:c="http://www.w3.org/ns/xproc-step" xmlns:j="http://marklogic.com/json" xmlns:cx="http://xmlcalabash.com/ns/extensions" xmlns:xlink="http://www.w3.org/1999/xlink">Renames file references in a XML document and its physical manifestations. 
-      The fileref attributes are matched by a regex pattern. The filerefs are 
-      replaced with the value of the replace option.</p>
-    <h6 xmlns:p="http://www.w3.org/ns/xproc" xmlns:cxf="http://xmlcalabash.com/ns/extensions/fileutils" xmlns:tr="http://transpect.io" xmlns:c="http://www.w3.org/ns/xproc-step" xmlns:j="http://marklogic.com/json" xmlns:cx="http://xmlcalabash.com/ns/extensions" xmlns:xlink="http://www.w3.org/1999/xlink">Example: rename file extensions</h6>
-    <pre xmlns:p="http://www.w3.org/ns/xproc" xmlns:cxf="http://xmlcalabash.com/ns/extensions/fileutils" xmlns:tr="http://transpect.io" xmlns:c="http://www.w3.org/ns/xproc-step" xmlns:j="http://marklogic.com/json" xmlns:cx="http://xmlcalabash.com/ns/extensions" xmlns:xlink="http://www.w3.org/1999/xlink"><code class="xml">
+      <meta name="theme-color" content="#FF9800" />
+      
+      
+      <link rel="apple-touch-icon-precomposed" href="icons/apple-touch-icon-152x152.png" />
+      
+      <meta name="msapplication-TileImage" content="icons/mstile-144x144.png" />
+      
+      <link rel="icon" href="icons/favicon-32x32.png" sizes="32x32" />
+      
+      
+      <link type="text/css" rel="stylesheet" media="screen,projection" href="css/prism.css" />
+      
+      <link type="text/css" rel="stylesheet" media="screen,projection" href="css/materialize.min.css" />
+      
+      <link type="text/css" rel="stylesheet" media="screen,projection" href="css/le-tex.css" />
+      </head>
+   
+   <body id="modules-xproc-util">
+      
+      
+      <header>
+         
+         <div class="container"><a href="#" data-activates="tr-nav" class="button-collapse top-nav circle hide-on-large-only"><i class="mdi-navigation-menu"></i></a></div>
+         
+         
+         
+         <ul id="tr-nav" class="side-nav fixed" style="width:260px">
+            
+            <li class="logo"><a id="logo-container" href="#" class="brand-logo"><object id="front-page-logo" type="image/svg+xml" data="icons/logo-transpect.svg">Your browser does not support SVG</object></a></li>
+            
+            
+            <li class="naventry-1st"><a href="index.html">About</a></li>
+            <li class="naventry-1st"><a href="getting-started.html">Getting Started</a></li>
+            <li class="active no-padding">
+               <ul class="collapsible collapsible-accordion">
+                  <li class="active naventry-1st" id="d33723e415"><a class="active collapsible-header">Modules</a><div style="display:block" class="collapsible-body">
+                        <ul>
+                           <li class="naventry-2nd"><a href="modules-basex-svn-api.html">basex-svn-api</a></li>
+                           <li class="naventry-2nd"><a href="modules-bits2hub.html">bits2hub</a></li>
+                           <li class="naventry-2nd"><a href="modules-calabash-distro.html">calabash-distro</a></li>
+                           <li class="naventry-2nd"><a href="modules-calabash-frontend.html">calabash-frontend</a></li>
+                           <li class="naventry-2nd"><a href="modules-cascade.html">cascade</a></li>
+                           <li class="naventry-2nd"><a href="modules-control.html">control</a></li>
+                           <li class="naventry-2nd"><a href="modules-control-backend.html">control-backend</a></li>
+                           <li class="naventry-2nd"><a href="modules-crossref.html">crossref</a></li>
+                           <li class="naventry-2nd"><a href="modules-css-tools.html">css-tools</a></li>
+                           <li class="naventry-2nd"><a href="modules-docx2hub.html">docx2hub</a></li>
+                           <li class="naventry-2nd"><a href="modules-docx2hub-frontend.html">docx2hub-frontend</a></li>
+                           <li class="naventry-2nd"><a href="modules-docx2jats-demo.html">docx2jats-demo</a></li>
+                           <li class="naventry-2nd"><a href="modules-docx2tex.html">docx2tex</a></li>
+                           <li class="naventry-2nd"><a href="modules-docx_modify-lib.html">docx_modify-lib</a></li>
+                           <li class="naventry-2nd"><a href="modules-epub-font-subsetter.html">epub-font-subsetter</a></li>
+                           <li class="naventry-2nd"><a href="modules-epub2hub-lib.html">epub2hub-lib</a></li>
+                           <li class="naventry-2nd"><a href="modules-epubcheck-extension.html">epubcheck-extension</a></li>
+                           <li class="naventry-2nd"><a href="modules-epubcheck-idpf.html">epubcheck-idpf</a></li>
+                           <li class="naventry-2nd"><a href="modules-epubcheck-transpect.html">epubcheck-transpect</a></li>
+                           <li class="naventry-2nd"><a href="modules-epubtools.html">epubtools</a></li>
+                           <li class="naventry-2nd"><a href="modules-epubtools-frontend.html">epubtools-frontend</a></li>
+                           <li class="naventry-2nd"><a href="modules-evolve-hub.html">evolve-hub</a></li>
+                           <li class="naventry-2nd"><a href="modules-font-obfuscate-extension.html">font-obfuscate-extension</a></li>
+                           <li class="naventry-2nd"><a href="modules-fontmaps.html">fontmaps</a></li>
+                           <li class="naventry-2nd"><a href="modules-github-api.html">github-api</a></li>
+                           <li class="naventry-2nd"><a href="modules-html2hub.html">html2hub</a></li>
+                           <li class="naventry-2nd"><a href="modules-html2xlsx.html">html2xlsx</a></li>
+                           <li class="naventry-2nd"><a href="modules-htmlreports.html">htmlreports</a></li>
+                           <li class="naventry-2nd"><a href="modules-htmltables.html">htmltables</a></li>
+                           <li class="naventry-2nd"><a href="modules-htmltemplates.html">htmltemplates</a></li>
+                           <li class="naventry-2nd"><a href="modules-hub2bits.html">hub2bits</a></li>
+                           <li class="naventry-2nd"><a href="modules-hub2dbk.html">hub2dbk</a></li>
+                           <li class="naventry-2nd"><a href="modules-hub2docx-frontend.html">hub2docx-frontend</a></li>
+                           <li class="naventry-2nd"><a href="modules-hub2docx-lib.html">hub2docx-lib</a></li>
+                           <li class="naventry-2nd"><a href="modules-hub2html.html">hub2html</a></li>
+                           <li class="naventry-2nd"><a href="modules-hub2tei.html">hub2tei</a></li>
+                           <li class="naventry-2nd"><a href="modules-idml2xml.html">idml2xml</a></li>
+                           <li class="naventry-2nd"><a href="modules-idml2xml-frontend.html">idml2xml-frontend</a></li>
+                           <li class="naventry-2nd"><a href="modules-idml_docx-to-docbook_epub-demo.html">idml_docx-to-docbook_epub-demo</a></li>
+                           <li class="naventry-2nd"><a href="modules-idmlvalidation.html">idmlvalidation</a></li>
+                           <li class="naventry-2nd"><a href="modules-image-props-extension.html">image-props-extension</a></li>
+                           <li class="naventry-2nd"><a href="modules-image-transform-extension.html">image-transform-extension</a></li>
+                           <li class="naventry-2nd"><a href="modules-jats2html.html">jats2html</a></li>
+                           <li class="naventry-2nd"><a href="modules-javascript-extension.html">javascript-extension</a></li>
+                           <li class="naventry-2nd"><a href="modules-jing-trang-patch.html">jing-trang-patch</a></li>
+                           <li class="naventry-2nd"><a href="modules-kindlegen-amzn.html">kindlegen-amzn</a></li>
+                           <li class="naventry-2nd"><a href="modules-latex-math-images.html">latex-math-images</a></li>
+                           <li class="naventry-2nd"><a href="modules-logo.html">logo</a></li>
+                           <li class="naventry-2nd"><a href="modules-map-style-names.html">map-style-names</a></li>
+                           <li class="naventry-2nd"><a href="modules-markdown2hub.html">markdown2hub</a></li>
+                           <li class="naventry-2nd"><a href="modules-mathtype-extension.html">mathtype-extension</a></li>
+                           <li class="naventry-2nd"><a href="modules-mml-normalize.html">mml-normalize</a></li>
+                           <li class="naventry-2nd"><a href="modules-mml2tex.html">mml2tex</a></li>
+                           <li class="naventry-2nd"><a href="modules-nlm-stylechecker.html">nlm-stylechecker</a></li>
+                           <li class="naventry-2nd"><a href="modules-officeopenxml-validation.html">officeopenxml-validation</a></li>
+                           <li class="naventry-2nd"><a href="modules-pdf2fxl.html">pdf2fxl</a></li>
+                           <li class="naventry-2nd"><a href="modules-pygmentize-xpl.html">pygmentize-xpl</a></li>
+                           <li class="naventry-2nd"><a href="modules-rng-extension.html">rng-extension</a></li>
+                           <li class="naventry-2nd"><a href="modules-schema-bits.html">schema-bits</a></li>
+                           <li class="naventry-2nd"><a href="modules-schema-html.html">schema-html</a></li>
+                           <li class="naventry-2nd"><a href="modules-schema-jats.html">schema-jats</a></li>
+                           <li class="naventry-2nd"><a href="modules-schema-onix.html">schema-onix</a></li>
+                           <li class="naventry-2nd"><a href="modules-schematron.html">schematron</a></li>
+                           <li class="naventry-2nd"><a href="modules-semex.html">semex</a></li>
+                           <li class="naventry-2nd"><a href="modules-stylemapper-frontend.html">stylemapper-frontend</a></li>
+                           <li class="naventry-2nd"><a href="modules-stylemapper-lib.html">stylemapper-lib</a></li>
+                           <li class="naventry-2nd"><a href="modules-svn-extension.html">svn-extension</a></li>
+                           <li class="naventry-2nd"><a href="modules-tei2bits.html">tei2bits</a></li>
+                           <li class="naventry-2nd"><a href="modules-tei2html.html">tei2html</a></li>
+                           <li class="naventry-2nd"><a href="modules-tei2hub.html">tei2hub</a></li>
+                           <li class="naventry-2nd"><a href="modules-tokenized-to-tree.html">tokenized-to-tree</a></li>
+                           <li class="naventry-2nd"><a href="modules-transpect-tex.html">transpect-tex</a></li>
+                           <li class="naventry-2nd"><a href="modules-transpect.github.io.html">transpect.github.io</a></li>
+                           <li class="naventry-2nd"><a href="modules-transpectdoc.html">transpectdoc</a></li>
+                           <li class="naventry-2nd"><a href="modules-unwrap-mml.html">unwrap-mml</a></li>
+                           <li class="naventry-2nd"><a href="modules-unzip-extension.html">unzip-extension</a></li>
+                           <li class="naventry-2nd"><a href="modules-upload-webcomponent.html">upload-webcomponent</a></li>
+                           <li class="naventry-2nd"><a href="modules-use-css-decorator-classes.html">use-css-decorator-classes</a></li>
+                           <li class="naventry-2nd"><a href="modules-xerif.html">xerif</a></li>
+                           <li class="naventry-2nd"><a href="modules-xerif-demo.html">xerif-demo</a></li>
+                           <li class="naventry-2nd"><a href="modules-xlsx2html-frontend.html">xlsx2html-frontend</a></li>
+                           <li class="naventry-2nd"><a href="modules-xlsx2html-lib.html">xlsx2html-lib</a></li>
+                           <li class="naventry-2nd"><a href="modules-xml2idml.html">xml2idml</a></li>
+                           <li class="naventry-2nd"><a href="modules-xml2tex.html">xml2tex</a></li>
+                           <li class="active naventry-2nd"><a href="modules-xproc-util.html">xproc-util</a></li>
+                           <li class="naventry-2nd"><a href="modules-xslt-util.html">xslt-util</a></li>
+                        </ul>
+                     </div>
+                  </li>
+               </ul>
+            </li>
+            <li class="naventry-1st"><a href="styleguide.html">Styleguide</a></li>
+            <li class="naventry-1st"><a href="tutorial.html">Tutorials</a></li>
+         </ul>
+         </header>
+      
+      
+      <main>
+         
+         <div class="section orange" id="index-banner">
+            
+            <div class="container">
+               
+               <h1 id="tr-title" class="light header center-on-small-only white-text">xproc-util</h1>
+               
+               <h4 id="tr-subtitle" class="light orange-text text-lighten-4 center-on-small-only">XProc utilities for transpect</h4>
+               </div>
+            </div>
+         
+         <div class="container">
+            
+            <div class="row">
+               
+               
+               <div class="col s12 m9 l10" id="tr-content">
+                  <div class="card">
+                     <div class="card-content"><span class="card-title">Repository</span><table class="informaltable">
+                           <tbody>
+                              <tr>
+                                 <td>Git URL</td>
+                                 <td><code class="language-markup">https://github.com/transpect/xproc-util.git</code></td>
+                              </tr>
+                              <tr>
+                                 <td>SVN URL</td>
+                                 <td><code class="language-markup">https://github.com/transpect/xproc-util</code></td>
+                              </tr>
+                              <tr>
+                                 <td>Base URI</td>
+                                 <td><code class="language-markup">http://transpect.io/xproc-util/</code></td>
+                              </tr>
+                           </tbody>
+                        </table>
+                        <p><a href="https://github.com/transpect/xproc-util" class="btn-flat  orange lighten-4">Source ⬇</a></p>
+                     </div>
+                  </div>
+                  <div id="tr-batch-rename-files" class="section scrollspy">
+                     <h2 class="header">tr:batch-rename-files</h2>
+                     <p>
+                        
+                        <p xmlns:p="http://www.w3.org/ns/xproc" xmlns:cxf="http://xmlcalabash.com/ns/extensions/fileutils" xmlns:tr="http://transpect.io" xmlns:c="http://www.w3.org/ns/xproc-step" xmlns:j="http://marklogic.com/json" xmlns:cx="http://xmlcalabash.com/ns/extensions" xmlns:xlink="http://www.w3.org/1999/xlink">Renames file references in a XML document and its physical manifestations. 
+                           The fileref attributes are matched by a regex pattern. The filerefs are 
+                           replaced with the value of the replace option.</p>
+                        
+                        <h6 xmlns:p="http://www.w3.org/ns/xproc" xmlns:cxf="http://xmlcalabash.com/ns/extensions/fileutils" xmlns:tr="http://transpect.io" xmlns:c="http://www.w3.org/ns/xproc-step" xmlns:j="http://marklogic.com/json" xmlns:cx="http://xmlcalabash.com/ns/extensions" xmlns:xlink="http://www.w3.org/1999/xlink">Example: rename file extensions</h6>
+                        
+                        <pre xmlns:p="http://www.w3.org/ns/xproc" xmlns:cxf="http://xmlcalabash.com/ns/extensions/fileutils" xmlns:tr="http://transpect.io" xmlns:c="http://www.w3.org/ns/xproc-step" xmlns:j="http://marklogic.com/json" xmlns:cx="http://xmlcalabash.com/ns/extensions" xmlns:xlink="http://www.w3.org/1999/xlink"><code class="xml">
 &lt;tr:batch-rename-files&gt;
   &lt;p:with-option name="attribute-name" select="'fileref'"/&gt;
   &lt;p:with-option name="regex-match" select="'^(.+)\.tif$'"/&gt;
   &lt;p:with-option name="regex-replace" select="'$1.jpg'"/&gt;
 &lt;/tr:batch-rename-files&gt;
     </code></pre>
-    <h6 xmlns:p="http://www.w3.org/ns/xproc" xmlns:cxf="http://xmlcalabash.com/ns/extensions/fileutils" xmlns:tr="http://transpect.io" xmlns:c="http://www.w3.org/ns/xproc-step" xmlns:j="http://marklogic.com/json" xmlns:cx="http://xmlcalabash.com/ns/extensions" xmlns:xlink="http://www.w3.org/1999/xlink">Example: replace whitespace</h6>
-    <pre xmlns:p="http://www.w3.org/ns/xproc" xmlns:cxf="http://xmlcalabash.com/ns/extensions/fileutils" xmlns:tr="http://transpect.io" xmlns:c="http://www.w3.org/ns/xproc-step" xmlns:j="http://marklogic.com/json" xmlns:cx="http://xmlcalabash.com/ns/extensions" xmlns:xlink="http://www.w3.org/1999/xlink"><code class="xml">
+                        
+                        <h6 xmlns:p="http://www.w3.org/ns/xproc" xmlns:cxf="http://xmlcalabash.com/ns/extensions/fileutils" xmlns:tr="http://transpect.io" xmlns:c="http://www.w3.org/ns/xproc-step" xmlns:j="http://marklogic.com/json" xmlns:cx="http://xmlcalabash.com/ns/extensions" xmlns:xlink="http://www.w3.org/1999/xlink">Example: replace whitespace</h6>
+                        
+                        <pre xmlns:p="http://www.w3.org/ns/xproc" xmlns:cxf="http://xmlcalabash.com/ns/extensions/fileutils" xmlns:tr="http://transpect.io" xmlns:c="http://www.w3.org/ns/xproc-step" xmlns:j="http://marklogic.com/json" xmlns:cx="http://xmlcalabash.com/ns/extensions" xmlns:xlink="http://www.w3.org/1999/xlink"><code class="xml">
 &lt;tr:batch-rename-files&gt;
   &lt;p:with-option name="attribute-name" select="'fileref'"/&gt;
   &lt;p:with-option name="regex-match" select="'\s'"/&gt;
   &lt;p:with-option name="regex-replace" select="''"/&gt;
 &lt;/tr:batch-rename-files&gt;
     </code></pre>
-  </p><h4>Import</h4><pre><code class="language-markup">&lt;p:import href="http://transpect.io/xproc-util/batch-rename-files/xpl/batch-rename-files.xpl"/&gt;</code></pre><h4>Dependencies</h4><ul><li><p><a href="modules-xslt-util.html">xslt-util</a></p></li></ul><h4>Synopsis</h4><pre><code class="language-markup">&lt;tr:batch-rename-files xmlns:tr="http://transpect.io"&gt;
+                        </p>
+                     <h4>Import</h4>
+                     <pre><code class="language-markup">&lt;p:import href="http://transpect.io/xproc-util/batch-rename-files/xpl/batch-rename-files.xpl"/&gt;</code></pre>
+                     <h4>Dependencies</h4>
+                     <ul>
+                        <li>
+                           <p><a href="modules-xslt-util.html">xslt-util</a></p>
+                        </li>
+                     </ul>
+                     <h4>Synopsis</h4>
+                     <pre><code class="language-markup">&lt;tr:batch-rename-files xmlns:tr="http://transpect.io"&gt;
   &lt;p:input port="source"/&gt;
   &lt;p:output port="result" sequence="true" primary="true"/&gt;
   &lt;p:output port="report" primary="false"/&gt;
   &lt;p:option name="attribute-name" select="'fileref'"/&gt;
   &lt;p:option name="regex-match" required="true"/&gt;
   &lt;p:option name="regex-replace" required="true"/&gt;
-&lt;/tr:batch-rename-files&gt;</code></pre></div><div id="tr-copy-files" class="section scrollspy"><h2 class="header">tr:copy-files</h2><p>The behavior can be partly overridden by using @hub:target-fileref attributes on the same element
-  as the @fileref (or whatever $fileref-attribute-name-regex matches) attribute. If @hub:target-fileref is a relative
-  URI, it will be resolved wrt $target-dir-uri. If it is an absolute URI, it will have precedence over $target-dir-uri.
-  If @hub:target-fileref is present, the original @fileref attribute will not be changed. 
-  Libraries such as hub2docx should prefer @hub:target-fileref in order to determine the location. 
-  </p><h4>Import</h4><pre><code class="language-markup">&lt;p:import href="http://transpect.io/xproc-util/copy-files/xpl/copy-files.xpl"/&gt;</code></pre><h4>Dependencies</h4><ul><li><p><a href="modules-xproc-util.html">xproc-util</a></p></li></ul><h4>Synopsis</h4><pre><code class="language-markup">&lt;tr:copy-files xmlns:tr="http://transpect.io"&gt;
+&lt;/tr:batch-rename-files&gt;</code></pre>
+                  </div>
+                  <div id="tr-copy-files" class="section scrollspy">
+                     <h2 class="header">tr:copy-files</h2>
+                     <p>The behavior can be partly overridden by using @hub:target-fileref attributes on the
+                        same element
+                        as the @fileref (or whatever $fileref-attribute-name-regex matches) attribute. If
+                        @hub:target-fileref is a relative
+                        URI, it will be resolved wrt $target-dir-uri. If it is an absolute URI, it will have
+                        precedence over $target-dir-uri.
+                        If @hub:target-fileref is present, the original @fileref attribute will not be changed.
+                        
+                        Libraries such as hub2docx should prefer @hub:target-fileref in order to determine
+                        the location. 
+                        </p>
+                     <h4>Import</h4>
+                     <pre><code class="language-markup">&lt;p:import href="http://transpect.io/xproc-util/copy-files/xpl/copy-files.xpl"/&gt;</code></pre>
+                     <h4>Dependencies</h4>
+                     <ul>
+                        <li>
+                           <p><a href="modules-xproc-util.html">xproc-util</a></p>
+                        </li>
+                     </ul>
+                     <h4>Synopsis</h4>
+                     <pre><code class="language-markup">&lt;tr:copy-files xmlns:tr="http://transpect.io"&gt;
   &lt;p:input port="source" sequence="false" primary="true"/&gt;
   &lt;p:output port="result" sequence="true" primary="true"/&gt;
   &lt;p:option name="retain-subpaths" required="false" select="'false'"/&gt;
@@ -82,10 +264,28 @@
   &lt;p:option name="debug" select="'yes'"/&gt;
   &lt;p:option name="debug-dir-uri" select="'debug'"/&gt;
   &lt;p:option name="status-dir-uri" required="false" select="'debug/status?enabled=false'"/&gt;
-&lt;/tr:copy-files&gt;</code></pre></div><div id="tr-evolve-mml" class="section scrollspy"><h2 class="header">tr:evolve-mml</h2><p>
-     This step converts mml to tex. (via https://github.com/transpect/mml2tex)
-    The mml2tex module must be available on URI http://transpect.io/mml2tex regardless of the value of the option 'type'.
-  </p><h4>Import</h4><pre><code class="language-markup">&lt;p:import href="http://transpect.io/xproc-util/evolve-mml/xpl/evolve-mml.xpl"/&gt;</code></pre><h4>Dependencies</h4><ul><li><p><a href="modules-xproc-util.html">xproc-util</a></p></li><li><p><a href="modules-mml2tex.html">mml2tex</a></p></li></ul><h4>Synopsis</h4><pre><code class="language-markup">&lt;tr:evolve-mml xmlns:tr="http://transpect.io"&gt;
+&lt;/tr:copy-files&gt;</code></pre>
+                  </div>
+                  <div id="tr-evolve-mml" class="section scrollspy">
+                     <h2 class="header">tr:evolve-mml</h2>
+                     <p>
+                        This step converts mml to tex. (via https://github.com/transpect/mml2tex)
+                        The mml2tex module must be available on URI http://transpect.io/mml2tex regardless
+                        of the value of the option 'type'.
+                        </p>
+                     <h4>Import</h4>
+                     <pre><code class="language-markup">&lt;p:import href="http://transpect.io/xproc-util/evolve-mml/xpl/evolve-mml.xpl"/&gt;</code></pre>
+                     <h4>Dependencies</h4>
+                     <ul>
+                        <li>
+                           <p><a href="modules-xproc-util.html">xproc-util</a></p>
+                        </li>
+                        <li>
+                           <p><a href="modules-mml2tex.html">mml2tex</a></p>
+                        </li>
+                     </ul>
+                     <h4>Synopsis</h4>
+                     <pre><code class="language-markup">&lt;tr:evolve-mml xmlns:tr="http://transpect.io"&gt;
   &lt;p:input port="source" primary="true"/&gt;
   &lt;p:input port="conf" primary="false"/&gt;
   &lt;p:input port="paths" sequence="true" primary="true"/&gt;
@@ -104,80 +304,174 @@
   &lt;p:option name="display-equation-table-role" required="false" select="'equation-table'"/&gt;
   &lt;p:option name="store-plain-tex" select="'false'"/&gt;
   &lt;p:option name="set-math-style" select="'no'"/&gt;
-&lt;/tr:evolve-mml&gt;</code></pre></div><div id="tr-extract-cssa-rules" class="section scrollspy"><h2 class="header">tr:extract-cssa-rules</h2><h4>Import</h4><pre><code class="language-markup">&lt;p:import href="http://transpect.io/xproc-util/extract-cssa-rules/xpl/extract-cssa-rules.xpl"/&gt;</code></pre><h4>Synopsis</h4><pre><code class="language-markup">&lt;tr:extract-cssa-rules xmlns:tr="http://transpect.io"&gt;
+&lt;/tr:evolve-mml&gt;</code></pre>
+                  </div>
+                  <div id="tr-extract-cssa-rules" class="section scrollspy">
+                     <h2 class="header">tr:extract-cssa-rules</h2>
+                     <h4>Import</h4>
+                     <pre><code class="language-markup">&lt;p:import href="http://transpect.io/xproc-util/extract-cssa-rules/xpl/extract-cssa-rules.xpl"/&gt;</code></pre>
+                     <h4>Synopsis</h4>
+                     <pre><code class="language-markup">&lt;tr:extract-cssa-rules xmlns:tr="http://transpect.io"&gt;
   &lt;p:input port="source" primary="true"/&gt;
   &lt;p:input port="previous" sequence="true"/&gt;
   &lt;p:output port="result" primary="true"/&gt;
   &lt;p:option name="only-layout-type-and-name-attributes" select="'no'"/&gt;
   &lt;p:option name="debug" required="false" select="'no'"/&gt;
   &lt;p:option name="debug-dir-uri"/&gt;
-&lt;/tr:extract-cssa-rules&gt;</code></pre></div><div id="tr-extract-from-jar" class="section scrollspy"><h2 class="header">tr:extract-from-jar</h2><p>
-    Extends the pxp:unzip step to extract files from a jar file.
-  </p><h4>Import</h4><pre><code class="language-markup">&lt;p:import href="http://transpect.io/xproc-util/extract-from-jar/xpl/extract-from-jar.xpl"/&gt;</code></pre><h4>Synopsis</h4><pre><code class="language-markup">&lt;tr:extract-from-jar xmlns:tr="http://transpect.io"&gt;
+&lt;/tr:extract-cssa-rules&gt;</code></pre>
+                  </div>
+                  <div id="tr-extract-from-jar" class="section scrollspy">
+                     <h2 class="header">tr:extract-from-jar</h2>
+                     <p>
+                        Extends the pxp:unzip step to extract files from a jar file.
+                        </p>
+                     <h4>Import</h4>
+                     <pre><code class="language-markup">&lt;p:import href="http://transpect.io/xproc-util/extract-from-jar/xpl/extract-from-jar.xpl"/&gt;</code></pre>
+                     <h4>Synopsis</h4>
+                     <pre><code class="language-markup">&lt;tr:extract-from-jar xmlns:tr="http://transpect.io"&gt;
   &lt;p:output port="result"/&gt;
   &lt;p:option name="debug" select="'no'"/&gt;
   &lt;p:option name="debug-dir-uri" select="'debug'"/&gt;
   &lt;p:option name="href" required="true"/&gt;
   &lt;p:option name="dest-dir" required="true"/&gt;
-&lt;/tr:extract-from-jar&gt;</code></pre></div><div id="tr-escape-for-uri" class="section scrollspy"><h2 class="header">tr:escape-for-uri</h2><h4>Import</h4><pre><code class="language-markup">&lt;p:import href="http://transpect.io/xproc-util/file-uri/xpl/escape-for-uri.xpl"/&gt;</code></pre><h4>Dependencies</h4><ul><li><p><a href="modules-xslt-util.html">xslt-util</a></p></li></ul><h4>Synopsis</h4><pre><code class="language-markup">&lt;tr:escape-for-uri xmlns:tr="http://transpect.io"&gt;
+&lt;/tr:extract-from-jar&gt;</code></pre>
+                  </div>
+                  <div id="tr-escape-for-uri" class="section scrollspy">
+                     <h2 class="header">tr:escape-for-uri</h2>
+                     <h4>Import</h4>
+                     <pre><code class="language-markup">&lt;p:import href="http://transpect.io/xproc-util/file-uri/xpl/escape-for-uri.xpl"/&gt;</code></pre>
+                     <h4>Dependencies</h4>
+                     <ul>
+                        <li>
+                           <p><a href="modules-xslt-util.html">xslt-util</a></p>
+                        </li>
+                     </ul>
+                     <h4>Synopsis</h4>
+                     <pre><code class="language-markup">&lt;tr:escape-for-uri xmlns:tr="http://transpect.io"&gt;
   &lt;p:output port="result" primary="true"/&gt;
   &lt;p:option name="path"/&gt;
-&lt;/tr:escape-for-uri&gt;</code></pre></div><div id="tr-file-uri" class="section scrollspy"><h2 class="header">tr:file-uri</h2><p>
-    <p xmlns:p="http://www.w3.org/ns/xproc" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:tr="http://transpect.io" xmlns:pos="http://exproc.org/proposed/steps/os" xmlns:cat="urn:oasis:names:tc:entity:xmlns:xml:catalog" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:c="http://www.w3.org/ns/xproc-step" xmlns:j="http://marklogic.com/json" xmlns:cx="http://xmlcalabash.com/ns/extensions" xmlns:xlink="http://www.w3.org/1999/xlink">This step accepts either a file system path or a URL in its 'filename' option. It will normalize them so that both a file
-      system path and a file: URL are available. If filename starts with http: or https:, the file will be retrieved and stored
-      locally. Please note that this retrieval will not work for remote directories.</p>
-    <p xmlns:p="http://www.w3.org/ns/xproc" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:tr="http://transpect.io" xmlns:pos="http://exproc.org/proposed/steps/os" xmlns:cat="urn:oasis:names:tc:entity:xmlns:xml:catalog" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:c="http://www.w3.org/ns/xproc-step" xmlns:j="http://marklogic.com/json" xmlns:cx="http://xmlcalabash.com/ns/extensions" xmlns:xlink="http://www.w3.org/1999/xlink">Its primary uses are</p>
-    <ul xmlns:p="http://www.w3.org/ns/xproc" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:tr="http://transpect.io" xmlns:pos="http://exproc.org/proposed/steps/os" xmlns:cat="urn:oasis:names:tc:entity:xmlns:xml:catalog" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:c="http://www.w3.org/ns/xproc-step" xmlns:j="http://marklogic.com/json" xmlns:cx="http://xmlcalabash.com/ns/extensions" xmlns:xlink="http://www.w3.org/1999/xlink">
-      <li>giving users the liberty to either specify a URL or an OS-specific path for input file parameters;</li>
-      <li>making XML catalog resolution available to any URI, not just when accessing resources through catalog-enabled methods
-        such as <code>doc()</code>;</li>
-      <li>if, after optional catalog resolution, the 'filename' URI is still http:/https:, <code>p:http-request</code> will be
-        used to store the file locally.</li>
-    </ul>
-    <h5 xmlns:p="http://www.w3.org/ns/xproc" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:tr="http://transpect.io" xmlns:pos="http://exproc.org/proposed/steps/os" xmlns:cat="urn:oasis:names:tc:entity:xmlns:xml:catalog" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:c="http://www.w3.org/ns/xproc-step" xmlns:j="http://marklogic.com/json" xmlns:cx="http://xmlcalabash.com/ns/extensions" xmlns:xlink="http://www.w3.org/1999/xlink">Examples for 'filename' values</h5>
-    <ul xmlns:p="http://www.w3.org/ns/xproc" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:tr="http://transpect.io" xmlns:pos="http://exproc.org/proposed/steps/os" xmlns:cat="urn:oasis:names:tc:entity:xmlns:xml:catalog" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:c="http://www.w3.org/ns/xproc-step" xmlns:j="http://marklogic.com/json" xmlns:cx="http://xmlcalabash.com/ns/extensions" xmlns:xlink="http://www.w3.org/1999/xlink">
-      <li><code>C:/temp/file.docx</code>,</li>
-      <li><code>c:\temp\file.docx</code>,</li>
-      <li><code>file:/C:/temp/file.docx</code>,</li>
-      <li><code>file:///C:/temp/file.docx</code>,</li>
-      <li><code>/tmp/file.docx</code>,</li>
-      <li><code>subdir/file.docx</code>,</li>
-      <li><code>https://github.com/me/myrepo/blob/master/file.docx?raw=true</code></li>
-    </ul>
-    <h5 xmlns:p="http://www.w3.org/ns/xproc" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:tr="http://transpect.io" xmlns:pos="http://exproc.org/proposed/steps/os" xmlns:cat="urn:oasis:names:tc:entity:xmlns:xml:catalog" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:c="http://www.w3.org/ns/xproc-step" xmlns:j="http://marklogic.com/json" xmlns:cx="http://xmlcalabash.com/ns/extensions" xmlns:xlink="http://www.w3.org/1999/xlink">Relative Paths</h5>
-    <p xmlns:p="http://www.w3.org/ns/xproc" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:tr="http://transpect.io" xmlns:pos="http://exproc.org/proposed/steps/os" xmlns:cat="urn:oasis:names:tc:entity:xmlns:xml:catalog" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:c="http://www.w3.org/ns/xproc-step" xmlns:j="http://marklogic.com/json" xmlns:cx="http://xmlcalabash.com/ns/extensions" xmlns:xlink="http://www.w3.org/1999/xlink">Relative paths will be resolved against the current working directory, which is better than the static base uri most of the
-      time but which might not always be what the user wants. It is a good idea to absolutize paths, as in 
-      <code>$(readlink -f subdir/file.docx)</code> or <code>$(cygpath -ma subdir/file.docx)</code>.</p>
-    <h5 xmlns:p="http://www.w3.org/ns/xproc" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:tr="http://transpect.io" xmlns:pos="http://exproc.org/proposed/steps/os" xmlns:cat="urn:oasis:names:tc:entity:xmlns:xml:catalog" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:c="http://www.w3.org/ns/xproc-step" xmlns:j="http://marklogic.com/json" xmlns:cx="http://xmlcalabash.com/ns/extensions" xmlns:xlink="http://www.w3.org/1999/xlink">XML Catalogs</h5>
-    <p xmlns:p="http://www.w3.org/ns/xproc" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:tr="http://transpect.io" xmlns:pos="http://exproc.org/proposed/steps/os" xmlns:cat="urn:oasis:names:tc:entity:xmlns:xml:catalog" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:c="http://www.w3.org/ns/xproc-step" xmlns:j="http://marklogic.com/json" xmlns:cx="http://xmlcalabash.com/ns/extensions" xmlns:xlink="http://www.w3.org/1999/xlink">If a catalog is provided on the catalog port and an <a href="https://github.com/transpect/xslt-util/blob/master/xslt-based-catalog-resolver/">XSLT stylesheet for catalog resolution</a> is supplied on the 
-      resolver port, http:/https: URIs will be catalog-resolved first, see below.</p>
-    <h5 xmlns:p="http://www.w3.org/ns/xproc" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:tr="http://transpect.io" xmlns:pos="http://exproc.org/proposed/steps/os" xmlns:cat="urn:oasis:names:tc:entity:xmlns:xml:catalog" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:c="http://www.w3.org/ns/xproc-step" xmlns:j="http://marklogic.com/json" xmlns:cx="http://xmlcalabash.com/ns/extensions" xmlns:xlink="http://www.w3.org/1999/xlink">Storage Location for HTTP Downloads</h5>
-    <p xmlns:p="http://www.w3.org/ns/xproc" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:tr="http://transpect.io" xmlns:pos="http://exproc.org/proposed/steps/os" xmlns:cat="urn:oasis:names:tc:entity:xmlns:xml:catalog" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:c="http://www.w3.org/ns/xproc-step" xmlns:j="http://marklogic.com/json" xmlns:cx="http://xmlcalabash.com/ns/extensions" xmlns:xlink="http://www.w3.org/1999/xlink">It is possible to specify a temporary directory in the 'tmpdir' option. By default, it will be the subdir 'tmp' of the
-      user’s home directory. The 'tmpdir' option accepts both a file: URL and an OS path, thanks to this normalization step.</p>
-    <p xmlns:p="http://www.w3.org/ns/xproc" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:tr="http://transpect.io" xmlns:pos="http://exproc.org/proposed/steps/os" xmlns:cat="urn:oasis:names:tc:entity:xmlns:xml:catalog" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:c="http://www.w3.org/ns/xproc-step" xmlns:j="http://marklogic.com/json" xmlns:cx="http://xmlcalabash.com/ns/extensions" xmlns:xlink="http://www.w3.org/1999/xlink">Please note that temporary files will not be deleted by this step.</p>
-    <h5 xmlns:p="http://www.w3.org/ns/xproc" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:tr="http://transpect.io" xmlns:pos="http://exproc.org/proposed/steps/os" xmlns:cat="urn:oasis:names:tc:entity:xmlns:xml:catalog" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:c="http://www.w3.org/ns/xproc-step" xmlns:j="http://marklogic.com/json" xmlns:cx="http://xmlcalabash.com/ns/extensions" xmlns:xlink="http://www.w3.org/1999/xlink">Unique File Names for HTTP Downloads</h5>
-    <p xmlns:p="http://www.w3.org/ns/xproc" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:tr="http://transpect.io" xmlns:pos="http://exproc.org/proposed/steps/os" xmlns:cat="urn:oasis:names:tc:entity:xmlns:xml:catalog" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:c="http://www.w3.org/ns/xproc-step" xmlns:j="http://marklogic.com/json" xmlns:cx="http://xmlcalabash.com/ns/extensions" xmlns:xlink="http://www.w3.org/1999/xlink">If the option 'make-unique' is true (which it is by default), the files that are fetched by <code>p:http-request</code>
-      will get a random string like <code>_0fa8d348</code> appended to their base name.</p>
-    <h5 xmlns:p="http://www.w3.org/ns/xproc" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:tr="http://transpect.io" xmlns:pos="http://exproc.org/proposed/steps/os" xmlns:cat="urn:oasis:names:tc:entity:xmlns:xml:catalog" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:c="http://www.w3.org/ns/xproc-step" xmlns:j="http://marklogic.com/json" xmlns:cx="http://xmlcalabash.com/ns/extensions" xmlns:xlink="http://www.w3.org/1999/xlink">Output format</h5>
-    <p xmlns:p="http://www.w3.org/ns/xproc" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:tr="http://transpect.io" xmlns:pos="http://exproc.org/proposed/steps/os" xmlns:cat="urn:oasis:names:tc:entity:xmlns:xml:catalog" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:c="http://www.w3.org/ns/xproc-step" xmlns:j="http://marklogic.com/json" xmlns:cx="http://xmlcalabash.com/ns/extensions" xmlns:xlink="http://www.w3.org/1999/xlink">The output is a <code>c:result</code> element with the following attributes:</p>
-    <dl xmlns:p="http://www.w3.org/ns/xproc" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:tr="http://transpect.io" xmlns:pos="http://exproc.org/proposed/steps/os" xmlns:cat="urn:oasis:names:tc:entity:xmlns:xml:catalog" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:c="http://www.w3.org/ns/xproc-step" xmlns:j="http://marklogic.com/json" xmlns:cx="http://xmlcalabash.com/ns/extensions" xmlns:xlink="http://www.w3.org/1999/xlink">
-      <dt><code>os-path</code></dt>
-      <dd>OS-specific path. This is always present except when there is <code>error-status</code></dd>
-      <dt><code>local-href</code></dt>
-      <dd>file: URI. This is always present except when there is <code>error-status</code></dd>
-      <dt><code>error-status</code></dt>
-      <dd>This may only happen if the 'filename' was an HTTP URI and if there was an error retrieving the resource</dd>
-      <dt><code>href</code></dt>
-      <dd>The post catalog-resolution URI of the resource (if it is an HTTP URI)</dd>
-      <dt><code>orig-href</code></dt>
-      <dd>The pre catalog-resolution URI of the resource (if different from post catalog)</dd>
-      <dt><code>lastpath</code></dt>
-      <dd>For ordinary files, the non-directory part including suffix. For directories, the last path component without trailing slash.
-      lastpath is URL-escaped, that is, it is taken from local-href.</dd>
-      <dt><code>lastpath-os</code></dt>
-      <dd>The same as <code>lastpath</code>, but without URL escaping.</dd>
-    </dl>
-  </p><h4>Import</h4><pre><code class="language-markup">&lt;p:import href="http://transpect.io/xproc-util/file-uri/xpl/file-uri.xpl"/&gt;</code></pre><h4>Dependencies</h4><ul><li><p><a href="modules-xslt-util.html">xslt-util</a></p></li></ul><h4>Synopsis</h4><pre><code class="language-markup">&lt;tr:file-uri xmlns:tr="http://transpect.io"&gt;
+&lt;/tr:escape-for-uri&gt;</code></pre>
+                  </div>
+                  <div id="tr-file-uri" class="section scrollspy">
+                     <h2 class="header">tr:file-uri</h2>
+                     <p>
+                        
+                        <p xmlns:p="http://www.w3.org/ns/xproc" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:tr="http://transpect.io" xmlns:pos="http://exproc.org/proposed/steps/os" xmlns:cat="urn:oasis:names:tc:entity:xmlns:xml:catalog" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:c="http://www.w3.org/ns/xproc-step" xmlns:j="http://marklogic.com/json" xmlns:cx="http://xmlcalabash.com/ns/extensions" xmlns:xlink="http://www.w3.org/1999/xlink">This step accepts either a file system path or a URL in its 'filename' option. It
+                           will normalize them so that both a file
+                           system path and a file: URL are available. If filename starts with http: or https:,
+                           the file will be retrieved and stored
+                           locally. Please note that this retrieval will not work for remote directories.</p>
+                        
+                        <p xmlns:p="http://www.w3.org/ns/xproc" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:tr="http://transpect.io" xmlns:pos="http://exproc.org/proposed/steps/os" xmlns:cat="urn:oasis:names:tc:entity:xmlns:xml:catalog" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:c="http://www.w3.org/ns/xproc-step" xmlns:j="http://marklogic.com/json" xmlns:cx="http://xmlcalabash.com/ns/extensions" xmlns:xlink="http://www.w3.org/1999/xlink">Its primary uses are</p>
+                        
+                        <ul xmlns:p="http://www.w3.org/ns/xproc" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:tr="http://transpect.io" xmlns:pos="http://exproc.org/proposed/steps/os" xmlns:cat="urn:oasis:names:tc:entity:xmlns:xml:catalog" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:c="http://www.w3.org/ns/xproc-step" xmlns:j="http://marklogic.com/json" xmlns:cx="http://xmlcalabash.com/ns/extensions" xmlns:xlink="http://www.w3.org/1999/xlink">
+                           
+                           <li>giving users the liberty to either specify a URL or an OS-specific path for input
+                              file parameters;</li>
+                           
+                           <li>making XML catalog resolution available to any URI, not just when accessing resources
+                              through catalog-enabled methods
+                              such as <code>doc()</code>;</li>
+                           
+                           <li>if, after optional catalog resolution, the 'filename' URI is still http:/https:, <code>p:http-request</code> will be
+                              used to store the file locally.</li>
+                           </ul>
+                        
+                        <h5 xmlns:p="http://www.w3.org/ns/xproc" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:tr="http://transpect.io" xmlns:pos="http://exproc.org/proposed/steps/os" xmlns:cat="urn:oasis:names:tc:entity:xmlns:xml:catalog" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:c="http://www.w3.org/ns/xproc-step" xmlns:j="http://marklogic.com/json" xmlns:cx="http://xmlcalabash.com/ns/extensions" xmlns:xlink="http://www.w3.org/1999/xlink">Examples for 'filename' values</h5>
+                        
+                        <ul xmlns:p="http://www.w3.org/ns/xproc" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:tr="http://transpect.io" xmlns:pos="http://exproc.org/proposed/steps/os" xmlns:cat="urn:oasis:names:tc:entity:xmlns:xml:catalog" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:c="http://www.w3.org/ns/xproc-step" xmlns:j="http://marklogic.com/json" xmlns:cx="http://xmlcalabash.com/ns/extensions" xmlns:xlink="http://www.w3.org/1999/xlink">
+                           
+                           <li><code>C:/temp/file.docx</code>,</li>
+                           
+                           <li><code>c:\temp\file.docx</code>,</li>
+                           
+                           <li><code>file:/C:/temp/file.docx</code>,</li>
+                           
+                           <li><code>file:///C:/temp/file.docx</code>,</li>
+                           
+                           <li><code>/tmp/file.docx</code>,</li>
+                           
+                           <li><code>subdir/file.docx</code>,</li>
+                           
+                           <li><code>https://github.com/me/myrepo/blob/master/file.docx?raw=true</code></li>
+                           </ul>
+                        
+                        <h5 xmlns:p="http://www.w3.org/ns/xproc" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:tr="http://transpect.io" xmlns:pos="http://exproc.org/proposed/steps/os" xmlns:cat="urn:oasis:names:tc:entity:xmlns:xml:catalog" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:c="http://www.w3.org/ns/xproc-step" xmlns:j="http://marklogic.com/json" xmlns:cx="http://xmlcalabash.com/ns/extensions" xmlns:xlink="http://www.w3.org/1999/xlink">Relative Paths</h5>
+                        
+                        <p xmlns:p="http://www.w3.org/ns/xproc" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:tr="http://transpect.io" xmlns:pos="http://exproc.org/proposed/steps/os" xmlns:cat="urn:oasis:names:tc:entity:xmlns:xml:catalog" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:c="http://www.w3.org/ns/xproc-step" xmlns:j="http://marklogic.com/json" xmlns:cx="http://xmlcalabash.com/ns/extensions" xmlns:xlink="http://www.w3.org/1999/xlink">Relative paths will be resolved against the current working directory, which is better
+                           than the static base uri most of the
+                           time but which might not always be what the user wants. It is a good idea to absolutize
+                           paths, as in 
+                           <code>$(readlink -f subdir/file.docx)</code> or <code>$(cygpath -ma subdir/file.docx)</code>.</p>
+                        
+                        <h5 xmlns:p="http://www.w3.org/ns/xproc" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:tr="http://transpect.io" xmlns:pos="http://exproc.org/proposed/steps/os" xmlns:cat="urn:oasis:names:tc:entity:xmlns:xml:catalog" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:c="http://www.w3.org/ns/xproc-step" xmlns:j="http://marklogic.com/json" xmlns:cx="http://xmlcalabash.com/ns/extensions" xmlns:xlink="http://www.w3.org/1999/xlink">XML Catalogs</h5>
+                        
+                        <p xmlns:p="http://www.w3.org/ns/xproc" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:tr="http://transpect.io" xmlns:pos="http://exproc.org/proposed/steps/os" xmlns:cat="urn:oasis:names:tc:entity:xmlns:xml:catalog" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:c="http://www.w3.org/ns/xproc-step" xmlns:j="http://marklogic.com/json" xmlns:cx="http://xmlcalabash.com/ns/extensions" xmlns:xlink="http://www.w3.org/1999/xlink">If a catalog is provided on the catalog port and an <a href="https://github.com/transpect/xslt-util/blob/master/xslt-based-catalog-resolver/">XSLT stylesheet for catalog resolution</a> is supplied on the 
+                           resolver port, http:/https: URIs will be catalog-resolved first, see below.</p>
+                        
+                        <h5 xmlns:p="http://www.w3.org/ns/xproc" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:tr="http://transpect.io" xmlns:pos="http://exproc.org/proposed/steps/os" xmlns:cat="urn:oasis:names:tc:entity:xmlns:xml:catalog" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:c="http://www.w3.org/ns/xproc-step" xmlns:j="http://marklogic.com/json" xmlns:cx="http://xmlcalabash.com/ns/extensions" xmlns:xlink="http://www.w3.org/1999/xlink">Storage Location for HTTP Downloads</h5>
+                        
+                        <p xmlns:p="http://www.w3.org/ns/xproc" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:tr="http://transpect.io" xmlns:pos="http://exproc.org/proposed/steps/os" xmlns:cat="urn:oasis:names:tc:entity:xmlns:xml:catalog" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:c="http://www.w3.org/ns/xproc-step" xmlns:j="http://marklogic.com/json" xmlns:cx="http://xmlcalabash.com/ns/extensions" xmlns:xlink="http://www.w3.org/1999/xlink">It is possible to specify a temporary directory in the 'tmpdir' option. By default,
+                           it will be the subdir 'tmp' of the
+                           user’s home directory. The 'tmpdir' option accepts both a file: URL and an OS path,
+                           thanks to this normalization step.</p>
+                        
+                        <p xmlns:p="http://www.w3.org/ns/xproc" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:tr="http://transpect.io" xmlns:pos="http://exproc.org/proposed/steps/os" xmlns:cat="urn:oasis:names:tc:entity:xmlns:xml:catalog" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:c="http://www.w3.org/ns/xproc-step" xmlns:j="http://marklogic.com/json" xmlns:cx="http://xmlcalabash.com/ns/extensions" xmlns:xlink="http://www.w3.org/1999/xlink">Please note that temporary files will not be deleted by this step.</p>
+                        
+                        <h5 xmlns:p="http://www.w3.org/ns/xproc" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:tr="http://transpect.io" xmlns:pos="http://exproc.org/proposed/steps/os" xmlns:cat="urn:oasis:names:tc:entity:xmlns:xml:catalog" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:c="http://www.w3.org/ns/xproc-step" xmlns:j="http://marklogic.com/json" xmlns:cx="http://xmlcalabash.com/ns/extensions" xmlns:xlink="http://www.w3.org/1999/xlink">Unique File Names for HTTP Downloads</h5>
+                        
+                        <p xmlns:p="http://www.w3.org/ns/xproc" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:tr="http://transpect.io" xmlns:pos="http://exproc.org/proposed/steps/os" xmlns:cat="urn:oasis:names:tc:entity:xmlns:xml:catalog" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:c="http://www.w3.org/ns/xproc-step" xmlns:j="http://marklogic.com/json" xmlns:cx="http://xmlcalabash.com/ns/extensions" xmlns:xlink="http://www.w3.org/1999/xlink">If the option 'make-unique' is true (which it is by default), the files that are fetched
+                           by <code>p:http-request</code>
+                           will get a random string like <code>_0fa8d348</code> appended to their base name.</p>
+                        
+                        <h5 xmlns:p="http://www.w3.org/ns/xproc" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:tr="http://transpect.io" xmlns:pos="http://exproc.org/proposed/steps/os" xmlns:cat="urn:oasis:names:tc:entity:xmlns:xml:catalog" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:c="http://www.w3.org/ns/xproc-step" xmlns:j="http://marklogic.com/json" xmlns:cx="http://xmlcalabash.com/ns/extensions" xmlns:xlink="http://www.w3.org/1999/xlink">Output format</h5>
+                        
+                        <p xmlns:p="http://www.w3.org/ns/xproc" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:tr="http://transpect.io" xmlns:pos="http://exproc.org/proposed/steps/os" xmlns:cat="urn:oasis:names:tc:entity:xmlns:xml:catalog" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:c="http://www.w3.org/ns/xproc-step" xmlns:j="http://marklogic.com/json" xmlns:cx="http://xmlcalabash.com/ns/extensions" xmlns:xlink="http://www.w3.org/1999/xlink">The output is a <code>c:result</code> element with the following attributes:</p>
+                        
+                        <dl xmlns:p="http://www.w3.org/ns/xproc" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:tr="http://transpect.io" xmlns:pos="http://exproc.org/proposed/steps/os" xmlns:cat="urn:oasis:names:tc:entity:xmlns:xml:catalog" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:c="http://www.w3.org/ns/xproc-step" xmlns:j="http://marklogic.com/json" xmlns:cx="http://xmlcalabash.com/ns/extensions" xmlns:xlink="http://www.w3.org/1999/xlink">
+                           
+                           <dt><code>os-path</code></dt>
+                           
+                           <dd>OS-specific path. This is always present except when there is <code>error-status</code></dd>
+                           
+                           <dt><code>local-href</code></dt>
+                           
+                           <dd>file: URI. This is always present except when there is <code>error-status</code></dd>
+                           
+                           <dt><code>error-status</code></dt>
+                           
+                           <dd>This may only happen if the 'filename' was an HTTP URI and if there was an error retrieving
+                              the resource</dd>
+                           
+                           <dt><code>href</code></dt>
+                           
+                           <dd>The post catalog-resolution URI of the resource (if it is an HTTP URI)</dd>
+                           
+                           <dt><code>orig-href</code></dt>
+                           
+                           <dd>The pre catalog-resolution URI of the resource (if different from post catalog)</dd>
+                           
+                           <dt><code>lastpath</code></dt>
+                           
+                           <dd>For ordinary files, the non-directory part including suffix. For directories, the
+                              last path component without trailing slash.
+                              lastpath is URL-escaped, that is, it is taken from local-href.</dd>
+                           
+                           <dt><code>lastpath-os</code></dt>
+                           
+                           <dd>The same as <code>lastpath</code>, but without URL escaping.</dd>
+                           </dl>
+                        </p>
+                     <h4>Import</h4>
+                     <pre><code class="language-markup">&lt;p:import href="http://transpect.io/xproc-util/file-uri/xpl/file-uri.xpl"/&gt;</code></pre>
+                     <h4>Dependencies</h4>
+                     <ul>
+                        <li>
+                           <p><a href="modules-xslt-util.html">xslt-util</a></p>
+                        </li>
+                     </ul>
+                     <h4>Synopsis</h4>
+                     <pre><code class="language-markup">&lt;tr:file-uri xmlns:tr="http://transpect.io"&gt;
   &lt;p:input port="source" primary="true"/&gt;
   &lt;p:input port="catalog"/&gt;
   &lt;p:input port="resolver"/&gt;
@@ -188,16 +482,43 @@
   &lt;p:option name="check-http" required="false" select="'true'"/&gt;
   &lt;p:option name="tmpdir" required="false" select="''"/&gt;
   &lt;p:option name="use-filename-from-http-response" required="false" select="'no'"/&gt;
-&lt;/tr:file-uri&gt;</code></pre></div><div id="tr-unescape-uri" class="section scrollspy"><h2 class="header">tr:unescape-uri</h2><h4>Import</h4><pre><code class="language-markup">&lt;p:import href="http://transpect.io/xproc-util/file-uri/xpl/unescape-for-os-path.xpl"/&gt;</code></pre><h4>Dependencies</h4><ul><li><p><a href="modules-xslt-util.html">xslt-util</a></p></li></ul><h4>Synopsis</h4><pre><code class="language-markup">&lt;tr:unescape-uri xmlns:tr="http://transpect.io"&gt;
+&lt;/tr:file-uri&gt;</code></pre>
+                  </div>
+                  <div id="tr-unescape-uri" class="section scrollspy">
+                     <h2 class="header">tr:unescape-uri</h2>
+                     <h4>Import</h4>
+                     <pre><code class="language-markup">&lt;p:import href="http://transpect.io/xproc-util/file-uri/xpl/unescape-for-os-path.xpl"/&gt;</code></pre>
+                     <h4>Dependencies</h4>
+                     <ul>
+                        <li>
+                           <p><a href="modules-xslt-util.html">xslt-util</a></p>
+                        </li>
+                     </ul>
+                     <h4>Synopsis</h4>
+                     <pre><code class="language-markup">&lt;tr:unescape-uri xmlns:tr="http://transpect.io"&gt;
   &lt;p:input port="source"/&gt;
   &lt;p:output port="result" primary="true"/&gt;
   &lt;p:option name="uri" select="''"/&gt;
   &lt;p:option name="attribute-names" select="''"/&gt;
-&lt;/tr:unescape-uri&gt;</code></pre></div><div id="tr-ghostscript" class="section scrollspy"><h2 class="header">tr:ghostscript</h2><p>
-    This is an XProc wrapper to convert PostScript to PDF 
-    utilizing GhostScript, which needs to be installed on 
-    your system.
-  </p><h4>Import</h4><pre><code class="language-markup">&lt;p:import href="http://transpect.io/xproc-util/ghostscript/xpl/ghostscript.xpl"/&gt;</code></pre><h4>Dependencies</h4><ul><li><p><a href="modules-xproc-util.html">xproc-util</a></p></li></ul><h4>Synopsis</h4><pre><code class="language-markup">&lt;tr:ghostscript xmlns:tr="http://transpect.io"&gt;
+&lt;/tr:unescape-uri&gt;</code></pre>
+                  </div>
+                  <div id="tr-ghostscript" class="section scrollspy">
+                     <h2 class="header">tr:ghostscript</h2>
+                     <p>
+                        This is an XProc wrapper to convert PostScript to PDF 
+                        utilizing GhostScript, which needs to be installed on 
+                        your system.
+                        </p>
+                     <h4>Import</h4>
+                     <pre><code class="language-markup">&lt;p:import href="http://transpect.io/xproc-util/ghostscript/xpl/ghostscript.xpl"/&gt;</code></pre>
+                     <h4>Dependencies</h4>
+                     <ul>
+                        <li>
+                           <p><a href="modules-xproc-util.html">xproc-util</a></p>
+                        </li>
+                     </ul>
+                     <h4>Synopsis</h4>
+                     <pre><code class="language-markup">&lt;tr:ghostscript xmlns:tr="http://transpect.io"&gt;
   &lt;p:output port="result" primary="true"/&gt;
   &lt;p:output port="report" sequence="true" primary="false"/&gt;
   &lt;p:option name="href" required="true"/&gt;
@@ -208,11 +529,18 @@
   &lt;p:option name="debug" select="'no'"/&gt;
   &lt;p:option name="debug-dir-uri" select="'debug'"/&gt;
   &lt;p:option name="fail-on-error" select="'true'"/&gt;
-&lt;/tr:ghostscript&gt;</code></pre></div><div id="tr-html-embed-resources" class="section scrollspy"><h2 class="header">tr:html-embed-resources</h2><p>
-    <p xmlns:p="http://www.w3.org/ns/xproc" xmlns:tr="http://transpect.io" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:svg="http://www.w3.org/2000/svg" xmlns:c="http://www.w3.org/ns/xproc-step" xmlns:j="http://marklogic.com/json" xmlns:cx="http://xmlcalabash.com/ns/extensions" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://transpect.io">This step tries to embed external resources such as images, 
-      CSS and JavaScript as data URI, as XML or as plain text into the HTML document.</p>
-    <p xmlns:p="http://www.w3.org/ns/xproc" xmlns:tr="http://transpect.io" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:svg="http://www.w3.org/2000/svg" xmlns:c="http://www.w3.org/ns/xproc-step" xmlns:j="http://marklogic.com/json" xmlns:cx="http://xmlcalabash.com/ns/extensions" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://transpect.io">Consider the example below.</p>
-    <pre xmlns:p="http://www.w3.org/ns/xproc" xmlns:tr="http://transpect.io" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:svg="http://www.w3.org/2000/svg" xmlns:c="http://www.w3.org/ns/xproc-step" xmlns:j="http://marklogic.com/json" xmlns:cx="http://xmlcalabash.com/ns/extensions" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://transpect.io">&lt;html xmlns="http://www.w3.org/1999/xhtml"&gt;
+&lt;/tr:ghostscript&gt;</code></pre>
+                  </div>
+                  <div id="tr-html-embed-resources" class="section scrollspy">
+                     <h2 class="header">tr:html-embed-resources</h2>
+                     <p>
+                        
+                        <p xmlns:p="http://www.w3.org/ns/xproc" xmlns:tr="http://transpect.io" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:svg="http://www.w3.org/2000/svg" xmlns:c="http://www.w3.org/ns/xproc-step" xmlns:j="http://marklogic.com/json" xmlns:cx="http://xmlcalabash.com/ns/extensions" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://transpect.io">This step tries to embed external resources such as images, 
+                           CSS and JavaScript as data URI, as XML or as plain text into the HTML document.</p>
+                        
+                        <p xmlns:p="http://www.w3.org/ns/xproc" xmlns:tr="http://transpect.io" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:svg="http://www.w3.org/2000/svg" xmlns:c="http://www.w3.org/ns/xproc-step" xmlns:j="http://marklogic.com/json" xmlns:cx="http://xmlcalabash.com/ns/extensions" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://transpect.io">Consider the example below.</p>
+                        
+                        <pre xmlns:p="http://www.w3.org/ns/xproc" xmlns:tr="http://transpect.io" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:svg="http://www.w3.org/2000/svg" xmlns:c="http://www.w3.org/ns/xproc-step" xmlns:j="http://marklogic.com/json" xmlns:cx="http://xmlcalabash.com/ns/extensions" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://transpect.io">&lt;html xmlns="http://www.w3.org/1999/xhtml"&gt;
   &lt;head&gt;
     &lt;title/&gt;
   &lt;/head&gt;
@@ -222,8 +550,10 @@
     &lt;/div&gt;
   &lt;/body&gt;
 &lt;/html&gt;</pre>
-    <p xmlns:p="http://www.w3.org/ns/xproc" xmlns:tr="http://transpect.io" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:svg="http://www.w3.org/2000/svg" xmlns:c="http://www.w3.org/ns/xproc-step" xmlns:j="http://marklogic.com/json" xmlns:cx="http://xmlcalabash.com/ns/extensions" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://transpect.io">After processing the HTML, the image is embedded as data URI.</p>
-    <pre xmlns:p="http://www.w3.org/ns/xproc" xmlns:tr="http://transpect.io" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:svg="http://www.w3.org/2000/svg" xmlns:c="http://www.w3.org/ns/xproc-step" xmlns:j="http://marklogic.com/json" xmlns:cx="http://xmlcalabash.com/ns/extensions" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://transpect.io">&lt;html xmlns="http://www.w3.org/1999/xhtml"&gt;
+                        
+                        <p xmlns:p="http://www.w3.org/ns/xproc" xmlns:tr="http://transpect.io" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:svg="http://www.w3.org/2000/svg" xmlns:c="http://www.w3.org/ns/xproc-step" xmlns:j="http://marklogic.com/json" xmlns:cx="http://xmlcalabash.com/ns/extensions" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://transpect.io">After processing the HTML, the image is embedded as data URI.</p>
+                        
+                        <pre xmlns:p="http://www.w3.org/ns/xproc" xmlns:tr="http://transpect.io" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:svg="http://www.w3.org/2000/svg" xmlns:c="http://www.w3.org/ns/xproc-step" xmlns:j="http://marklogic.com/json" xmlns:cx="http://xmlcalabash.com/ns/extensions" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://transpect.io">&lt;html xmlns="http://www.w3.org/1999/xhtml"&gt;
   &lt;head&gt;
     &lt;title/&gt;
   &lt;/head&gt;
@@ -250,7 +580,17 @@ YmDABwACDAAAHgABzCCyiwAAAABJRU5ErkJggg==
     &lt;/div&gt;
   &lt;/body&gt;
 &lt;/html&gt;</pre> 
-  </p><h4>Import</h4><pre><code class="language-markup">&lt;p:import href="http://transpect.io/xproc-util/html-embed-resources/xpl/html-embed-resources.xpl"/&gt;</code></pre><h4>Dependencies</h4><ul><li><p><a href="modules-xproc-util.html">xproc-util</a></p></li></ul><h4>Synopsis</h4><pre><code class="language-markup">&lt;tr:html-embed-resources xmlns:tr="http://transpect.io"&gt;
+                        </p>
+                     <h4>Import</h4>
+                     <pre><code class="language-markup">&lt;p:import href="http://transpect.io/xproc-util/html-embed-resources/xpl/html-embed-resources.xpl"/&gt;</code></pre>
+                     <h4>Dependencies</h4>
+                     <ul>
+                        <li>
+                           <p><a href="modules-xproc-util.html">xproc-util</a></p>
+                        </li>
+                     </ul>
+                     <h4>Synopsis</h4>
+                     <pre><code class="language-markup">&lt;tr:html-embed-resources xmlns:tr="http://transpect.io"&gt;
   &lt;p:input port="source" primary="true"/&gt;
   &lt;p:input port="catalog"/&gt;
   &lt;p:output port="result" primary="true"/&gt;
@@ -261,30 +601,68 @@ YmDABwACDAAAHgABzCCyiwAAAABJRU5ErkJggg==
   &lt;p:option name="unavailable-resource-message" select="'no'"/&gt;
   &lt;p:option name="debug" select="'no'"/&gt;
   &lt;p:option name="fail-on-error" select="'true'"/&gt;
-&lt;/tr:html-embed-resources&gt;</code></pre></div><div id="tr-get-data-uri" class="section scrollspy"><h2 class="header">tr:get-data-uri</h2><p>
-      This step performs a simple p:http-request and 
-      checks whether the result exceeds the limit
-      of the base64 encoded size. If this check fails,
-      the original fileref markup is reproduced.
-    </p><h4>Import</h4><pre><code class="language-markup">&lt;p:import href="http://transpect.io/xproc-util/html-embed-resources/xpl/html-embed-resources.xpl"/&gt;</code></pre><h4>Synopsis</h4><pre><code class="language-markup">&lt;tr:get-data-uri xmlns:tr="http://transpect.io"&gt;
+&lt;/tr:html-embed-resources&gt;</code></pre>
+                  </div>
+                  <div id="tr-get-data-uri" class="section scrollspy">
+                     <h2 class="header">tr:get-data-uri</h2>
+                     <p>
+                        This step performs a simple p:http-request and 
+                        checks whether the result exceeds the limit
+                        of the base64 encoded size. If this check fails,
+                        the original fileref markup is reproduced.
+                        </p>
+                     <h4>Import</h4>
+                     <pre><code class="language-markup">&lt;p:import href="http://transpect.io/xproc-util/html-embed-resources/xpl/html-embed-resources.xpl"/&gt;</code></pre>
+                     <h4>Synopsis</h4>
+                     <pre><code class="language-markup">&lt;tr:get-data-uri xmlns:tr="http://transpect.io"&gt;
   &lt;p:input port="source" primary="true"/&gt;
   &lt;p:input port="fileref" primary="false"/&gt;
   &lt;p:input port="file-uri" primary="false"/&gt;
   &lt;p:output port="result"/&gt;
   &lt;p:option name="max-base64-encoded-size-kb" select="'1000'"/&gt;
-&lt;/tr:get-data-uri&gt;</code></pre></div><div id="tr-load-html5" class="section scrollspy"><h2 class="header">tr:load-html5</h2><p>
-		<p xmlns:p="http://www.w3.org/ns/xproc" xmlns:tr="http://transpect.io" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:c="http://www.w3.org/ns/xproc-step" xmlns:j="http://marklogic.com/json" xmlns:cx="http://xmlcalabash.com/ns/extensions" xmlns:xlink="http://www.w3.org/1999/xlink">Uses validator.nu that is bundled with Calabash to parse HTML5 (both HTML and XML serializations) files.
-		The files must have a single top-level element. They don’t need to have <code>html</code> as their top-level
-		element though. <code>body</code>, <code>section</code> etc. are also acceptable.</p>
-	</p><h4>Import</h4><pre><code class="language-markup">&lt;p:import href="http://transpect.io/xproc-util/html5/xpl/load-html5.xpl"/&gt;</code></pre><h4>Dependencies</h4><ul><li><p><a href="modules-xproc-util.html">xproc-util</a></p></li></ul><h4>Synopsis</h4><pre><code class="language-markup">&lt;tr:load-html5 xmlns:tr="http://transpect.io"&gt;
+&lt;/tr:get-data-uri&gt;</code></pre>
+                  </div>
+                  <div id="tr-load-html5" class="section scrollspy">
+                     <h2 class="header">tr:load-html5</h2>
+                     <p>
+                        		
+                        <p xmlns:p="http://www.w3.org/ns/xproc" xmlns:tr="http://transpect.io" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:c="http://www.w3.org/ns/xproc-step" xmlns:j="http://marklogic.com/json" xmlns:cx="http://xmlcalabash.com/ns/extensions" xmlns:xlink="http://www.w3.org/1999/xlink">Uses validator.nu that is bundled with Calabash to parse HTML5 (both HTML and XML
+                           serializations) files.
+                           		The files must have a single top-level element. They don’t need to have <code>html</code> as their top-level
+                           		element though. <code>body</code>, <code>section</code> etc. are also acceptable.</p>
+                        	</p>
+                     <h4>Import</h4>
+                     <pre><code class="language-markup">&lt;p:import href="http://transpect.io/xproc-util/html5/xpl/load-html5.xpl"/&gt;</code></pre>
+                     <h4>Dependencies</h4>
+                     <ul>
+                        <li>
+                           <p><a href="modules-xproc-util.html">xproc-util</a></p>
+                        </li>
+                     </ul>
+                     <h4>Synopsis</h4>
+                     <pre><code class="language-markup">&lt;tr:load-html5 xmlns:tr="http://transpect.io"&gt;
   &lt;p:output port="result" primary="true"/&gt;
   &lt;p:option name="file" required="true"/&gt;
   &lt;p:option name="debug" select="'no'"/&gt;
   &lt;p:option name="debug-dir-uri" select="'debug'"/&gt;
-&lt;/tr:load-html5&gt;</code></pre></div><div id="tr-imagemagick" class="section scrollspy"><h2 class="header">tr:imagemagick</h2><p>
-    This is an XProc wrapper for ImageMagick. The ImageMagick executable 
-    needs to be installed on your system.
-  </p><h4>Import</h4><pre><code class="language-markup">&lt;p:import href="http://transpect.io/xproc-util/imagemagick/xpl/imagemagick.xpl"/&gt;</code></pre><h4>Dependencies</h4><ul><li><p><a href="modules-xproc-util.html">xproc-util</a></p></li></ul><h4>Synopsis</h4><pre><code class="language-markup">&lt;tr:imagemagick xmlns:tr="http://transpect.io"&gt;
+&lt;/tr:load-html5&gt;</code></pre>
+                  </div>
+                  <div id="tr-imagemagick" class="section scrollspy">
+                     <h2 class="header">tr:imagemagick</h2>
+                     <p>
+                        This is an XProc wrapper for ImageMagick. The ImageMagick executable 
+                        needs to be installed on your system.
+                        </p>
+                     <h4>Import</h4>
+                     <pre><code class="language-markup">&lt;p:import href="http://transpect.io/xproc-util/imagemagick/xpl/imagemagick.xpl"/&gt;</code></pre>
+                     <h4>Dependencies</h4>
+                     <ul>
+                        <li>
+                           <p><a href="modules-xproc-util.html">xproc-util</a></p>
+                        </li>
+                     </ul>
+                     <h4>Synopsis</h4>
+                     <pre><code class="language-markup">&lt;tr:imagemagick xmlns:tr="http://transpect.io"&gt;
   &lt;p:output port="result" primary="true"/&gt;
   &lt;p:output port="report" sequence="true" primary="false"/&gt;
   &lt;p:option name="href" required="true"/&gt;
@@ -296,65 +674,162 @@ YmDABwACDAAAHgABzCCyiwAAAABJRU5ErkJggg==
   &lt;p:option name="debug" select="'no'"/&gt;
   &lt;p:option name="debug-dir-uri" select="'debug'"/&gt;
   &lt;p:option name="fail-on-error" select="'false'"/&gt;
-&lt;/tr:imagemagick&gt;</code></pre></div><div id="tr-insert-srcpaths" class="section scrollspy"><h2 class="header">tr:insert-srcpaths</h2><p>
-    <p xmlns:p="http://www.w3.org/ns/xproc" xmlns:tr="http://transpect.io" xmlns:c="http://www.w3.org/ns/xproc-step" xmlns:j="http://marklogic.com/json" xmlns:cx="http://xmlcalabash.com/ns/extensions" xmlns:xlink="http://www.w3.org/1999/xlink">This step inserts the XPath location of any element as attribute.</p>
-    <p xmlns:p="http://www.w3.org/ns/xproc" xmlns:tr="http://transpect.io" xmlns:c="http://www.w3.org/ns/xproc-step" xmlns:j="http://marklogic.com/json" xmlns:cx="http://xmlcalabash.com/ns/extensions" xmlns:xlink="http://www.w3.org/1999/xlink">Consider this example:</p>
-    <pre xmlns:p="http://www.w3.org/ns/xproc" xmlns:tr="http://transpect.io" xmlns:c="http://www.w3.org/ns/xproc-step" xmlns:j="http://marklogic.com/json" xmlns:cx="http://xmlcalabash.com/ns/extensions" xmlns:xlink="http://www.w3.org/1999/xlink">&lt;root&gt;
+&lt;/tr:imagemagick&gt;</code></pre>
+                  </div>
+                  <div id="tr-insert-srcpaths" class="section scrollspy">
+                     <h2 class="header">tr:insert-srcpaths</h2>
+                     <p>
+                        
+                        <p xmlns:p="http://www.w3.org/ns/xproc" xmlns:tr="http://transpect.io" xmlns:c="http://www.w3.org/ns/xproc-step" xmlns:j="http://marklogic.com/json" xmlns:cx="http://xmlcalabash.com/ns/extensions" xmlns:xlink="http://www.w3.org/1999/xlink">This step inserts the XPath location of any element as attribute.</p>
+                        
+                        <p xmlns:p="http://www.w3.org/ns/xproc" xmlns:tr="http://transpect.io" xmlns:c="http://www.w3.org/ns/xproc-step" xmlns:j="http://marklogic.com/json" xmlns:cx="http://xmlcalabash.com/ns/extensions" xmlns:xlink="http://www.w3.org/1999/xlink">Consider this example:</p>
+                        
+                        <pre xmlns:p="http://www.w3.org/ns/xproc" xmlns:tr="http://transpect.io" xmlns:c="http://www.w3.org/ns/xproc-step" xmlns:j="http://marklogic.com/json" xmlns:cx="http://xmlcalabash.com/ns/extensions" xmlns:xlink="http://www.w3.org/1999/xlink">&lt;root&gt;
   &lt;element&gt;Text&lt;/element&gt;
 &lt;/root&gt;</pre>
-    <p xmlns:p="http://www.w3.org/ns/xproc" xmlns:tr="http://transpect.io" xmlns:c="http://www.w3.org/ns/xproc-step" xmlns:j="http://marklogic.com/json" xmlns:cx="http://xmlcalabash.com/ns/extensions" xmlns:xlink="http://www.w3.org/1999/xlink">After applying the step, each element includes a <code>srcpath</code> 
-      attribute containing its XPath location.</p>
-    <pre xmlns:p="http://www.w3.org/ns/xproc" xmlns:tr="http://transpect.io" xmlns:c="http://www.w3.org/ns/xproc-step" xmlns:j="http://marklogic.com/json" xmlns:cx="http://xmlcalabash.com/ns/extensions" xmlns:xlink="http://www.w3.org/1999/xlink">&lt;root srcpath="/root"&gt;
+                        
+                        <p xmlns:p="http://www.w3.org/ns/xproc" xmlns:tr="http://transpect.io" xmlns:c="http://www.w3.org/ns/xproc-step" xmlns:j="http://marklogic.com/json" xmlns:cx="http://xmlcalabash.com/ns/extensions" xmlns:xlink="http://www.w3.org/1999/xlink">After applying the step, each element includes a <code>srcpath</code> 
+                           attribute containing its XPath location.</p>
+                        
+                        <pre xmlns:p="http://www.w3.org/ns/xproc" xmlns:tr="http://transpect.io" xmlns:c="http://www.w3.org/ns/xproc-step" xmlns:j="http://marklogic.com/json" xmlns:cx="http://xmlcalabash.com/ns/extensions" xmlns:xlink="http://www.w3.org/1999/xlink">&lt;root srcpath="/root"&gt;
   &lt;element srcpath="/root/element"&gt;Text&lt;/element&gt;
 &lt;/root&gt;</pre>
-  </p><h4>Import</h4><pre><code class="language-markup">&lt;p:import href="http://transpect.io/xproc-util/insert-srcpaths/xpl/insert-srcpaths.xpl"/&gt;</code></pre><h4>Dependencies</h4><ul><li><p><a href="modules-xslt-util.html">xslt-util</a></p></li></ul><h4>Synopsis</h4><pre><code class="language-markup">&lt;tr:insert-srcpaths xmlns:tr="http://transpect.io"&gt;
+                        </p>
+                     <h4>Import</h4>
+                     <pre><code class="language-markup">&lt;p:import href="http://transpect.io/xproc-util/insert-srcpaths/xpl/insert-srcpaths.xpl"/&gt;</code></pre>
+                     <h4>Dependencies</h4>
+                     <ul>
+                        <li>
+                           <p><a href="modules-xslt-util.html">xslt-util</a></p>
+                        </li>
+                     </ul>
+                     <h4>Synopsis</h4>
+                     <pre><code class="language-markup">&lt;tr:insert-srcpaths xmlns:tr="http://transpect.io"&gt;
   &lt;p:input port="source"/&gt;
   &lt;p:output port="result"/&gt;
   &lt;p:option name="schematron-like-paths" select="'no'"/&gt;
   &lt;p:option name="exclude-elements" select="''"/&gt;
   &lt;p:option name="exclude-descendants" select="'yes'"/&gt;
   &lt;p:option name="prepend" select="''"/&gt;
-&lt;/tr:insert-srcpaths&gt;</code></pre></div><div id="tr-load-data" class="section scrollspy"><h2 class="header">tr:load-data</h2><p>
-    <p xmlns:p="http://www.w3.org/ns/xproc" xmlns:tr="http://transpect.io" xmlns:c="http://www.w3.org/ns/xproc-step" xmlns:j="http://marklogic.com/json" xmlns:cx="http://xmlcalabash.com/ns/extensions" xmlns:xlink="http://www.w3.org/1999/xlink">This step loads a file via http-request</p>
-  </p><h4>Import</h4><pre><code class="language-markup">&lt;p:import href="http://transpect.io/xproc-util/load/xpl/load-data.xpl"/&gt;</code></pre><h4>Dependencies</h4><ul><li><p><a href="modules-xproc-util.html">xproc-util</a></p></li></ul><h4>Synopsis</h4><pre><code class="language-markup">&lt;tr:load-data xmlns:tr="http://transpect.io"&gt;
+&lt;/tr:insert-srcpaths&gt;</code></pre>
+                  </div>
+                  <div id="tr-load-data" class="section scrollspy">
+                     <h2 class="header">tr:load-data</h2>
+                     <p>
+                        
+                        <p xmlns:p="http://www.w3.org/ns/xproc" xmlns:tr="http://transpect.io" xmlns:c="http://www.w3.org/ns/xproc-step" xmlns:j="http://marklogic.com/json" xmlns:cx="http://xmlcalabash.com/ns/extensions" xmlns:xlink="http://www.w3.org/1999/xlink">This step loads a file via http-request</p>
+                        </p>
+                     <h4>Import</h4>
+                     <pre><code class="language-markup">&lt;p:import href="http://transpect.io/xproc-util/load/xpl/load-data.xpl"/&gt;</code></pre>
+                     <h4>Dependencies</h4>
+                     <ul>
+                        <li>
+                           <p><a href="modules-xproc-util.html">xproc-util</a></p>
+                        </li>
+                     </ul>
+                     <h4>Synopsis</h4>
+                     <pre><code class="language-markup">&lt;tr:load-data xmlns:tr="http://transpect.io"&gt;
   &lt;p:output port="result" primary="true"/&gt;
   &lt;p:option name="href" required="true"/&gt;
   &lt;p:option name="content-type-override" select="''"/&gt;
   &lt;p:option name="encoding" select="'base64'"/&gt;
   &lt;p:option name="fail-on-error" select="'false'"/&gt;
-&lt;/tr:load-data&gt;</code></pre></div><div id="tr-load-html" class="section scrollspy"><h2 class="header">tr:load-html</h2><p>
-    <p xmlns:p="http://www.w3.org/ns/xproc" xmlns:tr="http://transpect.io" xmlns:c="http://www.w3.org/ns/xproc-step" xmlns:j="http://marklogic.com/json" xmlns:cx="http://xmlcalabash.com/ns/extensions" xmlns:xlink="http://www.w3.org/1999/xlink">This step implements TagSoup to load even not well-formed HTML files. To use TagSoup with 
-      Calabash, you must include the TagSoup JAR file in your Java classpath and use a Calabash configuration file.</p>
-    <pre xmlns:p="http://www.w3.org/ns/xproc" xmlns:tr="http://transpect.io" xmlns:c="http://www.w3.org/ns/xproc-step" xmlns:j="http://marklogic.com/json" xmlns:cx="http://xmlcalabash.com/ns/extensions" xmlns:xlink="http://www.w3.org/1999/xlink">
+&lt;/tr:load-data&gt;</code></pre>
+                  </div>
+                  <div id="tr-load-html" class="section scrollspy">
+                     <h2 class="header">tr:load-html</h2>
+                     <p>
+                        
+                        <p xmlns:p="http://www.w3.org/ns/xproc" xmlns:tr="http://transpect.io" xmlns:c="http://www.w3.org/ns/xproc-step" xmlns:j="http://marklogic.com/json" xmlns:cx="http://xmlcalabash.com/ns/extensions" xmlns:xlink="http://www.w3.org/1999/xlink">This step implements TagSoup to load even not well-formed HTML files. To use TagSoup
+                           with 
+                           Calabash, you must include the TagSoup JAR file in your Java classpath and use a Calabash
+                           configuration file.</p>
+                        
+                        <pre xmlns:p="http://www.w3.org/ns/xproc" xmlns:tr="http://transpect.io" xmlns:c="http://www.w3.org/ns/xproc-step" xmlns:j="http://marklogic.com/json" xmlns:cx="http://xmlcalabash.com/ns/extensions" xmlns:xlink="http://www.w3.org/1999/xlink">
       <code>
         &lt;cc:xproc-config xmlns:cc="http://xmlcalabash.com/ns/configuration" xmlns:tr="http://transpect.io"&gt;
           &lt;cc:html-parser value="tagsoup"/&gt;
         &lt;/cc:xproc-config&gt;
       </code>
     </pre>
-  </p><h4>Import</h4><pre><code class="language-markup">&lt;p:import href="http://transpect.io/xproc-util/load/xpl/load-html.xpl"/&gt;</code></pre><h4>Dependencies</h4><ul><li><p><a href="modules-xproc-util.html">xproc-util</a></p></li></ul><h4>Synopsis</h4><pre><code class="language-markup">&lt;tr:load-html xmlns:tr="http://transpect.io"&gt;
+                        </p>
+                     <h4>Import</h4>
+                     <pre><code class="language-markup">&lt;p:import href="http://transpect.io/xproc-util/load/xpl/load-html.xpl"/&gt;</code></pre>
+                     <h4>Dependencies</h4>
+                     <ul>
+                        <li>
+                           <p><a href="modules-xproc-util.html">xproc-util</a></p>
+                        </li>
+                     </ul>
+                     <h4>Synopsis</h4>
+                     <pre><code class="language-markup">&lt;tr:load-html xmlns:tr="http://transpect.io"&gt;
   &lt;p:output port="result" primary="true"/&gt;
   &lt;p:option name="href" required="true"/&gt;
   &lt;p:option name="fail-on-error" select="'false'"/&gt;
-&lt;/tr:load-html&gt;</code></pre></div><div id="tr-load-sources" class="section scrollspy"><h2 class="header">tr:load-sources</h2><p>Documents identified by their base URIs should be selected from the documents on the source port. 
-    The selected documents are then passed to the result port. If there is no matching document on the source port 
-    for a given URI, the document should instead be loaded from the location specified by the base URI.</p><h4>Import</h4><pre><code class="language-markup">&lt;p:import href="http://transpect.io/xproc-util/load/xpl/load-sources.xpl"/&gt;</code></pre><h4>Synopsis</h4><pre><code class="language-markup">&lt;tr:load-sources xmlns:tr="http://transpect.io"&gt;
+&lt;/tr:load-html&gt;</code></pre>
+                  </div>
+                  <div id="tr-load-sources" class="section scrollspy">
+                     <h2 class="header">tr:load-sources</h2>
+                     <p>Documents identified by their base URIs should be selected from the documents on the
+                        source port. 
+                        The selected documents are then passed to the result port. If there is no matching
+                        document on the source port 
+                        for a given URI, the document should instead be loaded from the location specified
+                        by the base URI.</p>
+                     <h4>Import</h4>
+                     <pre><code class="language-markup">&lt;p:import href="http://transpect.io/xproc-util/load/xpl/load-sources.xpl"/&gt;</code></pre>
+                     <h4>Synopsis</h4>
+                     <pre><code class="language-markup">&lt;tr:load-sources xmlns:tr="http://transpect.io"&gt;
   &lt;p:input port="source" sequence="true" primary="true"/&gt;
   &lt;p:output port="result" sequence="true"/&gt;
   &lt;p:option name="uris"/&gt;
-&lt;/tr:load-sources&gt;</code></pre></div><div id="tr-load" class="section scrollspy"><h2 class="header">tr:load</h2><p>
-    <p xmlns:p="http://www.w3.org/ns/xproc" xmlns:tr="http://transpect.io" xmlns:c="http://www.w3.org/ns/xproc-step" xmlns:j="http://marklogic.com/json" xmlns:cx="http://xmlcalabash.com/ns/extensions" xmlns:xlink="http://www.w3.org/1999/xlink">Replacement for <c:body>p:load</c:body>. Uses the file-uri util to load any file
-      without using resolve-uri or other inconveniend ways. A relative
-      file (param href) will be loaded relative to the current working directory. Please
-      note, there is no input port. The document is loaded via <code>href</code> option.</p>
-  </p><h4>Import</h4><pre><code class="language-markup">&lt;p:import href="http://transpect.io/xproc-util/load/xpl/load.xpl"/&gt;</code></pre><h4>Dependencies</h4><ul><li><p><a href="modules-xproc-util.html">xproc-util</a></p></li></ul><h4>Synopsis</h4><pre><code class="language-markup">&lt;tr:load xmlns:tr="http://transpect.io"&gt;
+&lt;/tr:load-sources&gt;</code></pre>
+                  </div>
+                  <div id="tr-load" class="section scrollspy">
+                     <h2 class="header">tr:load</h2>
+                     <p>
+                        
+                        <p xmlns:p="http://www.w3.org/ns/xproc" xmlns:tr="http://transpect.io" xmlns:c="http://www.w3.org/ns/xproc-step" xmlns:j="http://marklogic.com/json" xmlns:cx="http://xmlcalabash.com/ns/extensions" xmlns:xlink="http://www.w3.org/1999/xlink">Replacement for 
+                           <c:body>p:load</c:body>. Uses the file-uri util to load any file
+                           without using resolve-uri or other inconveniend ways. A relative
+                           file (param href) will be loaded relative to the current working directory. Please
+                           note, there is no input port. The document is loaded via <code>href</code> option.</p>
+                        </p>
+                     <h4>Import</h4>
+                     <pre><code class="language-markup">&lt;p:import href="http://transpect.io/xproc-util/load/xpl/load.xpl"/&gt;</code></pre>
+                     <h4>Dependencies</h4>
+                     <ul>
+                        <li>
+                           <p><a href="modules-xproc-util.html">xproc-util</a></p>
+                        </li>
+                     </ul>
+                     <h4>Synopsis</h4>
+                     <pre><code class="language-markup">&lt;tr:load xmlns:tr="http://transpect.io"&gt;
   &lt;p:output port="result" primary="true"/&gt;
   &lt;p:option name="href" required="true"/&gt;
   &lt;p:option name="dtd-validate" select="'false'"/&gt;
   &lt;p:option name="fail-on-error" select="'yes'"/&gt;
-&lt;/tr:load&gt;</code></pre></div><div id="tr-merge-hub" class="section scrollspy"><h2 class="header">tr:merge-hub</h2><p>
-		<p xmlns:p="http://www.w3.org/ns/xproc" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:dbk="http://docbook.org/ns/docbook" xmlns:css="http://www.w3.org/1996/css" xmlns:tr="http://transpect.io" xmlns:csstmp="http://transpect.io/csstmp" xmlns:c="http://www.w3.org/ns/xproc-step" xmlns:j="http://marklogic.com/json" xmlns:cx="http://xmlcalabash.com/ns/extensions" xmlns:xlink="http://www.w3.org/1999/xlink">This step expects a sequence of Hub files and merges them to one single file.</p>
-	</p><h4>Import</h4><pre><code class="language-markup">&lt;p:import href="http://transpect.io/xproc-util/merge-hub/xpl/merge-hub.xpl"/&gt;</code></pre><h4>Dependencies</h4><ul><li><p><a href="modules-xproc-util.html">xproc-util</a></p></li><li><p><a href="modules-xslt-util.html">xslt-util</a></p></li></ul><h4>Synopsis</h4><pre><code class="language-markup">&lt;tr:merge-hub xmlns:tr="http://transpect.io"&gt;
+&lt;/tr:load&gt;</code></pre>
+                  </div>
+                  <div id="tr-merge-hub" class="section scrollspy">
+                     <h2 class="header">tr:merge-hub</h2>
+                     <p>
+                        		
+                        <p xmlns:p="http://www.w3.org/ns/xproc" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:dbk="http://docbook.org/ns/docbook" xmlns:css="http://www.w3.org/1996/css" xmlns:tr="http://transpect.io" xmlns:csstmp="http://transpect.io/csstmp" xmlns:c="http://www.w3.org/ns/xproc-step" xmlns:j="http://marklogic.com/json" xmlns:cx="http://xmlcalabash.com/ns/extensions" xmlns:xlink="http://www.w3.org/1999/xlink">This step expects a sequence of Hub files and merges them to one single file.</p>
+                        	</p>
+                     <h4>Import</h4>
+                     <pre><code class="language-markup">&lt;p:import href="http://transpect.io/xproc-util/merge-hub/xpl/merge-hub.xpl"/&gt;</code></pre>
+                     <h4>Dependencies</h4>
+                     <ul>
+                        <li>
+                           <p><a href="modules-xproc-util.html">xproc-util</a></p>
+                        </li>
+                        <li>
+                           <p><a href="modules-xslt-util.html">xslt-util</a></p>
+                        </li>
+                     </ul>
+                     <h4>Synopsis</h4>
+                     <pre><code class="language-markup">&lt;tr:merge-hub xmlns:tr="http://transpect.io"&gt;
   &lt;p:input port="source" sequence="true" primary="true"/&gt;
   &lt;p:output port="result" primary="true"/&gt;
   &lt;p:output port="report"/&gt;
@@ -362,9 +837,24 @@ YmDABwACDAAAHgABzCCyiwAAAABJRU5ErkJggg==
   &lt;p:option name="debug-dir-uri" select="'debug'"/&gt;
   &lt;p:option name="move-dir-components-to-srcpath" required="false" select="0"/&gt;
   &lt;p:option name="space-separated-docVar-merge" required="false" select="''"/&gt;
-&lt;/tr:merge-hub&gt;</code></pre></div><div id="tr-params2text" class="section scrollspy"><h2 class="header">tr:params2text</h2><p>
-    <p xmlns:p="http://www.w3.org/ns/xproc" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:tr="http://transpect.io" xmlns:c="http://www.w3.org/ns/xproc-step" xmlns:j="http://marklogic.com/json" xmlns:cx="http://xmlcalabash.com/ns/extensions" xmlns:xlink="http://www.w3.org/1999/xlink">Converts a &lt;c:param-set&gt; into text (CSV or whitespace separated).</p>
-  </p><h4>Import</h4><pre><code class="language-markup">&lt;p:import href="http://transpect.io/xproc-util/params2text/xpl/params2text.xpl"/&gt;</code></pre><h4>Dependencies</h4><ul><li><p><a href="modules-xproc-util.html">xproc-util</a></p></li></ul><h4>Synopsis</h4><pre><code class="language-markup">&lt;tr:params2text xmlns:tr="http://transpect.io"&gt;
+&lt;/tr:merge-hub&gt;</code></pre>
+                  </div>
+                  <div id="tr-params2text" class="section scrollspy">
+                     <h2 class="header">tr:params2text</h2>
+                     <p>
+                        
+                        <p xmlns:p="http://www.w3.org/ns/xproc" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:tr="http://transpect.io" xmlns:c="http://www.w3.org/ns/xproc-step" xmlns:j="http://marklogic.com/json" xmlns:cx="http://xmlcalabash.com/ns/extensions" xmlns:xlink="http://www.w3.org/1999/xlink">Converts a &lt;c:param-set&gt; into text (CSV or whitespace separated).</p>
+                        </p>
+                     <h4>Import</h4>
+                     <pre><code class="language-markup">&lt;p:import href="http://transpect.io/xproc-util/params2text/xpl/params2text.xpl"/&gt;</code></pre>
+                     <h4>Dependencies</h4>
+                     <ul>
+                        <li>
+                           <p><a href="modules-xproc-util.html">xproc-util</a></p>
+                        </li>
+                     </ul>
+                     <h4>Synopsis</h4>
+                     <pre><code class="language-markup">&lt;tr:params2text xmlns:tr="http://transpect.io"&gt;
   &lt;p:input port="source" primary="true"/&gt;
   &lt;p:output port="result" primary="true"/&gt;
   &lt;p:option name="mode" select="'one-line-as-comment'"/&gt;
@@ -373,65 +863,147 @@ YmDABwACDAAAHgABzCCyiwAAAABJRU5ErkJggg==
   &lt;p:option name="separator" select="' '"/&gt;
   &lt;p:option name="debug" required="false" select="'no'"/&gt;
   &lt;p:option name="debug-dir-uri" select="'debug'"/&gt;
-&lt;/tr:params2text&gt;</code></pre></div><div id="tr-pdf-info" class="section scrollspy"><h2 class="header">tr:pdf-info</h2><p>
-    An XProc wrapper for Poppler's pdfinfo. This step 
-    needs Poppler to be installed on the system.
-  </p><h4>Import</h4><pre><code class="language-markup">&lt;p:import href="http://transpect.io/xproc-util/pdf-info/xpl/pdf-info.xpl"/&gt;</code></pre><h4>Dependencies</h4><ul><li><p><a href="modules-xproc-util.html">xproc-util</a></p></li></ul><h4>Synopsis</h4><pre><code class="language-markup">&lt;tr:pdf-info xmlns:tr="http://transpect.io"&gt;
+&lt;/tr:params2text&gt;</code></pre>
+                  </div>
+                  <div id="tr-pdf-info" class="section scrollspy">
+                     <h2 class="header">tr:pdf-info</h2>
+                     <p>
+                        An XProc wrapper for Poppler's pdfinfo. This step 
+                        needs Poppler to be installed on the system.
+                        </p>
+                     <h4>Import</h4>
+                     <pre><code class="language-markup">&lt;p:import href="http://transpect.io/xproc-util/pdf-info/xpl/pdf-info.xpl"/&gt;</code></pre>
+                     <h4>Dependencies</h4>
+                     <ul>
+                        <li>
+                           <p><a href="modules-xproc-util.html">xproc-util</a></p>
+                        </li>
+                     </ul>
+                     <h4>Synopsis</h4>
+                     <pre><code class="language-markup">&lt;tr:pdf-info xmlns:tr="http://transpect.io"&gt;
   &lt;p:output port="result" sequence="true"/&gt;
   &lt;p:option name="file" required="true"/&gt;
   &lt;p:option name="debug" select="'yes'"/&gt;
   &lt;p:option name="debug-dir-uri" select="'debug'"/&gt;
   &lt;p:option name="status-dir-uri" select="concat($debug-dir-uri, '/status')"/&gt;
-&lt;/tr:pdf-info&gt;</code></pre></div><div id="tr-re-attach-out-of-doc-PIs" class="section scrollspy"><h2 class="header">tr:re-attach-out-of-doc-PIs</h2><p>This should be the penultimate step before writing back the result document.</p><h4>Import</h4><pre><code class="language-markup">&lt;p:import href="http://transpect.io/xproc-util/re-attach-out-of-doc-PIs/xpl/re-attach-out-of-doc-PIs.xpl"/&gt;</code></pre><h4>Dependencies</h4><ul><li><p><a href="modules-xslt-util.html">xslt-util</a></p></li></ul><h4>Synopsis</h4><pre><code class="language-markup">&lt;tr:re-attach-out-of-doc-PIs xmlns:tr="http://transpect.io"&gt;
+&lt;/tr:pdf-info&gt;</code></pre>
+                  </div>
+                  <div id="tr-re-attach-out-of-doc-PIs" class="section scrollspy">
+                     <h2 class="header">tr:re-attach-out-of-doc-PIs</h2>
+                     <p>This should be the penultimate step before writing back the result document.</p>
+                     <h4>Import</h4>
+                     <pre><code class="language-markup">&lt;p:import href="http://transpect.io/xproc-util/re-attach-out-of-doc-PIs/xpl/re-attach-out-of-doc-PIs.xpl"/&gt;</code></pre>
+                     <h4>Dependencies</h4>
+                     <ul>
+                        <li>
+                           <p><a href="modules-xslt-util.html">xslt-util</a></p>
+                        </li>
+                     </ul>
+                     <h4>Synopsis</h4>
+                     <pre><code class="language-markup">&lt;tr:re-attach-out-of-doc-PIs xmlns:tr="http://transpect.io"&gt;
   &lt;p:input port="source" primary="true"/&gt;
   &lt;p:output port="result" sequence="true" primary="true"/&gt;
   &lt;p:option name="file-uri"/&gt;
   &lt;p:option name="separator" select="'
 '"/&gt;
-&lt;/tr:re-attach-out-of-doc-PIs&gt;</code></pre></div><div id="tr-recursive-directory-list" class="section scrollspy"><h2 class="header">tr:recursive-directory-list</h2><p>
-    <p xmlns:p="http://www.w3.org/ns/xproc" xmlns:cxf="http://xmlcalabash.com/ns/extensions/fileutils" xmlns:tr="http://transpect.io" xmlns:c="http://www.w3.org/ns/xproc-step" xmlns:j="http://marklogic.com/json" xmlns:cx="http://xmlcalabash.com/ns/extensions" xmlns:xlink="http://www.w3.org/1999/xlink">Copied from <a href="http://xproc.org/library/">http://xproc.org/library/recursive-directory-list.xpl</a></p>
-    <p xmlns:p="http://www.w3.org/ns/xproc" xmlns:cxf="http://xmlcalabash.com/ns/extensions/fileutils" xmlns:tr="http://transpect.io" xmlns:c="http://www.w3.org/ns/xproc-step" xmlns:j="http://marklogic.com/json" xmlns:cx="http://xmlcalabash.com/ns/extensions" xmlns:xlink="http://www.w3.org/1999/xlink">Copyright situation unclear.</p>
-    <p xmlns:p="http://www.w3.org/ns/xproc" xmlns:cxf="http://xmlcalabash.com/ns/extensions/fileutils" xmlns:tr="http://transpect.io" xmlns:c="http://www.w3.org/ns/xproc-step" xmlns:j="http://marklogic.com/json" xmlns:cx="http://xmlcalabash.com/ns/extensions" xmlns:xlink="http://www.w3.org/1999/xlink">Changed the namespace prefix from <code>l</code> to <code>tr</code> (and the namespaces accordingly).</p>
-    <p xmlns:p="http://www.w3.org/ns/xproc" xmlns:cxf="http://xmlcalabash.com/ns/extensions/fileutils" xmlns:tr="http://transpect.io" xmlns:c="http://www.w3.org/ns/xproc-step" xmlns:j="http://marklogic.com/json" xmlns:cx="http://xmlcalabash.com/ns/extensions" xmlns:xlink="http://www.w3.org/1999/xlink">Prepended a <code>cxf:info</code> step because the step would fail sometimes with Calabash 1.1.4 even if there was a try/catch around it.</p>
-    <p xmlns:p="http://www.w3.org/ns/xproc" xmlns:cxf="http://xmlcalabash.com/ns/extensions/fileutils" xmlns:tr="http://transpect.io" xmlns:c="http://www.w3.org/ns/xproc-step" xmlns:j="http://marklogic.com/json" xmlns:cx="http://xmlcalabash.com/ns/extensions" xmlns:xlink="http://www.w3.org/1999/xlink">In addition, in order to deal with a similar error, replaced <code>p:value-available()</code> with default values (empty strings) for include-filter and exclude-filter.</p>
-  </p><h4>Import</h4><pre><code class="language-markup">&lt;p:import href="http://transpect.io/xproc-util/recursive-directory-list/xpl/recursive-directory-list.xpl"/&gt;</code></pre><h4>Synopsis</h4><pre><code class="language-markup">&lt;tr:recursive-directory-list xmlns:tr="http://transpect.io"&gt;
+&lt;/tr:re-attach-out-of-doc-PIs&gt;</code></pre>
+                  </div>
+                  <div id="tr-recursive-directory-list" class="section scrollspy">
+                     <h2 class="header">tr:recursive-directory-list</h2>
+                     <p>
+                        
+                        <p xmlns:p="http://www.w3.org/ns/xproc" xmlns:cxf="http://xmlcalabash.com/ns/extensions/fileutils" xmlns:tr="http://transpect.io" xmlns:c="http://www.w3.org/ns/xproc-step" xmlns:j="http://marklogic.com/json" xmlns:cx="http://xmlcalabash.com/ns/extensions" xmlns:xlink="http://www.w3.org/1999/xlink">Copied from <a href="http://xproc.org/library/">http://xproc.org/library/recursive-directory-list.xpl</a></p>
+                        
+                        <p xmlns:p="http://www.w3.org/ns/xproc" xmlns:cxf="http://xmlcalabash.com/ns/extensions/fileutils" xmlns:tr="http://transpect.io" xmlns:c="http://www.w3.org/ns/xproc-step" xmlns:j="http://marklogic.com/json" xmlns:cx="http://xmlcalabash.com/ns/extensions" xmlns:xlink="http://www.w3.org/1999/xlink">Copyright situation unclear.</p>
+                        
+                        <p xmlns:p="http://www.w3.org/ns/xproc" xmlns:cxf="http://xmlcalabash.com/ns/extensions/fileutils" xmlns:tr="http://transpect.io" xmlns:c="http://www.w3.org/ns/xproc-step" xmlns:j="http://marklogic.com/json" xmlns:cx="http://xmlcalabash.com/ns/extensions" xmlns:xlink="http://www.w3.org/1999/xlink">Changed the namespace prefix from <code>l</code> to <code>tr</code> (and the namespaces accordingly).</p>
+                        
+                        <p xmlns:p="http://www.w3.org/ns/xproc" xmlns:cxf="http://xmlcalabash.com/ns/extensions/fileutils" xmlns:tr="http://transpect.io" xmlns:c="http://www.w3.org/ns/xproc-step" xmlns:j="http://marklogic.com/json" xmlns:cx="http://xmlcalabash.com/ns/extensions" xmlns:xlink="http://www.w3.org/1999/xlink">Prepended a <code>cxf:info</code> step because the step would fail sometimes with Calabash 1.1.4 even if there was
+                           a try/catch around it.</p>
+                        
+                        <p xmlns:p="http://www.w3.org/ns/xproc" xmlns:cxf="http://xmlcalabash.com/ns/extensions/fileutils" xmlns:tr="http://transpect.io" xmlns:c="http://www.w3.org/ns/xproc-step" xmlns:j="http://marklogic.com/json" xmlns:cx="http://xmlcalabash.com/ns/extensions" xmlns:xlink="http://www.w3.org/1999/xlink">In addition, in order to deal with a similar error, replaced <code>p:value-available()</code> with default values (empty strings) for include-filter and exclude-filter.</p>
+                        </p>
+                     <h4>Import</h4>
+                     <pre><code class="language-markup">&lt;p:import href="http://transpect.io/xproc-util/recursive-directory-list/xpl/recursive-directory-list.xpl"/&gt;</code></pre>
+                     <h4>Synopsis</h4>
+                     <pre><code class="language-markup">&lt;tr:recursive-directory-list xmlns:tr="http://transpect.io"&gt;
   &lt;p:output port="result"/&gt;
   &lt;p:option name="path" required="true"/&gt;
   &lt;p:option name="include-filter" select="''"/&gt;
   &lt;p:option name="exclude-filter" select="''"/&gt;
   &lt;p:option name="depth" select="-1"/&gt;
-&lt;/tr:recursive-directory-list&gt;</code></pre></div><div id="tr-remove-ns-decl-and-xml-base" class="section scrollspy"><h2 class="header">tr:remove-ns-decl-and-xml-base</h2><p>
-    <p xmlns:p="http://www.w3.org/ns/xproc" xmlns:tr="http://transpect.io" xmlns:c="http://www.w3.org/ns/xproc-step" xmlns:j="http://marklogic.com/json" xmlns:cx="http://xmlcalabash.com/ns/extensions" xmlns:xlink="http://www.w3.org/1999/xlink">The purpose of this identity transformation is to remove all namespace declarations. 
-      The step prevents that XProc writes all prefixes declared in the pipeline are written 
-      into the output.</p>
-  </p><h4>Import</h4><pre><code class="language-markup">&lt;p:import href="http://transpect.io/xproc-util/remove-ns-decl-and-xml-base/xpl/remove-ns-decl-and-xml-base.xpl"/&gt;</code></pre><h4>Synopsis</h4><pre><code class="language-markup">&lt;tr:remove-ns-decl-and-xml-base xmlns:tr="http://transpect.io"&gt;
+&lt;/tr:recursive-directory-list&gt;</code></pre>
+                  </div>
+                  <div id="tr-remove-ns-decl-and-xml-base" class="section scrollspy">
+                     <h2 class="header">tr:remove-ns-decl-and-xml-base</h2>
+                     <p>
+                        
+                        <p xmlns:p="http://www.w3.org/ns/xproc" xmlns:tr="http://transpect.io" xmlns:c="http://www.w3.org/ns/xproc-step" xmlns:j="http://marklogic.com/json" xmlns:cx="http://xmlcalabash.com/ns/extensions" xmlns:xlink="http://www.w3.org/1999/xlink">The purpose of this identity transformation is to remove all namespace declarations.
+                           
+                           The step prevents that XProc writes all prefixes declared in the pipeline are written
+                           
+                           into the output.</p>
+                        </p>
+                     <h4>Import</h4>
+                     <pre><code class="language-markup">&lt;p:import href="http://transpect.io/xproc-util/remove-ns-decl-and-xml-base/xpl/remove-ns-decl-and-xml-base.xpl"/&gt;</code></pre>
+                     <h4>Synopsis</h4>
+                     <pre><code class="language-markup">&lt;tr:remove-ns-decl-and-xml-base xmlns:tr="http://transpect.io"&gt;
   &lt;p:input port="source"/&gt;
   &lt;p:output port="result"/&gt;
-&lt;/tr:remove-ns-decl-and-xml-base&gt;</code></pre></div><div id="tr-resolve-params" class="section scrollspy"><h2 class="header">tr:resolve-params</h2><p>
-    <p xmlns:p="http://www.w3.org/ns/xproc" xmlns:tr="http://transpect.io" xmlns:c="http://www.w3.org/ns/xproc-step" xmlns:j="http://marklogic.com/json" xmlns:cx="http://xmlcalabash.com/ns/extensions" xmlns:xlink="http://www.w3.org/1999/xlink">This step takes a c:param-set document as input. Parameters which follow the syntax 
-      <code><b>${name}</b></code> are resolved with matching parameters from this document. For 
-      example the parameter <code>${isbn}</code> will be replaced with the <code>@value</code> 
-      of a <code>c:param</code> element which contains a matching <code>@name</code> attribute.</p>
-    <p xmlns:p="http://www.w3.org/ns/xproc" xmlns:tr="http://transpect.io" xmlns:c="http://www.w3.org/ns/xproc-step" xmlns:j="http://marklogic.com/json" xmlns:cx="http://xmlcalabash.com/ns/extensions" xmlns:xlink="http://www.w3.org/1999/xlink">Given this input document:</p>
-    <pre xmlns:p="http://www.w3.org/ns/xproc" xmlns:tr="http://transpect.io" xmlns:c="http://www.w3.org/ns/xproc-step" xmlns:j="http://marklogic.com/json" xmlns:cx="http://xmlcalabash.com/ns/extensions" xmlns:xlink="http://www.w3.org/1999/xlink"><code>&lt;c:param-set xmlns:c="http://www.w3.org/ns/xproc-step"&gt;
+&lt;/tr:remove-ns-decl-and-xml-base&gt;</code></pre>
+                  </div>
+                  <div id="tr-resolve-params" class="section scrollspy">
+                     <h2 class="header">tr:resolve-params</h2>
+                     <p>
+                        
+                        <p xmlns:p="http://www.w3.org/ns/xproc" xmlns:tr="http://transpect.io" xmlns:c="http://www.w3.org/ns/xproc-step" xmlns:j="http://marklogic.com/json" xmlns:cx="http://xmlcalabash.com/ns/extensions" xmlns:xlink="http://www.w3.org/1999/xlink">This step takes a c:param-set document as input. Parameters which follow the syntax
+                           
+                           <code><b>${name}</b></code> are resolved with matching parameters from this document. For 
+                           example the parameter <code>${isbn}</code> will be replaced with the <code>@value</code> 
+                           of a <code>c:param</code> element which contains a matching <code>@name</code> attribute.</p>
+                        
+                        <p xmlns:p="http://www.w3.org/ns/xproc" xmlns:tr="http://transpect.io" xmlns:c="http://www.w3.org/ns/xproc-step" xmlns:j="http://marklogic.com/json" xmlns:cx="http://xmlcalabash.com/ns/extensions" xmlns:xlink="http://www.w3.org/1999/xlink">Given this input document:</p>
+                        
+                        <pre xmlns:p="http://www.w3.org/ns/xproc" xmlns:tr="http://transpect.io" xmlns:c="http://www.w3.org/ns/xproc-step" xmlns:j="http://marklogic.com/json" xmlns:cx="http://xmlcalabash.com/ns/extensions" xmlns:xlink="http://www.w3.org/1999/xlink"><code>&lt;c:param-set xmlns:c="http://www.w3.org/ns/xproc-step"&gt;
   &lt;param name="isbn" value="(97[89]){1}\d{9}"/&gt;
   &lt;param name="epub-filename" value="<b>{$isbn}</b>\.epub"/&gt;
 &lt;/c:param-set&gt;</code></pre>
-    <p xmlns:p="http://www.w3.org/ns/xproc" xmlns:tr="http://transpect.io" xmlns:c="http://www.w3.org/ns/xproc-step" xmlns:j="http://marklogic.com/json" xmlns:cx="http://xmlcalabash.com/ns/extensions" xmlns:xlink="http://www.w3.org/1999/xlink">This step would resolve the isbn parameter in <code>c:param[@name eq 'epub-filename']</code> 
-      and generates this output:</p>
-    <pre xmlns:p="http://www.w3.org/ns/xproc" xmlns:tr="http://transpect.io" xmlns:c="http://www.w3.org/ns/xproc-step" xmlns:j="http://marklogic.com/json" xmlns:cx="http://xmlcalabash.com/ns/extensions" xmlns:xlink="http://www.w3.org/1999/xlink"><code>&lt;c:param-set xmlns:c="http://www.w3.org/ns/xproc-step"&gt;
+                        
+                        <p xmlns:p="http://www.w3.org/ns/xproc" xmlns:tr="http://transpect.io" xmlns:c="http://www.w3.org/ns/xproc-step" xmlns:j="http://marklogic.com/json" xmlns:cx="http://xmlcalabash.com/ns/extensions" xmlns:xlink="http://www.w3.org/1999/xlink">This step would resolve the isbn parameter in <code>c:param[@name eq 'epub-filename']</code> 
+                           and generates this output:</p>
+                        
+                        <pre xmlns:p="http://www.w3.org/ns/xproc" xmlns:tr="http://transpect.io" xmlns:c="http://www.w3.org/ns/xproc-step" xmlns:j="http://marklogic.com/json" xmlns:cx="http://xmlcalabash.com/ns/extensions" xmlns:xlink="http://www.w3.org/1999/xlink"><code>&lt;c:param-set xmlns:c="http://www.w3.org/ns/xproc-step"&gt;
   &lt;param name="isbn" value="(97[89]){1}\d{9}"/&gt;
   &lt;param name="epub-filename" value="<b>(97[89]){1}\d{9}</b>\.epub"/&gt;
 &lt;/c:param-set&gt;</code></pre>
-  </p><h4>Import</h4><pre><code class="language-markup">&lt;p:import href="http://transpect.io/xproc-util/resolve-params/xpl/resolve-params.xpl"/&gt;</code></pre><h4>Dependencies</h4><ul><li><p><a href="modules-xslt-util.html">xslt-util</a></p></li></ul><h4>Synopsis</h4><pre><code class="language-markup">&lt;tr:resolve-params xmlns:tr="http://transpect.io"&gt;
+                        </p>
+                     <h4>Import</h4>
+                     <pre><code class="language-markup">&lt;p:import href="http://transpect.io/xproc-util/resolve-params/xpl/resolve-params.xpl"/&gt;</code></pre>
+                     <h4>Dependencies</h4>
+                     <ul>
+                        <li>
+                           <p><a href="modules-xslt-util.html">xslt-util</a></p>
+                        </li>
+                     </ul>
+                     <h4>Synopsis</h4>
+                     <pre><code class="language-markup">&lt;tr:resolve-params xmlns:tr="http://transpect.io"&gt;
   &lt;p:input port="source"/&gt;
   &lt;p:output port="result"/&gt;
-&lt;/tr:resolve-params&gt;</code></pre></div><div id="tr-mailing" class="section scrollspy"><h2 class="header">tr:mailing</h2><p>
-    Creates XML messages as expected by cx:send-mail step. 
-    There are two possibilities to include attachments: 
-    1. Use the input port="attachments" for XML files.
-    2. Provide a whitespace separated list of file URIs with option/@name=attachments. These files will be treated as binary data. 
-  </p><h4>Import</h4><pre><code class="language-markup">&lt;p:import href="http://transpect.io/xproc-util/send-mail/xpl/send-mail.xpl"/&gt;</code></pre><h4>Synopsis</h4><pre><code class="language-markup">&lt;tr:mailing xmlns:tr="http://transpect.io"&gt;
+&lt;/tr:resolve-params&gt;</code></pre>
+                  </div>
+                  <div id="tr-mailing" class="section scrollspy">
+                     <h2 class="header">tr:mailing</h2>
+                     <p>
+                        Creates XML messages as expected by cx:send-mail step. 
+                        There are two possibilities to include attachments: 
+                        1. Use the input port="attachments" for XML files.
+                        2. Provide a whitespace separated list of file URIs with option/@name=attachments.
+                        These files will be treated as binary data. 
+                        </p>
+                     <h4>Import</h4>
+                     <pre><code class="language-markup">&lt;p:import href="http://transpect.io/xproc-util/send-mail/xpl/send-mail.xpl"/&gt;</code></pre>
+                     <h4>Synopsis</h4>
+                     <pre><code class="language-markup">&lt;tr:mailing xmlns:tr="http://transpect.io"&gt;
   &lt;p:input port="attachments" sequence="true"/&gt;
   &lt;p:output port="result" sequence="true" primary="true"/&gt;
   &lt;p:option name="from" required="true"/&gt;
@@ -440,15 +1012,25 @@ YmDABwACDAAAHgABzCCyiwAAAABJRU5ErkJggg==
   &lt;p:option name="content" select="''"/&gt;
   &lt;p:option name="subject" select="'no subject'"/&gt;
   &lt;p:option name="attachments" select="''"/&gt;
-&lt;/tr:mailing&gt;</code></pre></div><div id="tr-simple-progress-msg" class="section scrollspy"><h2 class="header">tr:simple-progress-msg</h2><p>
-  		<p xmlns:p="http://www.w3.org/ns/xproc" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:pkg="http://expath.org/ns/pkg" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:epub="http://transpect.io/epubtools" xmlns:idml2xml="http://transpect.io/idml2xml" xmlns:tr="http://transpect.io" xmlns:c="http://www.w3.org/ns/xproc-step" xmlns:j="http://marklogic.com/json" xmlns:cx="http://xmlcalabash.com/ns/extensions" xmlns:xlink="http://www.w3.org/1999/xlink">This step stores status messages as plain text files and prints them to the standard output (GI 2018-09-13: The 
-  		  latter doesn’t seem to be true). The step can be used everywhere in your pipeline. The input will be simply forwarded 
-  		  to the output without any transformations.</p>
-  		<p xmlns:p="http://www.w3.org/ns/xproc" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:pkg="http://expath.org/ns/pkg" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:epub="http://transpect.io/epubtools" xmlns:idml2xml="http://transpect.io/idml2xml" xmlns:tr="http://transpect.io" xmlns:c="http://www.w3.org/ns/xproc-step" xmlns:j="http://marklogic.com/json" xmlns:cx="http://xmlcalabash.com/ns/extensions" xmlns:xlink="http://www.w3.org/1999/xlink">The input port entitled "msgs" expects a <code>c:message</code> XML document. The status messages must be wrapped 
-  		  in <code>c:message</code> elements.</p>
-  		<p xmlns:p="http://www.w3.org/ns/xproc" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:pkg="http://expath.org/ns/pkg" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:epub="http://transpect.io/epubtools" xmlns:idml2xml="http://transpect.io/idml2xml" xmlns:tr="http://transpect.io" xmlns:c="http://www.w3.org/ns/xproc-step" xmlns:j="http://marklogic.com/json" xmlns:cx="http://xmlcalabash.com/ns/extensions" xmlns:xlink="http://www.w3.org/1999/xlink">For localized messages, you can use multiple <code>c:message</code> elements each including a <code>xml:lang</code> 
-  		  attribute. The attribute value must be a language code according to ISO 639-1.</p>
-  		<pre xmlns:p="http://www.w3.org/ns/xproc" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:pkg="http://expath.org/ns/pkg" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:epub="http://transpect.io/epubtools" xmlns:idml2xml="http://transpect.io/idml2xml" xmlns:tr="http://transpect.io" xmlns:c="http://www.w3.org/ns/xproc-step" xmlns:j="http://marklogic.com/json" xmlns:cx="http://xmlcalabash.com/ns/extensions" xmlns:xlink="http://www.w3.org/1999/xlink"><code>&lt;tr:simple-progress-msg file="trdemo-paths.txt"&gt;
+&lt;/tr:mailing&gt;</code></pre>
+                  </div>
+                  <div id="tr-simple-progress-msg" class="section scrollspy">
+                     <h2 class="header">tr:simple-progress-msg</h2>
+                     <p>
+                        		
+                        <p xmlns:p="http://www.w3.org/ns/xproc" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:pkg="http://expath.org/ns/pkg" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:epub="http://transpect.io/epubtools" xmlns:idml2xml="http://transpect.io/idml2xml" xmlns:tr="http://transpect.io" xmlns:c="http://www.w3.org/ns/xproc-step" xmlns:j="http://marklogic.com/json" xmlns:cx="http://xmlcalabash.com/ns/extensions" xmlns:xlink="http://www.w3.org/1999/xlink">This step stores status messages as plain text files and prints them to the standard
+                           output (GI 2018-09-13: The 
+                           		  latter doesn’t seem to be true). The step can be used everywhere in your pipeline.
+                           The input will be simply forwarded 
+                           		  to the output without any transformations.</p>
+                        		
+                        <p xmlns:p="http://www.w3.org/ns/xproc" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:pkg="http://expath.org/ns/pkg" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:epub="http://transpect.io/epubtools" xmlns:idml2xml="http://transpect.io/idml2xml" xmlns:tr="http://transpect.io" xmlns:c="http://www.w3.org/ns/xproc-step" xmlns:j="http://marklogic.com/json" xmlns:cx="http://xmlcalabash.com/ns/extensions" xmlns:xlink="http://www.w3.org/1999/xlink">The input port entitled "msgs" expects a <code>c:message</code> XML document. The status messages must be wrapped 
+                           		  in <code>c:message</code> elements.</p>
+                        		
+                        <p xmlns:p="http://www.w3.org/ns/xproc" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:pkg="http://expath.org/ns/pkg" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:epub="http://transpect.io/epubtools" xmlns:idml2xml="http://transpect.io/idml2xml" xmlns:tr="http://transpect.io" xmlns:c="http://www.w3.org/ns/xproc-step" xmlns:j="http://marklogic.com/json" xmlns:cx="http://xmlcalabash.com/ns/extensions" xmlns:xlink="http://www.w3.org/1999/xlink">For localized messages, you can use multiple <code>c:message</code> elements each including a <code>xml:lang</code> 
+                           		  attribute. The attribute value must be a language code according to ISO 639-1.</p>
+                        		
+                        <pre xmlns:p="http://www.w3.org/ns/xproc" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:pkg="http://expath.org/ns/pkg" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:epub="http://transpect.io/epubtools" xmlns:idml2xml="http://transpect.io/idml2xml" xmlns:tr="http://transpect.io" xmlns:c="http://www.w3.org/ns/xproc-step" xmlns:j="http://marklogic.com/json" xmlns:cx="http://xmlcalabash.com/ns/extensions" xmlns:xlink="http://www.w3.org/1999/xlink"><code>&lt;tr:simple-progress-msg file="trdemo-paths.txt"&gt;
   &lt;p:input port="msgs"&gt;
     &lt;p:inline&gt;
       &lt;c:messages&gt;
@@ -459,18 +1041,33 @@ YmDABwACDAAAHgABzCCyiwAAAABJRU5ErkJggg==
   &lt;/p:input&gt;
   &lt;p:with-option name="status-dir-uri" select="$status-dir-uri"/&gt;
 &lt;/tr:simple-progress-msg&gt;</code></pre>
-  	  <p xmlns:p="http://www.w3.org/ns/xproc" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:pkg="http://expath.org/ns/pkg" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:epub="http://transpect.io/epubtools" xmlns:idml2xml="http://transpect.io/idml2xml" xmlns:tr="http://transpect.io" xmlns:c="http://www.w3.org/ns/xproc-step" xmlns:j="http://marklogic.com/json" xmlns:cx="http://xmlcalabash.com/ns/extensions" xmlns:xlink="http://www.w3.org/1999/xlink">Sometimes you might want to switch off storing of messages altogether. You can do this by appending
-  	  '?enabled=false' to the URI.</p>
-  	</p><h4>Import</h4><pre><code class="language-markup">&lt;p:import href="http://transpect.io/xproc-util/simple-progress-msg/xpl/simple-progress-msg.xpl"/&gt;</code></pre><h4>Synopsis</h4><pre><code class="language-markup">&lt;tr:simple-progress-msg xmlns:tr="http://transpect.io"&gt;
+                        	  
+                        <p xmlns:p="http://www.w3.org/ns/xproc" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:pkg="http://expath.org/ns/pkg" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:epub="http://transpect.io/epubtools" xmlns:idml2xml="http://transpect.io/idml2xml" xmlns:tr="http://transpect.io" xmlns:c="http://www.w3.org/ns/xproc-step" xmlns:j="http://marklogic.com/json" xmlns:cx="http://xmlcalabash.com/ns/extensions" xmlns:xlink="http://www.w3.org/1999/xlink">Sometimes you might want to switch off storing of messages altogether. You can do
+                           this by appending
+                           	  '?enabled=false' to the URI.</p>
+                        	</p>
+                     <h4>Import</h4>
+                     <pre><code class="language-markup">&lt;p:import href="http://transpect.io/xproc-util/simple-progress-msg/xpl/simple-progress-msg.xpl"/&gt;</code></pre>
+                     <h4>Synopsis</h4>
+                     <pre><code class="language-markup">&lt;tr:simple-progress-msg xmlns:tr="http://transpect.io"&gt;
   &lt;p:input port="source" sequence="true" primary="true"/&gt;
   &lt;p:input port="msgs"/&gt;
   &lt;p:output port="result" sequence="true" primary="true"/&gt;
   &lt;p:option name="file"/&gt;
   &lt;p:option name="status-dir-uri" select="'status?enabled=false'"/&gt;
-&lt;/tr:simple-progress-msg&gt;</code></pre></div><div id="tr-propagate-caught-error" class="section scrollspy"><h2 class="header">tr:propagate-caught-error</h2><p>
-      <p xmlns:p="http://www.w3.org/ns/xproc" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:pkg="http://expath.org/ns/pkg" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:epub="http://transpect.io/epubtools" xmlns:idml2xml="http://transpect.io/idml2xml" xmlns:tr="http://transpect.io" xmlns:c="http://www.w3.org/ns/xproc-step" xmlns:j="http://marklogic.com/json" xmlns:cx="http://xmlcalabash.com/ns/extensions" xmlns:xlink="http://www.w3.org/1999/xlink">This step redirects an error to a status text file and prints a <code>cx:message</code>. If option
-          <code>fail-on-error</code> is set to <code>true</code>, the error is reproduced with an attached error code.</p>
-    </p><h4>Import</h4><pre><code class="language-markup">&lt;p:import href="http://transpect.io/xproc-util/simple-progress-msg/xpl/simple-progress-msg.xpl"/&gt;</code></pre><h4>Synopsis</h4><pre><code class="language-markup">&lt;tr:propagate-caught-error xmlns:tr="http://transpect.io"&gt;
+&lt;/tr:simple-progress-msg&gt;</code></pre>
+                  </div>
+                  <div id="tr-propagate-caught-error" class="section scrollspy">
+                     <h2 class="header">tr:propagate-caught-error</h2>
+                     <p>
+                        
+                        <p xmlns:p="http://www.w3.org/ns/xproc" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:pkg="http://expath.org/ns/pkg" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:epub="http://transpect.io/epubtools" xmlns:idml2xml="http://transpect.io/idml2xml" xmlns:tr="http://transpect.io" xmlns:c="http://www.w3.org/ns/xproc-step" xmlns:j="http://marklogic.com/json" xmlns:cx="http://xmlcalabash.com/ns/extensions" xmlns:xlink="http://www.w3.org/1999/xlink">This step redirects an error to a status text file and prints a <code>cx:message</code>. If option
+                           <code>fail-on-error</code> is set to <code>true</code>, the error is reproduced with an attached error code.</p>
+                        </p>
+                     <h4>Import</h4>
+                     <pre><code class="language-markup">&lt;p:import href="http://transpect.io/xproc-util/simple-progress-msg/xpl/simple-progress-msg.xpl"/&gt;</code></pre>
+                     <h4>Synopsis</h4>
+                     <pre><code class="language-markup">&lt;tr:propagate-caught-error xmlns:tr="http://transpect.io"&gt;
   &lt;p:input port="source" primary="true"/&gt;
   &lt;p:output port="result" primary="true"/&gt;
   &lt;p:option name="fail-on-error" required="false" select="'false'"/&gt;
@@ -480,7 +1077,14 @@ YmDABwACDAAAHgABzCCyiwAAAABJRU5ErkJggg==
   &lt;p:option name="severity" required="false" select="'fatal-error'"/&gt;
   &lt;p:option name="msg-file" required="false" select="'unspecified-error.txt'"/&gt;
   &lt;p:option name="status-dir-uri" required="false" select="'debug/status?enabled=false'"/&gt;
-&lt;/tr:propagate-caught-error&gt;</code></pre></div><div id="tr-store-debug" class="section scrollspy"><h2 class="header">tr:store-debug</h2><h4>Import</h4><pre><code class="language-markup">&lt;p:import href="http://transpect.io/xproc-util/store-debug/xpl/store-debug.xpl"/&gt;</code></pre><h4>Synopsis</h4><pre><code class="language-markup">&lt;tr:store-debug xmlns:tr="http://transpect.io"&gt;
+&lt;/tr:propagate-caught-error&gt;</code></pre>
+                  </div>
+                  <div id="tr-store-debug" class="section scrollspy">
+                     <h2 class="header">tr:store-debug</h2>
+                     <h4>Import</h4>
+                     <pre><code class="language-markup">&lt;p:import href="http://transpect.io/xproc-util/store-debug/xpl/store-debug.xpl"/&gt;</code></pre>
+                     <h4>Synopsis</h4>
+                     <pre><code class="language-markup">&lt;tr:store-debug xmlns:tr="http://transpect.io"&gt;
   &lt;p:input port="source" sequence="true"/&gt;
   &lt;p:output port="result" sequence="true"/&gt;
   &lt;p:option name="active" required="false" select="'no'"/&gt;
@@ -489,7 +1093,20 @@ YmDABwACDAAAHgABzCCyiwAAAABJRU5ErkJggg==
   &lt;p:option name="base-uri" required="false" select="''"/&gt;
   &lt;p:option name="extension" required="false" select="''"/&gt;
   &lt;p:option name="indent" required="false" select="'true'"/&gt;
-&lt;/tr:store-debug&gt;</code></pre></div><div id="tr-store-zip" class="section scrollspy"><h2 class="header">tr:store-zip</h2><h4>Import</h4><pre><code class="language-markup">&lt;p:import href="http://transpect.io/xproc-util/store-zip/xpl/store-zip.xpl"/&gt;</code></pre><h4>Dependencies</h4><ul><li><p><a href="modules-xproc-util.html">xproc-util</a></p></li></ul><h4>Synopsis</h4><pre><code class="language-markup">&lt;tr:store-zip xmlns:tr="http://transpect.io"&gt;
+&lt;/tr:store-debug&gt;</code></pre>
+                  </div>
+                  <div id="tr-store-zip" class="section scrollspy">
+                     <h2 class="header">tr:store-zip</h2>
+                     <h4>Import</h4>
+                     <pre><code class="language-markup">&lt;p:import href="http://transpect.io/xproc-util/store-zip/xpl/store-zip.xpl"/&gt;</code></pre>
+                     <h4>Dependencies</h4>
+                     <ul>
+                        <li>
+                           <p><a href="modules-xproc-util.html">xproc-util</a></p>
+                        </li>
+                     </ul>
+                     <h4>Synopsis</h4>
+                     <pre><code class="language-markup">&lt;tr:store-zip xmlns:tr="http://transpect.io"&gt;
   &lt;p:input port="source" sequence="true" primary="true"/&gt;
   &lt;p:output port="result" sequence="false" primary="true"/&gt;
   &lt;p:option name="target-zip-uri" required="true"/&gt;
@@ -499,41 +1116,97 @@ YmDABwACDAAAHgABzCCyiwAAAABJRU5ErkJggg==
   &lt;p:option name="additional-file-uris-to-zip-root" required="false" select="''"/&gt;
   &lt;p:option name="debug" select="'yes'"/&gt;
   &lt;p:option name="debug-dir-uri" select="'debug'"/&gt;
-&lt;/tr:store-zip&gt;</code></pre></div><div id="tr-text2params" class="section scrollspy"><h2 class="header">tr:text2params</h2><p>
-    <p xmlns:p="http://www.w3.org/ns/xproc" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:tr="http://transpect.io" xmlns:c="http://www.w3.org/ns/xproc-step" xmlns:j="http://marklogic.com/json" xmlns:cx="http://xmlcalabash.com/ns/extensions" xmlns:xlink="http://www.w3.org/1999/xlink">Converts text-based configuration files (yaml, in particular) to &lt;c:param-set&gt;s.</p>
-    <p xmlns:p="http://www.w3.org/ns/xproc" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:tr="http://transpect.io" xmlns:c="http://www.w3.org/ns/xproc-step" xmlns:j="http://marklogic.com/json" xmlns:cx="http://xmlcalabash.com/ns/extensions" xmlns:xlink="http://www.w3.org/1999/xlink">It does not yet cope with hashes or arrays as found in yaml files. This will be adjourned
-    to a time when params will be expressed as maps.</p>
-  </p><h4>Import</h4><pre><code class="language-markup">&lt;p:import href="http://transpect.io/xproc-util/text2params/xpl/text2params.xpl"/&gt;</code></pre><h4>Dependencies</h4><ul><li><p><a href="modules-xproc-util.html">xproc-util</a></p></li></ul><h4>Synopsis</h4><pre><code class="language-markup">&lt;tr:text2params xmlns:tr="http://transpect.io"&gt;
+&lt;/tr:store-zip&gt;</code></pre>
+                  </div>
+                  <div id="tr-text2params" class="section scrollspy">
+                     <h2 class="header">tr:text2params</h2>
+                     <p>
+                        
+                        <p xmlns:p="http://www.w3.org/ns/xproc" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:tr="http://transpect.io" xmlns:c="http://www.w3.org/ns/xproc-step" xmlns:j="http://marklogic.com/json" xmlns:cx="http://xmlcalabash.com/ns/extensions" xmlns:xlink="http://www.w3.org/1999/xlink">Converts text-based configuration files (yaml, in particular) to &lt;c:param-set&gt;s.</p>
+                        
+                        <p xmlns:p="http://www.w3.org/ns/xproc" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:tr="http://transpect.io" xmlns:c="http://www.w3.org/ns/xproc-step" xmlns:j="http://marklogic.com/json" xmlns:cx="http://xmlcalabash.com/ns/extensions" xmlns:xlink="http://www.w3.org/1999/xlink">It does not yet cope with hashes or arrays as found in yaml files. This will be adjourned
+                           to a time when params will be expressed as maps.</p>
+                        </p>
+                     <h4>Import</h4>
+                     <pre><code class="language-markup">&lt;p:import href="http://transpect.io/xproc-util/text2params/xpl/text2params.xpl"/&gt;</code></pre>
+                     <h4>Dependencies</h4>
+                     <ul>
+                        <li>
+                           <p><a href="modules-xproc-util.html">xproc-util</a></p>
+                        </li>
+                     </ul>
+                     <h4>Synopsis</h4>
+                     <pre><code class="language-markup">&lt;tr:text2params xmlns:tr="http://transpect.io"&gt;
   &lt;p:output port="result" primary="true"/&gt;
   &lt;p:option name="file" required="true"/&gt;
   &lt;p:option name="debug" required="false" select="'no'"/&gt;
   &lt;p:option name="debug-dir-uri" select="'debug'"/&gt;
-&lt;/tr:text2params&gt;</code></pre></div><div id="tr-virustotal" class="section scrollspy"><h2 class="header">tr:virustotal</h2><p>
-    <p xmlns:p="http://www.w3.org/ns/xproc" xmlns:tr="http://transpect.io" xmlns:c="http://www.w3.org/ns/xproc-step" xmlns:j="http://marklogic.com/json" xmlns:cx="http://xmlcalabash.com/ns/extensions" xmlns:xlink="http://www.w3.org/1999/xlink">Send local files to Virus Total and get a Schematron report.</p>
-    <p xmlns:p="http://www.w3.org/ns/xproc" xmlns:tr="http://transpect.io" xmlns:c="http://www.w3.org/ns/xproc-step" xmlns:j="http://marklogic.com/json" xmlns:cx="http://xmlcalabash.com/ns/extensions" xmlns:xlink="http://www.w3.org/1999/xlink">This XProc step use the Total Virus API to upload and scan local 
-      files. Scan reports are retrieved with <code>p:http-request</code> and 
-      validated with Schematron.</p>
-    <p xmlns:p="http://www.w3.org/ns/xproc" xmlns:tr="http://transpect.io" xmlns:c="http://www.w3.org/ns/xproc-step" xmlns:j="http://marklogic.com/json" xmlns:cx="http://xmlcalabash.com/ns/extensions" xmlns:xlink="http://www.w3.org/1999/xlink">Note: requires a Virus Total account, please see option <code>api-key</code>.</p>
-    <pre xmlns:p="http://www.w3.org/ns/xproc" xmlns:tr="http://transpect.io" xmlns:c="http://www.w3.org/ns/xproc-step" xmlns:j="http://marklogic.com/json" xmlns:cx="http://xmlcalabash.com/ns/extensions" xmlns:xlink="http://www.w3.org/1999/xlink">$ sh calabash/calabash.sh -Xtransparent-json -Xjson-flavor=marklogic \
+&lt;/tr:text2params&gt;</code></pre>
+                  </div>
+                  <div id="tr-virustotal" class="section scrollspy">
+                     <h2 class="header">tr:virustotal</h2>
+                     <p>
+                        
+                        <p xmlns:p="http://www.w3.org/ns/xproc" xmlns:tr="http://transpect.io" xmlns:c="http://www.w3.org/ns/xproc-step" xmlns:j="http://marklogic.com/json" xmlns:cx="http://xmlcalabash.com/ns/extensions" xmlns:xlink="http://www.w3.org/1999/xlink">Send local files to Virus Total and get a Schematron report.</p>
+                        
+                        <p xmlns:p="http://www.w3.org/ns/xproc" xmlns:tr="http://transpect.io" xmlns:c="http://www.w3.org/ns/xproc-step" xmlns:j="http://marklogic.com/json" xmlns:cx="http://xmlcalabash.com/ns/extensions" xmlns:xlink="http://www.w3.org/1999/xlink">This XProc step use the Total Virus API to upload and scan local 
+                           files. Scan reports are retrieved with <code>p:http-request</code> and 
+                           validated with Schematron.</p>
+                        
+                        <p xmlns:p="http://www.w3.org/ns/xproc" xmlns:tr="http://transpect.io" xmlns:c="http://www.w3.org/ns/xproc-step" xmlns:j="http://marklogic.com/json" xmlns:cx="http://xmlcalabash.com/ns/extensions" xmlns:xlink="http://www.w3.org/1999/xlink">Note: requires a Virus Total account, please see option <code>api-key</code>.</p>
+                        
+                        <pre xmlns:p="http://www.w3.org/ns/xproc" xmlns:tr="http://transpect.io" xmlns:c="http://www.w3.org/ns/xproc-step" xmlns:j="http://marklogic.com/json" xmlns:cx="http://xmlcalabash.com/ns/extensions" xmlns:xlink="http://www.w3.org/1999/xlink">$ sh calabash/calabash.sh -Xtransparent-json -Xjson-flavor=marklogic \
       -o report=svrl.xml virustotal.xpl href=test.txt api-key=myRandomKey</pre>
-    <p xmlns:p="http://www.w3.org/ns/xproc" xmlns:tr="http://transpect.io" xmlns:c="http://www.w3.org/ns/xproc-step" xmlns:j="http://marklogic.com/json" xmlns:cx="http://xmlcalabash.com/ns/extensions" xmlns:xlink="http://www.w3.org/1999/xlink">Get more information on Virus Total at https://www.virustotal.com</p>
-  </p><h4>Import</h4><pre><code class="language-markup">&lt;p:import href="http://transpect.io/xproc-util/virustotal/xpl/virustotal.xpl"/&gt;</code></pre><h4>Synopsis</h4><pre><code class="language-markup">&lt;tr:virustotal xmlns:tr="http://transpect.io"&gt;
+                        
+                        <p xmlns:p="http://www.w3.org/ns/xproc" xmlns:tr="http://transpect.io" xmlns:c="http://www.w3.org/ns/xproc-step" xmlns:j="http://marklogic.com/json" xmlns:cx="http://xmlcalabash.com/ns/extensions" xmlns:xlink="http://www.w3.org/1999/xlink">Get more information on Virus Total at https://www.virustotal.com</p>
+                        </p>
+                     <h4>Import</h4>
+                     <pre><code class="language-markup">&lt;p:import href="http://transpect.io/xproc-util/virustotal/xpl/virustotal.xpl"/&gt;</code></pre>
+                     <h4>Synopsis</h4>
+                     <pre><code class="language-markup">&lt;tr:virustotal xmlns:tr="http://transpect.io"&gt;
   &lt;p:output port="result" primary="true"/&gt;
   &lt;p:output port="report" sequence="true" primary="false"/&gt;
   &lt;p:option name="scan-url" select="'https://www.virustotal.com/vtapi/v2/file/scan'"/&gt;
   &lt;p:option name="report-url" select="'https://www.virustotal.com/vtapi/v2/file/report'"/&gt;
   &lt;p:option name="href"/&gt;
   &lt;p:option name="api-key" select="''"/&gt;
-&lt;/tr:virustotal&gt;</code></pre></div><div id="tr-prepend-hub-xml-model" class="section scrollspy"><h2 class="header">tr:prepend-hub-xml-model</h2><h4>Import</h4><pre><code class="language-markup">&lt;p:import href="http://transpect.io/xproc-util/xml-model/xpl/prepend-hub-xml-model.xpl"/&gt;</code></pre><h4>Synopsis</h4><pre><code class="language-markup">&lt;tr:prepend-hub-xml-model xmlns:tr="http://transpect.io"&gt;
+&lt;/tr:virustotal&gt;</code></pre>
+                  </div>
+                  <div id="tr-prepend-hub-xml-model" class="section scrollspy">
+                     <h2 class="header">tr:prepend-hub-xml-model</h2>
+                     <h4>Import</h4>
+                     <pre><code class="language-markup">&lt;p:import href="http://transpect.io/xproc-util/xml-model/xpl/prepend-hub-xml-model.xpl"/&gt;</code></pre>
+                     <h4>Synopsis</h4>
+                     <pre><code class="language-markup">&lt;tr:prepend-hub-xml-model xmlns:tr="http://transpect.io"&gt;
   &lt;p:input port="source" primary="true"/&gt;
   &lt;p:output port="result" sequence="true" primary="true"/&gt;
   &lt;p:option name="hub-version" required="true"/&gt;
-&lt;/tr:prepend-hub-xml-model&gt;</code></pre></div><div id="tr-prepend-xml-model" class="section scrollspy"><h2 class="header">tr:prepend-xml-model</h2><h4>Import</h4><pre><code class="language-markup">&lt;p:import href="http://transpect.io/xproc-util/xml-model/xpl/prepend-xml-model.xpl"/&gt;</code></pre><h4>Synopsis</h4><pre><code class="language-markup">&lt;tr:prepend-xml-model xmlns:tr="http://transpect.io"&gt;
+&lt;/tr:prepend-hub-xml-model&gt;</code></pre>
+                  </div>
+                  <div id="tr-prepend-xml-model" class="section scrollspy">
+                     <h2 class="header">tr:prepend-xml-model</h2>
+                     <h4>Import</h4>
+                     <pre><code class="language-markup">&lt;p:import href="http://transpect.io/xproc-util/xml-model/xpl/prepend-xml-model.xpl"/&gt;</code></pre>
+                     <h4>Synopsis</h4>
+                     <pre><code class="language-markup">&lt;tr:prepend-xml-model xmlns:tr="http://transpect.io"&gt;
   &lt;p:input port="source" sequence="true" primary="true"/&gt;
   &lt;p:input port="models" sequence="true"/&gt;
   &lt;p:output port="result" sequence="true" primary="true"/&gt;
   &lt;p:option name="hub-version" required="false" select="''"/&gt;
-&lt;/tr:prepend-xml-model&gt;</code></pre></div><div id="tr-xslt-mode" class="section scrollspy"><h2 class="header">tr:xslt-mode</h2><h4>Import</h4><pre><code class="language-markup">&lt;p:import href="http://transpect.io/xproc-util/xslt-mode/xpl/xslt-mode.xpl"/&gt;</code></pre><h4>Dependencies</h4><ul><li><p><a href="modules-xproc-util.html">xproc-util</a></p></li></ul><h4>Synopsis</h4><pre><code class="language-markup">&lt;tr:xslt-mode xmlns:tr="http://transpect.io"&gt;
+&lt;/tr:prepend-xml-model&gt;</code></pre>
+                  </div>
+                  <div id="tr-xslt-mode" class="section scrollspy">
+                     <h2 class="header">tr:xslt-mode</h2>
+                     <h4>Import</h4>
+                     <pre><code class="language-markup">&lt;p:import href="http://transpect.io/xproc-util/xslt-mode/xpl/xslt-mode.xpl"/&gt;</code></pre>
+                     <h4>Dependencies</h4>
+                     <ul>
+                        <li>
+                           <p><a href="modules-xproc-util.html">xproc-util</a></p>
+                        </li>
+                     </ul>
+                     <h4>Synopsis</h4>
+                     <pre><code class="language-markup">&lt;tr:xslt-mode xmlns:tr="http://transpect.io"&gt;
   &lt;p:input port="source" sequence="true" primary="true"/&gt;
   &lt;p:input port="stylesheet"/&gt;
   &lt;p:input port="models" sequence="true"/&gt;
@@ -553,9 +1226,23 @@ YmDABwACDAAAHgABzCCyiwAAAABJRU5ErkJggg==
   &lt;p:option name="store-secondary" select="'yes'"/&gt;
   &lt;p:option name="adjust-doc-base-uri" select="'yes'"/&gt;
   &lt;p:option name="hub-version" required="false" select="''"/&gt;
-&lt;/tr:xslt-mode&gt;</code></pre></div><div id="tr-zip" class="section scrollspy"><h2 class="header">tr:zip</h2><p>
-    Extends the pxp:zip step to check whether all in a manifest referenced items are available.
-  </p><h4>Import</h4><pre><code class="language-markup">&lt;p:import href="http://transpect.io/xproc-util/zip/xpl/zip.xpl"/&gt;</code></pre><h4>Dependencies</h4><ul><li><p><a href="modules-xproc-util.html">xproc-util</a></p></li></ul><h4>Synopsis</h4><pre><code class="language-markup">&lt;tr:zip xmlns:tr="http://transpect.io"&gt;
+&lt;/tr:xslt-mode&gt;</code></pre>
+                  </div>
+                  <div id="tr-zip" class="section scrollspy">
+                     <h2 class="header">tr:zip</h2>
+                     <p>
+                        Extends the pxp:zip step to check whether all in a manifest referenced items are available.
+                        </p>
+                     <h4>Import</h4>
+                     <pre><code class="language-markup">&lt;p:import href="http://transpect.io/xproc-util/zip/xpl/zip.xpl"/&gt;</code></pre>
+                     <h4>Dependencies</h4>
+                     <ul>
+                        <li>
+                           <p><a href="modules-xproc-util.html">xproc-util</a></p>
+                        </li>
+                     </ul>
+                     <h4>Synopsis</h4>
+                     <pre><code class="language-markup">&lt;tr:zip xmlns:tr="http://transpect.io"&gt;
   &lt;p:input port="source" primary="true"/&gt;
   &lt;p:output port="result"/&gt;
   &lt;p:output port="report" sequence="true"/&gt;
@@ -565,57 +1252,124 @@ YmDABwACDAAAHgABzCCyiwAAAABJRU5ErkJggg==
   &lt;p:option name="compression-method" required="false" select="'deflated'"/&gt;
   &lt;p:option name="compression-level" required="false" select="'default'"/&gt;
   &lt;p:option name="href" required="true"/&gt;
-&lt;/tr:zip&gt;</code></pre></div><div id="d33992e931" class="status"><h2 class="header status"></h2><p class="last-updated">GitHub sync date: 2022-05-30+02:00</p></div></div>
-          
-          <div class="col hide-on-small-only m3 l2">
-            <div class="toc-wrapper pin-top" style="top: 0px;">
-              <div style="height: 1px;">
-                <ul id="tr-toc" class="table-of-contents"><li><a href="#tr-batch-rename-files" class="active">tr:batch-rename-files</a></li><li><a href="#tr-copy-files">tr:copy-files</a></li><li><a href="#tr-evolve-mml">tr:evolve-mml</a></li><li><a href="#tr-extract-cssa-rules">tr:extract-cssa-rules</a></li><li><a href="#tr-extract-from-jar">tr:extract-from-jar</a></li><li><a href="#tr-escape-for-uri">tr:escape-for-uri</a></li><li><a href="#tr-file-uri">tr:file-uri</a></li><li><a href="#tr-unescape-uri">tr:unescape-uri</a></li><li><a href="#tr-ghostscript">tr:ghostscript</a></li><li><a href="#tr-html-embed-resources">tr:html-embed-resources</a></li><li><a href="#tr-get-data-uri">tr:get-data-uri</a></li><li><a href="#tr-load-html5">tr:load-html5</a></li><li><a href="#tr-imagemagick">tr:imagemagick</a></li><li><a href="#tr-insert-srcpaths">tr:insert-srcpaths</a></li><li><a href="#tr-load-data">tr:load-data</a></li><li><a href="#tr-load-html">tr:load-html</a></li><li><a href="#tr-load-sources">tr:load-sources</a></li><li><a href="#tr-load">tr:load</a></li><li><a href="#tr-merge-hub">tr:merge-hub</a></li><li><a href="#tr-params2text">tr:params2text</a></li><li><a href="#tr-pdf-info">tr:pdf-info</a></li><li><a href="#tr-re-attach-out-of-doc-PIs">tr:re-attach-out-of-doc-PIs</a></li><li><a href="#tr-recursive-directory-list">tr:recursive-directory-list</a></li><li><a href="#tr-remove-ns-decl-and-xml-base">tr:remove-ns-decl-and-xml-base</a></li><li><a href="#tr-resolve-params">tr:resolve-params</a></li><li><a href="#tr-mailing">tr:mailing</a></li><li><a href="#tr-simple-progress-msg">tr:simple-progress-msg</a></li><li><a href="#tr-propagate-caught-error">tr:propagate-caught-error</a></li><li><a href="#tr-store-debug">tr:store-debug</a></li><li><a href="#tr-store-zip">tr:store-zip</a></li><li><a href="#tr-text2params">tr:text2params</a></li><li><a href="#tr-virustotal">tr:virustotal</a></li><li><a href="#tr-prepend-hub-xml-model">tr:prepend-hub-xml-model</a></li><li><a href="#tr-prepend-xml-model">tr:prepend-xml-model</a></li><li><a href="#tr-xslt-mode">tr:xslt-mode</a></li><li><a href="#tr-zip">tr:zip</a></li><li><a href="#d33992e931"></a></li></ul>
-              </div>
+&lt;/tr:zip&gt;</code></pre>
+                  </div>
+                  <div id="d34001e931" class="status">
+                     <h2 class="header status"></h2>
+                     <p class="last-updated">GitHub sync date: 2022-06-06+02:00</p>
+                  </div>
+               </div>
+               
+               
+               <div class="col hide-on-small-only m3 l2">
+                  
+                  <div class="toc-wrapper pin-top" style="top: 0px;">
+                     
+                     <div style="height: 1px;">
+                        
+                        <ul id="tr-toc" class="table-of-contents">
+                           <li><a href="#tr-batch-rename-files" class="active">tr:batch-rename-files</a></li>
+                           <li><a href="#tr-copy-files">tr:copy-files</a></li>
+                           <li><a href="#tr-evolve-mml">tr:evolve-mml</a></li>
+                           <li><a href="#tr-extract-cssa-rules">tr:extract-cssa-rules</a></li>
+                           <li><a href="#tr-extract-from-jar">tr:extract-from-jar</a></li>
+                           <li><a href="#tr-escape-for-uri">tr:escape-for-uri</a></li>
+                           <li><a href="#tr-file-uri">tr:file-uri</a></li>
+                           <li><a href="#tr-unescape-uri">tr:unescape-uri</a></li>
+                           <li><a href="#tr-ghostscript">tr:ghostscript</a></li>
+                           <li><a href="#tr-html-embed-resources">tr:html-embed-resources</a></li>
+                           <li><a href="#tr-get-data-uri">tr:get-data-uri</a></li>
+                           <li><a href="#tr-load-html5">tr:load-html5</a></li>
+                           <li><a href="#tr-imagemagick">tr:imagemagick</a></li>
+                           <li><a href="#tr-insert-srcpaths">tr:insert-srcpaths</a></li>
+                           <li><a href="#tr-load-data">tr:load-data</a></li>
+                           <li><a href="#tr-load-html">tr:load-html</a></li>
+                           <li><a href="#tr-load-sources">tr:load-sources</a></li>
+                           <li><a href="#tr-load">tr:load</a></li>
+                           <li><a href="#tr-merge-hub">tr:merge-hub</a></li>
+                           <li><a href="#tr-params2text">tr:params2text</a></li>
+                           <li><a href="#tr-pdf-info">tr:pdf-info</a></li>
+                           <li><a href="#tr-re-attach-out-of-doc-PIs">tr:re-attach-out-of-doc-PIs</a></li>
+                           <li><a href="#tr-recursive-directory-list">tr:recursive-directory-list</a></li>
+                           <li><a href="#tr-remove-ns-decl-and-xml-base">tr:remove-ns-decl-and-xml-base</a></li>
+                           <li><a href="#tr-resolve-params">tr:resolve-params</a></li>
+                           <li><a href="#tr-mailing">tr:mailing</a></li>
+                           <li><a href="#tr-simple-progress-msg">tr:simple-progress-msg</a></li>
+                           <li><a href="#tr-propagate-caught-error">tr:propagate-caught-error</a></li>
+                           <li><a href="#tr-store-debug">tr:store-debug</a></li>
+                           <li><a href="#tr-store-zip">tr:store-zip</a></li>
+                           <li><a href="#tr-text2params">tr:text2params</a></li>
+                           <li><a href="#tr-virustotal">tr:virustotal</a></li>
+                           <li><a href="#tr-prepend-hub-xml-model">tr:prepend-hub-xml-model</a></li>
+                           <li><a href="#tr-prepend-xml-model">tr:prepend-xml-model</a></li>
+                           <li><a href="#tr-xslt-mode">tr:xslt-mode</a></li>
+                           <li><a href="#tr-zip">tr:zip</a></li>
+                           <li><a href="#d34001e931"></a></li>
+                        </ul>
+                        </div>
+                     </div>
+                  </div>
+               </div>
             </div>
-          </div>
-        </div>
-      </div>
-    </main>
-    <footer class="page-footer grey">
-      <div class="container">
-        <div class="row">
-          <div id="tr-footer-1" class="col s12 m6 l4">
-            <h5 class="white-text">GitHub</h5>
-            <p class="white-text">Checkout the transpect repositories on GitHub and use transpect in your project. 
-              Give us feedback, create issues and make pull requests.</p>
-            <p><a target="_blank" href="https://github.com/transpect" class="btn red">GitHub</a></p>
-          </div>
-          <div id="tr-footer-2" class="col s12 m6 l4">
-            <h5 class="white-text">Twitter</h5>
-            <p class="white-text">News from le-tex’ XML machine room. Mostly related to 
-              XSLT/XPath 2+, XProc, Relax NG, Schematron, and our 
-              open-source framework transpect.
-            </p>
-            <p><a target="_blank" href="https://twitter.com/intent/user?screen_name=letexml" class="btn red">Follow @letexml</a></p>
-          </div>
-          <div id="tr-footer-3" class="col s12 m6 l4">
-            <a target="_blank" href="http://www.le-tex.de"><object id="letex-logo" type="image/svg+xml" data="icons/logo-le-tex.svg">Your browser does not support SVG</object></a>
-          </div>
-        </div>
-      </div>
-      <div class="footer-copyright grey darken-1">
-        <div class="container">
-          <div class="row">
-            <div id="tr-footer-copyright-1" class="col s12 m6 l6">
-              <p class="white-text left">le-tex publishing services GmbH, 2021</p>
+         </main>
+      
+      <footer class="page-footer grey">
+         
+         <div class="container">
+            
+            <div class="row">
+               
+               <div id="tr-footer-1" class="col s12 m6 l4">
+                  
+                  <h5 class="white-text">GitHub</h5>
+                  
+                  <p class="white-text">Checkout the transpect repositories on GitHub and use transpect in your project. 
+                     Give us feedback, create issues and make pull requests.</p>
+                  
+                  <p><a target="_blank" href="https://github.com/transpect" class="btn red">GitHub</a></p>
+                  </div>
+               
+               <div id="tr-footer-2" class="col s12 m6 l4">
+                  
+                  <h5 class="white-text">Twitter</h5>
+                  
+                  <p class="white-text">News from le-tex’ XML machine room. Mostly related to 
+                     XSLT/XPath 2+, XProc, Relax NG, Schematron, and our 
+                     open-source framework transpect.
+                     </p>
+                  
+                  <p><a target="_blank" href="https://twitter.com/intent/user?screen_name=letexml" class="btn red">Follow @letexml</a></p>
+                  </div>
+               
+               <div id="tr-footer-3" class="col s12 m6 l4">
+                  <a target="_blank" href="http://www.le-tex.de"><object id="letex-logo" type="image/svg+xml" data="icons/logo-le-tex.svg">Your browser does not support SVG</object></a>
+                  </div>
+               </div>
             </div>
-            <div id="tr-footer-copyright-2" class="col s12 m6 l6">
-              <p><a class="white-text right" href="http://www.le-tex.de">http://www.le-tex.de</a></p>
+         
+         <div class="footer-copyright grey darken-1">
+            
+            <div class="container">
+               
+               <div class="row">
+                  
+                  <div id="tr-footer-copyright-1" class="col s12 m6 l6">
+                     
+                     <p class="white-text left">le-tex publishing services GmbH, 2021</p>
+                     </div>
+                  
+                  <div id="tr-footer-copyright-2" class="col s12 m6 l6">
+                     
+                     <p><a class="white-text right" href="http://www.le-tex.de">http://www.le-tex.de</a></p>
+                     </div>
+                  </div>
+               </div>
             </div>
-          </div>
-        </div>
-      </div>
-    </footer>
-    
-    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-    <script type="text/javascript" src="js/prism.js"></script>
-    <script type="text/javascript" src="js/materialize.min.js"></script>
-    <script src="js/init.js"></script>
-  </body>
-</html>
+         </footer>
+      
+      <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+      <script type="text/javascript" src="js/prism.js"></script>
+      <script type="text/javascript" src="js/materialize.min.js"></script>
+      <script src="js/init.js"></script>
+      </body>
+   </html>
