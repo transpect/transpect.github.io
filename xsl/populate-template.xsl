@@ -25,14 +25,20 @@
   <xsl:template match="html">
     <xsl:copy>
       <xsl:apply-templates select="$current-chapter/@xml:base"/>
-      <xsl:apply-templates/>
+      <xsl:apply-templates select="*"/>
+    </xsl:copy>
+  </xsl:template>
+  
+  <xsl:template match="head|header|main|footer|div[not(text()[normalize-space()])]">
+    <xsl:copy>
+      <xsl:apply-templates select="@*, *"/>
     </xsl:copy>
   </xsl:template>
   
   <xsl:template match="body">
     <xsl:copy>
       <xsl:apply-templates select="$current-chapter/@xml:id"/>
-      <xsl:apply-templates/>
+      <xsl:apply-templates select="*"/>
     </xsl:copy>
   </xsl:template>
   
@@ -126,25 +132,25 @@
 
   <xsl:template match="dbk:section[not(parent::dbk:section)]">
     <div id="{(@xml:id, generate-id())[1]}" class="section scrollspy">
-      <xsl:apply-templates select="@*|node()"/>
+      <xsl:apply-templates select="@*, *"/>
     </div>
   </xsl:template>
   
   <xsl:template match="dbk:section[ancestor::dbk:section]">
     <div>
-      <xsl:apply-templates select="@*|node()"/>
+      <xsl:apply-templates select="@*, *"/>
     </div>
   </xsl:template>
   
   <xsl:template match="dbk:simplesect">
     <div>
-      <xsl:apply-templates select="@*|node()"/>
+      <xsl:apply-templates select="@*, *"/>
     </div>
   </xsl:template>
   
   <xsl:template match="dbk:simplesect/dbk:title">
     <h5>
-      <xsl:apply-templates select="@*|node()"/>
+      <xsl:apply-templates select="@*, node()"/>
     </h5>
   </xsl:template>
   
@@ -195,41 +201,41 @@
   
   <xsl:template match="dbk:itemizedlist">
     <ul>
-      <xsl:apply-templates select="@*|node()"/>
+      <xsl:apply-templates select="@*, *"/>
     </ul>
   </xsl:template>
   
   <xsl:template match="dbk:orderedlist">
     <ol>
-      <xsl:apply-templates select="@*|node()"/>
+      <xsl:apply-templates select="@*, *"/>
     </ol>
   </xsl:template>
   
   <xsl:template match="dbk:itemizedlist/dbk:listitem|dbk:orderedlist/dbk:listitem">
     <li>
-      <xsl:apply-templates select="@*|node()"/>
+      <xsl:apply-templates select="@*, *"/>
     </li>
   </xsl:template>
   
   <xsl:template match="dbk:variablelist">
     <dl>
-      <xsl:apply-templates select="@*|node()"/>
+      <xsl:apply-templates select="@*, *"/>
     </dl>
   </xsl:template>
   
   <xsl:template match="dbk:varlistentry">
-    <xsl:apply-templates select="@*|node()"/>
+    <xsl:apply-templates select="@*, *"/>
   </xsl:template>
   
   <xsl:template match="dbk:varlistentry/dbk:term">
     <dt>
-      <xsl:apply-templates select="@*|node()"/>
+      <xsl:apply-templates select="@*, node()"/>
     </dt>
   </xsl:template>
   
   <xsl:template match="dbk:varlistentry/dbk:listitem">
     <dd>
-      <xsl:apply-templates select="@*|node()"/>
+      <xsl:apply-templates select="@*, *"/>
     </dd>
   </xsl:template>
   
@@ -320,8 +326,10 @@
 
   <xsl:template match="@*|*">
     <xsl:copy>
-      <xsl:apply-templates select="@*|node()"/>
+      <xsl:apply-templates select="@*, node()"/>
     </xsl:copy>
   </xsl:template>  
+  
+  <xsl:template match="comment()"/>
   
 </xsl:stylesheet>
