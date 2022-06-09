@@ -29,7 +29,7 @@
     </xsl:copy>
   </xsl:template>
   
-  <xsl:template match="head|header|main|footer|div[not(text()[normalize-space()])]">
+  <xsl:template match="head|header|main|footer|div[not(text()[normalize-space()])]" priority="-1">
     <xsl:copy>
       <xsl:apply-templates select="@*, *"/>
     </xsl:copy>
@@ -324,7 +324,7 @@
         * identity template
         * -->
 
-  <xsl:template match="@*|*">
+  <xsl:template match="@*|*" priority="-2">
     <xsl:copy>
       <xsl:apply-templates select="@*, node()"/>
     </xsl:copy>
