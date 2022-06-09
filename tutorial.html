@@ -1,51 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?><html xmlns="http://www.w3.org/1999/xhtml" xml:base="../tutorial.html">
-   
    <head>
       <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-      
       <title>Tutorials</title>
-      
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      
       <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-      
-      
       <meta name="theme-color" content="#FF9800" />
-      
-      
       <link rel="apple-touch-icon-precomposed" href="icons/apple-touch-icon-152x152.png" />
-      
       <meta name="msapplication-TileImage" content="icons/mstile-144x144.png" />
-      
       <link rel="icon" href="icons/favicon-32x32.png" sizes="32x32" />
-      
-      
       <link type="text/css" rel="stylesheet" media="screen,projection" href="css/prism.css" />
-      
       <link type="text/css" rel="stylesheet" media="screen,projection" href="css/materialize.min.css" />
-      
       <link type="text/css" rel="stylesheet" media="screen,projection" href="css/le-tex.css" />
-      </head>
-   
+   </head>
    <body id="tutorial-docx-jats-epub">
-      
-      
       <header>
-         
          <div class="container"><a href="#" data-activates="tr-nav" class="button-collapse top-nav circle hide-on-large-only"><i class="mdi-navigation-menu"></i></a></div>
-         
-         
-         
          <ul id="tr-nav" class="side-nav fixed" style="width:260px">
-            
             <li class="logo"><a id="logo-container" href="#" class="brand-logo"><object id="front-page-logo" type="image/svg+xml" data="icons/logo-transpect.svg">Your browser does not support SVG</object></a></li>
-            
-            
             <li class="naventry-1st"><a href="index.html">About</a></li>
             <li class="naventry-1st"><a href="getting-started.html">Getting Started</a></li>
             <li class="no-padding">
                <ul class="collapsible collapsible-accordion">
-                  <li class="naventry-1st" id="d33723e415"><a class="collapsible-header">Modules</a><div class="collapsible-body">
+                  <li class="naventry-1st" id="d13e415"><a class="collapsible-header">Modules</a><div class="collapsible-body">
                         <ul>
                            <li class="naventry-2nd"><a href="modules-basex-svn-api.html">basex-svn-api</a></li>
                            <li class="naventry-2nd"><a href="modules-bits2hub.html">bits2hub</a></li>
@@ -141,60 +117,42 @@
             <li class="naventry-1st"><a href="styleguide.html">Styleguide</a></li>
             <li class="active naventry-1st"><a href="tutorial.html">Tutorials</a></li>
          </ul>
-         </header>
-      
-      
+      </header>
       <main>
-         
          <div class="section orange" id="index-banner">
-            
             <div class="container">
-               
                <h1 id="tr-title" class="light header center-on-small-only white-text">Tutorials</h1>
-               
                <h4 id="tr-subtitle" class="light orange-text text-lighten-4 center-on-small-only">docx→JATS→EPUB</h4>
-               </div>
             </div>
-         
+         </div>
          <div class="container">
-            
             <div class="row">
-               
-               
                <div class="col s12 m9 l10" id="tr-content">
                   <p>By following this tutorial you will be able to set up a transpect conversion project.
                      You will encounter
                      the main concepts:</p>
                   <ul>
-                     
                      <li>
-                        
                         <p>transpect is a configuration management system for XProc/XSLT/validation pipelines
                            with a focus on
                            publishing workflows.</p>
-                        </li>
-                     
+                     </li>
                      <li>
-                        
                         <p>transpect provides modules for conversion between XML-based formats such as docx and
                            EPUB, and between
                            XML vocabularies.</p>
-                        </li>
-                     
+                     </li>
                      <li>
-                        
                         <p>The Schematron/RelaxNG/custom validation results will be consolidated into an HTML
                            rendering of
                            the input.</p>
-                        </li>
-                     
+                     </li>
                      <li>
-                        
                         <p>transpect projects typically reside in revision control repositories, attaching the
                            necessary modules
                            and even the runtime (Calabash XProc processor) as svn externals or git submodules</p>
-                        </li>
-                     </ul>
+                     </li>
+                  </ul>
                   <p>Prerequisites: Intermediate knowledge of revision control systems, XProc, and XSLT.</p>
                   <p>transpect offers some ready-to-run pipelines such as <a href="https://github.com/transpect/docx2tex">➼ docx2tex</a>
                      or <a href="https://transpect.le-tex.de/en/converter/save_file?set_button=&amp;upload_type=epubcheck">➼ epubcheck-transpect</a>, 
@@ -205,47 +163,34 @@
                      once-configured pipelines continue to yield consistent results.</p>
                   <p>This tutorial focuses on the configuration part.</p>
                   <div id="initial-github-repo" class="section scrollspy">
-                     
                      <h2 class="header">Creating a Repository</h2>
-                     
                      <p>A transpect project consists of a specification which modules to use (and in which
                         revision), project-specific
                         adaptations, and the modules. The project itself resides in a version control repository
                         (we are using Git and Subversion (SVN),
                         others will probably work, too). There are at least three ways of setting up a transpect
                         project:</p>
-                     
                      <ul>
-                        
                         <li>
-                           
                            <p>Git project with Git submodules</p>
-                           </li>
-                        
+                        </li>
                         <li>
-                           
                            <p>SVN project with SVN externals (GitHub provides sufficient SVN support to make this
                               feasible, even if
                               the modules reside in Git repositories)</p>
-                           </li>
-                        
+                        </li>
                         <li>
-                           
                            <p>Git, SVN (or probably also Mercurial) project with the modules as Git or SVN externals,
                               using 
                               <a href="http://nopugs.com/ext-tutorial">➼ ext</a></p>
-                           </li>
-                        </ul>
-                     
+                        </li>
+                     </ul>
                      <p>We will focus on the first approach, although git submodules are quite a beast. For
                         people who don’t use
                         SVN on a regular basis it’s the best choice though.</p>
-                     
                      <p>Let’s start creating a repository on GitHub. We call it <a href="https://github.com/transpect/docx2jats-demo">➼ docx2jats-demo</a> and clone its <a href="https://github.com/transpect/docx2jats-demo/tree/99ce82f2a007e8c948a9663d8325c73bcc05664a">➼ initial
                            commit 99ce82f</a> to local:</p>
-                     
                      <pre>git clone https://github.com/transpect/docx2jats-demo.git --recursive</pre>
-                     
                      <div class="card">
                         <div class="card-content">
                            
@@ -253,11 +198,9 @@
                               to clone the final project this is helpful already.</p>
                            </div>
                      </div>
-                     </div>
+                  </div>
                   <div id="submodules" class="section scrollspy">
-                     
                      <h2 class="header">Adding Submodules</h2>
-                     
                      <p>We’ll identify the modules that we need (primarily by their name, such as <a href="https://github.com/transpect/docx2hub">➼ docx2hub</a>, <a href="https://github.com/transpect/hub2jats">➼ hub2jats</a>, <a href="https://github.com/transpect/jats2html">➼ jats2html</a>
                         or <a href="https://github.com/transpect/epubtools">➼ epubtools</a>).
                         One of the submodules is the XProc processor. In principle, we could rely on an already-installed
@@ -267,16 +210,11 @@
                         assurance. Therefore, we created our own Calabash distribution, usually based on the
                         most recent release, and we add 
                         this as a submodule to every project.</p>
-                     
                      <pre>git submodule add https://github.com/transpect/calabash-frontend.git calabash</pre>
-                     
                      <p>The <code class="language-literal">calabash-frontend</code> is special in that it includes other submodules. These won’t be checked
                         out by default. Therefore you should initialize them recursively:</p>
-                     
                      <pre>git submodule update --init --recursive</pre>
-                     
                      <p>(You can postpone this statement until you have specified all submodules.)</p>
-                     
                      <div class="card">
                         <div class="card-content">
                            <span class="card-title">Optional: Using Subversion</span>
@@ -294,14 +232,11 @@ https://github.com/transpect/image-props-extension/trunk@4 calabash/extensions/t
                               Git submodules are fixed to a certain commit by default.</p>
                            </div>
                      </div>
-                     
                      <p>Let’s continue checking out some externals. We are probably going to validate the
                         intermediate <a href="https://github.com/le-tex/Hub">➼ Hub XML</a> in our docx→Hub→JATS→EPUB pipeline. This RNG schema includes
                         the <a href="https://github.com/le-tex/CSSa">➼ CSSa</a> schema as a submodule.</p>
-                     
                      <pre>git submodule add https://github.com/le-tex/Hub.git schema/hub
 git submodule update --init --recursive</pre>
-                     
                      <div class="card">
                         <div class="card-content">
                            <span class="card-title">Optional: Using Subversion</span>
@@ -316,7 +251,6 @@ https://github.com/le-tex/CSSa/trunk schema/Hub/css</pre>
                               it is relatively safe to omit the fixed revision here.</p>
                            </div>
                      </div>
-                     
                      <pre>git submodule add https://github.com/transpect/schema-jats schema/jats
 git submodule add https://github.com/transpect/schema-html schema/html
 git submodule add https://github.com/transpect/docx2hub
@@ -332,22 +266,15 @@ git submodule add https://github.com/transpect/epubcheck-idpf.git
 git submodule add https://github.com/transpect/xslt-util.git
 git submodule add https://github.com/transpect/xproc-util.git
 </pre>
-                     
                      <p>You’ll find individual descriptions of the modules in the <a href="http://transpect.github.io/modules-bits2hub.html">➼ Modules section</a>.</p>
-                     
                      <p>Some of the modules you’ll need in almost every transpect project, some are vocabulary-specific
                         (the ones
                         that contain “jats” or “bits”) or input/output format specific (the ones that contain
                         “docx”, “idml”, or “epub”).</p>
-                     
                      <p>Commit the changes and push it to the upstream repository:</p>
-                     
                      <pre>git commit -m "add submodules"
 git push</pre>
-                     
                      <p>This is the repository after commit <a href="https://github.com/transpect/docx2jats-demo/tree/2445f084fae5635bb1f32f3e47e33275d73a34d9">➼ 2445f08</a>.</p>
-                     
-                     
                      <div class="card">
                         <div class="card-content">
                            <span class="card-title">If you want to commit to the submodules later</span>
@@ -367,11 +294,9 @@ git push</pre>
                               the new commits from the top-level directory.</p>
                            </div>
                      </div>
-                     </div>
+                  </div>
                   <div id="xmlcatalog" class="section scrollspy">
-                     
                      <h2 class="header">XML Catalog</h2>
-                     
                      <p>Each transpect module is known by a canonical URI (example: <code class="language-literal">http:transpect.io/docx2hub/</code>) 
                         that may be used for importing their XSLT, XProc, images, or even for referring to
                         fonts in CSS files. The
@@ -387,25 +312,19 @@ git push</pre>
                         your project’s base directory. This is necessary for the configuration cascade that
                         we’ll encounter later. By convention,
                         all project-specific adaptations reside below <code class="language-literal">http://this.transpect.io/a9s/</code>.</p>
-                     
                      <pre>mkdir xmlcatalog
  # (edit xmlcatalog/catalog.xml)
  git add xmlcatalog</pre>
-                     
                      <p>We’ll get back to the last instruction in the catalog later 
                         (<code class="language-markup">&lt;nextCatalog catalog="content-repo.catalog.xml"/&gt;</code>).</p>
-                     
                      <p>If you are an <a href="https://www.oxygenxml.com/">➼ oXygen</a> user, now is a good time to create
                         a <code class="language-literal">.xpr</code> (oXygen project) file. In this file, you tell oXygen to use 
                         <code class="language-literal">${pdu}/calabash/xmlcatalog/catalog.xml</code> as XML catalog.</p>
-                     
                      <figure class="informalfigure"><img class="responsive-img" src="source/media/docx2jats-demo/catalog-xpr.png" alt="oXygen XML catalog configuration" /></figure>
-                     
                      <p>This will make oXygen use your project’s catalog by means of a <code class="language-literal">nextCatalog</code> instruction, in 
                         the same way as Calabash uses your catalog. This will be helpful later because oXygen
                         will be able to follow the
                         canonical URIs.</p>
-                     
                      <p>While you are at it, you should “Enable Master Files Support” for this oXygen project
                         and add 
                         <code class="language-literal">docx2hub/xsl/main.xsl</code> and <code class="language-literal">evolve-hub/xsl/evolve-hub.xsl</code>. We may need to
@@ -414,32 +333,25 @@ git push</pre>
                         from other files than the currently edited or its imports. By doing so, you’ll benefit
                         from oXygen’s XSLT checking
                         capabilities that go far beyond syntax checks.</p>
-                     
                      <pre>git add docx2jats-demo.xpr
 git commit -m "add XML catalog, oXygen project"
 git push</pre>
-                     
                      <p>You may try the correct catalog resolution and oXygen configuration by Ctrl-clicking
                         on 
                         <code class="language-literal">http://this.transpect.io/</code> in the catalog. It should open the project’s base directory.</p>
-                     
                      <p>With an update to a submodule that happened in the meantime, the repo at this stage
                         looks like this: <a href="https://github.com/transpect/docx2jats-demo/tree/eabd9b6201e236af1042f0c60eb3b9bf97444169">➼ eabd9b6</a></p>
-                     </div>
+                  </div>
                   <div id="getting-input" class="section scrollspy">
-                     
                      <h2 class="header">Getting Sample Input</h2>
-                     
                      <p>Our friends at <a href="http://www.ulsp.eu/">➼ University of Leipzig Sports Medicine</a> produce and
                         publish an open access journal from Word files. Their desire to upload the articles
                         to <a href="http://www.ncbi.nlm.nih.gov/pmc/">➼ PMC</a> made them ask us to provide a converter. Because our test
                         system relies on SVN front-end repos, we were unable to use it as a GitHub-based demo
                         project. But we can use their
                         content. You can check it out from our <a href="https://subversion.le-tex.de/common/transpect-demo/content/ulsp/">➼ SVN server</a>:</p>
-                     
                      <pre>mkdir ../content
 svn co https://subversion.le-tex.de/common/transpect-demo/content/ulsp/ ../content/ulsp</pre>
-                     
                      <p>or, for the time being, you can just save one of the 
                         <a href="https://subversion.le-tex.de/common/transpect-demo/content/ulsp/CSMI/CSMI_2014_701/docx/CSMI_2014_701.docx">➼ <code class="language-literal">.docx</code></a> 
                         files anywhere you want. Please be aware though
@@ -449,34 +361,25 @@ svn co https://subversion.le-tex.de/common/transpect-demo/content/ulsp/ ../conte
                         cascade that lets you – in principle – override settings per article, the content
                         has to be stored according to a certain 
                         directory structure.</p>
-                     </div>
+                  </div>
                   <div id="basic-pipeline" class="section scrollspy">
-                     
                      <h2 class="header">A First Pipeline</h2>
-                     
                      <p>By convention, the pipelines that are meant to be invoked directly (as opposed to
                         pipelines that implement 
                         the innards of a macroscopic step such as the ominous <code class="language-literal">evolve-hub</code>) reside in the directory 
                         <code class="language-literal">a9s/common/xpl</code>. This is absolutely not necessary; they may reside anywhere within the project.</p>
-                     
                      <p>Let’s create <code class="language-literal">a9s/common/xpl/docx2jats.xpl</code> and insert a basic pipeline: docx → flat Hub XML → JATS</p>
-                     
                      <p>The commit is <a href="https://github.com/transpect/docx2jats-demo/tree/0e289b58a2978f334c2ced62f557627b1e7e9172">➼ 0e289b5</a>, 
                         and the <a href="https://github.com/transpect/docx2jats-demo/blob/0e289b58a2978f334c2ced62f557627b1e7e9172/a9s/common/xpl/docx2jats.xpl">➼ pipeline 
                            looks like this</a>. You’ll notice the <code class="language-literal">p:import</code> by canonical URI statements and the three essential
                         steps, <code class="language-literal">docx2hub:convert</code>, <code class="language-literal">hub:evolve-hub</code>, and <code class="language-literal">jats:hub2bits</code> 
                         (the odd naming is because the step will produce <a href="http://jats.nlm.nih.gov/extensions/bits/">➼ BITS</a> 
                         books instead of JATS articles if fed with a <code class="language-literal">/dbk:book</code> document).</p>
-                     
                      <p>Invoke the transformation with the following statement on the command line (swapping
                         <code class="language-literal">.sh</code>
                         with <code class="language-literal">.bat</code> and probably also <code class="language-literal">/</code> with <code class="language-literal">\</code> on Windows machines 
                         without <a href="https://cygwin.com/">➼ Cygwin</a>):</p>
-                     
-                     
                      <pre>calabash/calabash.sh a9s/common/xpl/docx2jats.xpl file=../content/ulsp/CSMI/CSMI_2014_701/docx/CSMI_2014_701.docx</pre>
-                     
-                     
                      <p>You will see some <a href="source/media//docx2jats-demo/output-CSMI_2014_701-from_flat.xml">garbage</a>
                         that faintly resembles JATS, but with all kinds of <code class="language-literal">css:</code> attributes
                         and a <code class="language-literal">dark-matter</code> element instead of <code class="language-literal">body</code> or <code class="language-literal">back</code>. This
@@ -493,11 +396,9 @@ svn co https://subversion.le-tex.de/common/transpect-demo/content/ulsp/ ../conte
                         <code class="language-literal">evolve-hub</code> configuration that was applied to the input was a succession of XSLT modes defined
                         in <a href="https://github.com/transpect/evolve-hub/blob/master/xpl/fallback.xpl#L210">➼ fallback.xpl</a>,
                         using default parameters/variables/templates/functions in XSLT.</p>
-                     </div>
+                  </div>
                   <div id="dynamic-transformation-pipelines" class="section scrollspy">
-                     
                      <h2 class="header">Dynamic Transformation Pipelines</h2>
-                     
                      <div class="card">
                         <div class="card-content">
                            
@@ -506,43 +407,32 @@ svn co https://subversion.le-tex.de/common/transpect-demo/content/ulsp/ ../conte
                               details, content repositories, or debugging. You may jump directly to <a href="#a9s-common">Improving the Output by Adding Actual Configuration</a>.</p>
                            </div>
                      </div>
-                     
                      <p>All the major steps that transform documents from one XML format to another XML format
                         are implemented using the
                         XProc step <a href="https://github.com/transpect/cascade/blob/master/xpl/dynamic-transformation-pipeline.xpl">➼ <code class="language-literal">tr:dynamic-transformation-pipeline</code></a>.</p>
-                     
                      <p>It works like this:</p>
-                     
                      <ol>
-                        
                         <li>
-                           
                            <p>Consider the <code class="language-literal">load</code> option given to the step (for ex. <code class="language-literal">evolve-hub/driver</code>)</p>
-                           </li>
-                        
+                        </li>
                         <li>
-                           
                            <p>In the configuration cascade, look for the most specific file with the name <code class="language-literal">evolve-hub/driver.xpl</code>. 
                               This pipeline (or a fallback pipeline, if specified) will then be dynamically executed,
                               using Calabash’s 
                               <code class="language-literal">cx:eval</code> extension step.</p>
-                           </li>
-                        
+                        </li>
                         <li>
-                           
                            <p>In the configuration cascade, look for the most specific file with the name <code class="language-literal">evolve-hub/driver.xsl</code>.
                               This will be supplied to the pipeline on its stylesheet port. Typically a more specific
                               stylesheet (for a journal) 
                               will import a stylesheet from a less specific location (for an imprint).</p>
-                           </li>
-                        </ol>
-                     
+                        </li>
+                     </ol>
                      <p>Apart from the primary input (<code class="language-literal">source</code> port) and the stylesheet, the dynamically loaded pipeline
                         may get its options in a <code class="language-literal">cx:options</code> document and additional inputs on an <code class="language-literal">additional-inputs</code>
                         port with <code class="language-literal">sequence="true"</code>. It will typically contain a sequence of XSLT passes, where each pass will transform
                         its input in a given XSLT mode, using the same stylesheet. It may apply arbitrary
                         XProc steps, though.</p>
-                     
                      <p>XSLT has a nice import mechanism; in XProc, import is a different thing. There is
                         no “inherit&amp;tweak” 
                         mechanism for pipelines. Therefore, in order to avoid the redundancy of writing lots
@@ -557,94 +447,62 @@ svn co https://subversion.le-tex.de/common/transpect-demo/content/ulsp/ ../conte
                         <code class="language-literal">evolve-hub/driver.xpl.xsl</code>. This main template typically loads the pipeline 
                         <code class="language-literal">evolve-hub/driver.xpl</code> from a less specific location (or from a sister journal) and transforms
                         it, typically adding or removing XSLT steps in certain modes.</p>
-                     </div>
+                  </div>
                   <div id="cascade" class="section scrollspy">
-                     
                      <h2 class="header">Configuration Cascade</h2>
-                     
                      <p>The configuration relies on the following assumptions:</p>
-                     
                      <ul>
-                        
                         <li>
-                           
                            <p>Each content item belongs to a certain place 
                               in a content hierarchy (a certain imprint, a certain book series, …).</p>
-                           </li>
-                        
+                        </li>
                         <li>
-                           
                            <p>It is possible to address this location by name/value pairs</p>
-                           </li>
-                        
+                        </li>
                         <li>
-                           
                            <p>The name/value pairs, if not given explicitly, may be parsed from the file name.</p>
-                           
                            <figure class="informalfigure"><img class="responsive-img" src="source/media/docx2jats-demo/filename2directory.svg" alt="Location lookup from name/value pairs" /></figure>
-                           </li>
-                        
+                        </li>
                         <li>
-                           
                            <p>All content items within a subtree inherit the same configuration settings (CSS, XSLT,
                               Schematron, …)
                               and may overwrite them for their subtree.</p>
-                           </li>
-                        </ul>
-                     
+                        </li>
+                     </ul>
                      <p>These non-overlapping classification hierarchies are called <em><a href="https://en.wikipedia.org/wiki/Clade">➼ clades</a></em>.</p>
-                     
                      <figure class="informalfigure"><img class="responsive-img" src="source/media/docx2jats-demo/wikipedia_Clade-grade_II.svg" alt="Schematic clade diagram (from Wikipedia)" /></figure>
-                     
                      <p>In a transpect project, the configuration overrides for the clades are stored in the
                         <code class="language-literal">a9s</code> 
                         (adaptations) directory.</p>
-                     
                      <p>The underlying concept is described in greater detail in <a href="https://subversion.le-tex.de/common/transpect-demo/content/le-tex/setup-manual/en/out/xhtml/transpect-setup.xhtml#sec-cascade">➼ another 
                            piece of documentation</a> that will eventually be integrated into this site.</p>
-                     
-                     
-                     
                      <p>It is also possible to have clades for each input type, e.g., <code class="language-literal">.docx</code> and <code class="language-literal">.idml</code>. 
                         However, this approach is problematic as dicussed briefly at the end of 
                         <a href="https://subversion.le-tex.de/common/transpect-demo/content/le-tex/setup-manual/en/out/xhtml/transpect-setup.xhtml#sec-cascade-clade-selection">➼ this section</a>.</p>
-                     
                      <p>There are two ways to determine which clade a given input file belongs to:</p>
-                     
                      <ul>
-                        
                         <li>
-                           
                            <p>by file name parsing (example: <code class="language-literal">CSMI_2014_701.docx → publisher=ulsp, journal=CSMI, ms=CSMI_2014_701, ext=docx</code>)</p>
-                           
                            <p>(Note that <code class="language-literal">publisher=ulsp</code> doesn’t come from nowhere; this name/value pair either needs to be returned
                               statically the same for every content by the parser, or it needs to be looked up by
                               the parser in a journal/publisher list.)</p>
-                           </li>
-                        
+                        </li>
                         <li>
-                           
                            <p>by explicitly setting it as an option to the pipeline (example: <code class="language-literal">clades="publisher=ulsp journal=CSMI"</code>,
                               where ext may still be parsed from the file name). You may use <a href="https://github.com/transpect/cascade/blob/master/xsl/paths.xsl#L365">➼ <code class="language-literal">[,/\s]</code></a> 
                               as a sepator</p>
-                           </li>
-                        </ul>
-                     
-                     
+                        </li>
+                     </ul>
                      <h4>transpect Configuration File (clades file)</h4>
-                     
-                     
                      <p>At this point, it might be helpful to define “configuration”. It bears dual meaning:
                         In a broad sense, 
                         it’s the entirety of customizations, be it XSLT, CSS, fonts, dynamically loaded Proc
                         pipelines, Schematron rules, …
                         In a narrow sense, it is the single configuration file (the <em>transpect configuration file</em>) that 
                         declares which clades are available and by which name/value pairs they are selected.</p>
-                     
                      <p>The current project’s <a href="https://github.com/transpect/docx2jats-demo/blob/master/conf/transpect-conf.xml">➼ transpect configuration 
                            file</a> contains three clades: one for the publisher,
                         <code class="language-literal">ulsp</code>, and two for the journals <code class="language-literal">CSMI</code> and <code class="language-literal">Test</code>.</p>
-                     
                      <p>The ultimate goal of clade selection is to compute file system paths in descending
                         specificity where to look for
                         the broad-sense configuration files. The file system paths will be contained in a
@@ -654,15 +512,10 @@ svn co https://subversion.le-tex.de/common/transpect-demo/content/ulsp/ ../conte
                         <code class="language-literal">clades</code> will have precedence. Technically the name/value pairs are modeled as attributes
                         (not
                         bound to any element).</p>
-                     
                      <p>There is a <a href="https://github.com/transpect/cascade/blob/master/schema/cascade.rng">➼ Relax NG 
                            schema</a> for the transpect configuration file. <a href="https://github.com/transpect/cascade/blob/master/schema/cascade.rng#L76">➼ Schematron rules</a> in this schema support
                         you in avoiding ambiguous clades that match the same combination of name/value pairs.</p>
-                     
-                     
                      <h4>Per-clade parameters</h4>
-                     
-                     
                      <p>You can insert <a href="https://github.com/transpect/docx2jats-demo/blob/master/conf/transpect-conf.xml#L24">➼ arbitrary name/value 
                            pairs</a> in the clades. These will be included in the generated paths
                         document for a content item that belongs to the clade. By using these parameters,
@@ -672,12 +525,7 @@ svn co https://subversion.le-tex.de/common/transpect-demo/content/ulsp/ ../conte
                         This won’t happen automagically though. A pipeline step has to read the parameter
                         from the paths document and
                         alter the value in the EPUB configuration document template.</p>
-                     
-                     
-                     
                      <h4>Custom File Name Parser</h4>
-                     
-                     
                      <p>Matching a clade according to the parsed or supplied name/value pairs is one thing.
                         If you don’t supply the 
                         <code class="language-literal">clades</code> option, it is necessary nonetheless to parse the input file name in order to get
@@ -690,21 +538,17 @@ svn co https://subversion.le-tex.de/common/transpect-demo/content/ulsp/ ../conte
                         of this
                         custom <code class="language-literal">paths.xsl</code> is given in the <a href="https://github.com/transpect/docx2jats-demo/blob/master/conf/transpect-conf.xml#L6">➼ <code class="language-literal">/tr:conf/@paths-xsl-uri</code></a>
                         of the transpect configuration file.</p>
-                     
                      <p>It is instructive to have a look at the <a href="https://github.com/transpect/docx2jats-demo/commit/e5e4e45eb4dad4a1acc48baf1f338c16e1ed17f4">➼ changes 
                            of commit e5e4e45</a> and also at the <a href="https://gist.github.com/gimsieke/3f866dc10d613665c83f/4c2b87e1769aa26bf2dc2dc533fd32b6169ae357">➼ resulting 
                            paths document</a>.</p>
-                     
                      <p>Have a look at the <code class="language-literal">c:param</code>s that start with “s9y…” (for “specificity”).
                         <code class="language-literal">s9y1-path</code> is the path to the most specific confiuration location. There are 9 levels of
                         specificity available at the moment, that means 7 levels of nested clades, plus the
                         path for the common configuration,
                         plus the content location for per-work specific overrides.</p>
-                     
                      <p>If no clade matches, there will only be two search paths in the paths document: the
                         directory where the input file
                         resides in and the common path. </p>
-                     
                      <div class="card">
                         <div class="card-content">
                            <span class="card-title">Clades are complex. Should I use them for simple pipelines?</span>
@@ -721,12 +565,10 @@ svn co https://subversion.le-tex.de/common/transpect-demo/content/ulsp/ ../conte
                               conversion code that will ultimately render a monolithic converter unmaintainable.</p>
                            </div>
                      </div>
-                     
                      <p>
                         
                         <h4>Content Repository</h4>
                         </p>
-                     
                      <p>You might have noticed that in the paths document that <a href="https://gist.github.com/gimsieke/3f866dc10d613665c83f#file-paths-xml-L22">➼ <code class="language-literal">repo-href-local</code></a> and also <code class="language-literal">s9y1-path</code> point to HTTP URLs, although they
                         should be pointing to local paths. This is the canonical content repo location URI
                         that will be resolved by the
@@ -736,35 +578,28 @@ svn co https://subversion.le-tex.de/common/transpect-demo/content/ulsp/ ../conte
                         all of them in the revision control repository. Although there is a <code class="language-literal">&lt;nextCatalog
                            catalog="content-repo.catalog.xml"/&gt;</code> provision already in the XML catalog for this resolution, you
                         should only provide an unversioned file for each installation of this project.</p>
-                     
                      <p>However, a common location for the (local copy of the) content repository is next
                         to the project’s code directory.
                         We typically cover this common case by placing another <code class="language-literal">&lt;nextCatalog</code> instruction below the
                         first (see <a href="https://github.com/transpect/docx2jats-demo/compare/e5e4e45...37a9086">➼ diff</a> of
                         the catalogs). The paths that are supposed to be local 
                         <a href="https://gist.github.com/gimsieke/3f866dc10d613665c83f/revisions">➼ become local</a> in the paths document.</p>
-                     
                      <p>By providing a <code class="language-literal">content-repo.catalog.xml</code> that has higher <code class="language-literal">nextCatalog</code> precedence 
                         than <code class="language-literal">content-repo.default.catalog.xml</code>, you can still divert content repo lookups to other locations.</p>
-                     
                      <p>As mentioned before, local resolution of the content repo will not only be used for
                         per-content-item configuration
                         overrides, but also for locating images. When Word InDesign link to external files,
                         we often strip their paths and later
                         replace them with <code class="language-literal">concat($s9y1-path, 'images/', @fileref)</code>.</p>
-                     
-                     </div>
+                  </div>
                   <div id="debugging" class="section scrollspy">
-                     
                      <h2 class="header">Debugging</h2>
-                     
                      <p>You might have wondered where we read the <a href="https://gist.github.com/gimsieke/3f866dc10d613665c83f">➼ paths 
                            document</a> in the previous section, as the pipeline has no output port
                         for it. We read it from the file <code class="language-literal">debug/cascade/paths.xml</code>. The location of the debugging files
                         and whether they will be written at all (they can easily comprise dozens of Megabytes
                         for IDML conversions)
                         can be controlled as follows:</p>
-                     
                      <p>Almost every transpect step supports two options, <code class="language-literal">debug</code> and <code class="language-literal">debug-dir-uri</code>.
                         A transpect pipeline run might consist of dozens of steps (primarily XSLT passes)
                         and these transformations are hard
@@ -775,71 +610,49 @@ svn co https://subversion.le-tex.de/common/transpect-demo/content/ulsp/ ../conte
                         <code class="language-literal">yes</code> by default, but debug-dir-uri is set to <code class="language-literal">debug</code>, which leads to the
                         debugging output being written to <code class="language-literal">xproc-util/store-debug/xpl/debug</code>. If you want to store it below
                         the project directory, you can do so by modifying the invocation to:</p>
-                     
-                     
                      <pre>calabash/calabash.sh -o result=out.xml a9s/common/xpl/docx2jats.xpl \
   file=../content/ulsp/CSMI/CSMI_2014_701/docx/CSMI_2014_701.docx \
   debug-dir-uri=file:$(pwd)/debug</pre>
-                     
                      <p>for Linux or <code class="language-literal">debug-dir-uri=file:/$(cygpath -ma debug)</code> for Cygwin.</p>
-                     
                      <p>The resulting tree looks like this. There are debug subdirectories for almost every
                         step.</p>
-                     
                      <figure class="informalfigure"><img class="responsive-img" src="source/media/docx2jats-demo/debug-paths.png" alt="debug directories" /></figure>
-                     </div>
+                  </div>
                   <div id="a9s-common" class="section scrollspy">
-                     
                      <h2 class="header">Improving the Output by Adding Actual Configuration</h2>
-                     
-                     
                      <p>In order to make the <a href="source/media/docx2jats-demo/output-CSMI_2014_701-with-config.xml">output</a> 
                         more valid and reasonable, we now add configuration for the <code class="language-literal">evolve-hub</code>
                         and <code class="language-literal">hub2jats</code> steps. (As a side note: <code class="language-literal">docx2hub</code> is a virtually configuration-free step that
                         is supposed to yield the same flat Hub XML output for a given <code class="language-literal">.docx</code> file.)</p>
-                     
                      <p>The differences in code can be seen <a href="https://github.com/transpect/docx2jats-demo/commit/34147aceaaeeb3f014ecfdd39c953d0f5d34cfa9">➼ here (commit 34147ac)</a>.
                         Admittedly, finding the right places to tweak the <a href="https://github.com/transpect/docx2jats-demo/blob/master/a9s/common/evolve-hub/driver.xsl#L14">➼ imported XSLT</a> may
                         be hard, but that’s a thing that this sample project should help alleviate.</p>
-                     </div>
+                  </div>
                   <div id="validation" class="section scrollspy">
-                     
                      <h2 class="header">Validation</h2>
-                     
                      <p>This <a href="https://github.com/transpect/docx2jats-demo/compare/34147ac...e5ef56c">➼ diff of commit e5ef56c</a> 
                         show several modifications to the <a href="https://github.com/transpect/docx2jats-demo/commit/fbd645bc9f1c4f204fd248b361cc600adabe0413#diff-70cf31a3c86a739a35ebbf3fe22ec844">➼ current pipeline</a>:</p>
-                     
                      <ul>
-                        
                         <li>
-                           
                            <p>Added a <code class="language-literal">jats2html</code> step, <a href="https://github.com/transpect/docx2jats-demo/blob/e5ef56c8f9b15b466047b813f66940a63550cdbf/a9s/common/jats2html/jats2html.xsl">➼ XSLT customizing</a>
                               for this step, and CSS </p>
-                           </li>
-                        
+                        </li>
                         <li>
-                           
                            <p>Added Schematron checks for flat Hub, for evolved Hub, and for JATS XML</p>
-                           </li>
-                        
+                        </li>
                         <li>
-                           
                            <p>Added a Relax NG check for JATS XML, using the JATS 1.0 archiving schema (using a
                               <a href="https://github.com/transpect/rng-extension/blob/master/xpl/validate-with-rng-declaration.xpl">➼ wrapper</a> around
                               <code class="language-literal">p:validate-with-relax-ng</code> that produces an output port and reports the XPath
                               location for each error, in addition to the line number which is meaningless in the
                               middle of a pipeline)</p>
-                           </li>
-                        
+                        </li>
                         <li>
-                           
                            <p>Added a <code class="language-literal">tr:check-styles</code> step that matches the styles found in the input <code class="language-literal">.docx</code>
                               against <a href="https://github.com/transpect/docx2jats-demo/blob/master/a9s/common/styles/cssa.xml">➼ this list</a>
                               (that has been extracted from the Hub XML of a sample input document)</p>
-                           </li>
-                        
+                        </li>
                         <li>
-                           
                            <p><code class="language-literal">tr:patch-svrl</code>: Collect the 
                               <code class="language-literal">report</code> ports of all steps (SVRL and <code class="language-literal">c:errors</code> documents produced by the
                               RNG validation and potentially also by <code class="language-literal">p:try</code>/<code class="language-literal">p:catch</code>-encapsulated steps)
@@ -847,57 +660,38 @@ svn co https://subversion.le-tex.de/common/transpect-demo/content/ulsp/ ../conte
                               presentation entitled 
                               <a href="http://publishinggeekly.com/wp-content/uploads/2015/11/2015-11-06_xmlamsterdam_htmlreports/">➼ “Unified Validation Reporting in HTML Renderings”</a> that describes this approach.
                               </p>
-                           </li>
-                        </ul>
-                     
+                        </li>
+                     </ul>
                      <p>The modified invocation (modulo debug options) reads:</p>
-                     
                      <pre>calabash/calabash.sh \
    -o result=out.xml \
    -o htmlreport=report.xhtml \
    a9s/common/xpl/docx2jats.xpl \
    file=../content/ulsp/CSMI/CSMI_2014_701/docx/CSMI_2014_701.docx</pre>
-                     
                      <p>See the resulting <a href="source/media/docx2jats-demo/report-CSMI_2014_701.xhtml">error report</a>.</p>
-                     
                      <h4>Faulty Input</h4>
-                     
                      <p>Let’s convert a file, <a href="https://subversion.le-tex.de/common/transpect-demo/content/ulsp/CSMI/CSMI_2014_701f/docx/CSMI_2014_701f.docx">➼ CSMI_2014_701f.docx</a>,
                         that contains some errors.</p>
-                     
                      <p>After setting a <a href="https://github.com/transpect/docx2jats-demo/commit/f427b4024d1f6cd5099c0dd9a1a34b1bb036de1b#diff-1">➼ configuration 
                            parameter</a> that will regroup the SVRL messages according to <a href="https://github.com/transpect/docx2jats-demo/blob/e5ef56c8f9b15b466047b813f66940a63550cdbf/a9s/common/schematron/flat/flat-hub.sch.xml#L47">➼ category</a> instead of
                         conversion step, where category is supplied by the Schematron author, the <a href="source/media/docx2jats-demo/report-CSMI_2014_701.xhtml">HTML report</a> contains some more errors
                         and warnings.</p>
-                     
-                     </div>
+                  </div>
                   <div id="a9s-specific-customizations" class="section scrollspy">
-                     
                      <h2 class="header">Using the Configuration Cascade</h2>
-                     
-                     
                      <p>So far, we did only supply customizations in the <code class="language-literal">a9s/common</code> directory. Let’s introduce
                         a new ulsp journal, alongside the existing CSMI, and call it 'Test'. (Oh, we did actually
                         introduce it already,
                         in our <a href="https://github.com/transpect/docx2jats-demo/blob/master/conf/transpect-conf.xml">➼ configuration 
                            file</a>.) Its configuration base directory is <code class="language-literal">a9s/ulsp/Test</code>.</p>
-                     
-                     
                      <h4>Mapping Style Names</h4>
-                     
-                     
                      <p>Sometimes you want to use localized or publisher-/journal-/typesetter-specific versions
                         of your Word or InDesign
                         templates. transpect features a batch-mode style mapper that will normalize the diverse
                         names to a common standard.
                         This will help you keep your XSLT and Schematron rules simple.</p>
-                     
-                     
                      <p>Let’s assume that the Test journal uses different style names, like this:</p>
-                     
                      <figure class="informalfigure"><img class="responsive-img" src="source/media/docx2jats-demo/pre-stylemap-diff.png" alt="Diff between the CSMI and Test docx2hub output" /></figure>
-                     
-                     
                      <p>We introduce a file <a href="https://github.com/transpect/docx2jats-demo/commit/7131f8ef042855066dbe29a3a2be943134554d1e#diff-3">➼ <code class="language-literal">a9s/ulsp/styles/map-docx.xhtml</code></a>.
                         It contains a 3-column HTML table where the second column contains a regex that is
                         supposed to match existing
@@ -906,36 +700,24 @@ svn co https://subversion.le-tex.de/common/transpect-demo/content/ulsp/ ../conte
                         subsequent rules will be applied to the output of the current replacement rule. This
                         makes the mapping mechanism 
                         really powerful.</p>
-                     
-                     
                      <p>We add <a href="https://github.com/transpect/map-style-names">➼ map-style-names</a> as a submodule, 
                         refer to its XML catalog and <a href="https://github.com/transpect/docx2jats-demo/commit/7131f8ef042855066dbe29a3a2be943134554d1e#diff-1">➼ invoke 
                            the step in the pipeline</a>, right after <code class="language-literal">docx2hub</code>. That way, we don’t have to adapt
                         our style checking step or any other parts of the pipeline.</p>
-                     
-                     
                      <p>Without the mapping, the HTML report will <a href="source/media/docx2jats-demo/report-Test_2014_701-unmapped.xhtml">go berserk</a> because no valid JATS 
                         could be produced, due to the unexpected style names.</p>
-                     
-                     
                      <h4>Extending the Schematron</h4>
-                     
                      <p>In order to make it a bit more interesting, we introduce <a href="https://github.com/transpect/docx2jats-demo/commit/7131f8ef042855066dbe29a3a2be943134554d1e#diff-2">➼ an 
                            additional Schematron check</a> for <code class="language-literal">a9s/ulsp/Test</code>. The resulting report features an
                         <a href="source/media/docx2jats-demo/report-Test_2014_701.xhtml#BC_d6897e95_1">interesting new error</a>.</p>
-                     
-                     
                      <p>The assembly mechanism for Schematron checks works cumulatively. For each given <em>family</em> 
                         (<code class="language-literal">jats</code>, <code class="language-literal">flat</code>, <code class="language-literal">evolve-hub</code> in this project), it adds the checks 
                         of the sub-clades to the ancestor clades’ checks. </p>
-                     
                      <p>If a check should be left out in the derivative clade, its pattern should be redefined
                         empty there.</p>
-                     </div>
+                  </div>
                   <div id="epub" class="section scrollspy">
-                     
                      <h2 class="header">Creating an EPUB</h2>
-                     
                      <p>transpect’s EPUB conversion step accepts a single (X)HTML document on its source port.
                         In addition,
                         it requires a configuration file in which you can specify the EPUB version (2 or 3
@@ -943,34 +725,24 @@ svn co https://subversion.le-tex.de/common/transpect-demo/content/ulsp/ ../conte
                         classes/epub:types for generating the nav document, parameters for existing checks
                         (e.g., image file size, colorspace),
                         additional Schematron for checks, the location of the cover image, and metadata.</p>
-                     
                      <p>We’ll have to change the following things:</p>
-                     
                      <ul>
-                        
                         <li>
-                           
                            <p>add an <code class="language-literal">xml:base</code> attribute to the HTML rendering that is a <code class="language-literal">file:</code> 
                               URI that ends in <code class="language-literal">.xhtml</code>.
                               In the example, it is the file URI of the <code class="language-literal">docx2hub</code> output, with a trailing <code class="language-literal">.hub.xml</code>
                               replaced with <code class="language-literal">.xhtml</code></p>
-                           </li>
-                        
+                        </li>
                         <li>
-                           
                            <p>add css-tools as submodule since we forgot to add it initially</p>
-                           </li>
-                        
+                        </li>
                         <li>
-                           
                            <p>provide an epub configuration (we put it into <code class="language-literal">a9s/common/epubtools/epub-config.xml</code>,
                               and <code class="language-literal">tr:load-cascaded</code> lets you load a different config files for other 
                               clades or create a document from another one using the <code class="language-literal">epub-config.xml.xsl</code> mechanism).</p>
-                           </li>
-                        </ul>
-                     
+                        </li>
+                     </ul>
                      <p>These are the changes of the corresponding <a href="https://github.com/transpect/docx2jats-demo/commit/9e5e49bf0d17d7291e02225d30fb6763a0f19586">➼ commit 9e5e49b</a>.</p>
-                     
                      <p>This is the resulting <a href="source/media/docx2jats-demo/Test_2014_701.epub">EPUB file</a>, and
                         this is the 
                         <a href="source/media/docx2jats-demo/report-Test_2014_701-epubtools.xhtml">HTML report</a> that includes the standard IDPF epubcheck 4.0.1 checks. In addition, it would have
@@ -978,58 +750,35 @@ svn co https://subversion.le-tex.de/common/transpect-demo/content/ulsp/ ../conte
                         and sizes by Schematron. But in this case the images happen to be TIFFs – we need
                         to 
                         <a href="https://github.com/transpect/image-transform-extension">➼ convert them to supported formats</a> before.</p>
-                     </div>
+                  </div>
                   <div id="pmc" class="section scrollspy">
-                     
                      <h2 class="header">PubMed Central Submission</h2>
-                     
-                     
                      <h4>PubMed Central / NLM style checker</h4>
-                     
                      <p>PMC provides <a href="http://www.ncbi.nlm.nih.gov/pmc/tools/stylechecker/">➼ XSLT stylesheets</a> for letting you check JATS prior to submission. We wrapped this as an XProc step
                         that 
                         produces SVRL that may then be rendered into the <a href="source/media/docx2jats-demo/report-CSMI_2014_701-nlm.xhtml">HTML report</a>.</p>
-                     
-                     
                      <p>Here’s the corresponding <a href="https://github.com/transpect/docx2jats-demo/commit/0327abfebc013908de3879d408200163243ca2ad">➼ commit 0327abf</a></p>
-                     
-                     
                      <h4>Creating a PMC Zip</h4>
-                     
                      <p>tbd; will be available by tonight…</p>
-                     
-                     </div>
+                  </div>
                   <div id="transpectdoc" class="section scrollspy">
-                     
                      <h2 class="header">transpectdoc</h2>
-                     
                      <p>The <a href="source/media/docx2jats-demo/doc/">generated documentation</a> of this project.</p>
-                     </div>
+                  </div>
                   <div id="integration" class="section scrollspy">
-                     
                      <h2 class="header">Integration/Tests</h2>
-                     
                      <p>tbd: Upload interface / Makefile</p>
-                     
                      <p>tbd: before/after</p>
-                     
                      <p>tbd: jenkins screenshot</p>
-                     </div>
+                  </div>
                   <div id="gui" class="section scrollspy">
-                     
                      <h2 class="header">GUI</h2>
-                     
                      <p>tbd: screenshots, installation of this project on <a href="https://transpect.le-tex.de/?locale=en">➼ transpect.le-tex.de</a></p>
-                     </div>
+                  </div>
                </div>
-               
-               
                <div class="col hide-on-small-only m3 l2">
-                  
                   <div class="toc-wrapper pin-top" style="top: 0px;">
-                     
                      <div style="height: 1px;">
-                        
                         <ul id="tr-toc" class="table-of-contents">
                            <li><a href="#initial-github-repo" class="active">Creating a Repository</a></li>
                            <li><a href="#submodules">Adding Submodules</a></li>
@@ -1048,70 +797,43 @@ svn co https://subversion.le-tex.de/common/transpect-demo/content/ulsp/ ../conte
                            <li><a href="#integration">Integration/Tests</a></li>
                            <li><a href="#gui">GUI</a></li>
                         </ul>
-                        </div>
                      </div>
                   </div>
                </div>
             </div>
-         </main>
-      
+         </div>
+      </main>
       <footer class="page-footer grey">
-         
          <div class="container">
-            
             <div class="row">
-               
                <div id="tr-footer-1" class="col s12 m6 l4">
-                  
                   <h5 class="white-text">GitHub</h5>
-                  
                   <p class="white-text">Checkout the transpect repositories on GitHub and use transpect in your project. 
                      Give us feedback, create issues and make pull requests.</p>
-                  
                   <p><a target="_blank" href="https://github.com/transpect" class="btn red">GitHub</a></p>
-                  </div>
-               
+               </div>
                <div id="tr-footer-2" class="col s12 m6 l4">
-                  
                   <h5 class="white-text">Twitter</h5>
-                  
                   <p class="white-text">News from le-tex’ XML machine room. Mostly related to 
                      XSLT/XPath 2+, XProc, Relax NG, Schematron, and our 
                      open-source framework transpect.
                      </p>
-                  
                   <p><a target="_blank" href="https://twitter.com/intent/user?screen_name=letexml" class="btn red">Follow @letexml</a></p>
-                  </div>
-               
-               <div id="tr-footer-3" class="col s12 m6 l4">
-                  <a target="_blank" href="http://www.le-tex.de"><object id="letex-logo" type="image/svg+xml" data="icons/logo-le-tex.svg">Your browser does not support SVG</object></a>
-                  </div>
                </div>
+               <div id="tr-footer-3" class="col s12 m6 l4"><a target="_blank" href="http://www.le-tex.de"><object id="letex-logo" type="image/svg+xml" data="icons/logo-le-tex.svg">Your browser does not support SVG</object></a></div>
             </div>
-         
+         </div>
          <div class="footer-copyright grey darken-1">
-            
             <div class="container">
-               
                <div class="row">
-                  
                   <div id="tr-footer-copyright-1" class="col s12 m6 l6">
-                     
-                     <p class="white-text left">le-tex publishing services GmbH, 2021</p>
-                     </div>
-                  
+                     <p class="white-text left">le-tex publishing services GmbH, 2022</p>
+                  </div>
                   <div id="tr-footer-copyright-2" class="col s12 m6 l6">
-                     
                      <p><a class="white-text right" href="http://www.le-tex.de">http://www.le-tex.de</a></p>
-                     </div>
                   </div>
                </div>
             </div>
-         </footer>
-      
-      <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-      <script type="text/javascript" src="js/prism.js"></script>
-      <script type="text/javascript" src="js/materialize.min.js"></script>
-      <script src="js/init.js"></script>
-      </body>
-   </html>
+         </div>
+      </footer><script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script><script type="text/javascript" src="js/prism.js"></script><script type="text/javascript" src="js/materialize.min.js"></script><script src="js/init.js"></script></body>
+</html>

@@ -1,51 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?><html xmlns="http://www.w3.org/1999/xhtml" xml:base="../getting-started.html">
-   
    <head>
       <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-      
       <title>Getting Started</title>
-      
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      
       <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-      
-      
       <meta name="theme-color" content="#FF9800" />
-      
-      
       <link rel="apple-touch-icon-precomposed" href="icons/apple-touch-icon-152x152.png" />
-      
       <meta name="msapplication-TileImage" content="icons/mstile-144x144.png" />
-      
       <link rel="icon" href="icons/favicon-32x32.png" sizes="32x32" />
-      
-      
       <link type="text/css" rel="stylesheet" media="screen,projection" href="css/prism.css" />
-      
       <link type="text/css" rel="stylesheet" media="screen,projection" href="css/materialize.min.css" />
-      
       <link type="text/css" rel="stylesheet" media="screen,projection" href="css/le-tex.css" />
-      </head>
-   
+   </head>
    <body>
-      
-      
       <header>
-         
          <div class="container"><a href="#" data-activates="tr-nav" class="button-collapse top-nav circle hide-on-large-only"><i class="mdi-navigation-menu"></i></a></div>
-         
-         
-         
          <ul id="tr-nav" class="side-nav fixed" style="width:260px">
-            
             <li class="logo"><a id="logo-container" href="#" class="brand-logo"><object id="front-page-logo" type="image/svg+xml" data="icons/logo-transpect.svg">Your browser does not support SVG</object></a></li>
-            
-            
             <li class="naventry-1st"><a href="index.html">About</a></li>
             <li class="active naventry-1st"><a href="getting-started.html">Getting Started</a></li>
             <li class="no-padding">
                <ul class="collapsible collapsible-accordion">
-                  <li class="naventry-1st" id="d33723e415"><a class="collapsible-header">Modules</a><div class="collapsible-body">
+                  <li class="naventry-1st" id="d13e415"><a class="collapsible-header">Modules</a><div class="collapsible-body">
                         <ul>
                            <li class="naventry-2nd"><a href="modules-basex-svn-api.html">basex-svn-api</a></li>
                            <li class="naventry-2nd"><a href="modules-bits2hub.html">bits2hub</a></li>
@@ -141,72 +117,48 @@
             <li class="naventry-1st"><a href="styleguide.html">Styleguide</a></li>
             <li class="naventry-1st"><a href="tutorial.html">Tutorials</a></li>
          </ul>
-         </header>
-      
-      
+      </header>
       <main>
-         
          <div class="section orange" id="index-banner">
-            
             <div class="container">
-               
                <h1 id="tr-title" class="light header center-on-small-only white-text">Getting Started</h1>
-               
                <h4 id="tr-subtitle" class="light orange-text text-lighten-4 center-on-small-only">Learn how to use transpect</h4>
-               </div>
             </div>
-         
+         </div>
          <div class="container">
-            
             <div class="row">
-               
-               
                <div class="col s12 m9 l10" id="tr-content">
                   <div id="gs-prerequisites" class="section scrollspy">
-                     
                      <h2 class="header">Prerequisites</h2>
-                     
                      <p>There are no further prerequisites as are required to run XProc. If you are not familiar
                         with XProc, we
                         suggest to work yourself through Roger L. Costello’s <a href="http://www.xfront.com/xproc/">➼ XProc
                            tutorial</a> first.</p>
-                     
                      <div class="col s12 m6">
-                        
                         <h5>XML Calabash</h5>
-                        
                         <p>We recommend to use our pre-configured XML Calabash for running transpect’s XProc
                            pipelines. It includes
                            convenient frontend scripts and extensions steps which are essential to some modules.</p>
-                        </div>
-                     
+                     </div>
                      <div class="col s12 m6">
-                        
                         <h5>Java</h5>
-                        
                         <p>XML Calabash needs Java 1.7 and later to run. We noticed some odd behaviour while
                            running XML Calabash
                            with a JVMs other than Oracle. If you get memory issues, consider to install the 64-bit
                            version.</p>
-                        </div>
                      </div>
+                  </div>
                   <div id="gs-project-setup" class="section scrollspy">
-                     
                      <h2 class="header">Project Setup</h2>
-                     
                      <h4>Install XML Calabash</h4>
-                     
                      <p>We recommend to use Git or SVN to checkout Calabash to take care that all dependencies
                         are met. The calabash directory
                         should be placed at the top-level of your project directory.</p>
-                     
                      <pre><code class="language-code">MyProject/
   |--calabash/
   |  |--calabash.sh
   |  |--calabash.bat</code></pre>
-                     
                      <pre><code class="language-git">git clone --recursive https://github.com/transpect/calabash-frontend calabash</code></pre>
-                     
                      <div class="card">
                         <div class="card-content">
                            <span class="card-title">Optional: checkout XML Calabash with SVN</span>
@@ -226,19 +178,15 @@ svn co https://github.com/transpect/image-props-extension/trunk calabash/extensi
 svn co https://github.com/transpect/image-transform-extension/trunk calabash/extensions/transpect/image-transform-extension</code></pre>
                            </div>
                      </div>
-                     
                      <h4>Checkout the transpect modules</h4>
-                     
                      <p>First, we have to checkout the modules with Git or SVN. For example, we want to get
                         <a href="modules-docx2hub.html#docx2hub-convert">docx2hub:convert</a>, 
                         which converts Microsoft Word to <a href="https://github.com/le-tex/Hub">➼ Hub XML</a>. The docx2hub module depends on <a href="modules-xproc-util.html#modules-xproc-util">xproc-util</a> and <a href="modules-xslt-util.html#modules-xslt-util">xslt-util</a>.
                         </p>
-                     
                      <pre><code class="language-git">git clone https://github.com/transpect/docx2hub
 git clone https://github.com/transpect/htmlreports
 git clone https://github.com/transpect/xslt-util
 git clone https://github.com/transpect/xproc-util</code></pre>
-                     
                      <div class="card">
                         <div class="card-content">
                            <span class="card-title">Optional: checkout modules with SVN</span>
@@ -249,33 +197,26 @@ svn co https://github.com/transpect/xslt-util/trunk xslt-util
 svn co https://github.com/transpect/xproc-util/trunk xproc-util</code></pre>
                            </div>
                      </div>
-                     
                      <p>After we cloned XML Calabash and the transpect modules, our project directory should
                         look like this.</p>
-                     
                      <pre><code class="language-code">MyProject/
   |--calabash/
   |--docx2hub/
   |--htmlreports/
   |--xproc-util/
   |--xslt-util/</code></pre>
-                     
                      <h4>Create an XML Catalog</h4>
-                     
                      <p>Transpect uses canonical import URIs to import other modules. To resolve this URIs,
                         our XML Calabash
                         looks after an XML catalog in the project directory. Starting from the project dir,
                         the path is usually <code class="language-filename">xmlcatalog/catalog.xml</code>. 
                         So you have to create the directory <code class="language-filename">xmlcatalog</code> and create a file named <code class="language-filename">catalog.xml</code> in this directory.</p>
-                     
                      <pre><code class="language-code">MyProject/
   |--xmlcatalog/
   |  |--catalog.xml</code></pre>
-                     
                      <p>The XML catalog of the project is used to include the catalogs of the transpect modules.
                         Therefore the <code class="language-code">nextCatalog</code> element is used 
                         to connect the module catalogs. Edit the <code class="language-filename">catalog.xml</code> and add the following lines.</p>
-                     
                      <pre><code class="language-markup">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
 &lt;catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog"&gt;
   &lt;nextCatalog catalog="../docx2hub/xmlcatalog/catalog.xml"/&gt;
@@ -283,32 +224,23 @@ svn co https://github.com/transpect/xproc-util/trunk xproc-util</code></pre>
   &lt;nextCatalog catalog="../xproc-util/xmlcatalog/catalog.xml"/&gt;
   &lt;nextCatalog catalog="../xslt-util/xmlcatalog/catalog.xml"/&gt;
 &lt;/catalog&gt;</code></pre>
-                     </div>
+                  </div>
                   <div id="gs-run-the-pipeline" class="section scrollspy">
-                     
                      <h2 class="header">Run the pipeline</h2>
-                     
                      <h4>Command line</h4>
-                     
                      <p>After we are included transpect in our project, we can run the <a href="modules-docx2hub.html#docx2hub-convert">docx2hub:convert</a> pipeline to convert a Microsoft 
                         Word DOCX file to <a href="https://github.com/le-tex/Hub">➼ Hub XML</a>. Users of Linux, Mac OS X or Cygwin can use 
                         a convenient Bash script:</p>
-                     
                      <pre>./calabash/calabash.sh -o result=MyXMLfile.xml docx2hub/xpl/docx2hub.xpl docx=MyWordfile.docx</pre>
-                     
                      <p>There exists also a Batch file for Windows users:</p>
-                     
                      <pre>.\calabash\calabash.bat -o result=MyXMLfile.xml .\docx2hub\xpl\docx2hub.xpl docx=MyWordfile.docx</pre>
-                     
                      <h4 id="gs-include-in-your-pipeline">Include in your pipeline</h4>
-                     
                      <p>You can import and use transpect modules in your own XProc pipelines. Therefore, you
                         need to declare the namespace and 
                         add the <code class="language-code">p:import</code> statement of the XProc step you want to use. Here is a simple XProc pipeline which
                         implements 
                         <a href="modules-docx2hub.html#docx2hub-convert">docx2hub:convert</a>.
                         </p>
-                     
                      <pre><code class="language-markup">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
 &lt;p:declare-step xmlns:p="http://www.w3.org/ns/xproc" 
   xmlns:docx2hub="http://transpect.io/docx2hub"
@@ -324,94 +256,60 @@ svn co https://github.com/transpect/xproc-util/trunk xproc-util</code></pre>
     &lt;p:with-option name="docx" select="$docx"/&gt;
   &lt;/docx2hub:convert&gt;
   
-&lt;/p:declare-step&gt;</code></pre>  
-                     </div>
+&lt;/p:declare-step&gt;</code></pre>
+                  </div>
                   <div id="gs-learn-more" class="section scrollspy">
-                     
                      <h2 class="header">Learn more?</h2>
-                     
                      <p>If you want to get a deeper insight into the transpect framework, we would recommend
-                        to read our <a href="tutorial.html#tutorial-docx-jats-epub">Tutorials</a>.</p>          
-                     </div>
+                        to read our <a href="tutorial.html#tutorial-docx-jats-epub">Tutorials</a>.</p>
+                  </div>
                </div>
-               
-               
                <div class="col hide-on-small-only m3 l2">
-                  
                   <div class="toc-wrapper pin-top" style="top: 0px;">
-                     
                      <div style="height: 1px;">
-                        
                         <ul id="tr-toc" class="table-of-contents">
                            <li><a href="#gs-prerequisites" class="active">Prerequisites</a></li>
                            <li><a href="#gs-project-setup">Project Setup</a></li>
                            <li><a href="#gs-run-the-pipeline">Run the pipeline</a></li>
                            <li><a href="#gs-learn-more">Learn more?</a></li>
                         </ul>
-                        </div>
                      </div>
                   </div>
                </div>
             </div>
-         </main>
-      
+         </div>
+      </main>
       <footer class="page-footer grey">
-         
          <div class="container">
-            
             <div class="row">
-               
                <div id="tr-footer-1" class="col s12 m6 l4">
-                  
                   <h5 class="white-text">GitHub</h5>
-                  
                   <p class="white-text">Checkout the transpect repositories on GitHub and use transpect in your project. 
                      Give us feedback, create issues and make pull requests.</p>
-                  
                   <p><a target="_blank" href="https://github.com/transpect" class="btn red">GitHub</a></p>
-                  </div>
-               
+               </div>
                <div id="tr-footer-2" class="col s12 m6 l4">
-                  
                   <h5 class="white-text">Twitter</h5>
-                  
                   <p class="white-text">News from le-tex’ XML machine room. Mostly related to 
                      XSLT/XPath 2+, XProc, Relax NG, Schematron, and our 
                      open-source framework transpect.
                      </p>
-                  
                   <p><a target="_blank" href="https://twitter.com/intent/user?screen_name=letexml" class="btn red">Follow @letexml</a></p>
-                  </div>
-               
-               <div id="tr-footer-3" class="col s12 m6 l4">
-                  <a target="_blank" href="http://www.le-tex.de"><object id="letex-logo" type="image/svg+xml" data="icons/logo-le-tex.svg">Your browser does not support SVG</object></a>
-                  </div>
                </div>
+               <div id="tr-footer-3" class="col s12 m6 l4"><a target="_blank" href="http://www.le-tex.de"><object id="letex-logo" type="image/svg+xml" data="icons/logo-le-tex.svg">Your browser does not support SVG</object></a></div>
             </div>
-         
+         </div>
          <div class="footer-copyright grey darken-1">
-            
             <div class="container">
-               
                <div class="row">
-                  
                   <div id="tr-footer-copyright-1" class="col s12 m6 l6">
-                     
-                     <p class="white-text left">le-tex publishing services GmbH, 2021</p>
-                     </div>
-                  
+                     <p class="white-text left">le-tex publishing services GmbH, 2022</p>
+                  </div>
                   <div id="tr-footer-copyright-2" class="col s12 m6 l6">
-                     
                      <p><a class="white-text right" href="http://www.le-tex.de">http://www.le-tex.de</a></p>
-                     </div>
                   </div>
                </div>
             </div>
-         </footer>
-      
-      <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-      <script type="text/javascript" src="js/prism.js"></script>
-      <script type="text/javascript" src="js/materialize.min.js"></script>
-      <script src="js/init.js"></script>
-      </body>
-   </html>
+         </div>
+      </footer><script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script><script type="text/javascript" src="js/prism.js"></script><script type="text/javascript" src="js/materialize.min.js"></script><script src="js/init.js"></script></body>
+</html>

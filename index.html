@@ -1,51 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?><html xmlns="http://www.w3.org/1999/xhtml" xml:base="../index.html">
-   
    <head>
       <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-      
       <title>transpect</title>
-      
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      
       <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-      
-      
       <meta name="theme-color" content="#FF9800" />
-      
-      
       <link rel="apple-touch-icon-precomposed" href="icons/apple-touch-icon-152x152.png" />
-      
       <meta name="msapplication-TileImage" content="icons/mstile-144x144.png" />
-      
       <link rel="icon" href="icons/favicon-32x32.png" sizes="32x32" />
-      
-      
       <link type="text/css" rel="stylesheet" media="screen,projection" href="css/prism.css" />
-      
       <link type="text/css" rel="stylesheet" media="screen,projection" href="css/materialize.min.css" />
-      
       <link type="text/css" rel="stylesheet" media="screen,projection" href="css/le-tex.css" />
-      </head>
-   
+   </head>
    <body>
-      
-      
       <header>
-         
          <div class="container"><a href="#" data-activates="tr-nav" class="button-collapse top-nav circle hide-on-large-only"><i class="mdi-navigation-menu"></i></a></div>
-         
-         
-         
          <ul id="tr-nav" class="side-nav fixed" style="width:260px">
-            
             <li class="logo"><a id="logo-container" href="#" class="brand-logo"><object id="front-page-logo" type="image/svg+xml" data="icons/logo-transpect.svg">Your browser does not support SVG</object></a></li>
-            
-            
             <li class="active naventry-1st"><a href="index.html">About</a></li>
             <li class="naventry-1st"><a href="getting-started.html">Getting Started</a></li>
             <li class="no-padding">
                <ul class="collapsible collapsible-accordion">
-                  <li class="naventry-1st" id="d33723e415"><a class="collapsible-header">Modules</a><div class="collapsible-body">
+                  <li class="naventry-1st" id="d13e415"><a class="collapsible-header">Modules</a><div class="collapsible-body">
                         <ul>
                            <li class="naventry-2nd"><a href="modules-basex-svn-api.html">basex-svn-api</a></li>
                            <li class="naventry-2nd"><a href="modules-bits2hub.html">bits2hub</a></li>
@@ -141,26 +117,16 @@
             <li class="naventry-1st"><a href="styleguide.html">Styleguide</a></li>
             <li class="naventry-1st"><a href="tutorial.html">Tutorials</a></li>
          </ul>
-         </header>
-      
-      
+      </header>
       <main>
-         
          <div class="section orange" id="index-banner">
-            
             <div class="container">
-               
                <h1 id="tr-title" class="light header center-on-small-only white-text">transpect</h1>
-               
                <h4 id="tr-subtitle" class="light orange-text text-lighten-4 center-on-small-only">An Open Source framework for converting and checking data</h4>
-               </div>
             </div>
-         
+         </div>
          <div class="container">
-            
             <div class="row">
-               
-               
                <div class="col s12 m9 l10" id="tr-content">
                   <p class="col">Transpect was designed to provide generic and stable modules for common conversion
                      and checking
@@ -169,10 +135,8 @@
                      transformation and checking rules. Each component within the framework is Open Source
                      and use standard
                      technologies such as XSLT 2.0 and XProc.</p>
-                  <div id="d33915e10" class="section scrollspy">
-                     
+                  <div id="d205e10" class="section scrollspy">
                      <h2 class="header">Data Conversion</h2>
-                     
                      <p>Transpect offers many modules to parse and convert a wide range of XML-based formats
                         such as DOCX, IDML,
                         EPUB, NLM JATS/BITS and TEI. Additionally, there exist tools for converting text-based
@@ -180,7 +144,6 @@
                         LaTeX as well as extensions, e. g., in order to check PDF and image files. The following
                         list of supported
                         formats makes no claim to be comprehensive.</p>
-                     
                      <table class="informaltable">
                         
                         <thead>
@@ -288,56 +251,45 @@
                               </tr>
                            </tbody>
                         </table>
-                     
                      <p>Many converters generate the intermediate format <a href="https://github.com/le-tex/Hub">➼ Hub XML</a>. Hub XML is a DocBook 5.1 derivative that allows
                         for documents that lack a proper section hierarchy and uses <a href="https://github.com/le-tex/CSSa">➼ CSSa</a> for expressing layout information. It is used
                         as a common intermediate format to represent raw conversion results of, for example,
                         OOXML, ODT, and IDML
                         documents.</p>
-                     </div>
-                  <div id="d33915e144" class="section scrollspy">
-                     
+                  </div>
+                  <div id="d205e144" class="section scrollspy">
                      <h2 class="header">Checking Data</h2>
-                     
                      <p>Transpect implements Schematron and Schema validation. Furthermore, many modules integrate
                         error detection
                         and recovery methods. Reports are stored as Schematron SVRL document. The report messages
                         can be displayed in
                         an HTML view of the document at the error location. </p>
-                     </div>
-                  <div id="d33915e152" class="section scrollspy">
-                     
+                  </div>
+                  <div id="d205e152" class="section scrollspy">
                      <h2 class="header">Configuration Cascade</h2>
-                     
                      <p>Default transformation and checking rules (XSLT, Schematron, CSS, …) may be superseded
                         with specific
                         rules. These rules specified according to the group of content that the input belongs
                         to, for example per
                         company, per production-line, or per product.</p>
-                     </div>
-                  <div id="d33915e159" class="section scrollspy">
-                     
+                  </div>
+                  <div id="d205e159" class="section scrollspy">
                      <h2 class="header">Open Source</h2>
-                     
                      <p>Transpect is published under the BSD 2-clause license, also known as FreeBSD License.
                         This permissive
                         license imposes minimal restrictions on the redistribution of the software. Therefore
                         you can use the software
                         in commercial and even in closed source projects.</p>
-                     
                      <p> The license terms can be found here: <a href="http://opensource.org/licenses/BSD-2-Clause">➼ http://opensource.org/licenses/BSD-2-Clause</a>
                         </p>
-                     </div>
-                  <div id="d33915e172" class="section scrollspy">
-                     
+                  </div>
+                  <div id="d205e172" class="section scrollspy">
                      <h2 class="header">Industry Standards</h2>
-                     
                      <p>The technologies behind transpect are industry standards like XProc, XSLT 2.0 and
                         Schematron. Their
                         specifications are publicly available through international standards organizations
                         such as W3C and
                         ISO.</p>
-                     
                      <table class="informaltable">
                         
                         <tbody>
@@ -374,96 +326,62 @@
                               </tr>
                            </tbody>
                         </table>
-                     </div>
-                  <div id="d33915e213" class="section scrollspy">
-                     
+                  </div>
+                  <div id="d205e213" class="section scrollspy">
                      <h2 class="header">le-tex</h2>
-                     
                      <p>Transpect is developed and maintained by le-tex, a Leipzig-based company which provides
                         professional
                         services for publishers.</p>
-                     </div>
+                  </div>
                </div>
-               
-               
                <div class="col hide-on-small-only m3 l2">
-                  
                   <div class="toc-wrapper pin-top" style="top: 0px;">
-                     
                      <div style="height: 1px;">
-                        
                         <ul id="tr-toc" class="table-of-contents">
-                           <li><a href="#d33915e10" class="active">Data Conversion</a></li>
-                           <li><a href="#d33915e144">Checking Data</a></li>
-                           <li><a href="#d33915e152">Configuration Cascade</a></li>
-                           <li><a href="#d33915e159">Open Source</a></li>
-                           <li><a href="#d33915e172">Industry Standards</a></li>
-                           <li><a href="#d33915e213">le-tex</a></li>
+                           <li><a href="#d205e10" class="active">Data Conversion</a></li>
+                           <li><a href="#d205e144">Checking Data</a></li>
+                           <li><a href="#d205e152">Configuration Cascade</a></li>
+                           <li><a href="#d205e159">Open Source</a></li>
+                           <li><a href="#d205e172">Industry Standards</a></li>
+                           <li><a href="#d205e213">le-tex</a></li>
                         </ul>
-                        </div>
                      </div>
                   </div>
                </div>
             </div>
-         </main>
-      
+         </div>
+      </main>
       <footer class="page-footer grey">
-         
          <div class="container">
-            
             <div class="row">
-               
                <div id="tr-footer-1" class="col s12 m6 l4">
-                  
                   <h5 class="white-text">GitHub</h5>
-                  
                   <p class="white-text">Checkout the transpect repositories on GitHub and use transpect in your project. 
                      Give us feedback, create issues and make pull requests.</p>
-                  
                   <p><a target="_blank" href="https://github.com/transpect" class="btn red">GitHub</a></p>
-                  </div>
-               
+               </div>
                <div id="tr-footer-2" class="col s12 m6 l4">
-                  
                   <h5 class="white-text">Twitter</h5>
-                  
                   <p class="white-text">News from le-tex’ XML machine room. Mostly related to 
                      XSLT/XPath 2+, XProc, Relax NG, Schematron, and our 
                      open-source framework transpect.
                      </p>
-                  
                   <p><a target="_blank" href="https://twitter.com/intent/user?screen_name=letexml" class="btn red">Follow @letexml</a></p>
-                  </div>
-               
-               <div id="tr-footer-3" class="col s12 m6 l4">
-                  <a target="_blank" href="http://www.le-tex.de"><object id="letex-logo" type="image/svg+xml" data="icons/logo-le-tex.svg">Your browser does not support SVG</object></a>
-                  </div>
                </div>
+               <div id="tr-footer-3" class="col s12 m6 l4"><a target="_blank" href="http://www.le-tex.de"><object id="letex-logo" type="image/svg+xml" data="icons/logo-le-tex.svg">Your browser does not support SVG</object></a></div>
             </div>
-         
+         </div>
          <div class="footer-copyright grey darken-1">
-            
             <div class="container">
-               
                <div class="row">
-                  
                   <div id="tr-footer-copyright-1" class="col s12 m6 l6">
-                     
-                     <p class="white-text left">le-tex publishing services GmbH, 2021</p>
-                     </div>
-                  
+                     <p class="white-text left">le-tex publishing services GmbH, 2022</p>
+                  </div>
                   <div id="tr-footer-copyright-2" class="col s12 m6 l6">
-                     
                      <p><a class="white-text right" href="http://www.le-tex.de">http://www.le-tex.de</a></p>
-                     </div>
                   </div>
                </div>
             </div>
-         </footer>
-      
-      <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-      <script type="text/javascript" src="js/prism.js"></script>
-      <script type="text/javascript" src="js/materialize.min.js"></script>
-      <script src="js/init.js"></script>
-      </body>
-   </html>
+         </div>
+      </footer><script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script><script type="text/javascript" src="js/prism.js"></script><script type="text/javascript" src="js/materialize.min.js"></script><script src="js/init.js"></script></body>
+</html>
