@@ -1,7 +1,7 @@
-<?xml version="1.0" encoding="UTF-8"?><html xmlns="http://www.w3.org/1999/xhtml" xml:base="../modules-hub2bits.html">
+<?xml version="1.0" encoding="UTF-8"?><html xmlns="http://www.w3.org/1999/xhtml" xml:base="../modules-ace-daisy.html">
    <head>
       <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-      <title>hub2bits</title>
+      <title>ace-daisy</title>
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <meta http-equiv="X-UA-Compatible" content="IE=edge" />
       <meta name="theme-color" content="#FF9800" />
@@ -12,7 +12,7 @@
       <link type="text/css" rel="stylesheet" media="screen,projection" href="css/materialize.min.css" />
       <link type="text/css" rel="stylesheet" media="screen,projection" href="css/le-tex.css" />
    </head>
-   <body id="modules-hub2bits">
+   <body id="modules-ace-daisy">
       <header>
          <div class="container"><a href="#" data-activates="tr-nav" class="button-collapse top-nav circle hide-on-large-only"><i class="mdi-navigation-menu"></i></a></div>
          <ul id="tr-nav" class="side-nav fixed" style="width:260px">
@@ -23,7 +23,7 @@
                <ul class="collapsible collapsible-accordion">
                   <li class="active naventry-1st" id="d33827e415"><a class="active collapsible-header">Modules</a><div style="display:block" class="collapsible-body">
                         <ul>
-                           <li class="naventry-2nd"><a href="modules-ace-daisy.html">ace-daisy</a></li>
+                           <li class="active naventry-2nd"><a href="modules-ace-daisy.html">ace-daisy</a></li>
                            <li class="naventry-2nd"><a href="modules-basex-svn-api.html">basex-svn-api</a></li>
                            <li class="naventry-2nd"><a href="modules-bits2hub.html">bits2hub</a></li>
                            <li class="naventry-2nd"><a href="modules-calabash-distro.html">calabash-distro</a></li>
@@ -54,7 +54,7 @@
                            <li class="naventry-2nd"><a href="modules-htmlreports.html">htmlreports</a></li>
                            <li class="naventry-2nd"><a href="modules-htmltables.html">htmltables</a></li>
                            <li class="naventry-2nd"><a href="modules-htmltemplates.html">htmltemplates</a></li>
-                           <li class="active naventry-2nd"><a href="modules-hub2bits.html">hub2bits</a></li>
+                           <li class="naventry-2nd"><a href="modules-hub2bits.html">hub2bits</a></li>
                            <li class="naventry-2nd"><a href="modules-hub2dbk.html">hub2dbk</a></li>
                            <li class="naventry-2nd"><a href="modules-hub2docx-frontend.html">hub2docx-frontend</a></li>
                            <li class="naventry-2nd"><a href="modules-hub2docx-lib.html">hub2docx-lib</a></li>
@@ -122,8 +122,8 @@
       <main>
          <div class="section orange" id="index-banner">
             <div class="container">
-               <h1 id="tr-title" class="light header center-on-small-only white-text">hub2bits</h1>
-               <h4 id="tr-subtitle" class="light orange-text text-lighten-4 center-on-small-only"></h4>
+               <h1 id="tr-title" class="light header center-on-small-only white-text">ace-daisy</h1>
+               <h4 id="tr-subtitle" class="light orange-text text-lighten-4 center-on-small-only">XProc wrapper for DAISY's accessibility checker</h4>
             </div>
          </div>
          <div class="container">
@@ -134,76 +134,22 @@
                            <tbody>
                               <tr>
                                  <td>Git URL</td>
-                                 <td><code class="language-markup">https://github.com/transpect/hub2bits.git</code></td>
+                                 <td><code class="language-markup">https://github.com/transpect/ace-daisy.git</code></td>
                               </tr>
                               <tr>
                                  <td>SVN URL</td>
-                                 <td><code class="language-markup">https://github.com/transpect/hub2bits</code></td>
+                                 <td><code class="language-markup">https://github.com/transpect/ace-daisy</code></td>
                               </tr>
                               <tr>
                                  <td>Base URI</td>
-                                 <td><code class="language-markup">http://transpect.io/hub2bits/</code></td>
+                                 <td><code class="language-markup">http://transpect.io/ace-daisy/</code></td>
                               </tr>
                            </tbody>
                         </table>
-                        <p><a href="https://github.com/transpect/hub2bits" class="btn-flat  orange lighten-4">Source ⬇</a></p>
+                        <p><a href="https://github.com/transpect/ace-daisy" class="btn-flat  orange lighten-4">Source ⬇</a></p>
                      </div>
                   </div>
-                  <div id="jats-hub2bits" class="section scrollspy">
-                     <h2 class="header">jats:hub2bits</h2>
-                     <h4>Import</h4>
-                     <pre><code class="language-markup">&lt;p:import href="http://transpect.io/hub2bits/xpl/hub2bits.xpl"/&gt;</code></pre>
-                     <h4>Dependencies</h4>
-                     <ul>
-                        <li>
-                           <p><a href="modules-cascade.html">cascade</a></p>
-                        </li>
-                        <li>
-                           <p><a href="modules-xproc-util.html">xproc-util</a></p>
-                        </li>
-                     </ul>
-                     <h4>Synopsis</h4>
-                     <pre><code class="language-markup">&lt;jats:hub2bits xmlns:jats="http://jats.nlm.nih.gov"&gt;
-  &lt;p:input port="source" primary="true"/&gt;
-  &lt;p:input port="paths" primary="true"/&gt;
-  &lt;p:input port="models"/&gt;
-  &lt;p:output port="result" primary="true"/&gt;
-  &lt;p:output port="report" sequence="true"/&gt;
-  &lt;p:option name="debug" required="false" select="'no'"/&gt;
-  &lt;p:option name="debug-dir-uri" required="false" select="'debug'"/&gt;
-  &lt;p:option name="status-dir-uri" required="false" select="resolve-uri('status')"/&gt;
-  &lt;p:option name="vocab" required="false" select="'bits'"/&gt;
-  &lt;p:option name="fallback-xsl" select="'http://transpect.io/hub2bits/xsl/hub2bits.xsl'"/&gt;
-  &lt;p:option name="fallback-xpl" select="'http://transpect.io/hub2bits/xpl/fallback.xpl'"/&gt;
-  &lt;p:option name="load" required="false" select="'hub2bits/hub2bits'"/&gt;
-&lt;/jats:hub2bits&gt;</code></pre>
-                  </div>
-                  <div id="jats-store-chunks" class="section scrollspy">
-                     <h2 class="header">jats:store-chunks</h2>
-                     <h4>Import</h4>
-                     <pre><code class="language-markup">&lt;p:import href="http://transpect.io/hub2bits/xpl/store-chunks.xpl"/&gt;</code></pre>
-                     <h4>Dependencies</h4>
-                     <ul>
-                        <li>
-                           <p><a href="modules-xproc-util.html">xproc-util</a></p>
-                        </li>
-                     </ul>
-                     <h4>Synopsis</h4>
-                     <pre><code class="language-markup">&lt;jats:store-chunks xmlns:jats="http://jats.nlm.nih.gov"&gt;
-  &lt;p:input port="source" primary="true"/&gt;
-  &lt;p:input port="xsl"/&gt;
-  &lt;p:input port="models"/&gt;
-  &lt;p:output port="result" primary="true"/&gt;
-  &lt;p:output port="chunks" sequence="true"/&gt;
-  &lt;p:output port="adjusted-links" sequence="true"/&gt;
-  &lt;p:option name="debug" required="false" select="'no'"/&gt;
-  &lt;p:option name="debug-dir-uri" required="false" select="'debug'"/&gt;
-  &lt;p:option name="status-dir-uri" required="false" select="resolve-uri('status')"/&gt;
-  &lt;p:option name="include-method" select="'xinclude'"/&gt;
-  &lt;p:option name="dtd-version" select="''"/&gt;
-&lt;/jats:store-chunks&gt;</code></pre>
-                  </div>
-                  <div id="d34054e62" class="status">
+                  <div id="d34023e26" class="status">
                      <h2 class="header status"></h2>
                      <p class="last-updated">GitHub sync date: 2022-06-22+02:00</p>
                   </div>
@@ -212,9 +158,7 @@
                   <div class="toc-wrapper pin-top" style="top: 0px;">
                      <div style="height: 1px;">
                         <ul id="tr-toc" class="table-of-contents">
-                           <li><a href="#jats-hub2bits" class="active">jats:hub2bits</a></li>
-                           <li><a href="#jats-store-chunks">jats:store-chunks</a></li>
-                           <li><a href="#d34054e62"></a></li>
+                           <li><a href="#d34023e26" class="active"></a></li>
                         </ul>
                      </div>
                   </div>

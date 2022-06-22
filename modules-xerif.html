@@ -21,8 +21,9 @@
             <li class="naventry-1st"><a href="getting-started.html">Getting Started</a></li>
             <li class="active no-padding">
                <ul class="collapsible collapsible-accordion">
-                  <li class="active naventry-1st" id="d13e415"><a class="active collapsible-header">Modules</a><div style="display:block" class="collapsible-body">
+                  <li class="active naventry-1st" id="d33827e415"><a class="active collapsible-header">Modules</a><div style="display:block" class="collapsible-body">
                         <ul>
+                           <li class="naventry-2nd"><a href="modules-ace-daisy.html">ace-daisy</a></li>
                            <li class="naventry-2nd"><a href="modules-basex-svn-api.html">basex-svn-api</a></li>
                            <li class="naventry-2nd"><a href="modules-bits2hub.html">bits2hub</a></li>
                            <li class="naventry-2nd"><a href="modules-calabash-distro.html">calabash-distro</a></li>
@@ -254,6 +255,27 @@
   &lt;p:option name="debug-dir-uri" required="false" select="resolve-uri('debug')"/&gt;
   &lt;p:option name="status-dir-uri" required="false" select="resolve-uri('status')"/&gt;
 &lt;/tx:export-chunks&gt;</code></pre>
+                  </div>
+                  <div id="tx-generate-xmp" class="section scrollspy">
+                     <h2 class="header">tx:generate-xmp</h2>
+                     <p>
+                        This step creates from the input file an XMP metadata document.
+                        </p>
+                     <h4>Dependencies</h4>
+                     <ul>
+                        <li>
+                           <p><a href="modules-cascade.html">cascade</a></p>
+                        </li>
+                     </ul>
+                     <h4>Synopsis</h4>
+                     <pre><code class="language-markup">&lt;tx:generate-xmp xmlns:tx="http://transpect.io/xerif"&gt;
+  &lt;p:input port="source" primary="true"/&gt;
+  &lt;p:input port="params" primary="false"/&gt;
+  &lt;p:output port="result" primary="true"/&gt;
+  &lt;p:option name="debug" required="false" select="'no'"/&gt;
+  &lt;p:option name="debug-dir-uri"/&gt;
+  &lt;p:option name="fail-on-error" select="'true'"/&gt;
+&lt;/tx:generate-xmp&gt;</code></pre>
                   </div>
                   <div id="tx-get-paths" class="section scrollspy">
                      <h2 class="header">tx:get-paths</h2>
@@ -543,9 +565,9 @@
   &lt;p:option name="status-dir-uri" select="'status'"/&gt;
 &lt;/tx:xml2tex&gt;</code></pre>
                   </div>
-                  <div id="d285e285" class="status">
+                  <div id="d34102e298" class="status">
                      <h2 class="header status"></h2>
-                     <p class="last-updated">GitHub sync date: 2022-06-09+02:00</p>
+                     <p class="last-updated">GitHub sync date: 2022-06-22+02:00</p>
                   </div>
                </div>
                <div class="col hide-on-small-only m3 l2">
@@ -557,6 +579,7 @@
                            <li><a href="#tx-docx2evolve">tx:docx2evolve</a></li>
                            <li><a href="#tx-evolve-hub">tx:evolve-hub</a></li>
                            <li><a href="#tx-export-chunks">tx:export-chunks</a></li>
+                           <li><a href="#tx-generate-xmp">tx:generate-xmp</a></li>
                            <li><a href="#tx-get-paths">tx:get-paths</a></li>
                            <li><a href="#tx-htmlreport">tx:htmlreport</a></li>
                            <li><a href="#tx-hub2epub">tx:hub2epub</a></li>
@@ -567,7 +590,7 @@
                            <li><a href="#tx-tei2epub">tx:tei2epub</a></li>
                            <li><a href="#tx-validate">tx:validate</a></li>
                            <li><a href="#tx-xml2tex">tx:xml2tex</a></li>
-                           <li><a href="#d285e285"></a></li>
+                           <li><a href="#d34102e298"></a></li>
                         </ul>
                      </div>
                   </div>
