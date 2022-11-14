@@ -21,7 +21,7 @@
             <li class="naventry-1st"><a href="getting-started.html">Getting Started</a></li>
             <li class="active no-padding">
                <ul class="collapsible collapsible-accordion">
-                  <li class="active naventry-1st" id="d33827e415"><a class="active collapsible-header">Modules</a><div style="display:block" class="collapsible-body">
+                  <li class="active naventry-1st" id="d34003e415"><a class="active collapsible-header">Modules</a><div style="display:block" class="collapsible-body">
                         <ul>
                            <li class="naventry-2nd"><a href="modules-ace-daisy.html">ace-daisy</a></li>
                            <li class="naventry-2nd"><a href="modules-basex-svn-api.html">basex-svn-api</a></li>
@@ -70,6 +70,7 @@
                            <li class="naventry-2nd"><a href="modules-javascript-extension.html">javascript-extension</a></li>
                            <li class="naventry-2nd"><a href="modules-jing-trang-patch.html">jing-trang-patch</a></li>
                            <li class="naventry-2nd"><a href="modules-kindlegen-amzn.html">kindlegen-amzn</a></li>
+                           <li class="naventry-2nd"><a href="modules-lang-extension.html">lang-extension</a></li>
                            <li class="naventry-2nd"><a href="modules-latex-math-images.html">latex-math-images</a></li>
                            <li class="naventry-2nd"><a href="modules-logo.html">logo</a></li>
                            <li class="naventry-2nd"><a href="modules-map-style-names.html">map-style-names</a></li>
@@ -270,6 +271,8 @@
   &lt;p:option name="context" required="false" select="false()"/&gt;
   &lt;p:option name="display-equation-table-role" required="false" select="'equation-table'"/&gt;
   &lt;p:option name="store-plain-tex" select="'false'"/&gt;
+  &lt;p:option name="pad-position" select="'false'"/&gt;
+  &lt;p:option name="pad" select="'3'"/&gt;
   &lt;p:option name="set-math-style" select="'no'"/&gt;
 &lt;/tr:evolve-mml&gt;</code></pre>
                   </div>
@@ -750,6 +753,7 @@ YmDABwACDAAAHgABzCCyiwAAAABJRU5ErkJggg==
   &lt;p:input port="source" sequence="true" primary="true"/&gt;
   &lt;p:output port="result" sequence="true"/&gt;
   &lt;p:option name="uris"/&gt;
+  &lt;p:option name="add-xml-base" select="'false'"/&gt;
 &lt;/tr:load-sources&gt;</code></pre>
                   </div>
                   <div id="tr-load" class="section scrollspy">
@@ -969,6 +973,12 @@ YmDABwACDAAAHgABzCCyiwAAAABJRU5ErkJggg==
                         </p>
                      <h4>Import</h4>
                      <pre><code class="language-markup">&lt;p:import href="http://transpect.io/xproc-util/send-mail/xpl/send-mail.xpl"/&gt;</code></pre>
+                     <h4>Dependencies</h4>
+                     <ul>
+                        <li>
+                           <p><a href="modules-xproc-util.html">xproc-util</a></p>
+                        </li>
+                     </ul>
                      <h4>Synopsis</h4>
                      <pre><code class="language-markup">&lt;tr:mailing xmlns:tr="http://transpect.io"&gt;
   &lt;p:input port="attachments" sequence="true"/&gt;
@@ -979,6 +989,8 @@ YmDABwACDAAAHgABzCCyiwAAAABJRU5ErkJggg==
   &lt;p:option name="content" select="''"/&gt;
   &lt;p:option name="subject" select="'no subject'"/&gt;
   &lt;p:option name="attachments" select="''"/&gt;
+  &lt;p:option name="debug" select="'no'"/&gt;
+  &lt;p:option name="debug-dir-uri" select="'debug'"/&gt;
 &lt;/tr:mailing&gt;</code></pre>
                   </div>
                   <div id="tr-simple-progress-msg" class="section scrollspy">
@@ -1221,9 +1233,9 @@ YmDABwACDAAAHgABzCCyiwAAAABJRU5ErkJggg==
   &lt;p:option name="href" required="true"/&gt;
 &lt;/tr:zip&gt;</code></pre>
                   </div>
-                  <div id="d34108e931" class="status">
+                  <div id="d34287e937" class="status">
                      <h2 class="header status"></h2>
-                     <p class="last-updated">GitHub sync date: 2022-06-22+02:00</p>
+                     <p class="last-updated">GitHub sync date: 2022-11-14+01:00</p>
                   </div>
                </div>
                <div class="col hide-on-small-only m3 l2">
@@ -1266,7 +1278,7 @@ YmDABwACDAAAHgABzCCyiwAAAABJRU5ErkJggg==
                            <li><a href="#tr-prepend-xml-model">tr:prepend-xml-model</a></li>
                            <li><a href="#tr-xslt-mode">tr:xslt-mode</a></li>
                            <li><a href="#tr-zip">tr:zip</a></li>
-                           <li><a href="#d34108e931"></a></li>
+                           <li><a href="#d34287e937"></a></li>
                         </ul>
                      </div>
                   </div>
@@ -1301,7 +1313,10 @@ YmDABwACDAAAHgABzCCyiwAAAABJRU5ErkJggg==
                      <p class="white-text left">le-tex publishing services GmbH, 2022</p>
                   </div>
                   <div id="tr-footer-copyright-2" class="col s12 m6 l6">
-                     <p><a class="white-text right" href="http://www.le-tex.de">http://www.le-tex.de</a></p>
+                     <p>
+                        		<a class="white-text right" href="http://www.le-tex.de">http://www.le-tex.de</a>
+                        		<a rel="me" href="https://fosstodon.org/@letexml" aria-label="Mastodon"></a>
+                        	      </p>
                   </div>
                </div>
             </div>

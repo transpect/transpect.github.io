@@ -21,7 +21,7 @@
             <li class="naventry-1st"><a href="getting-started.html">Getting Started</a></li>
             <li class="active no-padding">
                <ul class="collapsible collapsible-accordion">
-                  <li class="active naventry-1st" id="d33827e415"><a class="active collapsible-header">Modules</a><div style="display:block" class="collapsible-body">
+                  <li class="active naventry-1st" id="d34003e415"><a class="active collapsible-header">Modules</a><div style="display:block" class="collapsible-body">
                         <ul>
                            <li class="active naventry-2nd"><a href="modules-ace-daisy.html">ace-daisy</a></li>
                            <li class="naventry-2nd"><a href="modules-basex-svn-api.html">basex-svn-api</a></li>
@@ -70,6 +70,7 @@
                            <li class="naventry-2nd"><a href="modules-javascript-extension.html">javascript-extension</a></li>
                            <li class="naventry-2nd"><a href="modules-jing-trang-patch.html">jing-trang-patch</a></li>
                            <li class="naventry-2nd"><a href="modules-kindlegen-amzn.html">kindlegen-amzn</a></li>
+                           <li class="naventry-2nd"><a href="modules-lang-extension.html">lang-extension</a></li>
                            <li class="naventry-2nd"><a href="modules-latex-math-images.html">latex-math-images</a></li>
                            <li class="naventry-2nd"><a href="modules-logo.html">logo</a></li>
                            <li class="naventry-2nd"><a href="modules-map-style-names.html">map-style-names</a></li>
@@ -149,16 +150,47 @@
                         <p><a href="https://github.com/transpect/ace-daisy" class="btn-flat  orange lighten-4">Source ⬇</a></p>
                      </div>
                   </div>
-                  <div id="d34023e26" class="status">
+                  <div id="tr-ace-daisy" class="section scrollspy">
+                     <h2 class="header">tr:ace-daisy</h2>
+                     <p>
+                        XProc wrapper for DAISY's ACE accessibility checker.
+                        Default output are the validation messages as SVRL report 
+                        and brief SVRL summary. If the a11y-htmlreport option is 
+                        active, then a separate HTML report will be created.
+                        </p>
+                     <h4>Import</h4>
+                     <pre><code class="language-markup">&lt;p:import href="https://raw.githubusercontent.com/transpect/ace-daisy/main/xpl/ace.xpl"/&gt;</code></pre>
+                     <h4>Dependencies</h4>
+                     <ul>
+                        <li>
+                           <p><a href="modules-xproc-util.html">xproc-util</a></p>
+                        </li>
+                     </ul>
+                     <h4>Synopsis</h4>
+                     <pre><code class="language-markup">&lt;tr:ace-daisy xmlns:tr="http://transpect.io"&gt;
+  &lt;p:output port="result" primary="true"/&gt;
+  &lt;p:output port="summary" primary="false"/&gt;
+  &lt;p:option name="href"/&gt;
+  &lt;p:option name="ace" select="'dist/bin/ace.js'"/&gt;
+  &lt;p:option name="lang" select="'en'"/&gt;
+  &lt;p:option name="rule-family-name" select="'epubcheck 4.2.6'"/&gt;
+  &lt;p:option name="a11y-htmlreport" select="'yes'"/&gt;
+  &lt;p:option name="severity-override" select="''"/&gt;
+  &lt;p:option name="debug" select="'no'"/&gt;
+  &lt;p:option name="debug-dir-uri" select="'debug'"/&gt;
+&lt;/tr:ace-daisy&gt;</code></pre>
+                  </div>
+                  <div id="d34201e43" class="status">
                      <h2 class="header status"></h2>
-                     <p class="last-updated">GitHub sync date: 2022-06-22+02:00</p>
+                     <p class="last-updated">GitHub sync date: 2022-11-14+01:00</p>
                   </div>
                </div>
                <div class="col hide-on-small-only m3 l2">
                   <div class="toc-wrapper pin-top" style="top: 0px;">
                      <div style="height: 1px;">
                         <ul id="tr-toc" class="table-of-contents">
-                           <li><a href="#d34023e26" class="active"></a></li>
+                           <li><a href="#tr-ace-daisy" class="active">tr:ace-daisy</a></li>
+                           <li><a href="#d34201e43"></a></li>
                         </ul>
                      </div>
                   </div>
@@ -193,7 +225,10 @@
                      <p class="white-text left">le-tex publishing services GmbH, 2022</p>
                   </div>
                   <div id="tr-footer-copyright-2" class="col s12 m6 l6">
-                     <p><a class="white-text right" href="http://www.le-tex.de">http://www.le-tex.de</a></p>
+                     <p>
+                        		<a class="white-text right" href="http://www.le-tex.de">http://www.le-tex.de</a>
+                        		<a rel="me" href="https://fosstodon.org/@letexml" aria-label="Mastodon"></a>
+                        	      </p>
                   </div>
                </div>
             </div>

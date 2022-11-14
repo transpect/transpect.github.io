@@ -1,7 +1,7 @@
-<?xml version="1.0" encoding="UTF-8"?><html xmlns="http://www.w3.org/1999/xhtml" xml:base="../modules-semex.html">
+<?xml version="1.0" encoding="UTF-8"?><html xmlns="http://www.w3.org/1999/xhtml" xml:base="../modules-lang-extension.html">
    <head>
       <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-      <title>semex</title>
+      <title>lang-extension</title>
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <meta http-equiv="X-UA-Compatible" content="IE=edge" />
       <meta name="theme-color" content="#FF9800" />
@@ -12,7 +12,7 @@
       <link type="text/css" rel="stylesheet" media="screen,projection" href="css/materialize.min.css" />
       <link type="text/css" rel="stylesheet" media="screen,projection" href="css/le-tex.css" />
    </head>
-   <body id="modules-semex">
+   <body id="modules-lang-extension">
       <header>
          <div class="container"><a href="#" data-activates="tr-nav" class="button-collapse top-nav circle hide-on-large-only"><i class="mdi-navigation-menu"></i></a></div>
          <ul id="tr-nav" class="side-nav fixed" style="width:260px">
@@ -70,7 +70,7 @@
                            <li class="naventry-2nd"><a href="modules-javascript-extension.html">javascript-extension</a></li>
                            <li class="naventry-2nd"><a href="modules-jing-trang-patch.html">jing-trang-patch</a></li>
                            <li class="naventry-2nd"><a href="modules-kindlegen-amzn.html">kindlegen-amzn</a></li>
-                           <li class="naventry-2nd"><a href="modules-lang-extension.html">lang-extension</a></li>
+                           <li class="active naventry-2nd"><a href="modules-lang-extension.html">lang-extension</a></li>
                            <li class="naventry-2nd"><a href="modules-latex-math-images.html">latex-math-images</a></li>
                            <li class="naventry-2nd"><a href="modules-logo.html">logo</a></li>
                            <li class="naventry-2nd"><a href="modules-map-style-names.html">map-style-names</a></li>
@@ -88,7 +88,7 @@
                            <li class="naventry-2nd"><a href="modules-schema-jats.html">schema-jats</a></li>
                            <li class="naventry-2nd"><a href="modules-schema-onix.html">schema-onix</a></li>
                            <li class="naventry-2nd"><a href="modules-schematron.html">schematron</a></li>
-                           <li class="active naventry-2nd"><a href="modules-semex.html">semex</a></li>
+                           <li class="naventry-2nd"><a href="modules-semex.html">semex</a></li>
                            <li class="naventry-2nd"><a href="modules-stylemapper-frontend.html">stylemapper-frontend</a></li>
                            <li class="naventry-2nd"><a href="modules-stylemapper-lib.html">stylemapper-lib</a></li>
                            <li class="naventry-2nd"><a href="modules-svn-extension.html">svn-extension</a></li>
@@ -123,8 +123,8 @@
       <main>
          <div class="section orange" id="index-banner">
             <div class="container">
-               <h1 id="tr-title" class="light header center-on-small-only white-text">semex</h1>
-               <h4 id="tr-subtitle" class="light orange-text text-lighten-4 center-on-small-only">Extrection of semantic data (values+units, etc.) from tables</h4>
+               <h1 id="tr-title" class="light header center-on-small-only white-text">lang-extension</h1>
+               <h4 id="tr-subtitle" class="light orange-text text-lighten-4 center-on-small-only">XML Calabash extension to provide language detection via the lingua library</h4>
             </div>
          </div>
          <div class="container">
@@ -135,74 +135,22 @@
                            <tbody>
                               <tr>
                                  <td>Git URL</td>
-                                 <td><code class="language-markup">https://github.com/transpect/semex.git</code></td>
+                                 <td><code class="language-markup">https://github.com/transpect/lang-extension.git</code></td>
                               </tr>
                               <tr>
                                  <td>SVN URL</td>
-                                 <td><code class="language-markup">https://github.com/transpect/semex</code></td>
+                                 <td><code class="language-markup">https://github.com/transpect/lang-extension</code></td>
                               </tr>
                               <tr>
                                  <td>Base URI</td>
-                                 <td><code class="language-markup">http://transpect.io/semex/</code></td>
+                                 <td><code class="language-markup">http://transpect.io/calabash-extensions/lang/</code></td>
                               </tr>
                            </tbody>
                         </table>
-                        <p><a href="https://github.com/transpect/semex" class="btn-flat  orange lighten-4">Source ⬇</a></p>
+                        <p><a href="https://github.com/transpect/lang-extension" class="btn-flat  orange lighten-4">Source ⬇</a></p>
                      </div>
                   </div>
-                  <div id="isosts-tables2html" class="section scrollspy">
-                     <h2 class="header">isosts:tables2html</h2>
-                     <p></p>
-                     <h4>Import</h4>
-                     <pre><code class="language-markup">&lt;p:import href="http://transpect.io/semex/xpl/tables2html.xpl"/&gt;</code></pre>
-                     <h4>Dependencies</h4>
-                     <ul>
-                        <li>
-                           <p><a href="modules-html2xlsx.html">html2xlsx</a></p>
-                        </li>
-                        <li>
-                           <p><a href="modules-xproc-util.html">xproc-util</a></p>
-                        </li>
-                     </ul>
-                     <h4>Synopsis</h4>
-                     <pre><code class="language-markup">&lt;isosts:tables2html xmlns:isosts="http://www.iso.org/ns/isosts"&gt;
-  &lt;p:input port="source" primary="true"/&gt;
-  &lt;p:input port="tr3k2nisosts-xsl"/&gt;
-  &lt;p:input port="nisosts2html-xsl"/&gt;
-  &lt;p:input port="add-semantics-xsl"/&gt;
-  &lt;p:input port="quantities2html-xsl"/&gt;
-  &lt;p:input port="quantity-lookup"/&gt;
-  &lt;p:input port="table-head-lookup"/&gt;
-  &lt;p:output port="result" sequence="true" primary="true"/&gt;
-  &lt;p:option name="sts-base-dir" select="''"/&gt;
-  &lt;p:option name="debug" select="'no'"/&gt;
-  &lt;p:option name="debug-dir-uri" select="''"/&gt;
-  &lt;p:option name="xlsx-template" select="'http://this.transpect.io/a9s/beuth/html2xlsx/template.xlsx'"/&gt;
-  &lt;p:option name="single-xlsx-tables" select="'no'"/&gt;
-&lt;/isosts:tables2html&gt;</code></pre>
-                  </div>
-                  <div id="isosts-process-single-file" class="section scrollspy">
-                     <h2 class="header">isosts:process-single-file</h2>
-                     <p>Processes single input files (TR3K or (N)ISO STS).</p>
-                     <h4>Import</h4>
-                     <pre><code class="language-markup">&lt;p:import href="http://transpect.io/semex/xpl/tables2html.xpl"/&gt;</code></pre>
-                     <h4>Synopsis</h4>
-                     <pre><code class="language-markup">&lt;isosts:process-single-file xmlns:isosts="http://www.iso.org/ns/isosts"&gt;
-  &lt;p:input port="source" primary="true"/&gt;
-  &lt;p:input port="tr3k2sts-stylesheet"/&gt;
-  &lt;p:input port="nisosts2html-stylesheet"/&gt;
-  &lt;p:input port="add-semantics-stylesheet"/&gt;
-  &lt;p:input port="quantities2html-stylesheet"/&gt;
-  &lt;p:input port="quantity-lookup-file"/&gt;
-  &lt;p:input port="table-head-lookup-file"/&gt;
-  &lt;p:output port="result" sequence="true" primary="true"/&gt;
-  &lt;p:option name="debug" select="'no'"/&gt;
-  &lt;p:option name="debug-dir-uri" select="''"/&gt;
-  &lt;p:option name="xlsx-template" select="''"/&gt;
-  &lt;p:option name="single-xlsx-tables" select="'no'"/&gt;
-&lt;/isosts:process-single-file&gt;</code></pre>
-                  </div>
-                  <div id="d34266e58" class="status">
+                  <div id="d34248e26" class="status">
                      <h2 class="header status"></h2>
                      <p class="last-updated">GitHub sync date: 2022-11-14+01:00</p>
                   </div>
@@ -211,9 +159,7 @@
                   <div class="toc-wrapper pin-top" style="top: 0px;">
                      <div style="height: 1px;">
                         <ul id="tr-toc" class="table-of-contents">
-                           <li><a href="#isosts-tables2html" class="active">isosts:tables2html</a></li>
-                           <li><a href="#isosts-process-single-file">isosts:process-single-file</a></li>
-                           <li><a href="#d34266e58"></a></li>
+                           <li><a href="#d34248e26" class="active"></a></li>
                         </ul>
                      </div>
                   </div>
