@@ -21,7 +21,7 @@
             <li class="naventry-1st"><a href="getting-started.html">Getting Started</a></li>
             <li class="active no-padding">
                <ul class="collapsible collapsible-accordion">
-                  <li class="active naventry-1st" id="d34012e415"><a class="active collapsible-header">Modules</a><div style="display:block" class="collapsible-body">
+                  <li class="active naventry-1st" id="d41190e415"><a class="active collapsible-header">Modules</a><div style="display:block" class="collapsible-body">
                         <ul>
                            <li class="naventry-2nd"><a href="modules-ace-daisy.html">ace-daisy</a></li>
                            <li class="naventry-2nd"><a href="modules-basex-svn-api.html">basex-svn-api</a></li>
@@ -81,6 +81,7 @@
                            <li class="naventry-2nd"><a href="modules-nlm-stylechecker.html">nlm-stylechecker</a></li>
                            <li class="naventry-2nd"><a href="modules-officeopenxml-validation.html">officeopenxml-validation</a></li>
                            <li class="naventry-2nd"><a href="modules-pdf2fxl.html">pdf2fxl</a></li>
+                           <li class="naventry-2nd"><a href="modules-proj-eval.html">proj-eval</a></li>
                            <li class="naventry-2nd"><a href="modules-pygmentize-xpl.html">pygmentize-xpl</a></li>
                            <li class="naventry-2nd"><a href="modules-rng-extension.html">rng-extension</a></li>
                            <li class="naventry-2nd"><a href="modules-schema-bits.html">schema-bits</a></li>
@@ -195,7 +196,7 @@
                            <p><a href="modules-cascade.html">cascade</a></p>
                         </li>
                         <li>
-                           <p><a href="modules-xproc-util.html">xproc-util</a></p>
+                           <p><a href="modules-xproc-util transpect.github.io.html">xproc-util transpect.github.io</a></p>
                         </li>
                      </ul>
                      <h4>Synopsis</h4>
@@ -221,7 +222,7 @@
                      <h4>Dependencies</h4>
                      <ul>
                         <li>
-                           <p><a href="modules-xproc-util.html">xproc-util</a></p>
+                           <p><a href="modules-xproc-util transpect.github.io.html">xproc-util transpect.github.io</a></p>
                         </li>
                      </ul>
                      <h4>Synopsis</h4>
@@ -237,11 +238,38 @@
   &lt;p:option name="status-dir-uri" select="'status-dir-uri'"/&gt;
   &lt;p:option name="fail-on-error" select="'no'"/&gt;
   &lt;p:option name="prefix" required="false" select="'evolve-hub/5'"/&gt;
+  &lt;p:option name="hub-version" required="false" select="'1.2'"/&gt;
 &lt;/hub:evolve-hub_lists-by-indent&gt;</code></pre>
                   </div>
-                  <div id="d34232e63" class="status">
+                  <div id="hub-evolve-hub_lists-by-role" class="section scrollspy">
+                     <h2 class="header">hub:evolve-hub_lists-by-role</h2>
+                     <h4>Import</h4>
+                     <pre><code class="language-markup">&lt;p:import href="http://transpect.io/evolve-hub/xpl/evolve-hub_lists-by-role.xpl"/&gt;</code></pre>
+                     <h4>Dependencies</h4>
+                     <ul>
+                        <li>
+                           <p><a href="modules-xproc-util transpect.github.io.html">xproc-util transpect.github.io</a></p>
+                        </li>
+                     </ul>
+                     <h4>Synopsis</h4>
+                     <pre><code class="language-markup">&lt;hub:evolve-hub_lists-by-role xmlns:hub="http://transpect.io/hub"&gt;
+  &lt;p:input port="source" primary="true"/&gt;
+  &lt;p:input port="parameters" sequence="true" primary="true"/&gt;
+  &lt;p:input port="stylesheet"/&gt;
+  &lt;p:output port="result" primary="true"/&gt;
+  &lt;p:output port="report" sequence="true"/&gt;
+  &lt;p:option name="debug" required="false" select="'no'"/&gt;
+  &lt;p:option name="debug-dir-uri" select="'debug-dir-uri'"/&gt;
+  &lt;p:option name="debug-indent" select="'true'"/&gt;
+  &lt;p:option name="status-dir-uri" select="'status-dir-uri'"/&gt;
+  &lt;p:option name="fail-on-error" select="'no'"/&gt;
+  &lt;p:option name="prefix" required="false" select="'evolve-hub/5'"/&gt;
+  &lt;p:option name="hub-version" required="false" select="'1.2'"/&gt;
+&lt;/hub:evolve-hub_lists-by-role&gt;</code></pre>
+                  </div>
+                  <div id="d41412e79" class="status">
                      <h2 class="header status"></h2>
-                     <p class="last-updated">GitHub sync date: 2023-01-13+01:00</p>
+                     <p class="last-updated">GitHub sync date: 2023-08-04+02:00</p>
                   </div>
                </div>
                <div class="col hide-on-small-only m3 l2">
@@ -250,7 +278,8 @@
                         <ul id="tr-toc" class="table-of-contents">
                            <li><a href="#hub-evolve-hub" class="active">hub:evolve-hub</a></li>
                            <li><a href="#hub-evolve-hub_lists-by-indent">hub:evolve-hub_lists-by-indent</a></li>
-                           <li><a href="#d34232e63"></a></li>
+                           <li><a href="#hub-evolve-hub_lists-by-role">hub:evolve-hub_lists-by-role</a></li>
+                           <li><a href="#d41412e79"></a></li>
                         </ul>
                      </div>
                   </div>
