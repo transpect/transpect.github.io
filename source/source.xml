@@ -378,7 +378,7 @@ myproject/
         <title>XSLT</title>
         <itemizedlist>
           <listitem>
-            <para>Avoid too many nested <code>xsl:choose</code> as this will make your code difficult do decipher. Try
+            <para>Avoid too many nested <code>xsl:choose</code> as this will make your code difficult to decipher. Try
               to replace with <code>xsl:template</code> with concrete matching patterns.</para>
           </listitem>
           <listitem>
