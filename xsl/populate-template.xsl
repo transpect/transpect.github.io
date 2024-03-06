@@ -110,6 +110,15 @@
     </xsl:copy>
   </xsl:template>
 
+  <!-- copyright -->
+
+  <xsl:template match="span[@class eq 'current-year']">
+    <xsl:copy>
+      <xsl:apply-templates select="@*"/>
+      <xsl:value-of select="format-date(current-date(), '[Y]')"/>
+    </xsl:copy>
+  </xsl:template>
+
   <!--  * 
         * transform DocBook to XHTML5
         * -->
@@ -328,7 +337,7 @@
     <xsl:copy>
       <xsl:apply-templates select="@*, node()"/>
     </xsl:copy>
-  </xsl:template>  
+  </xsl:template>
   
   <xsl:template match="comment()"/>
   
