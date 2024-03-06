@@ -21,10 +21,12 @@
             <li class="naventry-1st"><a href="getting-started.html">Getting Started</a></li>
             <li class="active no-padding">
                <ul class="collapsible collapsible-accordion">
-                  <li class="active naventry-1st" id="d41190e415"><a class="active collapsible-header">Modules</a><div style="display:block" class="collapsible-body">
+                  <li class="active naventry-1st" id="d42168e415"><a class="active collapsible-header">Modules</a><div style="display:block" class="collapsible-body">
                         <ul>
+                           <li class="naventry-2nd"><a href="modules-CoCoTeX.html">CoCoTeX</a></li>
                            <li class="naventry-2nd"><a href="modules-ace-daisy.html">ace-daisy</a></li>
                            <li class="naventry-2nd"><a href="modules-basex-svn-api.html">basex-svn-api</a></li>
+                           <li class="naventry-2nd"><a href="modules-bib-parser.html">bib-parser</a></li>
                            <li class="naventry-2nd"><a href="modules-bits2hub.html">bits2hub</a></li>
                            <li class="naventry-2nd"><a href="modules-calabash-distro.html">calabash-distro</a></li>
                            <li class="naventry-2nd"><a href="modules-calabash-frontend.html">calabash-frontend</a></li>
@@ -39,6 +41,7 @@
                            <li class="naventry-2nd"><a href="modules-docx2tex.html">docx2tex</a></li>
                            <li class="naventry-2nd"><a href="modules-docx_modify-lib.html">docx_modify-lib</a></li>
                            <li class="naventry-2nd"><a href="modules-epub-font-subsetter.html">epub-font-subsetter</a></li>
+                           <li class="naventry-2nd"><a href="modules-epub2epub.html">epub2epub</a></li>
                            <li class="naventry-2nd"><a href="modules-epub2hub-lib.html">epub2hub-lib</a></li>
                            <li class="naventry-2nd"><a href="modules-epubcheck-extension.html">epubcheck-extension</a></li>
                            <li class="naventry-2nd"><a href="modules-epubcheck-idpf.html">epubcheck-idpf</a></li>
@@ -90,6 +93,7 @@
                            <li class="naventry-2nd"><a href="modules-schema-onix.html">schema-onix</a></li>
                            <li class="naventry-2nd"><a href="modules-schematron.html">schematron</a></li>
                            <li class="naventry-2nd"><a href="modules-semex.html">semex</a></li>
+                           <li class="naventry-2nd"><a href="modules-split-docx.html">split-docx</a></li>
                            <li class="naventry-2nd"><a href="modules-stylemapper-frontend.html">stylemapper-frontend</a></li>
                            <li class="naventry-2nd"><a href="modules-stylemapper-lib.html">stylemapper-lib</a></li>
                            <li class="naventry-2nd"><a href="modules-svn-extension.html">svn-extension</a></li>
@@ -97,7 +101,6 @@
                            <li class="naventry-2nd"><a href="modules-tei2html.html">tei2html</a></li>
                            <li class="naventry-2nd"><a href="modules-tei2hub.html">tei2hub</a></li>
                            <li class="naventry-2nd"><a href="modules-tokenized-to-tree.html">tokenized-to-tree</a></li>
-                           <li class="naventry-2nd"><a href="modules-transpect-tex.html">transpect-tex</a></li>
                            <li class="naventry-2nd"><a href="modules-transpect.github.io.html">transpect.github.io</a></li>
                            <li class="naventry-2nd"><a href="modules-transpectdoc.html">transpectdoc</a></li>
                            <li class="naventry-2nd"><a href="modules-unwrap-mml.html">unwrap-mml</a></li>
@@ -246,11 +249,14 @@
                         <li>
                            <p><a href="modules-cascade.html">cascade</a></p>
                         </li>
+                        <li>
+                           <p><a href="modules-xproc-util transpect.github.io.html">xproc-util transpect.github.io</a></p>
+                        </li>
                      </ul>
                      <h4>Synopsis</h4>
                      <pre><code class="language-markup">&lt;tx:evolve-hub xmlns:tx="http://transpect.io/xerif"&gt;
   &lt;p:input port="source" primary="true"/&gt;
-  &lt;p:input port="parameters" primary="true"/&gt;
+  &lt;p:input port="params" primary="false"/&gt;
   &lt;p:output port="result" primary="true"/&gt;
   &lt;p:output port="report" sequence="true" primary="false"/&gt;
   &lt;p:option name="debug" required="false" select="'no'"/&gt;
@@ -294,6 +300,7 @@
                      <h4>Synopsis</h4>
                      <pre><code class="language-markup">&lt;tx:generate-xmp xmlns:tx="http://transpect.io/xerif"&gt;
   &lt;p:input port="source" primary="true"/&gt;
+  &lt;p:input port="meta" primary="false"/&gt;
   &lt;p:input port="params" primary="false"/&gt;
   &lt;p:output port="result" primary="true"/&gt;
   &lt;p:option name="debug" required="false" select="'no'"/&gt;
@@ -419,10 +426,10 @@
                      <h4>Dependencies</h4>
                      <ul>
                         <li>
-                           <p><a href="modules-xproc-util transpect.github.io.html">xproc-util transpect.github.io</a></p>
+                           <p><a href="modules-cascade.html">cascade</a></p>
                         </li>
                         <li>
-                           <p><a href="modules-cascade.html">cascade</a></p>
+                           <p><a href="modules-xproc-util transpect.github.io.html">xproc-util transpect.github.io</a></p>
                         </li>
                         <li>
                            <p><a href="modules-xml2idml.html">xml2idml</a></p>
@@ -437,6 +444,7 @@
   &lt;p:input port="paths" primary="false"/&gt;
   &lt;p:output port="idmlval"/&gt;
   &lt;p:output port="idml" sequence="true"/&gt;
+  &lt;p:option name="template" select="'xml2idml/template.idml'"/&gt;
   &lt;p:option name="debug" required="false" select="'no'"/&gt;
   &lt;p:option name="debug-dir-uri" required="false" select="resolve-uri('debug')"/&gt;
   &lt;p:option name="status-dir-uri" required="false" select="resolve-uri('status')"/&gt;
@@ -581,6 +589,9 @@
                      <h4>Dependencies</h4>
                      <ul>
                         <li>
+                           <p><a href="modules-ace-daisy.html">ace-daisy</a></p>
+                        </li>
+                        <li>
                            <p><a href="modules-epubcheck-idpf.html">epubcheck-idpf</a></p>
                         </li>
                         <li>
@@ -599,6 +610,7 @@
   &lt;p:option name="debug" select="'yes'"/&gt;
   &lt;p:option name="debug-dir-uri" select="'debug'"/&gt;
   &lt;p:option name="status-dir-uri" select="'status'"/&gt;
+  &lt;p:option name="interface-language" select="'de'"/&gt;
 &lt;/tx:validate&gt;</code></pre>
                   </div>
                   <div id="tx-xml2tex" class="section scrollspy">
@@ -611,6 +623,9 @@
                         <li>
                            <p><a href="modules-xml2tex.html">xml2tex</a></p>
                         </li>
+                        <li>
+                           <p><a href="modules-xproc-util transpect.github.io.html">xproc-util transpect.github.io</a></p>
+                        </li>
                      </ul>
                      <h4>Synopsis</h4>
                      <pre><code class="language-markup">&lt;tx:xml2tex xmlns:tx="http://transpect.io/xerif"&gt;
@@ -622,9 +637,9 @@
   &lt;p:option name="status-dir-uri" select="'status'"/&gt;
 &lt;/tx:xml2tex&gt;</code></pre>
                   </div>
-                  <div id="d41471e338" class="status">
+                  <div id="d42458e350" class="status">
                      <h2 class="header status"></h2>
-                     <p class="last-updated">GitHub sync date: 2023-08-04+02:00</p>
+                     <p class="last-updated">GitHub sync date: 2024-03-05+01:00</p>
                   </div>
                </div>
                <div class="col hide-on-small-only m3 l2">
@@ -649,7 +664,7 @@
                            <li><a href="#tx-tei2epub">tx:tei2epub</a></li>
                            <li><a href="#tx-validate">tx:validate</a></li>
                            <li><a href="#tx-xml2tex">tx:xml2tex</a></li>
-                           <li><a href="#d41471e338"></a></li>
+                           <li><a href="#d42458e350"></a></li>
                         </ul>
                      </div>
                   </div>

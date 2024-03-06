@@ -21,10 +21,12 @@
             <li class="naventry-1st"><a href="getting-started.html">Getting Started</a></li>
             <li class="active no-padding">
                <ul class="collapsible collapsible-accordion">
-                  <li class="active naventry-1st" id="d41190e415"><a class="active collapsible-header">Modules</a><div style="display:block" class="collapsible-body">
+                  <li class="active naventry-1st" id="d42168e415"><a class="active collapsible-header">Modules</a><div style="display:block" class="collapsible-body">
                         <ul>
+                           <li class="naventry-2nd"><a href="modules-CoCoTeX.html">CoCoTeX</a></li>
                            <li class="naventry-2nd"><a href="modules-ace-daisy.html">ace-daisy</a></li>
                            <li class="naventry-2nd"><a href="modules-basex-svn-api.html">basex-svn-api</a></li>
+                           <li class="naventry-2nd"><a href="modules-bib-parser.html">bib-parser</a></li>
                            <li class="naventry-2nd"><a href="modules-bits2hub.html">bits2hub</a></li>
                            <li class="naventry-2nd"><a href="modules-calabash-distro.html">calabash-distro</a></li>
                            <li class="naventry-2nd"><a href="modules-calabash-frontend.html">calabash-frontend</a></li>
@@ -39,6 +41,7 @@
                            <li class="naventry-2nd"><a href="modules-docx2tex.html">docx2tex</a></li>
                            <li class="naventry-2nd"><a href="modules-docx_modify-lib.html">docx_modify-lib</a></li>
                            <li class="naventry-2nd"><a href="modules-epub-font-subsetter.html">epub-font-subsetter</a></li>
+                           <li class="naventry-2nd"><a href="modules-epub2epub.html">epub2epub</a></li>
                            <li class="naventry-2nd"><a href="modules-epub2hub-lib.html">epub2hub-lib</a></li>
                            <li class="naventry-2nd"><a href="modules-epubcheck-extension.html">epubcheck-extension</a></li>
                            <li class="naventry-2nd"><a href="modules-epubcheck-idpf.html">epubcheck-idpf</a></li>
@@ -90,6 +93,7 @@
                            <li class="naventry-2nd"><a href="modules-schema-onix.html">schema-onix</a></li>
                            <li class="naventry-2nd"><a href="modules-schematron.html">schematron</a></li>
                            <li class="naventry-2nd"><a href="modules-semex.html">semex</a></li>
+                           <li class="naventry-2nd"><a href="modules-split-docx.html">split-docx</a></li>
                            <li class="naventry-2nd"><a href="modules-stylemapper-frontend.html">stylemapper-frontend</a></li>
                            <li class="naventry-2nd"><a href="modules-stylemapper-lib.html">stylemapper-lib</a></li>
                            <li class="naventry-2nd"><a href="modules-svn-extension.html">svn-extension</a></li>
@@ -97,7 +101,6 @@
                            <li class="naventry-2nd"><a href="modules-tei2html.html">tei2html</a></li>
                            <li class="naventry-2nd"><a href="modules-tei2hub.html">tei2hub</a></li>
                            <li class="naventry-2nd"><a href="modules-tokenized-to-tree.html">tokenized-to-tree</a></li>
-                           <li class="naventry-2nd"><a href="modules-transpect-tex.html">transpect-tex</a></li>
                            <li class="naventry-2nd"><a href="modules-transpect.github.io.html">transpect.github.io</a></li>
                            <li class="naventry-2nd"><a href="modules-transpectdoc.html">transpectdoc</a></li>
                            <li class="naventry-2nd"><a href="modules-unwrap-mml.html">unwrap-mml</a></li>
@@ -249,6 +252,7 @@
   &lt;p:option name="font-subset-min-file-size" required="false" select="0"/&gt;
   &lt;p:option name="create-svg-cover" required="false" select="'false'"/&gt;
   &lt;p:option name="convert-svg-cover" required="false" select="'false'"/&gt;
+  &lt;p:option name="pull-up-epub-type-to-body" required="false" select="'false'"/&gt;
 &lt;/epub:create-ops&gt;</code></pre>
                   </div>
                   <div id="tr-create-font-subset" class="section scrollspy">
@@ -328,6 +332,7 @@
   &lt;p:option name="target" select="'EPUB2'"/&gt;
   &lt;p:option name="debug" select="'no'"/&gt;
   &lt;p:option name="debug-dir-uri" select="'debug'"/&gt;
+  &lt;p:option name="pull-up-epub-type-to-body" required="false" select="'false'"/&gt;
 &lt;/epub:html-splitter&gt;</code></pre>
                   </div>
                   <div id="epub-insert-amzn-region-magnification" class="section scrollspy">
@@ -446,6 +451,14 @@
                         
                         <p xmlns:p="http://www.w3.org/ns/xproc" xmlns:cxf="http://xmlcalabash.com/ns/extensions/fileutils" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:epub="http://transpect.io/epubtools" xmlns:tr="http://transpect.io" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:opf="http://www.idpf.org/2007/opf" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:ops="http://www.idpf.org/2007/ops" xmlns:c="http://www.w3.org/ns/xproc-step" xmlns:j="http://marklogic.com/json" xmlns:cx="http://xmlcalabash.com/ns/extensions" xmlns:xlink="http://www.w3.org/1999/xlink">Note that it’s advisable to make all file inputs absolute URIs, by using <code>cygpath</code> on Cygwin or <code>readlink -f</code>
                            on Unixy systems. For bash, this is, e.g., <code>source=file:/$(cygpath -ma sample/b978-3-646-92351-3.xhtml)</code> </p>
+                        
+                        <p xmlns:p="http://www.w3.org/ns/xproc" xmlns:cxf="http://xmlcalabash.com/ns/extensions/fileutils" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:epub="http://transpect.io/epubtools" xmlns:tr="http://transpect.io" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:opf="http://www.idpf.org/2007/opf" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:ops="http://www.idpf.org/2007/ops" xmlns:c="http://www.w3.org/ns/xproc-step" xmlns:j="http://marklogic.com/json" xmlns:cx="http://xmlcalabash.com/ns/extensions" xmlns:xlink="http://www.w3.org/1999/xlink">8/2023: new feature: if HTML contains a &gt;div&gt;, &gt;section&gt; or &gt;nav&gt; element with 
+                           <pre>@class="as-nav"</pre> and 
+                           
+                           <pre>@epub:type="loi"</pre> (or "lot") that section is removed from content and moved into the navigation page
+                           as &gt;nav&gt; element.
+                           This works not for EPUB2. Structure is expexted as &gt;ol&gt;&gt;li&gt;&gt;a href="link-to-fig"&gt;Fig
+                           1: xyz&gt;/a&gt;&gt;/li&gt;&gt;/ol&gt;.</p>
                         </p>
                      <h4>Import</h4>
                      <pre><code class="language-markup">&lt;p:import href="http://transpect.io/epubtools/xpl/epub-convert.xpl"/&gt;</code></pre>
@@ -488,11 +501,12 @@
   &lt;p:option name="create-font-subset" required="false" select="'true'"/&gt;
   &lt;p:option name="create-svg-cover" required="false" select="'false'"/&gt;
   &lt;p:option name="convert-svg-cover" required="false" select="'false'"/&gt;
+  &lt;p:option name="pull-up-epub-type-to-body" required="false" select="'false'"/&gt;
 &lt;/epub:convert&gt;</code></pre>
                   </div>
-                  <div id="d41410e263" class="status">
+                  <div id="d42397e270" class="status">
                      <h2 class="header status"></h2>
-                     <p class="last-updated">GitHub sync date: 2023-08-04+02:00</p>
+                     <p class="last-updated">GitHub sync date: 2024-03-05+01:00</p>
                   </div>
                </div>
                <div class="col hide-on-small-only m3 l2">
@@ -508,7 +522,7 @@
                            <li><a href="#epub-split-css">epub:split-css</a></li>
                            <li><a href="#epub-zip-package">epub:zip-package</a></li>
                            <li><a href="#epub-convert">epub:convert</a></li>
-                           <li><a href="#d41410e263"></a></li>
+                           <li><a href="#d42397e270"></a></li>
                         </ul>
                      </div>
                   </div>

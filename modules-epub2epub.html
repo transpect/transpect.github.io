@@ -1,7 +1,7 @@
-<?xml version="1.0" encoding="UTF-8"?><html xmlns="http://www.w3.org/1999/xhtml" xml:base="../modules-hub2docx-frontend.html">
+<?xml version="1.0" encoding="UTF-8"?><html xmlns="http://www.w3.org/1999/xhtml" xml:base="../modules-epub2epub.html">
    <head>
       <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-      <title>hub2docx-frontend</title>
+      <title>epub2epub</title>
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <meta http-equiv="X-UA-Compatible" content="IE=edge" />
       <meta name="theme-color" content="#FF9800" />
@@ -12,7 +12,7 @@
       <link type="text/css" rel="stylesheet" media="screen,projection" href="css/materialize.min.css" />
       <link type="text/css" rel="stylesheet" media="screen,projection" href="css/le-tex.css" />
    </head>
-   <body id="modules-hub2docx-frontend">
+   <body id="modules-epub2epub">
       <header>
          <div class="container"><a href="#" data-activates="tr-nav" class="button-collapse top-nav circle hide-on-large-only"><i class="mdi-navigation-menu"></i></a></div>
          <ul id="tr-nav" class="side-nav fixed" style="width:260px">
@@ -41,7 +41,7 @@
                            <li class="naventry-2nd"><a href="modules-docx2tex.html">docx2tex</a></li>
                            <li class="naventry-2nd"><a href="modules-docx_modify-lib.html">docx_modify-lib</a></li>
                            <li class="naventry-2nd"><a href="modules-epub-font-subsetter.html">epub-font-subsetter</a></li>
-                           <li class="naventry-2nd"><a href="modules-epub2epub.html">epub2epub</a></li>
+                           <li class="active naventry-2nd"><a href="modules-epub2epub.html">epub2epub</a></li>
                            <li class="naventry-2nd"><a href="modules-epub2hub-lib.html">epub2hub-lib</a></li>
                            <li class="naventry-2nd"><a href="modules-epubcheck-extension.html">epubcheck-extension</a></li>
                            <li class="naventry-2nd"><a href="modules-epubcheck-idpf.html">epubcheck-idpf</a></li>
@@ -59,7 +59,7 @@
                            <li class="naventry-2nd"><a href="modules-htmltemplates.html">htmltemplates</a></li>
                            <li class="naventry-2nd"><a href="modules-hub2bits.html">hub2bits</a></li>
                            <li class="naventry-2nd"><a href="modules-hub2dbk.html">hub2dbk</a></li>
-                           <li class="active naventry-2nd"><a href="modules-hub2docx-frontend.html">hub2docx-frontend</a></li>
+                           <li class="naventry-2nd"><a href="modules-hub2docx-frontend.html">hub2docx-frontend</a></li>
                            <li class="naventry-2nd"><a href="modules-hub2docx-lib.html">hub2docx-lib</a></li>
                            <li class="naventry-2nd"><a href="modules-hub2html.html">hub2html</a></li>
                            <li class="naventry-2nd"><a href="modules-hub2tei.html">hub2tei</a></li>
@@ -127,8 +127,8 @@
       <main>
          <div class="section orange" id="index-banner">
             <div class="container">
-               <h1 id="tr-title" class="light header center-on-small-only white-text">hub2docx-frontend</h1>
-               <h4 id="tr-subtitle" class="light orange-text text-lighten-4 center-on-small-only"></h4>
+               <h1 id="tr-title" class="light header center-on-small-only white-text">epub2epub</h1>
+               <h4 id="tr-subtitle" class="light orange-text text-lighten-4 center-on-small-only">XProc library for migrating mostly older EPUBs to newer EPUB standards</h4>
             </div>
          </div>
          <div class="container">
@@ -139,18 +139,213 @@
                            <tbody>
                               <tr>
                                  <td>Git URL</td>
-                                 <td><code class="language-markup">https://github.com/transpect/hub2docx-frontend.git</code></td>
+                                 <td><code class="language-markup">https://github.com/transpect/epub2epub.git</code></td>
                               </tr>
                               <tr>
                                  <td>SVN URL</td>
-                                 <td><code class="language-markup">https://github.com/transpect/hub2docx-frontend</code></td>
+                                 <td><code class="language-markup">https://github.com/transpect/epub2epub</code></td>
+                              </tr>
+                              <tr>
+                                 <td>Base URI</td>
+                                 <td><code class="language-markup">http://transpect.io/epub2epub/</code></td>
                               </tr>
                            </tbody>
                         </table>
-                        <p><a href="https://github.com/transpect/hub2docx-frontend" class="btn-flat  orange lighten-4">Source ⬇</a></p>
+                        <p><a href="https://github.com/transpect/epub2epub" class="btn-flat  orange lighten-4">Source ⬇</a></p>
                      </div>
                   </div>
-                  <div id="d42410e21" class="status">
+                  <div id="e2e-copy-resources" class="section scrollspy">
+                     <h2 class="header">e2e:copy-resources</h2>
+                     <h4>Import</h4>
+                     <pre><code class="language-markup">&lt;p:import href="https://raw.githubusercontent.com/transpect/epub2epub/main/xpl/copy-resources.xpl"/&gt;</code></pre>
+                     <h4>Dependencies</h4>
+                     <ul>
+                        <li>
+                           <p><a href="modules-xproc-util transpect.github.io.html">xproc-util transpect.github.io</a></p>
+                        </li>
+                     </ul>
+                     <h4>Synopsis</h4>
+                     <pre><code class="language-markup">&lt;e2e:copy-resources xmlns:e2e="http://transpect.io/epub2epub"&gt;
+  &lt;p:input port="source"/&gt;
+  &lt;p:output port="result" primary="true"/&gt;
+  &lt;p:output port="report" sequence="true" primary="false"/&gt;
+  &lt;p:option name="outdir"/&gt;
+  &lt;p:option name="remove-chars-regex" select="'\s'"/&gt;
+  &lt;p:option name="debug" select="'no'"/&gt;
+  &lt;p:option name="debug-dir-uri" select="'debug'"/&gt;
+  &lt;p:option name="terminate-on-error" select="'no'"/&gt;
+&lt;/e2e:copy-resources&gt;</code></pre>
+                  </div>
+                  <div id="e2e-create-config" class="section scrollspy">
+                     <h2 class="header">e2e:create-config</h2>
+                     <h4>Import</h4>
+                     <pre><code class="language-markup">&lt;p:import href="https://raw.githubusercontent.com/transpect/epub2epub/main/xpl/create-config.xpl"/&gt;</code></pre>
+                     <h4>Dependencies</h4>
+                     <ul>
+                        <li>
+                           <p><a href="modules-xproc-util transpect.github.io.html">xproc-util transpect.github.io</a></p>
+                        </li>
+                        <li>
+                           <p><a href="modules-xslt-util.html">xslt-util</a></p>
+                        </li>
+                     </ul>
+                     <h4>Synopsis</h4>
+                     <pre><code class="language-markup">&lt;e2e:create-config xmlns:e2e="http://transpect.io/epub2epub"&gt;
+  &lt;p:input port="source"/&gt;
+  &lt;p:output port="result"/&gt;
+  &lt;p:option name="outdir"/&gt;
+  &lt;p:option name="epub-version" select="'3.0'"/&gt;
+  &lt;p:option name="html-subdir-name" select="'content'"/&gt;
+  &lt;p:option name="remove-chars-regex" select="'\s'"/&gt;
+  &lt;p:option name="debug" select="'no'"/&gt;
+  &lt;p:option name="debug-dir-uri" select="'debug'"/&gt;
+&lt;/e2e:create-config&gt;</code></pre>
+                  </div>
+                  <div id="e2e-epub2epub" class="section scrollspy">
+                     <h2 class="header">e2e:epub2epub</h2>
+                     <p>
+                        Pipeline to migrate an EPUB2. Consumes an EPUB file and 
+                        converts output suitable for processing with the epubtools 
+                        module to generate a new EPUB.
+                        </p>
+                     <h4>Import</h4>
+                     <pre><code class="language-markup">&lt;p:import href="https://raw.githubusercontent.com/transpect/epub2epub/main/xpl/epub2epub.xpl"/&gt;</code></pre>
+                     <h4>Dependencies</h4>
+                     <ul>
+                        <li>
+                           <p><a href="modules-xproc-util transpect.github.io.html">xproc-util transpect.github.io</a></p>
+                        </li>
+                     </ul>
+                     <h4>Synopsis</h4>
+                     <pre><code class="language-markup">&lt;e2e:epub2epub xmlns:e2e="http://transpect.io/epub2epub"&gt;
+  &lt;p:output port="result" primary="true"/&gt;
+  &lt;p:output port="html" primary="false"/&gt;
+  &lt;p:output port="report" sequence="true" primary="false"/&gt;
+  &lt;p:output port="input-for-schematron" sequence="true" primary="false"/&gt;
+  &lt;p:option name="href"/&gt;
+  &lt;p:option name="outdir" select="'out'"/&gt;
+  &lt;p:option name="create-epub" select="'yes'"/&gt;
+  &lt;p:option name="epub-version" select="'EPUB3'"/&gt;
+  &lt;p:option name="html-subdir-name" select="'content'"/&gt;
+  &lt;p:option name="toc-page" select="4"/&gt;
+  &lt;p:option name="remove-chars-regex" select="'([\p{Zs}]|%20)'"/&gt;
+  &lt;p:option name="debug" select="'no'"/&gt;
+  &lt;p:option name="debug-dir-uri" select="'debug'"/&gt;
+  &lt;p:option name="status-dir-uri" select="'status'"/&gt;
+  &lt;p:option name="terminate-on-error" select="'no'"/&gt;
+&lt;/e2e:epub2epub&gt;</code></pre>
+                  </div>
+                  <div id="e2e-error-handler" class="section scrollspy">
+                     <h2 class="header">e2e:error-handler</h2>
+                     <h4>Import</h4>
+                     <pre><code class="language-markup">&lt;p:import href="https://raw.githubusercontent.com/transpect/epub2epub/main/xpl/error-handler.xpl"/&gt;</code></pre>
+                     <h4>Dependencies</h4>
+                     <ul>
+                        <li>
+                           <p><a href="modules-xproc-util transpect.github.io.html">xproc-util transpect.github.io</a></p>
+                        </li>
+                     </ul>
+                     <h4>Synopsis</h4>
+                     <pre><code class="language-markup">&lt;e2e:error-handler xmlns:e2e="http://transpect.io/epub2epub"&gt;
+  &lt;p:input port="source"/&gt;
+  &lt;p:output port="result"/&gt;
+  &lt;p:option name="debug" select="'no'"/&gt;
+  &lt;p:option name="debug-dir-uri" select="'debug'"/&gt;
+  &lt;p:option name="pipeline-step"/&gt;
+  &lt;p:option name="terminate-on-error" select="'no'"/&gt;
+&lt;/e2e:error-handler&gt;</code></pre>
+                  </div>
+                  <div id="e2e-load-html" class="section scrollspy">
+                     <h2 class="header">e2e:load-html</h2>
+                     <h4>Import</h4>
+                     <pre><code class="language-markup">&lt;p:import href="https://raw.githubusercontent.com/transpect/epub2epub/main/xpl/load-html.xpl"/&gt;</code></pre>
+                     <h4>Dependencies</h4>
+                     <ul>
+                        <li>
+                           <p><a href="modules-xproc-util transpect.github.io.html">xproc-util transpect.github.io</a></p>
+                        </li>
+                     </ul>
+                     <h4>Synopsis</h4>
+                     <pre><code class="language-markup">&lt;e2e:load-html xmlns:e2e="http://transpect.io/epub2epub"&gt;
+  &lt;p:input port="source"/&gt;
+  &lt;p:output port="result" primary="true"/&gt;
+  &lt;p:output port="html" primary="false"/&gt;
+  &lt;p:output port="report" sequence="true" primary="false"/&gt;
+  &lt;p:option name="href"/&gt;
+  &lt;p:option name="remove-chars-regex" select="'\s'"/&gt;
+  &lt;p:option name="debug" select="'no'"/&gt;
+  &lt;p:option name="debug-dir-uri" select="'debug'"/&gt;
+  &lt;p:option name="terminate-on-error" select="'no'"/&gt;
+&lt;/e2e:load-html&gt;</code></pre>
+                  </div>
+                  <div id="e2e-load-rootfile" class="section scrollspy">
+                     <h2 class="header">e2e:load-rootfile</h2>
+                     <h4>Import</h4>
+                     <pre><code class="language-markup">&lt;p:import href="https://raw.githubusercontent.com/transpect/epub2epub/main/xpl/load-rootfile.xpl"/&gt;</code></pre>
+                     <h4>Dependencies</h4>
+                     <ul>
+                        <li>
+                           <p><a href="modules-xproc-util transpect.github.io.html">xproc-util transpect.github.io</a></p>
+                        </li>
+                     </ul>
+                     <h4>Synopsis</h4>
+                     <pre><code class="language-markup">&lt;e2e:load-rootfile xmlns:e2e="http://transpect.io/epub2epub"&gt;
+  &lt;p:input port="source"/&gt;
+  &lt;p:output port="result" primary="true"/&gt;
+  &lt;p:output port="report" sequence="true" primary="false"/&gt;
+  &lt;p:option name="debug" select="'no'"/&gt;
+  &lt;p:option name="debug-dir-uri" select="'debug'"/&gt;
+  &lt;p:option name="terminate-on-error" select="'no'"/&gt;
+&lt;/e2e:load-rootfile&gt;</code></pre>
+                  </div>
+                  <div id="e2e-ncx-to-nav" class="section scrollspy">
+                     <h2 class="header">e2e:ncx-to-nav</h2>
+                     <h4>Import</h4>
+                     <pre><code class="language-markup">&lt;p:import href="https://raw.githubusercontent.com/transpect/epub2epub/main/xpl/ncx-to-nav.xpl"/&gt;</code></pre>
+                     <h4>Dependencies</h4>
+                     <ul>
+                        <li>
+                           <p><a href="modules-xproc-util transpect.github.io.html">xproc-util transpect.github.io</a></p>
+                        </li>
+                        <li>
+                           <p><a href="modules-xslt-util.html">xslt-util</a></p>
+                        </li>
+                     </ul>
+                     <h4>Synopsis</h4>
+                     <pre><code class="language-markup">&lt;e2e:ncx-to-nav xmlns:e2e="http://transpect.io/epub2epub"&gt;
+  &lt;p:input port="source"/&gt;
+  &lt;p:output port="result"/&gt;
+  &lt;p:option name="toc-page" select="4"/&gt;
+  &lt;p:option name="debug" select="'no'"/&gt;
+  &lt;p:option name="debug-dir-uri" select="'debug'"/&gt;
+&lt;/e2e:ncx-to-nav&gt;</code></pre>
+                  </div>
+                  <div id="e2e-unzip" class="section scrollspy">
+                     <h2 class="header">e2e:unzip</h2>
+                     <h4>Import</h4>
+                     <pre><code class="language-markup">&lt;p:import href="https://raw.githubusercontent.com/transpect/epub2epub/main/xpl/unzip.xpl"/&gt;</code></pre>
+                     <h4>Dependencies</h4>
+                     <ul>
+                        <li>
+                           <p><a href="modules-unzip-extension.html">unzip-extension</a></p>
+                        </li>
+                        <li>
+                           <p><a href="modules-xproc-util transpect.github.io.html">xproc-util transpect.github.io</a></p>
+                        </li>
+                     </ul>
+                     <h4>Synopsis</h4>
+                     <pre><code class="language-markup">&lt;e2e:unzip xmlns:e2e="http://transpect.io/epub2epub"&gt;
+  &lt;p:output port="result" primary="true"/&gt;
+  &lt;p:output port="report" sequence="true" primary="false"/&gt;
+  &lt;p:option name="href" required="true"/&gt;
+  &lt;p:option name="outdir" required="true"/&gt;
+  &lt;p:option name="debug" select="'no'"/&gt;
+  &lt;p:option name="debug-dir-uri" select="'debug'"/&gt;
+  &lt;p:option name="status-dir-uri" select="'status'"/&gt;
+  &lt;p:option name="terminate-on-error" select="'no'"/&gt;
+&lt;/e2e:unzip&gt;</code></pre>
+                  </div>
+                  <div id="d42392e168" class="status">
                      <h2 class="header status"></h2>
                      <p class="last-updated">GitHub sync date: 2024-03-05+01:00</p>
                   </div>
@@ -159,7 +354,15 @@
                   <div class="toc-wrapper pin-top" style="top: 0px;">
                      <div style="height: 1px;">
                         <ul id="tr-toc" class="table-of-contents">
-                           <li><a href="#d42410e21" class="active"></a></li>
+                           <li><a href="#e2e-copy-resources" class="active">e2e:copy-resources</a></li>
+                           <li><a href="#e2e-create-config">e2e:create-config</a></li>
+                           <li><a href="#e2e-epub2epub">e2e:epub2epub</a></li>
+                           <li><a href="#e2e-error-handler">e2e:error-handler</a></li>
+                           <li><a href="#e2e-load-html">e2e:load-html</a></li>
+                           <li><a href="#e2e-load-rootfile">e2e:load-rootfile</a></li>
+                           <li><a href="#e2e-ncx-to-nav">e2e:ncx-to-nav</a></li>
+                           <li><a href="#e2e-unzip">e2e:unzip</a></li>
+                           <li><a href="#d42392e168"></a></li>
                         </ul>
                      </div>
                   </div>

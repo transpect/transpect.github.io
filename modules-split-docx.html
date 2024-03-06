@@ -1,7 +1,7 @@
-<?xml version="1.0" encoding="UTF-8"?><html xmlns="http://www.w3.org/1999/xhtml" xml:base="../modules-hub2docx-frontend.html">
+<?xml version="1.0" encoding="UTF-8"?><html xmlns="http://www.w3.org/1999/xhtml" xml:base="../modules-split-docx.html">
    <head>
       <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-      <title>hub2docx-frontend</title>
+      <title>split-docx</title>
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <meta http-equiv="X-UA-Compatible" content="IE=edge" />
       <meta name="theme-color" content="#FF9800" />
@@ -12,7 +12,7 @@
       <link type="text/css" rel="stylesheet" media="screen,projection" href="css/materialize.min.css" />
       <link type="text/css" rel="stylesheet" media="screen,projection" href="css/le-tex.css" />
    </head>
-   <body id="modules-hub2docx-frontend">
+   <body id="modules-split-docx">
       <header>
          <div class="container"><a href="#" data-activates="tr-nav" class="button-collapse top-nav circle hide-on-large-only"><i class="mdi-navigation-menu"></i></a></div>
          <ul id="tr-nav" class="side-nav fixed" style="width:260px">
@@ -59,7 +59,7 @@
                            <li class="naventry-2nd"><a href="modules-htmltemplates.html">htmltemplates</a></li>
                            <li class="naventry-2nd"><a href="modules-hub2bits.html">hub2bits</a></li>
                            <li class="naventry-2nd"><a href="modules-hub2dbk.html">hub2dbk</a></li>
-                           <li class="active naventry-2nd"><a href="modules-hub2docx-frontend.html">hub2docx-frontend</a></li>
+                           <li class="naventry-2nd"><a href="modules-hub2docx-frontend.html">hub2docx-frontend</a></li>
                            <li class="naventry-2nd"><a href="modules-hub2docx-lib.html">hub2docx-lib</a></li>
                            <li class="naventry-2nd"><a href="modules-hub2html.html">hub2html</a></li>
                            <li class="naventry-2nd"><a href="modules-hub2tei.html">hub2tei</a></li>
@@ -93,7 +93,7 @@
                            <li class="naventry-2nd"><a href="modules-schema-onix.html">schema-onix</a></li>
                            <li class="naventry-2nd"><a href="modules-schematron.html">schematron</a></li>
                            <li class="naventry-2nd"><a href="modules-semex.html">semex</a></li>
-                           <li class="naventry-2nd"><a href="modules-split-docx.html">split-docx</a></li>
+                           <li class="active naventry-2nd"><a href="modules-split-docx.html">split-docx</a></li>
                            <li class="naventry-2nd"><a href="modules-stylemapper-frontend.html">stylemapper-frontend</a></li>
                            <li class="naventry-2nd"><a href="modules-stylemapper-lib.html">stylemapper-lib</a></li>
                            <li class="naventry-2nd"><a href="modules-svn-extension.html">svn-extension</a></li>
@@ -127,8 +127,8 @@
       <main>
          <div class="section orange" id="index-banner">
             <div class="container">
-               <h1 id="tr-title" class="light header center-on-small-only white-text">hub2docx-frontend</h1>
-               <h4 id="tr-subtitle" class="light orange-text text-lighten-4 center-on-small-only"></h4>
+               <h1 id="tr-title" class="light header center-on-small-only white-text">split-docx</h1>
+               <h4 id="tr-subtitle" class="light orange-text text-lighten-4 center-on-small-only">this module helps with splitting docx files</h4>
             </div>
          </div>
          <div class="container">
@@ -139,18 +139,118 @@
                            <tbody>
                               <tr>
                                  <td>Git URL</td>
-                                 <td><code class="language-markup">https://github.com/transpect/hub2docx-frontend.git</code></td>
+                                 <td><code class="language-markup">https://github.com/transpect/split-docx.git</code></td>
                               </tr>
                               <tr>
                                  <td>SVN URL</td>
-                                 <td><code class="language-markup">https://github.com/transpect/hub2docx-frontend</code></td>
+                                 <td><code class="language-markup">https://github.com/transpect/split-docx</code></td>
+                              </tr>
+                              <tr>
+                                 <td>Base URI</td>
+                                 <td><code class="language-markup">http://transpect.io/split-docx/</code></td>
                               </tr>
                            </tbody>
                         </table>
-                        <p><a href="https://github.com/transpect/hub2docx-frontend" class="btn-flat  orange lighten-4">Source ⬇</a></p>
+                        <p><a href="https://github.com/transpect/split-docx" class="btn-flat  orange lighten-4">Source ⬇</a></p>
                      </div>
                   </div>
-                  <div id="d42410e21" class="status">
+                  <div id="tr-split-docx_scan-dir" class="section scrollspy">
+                     <h2 class="header">tr:split-docx_scan-dir</h2>
+                     <p>
+                        
+                        <p xmlns:p="http://www.w3.org/ns/xproc" xmlns:cxf="http://xmlcalabash.com/ns/extensions/fileutils" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main" xmlns:docx2hub="http://transpect.io/docx2hub" xmlns:tr="http://transpect.io" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:c="http://www.w3.org/ns/xproc-step" xmlns:j="http://marklogic.com/json" xmlns:cx="http://xmlcalabash.com/ns/extensions" xmlns:xlink="http://www.w3.org/1999/xlink">This step will report the paragraph styles for all docx files in a given directory.</p>
+                        </p>
+                     <h4>Import</h4>
+                     <pre><code class="language-markup">&lt;p:import href="https://raw.githubusercontent.com/transpect/split-docx/main/xpl/split-docx0_scan-dir.xpl"/&gt;</code></pre>
+                     <h4>Dependencies</h4>
+                     <ul>
+                        <li>
+                           <p><a href="modules-xproc-util transpect.github.io.html">xproc-util transpect.github.io</a></p>
+                        </li>
+                     </ul>
+                     <h4>Synopsis</h4>
+                     <pre><code class="language-markup">&lt;tr:split-docx_scan-dir xmlns:tr="http://transpect.io"&gt;
+  &lt;p:output port="result" primary="true"/&gt;
+  &lt;p:option name="dir" required="true"/&gt;
+  &lt;p:option name="outdir" required="false" select="''"/&gt;
+  &lt;p:option name="debug" required="false" select="'no'"/&gt;
+  &lt;p:option name="debug-dir-uri" required="false" select="resolve-uri('debug')"/&gt;
+&lt;/tr:split-docx_scan-dir&gt;</code></pre>
+                  </div>
+                  <div id="tr-split-docx_styles" class="section scrollspy">
+                     <h2 class="header">tr:split-docx_styles</h2>
+                     <p>
+                        
+                        <p xmlns:p="http://www.w3.org/ns/xproc" xmlns:cxf="http://xmlcalabash.com/ns/extensions/fileutils" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:pxf="http://exproc.org/proposed/steps/file" xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main" xmlns:docx2hub="http://transpect.io/docx2hub" xmlns:tr="http://transpect.io" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:c="http://www.w3.org/ns/xproc-step" xmlns:j="http://marklogic.com/json" xmlns:cx="http://xmlcalabash.com/ns/extensions" xmlns:xlink="http://www.w3.org/1999/xlink">Will accept a <code>&lt;files&gt;</code> document as posted by the split button.</p>
+                        </p>
+                     <h4>Import</h4>
+                     <pre><code class="language-markup">&lt;p:import href="https://raw.githubusercontent.com/transpect/split-docx/main/xpl/split-docx1_select-styles.xpl"/&gt;</code></pre>
+                     <h4>Dependencies</h4>
+                     <ul>
+                        <li>
+                           <p><a href="modules-xproc-util transpect.github.io.html">xproc-util transpect.github.io</a></p>
+                        </li>
+                     </ul>
+                     <h4>Synopsis</h4>
+                     <pre><code class="language-markup">&lt;tr:split-docx_styles xmlns:tr="http://transpect.io"&gt;
+  &lt;p:input port="source" primary="true"/&gt;
+  &lt;p:output port="result" primary="true"/&gt;
+  &lt;p:option name="debug" required="false" select="'no'"/&gt;
+  &lt;p:option name="debug-dir-uri" required="false" select="resolve-uri('debug')"/&gt;
+&lt;/tr:split-docx_styles&gt;</code></pre>
+                  </div>
+                  <div id="tr-actual-split-docx" class="section scrollspy">
+                     <h2 class="header">tr:actual-split-docx</h2>
+                     <p>
+                        
+                        <p xmlns:p="http://www.w3.org/ns/xproc" xmlns:cxf="http://xmlcalabash.com/ns/extensions/fileutils" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:pxf="http://exproc.org/proposed/steps/file" xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main" xmlns:docx2hub="http://transpect.io/docx2hub" xmlns:tr="http://transpect.io" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:c="http://www.w3.org/ns/xproc-step" xmlns:j="http://marklogic.com/json" xmlns:cx="http://xmlcalabash.com/ns/extensions" xmlns:xlink="http://www.w3.org/1999/xlink">Will accept a <code>&lt;files&gt;</code> document as posted by the split button.</p>
+                        </p>
+                     <h4>Import</h4>
+                     <pre><code class="language-markup">&lt;p:import href="https://raw.githubusercontent.com/transpect/split-docx/main/xpl/split-docx2_finally-split.xpl"/&gt;</code></pre>
+                     <h4>Dependencies</h4>
+                     <ul>
+                        <li>
+                           <p><a href="modules-xproc-util transpect.github.io.html">xproc-util transpect.github.io</a></p>
+                        </li>
+                     </ul>
+                     <h4>Synopsis</h4>
+                     <pre><code class="language-markup">&lt;tr:actual-split-docx xmlns:tr="http://transpect.io"&gt;
+  &lt;p:input port="source" primary="true"/&gt;
+  &lt;p:output port="result" primary="true"/&gt;
+  &lt;p:option name="debug" required="false" select="'no'"/&gt;
+  &lt;p:option name="debug-dir-uri" required="false" select="resolve-uri('debug')"/&gt;
+&lt;/tr:actual-split-docx&gt;</code></pre>
+                  </div>
+                  <div id="tr-split-docx" class="section scrollspy">
+                     <h2 class="header">tr:split-docx</h2>
+                     <p>
+                        
+                        <p xmlns:p="http://www.w3.org/ns/xproc" xmlns:cxf="http://xmlcalabash.com/ns/extensions/fileutils" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main" xmlns:docx2hub="http://transpect.io/docx2hub" xmlns:tr="http://transpect.io" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:c="http://www.w3.org/ns/xproc-step" xmlns:j="http://marklogic.com/json" xmlns:cx="http://xmlcalabash.com/ns/extensions" xmlns:xlink="http://www.w3.org/1999/xlink">This step will split docx file(s)</p>
+                        </p>
+                     <h4>Import</h4>
+                     <pre><code class="language-markup">&lt;p:import href="https://raw.githubusercontent.com/transpect/split-docx/main/xpl/split-main.xpl"/&gt;</code></pre>
+                     <h4>Dependencies</h4>
+                     <ul>
+                        <li>
+                           <p><a href="modules-cascade.html">cascade</a></p>
+                        </li>
+                        <li>
+                           <p><a href="modules-xproc-util transpect.github.io.html">xproc-util transpect.github.io</a></p>
+                        </li>
+                     </ul>
+                     <h4>Synopsis</h4>
+                     <pre><code class="language-markup">&lt;tr:split-docx xmlns:tr="http://transpect.io"&gt;
+  &lt;p:input port="params" sequence="true" primary="true"/&gt;
+  &lt;p:output port="result" sequence="true" primary="true"/&gt;
+  &lt;p:option name="dir" required="true"/&gt;
+  &lt;p:option name="outdir" required="false" select="''"/&gt;
+  &lt;p:option name="part-regex" required="false" select="''"/&gt;
+  &lt;p:option name="chapter-regex" required="false" select="''"/&gt;
+  &lt;p:option name="debug" required="false" select="'no'"/&gt;
+  &lt;p:option name="debug-dir-uri" required="false" select="resolve-uri('debug')"/&gt;
+&lt;/tr:split-docx&gt;</code></pre>
+                  </div>
+                  <div id="d42444e118" class="status">
                      <h2 class="header status"></h2>
                      <p class="last-updated">GitHub sync date: 2024-03-05+01:00</p>
                   </div>
@@ -159,7 +259,11 @@
                   <div class="toc-wrapper pin-top" style="top: 0px;">
                      <div style="height: 1px;">
                         <ul id="tr-toc" class="table-of-contents">
-                           <li><a href="#d42410e21" class="active"></a></li>
+                           <li><a href="#tr-split-docx_scan-dir" class="active">tr:split-docx_scan-dir</a></li>
+                           <li><a href="#tr-split-docx_styles">tr:split-docx_styles</a></li>
+                           <li><a href="#tr-actual-split-docx">tr:actual-split-docx</a></li>
+                           <li><a href="#tr-split-docx">tr:split-docx</a></li>
+                           <li><a href="#d42444e118"></a></li>
                         </ul>
                      </div>
                   </div>

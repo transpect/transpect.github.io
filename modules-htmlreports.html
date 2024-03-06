@@ -21,10 +21,12 @@
             <li class="naventry-1st"><a href="getting-started.html">Getting Started</a></li>
             <li class="active no-padding">
                <ul class="collapsible collapsible-accordion">
-                  <li class="active naventry-1st" id="d41190e415"><a class="active collapsible-header">Modules</a><div style="display:block" class="collapsible-body">
+                  <li class="active naventry-1st" id="d42168e415"><a class="active collapsible-header">Modules</a><div style="display:block" class="collapsible-body">
                         <ul>
+                           <li class="naventry-2nd"><a href="modules-CoCoTeX.html">CoCoTeX</a></li>
                            <li class="naventry-2nd"><a href="modules-ace-daisy.html">ace-daisy</a></li>
                            <li class="naventry-2nd"><a href="modules-basex-svn-api.html">basex-svn-api</a></li>
+                           <li class="naventry-2nd"><a href="modules-bib-parser.html">bib-parser</a></li>
                            <li class="naventry-2nd"><a href="modules-bits2hub.html">bits2hub</a></li>
                            <li class="naventry-2nd"><a href="modules-calabash-distro.html">calabash-distro</a></li>
                            <li class="naventry-2nd"><a href="modules-calabash-frontend.html">calabash-frontend</a></li>
@@ -39,6 +41,7 @@
                            <li class="naventry-2nd"><a href="modules-docx2tex.html">docx2tex</a></li>
                            <li class="naventry-2nd"><a href="modules-docx_modify-lib.html">docx_modify-lib</a></li>
                            <li class="naventry-2nd"><a href="modules-epub-font-subsetter.html">epub-font-subsetter</a></li>
+                           <li class="naventry-2nd"><a href="modules-epub2epub.html">epub2epub</a></li>
                            <li class="naventry-2nd"><a href="modules-epub2hub-lib.html">epub2hub-lib</a></li>
                            <li class="naventry-2nd"><a href="modules-epubcheck-extension.html">epubcheck-extension</a></li>
                            <li class="naventry-2nd"><a href="modules-epubcheck-idpf.html">epubcheck-idpf</a></li>
@@ -90,6 +93,7 @@
                            <li class="naventry-2nd"><a href="modules-schema-onix.html">schema-onix</a></li>
                            <li class="naventry-2nd"><a href="modules-schematron.html">schematron</a></li>
                            <li class="naventry-2nd"><a href="modules-semex.html">semex</a></li>
+                           <li class="naventry-2nd"><a href="modules-split-docx.html">split-docx</a></li>
                            <li class="naventry-2nd"><a href="modules-stylemapper-frontend.html">stylemapper-frontend</a></li>
                            <li class="naventry-2nd"><a href="modules-stylemapper-lib.html">stylemapper-lib</a></li>
                            <li class="naventry-2nd"><a href="modules-svn-extension.html">svn-extension</a></li>
@@ -97,7 +101,6 @@
                            <li class="naventry-2nd"><a href="modules-tei2html.html">tei2html</a></li>
                            <li class="naventry-2nd"><a href="modules-tei2hub.html">tei2hub</a></li>
                            <li class="naventry-2nd"><a href="modules-tokenized-to-tree.html">tokenized-to-tree</a></li>
-                           <li class="naventry-2nd"><a href="modules-transpect-tex.html">transpect-tex</a></li>
                            <li class="naventry-2nd"><a href="modules-transpect.github.io.html">transpect.github.io</a></li>
                            <li class="naventry-2nd"><a href="modules-transpectdoc.html">transpectdoc</a></li>
                            <li class="naventry-2nd"><a href="modules-unwrap-mml.html">unwrap-mml</a></li>
@@ -244,6 +247,31 @@
   &lt;p:option name="severity" required="false" select="'warning'"/&gt;
   &lt;p:option name="step-name" select="''"/&gt;
 &lt;/tr:errorPI2svrl&gt;</code></pre>
+                  </div>
+                  <div id="tr-htmlreports-summary" class="section scrollspy">
+                     <h2 class="header">tr:htmlreports-summary</h2>
+                     <p>Pipeline for creating a meta HTML Report file: summarize all reports in one file.</p>
+                     <h4>Import</h4>
+                     <pre><code class="language-markup">&lt;p:import href="http://transpect.io/htmlreports/xpl/htmlreports-summary.xpl"/&gt;</code></pre>
+                     <h4>Dependencies</h4>
+                     <ul>
+                        <li>
+                           <p><a href="modules-xproc-util transpect.github.io.html">xproc-util transpect.github.io</a></p>
+                        </li>
+                     </ul>
+                     <h4>Synopsis</h4>
+                     <pre><code class="language-markup">&lt;tr:htmlreports-summary xmlns:tr="http://transpect.io"&gt;
+  &lt;p:input port="source"/&gt;
+  &lt;p:input port="stylesheet"/&gt;
+  &lt;p:option name="report-dir" required="true"/&gt;
+  &lt;p:option name="recursive" required="false" select="'no'"/&gt;
+  &lt;p:option name="htmlreport-file-regex" required="false" select="'^.*.report.xhtml$'"/&gt;
+  &lt;p:option name="summary-report-filename" required="false" select="'reports.xhtml'"/&gt;
+  &lt;p:option name="language" required="false" select="'en'"/&gt;
+  &lt;p:option name="debug" required="false" select="'no'"/&gt;
+  &lt;p:option name="debug-dir-uri" required="false" select="resolve-uri('debug')"/&gt;
+  &lt;p:option name="status-dir-uri" required="false" select="'status'"/&gt;
+&lt;/tr:htmlreports-summary&gt;</code></pre>
                   </div>
                   <div id="tr-list-checking-rules" class="section scrollspy">
                      <h2 class="header">tr:list-checking-rules</h2>
@@ -392,9 +420,9 @@
   &lt;p:option name="phase" select="'#ALL'"/&gt;
 &lt;/tr:validate-with-schematron2&gt;</code></pre>
                   </div>
-                  <div id="d41418e184" class="status">
+                  <div id="d42405e201" class="status">
                      <h2 class="header status"></h2>
-                     <p class="last-updated">GitHub sync date: 2023-08-04+02:00</p>
+                     <p class="last-updated">GitHub sync date: 2024-03-05+01:00</p>
                   </div>
                </div>
                <div class="col hide-on-small-only m3 l2">
@@ -404,12 +432,13 @@
                            <li><a href="#tr-assemble-schematron" class="active">tr:assemble-schematron</a></li>
                            <li><a href="#tr-check-styles">tr:check-styles</a></li>
                            <li><a href="#tr-errorPI2svrl">tr:errorPI2svrl</a></li>
+                           <li><a href="#tr-htmlreports-summary">tr:htmlreports-summary</a></li>
                            <li><a href="#tr-list-checking-rules">tr:list-checking-rules</a></li>
                            <li><a href="#tr-patch-svrl">tr:patch-svrl</a></li>
                            <li><a href="#tr-validate-with-rng-svrl">tr:validate-with-rng-svrl</a></li>
                            <li><a href="#tr-validate-with-schematron">tr:validate-with-schematron</a></li>
                            <li><a href="#tr-validate-with-schematron2">tr:validate-with-schematron2</a></li>
-                           <li><a href="#d41418e184"></a></li>
+                           <li><a href="#d42405e201"></a></li>
                         </ul>
                      </div>
                   </div>

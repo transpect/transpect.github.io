@@ -1,7 +1,7 @@
-<?xml version="1.0" encoding="UTF-8"?><html xmlns="http://www.w3.org/1999/xhtml" xml:base="../modules-hub2docx-frontend.html">
+<?xml version="1.0" encoding="UTF-8"?><html xmlns="http://www.w3.org/1999/xhtml" xml:base="../modules-bib-parser.html">
    <head>
       <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-      <title>hub2docx-frontend</title>
+      <title>bib-parser</title>
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <meta http-equiv="X-UA-Compatible" content="IE=edge" />
       <meta name="theme-color" content="#FF9800" />
@@ -12,7 +12,7 @@
       <link type="text/css" rel="stylesheet" media="screen,projection" href="css/materialize.min.css" />
       <link type="text/css" rel="stylesheet" media="screen,projection" href="css/le-tex.css" />
    </head>
-   <body id="modules-hub2docx-frontend">
+   <body id="modules-bib-parser">
       <header>
          <div class="container"><a href="#" data-activates="tr-nav" class="button-collapse top-nav circle hide-on-large-only"><i class="mdi-navigation-menu"></i></a></div>
          <ul id="tr-nav" class="side-nav fixed" style="width:260px">
@@ -26,7 +26,7 @@
                            <li class="naventry-2nd"><a href="modules-CoCoTeX.html">CoCoTeX</a></li>
                            <li class="naventry-2nd"><a href="modules-ace-daisy.html">ace-daisy</a></li>
                            <li class="naventry-2nd"><a href="modules-basex-svn-api.html">basex-svn-api</a></li>
-                           <li class="naventry-2nd"><a href="modules-bib-parser.html">bib-parser</a></li>
+                           <li class="active naventry-2nd"><a href="modules-bib-parser.html">bib-parser</a></li>
                            <li class="naventry-2nd"><a href="modules-bits2hub.html">bits2hub</a></li>
                            <li class="naventry-2nd"><a href="modules-calabash-distro.html">calabash-distro</a></li>
                            <li class="naventry-2nd"><a href="modules-calabash-frontend.html">calabash-frontend</a></li>
@@ -59,7 +59,7 @@
                            <li class="naventry-2nd"><a href="modules-htmltemplates.html">htmltemplates</a></li>
                            <li class="naventry-2nd"><a href="modules-hub2bits.html">hub2bits</a></li>
                            <li class="naventry-2nd"><a href="modules-hub2dbk.html">hub2dbk</a></li>
-                           <li class="active naventry-2nd"><a href="modules-hub2docx-frontend.html">hub2docx-frontend</a></li>
+                           <li class="naventry-2nd"><a href="modules-hub2docx-frontend.html">hub2docx-frontend</a></li>
                            <li class="naventry-2nd"><a href="modules-hub2docx-lib.html">hub2docx-lib</a></li>
                            <li class="naventry-2nd"><a href="modules-hub2html.html">hub2html</a></li>
                            <li class="naventry-2nd"><a href="modules-hub2tei.html">hub2tei</a></li>
@@ -127,8 +127,8 @@
       <main>
          <div class="section orange" id="index-banner">
             <div class="container">
-               <h1 id="tr-title" class="light header center-on-small-only white-text">hub2docx-frontend</h1>
-               <h4 id="tr-subtitle" class="light orange-text text-lighten-4 center-on-small-only"></h4>
+               <h1 id="tr-title" class="light header center-on-small-only white-text">bib-parser</h1>
+               <h4 id="tr-subtitle" class="light orange-text text-lighten-4 center-on-small-only">XProc wrapper to include various parsers for bibliographic references</h4>
             </div>
          </div>
          <div class="container">
@@ -139,18 +139,45 @@
                            <tbody>
                               <tr>
                                  <td>Git URL</td>
-                                 <td><code class="language-markup">https://github.com/transpect/hub2docx-frontend.git</code></td>
+                                 <td><code class="language-markup">https://github.com/transpect/bib-parser.git</code></td>
                               </tr>
                               <tr>
                                  <td>SVN URL</td>
-                                 <td><code class="language-markup">https://github.com/transpect/hub2docx-frontend</code></td>
+                                 <td><code class="language-markup">https://github.com/transpect/bib-parser</code></td>
+                              </tr>
+                              <tr>
+                                 <td>Base URI</td>
+                                 <td><code class="language-markup">http://transpect.io/bib-parser/</code></td>
                               </tr>
                            </tbody>
                         </table>
-                        <p><a href="https://github.com/transpect/hub2docx-frontend" class="btn-flat  orange lighten-4">Source ⬇</a></p>
+                        <p><a href="https://github.com/transpect/bib-parser" class="btn-flat  orange lighten-4">Source ⬇</a></p>
                      </div>
                   </div>
-                  <div id="d42410e21" class="status">
+                  <div id="tr-bib-parser" class="section scrollspy">
+                     <h2 class="header">tr:bib-parser</h2>
+                     <p>
+                        This is an XProc wrapper to run bibliographic 
+                        reference parsers.
+                        </p>
+                     <h4>Import</h4>
+                     <pre><code class="language-markup">&lt;p:import href="https://raw.githubusercontent.com/transpect/bib-parser/main/xpl/bib-parser.xpl"/&gt;</code></pre>
+                     <h4>Dependencies</h4>
+                     <ul>
+                        <li>
+                           <p><a href="modules-xproc-util transpect.github.io.html">xproc-util transpect.github.io</a></p>
+                        </li>
+                     </ul>
+                     <h4>Synopsis</h4>
+                     <pre><code class="language-markup">&lt;tr:bib-parser xmlns:tr="http://transpect.io"&gt;
+  &lt;p:output port="result" primary="true"/&gt;
+  &lt;p:output port="report" sequence="true" primary="false"/&gt;
+  &lt;p:option name="href" select="'C:/cygwin64/home/kraetke/bib-extension/refs.txt'"/&gt;
+  &lt;p:option name="ruby-path" select="'/usr/local/bin/ruby'"/&gt;
+  &lt;p:option name="parser-path" select="'/usr/local/bin/anystyle'"/&gt;
+&lt;/tr:bib-parser&gt;</code></pre>
+                  </div>
+                  <div id="d42377e43" class="status">
                      <h2 class="header status"></h2>
                      <p class="last-updated">GitHub sync date: 2024-03-05+01:00</p>
                   </div>
@@ -159,7 +186,8 @@
                   <div class="toc-wrapper pin-top" style="top: 0px;">
                      <div style="height: 1px;">
                         <ul id="tr-toc" class="table-of-contents">
-                           <li><a href="#d42410e21" class="active"></a></li>
+                           <li><a href="#tr-bib-parser" class="active">tr:bib-parser</a></li>
+                           <li><a href="#d42377e43"></a></li>
                         </ul>
                      </div>
                   </div>
