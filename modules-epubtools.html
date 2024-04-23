@@ -21,7 +21,7 @@
             <li class="naventry-1st"><a href="getting-started.html">Getting Started</a></li>
             <li class="active no-padding">
                <ul class="collapsible collapsible-accordion">
-                  <li class="active naventry-1st" id="d42168e415"><a class="active collapsible-header">Modules</a><div style="display:block" class="collapsible-body">
+                  <li class="active naventry-1st" id="d42430e418"><a class="active collapsible-header">Modules</a><div style="display:block" class="collapsible-body">
                         <ul>
                            <li class="naventry-2nd"><a href="modules-CoCoTeX.html">CoCoTeX</a></li>
                            <li class="naventry-2nd"><a href="modules-ace-daisy.html">ace-daisy</a></li>
@@ -92,6 +92,7 @@
                            <li class="naventry-2nd"><a href="modules-schema-jats.html">schema-jats</a></li>
                            <li class="naventry-2nd"><a href="modules-schema-onix.html">schema-onix</a></li>
                            <li class="naventry-2nd"><a href="modules-schematron.html">schematron</a></li>
+                           <li class="naventry-2nd"><a href="modules-sdox2hub.html">sdox2hub</a></li>
                            <li class="naventry-2nd"><a href="modules-semex.html">semex</a></li>
                            <li class="naventry-2nd"><a href="modules-split-docx.html">split-docx</a></li>
                            <li class="naventry-2nd"><a href="modules-stylemapper-frontend.html">stylemapper-frontend</a></li>
@@ -114,6 +115,7 @@
                            <li class="naventry-2nd"><a href="modules-xml2idml.html">xml2idml</a></li>
                            <li class="naventry-2nd"><a href="modules-xml2tex.html">xml2tex</a></li>
                            <li class="naventry-2nd"><a href="modules-xproc-util.html">xproc-util</a></li>
+                           <li class="naventry-2nd"><a href="modules-xproc3kit.html">xproc3kit</a></li>
                            <li class="naventry-2nd"><a href="modules-xslt-util.html">xslt-util</a></li>
                         </ul>
                      </div>
@@ -254,6 +256,30 @@
   &lt;p:option name="convert-svg-cover" required="false" select="'false'"/&gt;
   &lt;p:option name="pull-up-epub-type-to-body" required="false" select="'false'"/&gt;
 &lt;/epub:create-ops&gt;</code></pre>
+                  </div>
+                  <div id="tr-font-obfuscate" class="section scrollspy">
+                     <h2 class="header">tr:font-obfuscate</h2>
+                     <p>
+                        This step applies the EPUB font obfuscation algorithm to 
+                        all font files that are declared in the CSS.
+                        </p>
+                     <h4>Import</h4>
+                     <pre><code class="language-markup">&lt;p:import href="http://transpect.io/epubtools/modules/font-obfuscate/xpl/font-obfuscate.xpl"/&gt;</code></pre>
+                     <h4>Dependencies</h4>
+                     <ul>
+                        <li>
+                           <p><a href="modules-xproc-util transpect.github.io.html">xproc-util transpect.github.io</a></p>
+                        </li>
+                     </ul>
+                     <h4>Synopsis</h4>
+                     <pre><code class="language-markup">&lt;tr:font-obfuscate xmlns:tr="http://transpect.io"&gt;
+  &lt;p:input port="source" primary="true"/&gt;
+  &lt;p:input port="meta" primary="false"/&gt;
+  &lt;p:output port="result"/&gt;
+  &lt;p:option name="targetdir"/&gt;
+  &lt;p:option name="debug" select="'no'"/&gt;
+  &lt;p:option name="debug-dir-uri" select="'debug-dir-uri'"/&gt;
+&lt;/tr:font-obfuscate&gt;</code></pre>
                   </div>
                   <div id="tr-create-font-subset" class="section scrollspy">
                      <h2 class="header">tr:create-font-subset</h2>
@@ -504,9 +530,9 @@
   &lt;p:option name="pull-up-epub-type-to-body" required="false" select="'false'"/&gt;
 &lt;/epub:convert&gt;</code></pre>
                   </div>
-                  <div id="d42397e270" class="status">
+                  <div id="d42663e287" class="status">
                      <h2 class="header status"></h2>
-                     <p class="last-updated">GitHub sync date: 2024-03-06+01:00</p>
+                     <p class="last-updated">GitHub sync date: 2024-04-23+02:00</p>
                   </div>
                </div>
                <div class="col hide-on-small-only m3 l2">
@@ -516,13 +542,14 @@
                            <li><a href="#epub-create-ocf" class="active">epub:create-ocf</a></li>
                            <li><a href="#epub-create-opf">epub:create-opf</a></li>
                            <li><a href="#epub-create-ops">epub:create-ops</a></li>
+                           <li><a href="#tr-font-obfuscate">tr:font-obfuscate</a></li>
                            <li><a href="#tr-create-font-subset">tr:create-font-subset</a></li>
                            <li><a href="#epub-html-splitter">epub:html-splitter</a></li>
                            <li><a href="#epub-insert-amzn-region-magnification">epub:insert-amzn-region-magnification</a></li>
                            <li><a href="#epub-split-css">epub:split-css</a></li>
                            <li><a href="#epub-zip-package">epub:zip-package</a></li>
                            <li><a href="#epub-convert">epub:convert</a></li>
-                           <li><a href="#d42397e270"></a></li>
+                           <li><a href="#d42663e287"></a></li>
                         </ul>
                      </div>
                   </div>

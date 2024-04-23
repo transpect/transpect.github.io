@@ -1,7 +1,7 @@
-<?xml version="1.0" encoding="UTF-8"?><html xmlns="http://www.w3.org/1999/xhtml" xml:base="../modules-markdown2hub.html">
+<?xml version="1.0" encoding="UTF-8"?><html xmlns="http://www.w3.org/1999/xhtml" xml:base="../modules-sdox2hub.html">
    <head>
       <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-      <title>markdown2hub</title>
+      <title>sdox2hub</title>
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <meta http-equiv="X-UA-Compatible" content="IE=edge" />
       <meta name="theme-color" content="#FF9800" />
@@ -12,7 +12,7 @@
       <link type="text/css" rel="stylesheet" media="screen,projection" href="css/materialize.min.css" />
       <link type="text/css" rel="stylesheet" media="screen,projection" href="css/le-tex.css" />
    </head>
-   <body id="modules-markdown2hub">
+   <body id="modules-sdox2hub">
       <header>
          <div class="container"><a href="#" data-activates="tr-nav" class="button-collapse top-nav circle hide-on-large-only"><i class="mdi-navigation-menu"></i></a></div>
          <ul id="tr-nav" class="side-nav fixed" style="width:260px">
@@ -77,7 +77,7 @@
                            <li class="naventry-2nd"><a href="modules-latex-math-images.html">latex-math-images</a></li>
                            <li class="naventry-2nd"><a href="modules-logo.html">logo</a></li>
                            <li class="naventry-2nd"><a href="modules-map-style-names.html">map-style-names</a></li>
-                           <li class="active naventry-2nd"><a href="modules-markdown2hub.html">markdown2hub</a></li>
+                           <li class="naventry-2nd"><a href="modules-markdown2hub.html">markdown2hub</a></li>
                            <li class="naventry-2nd"><a href="modules-mathtype-extension.html">mathtype-extension</a></li>
                            <li class="naventry-2nd"><a href="modules-mml-normalize.html">mml-normalize</a></li>
                            <li class="naventry-2nd"><a href="modules-mml2tex.html">mml2tex</a></li>
@@ -92,7 +92,7 @@
                            <li class="naventry-2nd"><a href="modules-schema-jats.html">schema-jats</a></li>
                            <li class="naventry-2nd"><a href="modules-schema-onix.html">schema-onix</a></li>
                            <li class="naventry-2nd"><a href="modules-schematron.html">schematron</a></li>
-                           <li class="naventry-2nd"><a href="modules-sdox2hub.html">sdox2hub</a></li>
+                           <li class="active naventry-2nd"><a href="modules-sdox2hub.html">sdox2hub</a></li>
                            <li class="naventry-2nd"><a href="modules-semex.html">semex</a></li>
                            <li class="naventry-2nd"><a href="modules-split-docx.html">split-docx</a></li>
                            <li class="naventry-2nd"><a href="modules-stylemapper-frontend.html">stylemapper-frontend</a></li>
@@ -129,8 +129,8 @@
       <main>
          <div class="section orange" id="index-banner">
             <div class="container">
-               <h1 id="tr-title" class="light header center-on-small-only white-text">markdown2hub</h1>
-               <h4 id="tr-subtitle" class="light orange-text text-lighten-4 center-on-small-only">converts Markdown to Hub XML</h4>
+               <h1 id="tr-title" class="light header center-on-small-only white-text">sdox2hub</h1>
+               <h4 id="tr-subtitle" class="light orange-text text-lighten-4 center-on-small-only"></h4>
             </div>
          </div>
          <div class="container">
@@ -141,47 +141,18 @@
                            <tbody>
                               <tr>
                                  <td>Git URL</td>
-                                 <td><code class="language-markup">https://github.com/transpect/markdown2hub.git</code></td>
+                                 <td><code class="language-markup">https://github.com/transpect/sdox2hub.git</code></td>
                               </tr>
                               <tr>
                                  <td>SVN URL</td>
-                                 <td><code class="language-markup">https://github.com/transpect/markdown2hub</code></td>
-                              </tr>
-                              <tr>
-                                 <td>Base URI</td>
-                                 <td><code class="language-markup">http://transpect.io/markdown2hub/</code></td>
+                                 <td><code class="language-markup">https://github.com/transpect/sdox2hub</code></td>
                               </tr>
                            </tbody>
                         </table>
-                        <p><a href="https://github.com/transpect/markdown2hub" class="btn-flat  orange lighten-4">Source ⬇</a></p>
+                        <p><a href="https://github.com/transpect/sdox2hub" class="btn-flat  orange lighten-4">Source ⬇</a></p>
                      </div>
                   </div>
-                  <div id="tr-markdown2hub" class="section scrollspy">
-                     <h2 class="header">tr:markdown2hub</h2>
-                     <p>
-                        This step converts a Markdown file to Hub. The href option 
-                        expects an URI reference to the Markdown file.
-                        </p>
-                     <h4>Import</h4>
-                     <pre><code class="language-markup">&lt;p:import href="https://raw.githubusercontent.com/transpect/markdown2hub/main/xpl/markdown2hub.xpl"/&gt;</code></pre>
-                     <h4>Dependencies</h4>
-                     <ul>
-                        <li>
-                           <p><a href="modules-xproc-util transpect.github.io.html">xproc-util transpect.github.io</a></p>
-                        </li>
-                        <li>
-                           <p><a href="modules-xslt-util.html">xslt-util</a></p>
-                        </li>
-                     </ul>
-                     <h4>Synopsis</h4>
-                     <pre><code class="language-markup">&lt;tr:markdown2hub xmlns:tr="http://transpect.io"&gt;
-  &lt;p:output port="result"/&gt;
-  &lt;p:option name="href"/&gt;
-  &lt;p:option name="debug" select="'yes'"/&gt;
-  &lt;p:option name="debug-dir-uri" select="'debug'"/&gt;
-&lt;/tr:markdown2hub&gt;</code></pre>
-                  </div>
-                  <div id="d42694e47" class="status">
+                  <div id="d42709e21" class="status">
                      <h2 class="header status"></h2>
                      <p class="last-updated">GitHub sync date: 2024-04-23+02:00</p>
                   </div>
@@ -190,8 +161,7 @@
                   <div class="toc-wrapper pin-top" style="top: 0px;">
                      <div style="height: 1px;">
                         <ul id="tr-toc" class="table-of-contents">
-                           <li><a href="#tr-markdown2hub" class="active">tr:markdown2hub</a></li>
-                           <li><a href="#d42694e47"></a></li>
+                           <li><a href="#d42709e21" class="active"></a></li>
                         </ul>
                      </div>
                   </div>

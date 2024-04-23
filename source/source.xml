@@ -155,9 +155,10 @@
       <subtitle>Learn how to use transpect</subtitle>
       <section xml:id="gs-prerequisites">
         <title>Prerequisites</title>
-        <para>There are no further prerequisites as are required to run XProc. If you are not familiar with XProc, we
+        <para>There are no further prerequisites as are required to run XProc. If you are not familiar with XProc 1.0, we
           suggest to work yourself through Roger L. Costello’s <link xlink:href="http://www.xfront.com/xproc/">XProc
-            tutorial</link> first.</para>
+            tutorial</link> first. We're planning to move transpect to XProc 3.0 soon, so you could skip version 1.0 and read 
+          our Martin Kraetke's <link xlink:href="https://xporc.net/xproc-tutorial/">XProc 3.0 tutorial</link> as well.</para>
         <simplesect role="col s12 m6">
           <title>XML Calabash</title>
           <para>We recommend to use our pre-configured XML Calabash for running transpect’s XProc pipelines. It includes
