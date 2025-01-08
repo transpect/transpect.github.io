@@ -21,7 +21,7 @@
             <li class="naventry-1st"><a href="getting-started.html">Getting Started</a></li>
             <li class="active no-padding">
                <ul class="collapsible collapsible-accordion">
-                  <li class="active naventry-1st" id="d42430e418"><a class="active collapsible-header">Modules</a><div style="display:block" class="collapsible-body">
+                  <li class="active naventry-1st" id="d42574e418"><a class="active collapsible-header">Modules</a><div style="display:block" class="collapsible-body">
                         <ul>
                            <li class="naventry-2nd"><a href="modules-CoCoTeX.html">CoCoTeX</a></li>
                            <li class="naventry-2nd"><a href="modules-ace-daisy.html">ace-daisy</a></li>
@@ -73,7 +73,6 @@
                            <li class="naventry-2nd"><a href="modules-javascript-extension.html">javascript-extension</a></li>
                            <li class="naventry-2nd"><a href="modules-jing-trang-patch.html">jing-trang-patch</a></li>
                            <li class="naventry-2nd"><a href="modules-kindlegen-amzn.html">kindlegen-amzn</a></li>
-                           <li class="naventry-2nd"><a href="modules-lang-extension.html">lang-extension</a></li>
                            <li class="naventry-2nd"><a href="modules-latex-math-images.html">latex-math-images</a></li>
                            <li class="naventry-2nd"><a href="modules-logo.html">logo</a></li>
                            <li class="naventry-2nd"><a href="modules-map-style-names.html">map-style-names</a></li>
@@ -110,6 +109,7 @@
                            <li class="naventry-2nd"><a href="modules-use-css-decorator-classes.html">use-css-decorator-classes</a></li>
                            <li class="naventry-2nd"><a href="modules-xerif.html">xerif</a></li>
                            <li class="naventry-2nd"><a href="modules-xerif-demo.html">xerif-demo</a></li>
+                           <li class="naventry-2nd"><a href="modules-xerif-latex.html">xerif-latex</a></li>
                            <li class="naventry-2nd"><a href="modules-xlsx2html-frontend.html">xlsx2html-frontend</a></li>
                            <li class="naventry-2nd"><a href="modules-xlsx2html-lib.html">xlsx2html-lib</a></li>
                            <li class="naventry-2nd"><a href="modules-xml2idml.html">xml2idml</a></li>
@@ -147,21 +147,49 @@
                                  <td>SVN URL</td>
                                  <td><code class="language-markup">https://github.com/transpect/sdox2hub</code></td>
                               </tr>
+                              <tr>
+                                 <td>Base URI</td>
+                                 <td><code class="language-markup">http://transpect.io/sdox2hub/</code></td>
+                              </tr>
                            </tbody>
                         </table>
                         <p><a href="https://github.com/transpect/sdox2hub" class="btn-flat  orange lighten-4">Source ⬇</a></p>
                      </div>
                   </div>
-                  <div id="d42709e21" class="status">
+                  <div id="tr-sdox2hub" class="section scrollspy">
+                     <h2 class="header">tr:sdox2hub</h2>
+                     <h4>Import</h4>
+                     <pre><code class="language-markup">&lt;p:import href="https://raw.githubusercontent.com/transpect/sdox2hub/main/xpl/sdox2hub.xpl"/&gt;</code></pre>
+                     <h4>Dependencies</h4>
+                     <ul>
+                        <li>
+                           <p><a href="modules-unzip-extension.html">unzip-extension</a></p>
+                        </li>
+                        <li>
+                           <p><a href="modules-xproc-util transpect.github.io.html">xproc-util transpect.github.io</a></p>
+                        </li>
+                     </ul>
+                     <h4>Synopsis</h4>
+                     <pre><code class="language-markup">&lt;tr:sdox2hub xmlns:tr="http://transpect.io"&gt;
+  &lt;p:input port="sdox2hub-xsl"/&gt;
+  &lt;p:output port="result" primary="true"/&gt;
+  &lt;p:option name="input"/&gt;
+  &lt;p:option name="debug-dir-uri" required="false" select="resolve-uri('debug')"/&gt;
+  &lt;p:option name="debug" required="false" select="'yes'"/&gt;
+  &lt;p:option name="zip-dir" required="false" select="''"/&gt;
+&lt;/tr:sdox2hub&gt;</code></pre>
+                  </div>
+                  <div id="d42852e46" class="status">
                      <h2 class="header status"></h2>
-                     <p class="last-updated">GitHub sync date: 2024-04-23+02:00</p>
+                     <p class="last-updated">GitHub sync date: 2025-01-08+01:00</p>
                   </div>
                </div>
                <div class="col hide-on-small-only m3 l2">
                   <div class="toc-wrapper pin-top" style="top: 0px;">
                      <div style="height: 1px;">
                         <ul id="tr-toc" class="table-of-contents">
-                           <li><a href="#d42709e21" class="active"></a></li>
+                           <li><a href="#tr-sdox2hub" class="active">tr:sdox2hub</a></li>
+                           <li><a href="#d42852e46"></a></li>
                         </ul>
                      </div>
                   </div>
@@ -193,7 +221,7 @@
             <div class="container">
                <div class="row">
                   <div id="tr-footer-copyright-1" class="col s12 m6 l6">
-                     <p class="white-text left">le-tex publishing services GmbH, <span class="current-year">2024</span></p>
+                     <p class="white-text left">le-tex publishing services GmbH, <span class="current-year">2025</span></p>
                   </div>
                   <div id="tr-footer-copyright-2" class="col s12 m6 l6">
                      <p>

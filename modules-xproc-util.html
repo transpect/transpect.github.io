@@ -21,7 +21,7 @@
             <li class="naventry-1st"><a href="getting-started.html">Getting Started</a></li>
             <li class="active no-padding">
                <ul class="collapsible collapsible-accordion">
-                  <li class="active naventry-1st" id="d42430e418"><a class="active collapsible-header">Modules</a><div style="display:block" class="collapsible-body">
+                  <li class="active naventry-1st" id="d42574e418"><a class="active collapsible-header">Modules</a><div style="display:block" class="collapsible-body">
                         <ul>
                            <li class="naventry-2nd"><a href="modules-CoCoTeX.html">CoCoTeX</a></li>
                            <li class="naventry-2nd"><a href="modules-ace-daisy.html">ace-daisy</a></li>
@@ -73,7 +73,6 @@
                            <li class="naventry-2nd"><a href="modules-javascript-extension.html">javascript-extension</a></li>
                            <li class="naventry-2nd"><a href="modules-jing-trang-patch.html">jing-trang-patch</a></li>
                            <li class="naventry-2nd"><a href="modules-kindlegen-amzn.html">kindlegen-amzn</a></li>
-                           <li class="naventry-2nd"><a href="modules-lang-extension.html">lang-extension</a></li>
                            <li class="naventry-2nd"><a href="modules-latex-math-images.html">latex-math-images</a></li>
                            <li class="naventry-2nd"><a href="modules-logo.html">logo</a></li>
                            <li class="naventry-2nd"><a href="modules-map-style-names.html">map-style-names</a></li>
@@ -110,6 +109,7 @@
                            <li class="naventry-2nd"><a href="modules-use-css-decorator-classes.html">use-css-decorator-classes</a></li>
                            <li class="naventry-2nd"><a href="modules-xerif.html">xerif</a></li>
                            <li class="naventry-2nd"><a href="modules-xerif-demo.html">xerif-demo</a></li>
+                           <li class="naventry-2nd"><a href="modules-xerif-latex.html">xerif-latex</a></li>
                            <li class="naventry-2nd"><a href="modules-xlsx2html-frontend.html">xlsx2html-frontend</a></li>
                            <li class="naventry-2nd"><a href="modules-xlsx2html-lib.html">xlsx2html-lib</a></li>
                            <li class="naventry-2nd"><a href="modules-xml2idml.html">xml2idml</a></li>
@@ -239,6 +239,31 @@
   &lt;p:option name="debug-dir-uri" select="'debug'"/&gt;
   &lt;p:option name="status-dir-uri" required="false" select="'debug/status?enabled=false'"/&gt;
 &lt;/tr:copy-files&gt;</code></pre>
+                  </div>
+                  <div id="tr-xsltmode-as-saxon-command" class="section scrollspy">
+                     <h2 class="header">tr:xsltmode-as-saxon-command</h2>
+                     <p>
+                        
+                        <p xmlns:p="http://www.w3.org/ns/xproc" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:tr="http://transpect.io" xmlns:c="http://www.w3.org/ns/xproc-step" xmlns:j="http://marklogic.com/json" xmlns:cx="http://xmlcalabash.com/ns/extensions" xmlns:xlink="http://www.w3.org/1999/xlink">The purpose of this XProc pipeline is to create saxon call of the entire xsltmode-conversion
+                           runable in a shell. 
+                           With all params and optionally a saxon configuration plus collection file.</p>
+                        
+                        <p xmlns:p="http://www.w3.org/ns/xproc" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:tr="http://transpect.io" xmlns:c="http://www.w3.org/ns/xproc-step" xmlns:j="http://marklogic.com/json" xmlns:cx="http://xmlcalabash.com/ns/extensions" xmlns:xlink="http://www.w3.org/1999/xlink">All output documents are written to disc. The executable file + invocation call is
+                           messaged to console.</p>
+                        </p>
+                     <h4>Import</h4>
+                     <pre><code class="language-markup">&lt;p:import href="http://transpect.io/xproc-util/debugging/xpl/xsltmode-as-saxon-command.xpl"/&gt;</code></pre>
+                     <h4>Synopsis</h4>
+                     <pre><code class="language-markup">&lt;tr:xsltmode-as-saxon-command xmlns:tr="http://transpect.io"&gt;
+  &lt;p:input port="source" sequence="true" primary="true"/&gt;
+  &lt;p:input port="stylesheet" sequence="false"/&gt;
+  &lt;p:input port="xslt-params" sequence="true"/&gt;
+  &lt;p:output port="result" primary="true"/&gt;
+  &lt;p:option name="mode" required="true"/&gt;
+  &lt;p:option name="saxon-call-base-uri" required="true"/&gt;
+  &lt;p:option name="saxon-executable" required="false" select="'saxon'"/&gt;
+  &lt;p:option name="run-immediately" required="false" select="'no'"/&gt;
+&lt;/tr:xsltmode-as-saxon-command&gt;</code></pre>
                   </div>
                   <div id="tr-evolve-mml" class="section scrollspy">
                      <h2 class="header">tr:evolve-mml</h2>
@@ -1263,9 +1288,9 @@ YmDABwACDAAAHgABzCCyiwAAAABJRU5ErkJggg==
   &lt;p:option name="href" required="true"/&gt;
 &lt;/tr:zip&gt;</code></pre>
                   </div>
-                  <div id="d42731e948" class="status">
+                  <div id="d42875e966" class="status">
                      <h2 class="header status"></h2>
-                     <p class="last-updated">GitHub sync date: 2024-04-23+02:00</p>
+                     <p class="last-updated">GitHub sync date: 2025-01-08+01:00</p>
                   </div>
                </div>
                <div class="col hide-on-small-only m3 l2">
@@ -1274,6 +1299,7 @@ YmDABwACDAAAHgABzCCyiwAAAABJRU5ErkJggg==
                         <ul id="tr-toc" class="table-of-contents">
                            <li><a href="#tr-batch-rename-files" class="active">tr:batch-rename-files</a></li>
                            <li><a href="#tr-copy-files">tr:copy-files</a></li>
+                           <li><a href="#tr-xsltmode-as-saxon-command">tr:xsltmode-as-saxon-command</a></li>
                            <li><a href="#tr-evolve-mml">tr:evolve-mml</a></li>
                            <li><a href="#tr-extract-cssa-rules">tr:extract-cssa-rules</a></li>
                            <li><a href="#tr-extract-from-jar">tr:extract-from-jar</a></li>
@@ -1309,7 +1335,7 @@ YmDABwACDAAAHgABzCCyiwAAAABJRU5ErkJggg==
                            <li><a href="#tr-prepend-xml-model">tr:prepend-xml-model</a></li>
                            <li><a href="#tr-xslt-mode">tr:xslt-mode</a></li>
                            <li><a href="#tr-zip">tr:zip</a></li>
-                           <li><a href="#d42731e948"></a></li>
+                           <li><a href="#d42875e966"></a></li>
                         </ul>
                      </div>
                   </div>
@@ -1341,7 +1367,7 @@ YmDABwACDAAAHgABzCCyiwAAAABJRU5ErkJggg==
             <div class="container">
                <div class="row">
                   <div id="tr-footer-copyright-1" class="col s12 m6 l6">
-                     <p class="white-text left">le-tex publishing services GmbH, <span class="current-year">2024</span></p>
+                     <p class="white-text left">le-tex publishing services GmbH, <span class="current-year">2025</span></p>
                   </div>
                   <div id="tr-footer-copyright-2" class="col s12 m6 l6">
                      <p>
