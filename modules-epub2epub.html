@@ -21,7 +21,7 @@
             <li class="naventry-1st"><a href="getting-started.html">Getting Started</a></li>
             <li class="active no-padding">
                <ul class="collapsible collapsible-accordion">
-                  <li class="active naventry-1st" id="d42574e418"><a class="active collapsible-header">Modules</a><div style="display:block" class="collapsible-body">
+                  <li class="active naventry-1st" id="d43837e418"><a class="active collapsible-header">Modules</a><div style="display:block" class="collapsible-body">
                         <ul>
                            <li class="naventry-2nd"><a href="modules-CoCoTeX.html">CoCoTeX</a></li>
                            <li class="naventry-2nd"><a href="modules-ace-daisy.html">ace-daisy</a></li>
@@ -30,9 +30,12 @@
                            <li class="naventry-2nd"><a href="modules-bits2hub.html">bits2hub</a></li>
                            <li class="naventry-2nd"><a href="modules-calabash-distro.html">calabash-distro</a></li>
                            <li class="naventry-2nd"><a href="modules-calabash-frontend.html">calabash-frontend</a></li>
+                           <li class="naventry-2nd"><a href="modules-calabash3.html">calabash3</a></li>
                            <li class="naventry-2nd"><a href="modules-cascade.html">cascade</a></li>
                            <li class="naventry-2nd"><a href="modules-control.html">control</a></li>
                            <li class="naventry-2nd"><a href="modules-control-backend.html">control-backend</a></li>
+                           <li class="naventry-2nd"><a href="modules-convert.html">convert</a></li>
+                           <li class="naventry-2nd"><a href="modules-convert-docker.html">convert-docker</a></li>
                            <li class="naventry-2nd"><a href="modules-crossref.html">crossref</a></li>
                            <li class="naventry-2nd"><a href="modules-css-tools.html">css-tools</a></li>
                            <li class="naventry-2nd"><a href="modules-docx2hub.html">docx2hub</a></li>
@@ -73,6 +76,7 @@
                            <li class="naventry-2nd"><a href="modules-javascript-extension.html">javascript-extension</a></li>
                            <li class="naventry-2nd"><a href="modules-jing-trang-patch.html">jing-trang-patch</a></li>
                            <li class="naventry-2nd"><a href="modules-kindlegen-amzn.html">kindlegen-amzn</a></li>
+                           <li class="naventry-2nd"><a href="modules-lang-extension.html">lang-extension</a></li>
                            <li class="naventry-2nd"><a href="modules-latex-math-images.html">latex-math-images</a></li>
                            <li class="naventry-2nd"><a href="modules-logo.html">logo</a></li>
                            <li class="naventry-2nd"><a href="modules-map-style-names.html">map-style-names</a></li>
@@ -86,6 +90,7 @@
                            <li class="naventry-2nd"><a href="modules-proj-eval.html">proj-eval</a></li>
                            <li class="naventry-2nd"><a href="modules-pygmentize-xpl.html">pygmentize-xpl</a></li>
                            <li class="naventry-2nd"><a href="modules-rng-extension.html">rng-extension</a></li>
+                           <li class="naventry-2nd"><a href="modules-sbf.html">sbf</a></li>
                            <li class="naventry-2nd"><a href="modules-schema-bits.html">schema-bits</a></li>
                            <li class="naventry-2nd"><a href="modules-schema-html.html">schema-html</a></li>
                            <li class="naventry-2nd"><a href="modules-schema-jats.html">schema-jats</a></li>
@@ -103,6 +108,7 @@
                            <li class="naventry-2nd"><a href="modules-tokenized-to-tree.html">tokenized-to-tree</a></li>
                            <li class="naventry-2nd"><a href="modules-transpect.github.io.html">transpect.github.io</a></li>
                            <li class="naventry-2nd"><a href="modules-transpectdoc.html">transpectdoc</a></li>
+                           <li class="naventry-2nd"><a href="modules-ui.html">ui</a></li>
                            <li class="naventry-2nd"><a href="modules-unwrap-mml.html">unwrap-mml</a></li>
                            <li class="naventry-2nd"><a href="modules-unzip-extension.html">unzip-extension</a></li>
                            <li class="naventry-2nd"><a href="modules-upload-webcomponent.html">upload-webcomponent</a></li>
@@ -155,6 +161,26 @@
                         </table>
                         <p><a href="https://github.com/transpect/epub2epub" class="btn-flat  orange lighten-4">Source ⬇</a></p>
                      </div>
+                  </div>
+                  <div id="e2e-apply-custom-xslt" class="section scrollspy">
+                     <h2 class="header">e2e:apply-custom-xslt</h2>
+                     <h4>Import</h4>
+                     <pre><code class="language-markup">&lt;p:import href="https://raw.githubusercontent.com/transpect/epub2epub/main/xpl/apply-custom-xslt.xpl"/&gt;</code></pre>
+                     <h4>Dependencies</h4>
+                     <ul>
+                        <li>
+                           <p><a href="modules-xproc-util transpect.github.io.html">xproc-util transpect.github.io</a></p>
+                        </li>
+                     </ul>
+                     <h4>Synopsis</h4>
+                     <pre><code class="language-markup">&lt;e2e:apply-custom-xslt xmlns:e2e="http://transpect.io/epub2epub"&gt;
+  &lt;p:input port="source" primary="true"/&gt;
+  &lt;p:input port="stylesheet" primary="false"/&gt;
+  &lt;p:output port="result" primary="true"/&gt;
+  &lt;p:option name="debug" select="'no'"/&gt;
+  &lt;p:option name="debug-dir-uri" select="'debug'"/&gt;
+  &lt;p:option name="terminate-on-error" select="'no'"/&gt;
+&lt;/e2e:apply-custom-xslt&gt;</code></pre>
                   </div>
                   <div id="e2e-copy-resources" class="section scrollspy">
                      <h2 class="header">e2e:copy-resources</h2>
@@ -220,17 +246,24 @@
                      </ul>
                      <h4>Synopsis</h4>
                      <pre><code class="language-markup">&lt;e2e:epub2epub xmlns:e2e="http://transpect.io/epub2epub"&gt;
+  &lt;p:input port="stylesheet" primary="false"/&gt;
+  &lt;p:input port="css" sequence="true" primary="false"/&gt;
+  &lt;p:input port="alt-xml" sequence="true" primary="false"/&gt;
   &lt;p:output port="result" primary="true"/&gt;
   &lt;p:output port="html" primary="false"/&gt;
+  &lt;p:output port="opf" primary="false"/&gt;
   &lt;p:output port="report" sequence="true" primary="false"/&gt;
   &lt;p:output port="input-for-schematron" sequence="true" primary="false"/&gt;
   &lt;p:option name="href"/&gt;
   &lt;p:option name="outdir" select="'out'"/&gt;
-  &lt;p:option name="xslt-href" select="'../xsl/custom-xslt-placeholder.xsl'"/&gt;
   &lt;p:option name="create-epub" select="'yes'"/&gt;
   &lt;p:option name="epub-version" select="'EPUB3'"/&gt;
   &lt;p:option name="html-subdir-name" select="'content'"/&gt;
   &lt;p:option name="toc-page" select="4"/&gt;
+  &lt;p:option name="hide-toc" select="'yes'"/&gt;
+  &lt;p:option name="repair-heading-order" select="'yes'"/&gt;
+  &lt;p:option name="remove-cover" select="'no'"/&gt;
+  &lt;p:option name="remove-files-list" select="''"/&gt;
   &lt;p:option name="remove-chars-regex" select="'([\p{Zs}]|%20)'"/&gt;
   &lt;p:option name="html-lang" select="'en'"/&gt;
   &lt;p:option name="debug" select="'no'"/&gt;
@@ -259,6 +292,32 @@
   &lt;p:option name="terminate-on-error" select="'no'"/&gt;
 &lt;/e2e:error-handler&gt;</code></pre>
                   </div>
+                  <div id="e2e-include-alt-xml" class="section scrollspy">
+                     <h2 class="header">e2e:include-alt-xml</h2>
+                     <p>
+                        
+                        <p xmlns:p="http://www.w3.org/ns/xproc" xmlns:tr="http://transpect.io" xmlns:e2e="http://transpect.io/epub2epub" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:c="http://www.w3.org/ns/xproc-step" xmlns:j="http://marklogic.com/json" xmlns:cx="http://xmlcalabash.com/ns/extensions" xmlns:xlink="http://www.w3.org/1999/xlink">This pipeline patches alt texts into a HTML document.</p>
+                        </p>
+                     <h4>Import</h4>
+                     <pre><code class="language-markup">&lt;p:import href="https://raw.githubusercontent.com/transpect/epub2epub/main/xpl/include-alt-xml.xpl"/&gt;</code></pre>
+                     <h4>Dependencies</h4>
+                     <ul>
+                        <li>
+                           <p><a href="modules-xproc-util transpect.github.io.html">xproc-util transpect.github.io</a></p>
+                        </li>
+                     </ul>
+                     <h4>Synopsis</h4>
+                     <pre><code class="language-markup">&lt;e2e:include-alt-xml xmlns:e2e="http://transpect.io/epub2epub"&gt;
+  &lt;p:input port="source" primary="true"/&gt;
+  &lt;p:input port="alt-xml" sequence="true" primary="false"/&gt;
+  &lt;p:output port="result" primary="true"/&gt;
+  &lt;p:output port="report" sequence="true" primary="false"/&gt;
+  &lt;p:option name="debug" select="'no'"/&gt;
+  &lt;p:option name="debug-dir-uri" select="'debug'"/&gt;
+  &lt;p:option name="status-dir-uri" select="'status'"/&gt;
+  &lt;p:option name="terminate-on-error" select="'no'"/&gt;
+&lt;/e2e:include-alt-xml&gt;</code></pre>
+                  </div>
                   <div id="e2e-load-html" class="section scrollspy">
                      <h2 class="header">e2e:load-html</h2>
                      <h4>Import</h4>
@@ -271,14 +330,17 @@
                      </ul>
                      <h4>Synopsis</h4>
                      <pre><code class="language-markup">&lt;e2e:load-html xmlns:e2e="http://transpect.io/epub2epub"&gt;
-  &lt;p:input port="source"/&gt;
+  &lt;p:input port="source" primary="true"/&gt;
   &lt;p:output port="result" primary="true"/&gt;
   &lt;p:output port="html" primary="false"/&gt;
   &lt;p:output port="report" sequence="true" primary="false"/&gt;
   &lt;p:option name="href"/&gt;
+  &lt;p:option name="remove-cover" select="'no'"/&gt;
+  &lt;p:option name="wrap-cover" select="'yes'"/&gt;
   &lt;p:option name="remove-chars-regex" select="'\s'"/&gt;
+  &lt;p:option name="repair-heading-order" select="'yes'"/&gt;
   &lt;p:option name="html-lang" select="'en'"/&gt;
-  &lt;p:option name="xslt-href" select="'../xsl/custom-xslt-placeholder.xsl'"/&gt;
+  &lt;p:option name="toc-page" select="4"/&gt;
   &lt;p:option name="debug" select="'no'"/&gt;
   &lt;p:option name="debug-dir-uri" select="'debug'"/&gt;
   &lt;p:option name="terminate-on-error" select="'no'"/&gt;
@@ -299,6 +361,8 @@
   &lt;p:input port="source"/&gt;
   &lt;p:output port="result" primary="true"/&gt;
   &lt;p:output port="report" sequence="true" primary="false"/&gt;
+  &lt;p:option name="remove-cover" select="'no'"/&gt;
+  &lt;p:option name="remove-files-list" select="''"/&gt;
   &lt;p:option name="debug" select="'no'"/&gt;
   &lt;p:option name="debug-dir-uri" select="'debug'"/&gt;
   &lt;p:option name="terminate-on-error" select="'no'"/&gt;
@@ -319,6 +383,7 @@
   &lt;p:input port="source"/&gt;
   &lt;p:output port="result"/&gt;
   &lt;p:option name="toc-page" select="4"/&gt;
+  &lt;p:option name="hide-toc" select="'no'"/&gt;
   &lt;p:option name="debug" select="'no'"/&gt;
   &lt;p:option name="debug-dir-uri" select="'debug'"/&gt;
 &lt;/e2e:ncx-to-nav&gt;</code></pre>
@@ -335,13 +400,35 @@
                      </ul>
                      <h4>Synopsis</h4>
                      <pre><code class="language-markup">&lt;e2e:patch-css xmlns:e2e="http://transpect.io/epub2epub"&gt;
-  &lt;p:input port="source"/&gt;
+  &lt;p:input port="source" primary="true"/&gt;
+  &lt;p:input port="css" sequence="true" primary="false"/&gt;
   &lt;p:output port="result" primary="true"/&gt;
   &lt;p:option name="href"/&gt;
+  &lt;p:option name="hide-toc" select="'no'"/&gt;
   &lt;p:option name="debug" select="'no'"/&gt;
   &lt;p:option name="debug-dir-uri" select="'debug'"/&gt;
   &lt;p:option name="terminate-on-error" select="'no'"/&gt;
 &lt;/e2e:patch-css&gt;</code></pre>
+                  </div>
+                  <div id="e2e-repair-heading-order" class="section scrollspy">
+                     <h2 class="header">e2e:repair-heading-order</h2>
+                     <p>This step fixes the heading hierarchy. For example, 
+                        having an h1 followed directly by an h3 is not ideal for accessibility. 
+                        This step repairs the hierarchy at once.
+                        </p>
+                     <h4>Import</h4>
+                     <pre><code class="language-markup">&lt;p:import href="https://raw.githubusercontent.com/transpect/epub2epub/main/xpl/repair-heading-order.xpl"/&gt;</code></pre>
+                     <h4>Dependencies</h4>
+                     <ul>
+                        <li>
+                           <p><a href="modules-xslt-util.html">xslt-util</a></p>
+                        </li>
+                     </ul>
+                     <h4>Synopsis</h4>
+                     <pre><code class="language-markup">&lt;e2e:repair-heading-order xmlns:e2e="http://transpect.io/epub2epub"&gt;
+  &lt;p:input port="source"/&gt;
+  &lt;p:output port="result"/&gt;
+&lt;/e2e:repair-heading-order&gt;</code></pre>
                   </div>
                   <div id="e2e-unzip" class="section scrollspy">
                      <h2 class="header">e2e:unzip</h2>
@@ -362,31 +449,35 @@
   &lt;p:output port="report" sequence="true" primary="false"/&gt;
   &lt;p:option name="href" required="true"/&gt;
   &lt;p:option name="outdir" required="true"/&gt;
+  &lt;p:option name="remove-files-list" select="''"/&gt;
   &lt;p:option name="debug" select="'no'"/&gt;
   &lt;p:option name="debug-dir-uri" select="'debug'"/&gt;
   &lt;p:option name="status-dir-uri" select="'status'"/&gt;
   &lt;p:option name="terminate-on-error" select="'no'"/&gt;
 &lt;/e2e:unzip&gt;</code></pre>
                   </div>
-                  <div id="d42802e180" class="status">
+                  <div id="d44080e234" class="status">
                      <h2 class="header status"></h2>
-                     <p class="last-updated">GitHub sync date: 2025-01-08+01:00</p>
+                     <p class="last-updated">GitHub sync date: 2026-10-19+02:00</p>
                   </div>
                </div>
                <div class="col hide-on-small-only m3 l2">
                   <div class="toc-wrapper pin-top" style="top: 0px;">
                      <div style="height: 1px;">
                         <ul id="tr-toc" class="table-of-contents">
-                           <li><a href="#e2e-copy-resources" class="active">e2e:copy-resources</a></li>
+                           <li><a href="#e2e-apply-custom-xslt" class="active">e2e:apply-custom-xslt</a></li>
+                           <li><a href="#e2e-copy-resources">e2e:copy-resources</a></li>
                            <li><a href="#e2e-create-config">e2e:create-config</a></li>
                            <li><a href="#e2e-epub2epub">e2e:epub2epub</a></li>
                            <li><a href="#e2e-error-handler">e2e:error-handler</a></li>
+                           <li><a href="#e2e-include-alt-xml">e2e:include-alt-xml</a></li>
                            <li><a href="#e2e-load-html">e2e:load-html</a></li>
                            <li><a href="#e2e-load-rootfile">e2e:load-rootfile</a></li>
                            <li><a href="#e2e-ncx-to-nav">e2e:ncx-to-nav</a></li>
                            <li><a href="#e2e-patch-css">e2e:patch-css</a></li>
+                           <li><a href="#e2e-repair-heading-order">e2e:repair-heading-order</a></li>
                            <li><a href="#e2e-unzip">e2e:unzip</a></li>
-                           <li><a href="#d42802e180"></a></li>
+                           <li><a href="#d44080e234"></a></li>
                         </ul>
                      </div>
                   </div>
@@ -418,7 +509,7 @@
             <div class="container">
                <div class="row">
                   <div id="tr-footer-copyright-1" class="col s12 m6 l6">
-                     <p class="white-text left">le-tex publishing services GmbH, <span class="current-year">2025</span></p>
+                     <p class="white-text left">le-tex publishing services GmbH, <span class="current-year">2026</span></p>
                   </div>
                   <div id="tr-footer-copyright-2" class="col s12 m6 l6">
                      <p>
